@@ -8,7 +8,7 @@ setup(name='cenrl',
       author='Anonynmous',
       author_email='',
       url='',
-      packages=['common', 'baselines', 'models', 'api'],
+      packages=['common', 'baselines', 'models', 'api', 'Infrastructure'],
       package_data={'models': ['inputs/*.csv']},
       install_requires=[
          'numpy',
