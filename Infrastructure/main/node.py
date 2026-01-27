@@ -2,13 +2,14 @@ from dataclasses import dataclass, asdict
 from typing import Any, Dict, List, Tuple, Optional, Callable
 import os
 import sys
-from models.BatchUCB import BatchUCB
+from Infrastructure.models.BatchUCB import BatchUCB
 from enum import Enum
-from utils.structures import MeasurementResponse
+from Infrastructure.utils.structures import MeasurementResponse
 from dataclasses import asdict
 import pandas as pd
 from models.base.model import run_preprocessor
 import models.base.action_space as action_space_module
+from pathlib import Path
 
 
 class NodeState(Enum):
@@ -27,9 +28,19 @@ class RegionalNode:
         model_klass: BatchUCB,
         output_folder: str = None,
         batch_size: int = 10,
+        action_space_folder: str = None,
         **kwargs: Any,
     ):
         self.params = params.copy()
+        self.country_name_standard = country_name.replace(' ', '_')
+        action_space_csv = None
+        if action_space_folder:
+            path = Path(action_space_folder)
+            action_space_csv = path / self.country_name_standard / f"{self.country_name_standard}.csv"
+            if not action_space_csv.exists():
+                action_space_csv = None
+            else:
+                action_space_csv = str(action_space_csv)
         if output_folder:
             sections: list[str] = output_folder.split("/")
             sections[-1] = f"{country_name.replace(' ', '_')}/{sections[-1]}"
@@ -40,6 +51,9 @@ class RegionalNode:
         self.inactive_vps: set[str] = set()
         self.model: BatchUCB = model_klass(self.params, **kwargs)
         self.model.output_directory = os.path.dirname(self.params["outfile_csv"])
+        self.model.outfile = Path(self.model.output_directory) / f"{self.country_name_standard}.csv"
+        if action_space_csv:
+            self.model.action_value_file = action_space_csv
         self.state: int = NodeState.IDLE
         self.batch_size = batch_size
         self.in_flight = 0
@@ -88,7 +102,8 @@ class RegionalNode:
             initial_value_estimate = getattr(self.model, "initial_value_estimate")
 
         action_value_file = None
-        if hasattr(self.model, "action_value_file"):
+        if hasattr(self.model, "action_value_file") and getattr(self.model, "action_value_file"):
+            # print(f"Found action value file! {getattr(self.model, 'action_value_file')}")
             action_value_file = getattr(self.model, "action_value_file")
 
         # build the action space
@@ -113,62 +128,75 @@ class RegionalNode:
             self.state = NodeState.READY
         if self.state is NodeState.READY:
             # print("Trying to step!")
-            if self.model.can_step():
-                targets = self.model.queue_measurement(self.batch_size)
-                self.in_flight += len(targets)
-                self.state = NodeState.AWAITING_MEASUREMENTS
-                return targets
+            if self.model.can_step() and self.in_flight < self.batch_size and self.model.current_epoch_num < self.model.measurements_per_episode:
+                request_size = max(
+                    min(
+                        self.batch_size - self.in_flight,
+                        self.model.measurements_per_episode - (self.model.current_epoch_num + self.in_flight)
+                        ),
+                    0
+                )
+                if request_size > 0:
+                    print(f"request_size: {request_size}, batch_size: {self.batch_size}, in_flight: {self.in_flight}, measurements_per_ep: {self.model.measurements_per_episode}, epoch_num: {self.model.current_epoch_num}\n\n")
+                    targets = self.model.queue_measurement(request_size)
+                    print(f"{self.country_name_standard} requesting {targets}")
+                    self.in_flight += len(targets)
+                    # self.state = NodeState.AWAITING_MEASUREMENTS
+                    return targets
+                return None
             else:
-                print("Can't Step!")
+                if not self.model.can_step():
+                    print("Can't Step!")
         return None
 
     def maybe_update_model(
         self, measurements: list[MeasurementResponse], save_stats: bool = True
     ):
-        if self.state is NodeState.AWAITING_MEASUREMENTS and len(measurements) > 0:
+        if len(measurements) > 0:
             self.in_flight -= len(measurements)
-            self.active_measurements += measurements
-            if self.in_flight == 0:
-                # end of epoch
+            # self.active_measurements += measurements
+
+            for m in measurements:
                 episode_stat = {
                     "episode": self.episode_idx,
                     "time": self.model.current_epoch_num + 1,
                 }
                 episode_stat.update(
-                    self.model.absorb_measurement([asdict(m) for m in measurements])
+                    self.model.absorb_measurement(asdict(m))
                 )
                 self.episode_stats.append(episode_stat)
-                if (
-                    self.model.current_epoch_num != 0
-                    and self.model.current_epoch_num % 100 == 0
-                ):
-                    print(
-                        f"{self.country}: Episode Process {os.getpid()} - Done with {self.model.current_epoch_num} iterations"
+
+            if (
+                self.model.current_epoch_num != 0
+                and self.model.current_epoch_num % 100 == 0
+            ):
+                print(
+                    f"{self.country}: Episode Process {os.getpid()} - Done with {self.model.current_epoch_num} iterations"
+                )
+            # self.active_measurements = []
+            # self.state = NodeState.READY
+            # print("Done epoch, setting state back to READY")
+            # end of epoch
+            if (
+                self.model.current_epoch_num
+                < self.model.measurements_per_episode - 1
+            ):
+                self.model.current_epoch_num += len(measurements)
+            if self.episode_idx <= self.model.num_episodes and self.in_flight == 0:
+                self.episode_all_stats += self.episode_stats
+                if self.episode_idx < self.model.num_episodes:
+                    self.model.reset()
+                    self.episode_idx += 1
+                else:
+                    print("Done")
+                    self.state = NodeState.DONE
+                    self.stat_df = pd.DataFrame(
+                        columns=list(self.episode_all_stats[0].keys())
                     )
-                self.active_measurements = []
-                self.state = NodeState.READY
-                # print("Done epoch, setting state back to READY")
-                # end of epoch
-                if (
-                    self.model.current_epoch_num
-                    < self.model.measurements_per_episode - 1
-                ):
-                    self.model.current_epoch_num += 1
-                if self.episode_idx <= self.model.num_episodes:
-                    self.episode_all_stats += self.episode_stats
-                    if self.episode_idx < self.model.num_episodes:
-                        self.model.reset()
-                        self.episode_idx += 1
-                    else:
-                        print("Done")
-                        self.state = NodeState.DONE
-                        self.stat_df = pd.DataFrame(
-                            columns=list(self.episode_all_stats[0].keys())
-                        )
-                        self.stat_df = self.stat_df.from_dict(self.episode_all_stats)
-                        if save_stats:
-                            self.write_stats()
-                        return self.stat_df
+                    self.stat_df = self.stat_df.from_dict(self.episode_all_stats)
+                    if save_stats:
+                        self.write_stats()
+                    return self.stat_df
 
         return
 

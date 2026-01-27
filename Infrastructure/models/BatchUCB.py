@@ -12,6 +12,10 @@ from common.utils import (
 
 
 class BatchUCB(UCBNaive):
+    def __init__(self, params, **kwargs):
+        super().__init__(params, **kwargs)
+        self._selected_targets = {}
+
     def choose_targets(self, selected_arm_key: str, selected_arm_name: str, selection_size: int) -> str:
         chosen_targets = self.action_space.sample_successors(
             selected_arm_key, n_samples=selection_size, use_rank_weights=self.sample_by_target_rank
@@ -33,7 +37,7 @@ class BatchUCB(UCBNaive):
         if self.verbose and self.logfile:
             self.logfile.write(str(self._selected_arm_name) + LOG_FILE_DELIMITER)
 
-        self._selected_targets = {
+        new_targets = {
             self.action_space.get(t)[action_space_module.NAME]: {
                 "node": t,
                 "result": {
@@ -46,12 +50,16 @@ class BatchUCB(UCBNaive):
             )
         }
 
+        self._selected_targets.update(new_targets)
+        # for t_name in self._selected_targets.keys():
+        #     self.disable_target(self._selected_targets[t_name]["node"])
+
         if self.verbose and self.logfile:
             self.logfile.write(f"Selection Size {batch_size}" + LOG_FILE_DELIMITER)
 
-        return list(self._selected_targets.keys())
+        return list(new_targets.keys())
 
-    def absorb_measurement(self, results: list[dict[str, str]]):
+    def absorb_measurement(self, result: dict[str, str]):
         """
         Measurements from queue are absorbed. Rewards are then propogated for the arm, the targets
         are disabled, QValue is updated.
@@ -71,58 +79,57 @@ class BatchUCB(UCBNaive):
             "coverage": self.get_blocklist_coverage()
         }
         """
-        for result in results:
-            t = result["target"]
-            is_blocked = result["blocked"]
-            measurement_result = 1 if is_blocked else 0
-            self._selected_targets[t]["result"]["blocked"] = is_blocked
-            self._selected_targets[t]["result"]["reward"] = measurement_result
+        t_name = result["target"]
+        is_blocked = result["blocked"]
+        measurement_result = 1 if is_blocked else 0
+        self._selected_targets[t_name]["result"]["blocked"] = is_blocked
+        self._selected_targets[t_name]["result"]["reward"] = measurement_result
 
-            if is_blocked:
-                self.update_blocklist_target_found(t)
+        if is_blocked:
+            self.update_blocklist_target_found(t_name)
 
-            if self.verbose and self.logfile:
-                self.logfile.write(
-                    str(self._selected_targets[t])
-                    + LOG_FILE_DELIMITER
-                    + str(measurement_result)
-                    + "\n"
-                )
+        if self.verbose and self.logfile:
+            self.logfile.write(
+                t_name
+                + LOG_FILE_DELIMITER
+                + str(measurement_result)
+                + "\n"
+            )
 
         # call before observe
         is_optimal = self.is_optimal_action(self.selected_arm_seq)
 
-        for t in self._selected_targets.keys():
-            observed_value = self.observe(self._selected_arm_key, self._selected_targets[t]["result"]["reward"])
-            assert observed_value is not None, "Missing observed value, expecting a float"
-            self._selected_targets[t]["observed_value"] = observed_value
+        observed_value = self.observe(self._selected_arm_key, self._selected_targets[t_name]["result"]["reward"])
+        assert observed_value is not None, "Missing observed value, expecting a float"
+        self._selected_targets[t_name]["observed_value"] = observed_value
 
         self.propagate_rewards(self._selected_arm_key)
-        self.disable_target(self._selected_targets[t]["node"])
+        self.disable_target(self._selected_targets[t_name]["node"])
         self.update_optimal_value()
 
         # set selected nodes explored
-        for n in (self.selected_arm_seq + [self._selected_targets[t]["node"] for t in self._selected_targets.keys()]):
+        for n in (self.selected_arm_seq + [self._selected_targets[t_name]["node"]]):
             self.action_space.get(n)[action_space_module.EXPLORED] = True
 
-        return {
+        return_value = {
             "action": self._selected_arm_key,
-            "targets": list(self._selected_targets.keys()),
-            "rewards": [
-                round(self._selected_targets[t]["result"]["reward"], 2)
-                for t in self._selected_targets.keys()
-            ],
-            "q_values": [
-                round(self._selected_targets[t]["observed_value"], 2)
-                for t in self._selected_targets.keys()
-            ],
-            "is_blocked": [
-                1 if self._selected_targets[t]["result"]["blocked"] else 0
-                for t in self._selected_targets.keys()
-            ],
+            "targets": t_name,
+            "rewards":
+                round(self._selected_targets[t_name]["result"]["reward"], 2)
+            ,
+            "q_value":
+                round(self._selected_targets[t_name]["observed_value"], 2)
+            ,
+            "is_blocked": 
+                1 if self._selected_targets[t_name]["result"]["blocked"] else 0
+            ,
             "is_optimal": 1 if is_optimal else 0,
             "coverage": self.get_blocklist_coverage(),
         }
+
+        del self._selected_targets[t_name]
+
+        return return_value
 
     def parse_block_list(self):
         pass
