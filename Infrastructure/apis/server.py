@@ -1,8 +1,8 @@
 from fastapi import FastAPI, Request
 import uvicorn
 import threading
-from utils.store import MeasurementStore
-from utils.structures import RequestPayload, ResponseData, LocationData
+from Infrastructure.utils.store import MeasurementStore
+from Infrastructure.utils.structures import RequestPayload, ResponseData, LocationData
 
 class MeasurementReceiver:
     def __init__(self, store: MeasurementStore, host="0.0.0.0", port=9000):

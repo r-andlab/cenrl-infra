@@ -1,6 +1,6 @@
 import requests
 import json
-from apis.api import Api
+from Infrastructure.apis.api import Api
 from dataclasses import dataclass, asdict
 import subprocess
 from typing import Any, Dict, List, Tuple, Optional
@@ -8,9 +8,9 @@ import sys
 from queue import Queue
 import threading
 import uvicorn
-from utils.store import MeasurementStore
-from apis.server import MeasurementReceiver
-from utils.structures import RequestPayload, ResponseData, LocationData, Tag, Job, MeasurementResponse
+from Infrastructure.utils.store import MeasurementStore
+from Infrastructure.apis.server import MeasurementReceiver
+from Infrastructure.utils.structures import RequestPayload, ResponseData, LocationData, Tag, Job, MeasurementResponse
 
 class SmallQuackAPI(Api):
     def __init__(
@@ -81,7 +81,7 @@ class HyperQuackAPI(Api):
     can communicate with the Go-based service API.
     """
 
-    def __init__(self, go_api_url: str):
+    def __init__(self, go_api_url: str, debug: bool = False):
         """
         :param go_api_url: Base URL of the Go API (e.g. http://127.0.0.1:8080)
         :param host: Host for this FastAPI server (default: localhost)
@@ -93,7 +93,11 @@ class HyperQuackAPI(Api):
         self.tags = set()
         self.store: MeasurementStore = MeasurementStore()
         self.receiver: MeasurementReceiver = MeasurementReceiver(self.store)
-        self.receiver.start_in_background()
+        self.debug = debug
+        if not self.debug:
+            self.receiver.start_in_background()
+        else:
+            print("Starting measurement API in DEBUG mode...")
 
     def schedule_measurements(self, vps: List[str], services: List[str], targets: List[str]):
         update_response = self.update_vps(vps, services)
@@ -130,6 +134,8 @@ class HyperQuackAPI(Api):
             return {}
         for vp in new_vps:
             self.vps.add(vp)
+        if self.debug:
+            return None
         return self.add_vantage_points(new_vps, services)
 
     # ---------------------------- CALLS -----------------------------
@@ -147,9 +153,11 @@ class HyperQuackAPI(Api):
         return self.call_go_api(endpoint, body)
 
     def add_work(self, jobs: List[Job]):
-        endpoint = "/add-work"
-        body = {"work": [asdict(j) for j in jobs]}
-        return self.call_go_api(endpoint, body)
+        if not self.debug:
+            endpoint = "/add-work"
+            body = {"work": [asdict(j) for j in jobs]}
+            return self.call_go_api(endpoint, body)
+        return
 
     def debug(self):
         endpoint = "/debug"
@@ -167,6 +175,7 @@ class HyperQuackAPI(Api):
             try:
                 url = f"{self.go_api_url}{endpoint}"
                 response = requests.post(url, json=data, timeout=10)
+                # print(f"Sending message {data}")
                 response.raise_for_status()
                 return response.json()
             except Exception as e:
