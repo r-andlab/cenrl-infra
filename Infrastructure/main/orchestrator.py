@@ -102,6 +102,6 @@ class Orchestrator:
 if __name__ == "__main__":
     parser = UCBNaiveParserOptions()
     params = parser.parse()
-    m = Orchestrator(params, vantage_points, "http://127.0.0.1:8888", ["https"], previous_values_folder="outputs/outtest5")
+    m = Orchestrator(params, vantage_points, "http://127.0.0.1:8888", ["https"], )  # previous_values_folder="outputs/outtest5")
     m.run_forever()
     # python3 Infrastructure/main/orchestrator.py -E 1 -m 1000 -v -f "categories" -a inputs/tranco/tranco_categories_subdomain_tld_entities_top10k.csv -f "categories" -s 0.0 -c 0.03 -V 0.0 -o outputs/outtest

@@ -123,82 +123,124 @@ class RegionalNode:
         self.stat_df.to_csv(self.model.outfile, index=False)
         return
 
+    def _remaining_capacity(self) -> int:
+        return max(self.batch_size - self.in_flight, 0)
+
+    def _remaining_steps_this_episode(self) -> int:
+        # how many *more* measurements we still need to COMPLETE this episode
+        return max(self.model.measurements_per_episode - self.model.current_epoch_num, 0)
+
+    def _remaining_steps_including_inflight(self) -> int:
+        # how many more we can *request* without exceeding measurements_per_episode
+        return max(self.model.measurements_per_episode - (self.model.current_epoch_num + self.in_flight), 0)
+
     def maybe_request_more(self) -> Optional[List[str]]:
         if self.state is NodeState.IDLE:
             self.state = NodeState.READY
-        if self.state is NodeState.READY:
-            # print("Trying to step!")
-            if self.model.can_step() and self.in_flight < self.batch_size and self.model.current_epoch_num < self.model.measurements_per_episode:
-                request_size = max(
-                    min(
-                        self.batch_size - self.in_flight,
-                        self.model.measurements_per_episode - (self.model.current_epoch_num + self.in_flight)
-                        ),
-                    0
-                )
-                if request_size > 0:
-                    print(f"request_size: {request_size}, batch_size: {self.batch_size}, in_flight: {self.in_flight}, measurements_per_ep: {self.model.measurements_per_episode}, epoch_num: {self.model.current_epoch_num}\n\n")
-                    targets = self.model.queue_measurement(request_size)
-                    print(f"{self.country_name_standard} requesting {targets}")
-                    self.in_flight += len(targets)
-                    # self.state = NodeState.AWAITING_MEASUREMENTS
-                    return targets
-                return None
-            else:
-                if not self.model.can_step():
-                    print("Can't Step!")
-        return None
+        if self.state is not NodeState.READY:
+            return None
+
+        if not self.model.can_step():
+            return None
+
+        requestable = min(self._remaining_capacity(), self._remaining_steps_including_inflight())
+        if requestable <= 0:
+            return None
+
+        targets = self.model.queue_measurement(requestable)
+        if not targets:
+            return None
+
+        self.in_flight += len(targets)
+        return targets
+
+    def _append_measurements(self, measurements: List[MeasurementResponse]) -> None:
+        """
+        Absorb batch of responses. Assign monotonically increasing step indexes within an episode.
+        
+        :param self: Node responsible for current model
+        :param measurements: List of incoming measurement responses to absorb into model
+        :type measurements: List[MeasurementResponse]
+        """
+        start_step = self.model.current_epoch_num
+        for i, m in enumerate(measurements):
+            step_idx = start_step + i
+            episode_stat = {
+                "episode": self.episode_idx,
+                "time": step_idx + 1,
+            }
+            episode_stat.update(self.model.absorb_measurement(asdict(m)))
+            self.episode_stats.append(episode_stat)
+
+        self.model.current_epoch_num += len(measurements)
+
+    def _finish_episode_if_ready(self, save_stats: bool) -> Optional[pd.DataFrame]:
+        """
+        If episode complete and no in-flight measurements, advance episode or finalize stats.
+
+        :param self: Node responsible for current model
+        :param save_stats: flag that determines whether output is written
+        :type save_stats: bool
+        :return: Returns dataframe representative of RL steps if save_stats is True
+        :rtype: DataFrame | None
+        """
+        if self.in_flight != 0:
+            return None
+
+        if self.model.current_epoch_num < self.model.measurements_per_episode:
+            return None
+
+        # Episode Finished
+        if self.episode_stats:
+            self.episode_all_stats += self.episode_stats
+        self.episode_stats = []
+
+        if self.episode_idx < self.model.num_episodes:
+            self.model.reset()
+            self.episode_idx += 1
+            self.model.current_epoch_num = 0
+            return None
+
+        # All episodes finished
+        self.state = NodeState.DONE
+        if not self.episode_all_stats:
+            return pd.DataFrame()
+
+        # print(self.episode_all_stats)
+        self.stat_df = pd.DataFrame(
+            columns=list(self.episode_all_stats[0].keys())
+        )
+        self.stat_df = self.stat_df.from_dict(self.episode_all_stats)
+        if save_stats:
+            self.write_stats()
+        return self.stat_df
 
     def maybe_update_model(
         self, measurements: list[MeasurementResponse], save_stats: bool = True
     ):
-        if len(measurements) > 0:
-            self.in_flight -= len(measurements)
-            # self.active_measurements += measurements
+        """
+        Update models with measurement responses
 
-            for m in measurements:
-                episode_stat = {
-                    "episode": self.episode_idx,
-                    "time": self.model.current_epoch_num + 1,
-                }
-                episode_stat.update(
-                    self.model.absorb_measurement(asdict(m))
-                )
-                self.episode_stats.append(episode_stat)
+        :param self: Node responsible for model
+        :param measurements: List of incoming measurement responses to absorb into model
+        :type measurements: list[MeasurementResponse]
+        :param save_stats: flag that determines whether output is written
+        :type save_stats: bool
+        """
+        if not measurements:
+            return None
 
-            if (
-                self.model.current_epoch_num != 0
-                and self.model.current_epoch_num % 100 == 0
-            ):
-                print(
-                    f"{self.country}: Episode Process {os.getpid()} - Done with {self.model.current_epoch_num} iterations"
-                )
-            # self.active_measurements = []
-            # self.state = NodeState.READY
-            # print("Done epoch, setting state back to READY")
-            # end of epoch
-            if (
-                self.model.current_epoch_num
-                < self.model.measurements_per_episode - 1
-            ):
-                self.model.current_epoch_num += len(measurements)
-            if self.episode_idx <= self.model.num_episodes and self.in_flight == 0:
-                self.episode_all_stats += self.episode_stats
-                if self.episode_idx < self.model.num_episodes:
-                    self.model.reset()
-                    self.episode_idx += 1
-                else:
-                    print("Done")
-                    self.state = NodeState.DONE
-                    self.stat_df = pd.DataFrame(
-                        columns=list(self.episode_all_stats[0].keys())
-                    )
-                    self.stat_df = self.stat_df.from_dict(self.episode_all_stats)
-                    if save_stats:
-                        self.write_stats()
-                    return self.stat_df
+        self.in_flight -= len(measurements)
+        if self.in_flight < 0:
+            # Defensive check against miscounts
+            self.in_flight = 0
 
-        return
+        self._append_measurements(measurements)
+
+        if self.model.current_epoch_num != 0 and self.model.current_epoch_num % 100 == 0:
+            print(f"{self.country}: Episode Process {os.getpid()} - Done with {self.model.current_epoch_num} iterations")
+
+        return self._finish_episode_if_ready(save_stats)
 
     def get_vps(self):
         return self.active_vps
