@@ -8,9 +8,20 @@ import sys
 from queue import Queue
 import threading
 import uvicorn
+import time
+import random
+from datetime import datetime, timezone
 from Infrastructure.utils.store import MeasurementStore
 from Infrastructure.apis.server import MeasurementReceiver
-from Infrastructure.utils.structures import RequestPayload, ResponseData, LocationData, Tag, Job, MeasurementResponse
+from Infrastructure.utils.structures import (
+    RequestPayload,
+    ResponseData,
+    LocationData,
+    Tag,
+    Job,
+    MeasurementResponse,
+)
+
 
 class SmallQuackAPI(Api):
     def __init__(
@@ -75,13 +86,21 @@ class SmallQuackAPI(Api):
                 f"Failed to decode Go output as JSON:\n{raw}\nError: {e}"
             ) from e
 
+
 class HyperQuackAPI(Api):
     """
     Lightweight API interface for a reinforcement learning model that
     can communicate with the Go-based service API.
     """
 
-    def __init__(self, go_api_url: str, debug: bool = False):
+    def __init__(
+        self,
+        go_api_url: str,
+        debug: bool = False,
+        debug_block_prob: float = 0.15,
+        debug_min_delay_s: float = 0.0,
+        debug_max_delay_s: float = 0.0,
+    ):
         """
         :param go_api_url: Base URL of the Go API (e.g. http://127.0.0.1:8080)
         :param host: Host for this FastAPI server (default: localhost)
@@ -97,15 +116,31 @@ class HyperQuackAPI(Api):
         if not self.debug:
             self.receiver.start_in_background()
         else:
+            self.debug_block_prob = debug_block_prob
+            self.debug_min_delay_s = debug_min_delay_s
+            self.debug_max_delay_s = debug_max_delay_s
             print("Starting measurement API in DEBUG mode...")
 
-    def schedule_measurements(self, vps: List[str], services: List[str], targets: List[str]):
+    def schedule_measurements(
+        self, vps: List[str], services: List[str], targets: List[str], country: str
+    ):
         update_response = self.update_vps(vps, services)
-        if "invalid_entries" in update_response and len(update_response["invalid_entries"]) != 0:
-            print(f"Invalid entries: {update_response['invalid_entries']}", file=sys.stderr)
+        if (
+            "invalid_entries" in update_response
+            and len(update_response["invalid_entries"]) != 0
+        ):
+            print(
+                f"Invalid entries: {update_response['invalid_entries']}",
+                file=sys.stderr,
+            )
 
         # Create Jobs
         jobs = [Job(target, services, vp, "") for vp in vps for target in targets]
+
+        if self.debug:
+            self._inject_debug_results(country=country, jobs=jobs)
+            return
+
         self.add_work(jobs)
         return
 
@@ -116,14 +151,20 @@ class HyperQuackAPI(Api):
         return self.parse_measurements(results)
 
     # ---------------------------- Helpers -----------------------------
-    def parse_measurements(self, results: List[RequestPayload]) -> List[MeasurementResponse]:
+    def parse_measurements(
+        self, results: List[RequestPayload]
+    ) -> List[MeasurementResponse]:
         parsed_output = []
         for r in results:
             target = r.test_url
             blocked = False
             if r.response:
                 blocked = not r.response[0].matches_template
-            parsed_output.append(MeasurementResponse(target=target, blocked=(r.stateful_block or blocked)))
+            parsed_output.append(
+                MeasurementResponse(
+                    target=target, blocked=(r.stateful_block or blocked)
+                )
+            )
         # if len(parsed_output) > 0:
         #     print(f"Parsed Output:\n{parsed_output}")
         return parsed_output
@@ -135,7 +176,7 @@ class HyperQuackAPI(Api):
         for vp in new_vps:
             self.vps.add(vp)
         if self.debug:
-            return None
+            return {}
         return self.add_vantage_points(new_vps, services)
 
     # ---------------------------- CALLS -----------------------------
@@ -159,7 +200,47 @@ class HyperQuackAPI(Api):
             return self.call_go_api(endpoint, body)
         return
 
-    def debug(self):
+    def _inject_debug_results(self, country: str, jobs: List["Job"]) -> None:
+        """
+        Simulate measurement completion by pushing synthetic RequestPayloads into the store.
+        Uses the SAME format parse_measurements() expects.
+        """
+
+        def worker():
+            # optional simulated delay
+            if self.debug_max_delay_s > 0:
+                time.sleep(
+                    random.uniform(self.debug_min_delay_s, self.debug_max_delay_s)
+                )
+
+            now = datetime.now(timezone.utc).isoformat()
+
+            for j in jobs:
+                blocked = random.random() < self.debug_block_prob
+
+                payload = RequestPayload(
+                    vp=j.vantage_point_predicate,
+                    location=LocationData(country_name=country, country_code="XX"),
+                    service=(j.services[0] if j.services else "https"),
+                    test_url=j.keyword,
+                    response=[
+                        ResponseData(
+                            matches_template=(not blocked),
+                            start_time=now,
+                            end_time=now,
+                        )
+                    ],
+                    anomaly=False,
+                    controls_failed=False,
+                    stateful_block=blocked,
+                )
+                # request_id is country
+                self.store.record_result(country, payload)
+
+        # run async so orchestrator loop behaves like real life
+        threading.Thread(target=worker, daemon=True).start()
+
+    def call_debug_endpoint(self):
         endpoint = "/debug"
         return self.call_go_api(endpoint, method="GET")
 
@@ -197,7 +278,13 @@ if __name__ == "__main__":
     vp = "12.47.31.201"
     vps = ["87.190.253.178", vp]
     print(api.add_vantage_points(vps, ["https"]))
-    print(api.schedule_measurements(vps=vps, services=["https"], targets=["google.com", "example.com", "poop.com"]))
+    print(
+        api.schedule_measurements(
+            vps=vps,
+            services=["https"],
+            targets=["google.com", "example.com", "poop.com"],
+        )
+    )
     # print(api.add_tags([Tag("mytag", "output.txt", "eval.txt")]))
     # print(api.add_work([Job("google.com", ["http", "echo", "discard", "https"], "*", "")]))
     # api.receiver.debug_start()
