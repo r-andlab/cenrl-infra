@@ -46,26 +46,41 @@ class Orchestrator:
         self.api.update_vps(new_vps=list(vantage_point_map.values()), services=services)
         self.services = services
 
+    def tick(self) -> None:
+        finished_nodes: List[str] = []
+
+        for country, n in self.agents.items():
+            # Attempt to read new results from funneler
+            results = self.api.try_get_results(country)
+            if results:
+                n.maybe_update_model(results)
+
+            # Remove node if it has completed
+            if n.state is NodeState.DONE:
+                print(
+                    f"{country} had completed {n.model.num_episodes} and is finished."
+                )
+                finished_nodes.append(country)
+                continue
+            
+            # Try to get more targets to request
+            vps = list(n.get_vps())
+            if vps:
+                targets = n.maybe_request_more()
+                if not targets:
+                    continue
+                self.api.schedule_measurements(
+                    vps=vps, services=self.services, targets=targets, country=country
+                )
+
+        for country in finished_nodes:
+            self.agents.pop(country, None)
+
     def run_forever(self):
-        while True:
-            if len(self.agents) == 0:
-                print("All countries completed, exiting program...")
-                return
-            for country, n in self.agents.items():
-                if n.state == NodeState.IDLE or n.state == NodeState.READY:
-                    targets = n.maybe_request_more()
-                    if targets is not None:
-                        # print(f"{country} requesting {targets}\n")
-                        self.funnel_measurements(country, targets)
-                    #if n.state == NodeState.AWAITING_MEASUREMENTS:
-                    n.maybe_update_model(self.api.try_get_results(country))
-                if n.state == NodeState.DONE:
-                    print(
-                        f"{country} had completed {n.model.num_episodes} and is finished."
-                    )
-                    self.agents.pop(country)
-                    break
+        while self.agents:
+            self.tick()
             sleep(0.5)
+        print("All countries completed, exiting program...")
 
     def funnel_measurements(self, country, targets):
         vps = self.agents[country].get_vps()
@@ -76,7 +91,7 @@ class Orchestrator:
     def add_vp(self, country, vp):
         if country not in self.agents:
             self.agents[country] = RegionalNode(
-                params=self.params, country=country, vps=set(), model_klass=BatchUCB
+                params=self.params, country_name=country, vps=set(), model_klass=BatchUCB
             )
         self.agents[country].active_vps.add(vp)
 
