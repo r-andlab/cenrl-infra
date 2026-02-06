@@ -1,10 +1,11 @@
 from models.ucb.ucb_naive import UCBNaive
 import models.base.action_space as action_space_module
-from typing import List
+from typing import List, Dict
 from Infrastructure.utils.structures import (
     BatchSizeMethod,
     BatchSelectionMethod,
-    PropagationMethod
+    PropagationMethod,
+    Pending
 )
 from common.utils import (
     LOG_FILE_DELIMITER,
@@ -26,15 +27,15 @@ class BatchUCB(UCBNaive):
         **kwargs,
     ):
         super().__init__(params, **kwargs)
-        self._selected_targets = {}
+        self._selected_targets: Dict[str, Pending] = {}
         self.selection_method = target_selection
         self.size_method = batch_size_method
         self.prop_method = qval_propagation_method
 
     def choose_targets(
-        self, selected_arm_key: str, selected_arm_name: str, selection_size: int
+        self, selected_arm_key: str, selected_arm_name: str, selection_size: int = 10
     ) -> List[str]:
-        def topk_from_arm():
+        if self.selection_method is BatchSelectionMethod.TOP_K_FROM_ARM:
             """Method: Choose top-k from chosen arm"""
             chosen_targets = self.action_space.sample_successors(
                 selected_arm_key,
@@ -42,58 +43,43 @@ class BatchUCB(UCBNaive):
                 use_rank_weights=self.sample_by_target_rank,
             )
             return chosen_targets[0:selection_size]
-        
-        def uniform_spread():
+        elif self.selection_method is BatchSelectionMethod.UNIFORM_SPREAD:
             """Method: Spread selection over all arms equally"""
-            # not implemented
-            return []
-        
-        def weighted_spread():
+            raise NotImplementedError
+        elif self.selection_method is BatchSelectionMethod.WEIGHTED_SPREAD:
             """Method: Distribute k targets over arms depending on previous arm success"""
-            # not implemented
-            return []
-        
-
-        match self.selection_method:
-            case BatchSelectionMethod.TOP_K_FROM_ARM:
-                return topk_from_arm
-            case BatchSelectionMethod.UNIFORM_SPREAD:
-                return uniform_spread
-            case BatchSelectionMethod.WEIGHTED_SPREAD:
-                return weighted_spread
+            raise NotImplementedError
 
     def queue_measurement(self, batch_size) -> list[str]:
         """
         Selects an arm, then selects a group of targets from that arm.
         Returns a list of targets to measure.
         """
-        self.selected_arm_seq = self.choose_arm()
-        self._selected_arm_key = self.selected_arm_seq[-1]
+        arm_seq = self.choose_arm()
+        arm_key = arm_seq[-1]
+        arm_name = self.action_space.get(arm_key)[action_space_module.NAME]
 
-        self._selected_arm_name = self.action_space.get(self._selected_arm_key)[
-            action_space_module.NAME
-        ]
-        # print(f"selected arm: index: {selected_arm_index}, name: {selected_arm_name}")
         if self.verbose and self.logfile:
-            self.logfile.write(str(self._selected_arm_name) + LOG_FILE_DELIMITER)
+            self.logfile.write(str(arm_name) + LOG_FILE_DELIMITER)
 
-        new_targets = {
-            self.action_space.get(t)[action_space_module.NAME]: {
-                "node": t,
-                "result": {
-                    "blocked": False,
-                    "reward": 0.0,
-                },  # assume all not blocked by default
-            }
-            for t in self.choose_targets(
-                self._selected_arm_key, self._selected_arm_name, batch_size
+        node_ids = self.choose_targets(arm_key, arm_name, batch_size)
+
+        new_targets: Dict[str, Pending] = {}
+        for node_id in node_ids:
+            t_name = self.action_space.get(node_id)[action_space_module.NAME]
+            # guard against NAME collisions
+            if t_name in self._selected_targets or t_name in new_targets:
+                # prefer unique key; for now, disambiguate, may be pointless
+                t_name = f"{t_name}__{node_id}"
+
+            new_targets[t_name] = Pending(
+                node_id=node_id,
+                arm_key=arm_key,
+                arm_seq=arm_seq,
             )
-        }
 
         self._selected_targets.update(new_targets)
-        # for t_name in self._selected_targets.keys():
-        #     self.disable_target(self._selected_targets[t_name]["node"])
-
+        
         if self.verbose and self.logfile:
             self.logfile.write(f"Selection Size {batch_size}" + LOG_FILE_DELIMITER)
 
@@ -120,44 +106,48 @@ class BatchUCB(UCBNaive):
         }
         """
         t_name = result["target"]
+        if t_name not in self._selected_targets.keys():
+            raise KeyError(f"Received results from unknown target {t_name}")
+        
+        pending: Pending = self._selected_targets[t_name]
+
         is_blocked = result["blocked"]
-        measurement_result = 1 if is_blocked else 0
-        self._selected_targets[t_name]["result"]["blocked"] = is_blocked
-        self._selected_targets[t_name]["result"]["reward"] = measurement_result
+        reward = 1.0 if is_blocked else 0.0
+        pending.reward = reward
+        pending.blocked = is_blocked
 
         if is_blocked:
             self.update_blocklist_target_found(t_name)
 
         if self.verbose and self.logfile:
             self.logfile.write(
-                t_name + LOG_FILE_DELIMITER + str(measurement_result) + "\n"
+                t_name + LOG_FILE_DELIMITER + str(int(reward)) + "\n"
             )
 
+        arm_seq = pending.arm_seq
+        arm_key = pending.arm_key
+
         # call before observe
-        is_optimal = self.is_optimal_action(self.selected_arm_seq)
+        is_optimal = self.is_optimal_action(arm_seq)
+        observed_value = self.observe(arm_key, reward)
 
-        observed_value = self.observe(
-            self._selected_arm_key, self._selected_targets[t_name]["result"]["reward"]
-        )
         assert observed_value is not None, "Missing observed value, expecting a float"
-        self._selected_targets[t_name]["observed_value"] = observed_value
+        pending.observed_value = observed_value
 
-        self.propagate_rewards(self._selected_arm_key)
-        self.disable_target(self._selected_targets[t_name]["node"])
+        self.propagate_rewards(arm_key)
+        self.disable_target(pending.node_id)
         self.update_optimal_value()
 
         # set selected nodes explored
-        for n in self.selected_arm_seq + [self._selected_targets[t_name]["node"]]:
+        for n in arm_seq + [pending.node_id]:
             self.action_space.get(n)[action_space_module.EXPLORED] = True
 
         return_value = {
-            "action": self._selected_arm_key,
+            "action": arm_key,
             "targets": t_name,
-            "rewards": round(self._selected_targets[t_name]["result"]["reward"], 2),
-            "q_value": round(self._selected_targets[t_name]["observed_value"], 2),
-            "is_blocked": (
-                1 if self._selected_targets[t_name]["result"]["blocked"] else 0
-            ),
+            "rewards": round(pending.reward, 2),
+            "q_value": round(pending.observed_value, 2),
+            "is_blocked": 1 if is_blocked else 0,
             "is_optimal": 1 if is_optimal else 0,
             "coverage": self.get_blocklist_coverage(),
         }
