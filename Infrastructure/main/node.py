@@ -1,10 +1,9 @@
-from dataclasses import dataclass, asdict
-from typing import Any, Dict, List, Tuple, Optional, Callable
+from dataclasses import asdict
+from typing import Any, Dict, List, Tuple, Optional, Callable, Set
 import os
 import sys
 from Infrastructure.models.BatchUCB import BatchUCB
-from enum import Enum
-from Infrastructure.utils.structures import MeasurementResponse
+from Infrastructure.utils.structures import MeasurementResponse, BatchSelectionMethod, BatchSizeMethod, PropagationMethod, NodeState
 from dataclasses import asdict
 import pandas as pd
 from models.base.model import run_preprocessor
@@ -12,19 +11,12 @@ import models.base.action_space as action_space_module
 from pathlib import Path
 
 
-class NodeState(Enum):
-    IDLE = 1
-    READY = 2
-    AWAITING_MEASUREMENTS = 3
-    DONE = 4
-
-
 class RegionalNode:
     def __init__(
         self,
-        params: dict,
+        params: Dict,
         country_name: str,
-        vps: set[str],
+        vps: Set[str],
         model_klass: BatchUCB,
         output_folder: str = None,
         batch_size: int = 10,

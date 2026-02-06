@@ -1,33 +1,25 @@
 import os
-import sys
-script_dir = os.path.dirname(__file__)
-parent_dir = os.path.join(script_dir, "../../..")
-sys.path.append(parent_dir)
 
 from Infrastructure.examples.vps import vantage_points
 from pathlib import Path
 
 
-from models.ucb.ucb_naive import UCBNaive, UCBNaiveParserOptions
-from models.base.model import ParserOptions, run_multiprocessing, Model
-from dataclasses import dataclass, asdict
-from typing import Any, Dict, List, Tuple, Optional, Callable
-from models.base.preprocessor import run_preprocessor
-import models.base.action_space as action_space_module
+from models.ucb.ucb_naive import UCBNaiveParserOptions
+from typing import Dict, List, Any
 from Infrastructure.apis.funneler import HyperQuackAPI
 from Infrastructure.models.BatchUCB import BatchUCB
-from Infrastructure.main.node import RegionalNode, NodeState
+from Infrastructure.main.node import RegionalNode
+from Infrastructure.utils.structures import NodeState
 from time import sleep
-import pandas as pd
 
 
 class Orchestrator:
     def __init__(
         self,
-        params: dict,
-        vantage_point_map: dict[str, str],
+        params: Dict,
+        vantage_point_map: Dict[str, str],
         go_api_endpoint: str,
-        services: list[str],
+        services: List[str],
         previous_values_folder: str = None
     ):
         self.params = params
@@ -98,7 +90,7 @@ class Orchestrator:
             raise KeyError(f"Country {country} not present in network")
         self.agents[country].delete_vp(vp)
 
-# go command: 
+
 if __name__ == "__main__":
     parser = UCBNaiveParserOptions()
     params = parser.parse()
