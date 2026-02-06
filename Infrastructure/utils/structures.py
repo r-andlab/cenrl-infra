@@ -1,6 +1,29 @@
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from pydantic import BaseModel
+from enum import Enum
 
+
+class NodeState(Enum):
+    IDLE = 1
+    READY = 2
+    AWAITING_MEASUREMENTS = 3
+    DONE = 4
+
+
+class BatchSizeMethod(Enum):
+    CONSTANT_VAL = 1
+    VARY_ON_SUCCESS = 2
+    NESTED_RL = 3
+
+
+class BatchSelectionMethod(Enum):
+    TOP_K_FROM_ARM = 1
+    UNIFORM_SPREAD = 2
+    WEIGHTED_SPREAD = 3
+
+class PropagationMethod(Enum):
+    ON_RECEIPT = 1
+    IN_ORDER = 2
 
 class ResponseData(BaseModel):
     matches_template: bool
