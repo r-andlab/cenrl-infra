@@ -3,13 +3,25 @@ from pydantic import BaseModel
 from enum import Enum
 
 
+# For pending measurements from API within the BatchUCB Model
+@dataclass
+class Pending:
+    node_id: str  # action space node key
+    arm_key: str
+    arm_seq: list[str]
+    blocked: bool = False
+    reward: float = 0.0
+    observed_value: float | None = None
+
+
+# Represents Different States of Regional Nodes
 class NodeState(Enum):
     IDLE = 1
     READY = 2
     AWAITING_MEASUREMENTS = 3
     DONE = 4
 
-
+# Each Method Class represents different ways that the model can operate
 class BatchSizeMethod(Enum):
     CONSTANT_VAL = 1
     VARY_ON_SUCCESS = 2
@@ -24,6 +36,9 @@ class BatchSelectionMethod(Enum):
 class PropagationMethod(Enum):
     ON_RECEIPT = 1
     IN_ORDER = 2
+
+
+# Classes for requests and responses from Go API -----------------
 
 class ResponseData(BaseModel):
     matches_template: bool
