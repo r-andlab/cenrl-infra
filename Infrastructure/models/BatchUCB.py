@@ -21,6 +21,7 @@ class BatchUCB(UCBNaive):
     def __init__(
         self,
         params,
+        country_name,
         target_selection: BatchSelectionMethod = BatchSelectionMethod.TOP_K_FROM_ARM,
         batch_size_method: BatchSizeMethod = BatchSizeMethod.CONSTANT_VAL,
         qval_propagation_method: PropagationMethod = PropagationMethod.ON_RECEIPT,
@@ -31,6 +32,7 @@ class BatchUCB(UCBNaive):
         self.selection_method = target_selection
         self.size_method = batch_size_method
         self.prop_method = qval_propagation_method
+        self.country_name = country_name
 
     def choose_targets(
         self, selected_arm_key: str, selected_arm_name: str, selection_size: int = 10
@@ -107,7 +109,7 @@ class BatchUCB(UCBNaive):
         """
         t_name = result["target"]
         if t_name not in self._selected_targets.keys():
-            raise KeyError(f"Received results from unknown target {t_name}")
+            raise KeyError(f"{self.country_name}: Received results from unknown target {t_name}")
         
         pending: Pending = self._selected_targets[t_name]
 
