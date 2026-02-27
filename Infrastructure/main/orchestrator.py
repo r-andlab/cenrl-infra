@@ -23,7 +23,7 @@ class Orchestrator:
         previous_values_folder: str = None
     ):
         self.params = params
-        self.output_folder = params.get("outfile_csv", None)
+        self.output_folder = params.get("output_directory", None)
         if previous_values_folder:
             path = Path(previous_values_folder)
             if not path.exists() or not path.is_dir():
@@ -42,7 +42,7 @@ class Orchestrator:
             )
             for key, value in vantage_point_map.items()
         }
-        self.api = HyperQuackAPI(go_api_endpoint)
+        self.api = HyperQuackAPI(go_api_endpoint, debug=False)
         self.api.update_vps(new_vps=list(vantage_point_map.values()), services=services)
         self.services = services
 
@@ -106,9 +106,24 @@ class Orchestrator:
         self.agents[country].delete_vp(vp)
 
 
+class OrchestrationParser(UCBNaiveParserOptions):
+
+    def set_params(self, args):
+        if args.outfile[-1] != "/":
+            args.outfile+="/"
+        super().set_params(args)
+
+    # def parse(self):
+    #     self.add_arguments()
+    #     args = self.parser.parse_args()
+    #     self.set_params(args)
+
+    #     return self.params
+    
+
 if __name__ == "__main__":
-    parser = UCBNaiveParserOptions()
+    parser = OrchestrationParser()
     params = parser.parse()
     m = Orchestrator(params, vantage_points, "http://127.0.0.1:8888", ["https"], )  # previous_values_folder="outputs/outtest5")
     m.run_forever()
-    # python3 Infrastructure/main/orchestrator.py -E 1 -m 1000 -v -f "categories" -a inputs/tranco/tranco_categories_subdomain_tld_entities_top10k.csv -f "categories" -s 0.0 -c 0.03 -V 0.0 -o outputs/outtest
+    # python3 Infrastructure/main/orchestrator.py -E 1 -m 1000 -v -f "categories" -a inputs/tranco/tranco_categories_subdomain_tld_entities_top10k.csv -f "categories" -s 0.0 -c 0.03 -V 0.0 --output-folder outputs/outtest
