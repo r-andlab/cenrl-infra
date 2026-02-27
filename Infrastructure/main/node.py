@@ -25,6 +25,7 @@ class RegionalNode:
     ):
         self.params = params.copy()
         self.country_name_standard = country_name.replace(' ', '_')
+        self.output_folder = output_folder
         action_space_csv = None
         if action_space_folder:
             path = Path(action_space_folder)
@@ -34,14 +35,19 @@ class RegionalNode:
             else:
                 action_space_csv = str(action_space_csv)
         if output_folder:
-            sections: list[str] = output_folder.split("/")
-            sections[-1] = f"{country_name.replace(' ', '_')}/{sections[-1]}"
-            self.params["outfile_csv"] = "/".join(sections)
-            os.makedirs(os.path.dirname(self.params["outfile_csv"]), exist_ok=True)
+            base_path = Path(output_folder)  # e.g. outputs/outtest9
+            country_dir = base_path / country_name.replace(" ", "_")
+            csv = country_dir / f"{country_name.replace(' ', '_')}.csv"
+            print(base_path, country_dir, csv)
+            # Create the directory
+            country_dir.mkdir(parents=True, exist_ok=True)
+
+            # If you want outfile_csv to point inside that folder:
+            self.params["outfile_csv"] = str(csv)
         self.country: str = country_name
         self.active_vps: set[str] = set(vps)
         self.inactive_vps: set[str] = set()
-        self.model: BatchUCB = model_klass(self.params, **kwargs)
+        self.model: BatchUCB = model_klass(self.params, country_name, **kwargs)
         self.model.output_directory = os.path.dirname(self.params["outfile_csv"])
         self.model.outfile = Path(self.model.output_directory) / f"{self.country_name_standard}.csv"
         if action_space_csv:
@@ -183,6 +189,7 @@ class RegionalNode:
             return None
 
         # Episode Finished
+        print(f"{self.country} completed episode {self.episode_idx}/{self.model.num_episodes}")
         if self.episode_stats:
             self.episode_all_stats += self.episode_stats
         self.episode_stats = []
