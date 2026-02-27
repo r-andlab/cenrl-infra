@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from pydantic import BaseModel
 from enum import Enum
+from typing import List, Dict
 
 
 # For pending measurements from API within the BatchUCB Model
@@ -8,7 +9,7 @@ from enum import Enum
 class Pending:
     node_id: str  # action space node key
     arm_key: str
-    arm_seq: list[str]
+    arm_seq: List[str]
     blocked: bool = False
     reward: float = 0.0
     observed_value: float | None = None
@@ -40,23 +41,28 @@ class PropagationMethod(Enum):
 
 # Classes for requests and responses from Go API -----------------
 
-class ResponseData(BaseModel):
+class TestResponseData(BaseModel):
     matches_template: bool
     start_time: str
     end_time: str
-
 
 class LocationData(BaseModel):
     country_name: str
     country_code: str
 
+class EvalPayload(BaseModel):
+    vp: str
+    service: str
+    response: List[Dict]
+    issue: str | None = None
+    template: Dict | None = None
 
-class RequestPayload(BaseModel):
+class TestPayload(BaseModel):
     vp: str
     location: LocationData
     service: str
     test_url: str
-    response: list[ResponseData]
+    response: List[TestResponseData]
     anomaly: bool
     controls_failed: bool
     stateful_block: bool
@@ -76,7 +82,7 @@ class Tag:
 @dataclass
 class Job:
     keyword: str
-    services: list[str]
+    services: List[str]
     vantage_point_predicate: str
     tag: Tag
 
