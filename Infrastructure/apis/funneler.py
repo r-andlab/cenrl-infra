@@ -14,8 +14,9 @@ from datetime import datetime, timezone
 from Infrastructure.utils.store import MeasurementStore
 from Infrastructure.apis.server import MeasurementReceiver
 from Infrastructure.utils.structures import (
-    RequestPayload,
-    ResponseData,
+    TestPayload,
+    EvalPayload,
+    TestResponseData,
     LocationData,
     Tag,
     Job,
@@ -152,7 +153,7 @@ class HyperQuackAPI(Api):
 
     # ---------------------------- Helpers -----------------------------
     def parse_measurements(
-        self, results: List[RequestPayload]
+        self, results: List[TestPayload]
     ) -> List[MeasurementResponse]:
         parsed_output = []
         for r in results:
@@ -218,13 +219,13 @@ class HyperQuackAPI(Api):
             for j in jobs:
                 blocked = random.random() < self.debug_block_prob
 
-                payload = RequestPayload(
+                payload = TestPayload(
                     vp=j.vantage_point_predicate,
                     location=LocationData(country_name=country, country_code="XX"),
                     service=(j.services[0] if j.services else "https"),
                     test_url=j.keyword,
                     response=[
-                        ResponseData(
+                        TestResponseData(
                             matches_template=(not blocked),
                             start_time=now,
                             end_time=now,
