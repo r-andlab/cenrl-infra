@@ -38,15 +38,13 @@ class RegionalNode:
             base_path = Path(output_folder)  # e.g. outputs/outtest9
             country_dir = base_path / country_name.replace(" ", "_")
             csv = country_dir / f"{country_name.replace(' ', '_')}.csv"
-            print(base_path, country_dir, csv)
+            # print(base_path, country_dir, csv)
             # Create the directory
             country_dir.mkdir(parents=True, exist_ok=True)
 
             # If you want outfile_csv to point inside that folder:
             self.params["outfile_csv"] = str(csv)
         self.country: str = country_name
-        self.active_vps: set[str] = set(vps)
-        self.inactive_vps: set[str] = set()
         self.model: BatchUCB = model_klass(self.params, country_name, **kwargs)
         self.model.output_directory = os.path.dirname(self.params["outfile_csv"])
         self.model.outfile = Path(self.model.output_directory) / f"{self.country_name_standard}.csv"
@@ -241,19 +239,3 @@ class RegionalNode:
 
         return self._finish_episode_if_ready(save_stats)
 
-    def get_vps(self):
-        return self.active_vps
-
-    def add_vp(self, vp):
-        self.active_vps.add(vp)
-
-    def deactivate_vp(self, vp):
-        if vp in self.active_vps:
-            self.active_vps.remove(vp)
-        self.inactive_vps.add(vp)
-
-    def delete_vp(self, vp):
-        if vp in self.active_vps:
-            self.active_vps.remove(vp)
-        if vp in self.inactive_vps:
-            self.inactive_vps.remove(vp)

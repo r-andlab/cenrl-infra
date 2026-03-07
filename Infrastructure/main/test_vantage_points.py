@@ -97,6 +97,68 @@ class TestVantagePoints(unittest.TestCase):
         os.remove(csv)
 
 
+    def test_get_n_vantages(self):
+        rows = [
+            {"ipv4": f"7.7.7.{i}", "country": "D"}
+            for i in range(1, 6)
+        ]
+        csv = make_ev_csv(rows)
+        vp = VantagePoints(ev_file=csv, blocklist_file=None, max_size=10)
+
+        drawn = vp.get_n_vantages("D", 3)
+        self.assertEqual(len(drawn), 3)
+        self.assertEqual(len(vp.get_active("D")), 3)
+        self.assertEqual(len(vp.get_inactive("D")), 2)
+
+        # drawing more than remaining gives only what's left
+        extra = vp.get_n_vantages("D", 5)
+        self.assertEqual(len(extra), 2)
+        self.assertEqual(len(vp.get_active("D")), 5)
+        self.assertEqual(len(vp.get_inactive("D")), 0)
+        os.remove(csv)
+
+    def test_confirm_active(self):
+        rows = [{"ipv4": "8.8.8.8", "country": "E"}]
+        csv = make_ev_csv(rows)
+        vp = VantagePoints(ev_file=csv, blocklist_file=None, max_size=5)
+
+        drawn = vp.get_vantage("E")
+        self.assertEqual(drawn, "8.8.8.8")
+        # confirm_active should keep it in active (no-op)
+        vp.confirm_active("E", "8.8.8.8")
+        self.assertEqual(vp.get_active("E"), ["8.8.8.8"])
+        self.assertEqual(vp.get_inactive("E"), [])
+        os.remove(csv)
+
+    def test_reject_vp_with_replacement(self):
+        rows = [
+            {"ipv4": "9.9.9.1", "country": "F"},
+            {"ipv4": "9.9.9.2", "country": "F"},
+        ]
+        csv = make_ev_csv(rows)
+        vp = VantagePoints(ev_file=csv, blocklist_file=None, max_size=5)
+
+        first = vp.get_vantage("F")
+        replacement = vp.reject_vp("F", first)
+        self.assertIsNotNone(replacement)
+        self.assertNotEqual(replacement, first)
+        self.assertIn(replacement, vp.get_active("F"))
+        self.assertNotIn(first, vp.get_active("F"))
+        self.assertNotIn(first, vp.get_inactive("F"))
+        os.remove(csv)
+
+    def test_reject_vp_no_replacement(self):
+        rows = [{"ipv4": "11.11.11.11", "country": "G"}]
+        csv = make_ev_csv(rows)
+        vp = VantagePoints(ev_file=csv, blocklist_file=None, max_size=5)
+
+        first = vp.get_vantage("G")
+        replacement = vp.reject_vp("G", first)
+        self.assertIsNone(replacement)
+        self.assertEqual(vp.get_active("G"), [])
+        self.assertEqual(vp.get_inactive("G"), [])
+        os.remove(csv)
+
     def test_real_data(self):
         logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
         vp = VantagePoints(ev_file=EV_CSV, blocklist_file=BLOCKLIST, max_size=50)

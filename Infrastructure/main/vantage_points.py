@@ -39,6 +39,7 @@ class VantagePoints:
                         ipaddress.ip_network(line, strict=False)
                     )
 
+        self.ev_file = ev_file
         self.max_size = max_size
         # country -> {"active": set(), "inactive": set()}
         self.vantages: Dict[str, Dict[str, Set[str]]] = {}
@@ -61,6 +62,7 @@ class VantagePoints:
         is non-empty.  After collecting all candidates we reduce each country's
         pool to ``max_size`` addresses by randomly selecting a subset.
         """
+        logger.info(f"Parsing vantage points from {self.ev_file}")
         with self._lock:
             self.vantages.clear()
             for row in self.all_vantages.itertuples(index=False):
@@ -134,6 +136,46 @@ class VantagePoints:
                 replacement = random.choice(tuple(entry["inactive"]))
                 entry["inactive"].remove(replacement)
                 entry["active"].add(replacement)
+
+    def get_n_vantages(self, country: str, n: int) -> List[str]:
+        """Draw up to *n* inactive VPs, move them to active, return IPs."""
+        with self._lock:
+            entry = self.vantages.get(country)
+            if not entry:
+                return []
+            drawn = []
+            for _ in range(n):
+                if not entry["inactive"]:
+                    break
+                vp = random.choice(tuple(entry["inactive"]))
+                entry["inactive"].remove(vp)
+                entry["active"].add(vp)
+                drawn.append(vp)
+            return drawn
+
+    def confirm_active(self, country: str, vp: str) -> None:
+        """VP passed evaluation — ensure it remains in the active set."""
+        with self._lock:
+            entry = self.vantages.get(country)
+            if not entry:
+                return
+            entry["active"].add(vp)
+
+    def reject_vp(self, country: str, vp: str) -> Optional[str]:
+        """VP failed evaluation — remove entirely and draw a replacement
+        into active.  Returns the replacement IP, or ``None``."""
+        with self._lock:
+            entry = self.vantages.get(country)
+            if not entry:
+                return None
+            entry["active"].discard(vp)
+            entry["inactive"].discard(vp)
+            if entry["inactive"]:
+                replacement = random.choice(tuple(entry["inactive"]))
+                entry["inactive"].remove(replacement)
+                entry["active"].add(replacement)
+                return replacement
+            return None
 
     # convenience accessors for inspection / testing
     def get_active(self, country: str) -> List[str]:
