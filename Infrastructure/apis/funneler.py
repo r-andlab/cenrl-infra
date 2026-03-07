@@ -3,15 +3,18 @@ import json
 from Infrastructure.apis.api import Api
 from dataclasses import dataclass, asdict
 import subprocess
-from typing import Any, Dict, List, Tuple, Optional
+from typing import Dict, List, Set
 import sys
 from queue import Queue
 import threading
 import uvicorn
 import time
 import random
+import logging
 from datetime import datetime, timezone
 from Infrastructure.utils.store import MeasurementStore
+from Infrastructure.utils.eval_store import EvalStore
+from Infrastructure.utils.aggregator import MeasurementAggregator
 from Infrastructure.apis.server import MeasurementReceiver
 from Infrastructure.utils.structures import (
     TestPayload,
@@ -23,6 +26,8 @@ from Infrastructure.utils.structures import (
     MeasurementResponse,
 )
 
+logger = logging.getLogger(__name__)
+
 class HyperQuackAPI(Api):
     """
     Lightweight API interface for a reinforcement learning model that
@@ -32,6 +37,7 @@ class HyperQuackAPI(Api):
     def __init__(
         self,
         go_api_url: str,
+        eval_store: EvalStore = None,
         debug: bool = False,
         debug_block_prob: float = 0.15,
         debug_min_delay_s: float = 0.0,
@@ -39,15 +45,18 @@ class HyperQuackAPI(Api):
     ):
         """
         :param go_api_url: Base URL of the Go API (e.g. http://127.0.0.1:8080)
-        :param host: Host for this FastAPI server (default: localhost)
-        :param port: Port for this FastAPI server (default: 8000)
+        :param eval_store: Shared EvalStore for VP evaluation results
         """
         self.go_api_url = go_api_url.rstrip("/")
         self.retries = 5
         self.vps = set()
         self.tags = set()
         self.store: MeasurementStore = MeasurementStore()
-        self.receiver: MeasurementReceiver = MeasurementReceiver(self.store)
+        self.eval_store = eval_store
+        self.aggregator = MeasurementAggregator()
+        self.receiver: MeasurementReceiver = MeasurementReceiver(
+            self.store, eval_store=self.eval_store
+        )
         self.debug = debug
         if not self.debug:
             self.receiver.start_in_background()
@@ -55,7 +64,11 @@ class HyperQuackAPI(Api):
             self.debug_block_prob = debug_block_prob
             self.debug_min_delay_s = debug_min_delay_s
             self.debug_max_delay_s = debug_max_delay_s
-            print("Starting measurement API in DEBUG mode...")
+            logger.info("Starting measurement API in DEBUG mode...")
+
+    def update_aggregator_vps(self, country: str, vps: Set[str]) -> None:
+        """Inform the aggregator which VPs are active for a country."""
+        self.aggregator.set_expected_vps(country, vps)
 
     def schedule_measurements(
         self, vps: List[str], services: List[str], targets: List[str], country: str
@@ -82,9 +95,15 @@ class HyperQuackAPI(Api):
 
     def try_get_results(self, country: str) -> List[MeasurementResponse]:
         results = self.store.get_country_batch(country=country)
-        # if len(results) > 0:
-        #     print(f"Retrieved results for {country}:{results[0].test_url}")
         return self.parse_measurements(results)
+
+    def drain_raw_results(self, country: str) -> List[TestPayload]:
+        """Return raw TestPayloads for *country* without parsing.
+
+        The orchestrator uses this to inspect per-VP results (e.g. for
+        health monitoring) before feeding them into the aggregator.
+        """
+        return self.store.get_country_batch(country=country)
 
     # ---------------------------- Helpers -----------------------------
     def parse_measurements(
@@ -101,8 +120,6 @@ class HyperQuackAPI(Api):
                     target=target, blocked=(r.stateful_block or blocked)
                 )
             )
-        # if len(parsed_output) > 0:
-        #     print(f"Parsed Output:\n{parsed_output}")
         return parsed_output
 
     def update_vps(self, new_vps: List[str], services: List[str]):
@@ -119,10 +136,13 @@ class HyperQuackAPI(Api):
     def add_vantage_points(self, ips: List[str], services: List[str]):
         endpoint = "/add-vantage-points"
         body = {"vantage_points": [{"ip": ip, "services": services} for ip in ips]}
+        logging.info(f"Adding vantage points with body\n{body}\n")
         for ip in ips:
             if ip not in self.vps:
                 self.vps.add(ip)
-        return self.call_go_api(endpoint, body)
+        response = self.call_go_api(endpoint, body)
+        logging.info(f"Received response\n{response}")
+        return response
 
     def add_tags(self, tags: List[Tag]):
         endpoint = "/add-tags"
@@ -138,8 +158,8 @@ class HyperQuackAPI(Api):
 
     def _inject_debug_results(self, country: str, jobs: List["Job"]) -> None:
         """
-        Simulate measurement completion by pushing synthetic RequestPayloads into the store.
-        Uses the SAME format parse_measurements() expects.
+        Simulate measurement completion by pushing synthetic TestPayloads
+        into the store.
         """
 
         def worker():
@@ -170,10 +190,28 @@ class HyperQuackAPI(Api):
                     controls_failed=False,
                     stateful_block=blocked,
                 )
-                # request_id is country
                 self.store.record_result(country, payload)
 
-        # run async so orchestrator loop behaves like real life
+        threading.Thread(target=worker, daemon=True).start()
+
+    def _inject_debug_eval_results(
+        self, vps: List[str], success_prob: float = 0.9
+    ) -> None:
+        """Simulate VP evaluation for debug mode."""
+
+        def worker():
+            for vp in vps:
+                ok = random.random() < success_prob
+                payload = EvalPayload(
+                    vp=vp,
+                    service="https",
+                    response=[],
+                    issue=None if ok else "debug_failure",
+                    template={"debug": True} if ok else None,
+                )
+                if self.eval_store:
+                    self.eval_store.record(payload)
+
         threading.Thread(target=worker, daemon=True).start()
 
     def call_debug_endpoint(self):
@@ -185,42 +223,19 @@ class HyperQuackAPI(Api):
         """Send a POST request to the Go API and return JSON response."""
         method = method.upper()
         if method not in ["POST", "GET"]:
-            print(f"Invalid method: {method}")
+            logging.warning(f"Invalid method: {method}")
             return {"error": "invalid method"}
         retries = 0
         for _ in range(self.retries):
             try:
                 url = f"{self.go_api_url}{endpoint}"
                 response = requests.post(url, json=data, timeout=10)
-                # print(f"Sending message {data}")
                 response.raise_for_status()
                 return response.json()
             except Exception as e:
                 retries += 1
                 if retries == self.retries:
-                    print(f"[Error] Failed to call Go API: {e}")
+                    logging.warning(f"[Error] Failed to call Go API: {e}")
                     return {"error": str(e)}
                 else:
                     continue
-
-
-# ---------------------------- MAIN ENTRY ----------------------------
-if __name__ == "__main__":
-    # api = SmallQuackAPI(
-    # go_file="/Users/grahamklingler/Repositories/hyperquackv2/main.go"
-    # )
-    # print(api.run_go_trial(keyword="google.com", ip="12.47.31.201", port=443))
-    api = HyperQuackAPI(go_api_url="http://127.0.0.1:8888")
-    vp = "12.47.31.201"
-    vps = ["87.190.253.178", vp]
-    print(api.add_vantage_points(vps, ["https"]))
-    print(
-        api.schedule_measurements(
-            vps=vps,
-            services=["https"],
-            targets=["google.com", "example.com", "poop.com"],
-        )
-    )
-    # print(api.add_tags([Tag("mytag", "output.txt", "eval.txt")]))
-    # print(api.add_work([Job("google.com", ["http", "echo", "discard", "https"], "*", "")]))
-    # api.receiver.debug_start()
