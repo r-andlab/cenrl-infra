@@ -21,13 +21,13 @@ class MeasurementReceiver:
 
     def _setup_routes(self):
         @self.app.post("/measurement-done")
-        async def measurement_done(req: TestPayload):
+        def measurement_done(req: TestPayload):
             request_id = req.location.country_name  # must match what Go sends
             self.store.record_result(request_id, req)
             return {"status": "ok"}
 
         @self.app.post("/vp-evaluated")
-        async def vp_evaluated(req: EvalPayload):
+        def vp_evaluated(req: EvalPayload):
             logger.info("Evaluated VP %s — %s", req.vp,
                         "OK" if req.template else "DOWN")
             if self.eval_store:
