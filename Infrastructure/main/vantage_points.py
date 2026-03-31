@@ -75,7 +75,7 @@ class VantagePoints:
                     continue
                 if self._is_blocked(ip):
                     country_val = getattr(row, "country", "unknown")
-                    logger.info("Blocked IP %s (country=%s)", ip, country_val)
+                    # logger.info("Blocked IP %s (country=%s)", ip, country_val)
                     continue
 
                 country = getattr(row, "country", None)

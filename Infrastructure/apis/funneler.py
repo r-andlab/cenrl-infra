@@ -136,12 +136,12 @@ class HyperQuackAPI(Api):
     def add_vantage_points(self, ips: List[str], services: List[str]):
         endpoint = "/add-vantage-points"
         body = {"vantage_points": [{"ip": ip, "services": services} for ip in ips]}
-        logging.info(f"Adding vantage points with body\n{body}\n")
+        # logging.info(f"Adding vantage points with body\n{body}\n")
         for ip in ips:
             if ip not in self.vps:
                 self.vps.add(ip)
         response = self.call_go_api(endpoint, body)
-        logging.info(f"Received response\n{response}")
+        # logging.info(f"Received response\n{response}")
         return response
 
     def add_tags(self, tags: List[Tag]):
