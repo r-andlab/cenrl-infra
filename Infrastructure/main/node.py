@@ -1,5 +1,6 @@
 from dataclasses import asdict
 from typing import Any, Dict, List, Tuple, Optional, Callable, Set
+import logging
 import os
 import sys
 from Infrastructure.models.BatchUCB import BatchUCB
@@ -9,6 +10,8 @@ import pandas as pd
 from models.base.model import run_preprocessor
 import models.base.action_space as action_space_module
 from pathlib import Path
+
+logger = logging.getLogger(__name__)
 
 
 class RegionalNode:
@@ -150,25 +153,37 @@ class RegionalNode:
         self.in_flight += len(targets)
         return targets
 
-    def _append_measurements(self, measurements: List[MeasurementResponse]) -> None:
+    def _append_measurements(self, measurements: List[MeasurementResponse]) -> int:
         """
         Absorb batch of responses. Assign monotonically increasing step indexes within an episode.
-        
+
         :param self: Node responsible for current model
         :param measurements: List of incoming measurement responses to absorb into model
         :type measurements: List[MeasurementResponse]
+        :return: Number of measurements successfully absorbed
         """
+        absorbed = 0
         start_step = self.model.current_epoch_num
-        for i, m in enumerate(measurements):
-            step_idx = start_step + i
+        for m in measurements:
+            try:
+                result = self.model.absorb_measurement(asdict(m))
+            except KeyError:
+                logger.warning(
+                    "%s: skipping duplicate/stale result for target %s",
+                    self.country, m.target,
+                )
+                continue
+            step_idx = start_step + absorbed
             episode_stat = {
                 "episode": self.episode_idx,
                 "time": step_idx + 1,
             }
-            episode_stat.update(self.model.absorb_measurement(asdict(m)))
+            episode_stat.update(result)
             self.episode_stats.append(episode_stat)
+            absorbed += 1
 
-        self.model.current_epoch_num += len(measurements)
+        self.model.current_epoch_num += absorbed
+        return absorbed
 
     def _finish_episode_if_ready(self, save_stats: bool) -> Optional[pd.DataFrame]:
         """
@@ -227,12 +242,11 @@ class RegionalNode:
         if not measurements:
             return None
 
-        self.in_flight -= len(measurements)
-        if self.in_flight < 0:
-            # Defensive check against miscounts
-            self.in_flight = 0
+        absorbed = self._append_measurements(measurements)
 
-        self._append_measurements(measurements)
+        self.in_flight -= absorbed
+        if self.in_flight < 0:
+            self.in_flight = 0
 
         if self.model.current_epoch_num != 0 and self.model.current_epoch_num % 100 == 0:
             print(f"{self.country}: Episode Process {os.getpid()} - Done with {self.model.current_epoch_num} iterations")
