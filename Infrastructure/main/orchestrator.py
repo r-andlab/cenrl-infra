@@ -3,7 +3,7 @@ import os
 from collections import defaultdict
 from pathlib import Path
 from time import sleep
-from typing import Dict, List, Tuple
+from typing import Dict, List, Set, Tuple
 
 from models.ucb.ucb_naive import UCBNaiveParserOptions
 from Infrastructure.apis.funneler import HyperQuackAPI
@@ -103,7 +103,9 @@ class Orchestrator:
             # Step 2: drain raw results, check VP health, aggregate
             raw_results = self.api.drain_raw_results(country)
             if raw_results:
-                self._check_vp_health(country, raw_results)
+                dropped_vps = self._check_vp_health(country, raw_results)
+                if dropped_vps:
+                    raw_results = [r for r in raw_results if r.vp not in dropped_vps]
                 self._feed_aggregator(country, raw_results)
 
             # Step 3: deliver aggregated results to the node
@@ -219,8 +221,12 @@ class Orchestrator:
 
     def _check_vp_health(
         self, country: str, raw_results: List[TestPayload]
-    ) -> None:
-        """Track VP control failures and remove unhealthy VPs."""
+    ) -> Set[str]:
+        """Track VP control failures and remove unhealthy VPs.
+
+        Returns the set of VP IPs that were dropped during this call.
+        """
+        dropped_vps: Set[str] = set()
         for r in raw_results:
             key = (country, r.vp)
             if r.controls_failed:
@@ -230,6 +236,7 @@ class Orchestrator:
                         "VP %s in %s exceeded failure threshold, removing",
                         r.vp, country,
                     )
+                    dropped_vps.add(r.vp)
                     replacement = self.vantage_points.reject_vp(country, r.vp)
                     self.api.aggregator.drop_vp(country, r.vp)
                     active = self.vantage_points.get_active(country)
@@ -243,6 +250,7 @@ class Orchestrator:
             else:
                 # Reset counter on success
                 self._vp_failure_counts.pop(key, None)
+        return dropped_vps
 
     # ------------------------------------------------------------------
     # helpers
