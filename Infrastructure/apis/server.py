@@ -45,7 +45,7 @@ class MeasurementReceiver:
 
     def start_in_background(self):
         def run():
-            uvicorn.run(self.app, host=self.host, port=self.port, log_level="info")
+            uvicorn.run(self.app, host=self.host, port=self.port, log_level="warning")
 
         t = threading.Thread(target=run, daemon=True)
         t.start()
