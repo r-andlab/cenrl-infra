@@ -86,8 +86,16 @@ class HyperQuackAPI(Api):
                 file=sys.stderr,
             )
 
-        # Create Jobs
-        jobs = [Job(target, services, vp, "") for vp in vps for target in targets]
+        # Create Jobs with per-VP services (port-aware)
+        jobs = []
+        for vp in vps:
+            vp_services = (
+                self.vantage_points.get_services(vp, services)
+                if self.vantage_points
+                else services
+            )
+            for target in targets:
+                jobs.append(Job(target, vp_services, vp, ""))
 
         if self.debug:
             self._inject_debug_results(country=country, jobs=jobs)
@@ -140,11 +148,12 @@ class HyperQuackAPI(Api):
         endpoint = "/add-vantage-points"
         vp_entries = []
         for ip in ips:
-            entry = {"ip": ip, "services": services}
-            if self.vantage_points:
-                port = self.vantage_points.get_port(ip)
-                if port is not None:
-                    entry["port"] = port
+            vp_services = (
+                self.vantage_points.get_services(ip, services)
+                if self.vantage_points
+                else services
+            )
+            entry = {"ip": ip, "services": vp_services}
             vp_entries.append(entry)
         body = {"vantage_points": vp_entries}
         # logging.info(f"Adding vantage points with body\n{body}\n")

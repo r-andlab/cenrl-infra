@@ -11,10 +11,15 @@ logger = logging.getLogger(__name__)
 class VantagePoints:
     """Pool manager for per-country vantage-point IP addresses.
 
-    The CSV file pointed at by ``ev_file`` is expected to have at least
-    ``ipv4``/``ipv6`` and ``country`` columns (other columns are ignored).
-    An optional ``blocklist_file`` may contain addresses that should never be
-    used.  The maximum number of candidates remembered for each country is
+    Can be initialized from either:
+
+    * ``ev_file`` — a raw EV-certs CSV with ``ipv4``/``ipv6``, ``country``,
+      and optional ``port`` columns.
+    * ``vp_pool_file`` — a pre-filtered pool CSV (as produced by
+      ``vantage_point_stats.py``) with ``country``, ``ip``, ``port`` columns.
+
+    An optional ``blocklist_file`` may contain CIDR ranges that should never
+    be used.  The maximum number of candidates remembered for each country is
     controlled with ``max_size``.
 
     Two internally managed sets are maintained for every country:
@@ -22,12 +27,23 @@ class VantagePoints:
     * **active** — currently under evaluation by a measurement job.
     * **inactive** — candidates that may be drawn later.
 
+    Port information is stored separately and can be looked up via
+    :meth:`get_port`.
+
     The class is thread-safe; all public methods acquire an internal lock to
     protect the data structures.
     """
 
-    def __init__(self, ev_file: str, blocklist_file: Optional[str], max_size: int):
-        self.all_vantages = pd.read_csv(ev_file)
+    def __init__(
+        self,
+        ev_file: Optional[str] = None,
+        vp_pool_file: Optional[str] = None,
+        blocklist_file: Optional[str] = None,
+        max_size: int = 10,
+    ):
+        if not ev_file and not vp_pool_file:
+            raise ValueError("Either ev_file or vp_pool_file must be given")
+
         self.blocklist: List[ipaddress.IPv4Network | ipaddress.IPv6Network] = []
         if blocklist_file:
             with open(blocklist_file) as f:
@@ -40,12 +56,18 @@ class VantagePoints:
                     )
 
         self.ev_file = ev_file
+        self.vp_pool_file = vp_pool_file
         self.max_size = max_size
         # country -> {"active": set(), "inactive": set()}
         self.vantages: Dict[str, Dict[str, Set[str]]] = {}
+        # ip -> port (e.g. "1.2.3.4" -> 443)
+        self._ports: Dict[str, int] = {}
         self._lock = threading.RLock()
 
-        self.parse_vantages()
+        if vp_pool_file:
+            self._parse_pool_file()
+        else:
+            self._parse_ev_file()
 
     def _is_blocked(self, ip: str) -> bool:
         addr = ipaddress.ip_address(ip)
@@ -54,33 +76,32 @@ class VantagePoints:
     # ------------------------------------------------------------------
     # initialization helpers
     # ------------------------------------------------------------------
-    def parse_vantages(self) -> None:
-        """Populate ``self.vantages`` from :pyattr:`all_vantages` DataFrame.
-
-        Any entry whose address is in the blocklist is skipped.  We prefer
-        IPv4 addresses over IPv6, but will accept either as long as the field
-        is non-empty.  After collecting all candidates we reduce each country's
-        pool to ``max_size`` addresses by randomly selecting a subset.
-        """
-        logger.info(f"Parsing vantage points from {self.ev_file}")
+    def _parse_ev_file(self) -> None:
+        """Populate from a raw EV-certs CSV (ipv4/ipv6, country, port)."""
+        logger.info("Parsing vantage points from %s", self.ev_file)
+        df = pd.read_csv(self.ev_file)
         with self._lock:
             self.vantages.clear()
-            for row in self.all_vantages.itertuples(index=False):
+            self._ports.clear()
+            for row in df.itertuples(index=False):
                 ip = None
                 if hasattr(row, "ipv4") and row.ipv4 and not pd.isna(row.ipv4):
-                    ip = row.ipv4
+                    ip = str(row.ipv4).strip()
                 elif hasattr(row, "ipv6") and row.ipv6 and not pd.isna(row.ipv6):
-                    ip = row.ipv6
+                    ip = str(row.ipv6).strip()
                 if not ip:
                     continue
                 if self._is_blocked(ip):
-                    country_val = getattr(row, "country", "unknown")
-                    # logger.info("Blocked IP %s (country=%s)", ip, country_val)
                     continue
 
                 country = getattr(row, "country", None)
-                if not country:
+                if not country or pd.isna(country):
                     continue
+                country = str(country).strip()
+
+                port = getattr(row, "port", None)
+                if port is not None and not pd.isna(port):
+                    self._ports.setdefault(ip, int(port))
 
                 entry = self.vantages.setdefault(
                     country, {"active": set(), "inactive": set()}
@@ -91,11 +112,76 @@ class VantagePoints:
             for country, entry in self.vantages.items():
                 inactive = entry["inactive"]
                 if len(inactive) > self.max_size:
-                    entry["inactive"] = set(random.sample(list(inactive), self.max_size))
+                    entry["inactive"] = set(
+                        random.sample(list(inactive), self.max_size)
+                    )
+
+    def _parse_pool_file(self) -> None:
+        """Populate from a pre-filtered pool CSV (country, ip, port).
+
+        The pool file is already blocklist-filtered so no blocklist check
+        is performed.  ``max_size`` trimming still applies.
+        """
+        logger.info("Parsing vantage points from pool file %s", self.vp_pool_file)
+        df = pd.read_csv(self.vp_pool_file)
+        with self._lock:
+            self.vantages.clear()
+            self._ports.clear()
+            for row in df.itertuples(index=False):
+                ip = str(row.ip).strip()
+                if not ip:
+                    continue
+
+                country = str(row.country).strip()
+                if not country:
+                    continue
+
+                if hasattr(row, "port") and not pd.isna(row.port):
+                    self._ports.setdefault(ip, int(row.port))
+
+                entry = self.vantages.setdefault(
+                    country, {"active": set(), "inactive": set()}
+                )
+                entry["inactive"].add(ip)
+
+            # trim pools to max_size
+            for country, entry in self.vantages.items():
+                inactive = entry["inactive"]
+                if len(inactive) > self.max_size:
+                    entry["inactive"] = set(
+                        random.sample(list(inactive), self.max_size)
+                    )
+
+    # Keep the old name as an alias so nothing breaks
+    def parse_vantages(self) -> None:
+        if self.vp_pool_file:
+            self._parse_pool_file()
+        else:
+            self._parse_ev_file()
 
     # ------------------------------------------------------------------
     # public API
     # ------------------------------------------------------------------
+    def get_port(self, ip: str) -> Optional[int]:
+        """Return the port associated with *ip*, or ``None`` if unknown."""
+        return self._ports.get(ip)
+
+    def get_services(self, ip: str, base_services: List[str]) -> List[str]:
+        """Return *base_services* with port suffixes for non-default ports.
+
+        For example, if the VP uses port 909 and base_services is
+        ``["https"]``, the result is ``["https:909"]``.  Default ports
+        (443 for https, 80 for http) are left unchanged.
+        """
+        _DEFAULT_PORTS = {"https": 443, "http": 80}
+        port = self._ports.get(ip)
+        if port is None:
+            return base_services
+        return [
+            f"{svc}:{port}" if _DEFAULT_PORTS.get(svc) != port else svc
+            for svc in base_services
+        ]
+
     def get_vantage(self, country: str) -> Optional[str]:
         """Return a randomly chosen inactive vantage point and mark it active.
 
@@ -124,7 +210,7 @@ class VantagePoints:
             entry = self.vantages.get(country)
             if not entry:
                 return
-                
+
             entry["active"].discard(vp)
             if ok:
                 entry["inactive"].add(vp)
