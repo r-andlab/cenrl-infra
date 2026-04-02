@@ -51,7 +51,10 @@ class Orchestrator:
 
         # Create API with shared eval store
         self.api = HyperQuackAPI(
-            go_api_endpoint, eval_store=self.eval_store, debug=debug
+            go_api_endpoint,
+            eval_store=self.eval_store,
+            vantage_points=vantage_points,
+            debug=debug,
         )
 
         # Nodes are created lazily once a VP passes evaluation.
@@ -94,6 +97,9 @@ class Orchestrator:
     # main loop
     # ------------------------------------------------------------------
     def tick(self) -> None:
+        # Step 0: move payloads from the server process into local stores
+        self.api.receiver.drain_queues()
+
         # Step 1: process VP evaluation results
         self._process_eval_results()
 

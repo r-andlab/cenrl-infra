@@ -38,6 +38,7 @@ class HyperQuackAPI(Api):
         self,
         go_api_url: str,
         eval_store: EvalStore = None,
+        vantage_points=None,
         debug: bool = False,
         debug_block_prob: float = 0.15,
         debug_min_delay_s: float = 0.0,
@@ -46,11 +47,13 @@ class HyperQuackAPI(Api):
         """
         :param go_api_url: Base URL of the Go API (e.g. http://127.0.0.1:8080)
         :param eval_store: Shared EvalStore for VP evaluation results
+        :param vantage_points: VantagePoints instance for port lookups
         """
         self.go_api_url = go_api_url.rstrip("/")
         self.retries = 5
         self.vps = set()
         self.tags = set()
+        self.vantage_points = vantage_points
         self.store: MeasurementStore = MeasurementStore()
         self.eval_store = eval_store
         self.aggregator = MeasurementAggregator()
@@ -135,7 +138,15 @@ class HyperQuackAPI(Api):
     # ---------------------------- CALLS -----------------------------
     def add_vantage_points(self, ips: List[str], services: List[str]):
         endpoint = "/add-vantage-points"
-        body = {"vantage_points": [{"ip": ip, "services": services} for ip in ips]}
+        vp_entries = []
+        for ip in ips:
+            entry = {"ip": ip, "services": services}
+            if self.vantage_points:
+                port = self.vantage_points.get_port(ip)
+                if port is not None:
+                    entry["port"] = port
+            vp_entries.append(entry)
+        body = {"vantage_points": vp_entries}
         # logging.info(f"Adding vantage points with body\n{body}\n")
         for ip in ips:
             if ip not in self.vps:
