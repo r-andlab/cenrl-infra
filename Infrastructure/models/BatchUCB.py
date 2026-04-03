@@ -69,10 +69,9 @@ class BatchUCB(UCBNaive):
         new_targets: Dict[str, Pending] = {}
         for node_id in node_ids:
             t_name = self.action_space.get(node_id)[action_space_module.NAME]
-            # guard against NAME collisions
+            # skip targets already in-flight to avoid duplicate measurements
             if t_name in self._selected_targets or t_name in new_targets:
-                # prefer unique key; for now, disambiguate, may be pointless
-                t_name = f"{t_name}__{node_id}"
+                continue
 
             new_targets[t_name] = Pending(
                 node_id=node_id,
