@@ -137,6 +137,10 @@ class Orchestrator:
             if not targets:
                 continue
 
+            # Update aggregator expected VPs to match exactly what we're
+            # sending, so the snapshot taken at recording time is correct.
+            self.api.update_aggregator_vps(country, set(active_vps))
+
             self.api.schedule_measurements(
                 vps=active_vps,
                 services=self.services,
@@ -180,12 +184,9 @@ class Orchestrator:
                         output_folder=self.output_folder,
                         action_space_folder=self.previous_values_folder,
                     )
-
-                # Sync aggregator's expected VP set
-                self.api.update_aggregator_vps(
-                    country,
-                    set(self.vantage_points.get_active(country)),
-                )
+                # NOTE: aggregator expected VPs are updated at scheduling
+                # time, not here, to avoid snapshot mismatches with
+                # in-flight targets.
             else:
                 # VP failed — reject and try replacement
                 replacement = self.vantage_points.reject_vp(country, vp)
@@ -204,11 +205,9 @@ class Orchestrator:
                         vp, country,
                     )
 
-                # Update aggregator in case VP was already expected
-                active = self.vantage_points.get_active(country)
-                if active:
-                    self.api.update_aggregator_vps(country, set(active))
-                    self.api.aggregator.drop_vp(country, vp)
+                # Drop the failed VP from pending aggregator entries so
+                # in-flight targets aren't stuck waiting for it.
+                self.api.aggregator.drop_vp(country, vp)
 
     # ------------------------------------------------------------------
     # measurement result processing
@@ -244,8 +243,6 @@ class Orchestrator:
                     dropped_vps.add(r.vp)
                     replacement = self.vantage_points.reject_vp(country, r.vp)
                     self.api.aggregator.drop_vp(country, r.vp)
-                    active = self.vantage_points.get_active(country)
-                    self.api.update_aggregator_vps(country, set(active))
                     if replacement:
                         self.eval_store.register_vp(replacement, country)
                         self.api.update_vps([replacement], self.services)
