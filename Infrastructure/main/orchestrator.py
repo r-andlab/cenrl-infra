@@ -131,6 +131,13 @@ class Orchestrator:
             # Step 5: schedule new measurements across all active VPs
             active_vps = self.vantage_points.get_active(country)
             if not active_vps:
+                # No active VPs and no inactive replacements — region is dead
+                if not self.vantage_points.get_inactive(country):
+                    logger.warning(
+                        "%s has no remaining vantage points, removing region.",
+                        country,
+                    )
+                    finished_nodes.append(country)
                 continue
 
             targets = node.maybe_request_more()
@@ -150,6 +157,8 @@ class Orchestrator:
 
         for country in finished_nodes:
             self.agents.pop(country, None)
+            if country in self.target_countries:
+                self.target_countries.remove(country)
 
     def run_forever(self) -> None:
         while self.agents or self._has_pending_evals():
@@ -204,6 +213,15 @@ class Orchestrator:
                         "VP %s failed for %s, no replacements available",
                         vp, country,
                     )
+                    # If the country has no VPs left at all, abandon it
+                    if (not self.vantage_points.get_active(country)
+                            and not self.vantage_points.get_inactive(country)):
+                        logger.warning(
+                            "%s has no remaining vantage points, removing region.",
+                            country,
+                        )
+                        if country in self.target_countries:
+                            self.target_countries.remove(country)
 
                 # Drop the failed VP from pending aggregator entries so
                 # in-flight targets aren't stuck waiting for it.
