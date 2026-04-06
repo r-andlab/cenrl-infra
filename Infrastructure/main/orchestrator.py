@@ -176,7 +176,6 @@ class Orchestrator:
                     self.agents[country] = RegionalNode(
                         params=self.params,
                         country_name=country,
-                        vps=self.vantage_points.get_active(country),
                         model_klass=BatchUCB,
                         output_folder=self.output_folder,
                         action_space_folder=self.previous_values_folder,

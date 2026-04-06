@@ -40,6 +40,7 @@ class VantagePoints:
         vp_pool_file: Optional[str] = None,
         blocklist_file: Optional[str] = None,
         max_size: int = 10,
+        max_countries: Optional[int] = None,
     ):
         if not ev_file and not vp_pool_file:
             raise ValueError("Either ev_file or vp_pool_file must be given")
@@ -58,6 +59,7 @@ class VantagePoints:
         self.ev_file = ev_file
         self.vp_pool_file = vp_pool_file
         self.max_size = max_size
+        self.max_countries = max_countries
         # country -> {"active": set(), "inactive": set()}
         self.vantages: Dict[str, Dict[str, Set[str]]] = {}
         # ip -> port (e.g. "1.2.3.4" -> 443)
@@ -68,6 +70,9 @@ class VantagePoints:
             self._parse_pool_file()
         else:
             self._parse_ev_file()
+
+        if self.max_countries is not None:
+            self._trim_to_top_countries()
 
     def _is_blocked(self, ip: str) -> bool:
         addr = ipaddress.ip_address(ip)
@@ -151,6 +156,27 @@ class VantagePoints:
                     entry["inactive"] = set(
                         random.sample(list(inactive), self.max_size)
                     )
+
+    def _trim_to_top_countries(self) -> None:
+        """Keep only the top ``max_countries`` countries ranked by total VP
+        count (active + inactive).  Ports for removed IPs are also cleaned up."""
+        with self._lock:
+            ranked = sorted(
+                self.vantages.keys(),
+                key=lambda c: len(self.vantages[c]["active"]) + len(self.vantages[c]["inactive"]),
+                reverse=True,
+            )
+            keep = set(ranked[: self.max_countries])
+            for country in list(self.vantages.keys()):
+                if country not in keep:
+                    entry = self.vantages.pop(country)
+                    removed_ips = entry["active"] | entry["inactive"]
+                    for ip in removed_ips:
+                        self._ports.pop(ip, None)
+            logger.info(
+                "Trimmed to top %d countries: %s",
+                self.max_countries, sorted(keep),
+            )
 
     # Keep the old name as an alias so nothing breaks
     def parse_vantages(self) -> None:

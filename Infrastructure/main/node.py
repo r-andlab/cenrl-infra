@@ -19,7 +19,6 @@ class RegionalNode:
         self,
         params: Dict,
         country_name: str,
-        vps: Set[str],
         model_klass: BatchUCB,
         output_folder: str = None,
         batch_size: int = 10,
