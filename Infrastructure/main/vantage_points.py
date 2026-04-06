@@ -19,8 +19,8 @@ class VantagePoints:
       ``vantage_point_stats.py``) with ``country``, ``ip``, ``port`` columns.
 
     An optional ``blocklist_file`` may contain CIDR ranges that should never
-    be used.  The maximum number of candidates remembered for each country is
-    controlled with ``max_size``.
+    be used.  An optional ``max_countries`` limits the pool to the N countries
+    with the most vantage points.
 
     Two internally managed sets are maintained for every country:
 
@@ -39,7 +39,6 @@ class VantagePoints:
         ev_file: Optional[str] = None,
         vp_pool_file: Optional[str] = None,
         blocklist_file: Optional[str] = None,
-        max_size: int = 10,
         max_countries: Optional[int] = None,
     ):
         if not ev_file and not vp_pool_file:
@@ -58,7 +57,6 @@ class VantagePoints:
 
         self.ev_file = ev_file
         self.vp_pool_file = vp_pool_file
-        self.max_size = max_size
         self.max_countries = max_countries
         # country -> {"active": set(), "inactive": set()}
         self.vantages: Dict[str, Dict[str, Set[str]]] = {}
@@ -113,19 +111,11 @@ class VantagePoints:
                 )
                 entry["inactive"].add(ip)
 
-            # trim pools to max_size
-            for country, entry in self.vantages.items():
-                inactive = entry["inactive"]
-                if len(inactive) > self.max_size:
-                    entry["inactive"] = set(
-                        random.sample(list(inactive), self.max_size)
-                    )
-
     def _parse_pool_file(self) -> None:
         """Populate from a pre-filtered pool CSV (country, ip, port).
 
         The pool file is already blocklist-filtered so no blocklist check
-        is performed.  ``max_size`` trimming still applies.
+        is performed.
         """
         logger.info("Parsing vantage points from pool file %s", self.vp_pool_file)
         df = pd.read_csv(self.vp_pool_file)
@@ -148,14 +138,6 @@ class VantagePoints:
                     country, {"active": set(), "inactive": set()}
                 )
                 entry["inactive"].add(ip)
-
-            # trim pools to max_size
-            for country, entry in self.vantages.items():
-                inactive = entry["inactive"]
-                if len(inactive) > self.max_size:
-                    entry["inactive"] = set(
-                        random.sample(list(inactive), self.max_size)
-                    )
 
     def _trim_to_top_countries(self) -> None:
         """Keep only the top ``max_countries`` countries ranked by total VP

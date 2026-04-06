@@ -277,7 +277,6 @@ if __name__ == "__main__":
     vp_pool = VantagePoints(
         ev_file="ev-certs.csv",
         blocklist_file="blocklist.txt",
-        max_size=10,
     )
     m = Orchestrator(
         params=params,
