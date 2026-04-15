@@ -105,6 +105,7 @@ class RegionalNode:
             action_value_file = getattr(self.model, "action_value_file")
 
         # build the action space
+        logger.info(f"Creating action space for country {self.country_name_standard}")
         self.model.action_space = action_space_klass(
             self.model.output_directory,
             action_space_df,
