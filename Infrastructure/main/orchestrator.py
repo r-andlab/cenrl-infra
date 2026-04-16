@@ -59,6 +59,7 @@ class Orchestrator:
 
         # Nodes are created lazily once a VP passes evaluation.
         self.agents: Dict[str, RegionalNode] = {}
+        self.completed_agents: set = set()
 
         # VP health tracking: (country, vp) -> consecutive failure count
         self._vp_failure_counts: Dict[Tuple[str, str], int] = defaultdict(int)
@@ -129,6 +130,7 @@ class Orchestrator:
                     country, node.model.num_episodes,
                 )
                 finished_nodes.append(country)
+                self.completed_agents.add(country)
                 continue
 
             # Step 5: schedule new measurements across all active VPs
@@ -190,7 +192,7 @@ class Orchestrator:
                 logger.info("VP %s confirmed OK for %s", vp, country)
 
                 # Create node lazily on first good VP
-                if country not in self.agents:
+                if country not in self.agents and country not in self.completed_agents:
                     self.agents[country] = RegionalNode(
                         params=self.params,
                         country_name=country,
