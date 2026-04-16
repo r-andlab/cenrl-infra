@@ -118,6 +118,9 @@ class Orchestrator:
             aggregated = self.api.aggregator.get_ready(country)
             if aggregated:
                 node.maybe_update_model(aggregated)
+                logger.info(
+                    f"{country} received {len(aggregated)} results: {[r.target for r in aggregated]}"
+                    )
 
             # Step 4: check for completion
             if node.state is NodeState.DONE:
@@ -143,7 +146,9 @@ class Orchestrator:
             targets = node.maybe_request_more()
             if not targets:
                 continue
-
+            logger.info(
+                f"{country} requesting {len(targets)} measurements: {targets}"
+                )
             # Update aggregator expected VPs to match exactly what we're
             # sending, so the snapshot taken at recording time is correct.
             self.api.update_aggregator_vps(country, set(active_vps))
@@ -204,10 +209,10 @@ class Orchestrator:
                     self.api.update_vps([replacement], self.services)
                     if self.api.debug:
                         self.api._inject_debug_eval_results([replacement])
-                    logger.info(
-                        "VP %s failed for %s, replacement %s sent for eval",
-                        vp, country, replacement,
-                    )
+                    # logger.info(
+                    #     "VP %s failed for %s, replacement %s sent for eval",
+                    #     vp, country, replacement,
+                    # )
                 else:
                     logger.warning(
                         "VP %s failed for %s, no replacements available",
