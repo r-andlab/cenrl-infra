@@ -1,10 +1,12 @@
 from fastapi import FastAPI, Request
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
 import logging
 import multiprocessing
 import uvicorn
 from Infrastructure.utils.structures import TestPayload, EvalPayload
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("uvicorn.error")
 
 
 def _run_server(measurement_queue, eval_queue, host, port, log_level):
@@ -14,6 +16,24 @@ def _run_server(measurement_queue, eval_queue, host, port, log_level):
     multiprocessing queues so the main process can consume them.
     """
     app = FastAPI()
+
+    # @app.exception_handler(RequestValidationError)
+    # async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    #     # Log the detailed error message and the request body
+    #     logger.error(f"Validation error: {exc.errors()} | Body: {exc.body}")
+    #     return JSONResponse(
+    #         status_code=422,
+    #         content={"detail": exc.errors(), "body": exc.body},
+    #     )
+    
+    @app.middleware("http")
+    async def log_requests(request: Request, call_next):
+        try:
+            response = await call_next(request)
+            return response
+        except Exception as e:
+            logger.exception(f"Unhandled error for {request.method} {request.url}")
+            raise e
 
     @app.post("/measurement-done")
     def measurement_done(req: TestPayload):
