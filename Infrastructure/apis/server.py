@@ -32,7 +32,7 @@ def _run_server(measurement_queue, eval_queue, host, port, log_level):
             response = await call_next(request)
             return response
         except Exception as e:
-            logger.exception(f"Unhandled error for {request.method} {request.url}")
+            logger.exception(f"Unhandled error for {request.method} {request.url}:\n{request.body}\n\n")
             raise e
 
     @app.post("/measurement-done")
