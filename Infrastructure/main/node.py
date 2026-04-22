@@ -119,8 +119,24 @@ class RegionalNode:
     def write_stats(self):
         print(f"{self.country}: Episode Process {os.getpid()} - Saving stats and model")
         self.model.save()
-        self.stat_df.to_csv(self.model.outfile, index=False)
+        if self.stat_df is not None:
+            self.stat_df.to_csv(self.model.outfile, index=False)
+        elif self.episode_all_stats or self.episode_stats:
+            all_stats = self.episode_all_stats + self.episode_stats
+            if all_stats:
+                pd.DataFrame(all_stats).to_csv(self.model.outfile, index=False)
         return
+
+    def soft_reset(self) -> None:
+        """Daily soft reset: re-enable all sleeping targets, reset epoch counter.
+        Does NOT call model.reset() — Q-values and arm counts are preserved (D-03).
+        """
+        logger.info("%s: performing daily soft reset", self.country)
+        self.model.action_space.wake_up_all_nodes()
+        self.model.current_epoch_num = 0
+        self.in_flight = 0
+        self.state = NodeState.IDLE
+        self.episode_stats = []
 
     def _remaining_capacity(self) -> int:
         return max(self.batch_size - self.in_flight, 0)
@@ -186,14 +202,10 @@ class RegionalNode:
         return absorbed
 
     def _finish_episode_if_ready(self, save_stats: bool) -> Optional[pd.DataFrame]:
-        """
-        If episode complete and no in-flight measurements, advance episode or finalize stats.
+        """If daily measurement quota reached and no in-flight, idle until reset.
 
-        :param self: Node responsible for current model
-        :param save_stats: flag that determines whether output is written
-        :type save_stats: bool
-        :return: Returns dataframe representative of RL steps if save_stats is True
-        :rtype: DataFrame | None
+        Under continuous operation (D-06/D-07), one calendar day = one episode.
+        Reaching the quota means idle-until-midnight, NOT termination.
         """
         if self.in_flight != 0:
             return None
@@ -201,31 +213,17 @@ class RegionalNode:
         if self.model.current_epoch_num < self.model.measurements_per_episode:
             return None
 
-        # Episode Finished
-        print(f"{self.country} completed episode {self.episode_idx}/{self.model.num_episodes}")
+        # Daily quota reached — idle until next midnight reset
+        logger.info(
+            "%s: daily quota of %d measurements reached, idling until reset",
+            self.country, self.model.measurements_per_episode,
+        )
         if self.episode_stats:
             self.episode_all_stats += self.episode_stats
-        self.episode_stats = []
-
-        if self.episode_idx < self.model.num_episodes:
-            self.model.reset()
-            self.episode_idx += 1
-            self.model.current_epoch_num = 0
-            return None
-
-        # All episodes finished
-        self.state = NodeState.DONE
-        if not self.episode_all_stats:
-            return pd.DataFrame()
-
-        # print(self.episode_all_stats)
-        self.stat_df = pd.DataFrame(
-            columns=list(self.episode_all_stats[0].keys())
-        )
-        self.stat_df = self.stat_df.from_dict(self.episode_all_stats)
-        if save_stats:
-            self.write_stats()
-        return self.stat_df
+            self.episode_stats = []
+        self.state = NodeState.IDLE
+        # Do NOT set NodeState.DONE — do NOT call model.reset()
+        return None
 
     def maybe_update_model(
         self, measurements: list[MeasurementResponse], save_stats: bool = True
