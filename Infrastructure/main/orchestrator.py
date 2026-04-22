@@ -1,6 +1,10 @@
 import logging
 import os
+import signal
+import threading
+import time
 from collections import defaultdict
+from datetime import datetime, timezone, timedelta, time as dtime
 from pathlib import Path
 from time import sleep
 from typing import Dict, List, Set, Tuple
@@ -72,6 +76,14 @@ class Orchestrator:
         # Draw initial VPs and send for evaluation
         self._bootstrap_vps()
 
+        # Signal-based stop flag (D-05)
+        self._stop_event = threading.Event()
+        # Wall-clock reset tracking (D-01)
+        self._next_reset_utc: datetime = self._compute_next_midnight()
+        self._draining: bool = False
+        # Delayed-result logger tracking (D-09)
+        self._last_delay_warn: float = time.monotonic()
+
     # ------------------------------------------------------------------
     # startup
     # ------------------------------------------------------------------
@@ -134,6 +146,10 @@ class Orchestrator:
                 continue
 
             # Step 5: schedule new measurements across all active VPs
+            # Guard: skip scheduling while draining for midnight reset (D-02)
+            if self._draining:
+                continue
+
             active_vps = self.vantage_points.get_active(country)
             if not active_vps:
                 # No active VPs and no inactive replacements — region is dead
@@ -163,15 +179,120 @@ class Orchestrator:
             )
 
         for country in finished_nodes:
+            if self._draining:
+                continue  # defer removal until after soft reset (Pitfall 5)
             self.agents.pop(country, None)
             if country in self.target_countries:
                 self.target_countries.remove(country)
 
     def run_forever(self) -> None:
-        while self.agents or self._has_pending_evals():
+        self._install_signal_handlers()
+        sum_time = []
+        iterations = 0
+        while not self._stop_event.is_set():
+            # Subprocess health check (D-12 / RUNT-06)
+            if not self._subprocess_healthy():
+                self._shutdown()
+                return
+
+            # Wall-clock daily reset check (D-01 / D-02)
+            if datetime.now(timezone.utc) >= self._next_reset_utc:
+                if not self._draining:
+                    logger.info("Midnight UTC reached, entering drain-before-reset mode")
+                    self._draining = True
+                if self._all_nodes_drained():
+                    self._perform_soft_reset()
+                    self._next_reset_utc += timedelta(days=1)
+                    self._draining = False
+
+            # Delayed-result logger (D-09 / RUNT-05)
+            self._check_delayed_results()
+
+            start_time = time.perf_counter()
             self.tick()
+            end_time = time.perf_counter()
+            sum_time.append(end_time - start_time)
+            iterations += 1
             sleep(0.5)
-        logger.info("All countries completed, exiting program...")
+
+        self._shutdown()
+        if iterations > 0:
+            logger.info(
+                "Average time for tick function to complete: %.6f",
+                sum(sum_time) / iterations,
+            )
+
+    # ------------------------------------------------------------------
+    # signal handling (D-04 / D-11)
+    # ------------------------------------------------------------------
+    def _install_signal_handlers(self) -> None:
+        """Install SIGTERM and SIGINT handlers. Must be called from main thread."""
+        def _handler(signum, frame):
+            logger.info("Signal %d received, initiating shutdown", signum)
+            self._stop_event.set()
+
+        signal.signal(signal.SIGTERM, _handler)
+        signal.signal(signal.SIGINT, _handler)
+
+    def _shutdown(self) -> None:
+        """Write stats for all active nodes and log summary (D-11)."""
+        logger.info("Shutting down — writing stats for %d active nodes", len(self.agents))
+        for country, node in self.agents.items():
+            try:
+                node.write_stats()
+            except Exception as exc:
+                logger.error("Failed to write stats for %s: %s", country, exc)
+        logger.info("Shutdown complete.")
+
+    # ------------------------------------------------------------------
+    # subprocess health (D-12 / RUNT-06)
+    # ------------------------------------------------------------------
+    def _subprocess_healthy(self) -> bool:
+        """Check if the FastAPI receiver subprocess is still alive."""
+        proc = self.api.receiver._process
+        if proc is None:
+            return True  # debug mode — no subprocess
+        if not proc.is_alive():
+            logger.error(
+                "FastAPI receiver subprocess exited unexpectedly (exitcode=%s), shutting down",
+                proc.exitcode,
+            )
+            return False
+        return True
+
+    # ------------------------------------------------------------------
+    # wall-clock reset (D-01 / D-02 / D-03)
+    # ------------------------------------------------------------------
+    @staticmethod
+    def _compute_next_midnight() -> datetime:
+        """Compute the next midnight UTC boundary."""
+        now = datetime.now(timezone.utc)
+        today_midnight = datetime.combine(now.date(), dtime(0, 0, 0), tzinfo=timezone.utc)
+        return today_midnight + timedelta(days=1)
+
+    def _all_nodes_drained(self) -> bool:
+        """Return True if all nodes have zero in-flight measurements."""
+        return all(node.in_flight == 0 for node in self.agents.values())
+
+    def _perform_soft_reset(self) -> None:
+        """Call soft_reset() on every active node (D-03)."""
+        logger.info("Performing daily soft reset for %d nodes", len(self.agents))
+        for country, node in self.agents.items():
+            node.soft_reset()
+
+    # ------------------------------------------------------------------
+    # delayed-result logger (D-09 / RUNT-05)
+    # ------------------------------------------------------------------
+    def _check_delayed_results(self) -> None:
+        """Every 5 minutes, log countries with outstanding in-flight measurements."""
+        if time.monotonic() - self._last_delay_warn >= 300:
+            for country, node in self.agents.items():
+                if node.in_flight > 0:
+                    logger.warning(
+                        "DELAYED: %s has %d in-flight measurements with no response",
+                        country, node.in_flight,
+                    )
+            self._last_delay_warn = time.monotonic()
 
     # ------------------------------------------------------------------
     # VP evaluation
