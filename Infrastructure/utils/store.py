@@ -2,7 +2,7 @@ from collections import defaultdict
 import threading
 import queue
 from typing import Any, Dict, List, Tuple, Optional
-from utils.structures import RequestPayload
+from Infrastructure.utils.structures import TestPayload
 
 
 class MeasurementStore:
@@ -15,7 +15,7 @@ class MeasurementStore:
 
     def __init__(self) -> None:
         # country -> list of results
-        self._country_results: Dict[str, List[RequestPayload]] = defaultdict(list)
+        self._country_results: Dict[str, List[TestPayload]] = defaultdict(list)
         # queue of countries that currently have *some* results ready
         self._ready_countries: "queue.Queue[str]" = queue.Queue()
         # to avoid enqueuing the same country multiple times
@@ -48,7 +48,7 @@ class MeasurementStore:
 
     def get_ready_batch(
         self, block: bool = True, timeout: Optional[float] = None
-    ) -> Tuple[Optional[str], List[RequestPayload]]:
+    ) -> Tuple[Optional[str], List[TestPayload]]:
         """
         Returns (country, [results]) for a single country that has
         at least one completed measurement.
@@ -69,7 +69,7 @@ class MeasurementStore:
 
     def get_country_batch(
         self, country: str, clear: bool = True
-    ) -> List[RequestPayload]:
+    ) -> List[TestPayload]:
         """
         Return all currently stored results for a specific country.
 

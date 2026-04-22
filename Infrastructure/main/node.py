@@ -119,7 +119,12 @@ class RegionalNode:
     def write_stats(self):
         print(f"{self.country}: Episode Process {os.getpid()} - Saving stats and model")
         self.model.save()
-        self.stat_df.to_csv(self.model.outfile, index=False)
+        if self.stat_df is not None:
+            self.stat_df.to_csv(self.model.outfile, index=False)
+        elif self.episode_all_stats or self.episode_stats:
+            all_stats = self.episode_all_stats + self.episode_stats
+            if all_stats:
+                pd.DataFrame(all_stats).to_csv(self.model.outfile, index=False)
         return
 
     def _remaining_capacity(self) -> int:
