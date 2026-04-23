@@ -3,7 +3,7 @@ import json
 from Infrastructure.apis.api import Api
 from dataclasses import dataclass, asdict
 import subprocess
-from typing import Dict, List, Set
+from typing import Dict, List, Set, Optional
 import sys
 from queue import Queue
 import threading
@@ -133,7 +133,7 @@ class HyperQuackAPI(Api):
             )
         return parsed_output
 
-    def update_vps(self, new_vps: List[str], services: List[str]):
+    def update_vps(self, new_vps: List[str], services: List[str], tag: Optional[str] = None):
         new_vps = [vp for vp in new_vps if vp not in self.vps]
         if len(new_vps) == 0:
             return {}
@@ -141,10 +141,10 @@ class HyperQuackAPI(Api):
             self.vps.add(vp)
         if self.debug:
             return {}
-        return self.add_vantage_points(new_vps, services)
+        return self.add_vantage_points(new_vps, services, tag=tag)
 
     # ---------------------------- CALLS -----------------------------
-    def add_vantage_points(self, ips: List[str], services: List[str]):
+    def add_vantage_points(self, ips: List[str], services: List[str], tag: Optional[str] = None):
         endpoint = "/add-vantage-points"
         vp_entries = []
         for ip in ips:
@@ -156,6 +156,10 @@ class HyperQuackAPI(Api):
             entry = {"ip": ip, "services": vp_services}
             vp_entries.append(entry)
         body = {"vantage_points": vp_entries}
+
+        if tag:
+            body["tag"] = tag
+            
         # logging.info(f"Adding vantage points with body\n{body}\n")
         for ip in ips:
             if ip not in self.vps:
