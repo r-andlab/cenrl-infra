@@ -24,7 +24,7 @@ class TestRunForeverLoopCondition(unittest.TestCase):
         orch._last_delay_warn = time.monotonic()
         orch.api = MagicMock()
         orch.api.receiver._process = None  # debug mode
-        orch.target_countries = []
+        orch.target_countries = set()
         return orch
 
     def test_no_exit_on_empty_agents(self):
@@ -61,7 +61,7 @@ class TestDailyResetTrigger(unittest.TestCase):
         orch._last_delay_warn = time.monotonic()
         orch.api = MagicMock()
         orch.api.receiver._process = None
-        orch.target_countries = []
+        orch.target_countries = set()
         return orch
 
     def test_daily_reset_triggers(self):
@@ -135,7 +135,7 @@ class TestSignalShutdown(unittest.TestCase):
         node.write_stats = MagicMock()
         node.in_flight = 0
         orch.agents = {"US": node}
-        orch.target_countries = []
+        orch.target_countries = set()
 
         # Set stop immediately
         orch._stop_event.set()

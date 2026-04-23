@@ -73,7 +73,7 @@ class Orchestrator:
         # Determine target countries
         if countries is None:
             countries = self.vantage_points.countries()
-        self.target_countries = countries
+        self.target_countries = set(countries)
 
         # Draw initial VPs and send for evaluation
         self._bootstrap_vps()
@@ -184,8 +184,7 @@ class Orchestrator:
             if self._draining:
                 continue  # defer removal until after soft reset (Pitfall 5)
             self.agents.pop(country, None)
-            if country in self.target_countries:
-                self.target_countries.remove(country)
+            self.target_countries.discard(country)
 
     def run_forever(self) -> None:
         self._install_signal_handlers()
@@ -354,8 +353,7 @@ class Orchestrator:
                             "%s has no remaining vantage points, removing region.",
                             country,
                         )
-                        if country in self.target_countries:
-                            self.target_countries.remove(country)
+                        self.target_countries.discard(country)
 
                 # Drop the failed VP from pending aggregator entries so
                 # in-flight targets aren't stuck waiting for it.
