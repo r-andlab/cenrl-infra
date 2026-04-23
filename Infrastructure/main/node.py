@@ -243,6 +243,10 @@ class RegionalNode:
 
         self.in_flight -= absorbed
         if self.in_flight < 0:
+            logger.warning(
+                "%s: in_flight went negative (%d), clamping to 0 — possible double-absorption",
+                self.country, self.in_flight,
+            )
             self.in_flight = 0
 
         if self.model.current_epoch_num != 0 and self.model.current_epoch_num % 100 == 0:
