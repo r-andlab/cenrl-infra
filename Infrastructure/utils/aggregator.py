@@ -1,8 +1,11 @@
+import logging
 import threading
 from collections import defaultdict
 from typing import Dict, List, Set, Tuple
 
 from Infrastructure.utils.structures import MeasurementResponse
+
+logger = logging.getLogger(__name__)
 
 
 class MeasurementAggregator:
@@ -14,9 +17,11 @@ class MeasurementAggregator:
     The aggregated ``MeasurementResponse`` is then placed on a per-country
     ready queue for the orchestrator to consume.
 
-    The expected VP set is **snapshotted per-target** when the first result
-    arrives.  This prevents targets from being blocked by VPs that were added
-    after the measurements were already dispatched.
+    The expected VP set is **snapshotted per-target at scheduling time** via
+    ``register_targets()``.  This must be called before measurements are
+    scheduled so that the aggregator knows exactly which VPs to wait for,
+    preventing races when VPs are added or removed between scheduling and
+    result arrival.
     """
 
     def __init__(self):
@@ -37,17 +42,27 @@ class MeasurementAggregator:
         with self._lock:
             self._expected_vps[country] = set(vps)
 
+    def register_targets(self, country: str, targets: List[str], vps: Set[str]) -> None:
+        """Snapshot expected VPs for each target at scheduling time (D-02).
+
+        Must be called BEFORE schedule_measurements() with the same VP set.
+        """
+        with self._lock:
+            snapshot = frozenset(vps)
+            for target in targets:
+                key = (country, target)
+                self._target_expected[key] = snapshot
+            # Keep _expected_vps updated for drop_vp() compatibility
+            self._expected_vps[country] = set(vps)
+
     def record(self, country: str, vp: str, target: str, blocked: bool) -> None:
         """Record one VP's result.  If all expected VPs have now reported
         for this target, finalize via majority vote and enqueue."""
         with self._lock:
             key = (country, target)
-            # Snapshot expected VPs on first result for this target
             if key not in self._target_expected:
-                current = self._expected_vps.get(country)
-                if not current:
-                    return
-                self._target_expected[key] = frozenset(current)
+                logger.warning("record() for unregistered target %s/%s, dropping", country, target)
+                return
             self._pending[key][vp] = blocked
             self._try_finalize(key)
 
@@ -64,13 +79,14 @@ class MeasurementAggregator:
             if expected is not None:
                 expected.discard(vp)
 
-            for key in list(self._pending):
+            # Iterate _target_expected (superset of _pending for registered targets)
+            for key in list(self._target_expected):
                 if key[0] != country:
                     continue
-                self._pending[key].pop(vp, None)
-                # Shrink the per-target snapshot too
-                if key in self._target_expected:
-                    self._target_expected[key] = self._target_expected[key] - {vp}
+                if key in self._pending:
+                    self._pending[key].pop(vp, None)
+                # Shrink the per-target snapshot
+                self._target_expected[key] = self._target_expected[key] - {vp}
                 self._try_finalize(key)
 
     # ------------------------------------------------------------------

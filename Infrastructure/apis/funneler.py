@@ -242,9 +242,31 @@ class HyperQuackAPI(Api):
         endpoint = "/debug"
         return self.call_go_api(endpoint, method="GET")
 
+    def remove_vantage_points(self, ips: List[str]) -> dict:
+        """POST /remove-vantage-points for permanently dropped VPs (D-07).
+
+        Response includes unstarted_work for removed VPs. Per D-08,
+        log a warning but do NOT reschedule unstarted work.
+        """
+        if not ips or self.debug:
+            return {}
+        endpoint = "/remove-vantage-points"
+        body = {"ips": list(ips)}
+        result = self.call_go_api(endpoint, body)
+        unstarted = result.get("unstarted_work", {})
+        for ip, work in unstarted.items():
+            if work:
+                logger.warning(
+                    "VP %s had %d unstarted work items when removed: %s",
+                    ip, len(work), work,
+                )
+        for ip in ips:
+            self.vps.discard(ip)
+        return result
+
     # ---------------------------- HELPERS ----------------------------
     def call_go_api(self, endpoint: str, data: dict = {}, method: str = "POST"):
-        """Send a POST request to the Go API and return JSON response."""
+        """Send a request to the Go API and return JSON response."""
         method = method.upper()
         if method not in ["POST", "GET"]:
             logging.warning(f"Invalid method: {method}")
@@ -253,7 +275,10 @@ class HyperQuackAPI(Api):
         for _ in range(self.retries):
             try:
                 url = f"{self.go_api_url}{endpoint}"
-                response = requests.post(url, json=data, timeout=10)
+                if method == "GET":
+                    response = requests.get(url, timeout=10)
+                else:
+                    response = requests.post(url, json=data, timeout=10)
                 response.raise_for_status()
                 return response.json()
             except Exception as e:
