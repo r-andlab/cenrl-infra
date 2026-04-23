@@ -5,7 +5,6 @@ import os
 import sys
 from Infrastructure.models.BatchUCB import BatchUCB
 from Infrastructure.utils.structures import MeasurementResponse, BatchSelectionMethod, BatchSizeMethod, PropagationMethod, NodeState
-from dataclasses import asdict
 import pandas as pd
 from models.base.model import run_preprocessor
 import models.base.action_space as action_space_module
