@@ -22,6 +22,7 @@ class TestRunForeverLoopCondition(unittest.TestCase):
         orch._next_reset_utc = datetime.now(timezone.utc) + timedelta(days=1)
         orch._draining = False
         orch._last_delay_warn = time.monotonic()
+        orch._inflight_times = {}
         orch.api = MagicMock()
         orch.api.receiver._process = None  # debug mode
         orch.target_countries = set()
@@ -59,6 +60,7 @@ class TestDailyResetTrigger(unittest.TestCase):
         orch._stop_event = threading.Event()
         orch._draining = False
         orch._last_delay_warn = time.monotonic()
+        orch._inflight_times = {}
         orch.api = MagicMock()
         orch.api.receiver._process = None
         orch.target_countries = set()
@@ -128,6 +130,7 @@ class TestSignalShutdown(unittest.TestCase):
         orch._next_reset_utc = datetime.now(timezone.utc) + timedelta(days=1)
         orch._draining = False
         orch._last_delay_warn = time.monotonic()
+        orch._inflight_times = {}
         orch.api = MagicMock()
         orch.api.receiver._process = None
 
@@ -149,32 +152,28 @@ class TestDelayedResultLogging(unittest.TestCase):
     """Verify 5-min delayed-result logger -- covers RUNT-05/D-09."""
 
     def test_delayed_result_logging(self):
-        """Warning logged when 5+ minutes elapsed and nodes have in-flight."""
+        """Warning logged for measurements in-flight longer than 5 minutes."""
         from Infrastructure.main.orchestrator import Orchestrator
         with patch.object(Orchestrator, '__init__', lambda self, *a, **kw: None):
             orch = Orchestrator.__new__(Orchestrator)
 
-        node = MagicMock()
-        node.in_flight = 3
-        orch.agents = {"US": node}
-        # Set last warn time to 6 minutes ago
-        orch._last_delay_warn = time.monotonic() - 360
+        # Simulate a measurement scheduled 6 minutes ago
+        orch._inflight_times = {"US": {"example.com": time.monotonic() - 360}}
 
         with self.assertLogs(level=logging.WARNING) as cm:
             orch._check_delayed_results()
         self.assertTrue(any("DELAYED" in msg for msg in cm.output))
         self.assertTrue(any("US" in msg for msg in cm.output))
+        self.assertTrue(any("example.com" in msg for msg in cm.output))
 
-    def test_no_logging_before_5_minutes(self):
-        """No warning when less than 5 minutes have passed."""
+    def test_no_logging_for_recent_measurements(self):
+        """No warning for measurements scheduled less than 5 minutes ago."""
         from Infrastructure.main.orchestrator import Orchestrator
         with patch.object(Orchestrator, '__init__', lambda self, *a, **kw: None):
             orch = Orchestrator.__new__(Orchestrator)
 
-        node = MagicMock()
-        node.in_flight = 3
-        orch.agents = {"US": node}
-        orch._last_delay_warn = time.monotonic()  # just now
+        # Simulate a measurement scheduled just now
+        orch._inflight_times = {"US": {"example.com": time.monotonic()}}
 
         # Should not log
         with self.assertRaises(AssertionError):

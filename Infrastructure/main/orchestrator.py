@@ -73,6 +73,18 @@ class Orchestrator:
             countries = self.vantage_points.countries()
         self.target_countries = set(countries)
 
+        # Add tags for each country
+        for country in self.target_countries:
+            self.api.add_tags(
+                [
+                    Tag(
+                        tag=country,
+                        result_output_file=f"{country}_result.json",
+                        eval_output_file=f"{country}_eval.json",
+                    )
+                ]
+            )
+
         # Draw initial VPs and send for evaluation
         self._bootstrap_vps()
 
@@ -83,6 +95,8 @@ class Orchestrator:
         self._draining: bool = False
         # Delayed-result logger tracking (D-09)
         self._last_delay_warn: float = time.monotonic()
+        # Per-measurement schedule timestamps: country -> {target -> monotonic time}
+        self._inflight_times: Dict[str, Dict[str, float]] = defaultdict(dict)
 
     # ------------------------------------------------------------------
     # startup
@@ -98,7 +112,7 @@ class Orchestrator:
             for vp in drawn:
                 self.eval_store.register_vp(vp, country)
             if drawn:
-                self.api.update_vps(drawn, self.services)
+                self.api.update_vps(drawn, self.services, tag=country)
                 if self.api.debug:
                     self.api._inject_debug_eval_results(drawn)
                 logger.info(
@@ -131,6 +145,8 @@ class Orchestrator:
             aggregated = self.api.aggregator.get_ready(country)
             if aggregated:
                 node.maybe_update_model(aggregated)
+                for r in aggregated:
+                    self._inflight_times.get(country, {}).pop(r.target, None)
                 logger.info(
                     f"{country} received {len(aggregated)} results: {[r.target for r in aggregated]}"
                     )
@@ -177,6 +193,9 @@ class Orchestrator:
                 targets=targets,
                 country=country,
             )
+            now = time.monotonic()
+            for t in targets:
+                self._inflight_times[country][t] = now
 
         for country in finished_nodes:
             if self._draining:
@@ -278,20 +297,22 @@ class Orchestrator:
         logger.info("Performing daily soft reset for %d nodes", len(self.agents))
         for country, node in self.agents.items():
             node.soft_reset()
+        self._inflight_times.clear()
 
     # ------------------------------------------------------------------
     # delayed-result logger (D-09 / RUNT-05)
     # ------------------------------------------------------------------
     def _check_delayed_results(self) -> None:
-        """Every 5 minutes, log countries with outstanding in-flight measurements."""
-        if time.monotonic() - self._last_delay_warn >= 300:
-            for country, node in self.agents.items():
-                if node.in_flight > 0:
-                    logger.warning(
-                        "DELAYED: %s has %d in-flight measurements with no response",
-                        country, node.in_flight,
-                    )
-            self._last_delay_warn = time.monotonic()
+        """Log measurements that have been in-flight longer than 5 minutes."""
+        now = time.monotonic()
+        threshold = 300  # 5 minutes
+        for country, targets in self._inflight_times.items():
+            delayed = [t for t, scheduled in targets.items() if now - scheduled >= threshold]
+            if delayed:
+                logger.warning(
+                    "DELAYED: %s has %d measurements waiting >5min: %s",
+                    country, len(delayed), delayed,
+                )
 
     # ------------------------------------------------------------------
     # VP evaluation
@@ -321,9 +342,6 @@ class Orchestrator:
                         action_space_folder=self.previous_values_folder,
                         batch_size=5
                     )
-                    self.api.add_tags([
-                        Tag(tag=country, result_output_file=f"{country}_result.json", eval_output_file=f"{country}_eval.json")
-                    ])
                 # NOTE: aggregator expected VPs are updated at scheduling
                 # time, not here, to avoid snapshot mismatches with
                 # in-flight targets.
@@ -423,9 +441,9 @@ if __name__ == "__main__":
     parser = OrchestrationParser()
     params = parser.parse()
     vp_pool = VantagePoints(
-        ev_file="ev-certs.csv",
-        vp_pool_file="vp_pool.csv",
-        blocklist_file="blocklist.txt",
+        ev_file="local/ev-certs.csv",
+        vp_pool_file="local/vp_pool.csv",
+        blocklist_file="local/blocklist.txt",
         max_countries=5,
         blocked_countries=["India"],
     )
