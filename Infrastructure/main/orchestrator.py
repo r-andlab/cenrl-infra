@@ -306,9 +306,13 @@ class Orchestrator:
     # ------------------------------------------------------------------
     def _check_delayed_results(self) -> None:
         """Log measurements that have been in-flight longer than 5 minutes.
-        First warning at 5min, then re-warn every 5min with updated wait time."""
+        First warning at 5min, then re-warn every 5min with updated wait time.
+        When stuck targets are found, trigger /debug poll to detect and resend
+        lost measurements (D-03)."""
         now = time.monotonic()
         threshold = 300  # 5 minutes
+        stuck_by_country: Dict[str, List[str]] = defaultdict(list)
+
         for country, targets in self._inflight_times.items():
             for target, scheduled in targets.items():
                 elapsed = now - scheduled
@@ -323,6 +327,75 @@ class Orchestrator:
                     country, target, elapsed_min,
                 )
                 self._last_delay_warn[country][target] = now
+                stuck_by_country[country].append(target)
+
+        if stuck_by_country:
+            self._check_and_resend_stuck(stuck_by_country)
+
+    def _check_and_resend_stuck(self, stuck_by_country: Dict[str, List[str]]) -> None:
+        """One /debug call per check cycle; resend measurements lost by Hyperquack (D-03).
+
+        For each stuck target, check if the VP the aggregator is waiting on
+        still has the target in its unstarted_work queue. If not, the measurement
+        was lost -- resend to the same VP, or to an alternative if the VP is
+        pending_removal (D-05).
+        """
+        if self.api.debug:
+            return
+
+        debug_response = self.api.call_debug_endpoint()
+        if not isinstance(debug_response, list):
+            logger.warning("Unexpected /debug response format: %s", type(debug_response))
+            return
+
+        # Build lookup: ip -> VP debug info
+        vp_status = {entry["ip"]: entry for entry in debug_response}
+
+        for country, stuck_targets in stuck_by_country.items():
+            active_vps = self.vantage_points.get_active(country)
+
+            # Read aggregator state under lock, then release before HTTP calls
+            resend_list = []
+            with self.api.aggregator._lock:
+                for target in stuck_targets:
+                    key = (country, target)
+                    expected = self.api.aggregator._target_expected.get(key, frozenset())
+                    received = set(self.api.aggregator._pending.get(key, {}).keys())
+                    missing_vps = expected - received
+
+                    for vp_ip in missing_vps:
+                        info = vp_status.get(vp_ip)
+                        if info is None:
+                            logger.warning("VP %s not in /debug response, assuming lost", vp_ip)
+                            resend_list.append((target, vp_ip, False))
+                            continue
+
+                        # Check if VP still has this target in its unstarted_work
+                        unstarted_keywords = {w["keyword"] for w in info.get("unstarted_work", [])}
+                        if target in unstarted_keywords:
+                            continue  # VP still has it queued, not lost yet
+
+                        is_pending_removal = info.get("pending_removal", False)
+                        resend_list.append((target, vp_ip, is_pending_removal))
+
+            # Now resend outside the lock
+            for target, vp_ip, is_pending_removal in resend_list:
+                send_to = vp_ip
+                if is_pending_removal:
+                    alternatives = [v for v in active_vps if v != vp_ip]
+                    if not alternatives:
+                        logger.warning("No alternative VP for lost %s/%s", country, target)
+                        continue
+                    send_to = alternatives[0]
+
+                logger.warning("Resending lost measurement %s/%s to %s (original VP: %s)",
+                               country, target, send_to, vp_ip)
+                self.api.schedule_measurements(
+                    vps=[send_to],
+                    services=self.services,
+                    targets=[target],
+                    country=country,
+                )
 
     # ------------------------------------------------------------------
     # VP evaluation

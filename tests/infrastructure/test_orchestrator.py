@@ -2,6 +2,7 @@ import logging
 import signal
 import time
 import unittest
+from collections import defaultdict
 from datetime import datetime, timezone, timedelta, time as dtime
 from unittest.mock import MagicMock, patch, PropertyMock
 
@@ -21,7 +22,7 @@ class TestRunForeverLoopCondition(unittest.TestCase):
         orch._stop_event = threading.Event()
         orch._next_reset_utc = datetime.now(timezone.utc) + timedelta(days=1)
         orch._draining = False
-        orch._last_delay_warn = time.monotonic()
+        orch._last_delay_warn = defaultdict(dict)
         orch._inflight_times = {}
         orch.api = MagicMock()
         orch.api.receiver._process = None  # debug mode
@@ -59,7 +60,7 @@ class TestDailyResetTrigger(unittest.TestCase):
         orch.agents = {}
         orch._stop_event = threading.Event()
         orch._draining = False
-        orch._last_delay_warn = time.monotonic()
+        orch._last_delay_warn = defaultdict(dict)
         orch._inflight_times = {}
         orch.api = MagicMock()
         orch.api.receiver._process = None
@@ -129,7 +130,7 @@ class TestSignalShutdown(unittest.TestCase):
         orch._stop_event = threading.Event()
         orch._next_reset_utc = datetime.now(timezone.utc) + timedelta(days=1)
         orch._draining = False
-        orch._last_delay_warn = time.monotonic()
+        orch._last_delay_warn = defaultdict(dict)
         orch._inflight_times = {}
         orch.api = MagicMock()
         orch.api.receiver._process = None
@@ -159,6 +160,8 @@ class TestDelayedResultLogging(unittest.TestCase):
 
         # Simulate a measurement scheduled 6 minutes ago
         orch._inflight_times = {"US": {"example.com": time.monotonic() - 360}}
+        orch._last_delay_warn = defaultdict(dict)
+        orch._check_and_resend_stuck = MagicMock()
 
         with self.assertLogs(level=logging.WARNING) as cm:
             orch._check_delayed_results()
@@ -174,6 +177,7 @@ class TestDelayedResultLogging(unittest.TestCase):
 
         # Simulate a measurement scheduled just now
         orch._inflight_times = {"US": {"example.com": time.monotonic()}}
+        orch._last_delay_warn = defaultdict(dict)
 
         # Should not log
         with self.assertRaises(AssertionError):
@@ -309,6 +313,8 @@ class TestVPRemovalOnEvalFailure(unittest.TestCase):
     def test_no_remove_when_all_pass(self):
         """If all VPs pass evaluation, remove_vantage_points should not be called."""
         orch = _OrchestratorTestHelper.make_orchestrator()
+        # Pre-create the node so _process_eval_results doesn't try to construct one
+        orch.agents = {"US": MagicMock()}
 
         payload = MagicMock()
         payload.vp = "1.1.1.1"
