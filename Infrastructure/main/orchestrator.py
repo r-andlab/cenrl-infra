@@ -20,8 +20,6 @@ from Infrastructure.utils.structures import NodeState, TestPayload, Tag
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-import time
-
 # A VP is removed from service after this many controls_failed results.
 VP_FAILURE_THRESHOLD = 5
 
