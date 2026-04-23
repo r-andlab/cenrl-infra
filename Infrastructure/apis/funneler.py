@@ -95,7 +95,7 @@ class HyperQuackAPI(Api):
                 else services
             )
             for target in targets:
-                jobs.append(Job(target, vp_services, vp, ""))
+                jobs.append(Job(target, vp_services, vp, country))
 
         if self.debug:
             self._inject_debug_results(country=country, jobs=jobs)

@@ -63,7 +63,10 @@ class MeasurementStore:
 
         with self._lock:
             results = self._country_results.pop(country, [])
-            self._in_queue.discard(country)
+            # Only discard from _in_queue if no new results were added
+            # after a get_country_batch cleared the previous batch
+            if not self._country_results.get(country):
+                self._in_queue.discard(country)
 
         return country, results
 

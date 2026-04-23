@@ -40,6 +40,7 @@ class VantagePoints:
         vp_pool_file: Optional[str] = None,
         blocklist_file: Optional[str] = None,
         max_countries: Optional[int] = None,
+        blocked_countries: Optional[List[str]] = None,
     ):
         if not ev_file and not vp_pool_file:
             raise ValueError("Either ev_file or vp_pool_file must be given")
@@ -63,6 +64,7 @@ class VantagePoints:
         # ip -> port (e.g. "1.2.3.4" -> 443)
         self._ports: Dict[str, int] = {}
         self._lock = threading.RLock()
+        self.blocked_countries = set(blocked_countries)
 
         if vp_pool_file:
             self._parse_pool_file()
@@ -149,6 +151,11 @@ class VantagePoints:
                 reverse=True,
             )
             keep = set(ranked[: self.max_countries])
+            logger.info(
+                "Trimmed to top %d countries: %s",
+                self.max_countries, sorted(keep),
+            )
+            keep -= self.blocked_countries
             for country in list(self.vantages.keys()):
                 if country not in keep:
                     entry = self.vantages.pop(country)
@@ -156,8 +163,8 @@ class VantagePoints:
                     for ip in removed_ips:
                         self._ports.pop(ip, None)
             logger.info(
-                "Trimmed to top %d countries: %s",
-                self.max_countries, sorted(keep),
+                "Trimmed blocked countries: %s\n%d countries remain: %s",
+                self.blocked_countries, len(keep), sorted(keep),
             )
 
     # Keep the old name as an alias so nothing breaks

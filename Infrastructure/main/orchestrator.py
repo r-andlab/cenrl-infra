@@ -15,10 +15,12 @@ from Infrastructure.models.BatchUCB import BatchUCB
 from Infrastructure.main.node import RegionalNode
 from Infrastructure.main.vantage_points import VantagePoints
 from Infrastructure.utils.eval_store import EvalStore
-from Infrastructure.utils.structures import NodeState, TestPayload
+from Infrastructure.utils.structures import NodeState, TestPayload, Tag
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+import time
 
 # A VP is removed from service after this many controls_failed results.
 VP_FAILURE_THRESHOLD = 5
@@ -320,7 +322,11 @@ class Orchestrator:
                         model_klass=BatchUCB,
                         output_folder=self.output_folder,
                         action_space_folder=self.previous_values_folder,
+                        batch_size=5
                     )
+                    self.api.add_tags([
+                        Tag(tag=country, result_output_file=f"{country}_result.json", eval_output_file=f"{country}_eval.json")
+                    ])
                 # NOTE: aggregator expected VPs are updated at scheduling
                 # time, not here, to avoid snapshot mismatches with
                 # in-flight targets.
@@ -422,7 +428,10 @@ if __name__ == "__main__":
     params = parser.parse()
     vp_pool = VantagePoints(
         ev_file="ev-certs.csv",
+        vp_pool_file="vp_pool.csv",
         blocklist_file="blocklist.txt",
+        max_countries=5,
+        blocked_countries=["India"],
     )
     m = Orchestrator(
         params=params,

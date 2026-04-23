@@ -1,18 +1,18 @@
 # commented vps are currently inactive
 vantage_points = {
     # "Turkmenistan": "95.85.97.29",
-    "United Arab Emirates": "94.206.76.35",
+    # "United Arab Emirates": "94.206.76.35",
     "Germany": "87.190.253.178",
-    "Costa Rica": "201.191.214.130",
+    # "Costa Rica": "201.191.214.130",
     "France": "89.91.71.119",
     "United States": "12.47.31.201",
     # "Cambodia": "203.176.143.21",
     # "Oman": "85.154.45.4",
-    "Myanmar": "103.70.249.58",
+    # "Myanmar": "103.70.249.58",
     # "Czech Republic": "193.165.79.231",
     # "Pakistan": "221.120.226.61",
-    "Singapore": "203.127.53.226",
+    # "Singapore": "203.127.53.226",
     # "Bangladesh": "202.134.12.124",
     # "Sri Lanka": "122.255.12.241",
-    "Ecuador": "186.3.59.186",
+    # "Ecuador": "186.3.59.186",
 }
