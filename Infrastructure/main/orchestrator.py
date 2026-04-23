@@ -93,8 +93,8 @@ class Orchestrator:
         # Wall-clock reset tracking (D-01)
         self._next_reset_utc: datetime = self._compute_next_midnight()
         self._draining: bool = False
-        # Delayed-result logger tracking (D-09)
-        self._last_delay_warn: float = time.monotonic()
+        # Per-target last-warned timestamps for delayed-result throttling (D-09)
+        self._last_delay_warn: Dict[str, Dict[str, float]] = defaultdict(dict)
         # Per-measurement schedule timestamps: country -> {target -> monotonic time}
         self._inflight_times: Dict[str, Dict[str, float]] = defaultdict(dict)
 
@@ -147,6 +147,7 @@ class Orchestrator:
                 node.maybe_update_model(aggregated)
                 for r in aggregated:
                     self._inflight_times.get(country, {}).pop(r.target, None)
+                    self._last_delay_warn.get(country, {}).pop(r.target, None)
                 logger.info(
                     f"{country} received {len(aggregated)} results: {[r.target for r in aggregated]}"
                     )
@@ -298,21 +299,30 @@ class Orchestrator:
         for country, node in self.agents.items():
             node.soft_reset()
         self._inflight_times.clear()
+        self._last_delay_warn.clear()
 
     # ------------------------------------------------------------------
     # delayed-result logger (D-09 / RUNT-05)
     # ------------------------------------------------------------------
     def _check_delayed_results(self) -> None:
-        """Log measurements that have been in-flight longer than 5 minutes."""
+        """Log measurements that have been in-flight longer than 5 minutes.
+        First warning at 5min, then re-warn every 5min with updated wait time."""
         now = time.monotonic()
         threshold = 300  # 5 minutes
         for country, targets in self._inflight_times.items():
-            delayed = [t for t, scheduled in targets.items() if now - scheduled >= threshold]
-            if delayed:
+            for target, scheduled in targets.items():
+                elapsed = now - scheduled
+                if elapsed < threshold:
+                    continue
+                last_warned = self._last_delay_warn.get(country, {}).get(target)
+                if last_warned is not None and (now - last_warned) < threshold:
+                    continue
+                elapsed_min = elapsed / 60.0
                 logger.warning(
-                    "DELAYED: %s has %d measurements waiting >5min: %s",
-                    country, len(delayed), delayed,
+                    "DELAYED: %s target %s waiting %.1fmin",
+                    country, target, elapsed_min,
                 )
+                self._last_delay_warn[country][target] = now
 
     # ------------------------------------------------------------------
     # VP evaluation
