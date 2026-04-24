@@ -78,6 +78,18 @@ class TestRemoveVantagePoints:
         assert "unstarted work" in caplog.text.lower()
 
     @patch.object(HyperQuackAPI, "call_go_api")
+    def test_expect_unstarted_suppresses_warning(self, mock_call, api, caplog):
+        """remove_vantage_points with expect_unstarted=True suppresses the warning."""
+        mock_call.return_value = {
+            "unstarted_work": {"1.1.1.1": ["target1.com", "target2.com"]}
+        }
+
+        with caplog.at_level(logging.WARNING):
+            api.remove_vantage_points(["1.1.1.1"], expect_unstarted=True)
+
+        assert "unstarted work" not in caplog.text.lower()
+
+    @patch.object(HyperQuackAPI, "call_go_api")
     def test_removes_ips_from_vps_set(self, mock_call, api):
         """remove_vantage_points removes IPs from self.vps set."""
         mock_call.return_value = {"unstarted_work": {}}

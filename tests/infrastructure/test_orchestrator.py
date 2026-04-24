@@ -308,7 +308,7 @@ class TestVPRemovalOnEvalFailure(unittest.TestCase):
 
         orch._process_eval_results()
 
-        orch.api.remove_vantage_points.assert_called_once_with(["1.1.1.1", "2.2.2.2"])
+        orch.api.remove_vantage_points.assert_called_once_with(["1.1.1.1", "2.2.2.2"], expect_unstarted=True)
 
     def test_no_remove_when_all_pass(self):
         """If all VPs pass evaluation, remove_vantage_points should not be called."""
@@ -347,7 +347,7 @@ class TestVPRemovalOnHealthCheck(unittest.TestCase):
 
         orch._check_vp_health("US", [result])
 
-        orch.api.remove_vantage_points.assert_called_once_with(["1.1.1.1"])
+        orch.api.remove_vantage_points.assert_called_once_with(["1.1.1.1"], expect_unstarted=True)
 
     def test_no_remove_below_threshold(self):
         """Below threshold, remove_vantage_points should not be called."""
