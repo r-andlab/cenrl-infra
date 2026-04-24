@@ -40,7 +40,7 @@ class VantagePoints:
         vp_pool_file: Optional[str] = None,
         blocklist_file: Optional[str] = None,
         max_countries: Optional[int] = None,
-        blocked_countries: Optional[List[str]] = None,
+        blocked_countries: Optional[List[str]] = [],
     ):
         if not ev_file and not vp_pool_file:
             raise ValueError("Either ev_file or vp_pool_file must be given")
