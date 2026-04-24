@@ -242,24 +242,31 @@ class HyperQuackAPI(Api):
         endpoint = "/debug"
         return self.call_go_api(endpoint, method="GET")
 
-    def remove_vantage_points(self, ips: List[str]) -> dict:
+    def remove_vantage_points(self, ips: List[str], expect_unstarted: bool = False) -> dict:
         """POST /remove-vantage-points for permanently dropped VPs (D-07).
 
         Response includes unstarted_work for removed VPs. Per D-08,
         log a warning but do NOT reschedule unstarted work.
+
+        Args:
+            ips: VP IPs to remove.
+            expect_unstarted: If True, suppress the unstarted_work warning
+                (e.g. when removing VPs that failed evaluation or health checks,
+                where queued work is expected).
         """
         if not ips or self.debug:
             return {}
         endpoint = "/remove-vantage-points"
         body = {"ips": list(ips)}
         result = self.call_go_api(endpoint, body)
-        unstarted = result.get("unstarted_work", {})
-        for ip, work in unstarted.items():
-            if work:
-                logger.warning(
-                    "VP %s had %d unstarted work items when removed: %s",
-                    ip, len(work), work,
-                )
+        if not expect_unstarted:
+            unstarted = result.get("unstarted_work", {})
+            for ip, work in unstarted.items():
+                if work:
+                    logger.warning(
+                        "VP %s had %d unstarted work items when removed: %s",
+                        ip, len(work), work,
+                    )
         for ip in ips:
             self.vps.discard(ip)
         return result

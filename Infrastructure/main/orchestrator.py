@@ -435,7 +435,7 @@ class Orchestrator:
                 failed_vps.append(vp)
                 if replacement:
                     self.eval_store.register_vp(replacement, country)
-                    self.api.update_vps([replacement], self.services)
+                    self.api.update_vps([replacement], self.services, tag=country)
                     if self.api.debug:
                         self.api._inject_debug_eval_results([replacement])
                     # logger.info(
@@ -462,7 +462,7 @@ class Orchestrator:
 
         # Batch-remove all failed VPs from Hyperquack (D-09)
         if failed_vps:
-            self.api.remove_vantage_points(failed_vps)
+            self.api.remove_vantage_points(failed_vps, expect_unstarted=True)
 
     # ------------------------------------------------------------------
     # measurement result processing
@@ -498,10 +498,10 @@ class Orchestrator:
                     dropped_vps.add(r.vp)
                     replacement = self.vantage_points.reject_vp(country, r.vp)
                     self.api.aggregator.drop_vp(country, r.vp)
-                    self.api.remove_vantage_points([r.vp])
+                    self.api.remove_vantage_points([r.vp], expect_unstarted=True)
                     if replacement:
                         self.eval_store.register_vp(replacement, country)
-                        self.api.update_vps([replacement], self.services)
+                        self.api.update_vps([replacement], self.services, tag=country)
                         if self.api.debug:
                             self.api._inject_debug_eval_results([replacement])
                     del self._vp_failure_counts[key]
