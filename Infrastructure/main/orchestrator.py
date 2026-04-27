@@ -126,9 +126,7 @@ class Orchestrator:
         formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 
         if self.output_folder:
-            # output_folder ends in "/" by convention (OrchestrationParser.set_params),
-            # so dirname() yields the actual directory.
-            log_dir = os.path.dirname(self.output_folder) or self.output_folder
+            log_dir = self.output_folder
             os.makedirs(log_dir, exist_ok=True)
             log_path = os.path.join(log_dir, "app.log")
             handler = logging.FileHandler(log_path, mode="a")
