@@ -66,6 +66,7 @@ class TestPayload(BaseModel):
     anomaly: bool
     controls_failed: bool
     stateful_block: bool
+    tag: str | None = None
 
 
 @dataclass

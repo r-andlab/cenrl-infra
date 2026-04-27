@@ -87,7 +87,7 @@ class MeasurementReceiver:
         while not self._measurement_queue.empty():
             data = self._measurement_queue.get_nowait()
             payload = TestPayload(**data)
-            country = payload.location.country_name
+            country = payload.tag if payload.tag else payload.location.country_name
             self.store.record_result(country, payload)
 
         while not self._eval_queue.empty():
