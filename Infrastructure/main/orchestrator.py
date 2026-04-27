@@ -17,7 +17,6 @@ from Infrastructure.main.vantage_points import VantagePoints
 from Infrastructure.utils.eval_store import EvalStore
 from Infrastructure.utils.structures import NodeState, TestPayload, Tag
 
-logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # A VP is removed from service after this many controls_failed results.
@@ -45,6 +44,10 @@ class Orchestrator:
                 self.previous_values_folder = None
         if self.output_folder:
             os.makedirs(os.path.dirname(self.output_folder), exist_ok=True)
+
+        # Configure logging now that output_folder is known and the directory
+        # exists. Must run BEFORE _bootstrap_vps() emits any log records.
+        self._configure_logging()
 
         self.vantage_points = vantage_points
         self.services = services
@@ -97,6 +100,43 @@ class Orchestrator:
         self._last_delay_warn: Dict[str, Dict[str, float]] = defaultdict(dict)
         # Per-measurement schedule timestamps: country -> {target -> monotonic time}
         self._inflight_times: Dict[str, Dict[str, float]] = defaultdict(dict)
+
+    # ------------------------------------------------------------------
+    # logging
+    # ------------------------------------------------------------------
+    def _configure_logging(self) -> None:
+        """Install a FileHandler on the root logger pointing at <output_folder>/app.log.
+
+        Must be called before any internal method that emits log records (notably
+        _bootstrap_vps). If output_folder is None we install a NullHandler so the
+        program does not crash and does not spam stdout (decision: silent-drop
+        fallback rather than CWD app.log or stderr).
+        """
+        root = logging.getLogger()
+        # Idempotent: clear any handlers a prior run/import may have attached so
+        # repeated Orchestrator instantiations (e.g. tests) don't double-log.
+        for h in list(root.handlers):
+            root.removeHandler(h)
+            try:
+                h.close()
+            except Exception:
+                pass
+
+        root.setLevel(logging.INFO)
+        formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+
+        if self.output_folder:
+            # output_folder ends in "/" by convention (OrchestrationParser.set_params),
+            # so dirname() yields the actual directory.
+            log_dir = os.path.dirname(self.output_folder) or self.output_folder
+            os.makedirs(log_dir, exist_ok=True)
+            log_path = os.path.join(log_dir, "app.log")
+            handler = logging.FileHandler(log_path, mode="a")
+            handler.setFormatter(formatter)
+            root.addHandler(handler)
+        else:
+            # No output dir => silent. Caller can override later if desired.
+            root.addHandler(logging.NullHandler())
 
     # ------------------------------------------------------------------
     # startup
