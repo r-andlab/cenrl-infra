@@ -82,8 +82,8 @@ class Orchestrator:
                 [
                     Tag(
                         tag=country,
-                        result_output_file=f"{country}_result.json",
-                        eval_output_file=f"{country}_eval.json",
+                        result_output_file=f"{country}_result.jsonl",
+                        eval_output_file=f"{country}_eval.jsonl",
                     )
                 ]
             )
@@ -572,8 +572,8 @@ if __name__ == "__main__":
         ev_file="local/ev-certs.csv",
         vp_pool_file="local/vp_pool.csv",
         blocklist_file="local/blocklist.txt",
-        max_countries=5,
-        blocked_countries=["India"],
+        max_countries=15,
+        blocked_countries=[],
     )
     m = Orchestrator(
         params=params,
