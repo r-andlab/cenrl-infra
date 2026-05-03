@@ -1,9 +1,12 @@
 from dataclasses import asdict
+from datetime import datetime, timezone
 from typing import Any, Dict, List, Tuple, Optional, Callable, Set
+import json
 import logging
 import os
 import sys
 from Infrastructure.models.BatchUCB import BatchUCB
+from Infrastructure.utils.persistence import find_latest_state, load_graph_and_sidecar, validate_sidecar
 from Infrastructure.utils.structures import MeasurementResponse, BatchSelectionMethod, BatchSizeMethod, PropagationMethod, NodeState
 import pandas as pd
 from models.base.model import run_preprocessor
@@ -88,6 +91,13 @@ class RegionalNode:
             self.model.set_blocklist_unique_counts_based_on_action_space()
         self.save_stats = save_stats
 
+        # Attempt to load saved state (D-09: auto-detect on startup). The fresh
+        # action space built above remains in place; load_checkpoint() patches
+        # Q-values / arm counts onto it from any saved snapshot.
+        state_dir = Path(self.model.output_directory) / "state"
+        if state_dir.exists():
+            self.load_checkpoint(state_dir)
+
     def set_action_space(
         self,
         action_space_df: pd.DataFrame,
@@ -125,6 +135,161 @@ class RegionalNode:
             if all_stats:
                 pd.DataFrame(all_stats).to_csv(self.model.outfile, index=False)
         return
+
+    def _write_sidecar(self, json_path: Path) -> None:
+        """Write JSON sidecar with UCB scalars, run config snapshot, and metadata.
+
+        Per D-14: contains UCB counters (exploration_epoch_num, current_epoch_num),
+        daily progress (measurements_completed_today), run config snapshot
+        (c, step_size, initial_value_estimate, strategy enums as .name), and
+        metadata (save_timestamp, country_code). Atomic write via .tmp + os.replace
+        to prevent corrupted sidecars on crash mid-write (T-02-02 mitigation).
+        """
+        sidecar = {
+            # UCB counters
+            "exploration_epoch_num": self.model.exploration_epoch_num,
+            "current_epoch_num": self.model.current_epoch_num,
+            # Daily progress
+            "measurements_completed_today": self.model.current_epoch_num,
+            # Run config snapshot
+            "c": self.model.c,
+            "step_size": self.model.step_size,
+            "initial_value_estimate": self.model.initial_value_estimate,
+            "selection_method": self.model.selection_method.name,
+            "size_method": self.model.size_method.name,
+            "prop_method": self.model.prop_method.name,
+            # Metadata
+            "save_timestamp": datetime.now(timezone.utc).isoformat(),
+            "country_code": self.country,
+        }
+        tmp_path = str(json_path) + ".tmp"
+        with open(tmp_path, "w") as f:
+            json.dump(sidecar, f, indent=2)
+        os.replace(tmp_path, str(json_path))
+
+    def save_checkpoint(self, state_dir: Path, prefix: str = "checkpoint") -> None:
+        """Save rolling checkpoint (overwrites fixed filenames per D-02).
+
+        Writes <state_dir>/<prefix>.graphml via ActionSpaceBase.checkpoint_save()
+        and <state_dir>/<prefix>.json via _write_sidecar(). Errors are logged
+        but never raised — losing one checkpoint is better than crashing the
+        orchestrator (D-12).
+        """
+        state_dir.mkdir(parents=True, exist_ok=True)
+        graphml_path = state_dir / f"{prefix}.graphml"
+        json_path = state_dir / f"{prefix}.json"
+        try:
+            self.model.action_space.checkpoint_save(str(graphml_path))
+            self._write_sidecar(json_path)
+        except Exception as exc:
+            logger.error("%s: save_checkpoint failed: %s", self.country, exc)
+
+    def save_daily(self, date_str: str, state_dir: Path) -> None:
+        """Save date-stamped daily boundary snapshot (per D-06).
+
+        Must be called BEFORE soft_reset() — soft_reset() clears
+        current_epoch_num and SLEEPING attributes (Pitfall 4).
+        """
+        state_dir.mkdir(parents=True, exist_ok=True)
+        graphml_path = state_dir / f"action_space_{date_str}.graphml"
+        json_path = state_dir / f"state_{date_str}.json"
+        try:
+            self.model.action_space.checkpoint_save(str(graphml_path))
+            self._write_sidecar(json_path)
+            logger.info("%s: daily state saved to %s", self.country, state_dir)
+        except Exception as exc:
+            logger.error("%s: save_daily failed: %s", self.country, exc)
+
+    def load_checkpoint(self, state_dir: Path) -> bool:
+        """Load saved state from state_dir and merge into the current action space.
+
+        Returns True iff a valid (graphml, json) pair was found, parsed, and
+        merged. Returns False on missing state, corrupt files (D-12), or
+        sidecar schema validation failure (T-02-04 mitigation).
+
+        Graph merge (D-10): the current action space was built fresh from CSV
+        before this call, so its node set reflects the latest input. We patch
+        Q-values, ACTION_ATTEMPTS, SLEEPING, and EXPLORED from the saved
+        graph onto matching nodes of the live graph. Targets present only in
+        the saved graph are silently dropped (removed from the CSV). Targets
+        only in the current graph keep their default values from build_graph().
+        """
+        graphml_path, json_path = find_latest_state(state_dir)
+        if graphml_path is None or json_path is None:
+            return False
+
+        saved_graph, sidecar = load_graph_and_sidecar(graphml_path, json_path)
+        if saved_graph is None or sidecar is None:
+            return False
+
+        if not validate_sidecar(sidecar):
+            return False
+
+        # D-10: merge Q-values from saved graph onto the freshly built graph.
+        live_graph = self.model.action_space._graph
+        merged_count = 0
+        for node_id in saved_graph.nodes():
+            if not live_graph.has_node(node_id):
+                # Node was in the saved snapshot but not in the current CSV — drop it.
+                continue
+            saved_attrs = saved_graph.nodes[node_id]
+            live_attrs = live_graph.nodes[node_id]
+            for attr in (
+                action_space_module.Q_VALUE,
+                action_space_module.ACTION_ATTEMPTS,
+                action_space_module.SLEEPING,
+                action_space_module.EXPLORED,
+            ):
+                if attr in saved_attrs:
+                    live_attrs[attr] = saved_attrs[attr]
+            merged_count += 1
+
+        # Restore UCB scalars
+        self.model.exploration_epoch_num = sidecar["exploration_epoch_num"]
+        self.model.current_epoch_num = sidecar["current_epoch_num"]
+
+        # Hyperparameter mismatch check — log warning but proceed
+        for hp in ("c", "step_size", "initial_value_estimate"):
+            saved_val = sidecar.get(hp)
+            current_val = getattr(self.model, hp, None)
+            if saved_val != current_val:
+                logger.warning(
+                    "%s: hyperparameter mismatch: saved %s=%r vs current %s=%r",
+                    self.country, hp, saved_val, hp, current_val,
+                )
+
+        # Restore enum fields from sidecar string names; tolerate invalid names
+        # by logging a warning and keeping the current model value (T-02-04).
+        try:
+            self.model.selection_method = BatchSelectionMethod[sidecar["selection_method"]]
+        except KeyError:
+            logger.warning(
+                "%s: unknown enum name for selection_method in sidecar — keeping current value",
+                self.country,
+            )
+        try:
+            self.model.size_method = BatchSizeMethod[sidecar["size_method"]]
+        except KeyError:
+            logger.warning(
+                "%s: unknown enum name for size_method in sidecar — keeping current value",
+                self.country,
+            )
+        try:
+            self.model.prop_method = PropagationMethod[sidecar["prop_method"]]
+        except KeyError:
+            logger.warning(
+                "%s: unknown enum name for prop_method in sidecar — keeping current value",
+                self.country,
+            )
+
+        logger.info(
+            "%s: loaded checkpoint from %s (%d nodes merged, exploration_epoch=%d)",
+            self.country,
+            graphml_path,
+            merged_count,
+            self.model.exploration_epoch_num,
+        )
+        return True
 
     def soft_reset(self) -> None:
         """Daily soft reset: re-enable all sleeping targets, reset epoch counter.
