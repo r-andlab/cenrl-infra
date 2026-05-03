@@ -4,7 +4,8 @@ import time
 import unittest
 from collections import defaultdict
 from datetime import datetime, timezone, timedelta, time as dtime
-from unittest.mock import MagicMock, patch, PropertyMock
+from pathlib import Path
+from unittest.mock import MagicMock, patch, PropertyMock, call
 
 from Infrastructure.utils.structures import NodeState
 
@@ -491,6 +492,235 @@ class TestCheckAndResendStuck(unittest.TestCase):
         call_args = orch._check_and_resend_stuck.call_args[0][0]
         self.assertIn("US", call_args)
         self.assertIn("example.com", call_args["US"])
+
+
+class TestStateDirFor(unittest.TestCase):
+    """Verify _state_dir_for() path construction for various country names (Plan 02-03)."""
+
+    def _orch(self, output_folder: str):
+        from Infrastructure.main.orchestrator import Orchestrator
+        with patch.object(Orchestrator, '__init__', lambda self, *a, **kw: None):
+            orch = Orchestrator.__new__(Orchestrator)
+        orch.output_folder = output_folder
+        return orch
+
+    def test_simple_country_name(self):
+        orch = self._orch("/tmp/out")
+        self.assertEqual(orch._state_dir_for("Germany"), Path("/tmp/out/Germany/state"))
+
+    def test_country_name_with_space_replaced(self):
+        orch = self._orch("/tmp/out")
+        self.assertEqual(
+            orch._state_dir_for("United States"),
+            Path("/tmp/out/United_States/state"),
+        )
+
+    def test_returns_path_instance(self):
+        orch = self._orch("/tmp/out")
+        result = orch._state_dir_for("Germany")
+        self.assertIsInstance(result, Path)
+
+
+class TestCheckpointAllNodes(unittest.TestCase):
+    """Verify _checkpoint_all_nodes() iterates all agents and isolates failures."""
+
+    def _orch_with_agents(self, agents):
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch.output_folder = "/tmp/out"
+        orch.agents = agents
+        return orch
+
+    def test_calls_save_checkpoint_on_each_agent(self):
+        node_de = MagicMock()
+        node_us = MagicMock()
+        orch = self._orch_with_agents({"Germany": node_de, "United States": node_us})
+
+        orch._checkpoint_all_nodes()
+
+        node_de.save_checkpoint.assert_called_once_with(
+            Path("/tmp/out/Germany/state")
+        )
+        node_us.save_checkpoint.assert_called_once_with(
+            Path("/tmp/out/United_States/state")
+        )
+
+    def test_continues_after_node_save_raises(self):
+        bad_node = MagicMock()
+        bad_node.save_checkpoint.side_effect = RuntimeError("disk full")
+        good_node = MagicMock()
+        # Order matters: bad first, good second — must still save the good one.
+        orch = self._orch_with_agents({"Bad": bad_node, "Good": good_node})
+
+        with self.assertLogs(level=logging.ERROR) as cm:
+            orch._checkpoint_all_nodes()
+
+        bad_node.save_checkpoint.assert_called_once()
+        good_node.save_checkpoint.assert_called_once()
+        self.assertTrue(any("Bad" in m for m in cm.output))
+
+
+class TestHourlyCheckpointTimer(unittest.TestCase):
+    """Verify the monotonic-time hourly checkpoint guard in run_forever()."""
+
+    def _orch(self):
+        from Infrastructure.main.orchestrator import Orchestrator
+        with patch.object(Orchestrator, '__init__', lambda self, *a, **kw: None):
+            orch = Orchestrator.__new__(Orchestrator)
+        import threading
+        orch.agents = {}
+        orch._stop_event = threading.Event()
+        orch._next_reset_utc = datetime.now(timezone.utc) + timedelta(days=1)
+        orch._draining = False
+        orch._last_delay_warn = defaultdict(dict)
+        orch._inflight_times = {}
+        orch._checkpoint_interval = 3600.0
+        orch.api = MagicMock()
+        orch.api.receiver._process = None
+        orch.target_countries = set()
+        orch._install_signal_handlers = MagicMock()
+        orch._shutdown = MagicMock()
+        orch._checkpoint_all_nodes = MagicMock()
+        orch.tick = MagicMock()
+        return orch
+
+    def test_checkpoint_fires_after_interval_elapsed(self):
+        """When monotonic clock has advanced past _checkpoint_interval, the
+        checkpoint method should be invoked exactly once on the next loop pass."""
+        orch = self._orch()
+        # Pretend the last checkpoint happened more than 1 hour ago.
+        orch._last_checkpoint_time = time.monotonic() - 3700.0
+
+        # Run a single iteration of run_forever.
+        def stop_after_one(*_a, **_kw):
+            orch._stop_event.set()
+        orch.tick.side_effect = stop_after_one
+
+        orch.run_forever()
+
+        orch._checkpoint_all_nodes.assert_called_once()
+        # And the timer was advanced (i.e. _last_checkpoint_time updated).
+        self.assertGreater(orch._last_checkpoint_time, time.monotonic() - 60.0)
+
+    def test_checkpoint_does_not_fire_before_interval(self):
+        """If less than _checkpoint_interval has elapsed since last checkpoint,
+        _checkpoint_all_nodes must NOT be called."""
+        orch = self._orch()
+        # Last checkpoint was 5 seconds ago — well under 3600s.
+        orch._last_checkpoint_time = time.monotonic() - 5.0
+
+        def stop_after_one(*_a, **_kw):
+            orch._stop_event.set()
+        orch.tick.side_effect = stop_after_one
+
+        orch.run_forever()
+
+        orch._checkpoint_all_nodes.assert_not_called()
+
+
+class TestShutdownSavesCheckpoint(unittest.TestCase):
+    """Verify _shutdown() calls write_stats AND save_checkpoint for each node."""
+
+    def test_shutdown_calls_both_write_stats_and_save_checkpoint(self):
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch.output_folder = "/tmp/out"
+        node = MagicMock()
+        orch.agents = {"Germany": node}
+
+        orch._shutdown()
+
+        node.write_stats.assert_called_once()
+        node.save_checkpoint.assert_called_once_with(Path("/tmp/out/Germany/state"))
+
+    def test_shutdown_save_checkpoint_runs_after_write_stats(self):
+        """write_stats must be invoked before save_checkpoint per task action step 5."""
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch.output_folder = "/tmp/out"
+        node = MagicMock()
+        orch.agents = {"Germany": node}
+
+        orch._shutdown()
+
+        method_names = [c[0] for c in node.method_calls]
+        ws_idx = method_names.index("write_stats")
+        sc_idx = method_names.index("save_checkpoint")
+        self.assertLess(ws_idx, sc_idx, "write_stats must be called before save_checkpoint")
+
+    def test_shutdown_continues_when_one_node_save_raises(self):
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch.output_folder = "/tmp/out"
+        bad = MagicMock()
+        bad.save_checkpoint.side_effect = OSError("disk full")
+        good = MagicMock()
+        orch.agents = {"Bad": bad, "Good": good}
+
+        with self.assertLogs(level=logging.ERROR):
+            orch._shutdown()
+
+        good.save_checkpoint.assert_called_once_with(Path("/tmp/out/Good/state"))
+
+
+class TestDailySaveBeforeReset(unittest.TestCase):
+    """Pitfall 4: save_daily MUST be called BEFORE soft_reset on each node."""
+
+    def _orch_with_one_agent(self):
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch.output_folder = "/tmp/out"
+        orch._last_checkpoint_time = time.monotonic()
+        orch._checkpoint_interval = 3600.0
+        return orch
+
+    def test_save_daily_called_before_soft_reset(self):
+        orch = self._orch_with_one_agent()
+        node = MagicMock()
+        orch.agents = {"Germany": node}
+
+        orch._perform_soft_reset()
+
+        method_names = [c[0] for c in node.method_calls]
+        save_idx = method_names.index("save_daily")
+        reset_idx = method_names.index("soft_reset")
+        self.assertLess(save_idx, reset_idx,
+                        "save_daily must be called before soft_reset (Pitfall 4)")
+
+    def test_save_daily_receives_utc_date_string(self):
+        """date_str should match the datetime.now(timezone.utc) %Y-%m-%d format."""
+        orch = self._orch_with_one_agent()
+        node = MagicMock()
+        orch.agents = {"Germany": node}
+
+        orch._perform_soft_reset()
+
+        # Inspect the first positional arg passed to save_daily.
+        args, _kwargs = node.save_daily.call_args
+        date_str = args[0]
+        # Must parse as YYYY-MM-DD and equal today's UTC date.
+        parsed = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+        today_utc = datetime.now(timezone.utc).date()
+        self.assertEqual(parsed.date(), today_utc)
+
+    def test_save_daily_receives_state_dir_path(self):
+        orch = self._orch_with_one_agent()
+        node = MagicMock()
+        orch.agents = {"United States": node}
+
+        orch._perform_soft_reset()
+
+        args, _kwargs = node.save_daily.call_args
+        state_dir = args[1]
+        self.assertEqual(state_dir, Path("/tmp/out/United_States/state"))
+
+    def test_soft_reset_runs_even_when_save_daily_raises(self):
+        """T-02-07: a failing daily save must NOT block soft_reset for other nodes."""
+        orch = self._orch_with_one_agent()
+        bad = MagicMock()
+        bad.save_daily.side_effect = OSError("disk full")
+        orch.agents = {"Germany": bad}
+
+        with self.assertLogs(level=logging.ERROR):
+            orch._perform_soft_reset()
+
+        # soft_reset must still have been called on the bad node.
+        bad.soft_reset.assert_called_once()
 
 
 if __name__ == "__main__":
