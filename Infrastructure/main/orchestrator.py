@@ -100,6 +100,10 @@ class Orchestrator:
         self._last_delay_warn: Dict[str, Dict[str, float]] = defaultdict(dict)
         # Per-measurement schedule timestamps: country -> {target -> monotonic time}
         self._inflight_times: Dict[str, Dict[str, float]] = defaultdict(dict)
+        # Hourly checkpoint timer (D-01 / D-04): all countries checkpoint together
+        # via monotonic clock so the cadence is robust to wall-clock jumps.
+        self._last_checkpoint_time: float = time.monotonic()
+        self._checkpoint_interval: float = 3600.0  # 60 minutes per D-01
 
     # ------------------------------------------------------------------
     # logging
@@ -265,6 +269,12 @@ class Orchestrator:
             # Delayed-result logger (D-09 / RUNT-05)
             self._check_delayed_results()
 
+            # Hourly checkpoint (D-01)
+            now_mono = time.monotonic()
+            if now_mono - self._last_checkpoint_time >= self._checkpoint_interval:
+                self._checkpoint_all_nodes()
+                self._last_checkpoint_time = now_mono
+
             start_time = time.perf_counter()
             self.tick()
             end_time = time.perf_counter()
@@ -292,13 +302,23 @@ class Orchestrator:
         signal.signal(signal.SIGINT, _handler)
 
     def _shutdown(self) -> None:
-        """Write stats for all active nodes and log summary (D-11)."""
+        """Write stats for all active nodes and log summary (D-11).
+
+        Also saves a rolling checkpoint per node (D-03 / D-04) so that graceful
+        shutdown loses zero learning. Each save is wrapped in its own try/except
+        so one failing node does not block the others.
+        """
         logger.info("Shutting down — writing stats for %d active nodes", len(self.agents))
         for country, node in self.agents.items():
             try:
                 node.write_stats()
             except Exception as exc:
                 logger.error("Failed to write stats for %s: %s", country, exc)
+            try:
+                state_dir = self._state_dir_for(country)
+                node.save_checkpoint(state_dir)
+            except Exception as exc:
+                logger.error("Failed to checkpoint %s on shutdown: %s", country, exc)
         logger.info("Shutdown complete.")
 
     # ------------------------------------------------------------------
@@ -331,10 +351,50 @@ class Orchestrator:
         """Return True if all nodes have zero in-flight measurements."""
         return all(node.in_flight == 0 for node in self.agents.values())
 
-    def _perform_soft_reset(self) -> None:
-        """Call soft_reset() on every active node (D-03)."""
-        logger.info("Performing daily soft reset for %d nodes", len(self.agents))
+    # ------------------------------------------------------------------
+    # state persistence (D-01, D-02, D-04)
+    # ------------------------------------------------------------------
+    def _state_dir_for(self, country: str) -> Path:
+        """Return the state subdirectory for a country's checkpoint files.
+
+        Mirrors the per-country path construction used in RegionalNode.__init__:
+        spaces in country names become underscores so the path is filesystem-safe.
+        """
+        return Path(self.output_folder) / country.replace(" ", "_") / "state"
+
+    def _checkpoint_all_nodes(self) -> None:
+        """Save rolling checkpoint for all active nodes (per D-01, D-02).
+
+        Each node is wrapped in its own try/except so a single failing node never
+        prevents the others from checkpointing (T-02-06 mitigation).
+        """
+        logger.info("Checkpointing %d active nodes", len(self.agents))
         for country, node in self.agents.items():
+            try:
+                state_dir = self._state_dir_for(country)
+                node.save_checkpoint(state_dir)
+            except Exception as exc:
+                logger.error("Checkpoint failed for %s: %s", country, exc)
+
+    def _perform_soft_reset(self) -> None:
+        """Save date-stamped daily state for every node, then call soft_reset() (D-01).
+
+        save_daily() MUST run BEFORE soft_reset() — soft_reset() zeroes
+        current_epoch_num and clears SLEEPING via wake_up_all_nodes() (Pitfall 4).
+        Per-node try/except around save_daily() ensures one bad save does not
+        block soft_reset() for other countries (T-02-07 mitigation).
+        """
+        date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        logger.info(
+            "Performing daily soft reset for %d nodes (date: %s)",
+            len(self.agents), date_str,
+        )
+        for country, node in self.agents.items():
+            try:
+                state_dir = self._state_dir_for(country)
+                node.save_daily(date_str, state_dir)
+            except Exception as exc:
+                logger.error("Daily save failed for %s: %s", country, exc)
             node.soft_reset()
         self._inflight_times.clear()
         self._last_delay_warn.clear()

@@ -24,6 +24,8 @@ class TestRunForeverLoopCondition(unittest.TestCase):
         orch._draining = False
         orch._last_delay_warn = defaultdict(dict)
         orch._inflight_times = {}
+        orch._last_checkpoint_time = time.monotonic()
+        orch._checkpoint_interval = 3600.0
         orch.api = MagicMock()
         orch.api.receiver._process = None  # debug mode
         orch.target_countries = set()
@@ -62,6 +64,9 @@ class TestDailyResetTrigger(unittest.TestCase):
         orch._draining = False
         orch._last_delay_warn = defaultdict(dict)
         orch._inflight_times = {}
+        orch._last_checkpoint_time = time.monotonic()
+        orch._checkpoint_interval = 3600.0
+        orch.output_folder = "/tmp/test_orchestrator_output"
         orch.api = MagicMock()
         orch.api.receiver._process = None
         orch.target_countries = set()
