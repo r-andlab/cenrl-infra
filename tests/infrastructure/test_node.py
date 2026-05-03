@@ -283,5 +283,222 @@ class TestSaveCheckpoint(unittest.TestCase):
                 self.fail(f"save_checkpoint should swallow exceptions, raised: {exc}")
 
 
+class TestLoadCheckpoint(unittest.TestCase):
+    """Tests for RegionalNode.load_checkpoint() — covers D-09, D-10, D-11, D-12."""
+
+    def _make_node(self, tmp_path):
+        """Build a node with a mocked model whose action_space has a real graph."""
+        import networkx as nx
+        from models.base.action_space import (
+            create_default_node_attributes,
+            add_root,
+            ROOT_KEY,
+            Q_VALUE,
+            ACTION_ATTEMPTS,
+            SLEEPING,
+            EXPLORED,
+            IS_TARGET_NODE,
+            PARENTS,
+        )
+
+        from Infrastructure.main.node import RegionalNode
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = "TestCountry"
+        node.country_name_standard = "TestCountry"
+        node.model = MagicMock()
+        node.model.exploration_epoch_num = 0
+        node.model.current_epoch_num = 0
+        node.model.c = 1.0
+        node.model.step_size = None
+        node.model.initial_value_estimate = 1.0
+        node.model.selection_method = BatchSelectionMethod.TOP_K_FROM_ARM
+        node.model.size_method = BatchSizeMethod.CONSTANT_VAL
+        node.model.prop_method = PropagationMethod.ON_RECEIPT
+        node.model.output_directory = str(tmp_path)
+
+        # Build a minimal "fresh" current graph: root, two arms, three targets.
+        g = nx.DiGraph()
+        add_root(g)
+        g.add_node(
+            "arm_a",
+            **create_default_node_attributes("arm_a", "arm_a", "category"),
+        )
+        g.add_edge(ROOT_KEY, "arm_a")
+        for t in ("target_1", "target_2", "target_3"):
+            g.add_node(
+                t,
+                **create_default_node_attributes(t, t, "domain", is_target_node=True),
+            )
+            g.add_edge("arm_a", t)
+        node.model.action_space = MagicMock()
+        node.model.action_space._graph = g
+        return node
+
+    def _write_saved_state(self, state_dir: Path, node_data_overrides=None,
+                           sidecar_overrides=None):
+        """Helper: write a synthetic checkpoint.graphml + checkpoint.json pair."""
+        import networkx as nx
+        from models.base.action_space import (
+            create_default_node_attributes,
+            add_root,
+            ROOT_KEY,
+            Q_VALUE,
+            ACTION_ATTEMPTS,
+        )
+
+        state_dir.mkdir(parents=True, exist_ok=True)
+
+        saved = nx.DiGraph()
+        add_root(saved)
+        saved.add_node(
+            "arm_a",
+            **create_default_node_attributes("arm_a", "arm_a", "category"),
+        )
+        saved.add_edge(ROOT_KEY, "arm_a")
+        # target_1 has learned Q-value; target_2 also; target_REMOVED not in current CSV
+        for t, q in (("target_1", 0.75), ("target_2", 0.42), ("target_REMOVED", 0.99)):
+            attrs = create_default_node_attributes(t, t, "domain", is_target_node=True)
+            attrs[Q_VALUE] = q
+            attrs[ACTION_ATTEMPTS] = 5
+            saved.add_node(t, **attrs)
+            saved.add_edge("arm_a", t)
+        # GraphML cannot serialize lists; convert PARENTS to ""
+        for n, d in saved.nodes(data=True):
+            d["parents"] = ""
+
+        graphml_path = state_dir / "checkpoint.graphml"
+        nx.write_graphml(saved, str(graphml_path))
+
+        sidecar = {
+            "exploration_epoch_num": 100,
+            "current_epoch_num": 50,
+            "measurements_completed_today": 50,
+            "c": 1.0,
+            "step_size": None,
+            "initial_value_estimate": 1.0,
+            "selection_method": "TOP_K_FROM_ARM",
+            "size_method": "CONSTANT_VAL",
+            "prop_method": "ON_RECEIPT",
+            "save_timestamp": "2026-04-24T12:00:00+00:00",
+            "country_code": "TestCountry",
+        }
+        if sidecar_overrides:
+            sidecar.update(sidecar_overrides)
+        json_path = state_dir / "checkpoint.json"
+        json_path.write_text(json.dumps(sidecar))
+        return graphml_path, json_path
+
+    def test_load_checkpoint_returns_true_and_restores_scalars(self):
+        """load_checkpoint() returns True for valid state and restores scalars."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            self._write_saved_state(state_dir)
+
+            result = node.load_checkpoint(state_dir)
+
+            self.assertTrue(result)
+            self.assertEqual(node.model.exploration_epoch_num, 100)
+            self.assertEqual(node.model.current_epoch_num, 50)
+
+    def test_load_checkpoint_returns_false_when_no_state(self):
+        """load_checkpoint() returns False when no state files exist."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            state_dir.mkdir(parents=True)
+
+            result = node.load_checkpoint(state_dir)
+
+            self.assertFalse(result)
+            # Scalars unchanged
+            self.assertEqual(node.model.exploration_epoch_num, 0)
+
+    def test_load_checkpoint_returns_false_on_corrupt_files(self):
+        """load_checkpoint() returns False on corrupted state files (D-12)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            state_dir.mkdir(parents=True)
+            # Write garbage to checkpoint files
+            (state_dir / "checkpoint.graphml").write_text("not valid xml")
+            (state_dir / "checkpoint.json").write_text("not valid json")
+
+            result = node.load_checkpoint(state_dir)
+
+            self.assertFalse(result)
+
+    def test_load_checkpoint_graph_merge_preserves_qvalues(self):
+        """D-10: Graph merge copies Q-values from saved graph to current graph
+        for nodes present in both; new targets keep defaults; removed targets dropped."""
+        import tempfile
+        from models.base.action_space import Q_VALUE, ACTION_ATTEMPTS
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            self._write_saved_state(state_dir)
+
+            result = node.load_checkpoint(state_dir)
+
+            self.assertTrue(result)
+            # target_1 and target_2 should have Q-values from saved state
+            self.assertEqual(node.model.action_space._graph.nodes["target_1"][Q_VALUE], 0.75)
+            self.assertEqual(node.model.action_space._graph.nodes["target_2"][Q_VALUE], 0.42)
+            self.assertEqual(node.model.action_space._graph.nodes["target_1"][ACTION_ATTEMPTS], 5)
+            # target_3 is in CSV but was not in saved state — keeps default 0
+            self.assertEqual(node.model.action_space._graph.nodes["target_3"][Q_VALUE], 0)
+            # target_REMOVED was in saved state but not in current CSV — must NOT appear
+            self.assertFalse(node.model.action_space._graph.has_node("target_REMOVED"))
+
+    def test_load_checkpoint_warns_on_hyperparameter_mismatch(self):
+        """Hyperparameter mismatch logs a warning but still loads."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            # Saved state has c=1.0, current model has c=2.5
+            node.model.c = 2.5
+            state_dir = tmp_path / "state"
+            self._write_saved_state(state_dir)
+
+            with self.assertLogs("Infrastructure.main.node", level="WARNING") as cm:
+                result = node.load_checkpoint(state_dir)
+
+            self.assertTrue(result)
+            # At least one warning mentioning hyperparameter mismatch
+            self.assertTrue(
+                any("mismatch" in msg.lower() or "c=" in msg for msg in cm.output),
+                f"Expected hyperparameter-mismatch warning, got: {cm.output}",
+            )
+
+    def test_load_checkpoint_restores_enum_fields(self):
+        """Enum fields (selection_method etc.) are restored from sidecar names."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            # Pre-set to different enum values to confirm restoration
+            node.model.selection_method = BatchSelectionMethod.UNIFORM_SPREAD
+            node.model.size_method = BatchSizeMethod.VARY_ON_SUCCESS
+            node.model.prop_method = PropagationMethod.IN_ORDER
+            state_dir = tmp_path / "state"
+            self._write_saved_state(state_dir)
+
+            result = node.load_checkpoint(state_dir)
+
+            self.assertTrue(result)
+            self.assertEqual(node.model.selection_method, BatchSelectionMethod.TOP_K_FROM_ARM)
+            self.assertEqual(node.model.size_method, BatchSizeMethod.CONSTANT_VAL)
+            self.assertEqual(node.model.prop_method, PropagationMethod.ON_RECEIPT)
+
+
 if __name__ == "__main__":
     unittest.main()
