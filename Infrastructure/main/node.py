@@ -1,5 +1,7 @@
 from dataclasses import asdict
+from datetime import datetime, timezone
 from typing import Any, Dict, List, Tuple, Optional, Callable, Set
+import json
 import logging
 import os
 import sys
@@ -125,6 +127,70 @@ class RegionalNode:
             if all_stats:
                 pd.DataFrame(all_stats).to_csv(self.model.outfile, index=False)
         return
+
+    def _write_sidecar(self, json_path: Path) -> None:
+        """Write JSON sidecar with UCB scalars, run config snapshot, and metadata.
+
+        Per D-14: contains UCB counters (exploration_epoch_num, current_epoch_num),
+        daily progress (measurements_completed_today), run config snapshot
+        (c, step_size, initial_value_estimate, strategy enums as .name), and
+        metadata (save_timestamp, country_code). Atomic write via .tmp + os.replace
+        to prevent corrupted sidecars on crash mid-write (T-02-02 mitigation).
+        """
+        sidecar = {
+            # UCB counters
+            "exploration_epoch_num": self.model.exploration_epoch_num,
+            "current_epoch_num": self.model.current_epoch_num,
+            # Daily progress
+            "measurements_completed_today": self.model.current_epoch_num,
+            # Run config snapshot
+            "c": self.model.c,
+            "step_size": self.model.step_size,
+            "initial_value_estimate": self.model.initial_value_estimate,
+            "selection_method": self.model.selection_method.name,
+            "size_method": self.model.size_method.name,
+            "prop_method": self.model.prop_method.name,
+            # Metadata
+            "save_timestamp": datetime.now(timezone.utc).isoformat(),
+            "country_code": self.country,
+        }
+        tmp_path = str(json_path) + ".tmp"
+        with open(tmp_path, "w") as f:
+            json.dump(sidecar, f, indent=2)
+        os.replace(tmp_path, str(json_path))
+
+    def save_checkpoint(self, state_dir: Path, prefix: str = "checkpoint") -> None:
+        """Save rolling checkpoint (overwrites fixed filenames per D-02).
+
+        Writes <state_dir>/<prefix>.graphml via ActionSpaceBase.checkpoint_save()
+        and <state_dir>/<prefix>.json via _write_sidecar(). Errors are logged
+        but never raised — losing one checkpoint is better than crashing the
+        orchestrator (D-12).
+        """
+        state_dir.mkdir(parents=True, exist_ok=True)
+        graphml_path = state_dir / f"{prefix}.graphml"
+        json_path = state_dir / f"{prefix}.json"
+        try:
+            self.model.action_space.checkpoint_save(str(graphml_path))
+            self._write_sidecar(json_path)
+        except Exception as exc:
+            logger.error("%s: save_checkpoint failed: %s", self.country, exc)
+
+    def save_daily(self, date_str: str, state_dir: Path) -> None:
+        """Save date-stamped daily boundary snapshot (per D-06).
+
+        Must be called BEFORE soft_reset() — soft_reset() clears
+        current_epoch_num and SLEEPING attributes (Pitfall 4).
+        """
+        state_dir.mkdir(parents=True, exist_ok=True)
+        graphml_path = state_dir / f"action_space_{date_str}.graphml"
+        json_path = state_dir / f"state_{date_str}.json"
+        try:
+            self.model.action_space.checkpoint_save(str(graphml_path))
+            self._write_sidecar(json_path)
+            logger.info("%s: daily state saved to %s", self.country, state_dir)
+        except Exception as exc:
+            logger.error("%s: save_daily failed: %s", self.country, exc)
 
     def soft_reset(self) -> None:
         """Daily soft reset: re-enable all sleeping targets, reset epoch counter.
