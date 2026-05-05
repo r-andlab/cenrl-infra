@@ -126,14 +126,50 @@ class RegionalNode:
         )
 
     def write_stats(self):
+        """Write per-iteration snapshot CSV and append to rolling per-country CSV (D-05, D-07).
+
+        Caller (_finish_episode_if_ready) is responsible for rotating
+        episode_stats → episode_all_stats BEFORE invoking this method, so that
+        episode_all_stats holds all rows for the iteration about to be written.
+
+        Files written (per D-07):
+        - <country>.csv               (rolling; appended on each iteration; header on first write only)
+        - <country>_iter_NNN.csv      (immutable per-iteration snapshot; full overwrite each call)
+
+        After writing, episode_all_stats is cleared so the next iteration starts
+        with an empty rolling buffer and the rolling CSV is not double-appended.
+        """
         print(f"{self.country}: Episode Process {os.getpid()} - Saving stats and model")
         self.model.save()
+
+        # Legacy stat_df path: external test harnesses still set this directly. Preserve
+        # the original overwrite behavior for compatibility — D-05 only governs the
+        # episode_stats path used by the live infrastructure run.
         if self.stat_df is not None:
             self.stat_df.to_csv(self.model.outfile, index=False)
-        elif self.episode_all_stats or self.episode_stats:
-            all_stats = self.episode_all_stats + self.episode_stats
-            if all_stats:
-                pd.DataFrame(all_stats).to_csv(self.model.outfile, index=False)
+            return
+
+        rows = list(self.episode_all_stats) + list(self.episode_stats)
+        if not rows:
+            return
+
+        rolling_path = Path(self.model.outfile)
+        snapshot_path = rolling_path.with_name(
+            f"{rolling_path.stem}_iter_{self.episode_idx:03d}{rolling_path.suffix}"
+        )
+
+        # Per-iteration snapshot — full overwrite, immutable artifact.
+        pd.DataFrame(rows).to_csv(snapshot_path, index=False)
+
+        # Rolling per-country CSV — append-mode. Header on first write only.
+        header_needed = not rolling_path.exists()
+        pd.DataFrame(rows).to_csv(
+            rolling_path, mode="a", header=header_needed, index=False,
+        )
+
+        # Clear the rolled-over buffer so the next iteration's rotate-then-write
+        # sequence does not double-append rows we have already persisted.
+        self.episode_all_stats = []
         return
 
     def _write_sidecar(self, json_path: Path) -> None:
@@ -199,6 +235,35 @@ class RegionalNode:
             logger.info("%s: daily state saved to %s", self.country, state_dir)
         except Exception as exc:
             logger.error("%s: save_daily failed: %s", self.country, exc)
+
+    def save_iteration(self, idx: int, state_dir: Path) -> None:
+        """Save per-iteration state snapshot under state/iterations/ (per Phase 02.1 D-06, D-07).
+
+        Must be called BEFORE soft_reset() — soft_reset() clears
+        current_epoch_num and SLEEPING attributes (Pitfall 4 / D-08).
+
+        Files written (under <state_dir>/iterations/):
+        - iter_NNN.graphml — action space snapshot for iteration NNN (zero-padded to 3 digits)
+        - iter_NNN.json    — JSON sidecar with UCB scalars + run config
+
+        Atomic writes via checkpoint_save (.tmp + os.replace) and _write_sidecar (.tmp + os.replace).
+        Per-country fault isolation is the caller's responsibility (try/except in
+        _finish_episode_if_ready); this method itself does not swallow exceptions.
+        """
+        iter_state_dir = state_dir / "iterations"
+        iter_state_dir.mkdir(parents=True, exist_ok=True)
+        graphml_path = iter_state_dir / f"iter_{idx:03d}.graphml"
+        json_path = iter_state_dir / f"iter_{idx:03d}.json"
+        try:
+            self.model.action_space.checkpoint_save(str(graphml_path))
+            self._write_sidecar(json_path)
+            logger.info(
+                "%s: iteration %d state saved to %s",
+                self.country, idx, iter_state_dir,
+            )
+        except Exception as exc:
+            logger.error("%s: save_iteration failed: %s", self.country, exc)
+            raise
 
     def load_checkpoint(self, state_dir: Path) -> bool:
         """Load saved state from state_dir and merge into the current action space.
@@ -292,15 +357,17 @@ class RegionalNode:
         return True
 
     def soft_reset(self) -> None:
-        """Daily soft reset: re-enable all sleeping targets, reset epoch counter.
-        Does NOT call model.reset() — Q-values and arm counts are preserved (D-03).
+        """Per-country iteration soft reset: re-enable all sleeping targets, reset epoch
+        counter, and bump the per-country iteration counter (Phase 02.1 D-04).
+        Does NOT call model.reset() — Q-values and arm counts are preserved (Phase 01 D-03).
         """
-        logger.info("%s: performing daily soft reset", self.country)
+        logger.info("%s: performing iteration soft reset (idx=%d)", self.country, self.episode_idx)
         self.model.action_space.wake_up_all_nodes()
         self.model.current_epoch_num = 0
         self.in_flight = 0
         self.state = NodeState.IDLE
         self.episode_stats = []
+        self.episode_idx += 1
 
     def _remaining_capacity(self) -> int:
         return max(self.batch_size - self.in_flight, 0)
@@ -366,10 +433,21 @@ class RegionalNode:
         return absorbed
 
     def _finish_episode_if_ready(self, save_stats: bool) -> Optional[pd.DataFrame]:
-        """If daily measurement quota reached and no in-flight, idle until reset.
+        """Per-country iteration boundary: when measurement quota is reached and no
+        in-flight measurements remain, persist outputs then soft-reset (Phase 02.1 D-02, D-03, D-08).
 
-        Under continuous operation (D-06/D-07), one calendar day = one episode.
-        Reaching the quota means idle-until-midnight, NOT termination.
+        Existing guards (preserved):
+        - in_flight != 0  → drain in-progress; return None and wait (D-03)
+        - current_epoch_num < measurements_per_episode → quota not yet hit; return None
+
+        On trigger (current_epoch_num >= measurements_per_episode AND in_flight == 0):
+        Strict ordering per D-08: write_stats(CSV) → save_iteration(state) → soft_reset().
+        Both saves MUST complete before soft_reset() zeroes current_epoch_num and clears
+        SLEEPING via wake_up_all_nodes() (Pitfall 4 from Phase 02 save_daily docstring).
+
+        Per-country fault isolation (Phase 02 D-04 invariant): each save is wrapped in
+        try/except so a failing save does not block the soft_reset path. Soft_reset
+        always runs.
         """
         if self.in_flight != 0:
             return None
@@ -377,16 +455,47 @@ class RegionalNode:
         if self.model.current_epoch_num < self.model.measurements_per_episode:
             return None
 
-        # Daily quota reached — idle until next midnight reset
         logger.info(
-            "%s: daily quota of %d measurements reached, idling until reset",
-            self.country, self.model.measurements_per_episode,
+            "%s: iteration %d quota of %d measurements reached, performing per-country reset",
+            self.country, self.episode_idx, self.model.measurements_per_episode,
         )
+
+        # Rotate this iteration's rows into the rolling buffer so write_stats sees them
+        # (D-05: rolling CSV append uses episode_all_stats; per-iteration snapshot uses
+        # the same rows).
         if self.episode_stats:
             self.episode_all_stats += self.episode_stats
             self.episode_stats = []
-        self.state = NodeState.IDLE
-        # Do NOT set NodeState.DONE — do NOT call model.reset()
+
+        # Resolve state_dir via the same convention as Orchestrator._state_dir_for —
+        # node has self.model.output_directory == "<output>/<country>/" already.
+        state_dir = Path(self.model.output_directory) / "state"
+
+        # Per-country fault isolation: D-04 invariant means a failed save MUST NOT
+        # prevent soft_reset from running for this country.
+        try:
+            self.write_stats()
+        except Exception as exc:
+            logger.error(
+                "%s: write_stats failed at iteration %d boundary: %s",
+                self.country, self.episode_idx, exc,
+            )
+
+        try:
+            self.save_iteration(self.episode_idx, state_dir)
+        except Exception as exc:
+            logger.error(
+                "%s: save_iteration failed at iteration %d: %s",
+                self.country, self.episode_idx, exc,
+            )
+
+        # Always soft-reset, even if a save raised. Soft_reset bumps episode_idx (D-04).
+        self.soft_reset()
+
+        # Plan 02.1-02 will add an orchestrator-side cleanup callback here
+        # (clears _inflight_times[country] and _last_delay_warn[country] per D-12).
+        # For now this plan stops at soft_reset(); the orchestrator wiring lives in 02.1-02.
+
         return None
 
     def maybe_update_model(

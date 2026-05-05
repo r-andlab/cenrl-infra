@@ -27,6 +27,7 @@ class TestSoftReset(unittest.TestCase):
         node.model.current_epoch_num = 50
         node.state = NodeState.AWAITING_MEASUREMENTS
         node.in_flight = 3
+        node.episode_idx = 1
         node.episode_stats = [{"episode": 1, "time": 1}]
         return node
 
@@ -57,19 +58,46 @@ class TestSoftReset(unittest.TestCase):
         node.soft_reset()
         self.assertEqual(node.state, NodeState.IDLE)
 
+    def test_soft_reset_increments_episode_idx(self):
+        """soft_reset() bumps episode_idx by 1 (Phase 02.1 D-04 — per-country iteration counter)."""
+        node = self._make_node()
+        node.episode_idx = 5
+        node.soft_reset()
+        self.assertEqual(node.episode_idx, 6)
+
 
 class TestFinishEpisodeIdleNotDone(unittest.TestCase):
-    """Tests for _finish_episode_if_ready() -- covers D-06/D-07."""
+    """Tests for _finish_episode_if_ready() -- covers Phase 02.1 D-02 / D-03 / D-04 / D-08.
 
-    def _make_node(self):
+    Verifies the per-country reset flow: when quota reached AND in_flight == 0,
+    write_stats → save_iteration → soft_reset run in that order with per-country
+    fault isolation. Existing guards (in_flight > 0, sub-quota) remain intact.
+    """
+
+    def _make_node(self, tmp_path):
         from Infrastructure.main.node import RegionalNode
         with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
             node = RegionalNode.__new__(RegionalNode)
         node.country = "TestCountry"
+        node.country_name_standard = "TestCountry"
         node.model = MagicMock()
         node.model.measurements_per_episode = 100
         node.model.current_epoch_num = 100  # quota reached
         node.model.num_episodes = 1
+        node.model.output_directory = str(tmp_path)
+        node.model.outfile = str(tmp_path / "TestCountry.csv")
+        node.model.save = MagicMock()
+        node.model.action_space = MagicMock()
+        node.model.action_space.checkpoint_save = MagicMock()
+        node.model.action_space.wake_up_all_nodes = MagicMock()
+        # Sidecar fields _write_sidecar reads
+        node.model.exploration_epoch_num = 5
+        node.model.c = 1.0
+        node.model.step_size = 0.1
+        node.model.initial_value_estimate = 0.5
+        node.model.selection_method = BatchSelectionMethod.TOP_K_FROM_ARM
+        node.model.size_method = BatchSizeMethod.CONSTANT_VAL
+        node.model.prop_method = PropagationMethod.ON_RECEIPT
         node.state = NodeState.READY
         node.in_flight = 0
         node.episode_stats = [{"episode": 1, "time": 1}]
@@ -79,26 +107,205 @@ class TestFinishEpisodeIdleNotDone(unittest.TestCase):
         node.save_stats = True
         return node
 
+    def _wrap_with_call_tracker(self, node, calls):
+        """Wrap write_stats/save_iteration/soft_reset to record call order."""
+        orig_write = node.write_stats
+        orig_save = node.save_iteration
+        orig_soft = node.soft_reset
+
+        def tracked_write(*a, **kw):
+            calls.append("write_stats")
+            return orig_write(*a, **kw)
+
+        def tracked_save(*a, **kw):
+            calls.append("save_iteration")
+            return orig_save(*a, **kw)
+
+        def tracked_soft(*a, **kw):
+            calls.append("soft_reset")
+            return orig_soft(*a, **kw)
+
+        node.write_stats = MagicMock(side_effect=tracked_write)
+        node.save_iteration = MagicMock(side_effect=tracked_save)
+        node.soft_reset = MagicMock(side_effect=tracked_soft)
+
     def test_finish_episode_sets_idle_not_done(self):
-        """When quota is reached, state becomes IDLE not DONE."""
-        node = self._make_node()
-        node._finish_episode_if_ready(save_stats=True)
-        self.assertEqual(node.state, NodeState.IDLE)
-        self.assertNotEqual(node.state, NodeState.DONE)
+        """When quota is reached and in_flight == 0, the per-country reset fires:
+        write_stats → save_iteration → soft_reset, ending in NodeState.IDLE."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            self.assertEqual(node.state, NodeState.IDLE)
+            self.assertNotEqual(node.state, NodeState.DONE)
+            # All three were called exactly once, in the correct order.
+            self.assertEqual(calls, ["write_stats", "save_iteration", "soft_reset"])
 
     def test_finish_episode_does_not_call_reset(self):
-        """_finish_episode_if_ready must NOT call model.reset()."""
-        node = self._make_node()
-        node._finish_episode_if_ready(save_stats=True)
-        node.model.reset.assert_not_called()
+        """_finish_episode_if_ready must NOT call model.reset() (Q-values preserved per Phase 01 D-03)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._finish_episode_if_ready(save_stats=True)
+            node.model.reset.assert_not_called()
 
     def test_finish_episode_noop_when_inflight(self):
-        """Does nothing when in_flight > 0."""
-        node = self._make_node()
-        node.in_flight = 3
-        result = node._finish_episode_if_ready(save_stats=True)
-        self.assertIsNone(result)
-        self.assertEqual(node.state, NodeState.READY)  # unchanged
+        """Does nothing when in_flight > 0 (drain semantics, D-03)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.in_flight = 3
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            result = node._finish_episode_if_ready(save_stats=True)
+
+            self.assertIsNone(result)
+            self.assertEqual(node.state, NodeState.READY)  # unchanged
+            self.assertEqual(calls, [])
+
+    def test_per_country_reset_triggers_on_quota(self):
+        """When quota hit and in_flight == 0, all three methods fire in order; episode_idx increments 1→2."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            self.assertEqual(calls, ["write_stats", "save_iteration", "soft_reset"])
+            self.assertEqual(node.episode_idx, 2)
+
+    def test_inflight_blocks_reset(self):
+        """current_epoch_num >= measurements_per_episode but in_flight > 0 → no reset."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.in_flight = 5
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            result = node._finish_episode_if_ready(save_stats=True)
+
+            self.assertIsNone(result)
+            self.assertEqual(calls, [])
+
+    def test_subquota_does_not_trigger_reset(self):
+        """current_epoch_num < measurements_per_episode → no reset."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.model.current_epoch_num = 50  # below quota
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            result = node._finish_episode_if_ready(save_stats=True)
+
+            self.assertIsNone(result)
+            self.assertEqual(calls, [])
+
+    def test_save_failure_does_not_block_soft_reset(self):
+        """write_stats raising RuntimeError → save_iteration AND soft_reset still fire; no propagation."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.write_stats = MagicMock(side_effect=RuntimeError("disk full"))
+            node.save_iteration = MagicMock()
+            orig_soft = node.soft_reset
+            node.soft_reset = MagicMock(wraps=orig_soft)
+
+            try:
+                result = node._finish_episode_if_ready(save_stats=True)
+            except Exception as exc:
+                self.fail(f"_finish_episode_if_ready should swallow write_stats errors, raised: {exc}")
+
+            self.assertIsNone(result)
+            node.write_stats.assert_called_once()
+            node.save_iteration.assert_called_once()
+            node.soft_reset.assert_called_once()
+
+    def test_save_iteration_failure_does_not_block_soft_reset(self):
+        """save_iteration raising → soft_reset still fires; no propagation."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.save_iteration = MagicMock(side_effect=RuntimeError("graphml write failed"))
+            orig_soft = node.soft_reset
+            node.soft_reset = MagicMock(wraps=orig_soft)
+
+            try:
+                result = node._finish_episode_if_ready(save_stats=True)
+            except Exception as exc:
+                self.fail(f"_finish_episode_if_ready should swallow save_iteration errors, raised: {exc}")
+
+            self.assertIsNone(result)
+            node.save_iteration.assert_called_once()
+            node.soft_reset.assert_called_once()
+
+    def test_episode_stats_rotated_before_write_stats(self):
+        """Before write_stats is called, episode_stats must be moved into episode_all_stats."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
+            node.episode_all_stats = [{"episode": 0, "time": 1, "reward": 0.0}]
+            captured = {}
+
+            def fake_write_stats():
+                # Snapshot the buffer state at the moment write_stats is invoked.
+                captured["episode_all_stats"] = list(node.episode_all_stats)
+                captured["episode_stats"] = list(node.episode_stats)
+
+            node.write_stats = MagicMock(side_effect=fake_write_stats)
+            node.save_iteration = MagicMock()
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            # Both pre-existing rolled rows AND the just-completed iteration's rows are in episode_all_stats.
+            self.assertEqual(len(captured["episode_all_stats"]), 2)
+            self.assertEqual(captured["episode_stats"], [])
+
+    def test_state_dir_uses_output_directory_plus_state(self):
+        """save_iteration is called with state_dir == Path(output_directory) / 'state'."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.save_iteration = MagicMock()
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            args, _ = node.save_iteration.call_args
+            self.assertEqual(args[1], Path(tmp_path) / "state")
+
+    def test_save_iteration_receives_pre_increment_episode_idx(self):
+        """save_iteration gets idx=5 when going in at episode_idx=5; soft_reset bumps to 6 afterward."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_idx = 5
+            node.save_iteration = MagicMock()
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            args, _ = node.save_iteration.call_args
+            self.assertEqual(args[0], 5, "save_iteration must receive pre-increment episode_idx")
+            self.assertEqual(node.episode_idx, 6, "soft_reset must bump episode_idx after save_iteration")
 
 
 class TestWriteStatsNullSafe(unittest.TestCase):
@@ -115,6 +322,7 @@ class TestWriteStatsNullSafe(unittest.TestCase):
         node.stat_df = None
         node.episode_stats = []
         node.episode_all_stats = []
+        node.episode_idx = 1
         return node
 
     def test_write_stats_no_crash_when_stat_df_none(self):
@@ -125,12 +333,17 @@ class TestWriteStatsNullSafe(unittest.TestCase):
         node.model.save.assert_called_once()
 
     def test_write_stats_flushes_partial_stats(self):
-        """write_stats() flushes episode_all_stats when stat_df is None."""
+        """write_stats() flushes episode_all_stats when stat_df is None.
+
+        Per Phase 02.1 D-05/D-07, write_stats now produces TWO files (per-iteration
+        snapshot + rolling-append CSV), so to_csv is called twice when there are rows.
+        """
         node = self._make_node()
         node.episode_all_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
         with patch.object(pd.DataFrame, 'to_csv') as mock_csv:
             node.write_stats()
-            mock_csv.assert_called_once()
+            # Two writes: per-iteration snapshot (overwrite) + rolling CSV (append)
+            self.assertEqual(mock_csv.call_count, 2)
 
 
 class TestSaveCheckpoint(unittest.TestCase):
@@ -281,6 +494,149 @@ class TestSaveCheckpoint(unittest.TestCase):
                 node.save_checkpoint(state_dir)
             except Exception as exc:
                 self.fail(f"save_checkpoint should swallow exceptions, raised: {exc}")
+
+
+class TestSaveIteration(unittest.TestCase):
+    """Tests for RegionalNode.save_iteration() — covers Phase 02.1 D-06, D-07, D-08."""
+
+    def _make_node(self, tmp_path: Path):
+        from Infrastructure.main.node import RegionalNode
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = "TestCountry"
+        node.country_name_standard = "TestCountry"
+        node.model = MagicMock()
+        node.model.action_space = MagicMock()
+        node.model.action_space.checkpoint_save = MagicMock(return_value=True)
+        # Sidecar fields _write_sidecar reads
+        node.model.exploration_epoch_num = 10
+        node.model.current_epoch_num = 50
+        node.model.c = 1.0
+        node.model.step_size = 0.1
+        node.model.initial_value_estimate = 0.5
+        node.model.selection_method = BatchSelectionMethod.TOP_K_FROM_ARM
+        node.model.size_method = BatchSizeMethod.CONSTANT_VAL
+        node.model.prop_method = PropagationMethod.ON_RECEIPT
+        node.model.output_directory = str(tmp_path)
+        return node
+
+    def test_save_iteration_creates_iter_subdir(self):
+        """save_iteration creates <state_dir>/iterations/ if missing."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            # iterations subdir not created yet
+            self.assertFalse((state_dir / "iterations").exists())
+
+            node.save_iteration(1, state_dir)
+
+            self.assertTrue((state_dir / "iterations").is_dir())
+
+    def test_save_iteration_uses_zero_padded_filename(self):
+        """idx=7 → iter_007.{graphml,json}, not iter_7.{graphml,json}."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+
+            node.save_iteration(7, state_dir)
+
+            called_path = node.model.action_space.checkpoint_save.call_args[0][0]
+            self.assertTrue(
+                called_path.endswith("iter_007.graphml"),
+                f"Expected zero-padded iter_007.graphml, got {called_path}",
+            )
+            self.assertTrue((state_dir / "iterations" / "iter_007.json").exists())
+            # Confirm non-zero-padded variant does NOT exist
+            self.assertFalse((state_dir / "iterations" / "iter_7.json").exists())
+
+    def test_save_iteration_calls_checkpoint_save_not_action_space_save(self):
+        """save_iteration uses mutation-safe checkpoint_save, never action_space.save()."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            node.model.action_space.save = MagicMock()
+
+            node.save_iteration(3, state_dir)
+
+            node.model.action_space.checkpoint_save.assert_called_once()
+            node.model.action_space.save.assert_not_called()
+
+    def test_save_iteration_writes_json_sidecar(self):
+        """JSON sidecar at iterations/iter_NNN.json contains expected scalar keys."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+
+            node.save_iteration(2, state_dir)
+
+            json_path = state_dir / "iterations" / "iter_002.json"
+            self.assertTrue(json_path.exists())
+            data = json.loads(json_path.read_text())
+            self.assertEqual(data["exploration_epoch_num"], 10)
+            self.assertEqual(data["current_epoch_num"], 50)
+            self.assertEqual(data["c"], 1.0)
+            self.assertEqual(data["selection_method"], "TOP_K_FROM_ARM")
+            self.assertEqual(data["country_code"], "TestCountry")
+
+    def test_save_iteration_uses_atomic_json_write(self):
+        """JSON sidecar write goes through os.replace from a .tmp file (atomic)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+
+            with patch("Infrastructure.main.node.os.replace", wraps=os.replace) as mock_replace:
+                node.save_iteration(4, state_dir)
+
+            mock_replace.assert_called_once()
+            args = mock_replace.call_args[0]
+            self.assertTrue(args[0].endswith(".tmp"))
+            json_path = state_dir / "iterations" / "iter_004.json"
+            self.assertEqual(args[1], str(json_path))
+            # No leftover .tmp file
+            self.assertFalse((state_dir / "iterations" / "iter_004.json.tmp").exists())
+
+    def test_save_iteration_re_raises_on_checkpoint_failure(self):
+        """checkpoint_save raising → save_iteration logs and re-raises (caller handles)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.model.action_space.checkpoint_save = MagicMock(
+                side_effect=RuntimeError("disk full")
+            )
+            state_dir = tmp_path / "state"
+
+            with self.assertRaises(RuntimeError):
+                node.save_iteration(1, state_dir)
+
+    def test_save_iteration_overwrites_on_repeated_idx(self):
+        """Calling save_iteration twice with the same idx succeeds; second call overwrites."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+
+            node.save_iteration(3, state_dir)
+            # Mutate sidecar field so we can verify the second write overwrote
+            node.model.current_epoch_num = 999
+            node.save_iteration(3, state_dir)
+
+            json_path = state_dir / "iterations" / "iter_003.json"
+            data = json.loads(json_path.read_text())
+            self.assertEqual(data["current_epoch_num"], 999)
+            # No .tmp leftover from the second write either
+            self.assertFalse((state_dir / "iterations" / "iter_003.json.tmp").exists())
 
 
 class TestLoadCheckpoint(unittest.TestCase):
@@ -498,6 +854,167 @@ class TestLoadCheckpoint(unittest.TestCase):
             self.assertEqual(node.model.selection_method, BatchSelectionMethod.TOP_K_FROM_ARM)
             self.assertEqual(node.model.size_method, BatchSizeMethod.CONSTANT_VAL)
             self.assertEqual(node.model.prop_method, PropagationMethod.ON_RECEIPT)
+
+
+class TestWriteStatsRollingAndSnapshot(unittest.TestCase):
+    """Tests for write_stats() rolling-append + per-iteration snapshot (D-05, D-07)."""
+
+    def _make_node(self, tmp_path: Path):
+        from Infrastructure.main.node import RegionalNode
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = "TestCountry"
+        node.model = MagicMock()
+        node.model.save = MagicMock()
+        node.model.outfile = str(tmp_path / "TestCountry.csv")
+        node.episode_idx = 1
+        node.episode_stats = []
+        node.episode_all_stats = []
+        node.stat_df = None
+        return node
+
+    def test_first_call_writes_snapshot_and_creates_rolling_with_header(self):
+        """First write_stats call: snapshot file created AND rolling CSV created with header."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            # Caller has rotated rows into episode_all_stats (Task 3 invariant).
+            node.episode_all_stats = [
+                {"episode": 1, "time": 1, "reward": 0.5},
+                {"episode": 1, "time": 2, "reward": 0.7},
+            ]
+
+            node.write_stats()
+
+            rolling_path = tmp_path / "TestCountry.csv"
+            snapshot_path = tmp_path / "TestCountry_iter_001.csv"
+            self.assertTrue(rolling_path.exists(), "rolling CSV not created")
+            self.assertTrue(snapshot_path.exists(), "snapshot CSV not created")
+
+            rolling_df = pd.read_csv(rolling_path)
+            snapshot_df = pd.read_csv(snapshot_path)
+            self.assertEqual(len(rolling_df), 2)
+            self.assertEqual(len(snapshot_df), 2)
+            # Header present in rolling on first write
+            with open(rolling_path) as f:
+                first_line = f.readline()
+            self.assertIn("episode", first_line)
+
+    def test_second_call_appends_to_rolling_without_header(self):
+        """Second iteration: rolling CSV appended (no header rewritten); snapshot for iter_002 separate."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+
+            # First iteration write
+            node.episode_idx = 1
+            node.episode_all_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
+            node.write_stats()
+
+            # Second iteration write (caller bumped episode_idx and re-rotated rows)
+            node.episode_idx = 2
+            node.episode_all_stats = [
+                {"episode": 2, "time": 1, "reward": 0.6},
+                {"episode": 2, "time": 2, "reward": 0.8},
+            ]
+            node.write_stats()
+
+            rolling_path = tmp_path / "TestCountry.csv"
+            with open(rolling_path) as f:
+                lines = f.readlines()
+
+            # 1 header + 1 row from iter_001 + 2 rows from iter_002 = 4 lines
+            self.assertEqual(len(lines), 4)
+            # Header appears exactly once (first line). Subsequent lines must NOT contain "episode,time"
+            header_count = sum(
+                1 for line in lines if line.startswith("episode,")
+            )
+            self.assertEqual(header_count, 1, f"Expected 1 header line, got {header_count}")
+
+            # iter_002 snapshot exists and has only iter_002 rows
+            snapshot2 = tmp_path / "TestCountry_iter_002.csv"
+            self.assertTrue(snapshot2.exists())
+            snap_df = pd.read_csv(snapshot2)
+            self.assertEqual(len(snap_df), 2)
+
+    def test_per_iteration_snapshot_is_overwritten_not_appended(self):
+        """Calling write_stats twice with the same episode_idx overwrites the snapshot (no append)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_idx = 3
+
+            node.episode_all_stats = [{"episode": 3, "time": 1, "reward": 0.1}]
+            node.write_stats()
+
+            # Re-set rows (write_stats clears episode_all_stats post-write)
+            node.episode_all_stats = [{"episode": 3, "time": 1, "reward": 0.1}]
+            node.write_stats()
+
+            snapshot_path = tmp_path / "TestCountry_iter_003.csv"
+            snap_df = pd.read_csv(snapshot_path)
+            # Snapshot has only one row (overwrite, not append)
+            self.assertEqual(len(snap_df), 1)
+
+    def test_writes_use_episode_idx_in_snapshot_filename(self):
+        """episode_idx=7 → snapshot path ends with _iter_007.csv (zero-padded)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_idx = 7
+            node.episode_all_stats = [{"episode": 7, "time": 1, "reward": 0.0}]
+
+            node.write_stats()
+
+            snapshot_path = tmp_path / "TestCountry_iter_007.csv"
+            self.assertTrue(snapshot_path.exists(), f"Expected zero-padded snapshot at {snapshot_path}")
+
+    def test_model_save_called_once_per_invocation(self):
+        """write_stats must call self.model.save() exactly once per call."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_all_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
+
+            node.write_stats()
+
+            node.model.save.assert_called_once()
+
+    def test_no_rows_no_files_written(self):
+        """Empty episode_stats AND episode_all_stats: neither snapshot nor rolling CSV created."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            # Both buffers empty
+            node.episode_stats = []
+            node.episode_all_stats = []
+
+            node.write_stats()
+
+            rolling_path = tmp_path / "TestCountry.csv"
+            snapshot_path = tmp_path / "TestCountry_iter_001.csv"
+            self.assertFalse(rolling_path.exists(), "rolling CSV should not be created when no rows")
+            self.assertFalse(snapshot_path.exists(), "snapshot CSV should not be created when no rows")
+            # model.save still ran (writes action_space.csv side-table)
+            node.model.save.assert_called_once()
+
+    def test_clears_episode_all_stats_after_write(self):
+        """Post-condition: episode_all_stats == [] after write_stats returns."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_all_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
+
+            node.write_stats()
+
+            self.assertEqual(node.episode_all_stats, [])
 
 
 if __name__ == "__main__":
