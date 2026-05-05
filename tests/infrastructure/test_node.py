@@ -115,6 +115,7 @@ class TestWriteStatsNullSafe(unittest.TestCase):
         node.stat_df = None
         node.episode_stats = []
         node.episode_all_stats = []
+        node.episode_idx = 1
         return node
 
     def test_write_stats_no_crash_when_stat_df_none(self):
@@ -125,12 +126,17 @@ class TestWriteStatsNullSafe(unittest.TestCase):
         node.model.save.assert_called_once()
 
     def test_write_stats_flushes_partial_stats(self):
-        """write_stats() flushes episode_all_stats when stat_df is None."""
+        """write_stats() flushes episode_all_stats when stat_df is None.
+
+        Per Phase 02.1 D-05/D-07, write_stats now produces TWO files (per-iteration
+        snapshot + rolling-append CSV), so to_csv is called twice when there are rows.
+        """
         node = self._make_node()
         node.episode_all_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
         with patch.object(pd.DataFrame, 'to_csv') as mock_csv:
             node.write_stats()
-            mock_csv.assert_called_once()
+            # Two writes: per-iteration snapshot (overwrite) + rolling CSV (append)
+            self.assertEqual(mock_csv.call_count, 2)
 
 
 class TestSaveCheckpoint(unittest.TestCase):

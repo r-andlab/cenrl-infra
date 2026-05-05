@@ -126,14 +126,50 @@ class RegionalNode:
         )
 
     def write_stats(self):
+        """Write per-iteration snapshot CSV and append to rolling per-country CSV (D-05, D-07).
+
+        Caller (_finish_episode_if_ready) is responsible for rotating
+        episode_stats → episode_all_stats BEFORE invoking this method, so that
+        episode_all_stats holds all rows for the iteration about to be written.
+
+        Files written (per D-07):
+        - <country>.csv               (rolling; appended on each iteration; header on first write only)
+        - <country>_iter_NNN.csv      (immutable per-iteration snapshot; full overwrite each call)
+
+        After writing, episode_all_stats is cleared so the next iteration starts
+        with an empty rolling buffer and the rolling CSV is not double-appended.
+        """
         print(f"{self.country}: Episode Process {os.getpid()} - Saving stats and model")
         self.model.save()
+
+        # Legacy stat_df path: external test harnesses still set this directly. Preserve
+        # the original overwrite behavior for compatibility — D-05 only governs the
+        # episode_stats path used by the live infrastructure run.
         if self.stat_df is not None:
             self.stat_df.to_csv(self.model.outfile, index=False)
-        elif self.episode_all_stats or self.episode_stats:
-            all_stats = self.episode_all_stats + self.episode_stats
-            if all_stats:
-                pd.DataFrame(all_stats).to_csv(self.model.outfile, index=False)
+            return
+
+        rows = list(self.episode_all_stats) + list(self.episode_stats)
+        if not rows:
+            return
+
+        rolling_path = Path(self.model.outfile)
+        snapshot_path = rolling_path.with_name(
+            f"{rolling_path.stem}_iter_{self.episode_idx:03d}{rolling_path.suffix}"
+        )
+
+        # Per-iteration snapshot — full overwrite, immutable artifact.
+        pd.DataFrame(rows).to_csv(snapshot_path, index=False)
+
+        # Rolling per-country CSV — append-mode. Header on first write only.
+        header_needed = not rolling_path.exists()
+        pd.DataFrame(rows).to_csv(
+            rolling_path, mode="a", header=header_needed, index=False,
+        )
+
+        # Clear the rolled-over buffer so the next iteration's rotate-then-write
+        # sequence does not double-append rows we have already persisted.
+        self.episode_all_stats = []
         return
 
     def _write_sidecar(self, json_path: Path) -> None:
