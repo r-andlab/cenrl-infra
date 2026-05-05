@@ -27,6 +27,7 @@ class TestSoftReset(unittest.TestCase):
         node.model.current_epoch_num = 50
         node.state = NodeState.AWAITING_MEASUREMENTS
         node.in_flight = 3
+        node.episode_idx = 1
         node.episode_stats = [{"episode": 1, "time": 1}]
         return node
 
@@ -56,6 +57,13 @@ class TestSoftReset(unittest.TestCase):
         node = self._make_node()
         node.soft_reset()
         self.assertEqual(node.state, NodeState.IDLE)
+
+    def test_soft_reset_increments_episode_idx(self):
+        """soft_reset() bumps episode_idx by 1 (Phase 02.1 D-04 — per-country iteration counter)."""
+        node = self._make_node()
+        node.episode_idx = 5
+        node.soft_reset()
+        self.assertEqual(node.episode_idx, 6)
 
 
 class TestFinishEpisodeIdleNotDone(unittest.TestCase):
