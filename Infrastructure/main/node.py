@@ -433,10 +433,21 @@ class RegionalNode:
         return absorbed
 
     def _finish_episode_if_ready(self, save_stats: bool) -> Optional[pd.DataFrame]:
-        """If daily measurement quota reached and no in-flight, idle until reset.
+        """Per-country iteration boundary: when measurement quota is reached and no
+        in-flight measurements remain, persist outputs then soft-reset (Phase 02.1 D-02, D-03, D-08).
 
-        Under continuous operation (D-06/D-07), one calendar day = one episode.
-        Reaching the quota means idle-until-midnight, NOT termination.
+        Existing guards (preserved):
+        - in_flight != 0  → drain in-progress; return None and wait (D-03)
+        - current_epoch_num < measurements_per_episode → quota not yet hit; return None
+
+        On trigger (current_epoch_num >= measurements_per_episode AND in_flight == 0):
+        Strict ordering per D-08: write_stats(CSV) → save_iteration(state) → soft_reset().
+        Both saves MUST complete before soft_reset() zeroes current_epoch_num and clears
+        SLEEPING via wake_up_all_nodes() (Pitfall 4 from Phase 02 save_daily docstring).
+
+        Per-country fault isolation (Phase 02 D-04 invariant): each save is wrapped in
+        try/except so a failing save does not block the soft_reset path. Soft_reset
+        always runs.
         """
         if self.in_flight != 0:
             return None
@@ -444,16 +455,47 @@ class RegionalNode:
         if self.model.current_epoch_num < self.model.measurements_per_episode:
             return None
 
-        # Daily quota reached — idle until next midnight reset
         logger.info(
-            "%s: daily quota of %d measurements reached, idling until reset",
-            self.country, self.model.measurements_per_episode,
+            "%s: iteration %d quota of %d measurements reached, performing per-country reset",
+            self.country, self.episode_idx, self.model.measurements_per_episode,
         )
+
+        # Rotate this iteration's rows into the rolling buffer so write_stats sees them
+        # (D-05: rolling CSV append uses episode_all_stats; per-iteration snapshot uses
+        # the same rows).
         if self.episode_stats:
             self.episode_all_stats += self.episode_stats
             self.episode_stats = []
-        self.state = NodeState.IDLE
-        # Do NOT set NodeState.DONE — do NOT call model.reset()
+
+        # Resolve state_dir via the same convention as Orchestrator._state_dir_for —
+        # node has self.model.output_directory == "<output>/<country>/" already.
+        state_dir = Path(self.model.output_directory) / "state"
+
+        # Per-country fault isolation: D-04 invariant means a failed save MUST NOT
+        # prevent soft_reset from running for this country.
+        try:
+            self.write_stats()
+        except Exception as exc:
+            logger.error(
+                "%s: write_stats failed at iteration %d boundary: %s",
+                self.country, self.episode_idx, exc,
+            )
+
+        try:
+            self.save_iteration(self.episode_idx, state_dir)
+        except Exception as exc:
+            logger.error(
+                "%s: save_iteration failed at iteration %d: %s",
+                self.country, self.episode_idx, exc,
+            )
+
+        # Always soft-reset, even if a save raised. Soft_reset bumps episode_idx (D-04).
+        self.soft_reset()
+
+        # Plan 02.1-02 will add an orchestrator-side cleanup callback here
+        # (clears _inflight_times[country] and _last_delay_warn[country] per D-12).
+        # For now this plan stops at soft_reset(); the orchestrator wiring lives in 02.1-02.
+
         return None
 
     def maybe_update_model(
