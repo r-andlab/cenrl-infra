@@ -496,6 +496,149 @@ class TestSaveCheckpoint(unittest.TestCase):
                 self.fail(f"save_checkpoint should swallow exceptions, raised: {exc}")
 
 
+class TestSaveIteration(unittest.TestCase):
+    """Tests for RegionalNode.save_iteration() — covers Phase 02.1 D-06, D-07, D-08."""
+
+    def _make_node(self, tmp_path: Path):
+        from Infrastructure.main.node import RegionalNode
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = "TestCountry"
+        node.country_name_standard = "TestCountry"
+        node.model = MagicMock()
+        node.model.action_space = MagicMock()
+        node.model.action_space.checkpoint_save = MagicMock(return_value=True)
+        # Sidecar fields _write_sidecar reads
+        node.model.exploration_epoch_num = 10
+        node.model.current_epoch_num = 50
+        node.model.c = 1.0
+        node.model.step_size = 0.1
+        node.model.initial_value_estimate = 0.5
+        node.model.selection_method = BatchSelectionMethod.TOP_K_FROM_ARM
+        node.model.size_method = BatchSizeMethod.CONSTANT_VAL
+        node.model.prop_method = PropagationMethod.ON_RECEIPT
+        node.model.output_directory = str(tmp_path)
+        return node
+
+    def test_save_iteration_creates_iter_subdir(self):
+        """save_iteration creates <state_dir>/iterations/ if missing."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            # iterations subdir not created yet
+            self.assertFalse((state_dir / "iterations").exists())
+
+            node.save_iteration(1, state_dir)
+
+            self.assertTrue((state_dir / "iterations").is_dir())
+
+    def test_save_iteration_uses_zero_padded_filename(self):
+        """idx=7 → iter_007.{graphml,json}, not iter_7.{graphml,json}."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+
+            node.save_iteration(7, state_dir)
+
+            called_path = node.model.action_space.checkpoint_save.call_args[0][0]
+            self.assertTrue(
+                called_path.endswith("iter_007.graphml"),
+                f"Expected zero-padded iter_007.graphml, got {called_path}",
+            )
+            self.assertTrue((state_dir / "iterations" / "iter_007.json").exists())
+            # Confirm non-zero-padded variant does NOT exist
+            self.assertFalse((state_dir / "iterations" / "iter_7.json").exists())
+
+    def test_save_iteration_calls_checkpoint_save_not_action_space_save(self):
+        """save_iteration uses mutation-safe checkpoint_save, never action_space.save()."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            node.model.action_space.save = MagicMock()
+
+            node.save_iteration(3, state_dir)
+
+            node.model.action_space.checkpoint_save.assert_called_once()
+            node.model.action_space.save.assert_not_called()
+
+    def test_save_iteration_writes_json_sidecar(self):
+        """JSON sidecar at iterations/iter_NNN.json contains expected scalar keys."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+
+            node.save_iteration(2, state_dir)
+
+            json_path = state_dir / "iterations" / "iter_002.json"
+            self.assertTrue(json_path.exists())
+            data = json.loads(json_path.read_text())
+            self.assertEqual(data["exploration_epoch_num"], 10)
+            self.assertEqual(data["current_epoch_num"], 50)
+            self.assertEqual(data["c"], 1.0)
+            self.assertEqual(data["selection_method"], "TOP_K_FROM_ARM")
+            self.assertEqual(data["country_code"], "TestCountry")
+
+    def test_save_iteration_uses_atomic_json_write(self):
+        """JSON sidecar write goes through os.replace from a .tmp file (atomic)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+
+            with patch("Infrastructure.main.node.os.replace", wraps=os.replace) as mock_replace:
+                node.save_iteration(4, state_dir)
+
+            mock_replace.assert_called_once()
+            args = mock_replace.call_args[0]
+            self.assertTrue(args[0].endswith(".tmp"))
+            json_path = state_dir / "iterations" / "iter_004.json"
+            self.assertEqual(args[1], str(json_path))
+            # No leftover .tmp file
+            self.assertFalse((state_dir / "iterations" / "iter_004.json.tmp").exists())
+
+    def test_save_iteration_re_raises_on_checkpoint_failure(self):
+        """checkpoint_save raising → save_iteration logs and re-raises (caller handles)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.model.action_space.checkpoint_save = MagicMock(
+                side_effect=RuntimeError("disk full")
+            )
+            state_dir = tmp_path / "state"
+
+            with self.assertRaises(RuntimeError):
+                node.save_iteration(1, state_dir)
+
+    def test_save_iteration_overwrites_on_repeated_idx(self):
+        """Calling save_iteration twice with the same idx succeeds; second call overwrites."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+
+            node.save_iteration(3, state_dir)
+            # Mutate sidecar field so we can verify the second write overwrote
+            node.model.current_epoch_num = 999
+            node.save_iteration(3, state_dir)
+
+            json_path = state_dir / "iterations" / "iter_003.json"
+            data = json.loads(json_path.read_text())
+            self.assertEqual(data["current_epoch_num"], 999)
+            # No .tmp leftover from the second write either
+            self.assertFalse((state_dir / "iterations" / "iter_003.json.tmp").exists())
+
+
 class TestLoadCheckpoint(unittest.TestCase):
     """Tests for RegionalNode.load_checkpoint() — covers D-09, D-10, D-11, D-12."""
 
