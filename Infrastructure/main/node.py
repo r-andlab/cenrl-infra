@@ -200,6 +200,35 @@ class RegionalNode:
         except Exception as exc:
             logger.error("%s: save_daily failed: %s", self.country, exc)
 
+    def save_iteration(self, idx: int, state_dir: Path) -> None:
+        """Save per-iteration state snapshot under state/iterations/ (per Phase 02.1 D-06, D-07).
+
+        Must be called BEFORE soft_reset() — soft_reset() clears
+        current_epoch_num and SLEEPING attributes (Pitfall 4 / D-08).
+
+        Files written (under <state_dir>/iterations/):
+        - iter_NNN.graphml — action space snapshot for iteration NNN (zero-padded to 3 digits)
+        - iter_NNN.json    — JSON sidecar with UCB scalars + run config
+
+        Atomic writes via checkpoint_save (.tmp + os.replace) and _write_sidecar (.tmp + os.replace).
+        Per-country fault isolation is the caller's responsibility (try/except in
+        _finish_episode_if_ready); this method itself does not swallow exceptions.
+        """
+        iter_state_dir = state_dir / "iterations"
+        iter_state_dir.mkdir(parents=True, exist_ok=True)
+        graphml_path = iter_state_dir / f"iter_{idx:03d}.graphml"
+        json_path = iter_state_dir / f"iter_{idx:03d}.json"
+        try:
+            self.model.action_space.checkpoint_save(str(graphml_path))
+            self._write_sidecar(json_path)
+            logger.info(
+                "%s: iteration %d state saved to %s",
+                self.country, idx, iter_state_dir,
+            )
+        except Exception as exc:
+            logger.error("%s: save_iteration failed: %s", self.country, exc)
+            raise
+
     def load_checkpoint(self, state_dir: Path) -> bool:
         """Load saved state from state_dir and merge into the current action space.
 
@@ -292,15 +321,17 @@ class RegionalNode:
         return True
 
     def soft_reset(self) -> None:
-        """Daily soft reset: re-enable all sleeping targets, reset epoch counter.
-        Does NOT call model.reset() — Q-values and arm counts are preserved (D-03).
+        """Per-country iteration soft reset: re-enable all sleeping targets, reset epoch
+        counter, and bump the per-country iteration counter (Phase 02.1 D-04).
+        Does NOT call model.reset() — Q-values and arm counts are preserved (Phase 01 D-03).
         """
-        logger.info("%s: performing daily soft reset", self.country)
+        logger.info("%s: performing iteration soft reset (idx=%d)", self.country, self.episode_idx)
         self.model.action_space.wake_up_all_nodes()
         self.model.current_epoch_num = 0
         self.in_flight = 0
         self.state = NodeState.IDLE
         self.episode_stats = []
+        self.episode_idx += 1
 
     def _remaining_capacity(self) -> int:
         return max(self.batch_size - self.in_flight, 0)
