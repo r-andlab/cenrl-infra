@@ -500,5 +500,166 @@ class TestLoadCheckpoint(unittest.TestCase):
             self.assertEqual(node.model.prop_method, PropagationMethod.ON_RECEIPT)
 
 
+class TestWriteStatsRollingAndSnapshot(unittest.TestCase):
+    """Tests for write_stats() rolling-append + per-iteration snapshot (D-05, D-07)."""
+
+    def _make_node(self, tmp_path: Path):
+        from Infrastructure.main.node import RegionalNode
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = "TestCountry"
+        node.model = MagicMock()
+        node.model.save = MagicMock()
+        node.model.outfile = str(tmp_path / "TestCountry.csv")
+        node.episode_idx = 1
+        node.episode_stats = []
+        node.episode_all_stats = []
+        node.stat_df = None
+        return node
+
+    def test_first_call_writes_snapshot_and_creates_rolling_with_header(self):
+        """First write_stats call: snapshot file created AND rolling CSV created with header."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            # Caller has rotated rows into episode_all_stats (Task 3 invariant).
+            node.episode_all_stats = [
+                {"episode": 1, "time": 1, "reward": 0.5},
+                {"episode": 1, "time": 2, "reward": 0.7},
+            ]
+
+            node.write_stats()
+
+            rolling_path = tmp_path / "TestCountry.csv"
+            snapshot_path = tmp_path / "TestCountry_iter_001.csv"
+            self.assertTrue(rolling_path.exists(), "rolling CSV not created")
+            self.assertTrue(snapshot_path.exists(), "snapshot CSV not created")
+
+            rolling_df = pd.read_csv(rolling_path)
+            snapshot_df = pd.read_csv(snapshot_path)
+            self.assertEqual(len(rolling_df), 2)
+            self.assertEqual(len(snapshot_df), 2)
+            # Header present in rolling on first write
+            with open(rolling_path) as f:
+                first_line = f.readline()
+            self.assertIn("episode", first_line)
+
+    def test_second_call_appends_to_rolling_without_header(self):
+        """Second iteration: rolling CSV appended (no header rewritten); snapshot for iter_002 separate."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+
+            # First iteration write
+            node.episode_idx = 1
+            node.episode_all_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
+            node.write_stats()
+
+            # Second iteration write (caller bumped episode_idx and re-rotated rows)
+            node.episode_idx = 2
+            node.episode_all_stats = [
+                {"episode": 2, "time": 1, "reward": 0.6},
+                {"episode": 2, "time": 2, "reward": 0.8},
+            ]
+            node.write_stats()
+
+            rolling_path = tmp_path / "TestCountry.csv"
+            with open(rolling_path) as f:
+                lines = f.readlines()
+
+            # 1 header + 1 row from iter_001 + 2 rows from iter_002 = 4 lines
+            self.assertEqual(len(lines), 4)
+            # Header appears exactly once (first line). Subsequent lines must NOT contain "episode,time"
+            header_count = sum(
+                1 for line in lines if line.startswith("episode,")
+            )
+            self.assertEqual(header_count, 1, f"Expected 1 header line, got {header_count}")
+
+            # iter_002 snapshot exists and has only iter_002 rows
+            snapshot2 = tmp_path / "TestCountry_iter_002.csv"
+            self.assertTrue(snapshot2.exists())
+            snap_df = pd.read_csv(snapshot2)
+            self.assertEqual(len(snap_df), 2)
+
+    def test_per_iteration_snapshot_is_overwritten_not_appended(self):
+        """Calling write_stats twice with the same episode_idx overwrites the snapshot (no append)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_idx = 3
+
+            node.episode_all_stats = [{"episode": 3, "time": 1, "reward": 0.1}]
+            node.write_stats()
+
+            # Re-set rows (write_stats clears episode_all_stats post-write)
+            node.episode_all_stats = [{"episode": 3, "time": 1, "reward": 0.1}]
+            node.write_stats()
+
+            snapshot_path = tmp_path / "TestCountry_iter_003.csv"
+            snap_df = pd.read_csv(snapshot_path)
+            # Snapshot has only one row (overwrite, not append)
+            self.assertEqual(len(snap_df), 1)
+
+    def test_writes_use_episode_idx_in_snapshot_filename(self):
+        """episode_idx=7 → snapshot path ends with _iter_007.csv (zero-padded)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_idx = 7
+            node.episode_all_stats = [{"episode": 7, "time": 1, "reward": 0.0}]
+
+            node.write_stats()
+
+            snapshot_path = tmp_path / "TestCountry_iter_007.csv"
+            self.assertTrue(snapshot_path.exists(), f"Expected zero-padded snapshot at {snapshot_path}")
+
+    def test_model_save_called_once_per_invocation(self):
+        """write_stats must call self.model.save() exactly once per call."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_all_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
+
+            node.write_stats()
+
+            node.model.save.assert_called_once()
+
+    def test_no_rows_no_files_written(self):
+        """Empty episode_stats AND episode_all_stats: neither snapshot nor rolling CSV created."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            # Both buffers empty
+            node.episode_stats = []
+            node.episode_all_stats = []
+
+            node.write_stats()
+
+            rolling_path = tmp_path / "TestCountry.csv"
+            snapshot_path = tmp_path / "TestCountry_iter_001.csv"
+            self.assertFalse(rolling_path.exists(), "rolling CSV should not be created when no rows")
+            self.assertFalse(snapshot_path.exists(), "snapshot CSV should not be created when no rows")
+            # model.save still ran (writes action_space.csv side-table)
+            node.model.save.assert_called_once()
+
+    def test_clears_episode_all_stats_after_write(self):
+        """Post-condition: episode_all_stats == [] after write_stats returns."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_all_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
+
+            node.write_stats()
+
+            self.assertEqual(node.episode_all_stats, [])
+
+
 if __name__ == "__main__":
     unittest.main()
