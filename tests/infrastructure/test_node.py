@@ -59,17 +59,37 @@ class TestSoftReset(unittest.TestCase):
 
 
 class TestFinishEpisodeIdleNotDone(unittest.TestCase):
-    """Tests for _finish_episode_if_ready() -- covers D-06/D-07."""
+    """Tests for _finish_episode_if_ready() -- covers Phase 02.1 D-02 / D-03 / D-04 / D-08.
 
-    def _make_node(self):
+    Verifies the per-country reset flow: when quota reached AND in_flight == 0,
+    write_stats → save_iteration → soft_reset run in that order with per-country
+    fault isolation. Existing guards (in_flight > 0, sub-quota) remain intact.
+    """
+
+    def _make_node(self, tmp_path):
         from Infrastructure.main.node import RegionalNode
         with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
             node = RegionalNode.__new__(RegionalNode)
         node.country = "TestCountry"
+        node.country_name_standard = "TestCountry"
         node.model = MagicMock()
         node.model.measurements_per_episode = 100
         node.model.current_epoch_num = 100  # quota reached
         node.model.num_episodes = 1
+        node.model.output_directory = str(tmp_path)
+        node.model.outfile = str(tmp_path / "TestCountry.csv")
+        node.model.save = MagicMock()
+        node.model.action_space = MagicMock()
+        node.model.action_space.checkpoint_save = MagicMock()
+        node.model.action_space.wake_up_all_nodes = MagicMock()
+        # Sidecar fields _write_sidecar reads
+        node.model.exploration_epoch_num = 5
+        node.model.c = 1.0
+        node.model.step_size = 0.1
+        node.model.initial_value_estimate = 0.5
+        node.model.selection_method = BatchSelectionMethod.TOP_K_FROM_ARM
+        node.model.size_method = BatchSizeMethod.CONSTANT_VAL
+        node.model.prop_method = PropagationMethod.ON_RECEIPT
         node.state = NodeState.READY
         node.in_flight = 0
         node.episode_stats = [{"episode": 1, "time": 1}]
@@ -79,26 +99,205 @@ class TestFinishEpisodeIdleNotDone(unittest.TestCase):
         node.save_stats = True
         return node
 
+    def _wrap_with_call_tracker(self, node, calls):
+        """Wrap write_stats/save_iteration/soft_reset to record call order."""
+        orig_write = node.write_stats
+        orig_save = node.save_iteration
+        orig_soft = node.soft_reset
+
+        def tracked_write(*a, **kw):
+            calls.append("write_stats")
+            return orig_write(*a, **kw)
+
+        def tracked_save(*a, **kw):
+            calls.append("save_iteration")
+            return orig_save(*a, **kw)
+
+        def tracked_soft(*a, **kw):
+            calls.append("soft_reset")
+            return orig_soft(*a, **kw)
+
+        node.write_stats = MagicMock(side_effect=tracked_write)
+        node.save_iteration = MagicMock(side_effect=tracked_save)
+        node.soft_reset = MagicMock(side_effect=tracked_soft)
+
     def test_finish_episode_sets_idle_not_done(self):
-        """When quota is reached, state becomes IDLE not DONE."""
-        node = self._make_node()
-        node._finish_episode_if_ready(save_stats=True)
-        self.assertEqual(node.state, NodeState.IDLE)
-        self.assertNotEqual(node.state, NodeState.DONE)
+        """When quota is reached and in_flight == 0, the per-country reset fires:
+        write_stats → save_iteration → soft_reset, ending in NodeState.IDLE."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            self.assertEqual(node.state, NodeState.IDLE)
+            self.assertNotEqual(node.state, NodeState.DONE)
+            # All three were called exactly once, in the correct order.
+            self.assertEqual(calls, ["write_stats", "save_iteration", "soft_reset"])
 
     def test_finish_episode_does_not_call_reset(self):
-        """_finish_episode_if_ready must NOT call model.reset()."""
-        node = self._make_node()
-        node._finish_episode_if_ready(save_stats=True)
-        node.model.reset.assert_not_called()
+        """_finish_episode_if_ready must NOT call model.reset() (Q-values preserved per Phase 01 D-03)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._finish_episode_if_ready(save_stats=True)
+            node.model.reset.assert_not_called()
 
     def test_finish_episode_noop_when_inflight(self):
-        """Does nothing when in_flight > 0."""
-        node = self._make_node()
-        node.in_flight = 3
-        result = node._finish_episode_if_ready(save_stats=True)
-        self.assertIsNone(result)
-        self.assertEqual(node.state, NodeState.READY)  # unchanged
+        """Does nothing when in_flight > 0 (drain semantics, D-03)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.in_flight = 3
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            result = node._finish_episode_if_ready(save_stats=True)
+
+            self.assertIsNone(result)
+            self.assertEqual(node.state, NodeState.READY)  # unchanged
+            self.assertEqual(calls, [])
+
+    def test_per_country_reset_triggers_on_quota(self):
+        """When quota hit and in_flight == 0, all three methods fire in order; episode_idx increments 1→2."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            self.assertEqual(calls, ["write_stats", "save_iteration", "soft_reset"])
+            self.assertEqual(node.episode_idx, 2)
+
+    def test_inflight_blocks_reset(self):
+        """current_epoch_num >= measurements_per_episode but in_flight > 0 → no reset."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.in_flight = 5
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            result = node._finish_episode_if_ready(save_stats=True)
+
+            self.assertIsNone(result)
+            self.assertEqual(calls, [])
+
+    def test_subquota_does_not_trigger_reset(self):
+        """current_epoch_num < measurements_per_episode → no reset."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.model.current_epoch_num = 50  # below quota
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            result = node._finish_episode_if_ready(save_stats=True)
+
+            self.assertIsNone(result)
+            self.assertEqual(calls, [])
+
+    def test_save_failure_does_not_block_soft_reset(self):
+        """write_stats raising RuntimeError → save_iteration AND soft_reset still fire; no propagation."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.write_stats = MagicMock(side_effect=RuntimeError("disk full"))
+            node.save_iteration = MagicMock()
+            orig_soft = node.soft_reset
+            node.soft_reset = MagicMock(wraps=orig_soft)
+
+            try:
+                result = node._finish_episode_if_ready(save_stats=True)
+            except Exception as exc:
+                self.fail(f"_finish_episode_if_ready should swallow write_stats errors, raised: {exc}")
+
+            self.assertIsNone(result)
+            node.write_stats.assert_called_once()
+            node.save_iteration.assert_called_once()
+            node.soft_reset.assert_called_once()
+
+    def test_save_iteration_failure_does_not_block_soft_reset(self):
+        """save_iteration raising → soft_reset still fires; no propagation."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.save_iteration = MagicMock(side_effect=RuntimeError("graphml write failed"))
+            orig_soft = node.soft_reset
+            node.soft_reset = MagicMock(wraps=orig_soft)
+
+            try:
+                result = node._finish_episode_if_ready(save_stats=True)
+            except Exception as exc:
+                self.fail(f"_finish_episode_if_ready should swallow save_iteration errors, raised: {exc}")
+
+            self.assertIsNone(result)
+            node.save_iteration.assert_called_once()
+            node.soft_reset.assert_called_once()
+
+    def test_episode_stats_rotated_before_write_stats(self):
+        """Before write_stats is called, episode_stats must be moved into episode_all_stats."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
+            node.episode_all_stats = [{"episode": 0, "time": 1, "reward": 0.0}]
+            captured = {}
+
+            def fake_write_stats():
+                # Snapshot the buffer state at the moment write_stats is invoked.
+                captured["episode_all_stats"] = list(node.episode_all_stats)
+                captured["episode_stats"] = list(node.episode_stats)
+
+            node.write_stats = MagicMock(side_effect=fake_write_stats)
+            node.save_iteration = MagicMock()
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            # Both pre-existing rolled rows AND the just-completed iteration's rows are in episode_all_stats.
+            self.assertEqual(len(captured["episode_all_stats"]), 2)
+            self.assertEqual(captured["episode_stats"], [])
+
+    def test_state_dir_uses_output_directory_plus_state(self):
+        """save_iteration is called with state_dir == Path(output_directory) / 'state'."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.save_iteration = MagicMock()
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            args, _ = node.save_iteration.call_args
+            self.assertEqual(args[1], Path(tmp_path) / "state")
+
+    def test_save_iteration_receives_pre_increment_episode_idx(self):
+        """save_iteration gets idx=5 when going in at episode_idx=5; soft_reset bumps to 6 afterward."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_idx = 5
+            node.save_iteration = MagicMock()
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            args, _ = node.save_iteration.call_args
+            self.assertEqual(args[0], 5, "save_iteration must receive pre-increment episode_idx")
+            self.assertEqual(node.episode_idx, 6, "soft_reset must bump episode_idx after save_iteration")
 
 
 class TestWriteStatsNullSafe(unittest.TestCase):
