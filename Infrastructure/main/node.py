@@ -25,6 +25,7 @@ class RegionalNode:
         output_folder: str = None,
         batch_size: int = 10,
         action_space_folder: str = None,
+        on_reset: Optional[Callable[[str], None]] = None,
         **kwargs: Any,
     ):
         self.params = params.copy()
@@ -63,6 +64,9 @@ class RegionalNode:
         self.episode_idx = 1
         self.active_measurements: List[MeasurementResponse] = []
         self.stat_df = None
+        # Phase 02.1 D-12: optional orchestrator-side cleanup callback fired
+        # after each per-country soft_reset inside _finish_episode_if_ready.
+        self._on_reset: Optional[Callable[[str], None]] = on_reset
         self.initialize()
 
     def set_measurements_per_episode(self, num_data: int):
@@ -492,9 +496,18 @@ class RegionalNode:
         # Always soft-reset, even if a save raised. Soft_reset bumps episode_idx (D-04).
         self.soft_reset()
 
-        # Plan 02.1-02 will add an orchestrator-side cleanup callback here
-        # (clears _inflight_times[country] and _last_delay_warn[country] per D-12).
-        # For now this plan stops at soft_reset(); the orchestrator wiring lives in 02.1-02.
+        # Per-country cleanup callback (Phase 02.1 D-12). The orchestrator clears its
+        # _inflight_times[country] and _last_delay_warn[country] entries here so the
+        # next iteration starts with a clean delayed-result slate. Per-country fault
+        # isolation: callback errors are logged, not re-raised.
+        if self._on_reset is not None:
+            try:
+                self._on_reset(self.country)
+            except Exception as exc:
+                logger.error(
+                    "%s: on_reset callback failed: %s",
+                    self.country, exc,
+                )
 
         return None
 
