@@ -105,6 +105,7 @@ class TestFinishEpisodeIdleNotDone(unittest.TestCase):
         node.episode_idx = 1
         node.stat_df = None
         node.save_stats = True
+        node._on_reset = None  # Phase 02.1 D-12 — default no callback
         return node
 
     def _wrap_with_call_tracker(self, node, calls):
@@ -306,6 +307,46 @@ class TestFinishEpisodeIdleNotDone(unittest.TestCase):
             args, _ = node.save_iteration.call_args
             self.assertEqual(args[0], 5, "save_iteration must receive pre-increment episode_idx")
             self.assertEqual(node.episode_idx, 6, "soft_reset must bump episode_idx after save_iteration")
+
+    def test_on_reset_callback_fired_after_soft_reset(self):
+        """on_reset is invoked with country string after soft_reset, post-episode_idx-bump (D-04, D-12)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            captured = []
+
+            def cb(country):
+                # episode_idx already bumped by soft_reset
+                captured.append((country, node.episode_idx))
+
+            node._on_reset = cb
+            node.episode_idx = 3
+            node._finish_episode_if_ready(save_stats=True)
+            self.assertEqual(captured, [("TestCountry", 4)])
+
+    def test_on_reset_none_no_error(self):
+        """When _on_reset is None, _finish_episode_if_ready does not raise."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._on_reset = None
+            # Should not raise
+            result = node._finish_episode_if_ready(save_stats=True)
+            self.assertIsNone(result)
+
+    def test_on_reset_exception_swallowed(self):
+        """An exception in _on_reset is logged but does not propagate."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._on_reset = MagicMock(side_effect=RuntimeError("callback failed"))
+            # Must not raise
+            result = node._finish_episode_if_ready(save_stats=True)
+            self.assertIsNone(result)
+            node._on_reset.assert_called_once_with("TestCountry")
 
 
 class TestWriteStatsNullSafe(unittest.TestCase):
