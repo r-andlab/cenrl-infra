@@ -381,9 +381,10 @@ class Orchestrator:
         Clears ONLY this country's in-flight tracking entries — other countries'
         entries are untouched so they continue to drain, schedule, and progress
         their own iterations independently. This is the per-country counterpart
-        to the deleted _perform_soft_reset's global _inflight_times.clear() /
-        _last_delay_warn.clear() (which incorrectly cleared every country's
-        tracking on each midnight under the old semantics).
+        to the global ``_inflight_times.clear()`` / ``_last_delay_warn.clear()``
+        that the legacy Phase 02 midnight-reset path used to perform (which
+        incorrectly cleared every country's tracking on each midnight under the
+        old semantics).
         """
         self._inflight_times.pop(country, None)
         self._last_delay_warn.pop(country, None)

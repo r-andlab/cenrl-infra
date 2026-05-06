@@ -772,5 +772,54 @@ class TestPerCountryResetCallback(unittest.TestCase):
         self.assertIn("t2", orch._last_delay_warn["Russia"])
 
 
+class TestCrossCountryIndependence(unittest.TestCase):
+    """End-to-end invariant: per-country reset cadences do not couple (Phase 02.1 D-02, D-09, D-12)."""
+
+    def _make_orchestrator(self):
+        from Infrastructure.main.orchestrator import Orchestrator
+        with patch.object(Orchestrator, '__init__', lambda self, *a, **kw: None):
+            orch = Orchestrator.__new__(Orchestrator)
+        orch._inflight_times = defaultdict(dict)
+        orch._last_delay_warn = defaultdict(dict)
+        return orch
+
+    def test_two_countries_diverge_in_episode_idx_without_blocking(self):
+        """Simulate China hitting quota repeatedly while Russia drains slowly.
+
+        After several rounds of China hitting quota, China's episode_idx should
+        be > Russia's episode_idx, and Russia's _inflight_times should NOT have
+        been cleared by China's resets (which is what _on_country_reset prevents).
+        """
+        orch = self._make_orchestrator()
+
+        china_node = MagicMock()
+        china_node.country = "China"
+        china_node.episode_idx = 1
+
+        russia_node = MagicMock()
+        russia_node.country = "Russia"
+        russia_node.episode_idx = 1
+
+        orch.agents = {"China": china_node, "Russia": russia_node}
+        orch._inflight_times["China"]["t1"] = 1.0
+        orch._inflight_times["Russia"]["t10"] = 10.0
+        orch._last_delay_warn["Russia"]["t10"] = datetime.now(timezone.utc)
+
+        # China resets 4 times (simulating 4 iteration boundaries)
+        for _ in range(4):
+            china_node.episode_idx += 1
+            orch._on_country_reset("China")
+            # Re-add an inflight entry to simulate next iteration scheduling
+            orch._inflight_times["China"]["t1"] = 5.0
+
+        # China is on iteration 5; Russia still on iteration 1
+        self.assertEqual(china_node.episode_idx, 5)
+        self.assertEqual(russia_node.episode_idx, 1)
+
+        # Russia's tracking is undisturbed
+        self.assertEqual(orch._inflight_times["Russia"], {"t10": 10.0})
+        self.assertIn("t10", orch._last_delay_warn["Russia"])
+
+
 if __name__ == "__main__":
     unittest.main()
