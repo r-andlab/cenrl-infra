@@ -93,9 +93,10 @@ class Orchestrator:
 
         # Signal-based stop flag (D-05)
         self._stop_event = threading.Event()
-        # Wall-clock reset tracking (D-01)
+        # Wall-clock save tracking (Phase 02.1 D-09) — drives the daily
+        # save_daily cadence only. Per-country soft resets are now
+        # measurement-count-driven inside RegionalNode.
         self._next_reset_utc: datetime = self._compute_next_midnight()
-        self._draining: bool = False
         # Per-target last-warned timestamps for delayed-result throttling (D-09)
         self._last_delay_warn: Dict[str, Dict[str, float]] = defaultdict(dict)
         # Per-measurement schedule timestamps: country -> {target -> monotonic time}
@@ -205,10 +206,6 @@ class Orchestrator:
                 continue
 
             # Step 5: schedule new measurements across all active VPs
-            # Guard: skip scheduling while draining for midnight reset (D-02)
-            if self._draining:
-                continue
-
             active_vps = self.vantage_points.get_active(country)
             if not active_vps:
                 # No active VPs and no inactive replacements — region is dead
@@ -241,8 +238,6 @@ class Orchestrator:
                 self._inflight_times[country][t] = now
 
         for country in finished_nodes:
-            if self._draining:
-                continue  # defer removal until after soft reset (Pitfall 5)
             self.agents.pop(country, None)
             self.target_countries.discard(country)
 
@@ -256,15 +251,22 @@ class Orchestrator:
                 self._shutdown()
                 return
 
-            # Wall-clock daily reset check (D-01 / D-02)
+            # Wall-clock daily save check (Phase 02.1 D-09, D-10)
+            # Midnight ONLY fires save_daily — no draining, no soft_reset, no global in-flight clear.
+            # Per-country soft resets are now driven by measurement count inside RegionalNode.
             if datetime.now(timezone.utc) >= self._next_reset_utc:
-                if not self._draining:
-                    logger.info("Midnight UTC reached, entering drain-before-reset mode")
-                    self._draining = True
-                if self._all_nodes_drained():
-                    self._perform_soft_reset()
-                    self._next_reset_utc += timedelta(days=1)
-                    self._draining = False
+                date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+                logger.info(
+                    "Midnight UTC reached, saving daily snapshots for %d nodes (date: %s)",
+                    len(self.agents), date_str,
+                )
+                for country, node in self.agents.items():
+                    try:
+                        state_dir = self._state_dir_for(country)
+                        node.save_daily(date_str, state_dir)
+                    except Exception as exc:
+                        logger.error("Daily save failed for %s: %s", country, exc)
+                self._next_reset_utc += timedelta(days=1)
 
             # Delayed-result logger (D-09 / RUNT-05)
             self._check_delayed_results()
@@ -338,7 +340,7 @@ class Orchestrator:
         return True
 
     # ------------------------------------------------------------------
-    # wall-clock reset (D-01 / D-02 / D-03)
+    # wall-clock save (Phase 02.1 D-09)
     # ------------------------------------------------------------------
     @staticmethod
     def _compute_next_midnight() -> datetime:
@@ -347,12 +349,8 @@ class Orchestrator:
         today_midnight = datetime.combine(now.date(), dtime(0, 0, 0), tzinfo=timezone.utc)
         return today_midnight + timedelta(days=1)
 
-    def _all_nodes_drained(self) -> bool:
-        """Return True if all nodes have zero in-flight measurements."""
-        return all(node.in_flight == 0 for node in self.agents.values())
-
     # ------------------------------------------------------------------
-    # state persistence (D-01, D-02, D-04)
+    # state persistence (D-01, D-02, D-04 + Phase 02.1 D-12)
     # ------------------------------------------------------------------
     def _state_dir_for(self, country: str) -> Path:
         """Return the state subdirectory for a country's checkpoint files.
@@ -376,28 +374,21 @@ class Orchestrator:
             except Exception as exc:
                 logger.error("Checkpoint failed for %s: %s", country, exc)
 
-    def _perform_soft_reset(self) -> None:
-        """Save date-stamped daily state for every node, then call soft_reset() (D-01).
+    def _on_country_reset(self, country: str) -> None:
+        """Per-country cleanup callback fired by RegionalNode after a per-iteration
+        soft reset (Phase 02.1 D-12).
 
-        save_daily() MUST run BEFORE soft_reset() — soft_reset() zeroes
-        current_epoch_num and clears SLEEPING via wake_up_all_nodes() (Pitfall 4).
-        Per-node try/except around save_daily() ensures one bad save does not
-        block soft_reset() for other countries (T-02-07 mitigation).
+        Clears ONLY this country's in-flight tracking entries — other countries'
+        entries are untouched so they continue to drain, schedule, and progress
+        their own iterations independently. This is the per-country counterpart
+        to the global ``_inflight_times.clear()`` / ``_last_delay_warn.clear()``
+        that the legacy Phase 02 midnight-reset path used to perform (which
+        incorrectly cleared every country's tracking on each midnight under the
+        old semantics).
         """
-        date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-        logger.info(
-            "Performing daily soft reset for %d nodes (date: %s)",
-            len(self.agents), date_str,
-        )
-        for country, node in self.agents.items():
-            try:
-                state_dir = self._state_dir_for(country)
-                node.save_daily(date_str, state_dir)
-            except Exception as exc:
-                logger.error("Daily save failed for %s: %s", country, exc)
-            node.soft_reset()
-        self._inflight_times.clear()
-        self._last_delay_warn.clear()
+        self._inflight_times.pop(country, None)
+        self._last_delay_warn.pop(country, None)
+        logger.debug("%s: cleared in-flight tracking after iteration reset", country)
 
     # ------------------------------------------------------------------
     # delayed-result logger (D-09 / RUNT-05)
@@ -522,7 +513,8 @@ class Orchestrator:
                         model_klass=BatchUCB,
                         output_folder=self.output_folder,
                         action_space_folder=self.previous_values_folder,
-                        batch_size=5
+                        batch_size=5,
+                        on_reset=self._on_country_reset,
                     )
                 # NOTE: aggregator expected VPs are updated at scheduling
                 # time, not here, to avoid snapshot mismatches with

@@ -22,7 +22,6 @@ class TestRunForeverLoopCondition(unittest.TestCase):
         orch.agents = {}
         orch._stop_event = threading.Event()
         orch._next_reset_utc = datetime.now(timezone.utc) + timedelta(days=1)
-        orch._draining = False
         orch._last_delay_warn = defaultdict(dict)
         orch._inflight_times = {}
         orch._last_checkpoint_time = time.monotonic()
@@ -53,7 +52,12 @@ class TestRunForeverLoopCondition(unittest.TestCase):
 
 
 class TestDailyResetTrigger(unittest.TestCase):
-    """Verify wall-clock reset fires at midnight UTC -- covers RUNT-02/D-01/D-02."""
+    """Verify midnight UTC trigger fires save_daily ONLY -- Phase 02.1 D-09 / D-10.
+
+    Under Phase 02.1, midnight no longer drains or calls soft_reset. Per-country
+    soft resets are measurement-count-driven inside RegionalNode. This class
+    verifies the gutted save-only handler in run_forever().
+    """
 
     def _make_orchestrator(self):
         from Infrastructure.main.orchestrator import Orchestrator
@@ -62,7 +66,6 @@ class TestDailyResetTrigger(unittest.TestCase):
         import threading
         orch.agents = {}
         orch._stop_event = threading.Event()
-        orch._draining = False
         orch._last_delay_warn = defaultdict(dict)
         orch._inflight_times = {}
         orch._last_checkpoint_time = time.monotonic()
@@ -73,55 +76,40 @@ class TestDailyResetTrigger(unittest.TestCase):
         orch.target_countries = set()
         return orch
 
-    def test_daily_reset_triggers(self):
-        """When now >= _next_reset_utc and all nodes drained, soft reset fires."""
+    def test_midnight_triggers_save_daily_only(self):
+        """At midnight UTC, run_forever fires save_daily for each node and advances
+        _next_reset_utc by 1 day. soft_reset is NOT called -- that is per-country
+        and measurement-count-driven (Phase 02.1 D-09)."""
         orch = self._make_orchestrator()
-        # Set next_reset to the past so it triggers immediately
-        orch._next_reset_utc = datetime.now(timezone.utc) - timedelta(hours=1)
-
         node = MagicMock()
-        node.in_flight = 0
-        node.soft_reset = MagicMock()
-        orch.agents = {"US": node}
+        orch.agents = {"China": node}
+        # Force midnight to be in the past so the handler fires
+        before = datetime.now(timezone.utc) - timedelta(seconds=1)
+        orch._next_reset_utc = before
+        # Stub helpers that the run_forever loop relies on
+        orch._state_dir_for = MagicMock(return_value=Path("/tmp/state"))
+        orch._subprocess_healthy = MagicMock(return_value=True)
+        orch.tick = MagicMock()
+        orch._check_delayed_results = MagicMock()
+        orch._checkpoint_all_nodes = MagicMock()
 
-        tick_count = 0
-        def stop_after_one():
-            nonlocal tick_count
-            tick_count += 1
-            if tick_count >= 1:
-                orch._stop_event.set()
-
-        orch.tick = stop_after_one
+        # Stop after one iteration
+        def stop_after_first(*a, **kw):
+            orch._stop_event.set()
+        orch.tick.side_effect = stop_after_first
         orch._install_signal_handlers = MagicMock()
         orch._shutdown = MagicMock()
 
         orch.run_forever()
-        node.soft_reset.assert_called_once()
 
-    def test_drain_before_reset(self):
-        """When midnight passes but nodes have in-flight, draining is set and no reset yet."""
-        orch = self._make_orchestrator()
-        orch._next_reset_utc = datetime.now(timezone.utc) - timedelta(hours=1)
-
-        node = MagicMock()
-        node.in_flight = 5  # still has in-flight
-        node.soft_reset = MagicMock()
-        orch.agents = {"US": node}
-
-        tick_count = 0
-        def stop_after_one():
-            nonlocal tick_count
-            tick_count += 1
-            if tick_count >= 1:
-                orch._stop_event.set()
-
-        orch.tick = stop_after_one
-        orch._install_signal_handlers = MagicMock()
-        orch._shutdown = MagicMock()
-
-        orch.run_forever()
-        self.assertTrue(orch._draining)
+        node.save_daily.assert_called_once()
+        args = node.save_daily.call_args[0]
+        self.assertRegex(args[0], r"^\d{4}-\d{2}-\d{2}$")
+        # state_dir is the second positional arg
+        self.assertEqual(args[1], Path("/tmp/state"))
         node.soft_reset.assert_not_called()
+        # _next_reset_utc advanced by exactly 1 day from the original
+        self.assertEqual(orch._next_reset_utc, before + timedelta(days=1))
 
 
 class TestSignalShutdown(unittest.TestCase):
@@ -135,7 +123,6 @@ class TestSignalShutdown(unittest.TestCase):
         import threading
         orch._stop_event = threading.Event()
         orch._next_reset_utc = datetime.now(timezone.utc) + timedelta(days=1)
-        orch._draining = False
         orch._last_delay_warn = defaultdict(dict)
         orch._inflight_times = {}
         orch.api = MagicMock()
@@ -240,7 +227,6 @@ class _OrchestratorTestHelper:
         orch.agents = {}
         orch._stop_event = threading.Event()
         orch._next_reset_utc = datetime.now(timezone.utc) + timedelta(days=1)
-        orch._draining = False
         orch._last_delay_warn = defaultdict(dict)
         orch._inflight_times = defaultdict(dict)
         orch._vp_failure_counts = defaultdict(int)
@@ -276,20 +262,6 @@ class TestRegisterTargetsWiring(unittest.TestCase):
         )
         # update_aggregator_vps should NOT be called
         orch.api.update_aggregator_vps.assert_not_called()
-
-    def test_tick_skips_scheduling_when_draining(self):
-        """When draining, tick() should not call register_targets."""
-        orch = _OrchestratorTestHelper.make_orchestrator()
-        orch._draining = True
-        node = MagicMock()
-        node.state = NodeState.IDLE
-        orch.agents = {"US": node}
-        orch.target_countries = {"US"}
-
-        orch.tick()
-
-        orch.api.aggregator.register_targets.assert_not_called()
-
 
 class TestVPRemovalOnEvalFailure(unittest.TestCase):
     """Verify _process_eval_results calls remove_vantage_points with failed VPs."""
@@ -570,7 +542,6 @@ class TestHourlyCheckpointTimer(unittest.TestCase):
         orch.agents = {}
         orch._stop_event = threading.Event()
         orch._next_reset_utc = datetime.now(timezone.utc) + timedelta(days=1)
-        orch._draining = False
         orch._last_delay_warn = defaultdict(dict)
         orch._inflight_times = {}
         orch._checkpoint_interval = 3600.0
@@ -659,68 +630,195 @@ class TestShutdownSavesCheckpoint(unittest.TestCase):
         good.save_checkpoint.assert_called_once_with(Path("/tmp/out/Good/state"))
 
 
-class TestDailySaveBeforeReset(unittest.TestCase):
-    """Pitfall 4: save_daily MUST be called BEFORE soft_reset on each node."""
+class TestMidnightSaveDailyLoop(unittest.TestCase):
+    """Phase 02.1 D-09 / D-10: midnight handler in run_forever calls save_daily for
+    every active node, advances _next_reset_utc by 1 day, and NEVER calls soft_reset.
 
-    def _orch_with_one_agent(self):
+    This class replaces the legacy TestDailySaveBeforeReset which tested the now-removed
+    Orchestrator._perform_soft_reset method. Save-before-reset ordering no longer applies
+    at midnight because midnight does not trigger soft_reset under Phase 02.1.
+    """
+
+    def _orch_with_agents(self, agents):
         orch = _OrchestratorTestHelper.make_orchestrator()
         orch.output_folder = "/tmp/out"
         orch._last_checkpoint_time = time.monotonic()
         orch._checkpoint_interval = 3600.0
+        orch.agents = agents
+        # Force midnight handler to fire on first iteration
+        orch._next_reset_utc = datetime.now(timezone.utc) - timedelta(seconds=1)
+        orch._subprocess_healthy = MagicMock(return_value=True)
+        orch._check_delayed_results = MagicMock()
+        orch._checkpoint_all_nodes = MagicMock()
+        orch._install_signal_handlers = MagicMock()
+        orch._shutdown = MagicMock()
+        orch.tick = MagicMock(side_effect=lambda *a, **kw: orch._stop_event.set())
         return orch
 
-    def test_save_daily_called_before_soft_reset(self):
-        orch = self._orch_with_one_agent()
+    def test_midnight_calls_save_daily_for_each_node(self):
+        """Each active node receives one save_daily call with (date_str, state_dir)."""
+        node_de = MagicMock()
+        node_us = MagicMock()
+        orch = self._orch_with_agents({"Germany": node_de, "United States": node_us})
+
+        orch.run_forever()
+
+        node_de.save_daily.assert_called_once()
+        node_us.save_daily.assert_called_once()
+        # state_dir must be the per-country path
+        de_args = node_de.save_daily.call_args[0]
+        us_args = node_us.save_daily.call_args[0]
+        self.assertEqual(de_args[1], Path("/tmp/out/Germany/state"))
+        self.assertEqual(us_args[1], Path("/tmp/out/United_States/state"))
+
+    def test_midnight_save_daily_uses_utc_date_string(self):
+        """date_str must parse as today's UTC date in YYYY-MM-DD form."""
         node = MagicMock()
-        orch.agents = {"Germany": node}
+        orch = self._orch_with_agents({"Germany": node})
 
-        orch._perform_soft_reset()
+        orch.run_forever()
 
-        method_names = [c[0] for c in node.method_calls]
-        save_idx = method_names.index("save_daily")
-        reset_idx = method_names.index("soft_reset")
-        self.assertLess(save_idx, reset_idx,
-                        "save_daily must be called before soft_reset (Pitfall 4)")
-
-    def test_save_daily_receives_utc_date_string(self):
-        """date_str should match the datetime.now(timezone.utc) %Y-%m-%d format."""
-        orch = self._orch_with_one_agent()
-        node = MagicMock()
-        orch.agents = {"Germany": node}
-
-        orch._perform_soft_reset()
-
-        # Inspect the first positional arg passed to save_daily.
-        args, _kwargs = node.save_daily.call_args
+        args = node.save_daily.call_args[0]
         date_str = args[0]
-        # Must parse as YYYY-MM-DD and equal today's UTC date.
         parsed = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
         today_utc = datetime.now(timezone.utc).date()
         self.assertEqual(parsed.date(), today_utc)
 
-    def test_save_daily_receives_state_dir_path(self):
-        orch = self._orch_with_one_agent()
+    def test_midnight_does_not_call_soft_reset(self):
+        """soft_reset must NOT be called at midnight (Phase 02.1 D-09)."""
         node = MagicMock()
-        orch.agents = {"United States": node}
+        orch = self._orch_with_agents({"Germany": node})
 
-        orch._perform_soft_reset()
+        orch.run_forever()
 
-        args, _kwargs = node.save_daily.call_args
-        state_dir = args[1]
-        self.assertEqual(state_dir, Path("/tmp/out/United_States/state"))
+        node.soft_reset.assert_not_called()
 
-    def test_soft_reset_runs_even_when_save_daily_raises(self):
-        """T-02-07: a failing daily save must NOT block soft_reset for other nodes."""
-        orch = self._orch_with_one_agent()
+    def test_midnight_continues_when_save_daily_raises(self):
+        """T-02.1-04: a failing save_daily must NOT block other nodes' saves."""
         bad = MagicMock()
         bad.save_daily.side_effect = OSError("disk full")
-        orch.agents = {"Germany": bad}
+        good = MagicMock()
+        # Iteration order matters: bad first, then good.
+        orch = self._orch_with_agents({"Bad": bad, "Good": good})
 
         with self.assertLogs(level=logging.ERROR):
-            orch._perform_soft_reset()
+            orch.run_forever()
 
-        # soft_reset must still have been called on the bad node.
-        bad.soft_reset.assert_called_once()
+        bad.save_daily.assert_called_once()
+        good.save_daily.assert_called_once()
+
+
+class TestPerCountryResetCallback(unittest.TestCase):
+    """Tests for Orchestrator._on_country_reset (Phase 02.1 D-12)."""
+
+    def _make_orchestrator(self):
+        from Infrastructure.main.orchestrator import Orchestrator
+        with patch.object(Orchestrator, '__init__', lambda self, *a, **kw: None):
+            orch = Orchestrator.__new__(Orchestrator)
+        from collections import defaultdict
+        orch._inflight_times = defaultdict(dict)
+        orch._last_delay_warn = defaultdict(dict)
+        return orch
+
+    def test_clears_only_target_country_inflight_times(self):
+        """_on_country_reset('China') clears China inflight_times only -- Russia stays."""
+        orch = self._make_orchestrator()
+        orch._inflight_times["China"]["target1"] = 100.0
+        orch._inflight_times["Russia"]["target2"] = 200.0
+
+        orch._on_country_reset("China")
+
+        self.assertNotIn("China", orch._inflight_times)
+        self.assertIn("Russia", orch._inflight_times)
+        self.assertEqual(orch._inflight_times["Russia"]["target2"], 200.0)
+
+    def test_clears_only_target_country_last_delay_warn(self):
+        """_on_country_reset('China') clears China last_delay_warn only -- Russia stays."""
+        orch = self._make_orchestrator()
+        now = datetime.now(timezone.utc)
+        orch._last_delay_warn["China"]["target1"] = now
+        orch._last_delay_warn["Russia"]["target2"] = now
+
+        orch._on_country_reset("China")
+
+        self.assertNotIn("China", orch._last_delay_warn)
+        self.assertIn("Russia", orch._last_delay_warn)
+
+    def test_unknown_country_no_error(self):
+        """_on_country_reset on a country with no entries does not raise."""
+        orch = self._make_orchestrator()
+        try:
+            orch._on_country_reset("NonExistent")
+        except Exception as exc:
+            self.fail(f"_on_country_reset must not raise on unknown country, got: {exc}")
+
+    def test_clearing_one_country_independence(self):
+        """Two countries on different iterations: clearing China leaves Russia entries untouched.
+
+        Direct invariant from CONTEXT.md: 'one country could be on its fifth iteration while
+        another is on the second' -- both inflight tracking dicts and last_delay_warn dicts
+        remain country-isolated.
+        """
+        orch = self._make_orchestrator()
+        orch._inflight_times["China"]["t1"] = 1.0
+        orch._inflight_times["Russia"]["t2"] = 2.0
+        orch._inflight_times["Russia"]["t3"] = 3.0
+        orch._last_delay_warn["Russia"]["t2"] = datetime.now(timezone.utc)
+
+        orch._on_country_reset("China")
+
+        # Russia full state preserved
+        self.assertEqual(orch._inflight_times["Russia"], {"t2": 2.0, "t3": 3.0})
+        self.assertIn("t2", orch._last_delay_warn["Russia"])
+
+
+class TestCrossCountryIndependence(unittest.TestCase):
+    """End-to-end invariant: per-country reset cadences do not couple (Phase 02.1 D-02, D-09, D-12)."""
+
+    def _make_orchestrator(self):
+        from Infrastructure.main.orchestrator import Orchestrator
+        with patch.object(Orchestrator, '__init__', lambda self, *a, **kw: None):
+            orch = Orchestrator.__new__(Orchestrator)
+        orch._inflight_times = defaultdict(dict)
+        orch._last_delay_warn = defaultdict(dict)
+        return orch
+
+    def test_two_countries_diverge_in_episode_idx_without_blocking(self):
+        """Simulate China hitting quota repeatedly while Russia drains slowly.
+
+        After several rounds of China hitting quota, China's episode_idx should
+        be > Russia's episode_idx, and Russia's _inflight_times should NOT have
+        been cleared by China's resets (which is what _on_country_reset prevents).
+        """
+        orch = self._make_orchestrator()
+
+        china_node = MagicMock()
+        china_node.country = "China"
+        china_node.episode_idx = 1
+
+        russia_node = MagicMock()
+        russia_node.country = "Russia"
+        russia_node.episode_idx = 1
+
+        orch.agents = {"China": china_node, "Russia": russia_node}
+        orch._inflight_times["China"]["t1"] = 1.0
+        orch._inflight_times["Russia"]["t10"] = 10.0
+        orch._last_delay_warn["Russia"]["t10"] = datetime.now(timezone.utc)
+
+        # China resets 4 times (simulating 4 iteration boundaries)
+        for _ in range(4):
+            china_node.episode_idx += 1
+            orch._on_country_reset("China")
+            # Re-add an inflight entry to simulate next iteration scheduling
+            orch._inflight_times["China"]["t1"] = 5.0
+
+        # China is on iteration 5; Russia still on iteration 1
+        self.assertEqual(china_node.episode_idx, 5)
+        self.assertEqual(russia_node.episode_idx, 1)
+
+        # Russia's tracking is undisturbed
+        self.assertEqual(orch._inflight_times["Russia"], {"t10": 10.0})
+        self.assertIn("t10", orch._last_delay_warn["Russia"])
 
 
 if __name__ == "__main__":
