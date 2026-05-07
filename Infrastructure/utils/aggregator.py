@@ -34,6 +34,9 @@ class MeasurementAggregator:
         self._expected_vps: Dict[str, Set[str]] = {}
         # country -> list of completed MeasurementResponse
         self._ready: Dict[str, List[MeasurementResponse]] = defaultdict(list)
+        # (country, target) -> monotonic time captured at register_targets() call.
+        # Drained in _try_finalize so finalized MeasurementResponse can carry latency source. (Phase 3 D-04)
+        self._schedule_times: Dict[Tuple, float] = {}
 
     def set_expected_vps(self, country: str, vps: Set[str]) -> None:
         """Update the set of VPs whose responses are required for *future*
@@ -42,16 +45,25 @@ class MeasurementAggregator:
         with self._lock:
             self._expected_vps[country] = set(vps)
 
-    def register_targets(self, country: str, targets: List[str], vps: Set[str]) -> None:
+    def register_targets(
+        self, country: str, targets: List[str], vps: Set[str],
+        schedule_times: Dict[str, float] | None = None,
+    ) -> None:
         """Snapshot expected VPs for each target at scheduling time (D-02).
 
         Must be called BEFORE schedule_measurements() with the same VP set.
+
+        If ``schedule_times`` is provided (Phase 3 D-04), each target's monotonic
+        schedule timestamp is recorded so the finalized ``MeasurementResponse``
+        can carry it through to downstream consumers (latency_ms derivation).
         """
         with self._lock:
             snapshot = frozenset(vps)
             for target in targets:
                 key = (country, target)
                 self._target_expected[key] = snapshot
+                if schedule_times is not None and target in schedule_times:
+                    self._schedule_times[key] = schedule_times[target]
             # Keep _expected_vps updated for drop_vp() compatibility
             self._expected_vps[country] = set(vps)
 
@@ -104,8 +116,16 @@ class MeasurementAggregator:
 
         votes = [vp_map[v] for v in expected]
         majority_blocked = sum(votes) > len(votes) / 2
+        # Phase 3 D-04: pop the schedule timestamp so the response carries it
+        # and the dict does not accumulate orphan entries.
+        sched_mono = self._schedule_times.pop(key, None)
         self._ready[key[0]].append(
-            MeasurementResponse(target=key[1], blocked=majority_blocked)
+            MeasurementResponse(
+                target=key[1],
+                blocked=majority_blocked,
+                scheduled_at_monotonic=sched_mono,
+                vp_count=len(votes),
+            )
         )
         del self._pending[key]
         del self._target_expected[key]
