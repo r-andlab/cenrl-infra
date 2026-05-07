@@ -812,19 +812,26 @@ class OrchestrationParser(UCBNaiveParserOptions):
 if __name__ == "__main__":
     parser = OrchestrationParser()
     params = parser.parse()
-    vp_pool = VantagePoints(
-        ev_file="local/ev-certs.csv",
-        vp_pool_file="local/vp_pool.csv",
-        blocklist_file="local/blocklist.txt",
-        max_countries=15,
-        blocked_countries=[],
-    )
+
+    # Phase 3 D-13: vp_pool_inputs group of run_config.json. Built from the
+    # same literals consumed by VantagePoints below so the snapshot is the
+    # single source of truth for run reproducibility.
+    vp_pool_config = {
+        "ev_file":           "local/ev-certs.csv",
+        "vp_pool_file":      "local/vp_pool.csv",
+        "blocklist_file":    "local/blocklist.txt",
+        "max_countries":     15,
+        "blocked_countries": [],
+    }
+    vp_pool = VantagePoints(**vp_pool_config)
+
     m = Orchestrator(
         params=params,
         vantage_points=vp_pool,
         go_api_endpoint="http://127.0.0.1:8888",
         services=["https"],
         vps_per_country=3,
+        vp_pool_config=vp_pool_config,
     )
     m.run_forever()
     # python3 Infrastructure/main/orchestrator.py -E 1 -m 1000 -v -f "categories" -a inputs/tranco/tranco_categories_subdomain_tld_entities_top10k.csv -f "categories" -s 0.0 -c 0.03 -V 0.0 -o outputs/outtest
