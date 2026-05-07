@@ -166,25 +166,37 @@ class Orchestrator:
     # ------------------------------------------------------------------
     # main loop
     # ------------------------------------------------------------------
-    def tick(self) -> None:
+    def tick(self) -> Dict[str, float]:
+        t0 = time.perf_counter()
+
         # Step 0: move payloads from the server process into local stores
         self.api.receiver.drain_queues()
+        t1 = time.perf_counter()
 
         # Step 1: process VP evaluation results
         self._process_eval_results()
+        t2 = time.perf_counter()
+
+        # Per-country sub-step accumulators (Phase 3 D-07: summed across countries).
+        agg_time = 0.0
+        model_update_time = 0.0
+        schedule_time = 0.0
 
         finished_nodes: List[str] = []
 
         for country, node in self.agents.items():
             # Step 2: drain raw results, check VP health, aggregate
+            _s2 = time.perf_counter()
             raw_results = self.api.drain_raw_results(country)
             if raw_results:
                 dropped_vps = self._check_vp_health(country, raw_results)
                 if dropped_vps:
                     raw_results = [r for r in raw_results if r.vp not in dropped_vps]
                 self._feed_aggregator(country, raw_results)
+            agg_time += time.perf_counter() - _s2
 
             # Step 3: deliver aggregated results to the node
+            _s3 = time.perf_counter()
             aggregated = self.api.aggregator.get_ready(country)
             if aggregated:
                 node.maybe_update_model(aggregated)
@@ -194,8 +206,9 @@ class Orchestrator:
                 logger.info(
                     f"{country} received {len(aggregated)} results: {[r.target for r in aggregated]}"
                     )
+            model_update_time += time.perf_counter() - _s3
 
-            # Step 4: check for completion
+            # Step 4: check for completion (NO timing column per D-08)
             if node.state is NodeState.DONE:
                 logger.info(
                     "%s completed %d episodes, finished.",
@@ -206,6 +219,7 @@ class Orchestrator:
                 continue
 
             # Step 5: schedule new measurements across all active VPs
+            _s5 = time.perf_counter()
             active_vps = self.vantage_points.get_active(country)
             if not active_vps:
                 # No active VPs and no inactive replacements — region is dead
@@ -215,10 +229,12 @@ class Orchestrator:
                         country,
                     )
                     finished_nodes.append(country)
+                schedule_time += time.perf_counter() - _s5
                 continue
 
             targets = node.maybe_request_more()
             if not targets:
+                schedule_time += time.perf_counter() - _s5
                 continue
             logger.info(
                 f"{country} requesting {len(targets)} measurements: {targets}"
@@ -242,10 +258,21 @@ class Orchestrator:
             )
             for t in targets:
                 self._inflight_times[country][t] = now
+            schedule_time += time.perf_counter() - _s5
 
         for country in finished_nodes:
             self.agents.pop(country, None)
             self.target_countries.discard(country)
+
+        t_end = time.perf_counter()
+        return {
+            "drain":           round(t1 - t0, 6),
+            "eval_processing": round(t2 - t1, 6),
+            "aggregate":       round(agg_time, 6),
+            "model_update":    round(model_update_time, 6),
+            "schedule":        round(schedule_time, 6),
+            "total":           round(t_end - t0, 6),
+        }
 
     def run_forever(self) -> None:
         self._install_signal_handlers()
