@@ -500,7 +500,7 @@ class Orchestrator:
                 logger.warning("Received eval for unknown VP %s, ignoring", vp)
                 continue
 
-            if payload.template is not None:
+            if payload.issue is None and payload.template is not None:
                 # VP is good — keep it active
                 self.vantage_points.confirm_active(country, vp)
                 logger.info("VP %s confirmed OK for %s", vp, country)
