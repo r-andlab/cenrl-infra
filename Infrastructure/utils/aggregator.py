@@ -56,11 +56,28 @@ class MeasurementAggregator:
         If ``schedule_times`` is provided (Phase 3 D-04), each target's monotonic
         schedule timestamp is recorded so the finalized ``MeasurementResponse``
         can carry it through to downstream consumers (latency_ms derivation).
+
+        WR-06 fix: re-registering an already-registered ``(country, target)``
+        is rejected with a warning. Without this guard, a re-registration
+        would overwrite ``_target_expected[key]`` and ``_schedule_times[key]``
+        while ``_pending[key]`` retained votes from the prior attempt — which
+        could finalize the new attempt early against stale votes, or report
+        a near-zero ``latency_ms`` that does not reflect the original schedule.
+        Targets in ``targets`` that are NOT yet registered are still registered
+        normally; only the duplicates are skipped.
         """
         with self._lock:
             snapshot = frozenset(vps)
             for target in targets:
                 key = (country, target)
+                if key in self._target_expected:
+                    logger.warning(
+                        "register_targets: %s/%s already registered, "
+                        "skipping re-registration to preserve schedule timestamp "
+                        "and pending votes",
+                        country, target,
+                    )
+                    continue
                 self._target_expected[key] = snapshot
                 if schedule_times is not None and target in schedule_times:
                     self._schedule_times[key] = schedule_times[target]
