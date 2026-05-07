@@ -5,6 +5,7 @@ import os
 import signal
 import subprocess
 import sys
+import tempfile
 import threading
 import time
 from collections import defaultdict
@@ -47,8 +48,11 @@ class Orchestrator:
             path = Path(previous_values_folder)
             if not path.exists() or not path.is_dir():
                 self.previous_values_folder = None
-        if self.output_folder:
-            os.makedirs(os.path.dirname(self.output_folder), exist_ok=True)
+        # WR-04 fix: removed redundant `os.makedirs(os.path.dirname(...))`
+        # call. It crashed with FileNotFoundError on bare relative paths
+        # (where dirname returns "") and was redundant anyway —
+        # _configure_logging() below creates self.output_folder directly,
+        # and per-country directories are created in RegionalNode.__init__.
 
         # Configure logging now that output_folder is known and the directory
         # exists. Must run BEFORE _bootstrap_vps() emits any log records.
@@ -216,13 +220,30 @@ class Orchestrator:
         }
 
         config_path = Path(self.output_folder) / "run_config.json"
-        tmp_path = str(config_path) + ".tmp"
+        # WR-08 fix: use NamedTemporaryFile (delete=False) for unique tmp
+        # names per process. The previous fixed `<path>.tmp` was vulnerable
+        # to two concurrent orchestrator processes racing on the same tmp
+        # file and producing a truncated final json.
+        tmp_path: Optional[str] = None
         try:
-            with open(tmp_path, "w") as f:
+            with tempfile.NamedTemporaryFile(
+                mode="w",
+                dir=str(self.output_folder),
+                prefix="run_config.json.",
+                suffix=".tmp",
+                delete=False,
+            ) as f:
+                tmp_path = f.name
                 json.dump(config, f, indent=2, default=str)
             os.replace(tmp_path, str(config_path))
         except Exception as exc:
             logger.error("Failed to write run_config.json: %s", exc)
+            # Best-effort cleanup of the unique tmp file if replace failed.
+            if tmp_path is not None:
+                try:
+                    os.remove(tmp_path)
+                except Exception:
+                    pass
             return
 
         short_sha = git_sha[:8] if git_sha else "unknown"
@@ -450,6 +471,39 @@ class Orchestrator:
             step_times = self.tick()
             iterations += 1
 
+            # WR-07 fix: if the writer is dead (e.g. transient I/O error
+            # during initial header write or a previous writerow), retry
+            # reopening on each tick rather than silently disabling tick
+            # timings for the rest of the run. This restores OBSV-01's
+            # "files are created on first row" invariant after recoverable
+            # failures (network-mounted output folder hiccups, etc.).
+            if timings_writer is None and output_folder:
+                try:
+                    timings_path = Path(output_folder) / "tick_timings.csv"
+                    timings_file = open(timings_path, "a", newline="")
+                    timings_writer = csv.DictWriter(timings_file, fieldnames=timings_fieldnames)
+                    if timings_path.stat().st_size == 0:
+                        timings_writer.writeheader()
+                        timings_file.flush()
+                    logger.info(
+                        "tick_timings.csv reopened successfully at tick %d", iterations,
+                    )
+                except Exception as exc:
+                    # Recurring warning every FLUSH_EVERY ticks while the
+                    # writer remains dead, so the operator sees the issue.
+                    if iterations % FLUSH_EVERY == 1:
+                        logger.error(
+                            "tick_timings.csv reopen attempt failed at tick %d: %s",
+                            iterations, exc,
+                        )
+                    timings_writer = None
+                    if timings_file is not None:
+                        try:
+                            timings_file.close()
+                        except Exception:
+                            pass
+                    timings_file = None
+
             if timings_writer is not None:
                 row = {
                     "tick_idx":           iterations,
@@ -463,6 +517,17 @@ class Orchestrator:
                         timings_file.flush()
                 except Exception as exc:
                     logger.error("tick_timings write failed at tick %d: %s", iterations, exc)
+                    # WR-07 fix: if the write itself fails (not just the
+                    # initial open), drop the writer so the reopen-retry
+                    # path above gets a chance on the next tick. Do not
+                    # leave a half-broken handle in place for the rest
+                    # of the run.
+                    try:
+                        timings_file.close()
+                    except Exception:
+                        pass
+                    timings_writer = None
+                    timings_file = None
 
             sleep(0.5)
 
@@ -577,10 +642,31 @@ class Orchestrator:
         that the legacy Phase 02 midnight-reset path used to perform (which
         incorrectly cleared every country's tracking on each midnight under the
         old semantics).
+
+        WR-05/WR-09 partial mitigation: explicitly log how many in-flight
+        targets are being discarded at the iteration boundary so the operator
+        can see the metric drift. Note that ``_finish_episode_if_ready`` only
+        triggers when ``in_flight == 0``, so any non-zero count here indicates
+        the schedule path incremented in_flight but the aggregated result was
+        already drained before this callback fired — or, more concerning, that
+        FastAPI-subprocess results that arrived after the boundary will land
+        on an empty tracking dict and silently no-op the .pop() in tick(). The
+        proper fix per WR-05 is iteration-tagged in-flight maps; this log
+        ensures the issue is at least observable.
         """
+        discarded_inflight = len(self._inflight_times.get(country, {}))
+        discarded_warns = len(self._last_delay_warn.get(country, {}))
         self._inflight_times.pop(country, None)
         self._last_delay_warn.pop(country, None)
-        logger.debug("%s: cleared in-flight tracking after iteration reset", country)
+        if discarded_inflight or discarded_warns:
+            logger.info(
+                "%s: iteration-boundary discarded %d in-flight tracking entries, "
+                "%d delay-warn entries (results arriving after this point will "
+                "no-op the tick() pop and the delayed-result metric will under-count)",
+                country, discarded_inflight, discarded_warns,
+            )
+        else:
+            logger.debug("%s: cleared in-flight tracking after iteration reset", country)
 
     # ------------------------------------------------------------------
     # delayed-result logger (D-09 / RUNT-05)
@@ -635,29 +721,35 @@ class Orchestrator:
         for country, stuck_targets in stuck_by_country.items():
             active_vps = self.vantage_points.get_active(country)
 
-            # Read aggregator state under lock, then release before HTTP calls
+            # WR-03 fix: snapshot aggregator state via the public API instead
+            # of reaching into private attributes. The aggregator owns its own
+            # locking; we receive immutable frozenset values that remain safe
+            # to use after the call returns.
+            pending_snapshot = self.api.aggregator.snapshot_pending(
+                country, stuck_targets,
+            )
+
             resend_list = []
-            with self.api.aggregator._lock:
-                for target in stuck_targets:
-                    key = (country, target)
-                    expected = self.api.aggregator._target_expected.get(key, frozenset())
-                    received = set(self.api.aggregator._pending.get(key, {}).keys())
-                    missing_vps = expected - received
+            for target in stuck_targets:
+                expected, received = pending_snapshot.get(
+                    target, (frozenset(), frozenset()),
+                )
+                missing_vps = expected - received
 
-                    for vp_ip in missing_vps:
-                        info = vp_status.get(vp_ip)
-                        if info is None:
-                            logger.warning("VP %s not in /debug response, assuming lost", vp_ip)
-                            resend_list.append((target, vp_ip, False))
-                            continue
+                for vp_ip in missing_vps:
+                    info = vp_status.get(vp_ip)
+                    if info is None:
+                        logger.warning("VP %s not in /debug response, assuming lost", vp_ip)
+                        resend_list.append((target, vp_ip, False))
+                        continue
 
-                        # Check if VP still has this target in its unstarted_work
-                        unstarted_keywords = {w["keyword"] for w in info.get("unstarted_work", [])}
-                        if target in unstarted_keywords:
-                            continue  # VP still has it queued, not lost yet
+                    # Check if VP still has this target in its unstarted_work
+                    unstarted_keywords = {w["keyword"] for w in info.get("unstarted_work", [])}
+                    if target in unstarted_keywords:
+                        continue  # VP still has it queued, not lost yet
 
-                        is_pending_removal = info.get("pending_removal", False)
-                        resend_list.append((target, vp_ip, is_pending_removal))
+                    is_pending_removal = info.get("pending_removal", False)
+                    resend_list.append((target, vp_ip, is_pending_removal))
 
             # Now resend outside the lock
             for target, vp_ip, is_pending_removal in resend_list:

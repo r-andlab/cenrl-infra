@@ -56,11 +56,28 @@ class MeasurementAggregator:
         If ``schedule_times`` is provided (Phase 3 D-04), each target's monotonic
         schedule timestamp is recorded so the finalized ``MeasurementResponse``
         can carry it through to downstream consumers (latency_ms derivation).
+
+        WR-06 fix: re-registering an already-registered ``(country, target)``
+        is rejected with a warning. Without this guard, a re-registration
+        would overwrite ``_target_expected[key]`` and ``_schedule_times[key]``
+        while ``_pending[key]`` retained votes from the prior attempt — which
+        could finalize the new attempt early against stale votes, or report
+        a near-zero ``latency_ms`` that does not reflect the original schedule.
+        Targets in ``targets`` that are NOT yet registered are still registered
+        normally; only the duplicates are skipped.
         """
         with self._lock:
             snapshot = frozenset(vps)
             for target in targets:
                 key = (country, target)
+                if key in self._target_expected:
+                    logger.warning(
+                        "register_targets: %s/%s already registered, "
+                        "skipping re-registration to preserve schedule timestamp "
+                        "and pending votes",
+                        country, target,
+                    )
+                    continue
                 self._target_expected[key] = snapshot
                 if schedule_times is not None and target in schedule_times:
                     self._schedule_times[key] = schedule_times[target]
@@ -82,6 +99,27 @@ class MeasurementAggregator:
         """Return and clear all finalized results for *country*."""
         with self._lock:
             return self._ready.pop(country, [])
+
+    def snapshot_pending(
+        self, country: str, targets: List[str],
+    ) -> Dict[str, Tuple[frozenset, frozenset]]:
+        """Return ``{target: (expected_vps, received_vps)}`` for *targets* in *country*.
+
+        Public, lock-protected snapshot of the aggregator's pending state for
+        external consumers (e.g. the orchestrator's resend logic). Reads under
+        ``self._lock`` so callers do not need to touch private attributes
+        (WR-03 fix). Targets not currently registered return ``(frozenset(),
+        frozenset())``. The returned frozensets are immutable snapshots safe
+        to use after the lock is released.
+        """
+        with self._lock:
+            out: Dict[str, Tuple[frozenset, frozenset]] = {}
+            for t in targets:
+                key = (country, t)
+                expected = self._target_expected.get(key, frozenset())
+                received = frozenset(self._pending.get(key, {}).keys())
+                out[t] = (expected, received)
+            return out
 
     def drop_vp(self, country: str, vp: str) -> None:
         """Remove *vp* from pending entries and their snapshots for
@@ -106,7 +144,25 @@ class MeasurementAggregator:
     # ------------------------------------------------------------------
     def _try_finalize(self, key: Tuple) -> None:
         expected = self._target_expected.get(key)
-        if not expected:
+        if expected is None:
+            return
+        # WR-01 fix: if drop_vp() drained the expected set to empty, finalize
+        # as a no-vote so the orchestrator can clear in-flight tracking and
+        # the model can advance. Without this, _pending[key], _target_expected[key],
+        # and _schedule_times[key] leak permanently and the orchestrator's
+        # delayed-result logger / resend path will fire forever.
+        if len(expected) == 0:
+            sched_mono = self._schedule_times.pop(key, None)
+            self._ready[key[0]].append(
+                MeasurementResponse(
+                    target=key[1],
+                    blocked=False,
+                    scheduled_at_monotonic=sched_mono,
+                    vp_count=0,
+                )
+            )
+            self._pending.pop(key, None)
+            del self._target_expected[key]
             return
         vp_map = self._pending.get(key)
         if vp_map is None:
