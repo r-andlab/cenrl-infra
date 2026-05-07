@@ -47,8 +47,11 @@ class Orchestrator:
             path = Path(previous_values_folder)
             if not path.exists() or not path.is_dir():
                 self.previous_values_folder = None
-        if self.output_folder:
-            os.makedirs(os.path.dirname(self.output_folder), exist_ok=True)
+        # WR-04 fix: removed redundant `os.makedirs(os.path.dirname(...))`
+        # call. It crashed with FileNotFoundError on bare relative paths
+        # (where dirname returns "") and was redundant anyway —
+        # _configure_logging() below creates self.output_folder directly,
+        # and per-country directories are created in RegionalNode.__init__.
 
         # Configure logging now that output_folder is known and the directory
         # exists. Must run BEFORE _bootstrap_vps() emits any log records.
