@@ -1,7 +1,10 @@
 import csv
+import json
 import logging
 import os
 import signal
+import subprocess
+import sys
 import threading
 import time
 from collections import defaultdict
@@ -35,6 +38,7 @@ class Orchestrator:
         vps_per_country: int = 3,
         previous_values_folder: str = None,
         debug: bool = False,
+        vp_pool_config: Optional[Dict] = None,
     ):
         self.params = params
         self.output_folder = params.get("output_directory", None)
@@ -49,6 +53,10 @@ class Orchestrator:
         # Configure logging now that output_folder is known and the directory
         # exists. Must run BEFORE _bootstrap_vps() emits any log records.
         self._configure_logging()
+
+        # Capture constructor args for run_config snapshot (Phase 3 D-13).
+        self._go_api_endpoint: str = go_api_endpoint
+        self._vp_pool_config: Optional[Dict] = vp_pool_config
 
         self.vantage_points = vantage_points
         self.services = services
@@ -88,6 +96,13 @@ class Orchestrator:
                     )
                 ]
             )
+
+        # Phase 3 D-12/D-13/D-14: write run_config.json before any measurements.
+        # Position: after _configure_logging (so the INFO line lands in app.log)
+        # and after target_countries is set (so provenance reflects the resolved
+        # set), but before _bootstrap_vps so a bootstrap crash still leaves a
+        # config record on disk.
+        self._write_run_config()
 
         # Draw initial VPs and send for evaluation
         self._bootstrap_vps()
@@ -141,6 +156,80 @@ class Orchestrator:
         else:
             # No output dir => silent. Caller can override later if desired.
             root.addHandler(logging.NullHandler())
+
+    # ------------------------------------------------------------------
+    # run-config snapshot (Phase 3 D-12/D-13/D-14)
+    # ------------------------------------------------------------------
+    def _write_run_config(self) -> None:
+        """One-shot run_config.json snapshot at startup (D-12, D-13, D-14).
+
+        Writes <output>/run_config.json with four groups:
+          - cli_params:      self.params dict (full CLI parser output)
+          - hyperquack:      go_api_endpoint, services, vps_per_country, debug
+          - vp_pool_inputs:  ev_file, vp_pool_file, blocklist_file, max_countries,
+                             blocked_countries (passed via vp_pool_config kwarg)
+          - provenance:      target_countries, action_space_file, git_sha, git_dirty,
+                             start_utc_timestamp, python_version
+
+        Atomic write via .tmp + os.replace (matches Phase 02 _write_sidecar
+        precedent — T-02-02 / T-03-15 mitigation). Best-effort git provenance:
+        failure (non-git env) leaves git_sha=null and git_dirty='unknown'
+        without aborting startup. Silently skipped when output_folder is None
+        (matches _configure_logging NullHandler fallback).
+        """
+        if not self.output_folder:
+            return
+
+        # Best-effort git provenance (D-13): non-git environments must NOT abort.
+        git_sha: Optional[str] = None
+        git_dirty: str = "unknown"
+        try:
+            git_sha = subprocess.check_output(
+                ["git", "rev-parse", "HEAD"], text=True,
+                stderr=subprocess.DEVNULL,
+            ).strip()
+            dirty_out = subprocess.check_output(
+                ["git", "status", "--porcelain"], text=True,
+                stderr=subprocess.DEVNULL,
+            ).strip()
+            git_dirty = "dirty" if dirty_out else "clean"
+        except Exception:
+            pass  # non-git env or git not on PATH; leave defaults
+
+        config = {
+            "cli_params": self.params,
+            "hyperquack": {
+                "go_api_endpoint": self._go_api_endpoint,
+                "services":        self.services,
+                "vps_per_country": self.vps_per_country,
+                "debug":           self.api.debug,
+            },
+            "vp_pool_inputs": self._vp_pool_config or {},
+            "provenance": {
+                "target_countries":    sorted(self.target_countries),
+                "action_space_file":   self.params.get("action_space_file"),
+                "git_sha":             git_sha,
+                "git_dirty":           git_dirty,
+                "start_utc_timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "python_version":      sys.version,
+            },
+        }
+
+        config_path = Path(self.output_folder) / "run_config.json"
+        tmp_path = str(config_path) + ".tmp"
+        try:
+            with open(tmp_path, "w") as f:
+                json.dump(config, f, indent=2, default=str)
+            os.replace(tmp_path, str(config_path))
+        except Exception as exc:
+            logger.error("Failed to write run_config.json: %s", exc)
+            return
+
+        short_sha = git_sha[:8] if git_sha else "unknown"
+        logger.info(
+            "Run config written to %s; git_sha=%s; debug=%s",
+            config_path, short_sha, self.api.debug,
+        )
 
     # ------------------------------------------------------------------
     # startup
@@ -723,19 +812,26 @@ class OrchestrationParser(UCBNaiveParserOptions):
 if __name__ == "__main__":
     parser = OrchestrationParser()
     params = parser.parse()
-    vp_pool = VantagePoints(
-        ev_file="local/ev-certs.csv",
-        vp_pool_file="local/vp_pool.csv",
-        blocklist_file="local/blocklist.txt",
-        max_countries=15,
-        blocked_countries=[],
-    )
+
+    # Phase 3 D-13: vp_pool_inputs group of run_config.json. Built from the
+    # same literals consumed by VantagePoints below so the snapshot is the
+    # single source of truth for run reproducibility.
+    vp_pool_config = {
+        "ev_file":           "local/ev-certs.csv",
+        "vp_pool_file":      "local/vp_pool.csv",
+        "blocklist_file":    "local/blocklist.txt",
+        "max_countries":     15,
+        "blocked_countries": [],
+    }
+    vp_pool = VantagePoints(**vp_pool_config)
+
     m = Orchestrator(
         params=params,
         vantage_points=vp_pool,
         go_api_endpoint="http://127.0.0.1:8888",
         services=["https"],
         vps_per_country=3,
+        vp_pool_config=vp_pool_config,
     )
     m.run_forever()
     # python3 Infrastructure/main/orchestrator.py -E 1 -m 1000 -v -f "categories" -a inputs/tranco/tranco_categories_subdomain_tld_entities_top10k.csv -f "categories" -s 0.0 -c 0.03 -V 0.0 -o outputs/outtest

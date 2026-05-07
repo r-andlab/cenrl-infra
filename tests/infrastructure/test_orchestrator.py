@@ -1006,5 +1006,141 @@ class TestTickTimingsCsv(unittest.TestCase):
         orch._shutdown.assert_called_once()
 
 
+class TestRunConfigSnapshot(unittest.TestCase):
+    """Phase 3 D-12/D-13/D-14: run_config.json snapshot at startup."""
+
+    def _make_orchestrator(self, tmp_path, params=None, vp_pool_config=None):
+        """Construct a partially-initialized Orchestrator with the state
+        _write_run_config needs, bypassing the full __init__ flow."""
+        from Infrastructure.main.orchestrator import Orchestrator
+        with patch.object(Orchestrator, '__init__', lambda self, *a, **kw: None):
+            orch = Orchestrator.__new__(Orchestrator)
+        orch.output_folder = str(tmp_path)
+        orch.params = params or {"action_space_file": "inputs/foo.csv", "m": 1000}
+        orch._go_api_endpoint = "http://127.0.0.1:8888"
+        orch.services = ["https"]
+        orch.vps_per_country = 3
+        orch._vp_pool_config = vp_pool_config or {
+            "ev_file": "local/ev-certs.csv",
+            "vp_pool_file": "local/vp_pool.csv",
+            "blocklist_file": "local/blocklist.txt",
+            "max_countries": 15,
+            "blocked_countries": [],
+        }
+        orch.target_countries = {"US", "Germany"}
+        orch.api = MagicMock()
+        orch.api.debug = False
+        return orch
+
+    def test_run_config_json_written(self):
+        import tempfile, json as _json
+        tmp = Path(tempfile.mkdtemp())
+        orch = self._make_orchestrator(tmp)
+        orch._write_run_config()
+        config_path = tmp / "run_config.json"
+        assert config_path.exists()
+        with open(config_path) as f:
+            data = _json.load(f)
+        assert set(data.keys()) == {"cli_params", "hyperquack", "vp_pool_inputs", "provenance"}
+
+    def test_run_config_hyperquack_group(self):
+        import tempfile, json as _json
+        tmp = Path(tempfile.mkdtemp())
+        orch = self._make_orchestrator(tmp)
+        orch._write_run_config()
+        with open(tmp / "run_config.json") as f:
+            data = _json.load(f)
+        assert data["hyperquack"]["go_api_endpoint"] == "http://127.0.0.1:8888"
+        assert data["hyperquack"]["services"] == ["https"]
+        assert data["hyperquack"]["vps_per_country"] == 3
+        assert data["hyperquack"]["debug"] is False
+
+    def test_run_config_vp_pool_inputs_group(self):
+        import tempfile, json as _json
+        tmp = Path(tempfile.mkdtemp())
+        orch = self._make_orchestrator(tmp)
+        orch._write_run_config()
+        with open(tmp / "run_config.json") as f:
+            data = _json.load(f)
+        vpi = data["vp_pool_inputs"]
+        assert vpi["ev_file"] == "local/ev-certs.csv"
+        assert vpi["vp_pool_file"] == "local/vp_pool.csv"
+        assert vpi["blocklist_file"] == "local/blocklist.txt"
+        assert vpi["max_countries"] == 15
+        assert vpi["blocked_countries"] == []
+
+    def test_run_config_provenance_group(self):
+        import tempfile, json as _json
+        tmp = Path(tempfile.mkdtemp())
+        orch = self._make_orchestrator(tmp)
+        orch._write_run_config()
+        with open(tmp / "run_config.json") as f:
+            data = _json.load(f)
+        prov = data["provenance"]
+        assert sorted(prov["target_countries"]) == ["Germany", "US"]
+        assert prov["action_space_file"] == "inputs/foo.csv"
+        # git fields: either real values or fallback (null + "unknown")
+        assert "git_sha" in prov
+        assert prov["git_dirty"] in ("clean", "dirty", "unknown")
+        assert "start_utc_timestamp" in prov
+        assert "python_version" in prov
+
+    def test_run_config_git_fallback_in_non_git_env(self):
+        """Per D-13: subprocess failure must NOT abort startup."""
+        import tempfile, json as _json
+        tmp = Path(tempfile.mkdtemp())
+        orch = self._make_orchestrator(tmp)
+        with patch("Infrastructure.main.orchestrator.subprocess.check_output",
+                   side_effect=FileNotFoundError("git not on PATH")):
+            orch._write_run_config()  # must NOT raise
+        with open(tmp / "run_config.json") as f:
+            data = _json.load(f)
+        assert data["provenance"]["git_sha"] is None
+        assert data["provenance"]["git_dirty"] == "unknown"
+
+    def test_run_config_emits_info_log(self):
+        import tempfile
+        tmp = Path(tempfile.mkdtemp())
+        orch = self._make_orchestrator(tmp)
+        with self.assertLogs("Infrastructure.main.orchestrator", level="INFO") as cm:
+            orch._write_run_config()
+        joined = "\n".join(cm.output)
+        assert "Run config written to" in joined
+        assert "git_sha=" in joined
+        assert "debug=" in joined
+
+    def test_run_config_atomic_write(self):
+        """Verify the .tmp file is moved into place (no partial writes left behind)."""
+        import tempfile
+        tmp = Path(tempfile.mkdtemp())
+        orch = self._make_orchestrator(tmp)
+        orch._write_run_config()
+        # After the write, no .tmp file should remain
+        assert not (tmp / "run_config.json.tmp").exists()
+        assert (tmp / "run_config.json").exists()
+
+    def test_run_config_skipped_when_no_output_folder(self):
+        from Infrastructure.main.orchestrator import Orchestrator
+        with patch.object(Orchestrator, '__init__', lambda self, *a, **kw: None):
+            orch = Orchestrator.__new__(Orchestrator)
+        orch.output_folder = None
+        # Must not raise even though we never set the other attributes
+        orch._write_run_config()
+
+    def test_run_config_handles_non_json_serializable_params(self):
+        """default=str fallback handles unusual CLI param values."""
+        import tempfile, json as _json
+        from pathlib import Path as _Path
+        tmp = Path(tempfile.mkdtemp())
+        orch = self._make_orchestrator(tmp, params={
+            "action_space_file": "inputs/foo.csv",
+            "some_path": _Path("/tmp/x"),  # not natively JSON serializable
+        })
+        orch._write_run_config()  # must NOT raise
+        with open(tmp / "run_config.json") as f:
+            data = _json.load(f)
+        assert data["cli_params"]["some_path"] == "/tmp/x"
+
+
 if __name__ == "__main__":
     unittest.main()
