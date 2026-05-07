@@ -91,3 +91,5 @@ class Job:
 class MeasurementResponse:
     target: str
     blocked: bool
+    scheduled_at_monotonic: float | None = None  # D-04: schedule -> absorb latency source
+    vp_count: int | None = None                  # D-05: actual VP votes in majority

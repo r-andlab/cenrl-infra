@@ -225,7 +225,14 @@ class Orchestrator:
                 )
             # Snapshot the expected VPs at scheduling time so the aggregator
             # knows exactly which VPs should report for each target (D-02).
-            self.api.aggregator.register_targets(country, targets, set(active_vps))
+            # Phase 3 D-04: also pass per-target schedule monotonic time so the
+            # aggregator can attach scheduled_at_monotonic to the finalized response.
+            now = time.monotonic()
+            schedule_times = {t: now for t in targets}
+            self.api.aggregator.register_targets(
+                country, targets, set(active_vps),
+                schedule_times=schedule_times,
+            )
 
             self.api.schedule_measurements(
                 vps=active_vps,
@@ -233,7 +240,6 @@ class Orchestrator:
                 targets=targets,
                 country=country,
             )
-            now = time.monotonic()
             for t in targets:
                 self._inflight_times[country][t] = now
 

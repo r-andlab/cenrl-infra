@@ -111,3 +111,63 @@ class TestDropVpWithRegisterTargets:
 
         # Snapshot should now only contain VP 1
         assert agg._target_expected[("US", "example.com")] == frozenset({"1.1.1.1"})
+
+
+class TestVpCountPassthrough:
+    """Phase 3 D-05: vp_count = len(votes) on finalized MeasurementResponse."""
+
+    def test_vp_count_three_when_three_voters(self):
+        agg = MeasurementAggregator()
+        agg.register_targets("US", ["a.com"], {"vp1", "vp2", "vp3"})
+        agg.record("US", "vp1", "a.com", blocked=True)
+        agg.record("US", "vp2", "a.com", blocked=True)
+        agg.record("US", "vp3", "a.com", blocked=False)
+        results = agg.get_ready("US")
+        assert len(results) == 1
+        assert results[0].vp_count == 3
+
+    def test_vp_count_two_after_drop_vp(self):
+        agg = MeasurementAggregator()
+        agg.register_targets("US", ["a.com"], {"vp1", "vp2", "vp3"})
+        agg.record("US", "vp1", "a.com", blocked=True)
+        agg.record("US", "vp2", "a.com", blocked=True)
+        # vp3 disappears before reporting
+        agg.drop_vp("US", "vp3")
+        results = agg.get_ready("US")
+        assert len(results) == 1
+        assert results[0].vp_count == 2  # surviving voter count
+
+
+class TestScheduledAtMonotonicPassthrough:
+    """Phase 3 D-04: scheduled_at_monotonic flows from register_targets to MeasurementResponse."""
+
+    def test_schedule_time_attached_when_provided(self):
+        agg = MeasurementAggregator()
+        agg.register_targets(
+            "US", ["a.com"], {"vp1", "vp2"},
+            schedule_times={"a.com": 100.5},
+        )
+        agg.record("US", "vp1", "a.com", blocked=False)
+        agg.record("US", "vp2", "a.com", blocked=False)
+        results = agg.get_ready("US")
+        assert len(results) == 1
+        assert results[0].scheduled_at_monotonic == 100.5
+
+    def test_schedule_time_none_when_not_provided(self):
+        agg = MeasurementAggregator()
+        agg.register_targets("US", ["a.com"], {"vp1", "vp2"})
+        agg.record("US", "vp1", "a.com", blocked=False)
+        agg.record("US", "vp2", "a.com", blocked=False)
+        results = agg.get_ready("US")
+        assert len(results) == 1
+        assert results[0].scheduled_at_monotonic is None
+
+    def test_schedule_times_pop_after_finalize(self):
+        agg = MeasurementAggregator()
+        agg.register_targets(
+            "US", ["a.com"], {"vp1"},
+            schedule_times={"a.com": 99.0},
+        )
+        agg.record("US", "vp1", "a.com", blocked=False)
+        agg.get_ready("US")
+        assert ("US", "a.com") not in agg._schedule_times
