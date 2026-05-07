@@ -826,5 +826,37 @@ class TestCrossCountryIndependence(unittest.TestCase):
         self.assertIn("t10", orch._last_delay_warn["Russia"])
 
 
+class TestShutdownClosesMeasurementsWriters(unittest.TestCase):
+    """Phase 3 D-01: Orchestrator._shutdown must call close_measurements on every active node."""
+
+    def test_shutdown_calls_close_measurements_per_node(self):
+        from Infrastructure.main.orchestrator import Orchestrator
+        with patch.object(Orchestrator, '__init__', lambda self, *a, **kw: None):
+            orch = Orchestrator.__new__(Orchestrator)
+        orch.output_folder = "/tmp/x"
+        node_us = MagicMock()
+        node_de = MagicMock()
+        orch.agents = {"US": node_us, "Germany": node_de}
+        orch._state_dir_for = MagicMock(return_value=Path("/tmp/x/state"))
+        orch._shutdown()
+        node_us.close_measurements.assert_called_once()
+        node_de.close_measurements.assert_called_once()
+
+    def test_shutdown_continues_when_one_node_close_raises(self):
+        from Infrastructure.main.orchestrator import Orchestrator
+        with patch.object(Orchestrator, '__init__', lambda self, *a, **kw: None):
+            orch = Orchestrator.__new__(Orchestrator)
+        orch.output_folder = "/tmp/x"
+        bad_node = MagicMock()
+        bad_node.close_measurements.side_effect = OSError("disk full")
+        good_node = MagicMock()
+        orch.agents = {"BadCountry": bad_node, "GoodCountry": good_node}
+        orch._state_dir_for = MagicMock(return_value=Path("/tmp/x/state"))
+        # Must not raise
+        with self.assertLogs(level=logging.ERROR):
+            orch._shutdown()
+        good_node.close_measurements.assert_called_once()
+
+
 if __name__ == "__main__":
     unittest.main()

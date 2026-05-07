@@ -327,6 +327,13 @@ class Orchestrator:
                 node.save_checkpoint(state_dir)
             except Exception as exc:
                 logger.error("Failed to checkpoint %s on shutdown: %s", country, exc)
+            try:
+                node.close_measurements()
+            except Exception as exc:
+                logger.error(
+                    "Failed to close measurements writer for %s: %s",
+                    country, exc,
+                )
         logger.info("Shutdown complete.")
 
     # ------------------------------------------------------------------

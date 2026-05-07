@@ -1058,5 +1058,226 @@ class TestWriteStatsRollingAndSnapshot(unittest.TestCase):
             self.assertEqual(node.episode_all_stats, [])
 
 
+class TestMeasurementsCsv(unittest.TestCase):
+    """Phase 3 D-01..D-06: per-measurement CSV writer on RegionalNode."""
+
+    def _make_node(self, tmp_path, country="US"):
+        """Construct a RegionalNode with the model and absorb path stubbed
+        so we can drive _append_measurements directly without a real BatchUCB.
+        """
+        from Infrastructure.main.node import RegionalNode
+
+        # Bypass __init__ to avoid the heavy model setup; manually set the
+        # state _append_measurements and _write_measurements_row depend on.
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = country
+        node.country_name_standard = country.replace(" ", "_")
+        node.output_folder = str(tmp_path)
+        country_dir = tmp_path / country.replace(" ", "_")
+        country_dir.mkdir(parents=True, exist_ok=True)
+        node._measurements_path = country_dir / f"{country.replace(' ', '_')}_measurements.csv"
+        node._measurements_file = None
+        node._measurements_writer = None
+        node._measurements_header_written = False
+
+        node.episode_idx = 1
+        node.episode_stats = []
+        node.episode_all_stats = []
+
+        node.model = MagicMock()
+        node.model.current_epoch_num = 0
+
+        def fake_absorb(m_dict):
+            return {
+                "action":     "arm-A",
+                "targets":    m_dict["target"],
+                "rewards":    1.0 if m_dict["blocked"] else 0.0,
+                "q_value":    0.42,
+                "is_blocked": 1 if m_dict["blocked"] else 0,
+                "is_optimal": 1,
+                "coverage":   0.5,
+            }
+        node.model.absorb_measurement.side_effect = fake_absorb
+        return node
+
+    def _read_csv(self, path):
+        import csv as _csv_module
+        with open(path) as f:
+            return list(_csv_module.DictReader(f))
+
+    def test_measurements_csv_header_written_once(self):
+        """Header row written exactly once on first row, never duplicated on second row append."""
+        import tempfile
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._append_measurements([MeasurementResponse(target="a.com", blocked=True)])
+            node._append_measurements([MeasurementResponse(target="b.com", blocked=False)])
+            node.close_measurements()
+            with open(node._measurements_path) as f:
+                lines = f.readlines()
+            # 1 header + 2 data rows = 3 lines
+            self.assertEqual(len(lines), 3)
+            # The header literal must match the 12-column order exactly
+            self.assertEqual(
+                lines[0].strip(),
+                "target,arm,blocked,reward,q_value,utc_timestamp,episode_idx,step_idx,is_optimal,coverage,latency_ms,vp_count",
+            )
+
+    def test_measurements_csv_twelve_columns_in_order(self):
+        """The row is serialized with exactly 12 columns in the documented order."""
+        import tempfile
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._append_measurements([
+                MeasurementResponse(
+                    target="a.com",
+                    blocked=True,
+                    scheduled_at_monotonic=None,  # latency_ms must serialize as ""
+                    vp_count=3,
+                )
+            ])
+            node.close_measurements()
+            rows = self._read_csv(node._measurements_path)
+            self.assertEqual(len(rows), 1)
+            row = rows[0]
+            self.assertEqual(list(row.keys()), [
+                "target", "arm", "blocked", "reward", "q_value",
+                "utc_timestamp", "episode_idx", "step_idx",
+                "is_optimal", "coverage", "latency_ms", "vp_count",
+            ])
+            self.assertEqual(row["target"], "a.com")
+            self.assertEqual(row["arm"], "arm-A")
+            self.assertEqual(row["blocked"], "1")
+            self.assertEqual(row["reward"], "1.0")
+            self.assertEqual(row["episode_idx"], "1")
+            self.assertEqual(row["step_idx"], "1")
+            self.assertEqual(row["is_optimal"], "1")
+            self.assertEqual(row["vp_count"], "3")
+
+    def test_measurements_csv_latency_ms_when_scheduled_at_provided(self):
+        """latency_ms is computed in milliseconds when scheduled_at_monotonic is provided."""
+        import tempfile
+        import time as _time
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            sched = _time.monotonic() - 0.250  # 250ms ago
+            node._append_measurements([
+                MeasurementResponse(
+                    target="a.com",
+                    blocked=True,
+                    scheduled_at_monotonic=sched,
+                    vp_count=2,
+                )
+            ])
+            node.close_measurements()
+            rows = self._read_csv(node._measurements_path)
+            latency = float(rows[0]["latency_ms"])
+            # Allow generous tolerance for CI scheduling jitter
+            self.assertGreaterEqual(latency, 200.0)
+            self.assertLessEqual(latency, 1000.0)
+
+    def test_measurements_csv_latency_ms_none_when_unscheduled(self):
+        """latency_ms serializes as empty string when scheduled_at_monotonic is None."""
+        import tempfile
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._append_measurements([
+                MeasurementResponse(target="a.com", blocked=True)
+            ])
+            node.close_measurements()
+            rows = self._read_csv(node._measurements_path)
+            self.assertEqual(rows[0]["latency_ms"], "")  # csv.DictWriter writes None as ""
+
+    def test_measurements_csv_flush_per_row(self):
+        """Partial-run readability: the file must contain row 1 BEFORE row 2 is written."""
+        import tempfile
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._append_measurements([MeasurementResponse(target="a.com", blocked=True)])
+            # Read the file WITHOUT closing the writer — flush-per-row guarantees row 1 is on disk
+            with open(node._measurements_path) as f:
+                content = f.read()
+            self.assertIn("a.com", content)
+            self.assertGreaterEqual(content.count("\n"), 2)  # header + 1 data row
+            node.close_measurements()
+
+    def test_measurements_writer_survives_soft_reset(self):
+        """Phase 3 D-01: writer is NOT closed at iteration boundary."""
+        import tempfile
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._append_measurements([MeasurementResponse(target="a.com", blocked=True)])
+            file_before = node._measurements_file
+            self.assertIsNotNone(file_before)
+            # Simulate iteration boundary: bump episode_idx without invoking close_measurements
+            node.episode_idx += 1
+            self.assertIs(node._measurements_file, file_before)  # same handle, NOT closed
+            node._append_measurements([MeasurementResponse(target="b.com", blocked=False)])
+            node.close_measurements()
+            rows = self._read_csv(node._measurements_path)
+            self.assertEqual({r["target"] for r in rows}, {"a.com", "b.com"})
+
+    def test_measurements_write_failure_is_isolated(self):
+        """Phase 02.1 D-04 invariant carried forward: write errors do not propagate."""
+        import logging as _logging
+        import tempfile
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            # Force the writer to raise on writerow
+            broken_writer = MagicMock()
+            broken_writer.writerow.side_effect = OSError("simulated disk error")
+            node._measurements_writer = broken_writer
+            node._measurements_file = MagicMock()  # so lazy-open is skipped
+            with self.assertLogs("Infrastructure.main.node", level=_logging.ERROR) as cm:
+                # Must NOT raise
+                absorbed = node._append_measurements([
+                    MeasurementResponse(target="a.com", blocked=True)
+                ])
+            self.assertEqual(absorbed, 1)  # absorb count unaffected by write failure
+            self.assertTrue(
+                any("measurements row write failed" in msg for msg in cm.output),
+                f"Expected 'measurements row write failed' in logs; got {cm.output}",
+            )
+
+    def test_close_measurements_idempotent(self):
+        """close_measurements is safe to call repeatedly."""
+        import tempfile
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._append_measurements([MeasurementResponse(target="a.com", blocked=True)])
+            node.close_measurements()
+            self.assertIsNone(node._measurements_file)
+            # Second call must not raise
+            node.close_measurements()
+            self.assertIsNone(node._measurements_file)
+
+    def test_close_measurements_when_never_opened(self):
+        """close_measurements() before any row was written must not raise."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            self.assertIsNone(node._measurements_file)
+            node.close_measurements()  # must not raise
+            self.assertIsNone(node._measurements_file)
+
+
 if __name__ == "__main__":
     unittest.main()
