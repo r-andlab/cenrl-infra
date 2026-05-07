@@ -1,10 +1,12 @@
 from dataclasses import asdict
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Tuple, Optional, Callable, Set
+import csv
 import json
 import logging
 import os
 import sys
+import time
 from Infrastructure.models.BatchUCB import BatchUCB
 from Infrastructure.utils.persistence import find_latest_state, load_graph_and_sidecar, validate_sidecar
 from Infrastructure.utils.structures import MeasurementResponse, BatchSelectionMethod, BatchSizeMethod, PropagationMethod, NodeState
@@ -42,13 +44,27 @@ class RegionalNode:
         if output_folder:
             base_path = Path(output_folder)  # e.g. outputs/outtest9
             country_dir = base_path / country_name.replace(" ", "_")
-            csv = country_dir / f"{country_name.replace(' ', '_')}.csv"
-            # print(base_path, country_dir, csv)
+            csv_path = country_dir / f"{country_name.replace(' ', '_')}.csv"
+            # print(base_path, country_dir, csv_path)
             # Create the directory
             country_dir.mkdir(parents=True, exist_ok=True)
 
             # If you want outfile_csv to point inside that folder:
-            self.params["outfile_csv"] = str(csv)
+            self.params["outfile_csv"] = str(csv_path)
+
+            # Phase 3 D-01: per-country flush-on-write measurements CSV path.
+            # File is opened lazily on first row append in _append_measurements
+            # (D-15: "Files are created on first row").
+            measurements_path = country_dir / f"{country_name.replace(' ', '_')}_measurements.csv"
+            self._measurements_path: Optional[Path] = measurements_path
+            self._measurements_file = None
+            self._measurements_writer: Optional[csv.DictWriter] = None
+            self._measurements_header_written: bool = False
+        else:
+            self._measurements_path: Optional[Path] = None
+            self._measurements_file = None
+            self._measurements_writer: Optional[csv.DictWriter] = None
+            self._measurements_header_written: bool = False
         self.country: str = country_name
         self.model: BatchUCB = model_klass(self.params, country_name, **kwargs)
         self.model.output_directory = os.path.dirname(self.params["outfile_csv"])
@@ -430,11 +446,93 @@ class RegionalNode:
                 "time": step_idx + 1,
             }
             episode_stat.update(result)
+
+            # Phase 3 D-02: per-measurement CSV row (12 columns, exact order).
+            utc_ts = datetime.now(timezone.utc).isoformat(timespec="seconds")
+            latency_ms: Optional[float] = None
+            if m.scheduled_at_monotonic is not None:
+                latency_ms = round(
+                    (time.monotonic() - m.scheduled_at_monotonic) * 1000.0, 1
+                )
+            meas_row = {
+                "target":        result.get("targets"),  # BatchUCB return uses plural key
+                "arm":           result.get("action"),
+                "blocked":       result.get("is_blocked"),
+                "reward":        result.get("rewards"),
+                "q_value":       result.get("q_value"),
+                "utc_timestamp": utc_ts,
+                "episode_idx":   self.episode_idx,
+                "step_idx":      step_idx + 1,
+                "is_optimal":    result.get("is_optimal"),
+                "coverage":      result.get("coverage"),
+                "latency_ms":    latency_ms,
+                "vp_count":      m.vp_count,
+            }
+            self._write_measurements_row(meas_row)
+
             self.episode_stats.append(episode_stat)
             absorbed += 1
 
         self.model.current_epoch_num += absorbed
         return absorbed
+
+    def _write_measurements_row(self, row: Dict[str, Any]) -> None:
+        """Append one row to <country>_measurements.csv (Phase 3 D-01..D-06).
+
+        Lazy file open on first call (D-15). Writes the header exactly once
+        (D-03). Flushes after every row so partial runs are readable in
+        pandas/R for thesis analysis (OBSV-01). Per-country fault isolation:
+        a write failure is logged but never raised — the orchestrator tick
+        and other countries continue (Phase 02.1 D-04 invariant).
+        """
+        if self._measurements_path is None:
+            return  # No output_folder configured — silent drop, matches _configure_logging fallback.
+        try:
+            if self._measurements_file is None:
+                self._measurements_file = open(
+                    self._measurements_path, "a", newline=""
+                )
+                self._measurements_writer = csv.DictWriter(
+                    self._measurements_file,
+                    fieldnames=[
+                        "target", "arm", "blocked", "reward", "q_value",
+                        "utc_timestamp", "episode_idx", "step_idx",
+                        "is_optimal", "coverage", "latency_ms", "vp_count",
+                    ],
+                )
+                # Header iff the file is empty (handles both fresh creation
+                # and appending to a previous run's truncated file).
+                if self._measurements_path.stat().st_size == 0:
+                    self._measurements_writer.writeheader()
+                self._measurements_header_written = True
+            self._measurements_writer.writerow(row)
+            self._measurements_file.flush()
+        except Exception as exc:
+            logger.error(
+                "%s: measurements row write failed: %s",
+                self.country, exc,
+            )
+
+    def close_measurements(self) -> None:
+        """Flush + close the measurements CSV file handle (D-15 shutdown path).
+
+        Idempotent. MUST NOT be called from soft_reset or _on_country_reset
+        (writer is intentionally long-lived across iteration boundaries per
+        Phase 3 D-01).
+        """
+        if self._measurements_file is None:
+            return
+        try:
+            self._measurements_file.flush()
+            self._measurements_file.close()
+        except Exception as exc:
+            logger.error(
+                "%s: failed to close measurements writer: %s",
+                self.country, exc,
+            )
+        finally:
+            self._measurements_file = None
+            self._measurements_writer = None
 
     def _finish_episode_if_ready(self, save_stats: bool) -> Optional[pd.DataFrame]:
         """Per-country iteration boundary: when measurement quota is reached and no
