@@ -580,10 +580,31 @@ class Orchestrator:
         that the legacy Phase 02 midnight-reset path used to perform (which
         incorrectly cleared every country's tracking on each midnight under the
         old semantics).
+
+        WR-05/WR-09 partial mitigation: explicitly log how many in-flight
+        targets are being discarded at the iteration boundary so the operator
+        can see the metric drift. Note that ``_finish_episode_if_ready`` only
+        triggers when ``in_flight == 0``, so any non-zero count here indicates
+        the schedule path incremented in_flight but the aggregated result was
+        already drained before this callback fired — or, more concerning, that
+        FastAPI-subprocess results that arrived after the boundary will land
+        on an empty tracking dict and silently no-op the .pop() in tick(). The
+        proper fix per WR-05 is iteration-tagged in-flight maps; this log
+        ensures the issue is at least observable.
         """
+        discarded_inflight = len(self._inflight_times.get(country, {}))
+        discarded_warns = len(self._last_delay_warn.get(country, {}))
         self._inflight_times.pop(country, None)
         self._last_delay_warn.pop(country, None)
-        logger.debug("%s: cleared in-flight tracking after iteration reset", country)
+        if discarded_inflight or discarded_warns:
+            logger.info(
+                "%s: iteration-boundary discarded %d in-flight tracking entries, "
+                "%d delay-warn entries (results arriving after this point will "
+                "no-op the tick() pop and the delayed-result metric will under-count)",
+                country, discarded_inflight, discarded_warns,
+            )
+        else:
+            logger.debug("%s: cleared in-flight tracking after iteration reset", country)
 
     # ------------------------------------------------------------------
     # delayed-result logger (D-09 / RUNT-05)
