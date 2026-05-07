@@ -363,9 +363,9 @@ class TestCheckAndResendStuck(unittest.TestCase):
         """Only one /debug call regardless of number of stuck targets/countries."""
         orch = _OrchestratorTestHelper.make_orchestrator()
         orch.api.call_debug_endpoint.return_value = []
-        orch.api.aggregator._lock = MagicMock()
-        orch.api.aggregator._target_expected = {}
-        orch.api.aggregator._pending = {}
+        # WR-03: orchestrator now reads aggregator pending state via the
+        # public snapshot_pending() API instead of touching private attrs.
+        orch.api.aggregator.snapshot_pending = MagicMock(return_value={})
 
         orch._check_and_resend_stuck({"US": ["a.com", "b.com"], "UK": ["c.com"]})
 
@@ -392,11 +392,10 @@ class TestCheckAndResendStuck(unittest.TestCase):
                 "unstarted_work": [{"keyword": "example.com", "service": "https"}],
             }
         ]
-        orch.api.aggregator._lock = MagicMock()
-        orch.api.aggregator._target_expected = {
-            ("US", "example.com"): frozenset(["1.1.1.1"])
-        }
-        orch.api.aggregator._pending = {("US", "example.com"): {}}
+        # WR-03: snapshot_pending returns {target: (expected, received)}
+        orch.api.aggregator.snapshot_pending = MagicMock(return_value={
+            "example.com": (frozenset(["1.1.1.1"]), frozenset()),
+        })
 
         orch.vantage_points.get_active.return_value = ["1.1.1.1"]
 
@@ -414,11 +413,10 @@ class TestCheckAndResendStuck(unittest.TestCase):
                 "unstarted_work": [],  # target NOT in unstarted_work => lost
             }
         ]
-        orch.api.aggregator._lock = MagicMock()
-        orch.api.aggregator._target_expected = {
-            ("US", "example.com"): frozenset(["1.1.1.1"])
-        }
-        orch.api.aggregator._pending = {("US", "example.com"): {}}
+        # WR-03: snapshot_pending returns {target: (expected, received)}
+        orch.api.aggregator.snapshot_pending = MagicMock(return_value={
+            "example.com": (frozenset(["1.1.1.1"]), frozenset()),
+        })
 
         orch.vantage_points.get_active.return_value = ["1.1.1.1"]
 
@@ -441,11 +439,10 @@ class TestCheckAndResendStuck(unittest.TestCase):
                 "unstarted_work": [],  # lost
             }
         ]
-        orch.api.aggregator._lock = MagicMock()
-        orch.api.aggregator._target_expected = {
-            ("US", "example.com"): frozenset(["1.1.1.1"])
-        }
-        orch.api.aggregator._pending = {("US", "example.com"): {}}
+        # WR-03: snapshot_pending returns {target: (expected, received)}
+        orch.api.aggregator.snapshot_pending = MagicMock(return_value={
+            "example.com": (frozenset(["1.1.1.1"]), frozenset()),
+        })
 
         orch.vantage_points.get_active.return_value = ["1.1.1.1", "3.3.3.3"]
 

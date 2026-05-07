@@ -83,6 +83,27 @@ class MeasurementAggregator:
         with self._lock:
             return self._ready.pop(country, [])
 
+    def snapshot_pending(
+        self, country: str, targets: List[str],
+    ) -> Dict[str, Tuple[frozenset, frozenset]]:
+        """Return ``{target: (expected_vps, received_vps)}`` for *targets* in *country*.
+
+        Public, lock-protected snapshot of the aggregator's pending state for
+        external consumers (e.g. the orchestrator's resend logic). Reads under
+        ``self._lock`` so callers do not need to touch private attributes
+        (WR-03 fix). Targets not currently registered return ``(frozenset(),
+        frozenset())``. The returned frozensets are immutable snapshots safe
+        to use after the lock is released.
+        """
+        with self._lock:
+            out: Dict[str, Tuple[frozenset, frozenset]] = {}
+            for t in targets:
+                key = (country, t)
+                expected = self._target_expected.get(key, frozenset())
+                received = frozenset(self._pending.get(key, {}).keys())
+                out[t] = (expected, received)
+            return out
+
     def drop_vp(self, country: str, vp: str) -> None:
         """Remove *vp* from pending entries and their snapshots for
         *country* — any that are now complete get finalized."""

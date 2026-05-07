@@ -635,29 +635,35 @@ class Orchestrator:
         for country, stuck_targets in stuck_by_country.items():
             active_vps = self.vantage_points.get_active(country)
 
-            # Read aggregator state under lock, then release before HTTP calls
+            # WR-03 fix: snapshot aggregator state via the public API instead
+            # of reaching into private attributes. The aggregator owns its own
+            # locking; we receive immutable frozenset values that remain safe
+            # to use after the call returns.
+            pending_snapshot = self.api.aggregator.snapshot_pending(
+                country, stuck_targets,
+            )
+
             resend_list = []
-            with self.api.aggregator._lock:
-                for target in stuck_targets:
-                    key = (country, target)
-                    expected = self.api.aggregator._target_expected.get(key, frozenset())
-                    received = set(self.api.aggregator._pending.get(key, {}).keys())
-                    missing_vps = expected - received
+            for target in stuck_targets:
+                expected, received = pending_snapshot.get(
+                    target, (frozenset(), frozenset()),
+                )
+                missing_vps = expected - received
 
-                    for vp_ip in missing_vps:
-                        info = vp_status.get(vp_ip)
-                        if info is None:
-                            logger.warning("VP %s not in /debug response, assuming lost", vp_ip)
-                            resend_list.append((target, vp_ip, False))
-                            continue
+                for vp_ip in missing_vps:
+                    info = vp_status.get(vp_ip)
+                    if info is None:
+                        logger.warning("VP %s not in /debug response, assuming lost", vp_ip)
+                        resend_list.append((target, vp_ip, False))
+                        continue
 
-                        # Check if VP still has this target in its unstarted_work
-                        unstarted_keywords = {w["keyword"] for w in info.get("unstarted_work", [])}
-                        if target in unstarted_keywords:
-                            continue  # VP still has it queued, not lost yet
+                    # Check if VP still has this target in its unstarted_work
+                    unstarted_keywords = {w["keyword"] for w in info.get("unstarted_work", [])}
+                    if target in unstarted_keywords:
+                        continue  # VP still has it queued, not lost yet
 
-                        is_pending_removal = info.get("pending_removal", False)
-                        resend_list.append((target, vp_ip, is_pending_removal))
+                    is_pending_removal = info.get("pending_removal", False)
+                    resend_list.append((target, vp_ip, is_pending_removal))
 
             # Now resend outside the lock
             for target, vp_ip, is_pending_removal in resend_list:
