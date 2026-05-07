@@ -106,7 +106,25 @@ class MeasurementAggregator:
     # ------------------------------------------------------------------
     def _try_finalize(self, key: Tuple) -> None:
         expected = self._target_expected.get(key)
-        if not expected:
+        if expected is None:
+            return
+        # WR-01 fix: if drop_vp() drained the expected set to empty, finalize
+        # as a no-vote so the orchestrator can clear in-flight tracking and
+        # the model can advance. Without this, _pending[key], _target_expected[key],
+        # and _schedule_times[key] leak permanently and the orchestrator's
+        # delayed-result logger / resend path will fire forever.
+        if len(expected) == 0:
+            sched_mono = self._schedule_times.pop(key, None)
+            self._ready[key[0]].append(
+                MeasurementResponse(
+                    target=key[1],
+                    blocked=False,
+                    scheduled_at_monotonic=sched_mono,
+                    vp_count=0,
+                )
+            )
+            self._pending.pop(key, None)
+            del self._target_expected[key]
             return
         vp_map = self._pending.get(key)
         if vp_map is None:
