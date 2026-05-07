@@ -453,6 +453,39 @@ class Orchestrator:
             step_times = self.tick()
             iterations += 1
 
+            # WR-07 fix: if the writer is dead (e.g. transient I/O error
+            # during initial header write or a previous writerow), retry
+            # reopening on each tick rather than silently disabling tick
+            # timings for the rest of the run. This restores OBSV-01's
+            # "files are created on first row" invariant after recoverable
+            # failures (network-mounted output folder hiccups, etc.).
+            if timings_writer is None and output_folder:
+                try:
+                    timings_path = Path(output_folder) / "tick_timings.csv"
+                    timings_file = open(timings_path, "a", newline="")
+                    timings_writer = csv.DictWriter(timings_file, fieldnames=timings_fieldnames)
+                    if timings_path.stat().st_size == 0:
+                        timings_writer.writeheader()
+                        timings_file.flush()
+                    logger.info(
+                        "tick_timings.csv reopened successfully at tick %d", iterations,
+                    )
+                except Exception as exc:
+                    # Recurring warning every FLUSH_EVERY ticks while the
+                    # writer remains dead, so the operator sees the issue.
+                    if iterations % FLUSH_EVERY == 1:
+                        logger.error(
+                            "tick_timings.csv reopen attempt failed at tick %d: %s",
+                            iterations, exc,
+                        )
+                    timings_writer = None
+                    if timings_file is not None:
+                        try:
+                            timings_file.close()
+                        except Exception:
+                            pass
+                    timings_file = None
+
             if timings_writer is not None:
                 row = {
                     "tick_idx":           iterations,
@@ -466,6 +499,17 @@ class Orchestrator:
                         timings_file.flush()
                 except Exception as exc:
                     logger.error("tick_timings write failed at tick %d: %s", iterations, exc)
+                    # WR-07 fix: if the write itself fails (not just the
+                    # initial open), drop the writer so the reopen-retry
+                    # path above gets a chance on the next tick. Do not
+                    # leave a half-broken handle in place for the rest
+                    # of the run.
+                    try:
+                        timings_file.close()
+                    except Exception:
+                        pass
+                    timings_writer = None
+                    timings_file = None
 
             sleep(0.5)
 
