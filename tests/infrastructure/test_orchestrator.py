@@ -1,5 +1,7 @@
+import csv as _csv_module
 import logging
 import signal
+import threading
 import time
 import unittest
 from collections import defaultdict
@@ -856,6 +858,152 @@ class TestShutdownClosesMeasurementsWriters(unittest.TestCase):
         with self.assertLogs(level=logging.ERROR):
             orch._shutdown()
         good_node.close_measurements.assert_called_once()
+class TestTickReturnsTimings(unittest.TestCase):
+    """Phase 3 D-07/D-08/D-11: tick() returns a six-field timing dict."""
+
+    def _make_orchestrator(self):
+        from Infrastructure.main.orchestrator import Orchestrator
+        with patch.object(Orchestrator, '__init__', lambda self, *a, **kw: None):
+            orch = Orchestrator.__new__(Orchestrator)
+        orch.agents = {}
+        orch.completed_agents = set()
+        orch.target_countries = set()
+        orch._inflight_times = defaultdict(dict)
+        orch._last_delay_warn = defaultdict(dict)
+        orch.api = MagicMock()
+        orch.api.receiver.drain_queues = MagicMock()
+        orch.api.aggregator.get_ready = MagicMock(return_value=[])
+        orch.api.drain_raw_results = MagicMock(return_value=[])
+        orch._process_eval_results = MagicMock()
+        orch.vantage_points = MagicMock()
+        orch.services = ["https"]
+        return orch
+
+    def test_tick_returns_six_step_timings(self):
+        orch = self._make_orchestrator()
+        result = orch.tick()
+        assert isinstance(result, dict)
+        assert set(result.keys()) == {
+            "drain", "eval_processing", "aggregate",
+            "model_update", "schedule", "total",
+        }
+        for k, v in result.items():
+            assert isinstance(v, float), f"{k} is not float: {type(v)}"
+            assert v >= 0.0, f"{k} is negative: {v}"
+
+    def test_tick_total_geq_outer_steps(self):
+        orch = self._make_orchestrator()
+        result = orch.tick()
+        # total bounds drain + eval_processing (outer-most steps)
+        assert result["total"] >= result["drain"] + result["eval_processing"] - 1e-6
+
+    def test_tick_per_country_steps_zero_with_no_agents(self):
+        orch = self._make_orchestrator()
+        result = orch.tick()
+        assert result["aggregate"] == 0.0
+        assert result["model_update"] == 0.0
+        assert result["schedule"] == 0.0
+
+
+class TestTickTimingsCsv(unittest.TestCase):
+    """Phase 3 D-07/D-09/D-10: tick_timings.csv schema and flush cadence."""
+
+    def _make_orchestrator(self, tmp_path):
+        from Infrastructure.main.orchestrator import Orchestrator
+        with patch.object(Orchestrator, '__init__', lambda self, *a, **kw: None):
+            orch = Orchestrator.__new__(Orchestrator)
+        orch.output_folder = str(tmp_path)
+        orch.agents = {}
+        orch.completed_agents = set()
+        orch.target_countries = set()
+        orch._stop_event = threading.Event()
+        orch._next_reset_utc = datetime.now(timezone.utc) + timedelta(days=1)
+        orch._last_delay_warn = defaultdict(dict)
+        orch._inflight_times = defaultdict(dict)
+        orch._last_checkpoint_time = time.monotonic()
+        orch._checkpoint_interval = 3600.0
+        orch.api = MagicMock()
+        orch.api.receiver._process = None
+        orch._install_signal_handlers = MagicMock()
+        orch._subprocess_healthy = MagicMock(return_value=True)
+        orch._check_delayed_results = MagicMock()
+        orch._checkpoint_all_nodes = MagicMock()
+        orch._state_dir_for = MagicMock(return_value=Path(str(tmp_path)) / "state")
+        orch._shutdown = MagicMock()
+        return orch
+
+    def test_tick_timings_csv_header_and_rows(self):
+        import tempfile
+        tmp = Path(tempfile.mkdtemp())
+        orch = self._make_orchestrator(tmp)
+        tick_count = [0]
+
+        def fake_tick():
+            tick_count[0] += 1
+            if tick_count[0] >= 3:
+                orch._stop_event.set()
+            return {
+                "drain": 0.001, "eval_processing": 0.002,
+                "aggregate": 0.003, "model_update": 0.004,
+                "schedule": 0.005, "total": 0.015,
+            }
+        orch.tick = fake_tick
+
+        # Patch sleep to no-op to keep the test fast
+        with patch("Infrastructure.main.orchestrator.sleep", lambda _x: None):
+            orch.run_forever()
+
+        csv_path = tmp / "tick_timings.csv"
+        assert csv_path.exists()
+        with open(csv_path) as f:
+            lines = f.readlines()
+        assert lines[0].strip() == "tick_idx,utc_timestamp,n_active_countries,drain,eval_processing,aggregate,model_update,schedule,total"
+        # 1 header + 3 data rows
+        assert len(lines) == 4
+
+    def test_tick_timings_csv_one_row_per_tick(self):
+        import tempfile
+        tmp = Path(tempfile.mkdtemp())
+        orch = self._make_orchestrator(tmp)
+        tick_count = [0]
+
+        def fake_tick():
+            tick_count[0] += 1
+            if tick_count[0] >= 5:
+                orch._stop_event.set()
+            return {"drain": 0.0, "eval_processing": 0.0, "aggregate": 0.0,
+                    "model_update": 0.0, "schedule": 0.0, "total": 0.0}
+        orch.tick = fake_tick
+
+        with patch("Infrastructure.main.orchestrator.sleep", lambda _x: None):
+            orch.run_forever()
+
+        with open(tmp / "tick_timings.csv") as f:
+            rows = list(_csv_module.DictReader(f))
+        assert len(rows) == 5
+        # tick_idx is monotonic 1..5
+        assert [int(r["tick_idx"]) for r in rows] == [1, 2, 3, 4, 5]
+
+    def test_tick_timings_csv_flushed_on_shutdown(self):
+        """The handle is flushed+closed BEFORE _shutdown so the file is readable post-exit."""
+        import tempfile
+        tmp = Path(tempfile.mkdtemp())
+        orch = self._make_orchestrator(tmp)
+
+        def fake_tick():
+            orch._stop_event.set()  # exit after one tick
+            return {"drain": 0.0, "eval_processing": 0.0, "aggregate": 0.0,
+                    "model_update": 0.0, "schedule": 0.0, "total": 0.0}
+        orch.tick = fake_tick
+
+        with patch("Infrastructure.main.orchestrator.sleep", lambda _x: None):
+            orch.run_forever()
+
+        # File is readable post-exit and has 1 data row
+        with open(tmp / "tick_timings.csv") as f:
+            rows = list(_csv_module.DictReader(f))
+        assert len(rows) == 1
+        orch._shutdown.assert_called_once()
 
 
 if __name__ == "__main__":

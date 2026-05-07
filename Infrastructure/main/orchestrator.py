@@ -1,3 +1,4 @@
+import csv
 import logging
 import os
 import signal
@@ -7,7 +8,7 @@ from collections import defaultdict
 from datetime import datetime, timezone, timedelta, time as dtime
 from pathlib import Path
 from time import sleep
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Optional, Set, Tuple
 
 from models.ucb.ucb_naive import UCBNaiveParserOptions
 from Infrastructure.apis.funneler import HyperQuackAPI
@@ -166,25 +167,37 @@ class Orchestrator:
     # ------------------------------------------------------------------
     # main loop
     # ------------------------------------------------------------------
-    def tick(self) -> None:
+    def tick(self) -> Dict[str, float]:
+        t0 = time.perf_counter()
+
         # Step 0: move payloads from the server process into local stores
         self.api.receiver.drain_queues()
+        t1 = time.perf_counter()
 
         # Step 1: process VP evaluation results
         self._process_eval_results()
+        t2 = time.perf_counter()
+
+        # Per-country sub-step accumulators (Phase 3 D-07: summed across countries).
+        agg_time = 0.0
+        model_update_time = 0.0
+        schedule_time = 0.0
 
         finished_nodes: List[str] = []
 
         for country, node in self.agents.items():
             # Step 2: drain raw results, check VP health, aggregate
+            _s2 = time.perf_counter()
             raw_results = self.api.drain_raw_results(country)
             if raw_results:
                 dropped_vps = self._check_vp_health(country, raw_results)
                 if dropped_vps:
                     raw_results = [r for r in raw_results if r.vp not in dropped_vps]
                 self._feed_aggregator(country, raw_results)
+            agg_time += time.perf_counter() - _s2
 
             # Step 3: deliver aggregated results to the node
+            _s3 = time.perf_counter()
             aggregated = self.api.aggregator.get_ready(country)
             if aggregated:
                 node.maybe_update_model(aggregated)
@@ -194,8 +207,9 @@ class Orchestrator:
                 logger.info(
                     f"{country} received {len(aggregated)} results: {[r.target for r in aggregated]}"
                     )
+            model_update_time += time.perf_counter() - _s3
 
-            # Step 4: check for completion
+            # Step 4: check for completion (NO timing column per D-08)
             if node.state is NodeState.DONE:
                 logger.info(
                     "%s completed %d episodes, finished.",
@@ -206,6 +220,7 @@ class Orchestrator:
                 continue
 
             # Step 5: schedule new measurements across all active VPs
+            _s5 = time.perf_counter()
             active_vps = self.vantage_points.get_active(country)
             if not active_vps:
                 # No active VPs and no inactive replacements — region is dead
@@ -215,10 +230,12 @@ class Orchestrator:
                         country,
                     )
                     finished_nodes.append(country)
+                schedule_time += time.perf_counter() - _s5
                 continue
 
             targets = node.maybe_request_more()
             if not targets:
+                schedule_time += time.perf_counter() - _s5
                 continue
             logger.info(
                 f"{country} requesting {len(targets)} measurements: {targets}"
@@ -242,19 +259,70 @@ class Orchestrator:
             )
             for t in targets:
                 self._inflight_times[country][t] = now
+            schedule_time += time.perf_counter() - _s5
 
         for country in finished_nodes:
             self.agents.pop(country, None)
             self.target_countries.discard(country)
 
+        t_end = time.perf_counter()
+        return {
+            "drain":           round(t1 - t0, 6),
+            "eval_processing": round(t2 - t1, 6),
+            "aggregate":       round(agg_time, 6),
+            "model_update":    round(model_update_time, 6),
+            "schedule":        round(schedule_time, 6),
+            "total":           round(t_end - t0, 6),
+        }
+
     def run_forever(self) -> None:
         self._install_signal_handlers()
-        sum_time = []
         iterations = 0
+
+        # Phase 3 D-07/D-09/D-10: per-tick timing CSV writer.
+        # File at <output>/tick_timings.csv; opened once at run start, header on
+        # first row when file is empty, buffered flush every 10 ticks (~5 s at
+        # the 0.5 s sleep cadence), closed before _shutdown.
+        timings_path: Optional[Path] = None
+        timings_file = None
+        timings_writer = None
+        timings_fieldnames = [
+            "tick_idx", "utc_timestamp", "n_active_countries",
+            "drain", "eval_processing", "aggregate",
+            "model_update", "schedule", "total",
+        ]
+        FLUSH_EVERY = 10
+
+        output_folder = getattr(self, "output_folder", None)
+        if output_folder:
+            try:
+                timings_path = Path(output_folder) / "tick_timings.csv"
+                # Note: open(..., "a") creates the file if missing, so size==0 on first run.
+                timings_file = open(timings_path, "a", newline="")
+                timings_writer = csv.DictWriter(timings_file, fieldnames=timings_fieldnames)
+                if timings_path.stat().st_size == 0:
+                    timings_writer.writeheader()
+                    timings_file.flush()
+            except Exception as exc:
+                logger.error("Failed to open tick_timings.csv: %s", exc)
+                timings_writer = None
+                if timings_file is not None:
+                    try:
+                        timings_file.close()
+                    except Exception:
+                        pass
+                timings_file = None
+
         while not self._stop_event.is_set():
             # Subprocess health check (D-12 / RUNT-06)
             if not self._subprocess_healthy():
                 self._shutdown()
+                if timings_file is not None:
+                    try:
+                        timings_file.flush()
+                        timings_file.close()
+                    except Exception:
+                        pass
                 return
 
             # Wall-clock daily save check (Phase 02.1 D-09, D-10)
@@ -283,19 +351,41 @@ class Orchestrator:
                 self._checkpoint_all_nodes()
                 self._last_checkpoint_time = now_mono
 
-            start_time = time.perf_counter()
-            self.tick()
-            end_time = time.perf_counter()
-            sum_time.append(end_time - start_time)
+            # Phase 3 D-09: snapshot tick metadata BEFORE tick() so the row
+            # reflects the active-country count at start-of-tick (matches the
+            # sub-step accumulators which also iterate over the start-of-tick
+            # agents set).
+            tick_utc = datetime.now(timezone.utc).isoformat(timespec="seconds")
+            n_countries = len(self.agents)
+
+            step_times = self.tick()
             iterations += 1
+
+            if timings_writer is not None:
+                row = {
+                    "tick_idx":           iterations,
+                    "utc_timestamp":      tick_utc,
+                    "n_active_countries": n_countries,
+                    **step_times,
+                }
+                try:
+                    timings_writer.writerow(row)
+                    if iterations % FLUSH_EVERY == 0:
+                        timings_file.flush()
+                except Exception as exc:
+                    logger.error("tick_timings write failed at tick %d: %s", iterations, exc)
+
             sleep(0.5)
 
+        # Graceful exit path: flush + close before _shutdown.
+        if timings_file is not None:
+            try:
+                timings_file.flush()
+                timings_file.close()
+            except Exception as exc:
+                logger.error("Failed to close tick_timings.csv: %s", exc)
+
         self._shutdown()
-        if iterations > 0:
-            logger.info(
-                "Average time for tick function to complete: %.6f",
-                sum(sum_time) / iterations,
-            )
 
     # ------------------------------------------------------------------
     # signal handling (D-04 / D-11)
