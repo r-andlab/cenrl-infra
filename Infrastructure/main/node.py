@@ -427,9 +427,18 @@ class RegionalNode:
         :param self: Node responsible for current model
         :param measurements: List of incoming measurement responses to absorb into model
         :type measurements: List[MeasurementResponse]
-        :return: Number of measurements successfully absorbed
+        :return: Number of in-flight slots this batch reclaims. Equal to the
+            count of measurements successfully absorbed by the model PLUS any
+            duplicate/stale results that were skipped (WR-02 fix). The caller
+            decrements ``self.in_flight`` by this value so accounting stays
+            symmetric with scheduling, which always increments ``in_flight``
+            regardless of whether the result later turns out to be a duplicate.
+            ``current_epoch_num`` is only advanced by the count of measurements
+            that were actually absorbed (not by skipped duplicates), so the
+            episode quota tracks real progress.
         """
         absorbed = 0
+        consumed = 0
         start_step = self.model.current_epoch_num
         for m in measurements:
             try:
@@ -439,6 +448,13 @@ class RegionalNode:
                     "%s: skipping duplicate/stale result for target %s",
                     self.country, m.target,
                 )
+                # WR-02 fix: a duplicate/stale result still consumed an
+                # in-flight slot when it was originally scheduled. Count it
+                # toward consumed so the caller's `in_flight -= consumed`
+                # decrement does not under-count, which would leave
+                # `in_flight` permanently above zero and block
+                # _finish_episode_if_ready.
+                consumed += 1
                 continue
             step_idx = start_step + absorbed
             episode_stat = {
@@ -472,9 +488,10 @@ class RegionalNode:
 
             self.episode_stats.append(episode_stat)
             absorbed += 1
+            consumed += 1
 
         self.model.current_epoch_num += absorbed
-        return absorbed
+        return consumed
 
     def _write_measurements_row(self, row: Dict[str, Any]) -> None:
         """Append one row to <country>_measurements.csv (Phase 3 D-01..D-06).
@@ -624,9 +641,14 @@ class RegionalNode:
         if not measurements:
             return None
 
-        absorbed = self._append_measurements(measurements)
+        # WR-02 fix: _append_measurements returns the number of in-flight
+        # slots reclaimed (absorbed + skipped duplicates). Decrementing
+        # in_flight by this value keeps accounting symmetric with the
+        # schedule path that always increments in_flight on send,
+        # regardless of whether the result later turns out to be a duplicate.
+        consumed = self._append_measurements(measurements)
 
-        self.in_flight -= absorbed
+        self.in_flight -= consumed
         if self.in_flight < 0:
             logger.warning(
                 "%s: in_flight went negative (%d), clamping to 0 — possible double-absorption",
