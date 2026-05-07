@@ -257,8 +257,13 @@ class TestRegisterTargetsWiring(unittest.TestCase):
 
         orch.tick()
 
+        # Phase 3 D-04: register_targets now also receives a schedule_times
+        # kwarg from the orchestrator. Use ANY to avoid coupling this test
+        # to the exact monotonic value picked at scheduling.
+        from unittest.mock import ANY
         orch.api.aggregator.register_targets.assert_called_once_with(
-            "US", ["example.com", "test.org"], {"1.1.1.1", "2.2.2.2"}
+            "US", ["example.com", "test.org"], {"1.1.1.1", "2.2.2.2"},
+            schedule_times=ANY,
         )
         # update_aggregator_vps should NOT be called
         orch.api.update_aggregator_vps.assert_not_called()
