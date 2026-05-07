@@ -5,6 +5,7 @@ import os
 import signal
 import subprocess
 import sys
+import tempfile
 import threading
 import time
 from collections import defaultdict
@@ -219,13 +220,30 @@ class Orchestrator:
         }
 
         config_path = Path(self.output_folder) / "run_config.json"
-        tmp_path = str(config_path) + ".tmp"
+        # WR-08 fix: use NamedTemporaryFile (delete=False) for unique tmp
+        # names per process. The previous fixed `<path>.tmp` was vulnerable
+        # to two concurrent orchestrator processes racing on the same tmp
+        # file and producing a truncated final json.
+        tmp_path: Optional[str] = None
         try:
-            with open(tmp_path, "w") as f:
+            with tempfile.NamedTemporaryFile(
+                mode="w",
+                dir=str(self.output_folder),
+                prefix="run_config.json.",
+                suffix=".tmp",
+                delete=False,
+            ) as f:
+                tmp_path = f.name
                 json.dump(config, f, indent=2, default=str)
             os.replace(tmp_path, str(config_path))
         except Exception as exc:
             logger.error("Failed to write run_config.json: %s", exc)
+            # Best-effort cleanup of the unique tmp file if replace failed.
+            if tmp_path is not None:
+                try:
+                    os.remove(tmp_path)
+                except Exception:
+                    pass
             return
 
         short_sha = git_sha[:8] if git_sha else "unknown"

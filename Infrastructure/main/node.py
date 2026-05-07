@@ -6,6 +6,7 @@ import json
 import logging
 import os
 import sys
+import tempfile
 import time
 from Infrastructure.models.BatchUCB import BatchUCB
 from Infrastructure.utils.persistence import find_latest_state, load_graph_and_sidecar, validate_sidecar
@@ -218,10 +219,30 @@ class RegionalNode:
             "save_timestamp": datetime.now(timezone.utc).isoformat(),
             "country_code": self.country,
         }
-        tmp_path = str(json_path) + ".tmp"
-        with open(tmp_path, "w") as f:
-            json.dump(sidecar, f, indent=2)
-        os.replace(tmp_path, str(json_path))
+        # WR-08 fix: use NamedTemporaryFile (delete=False) for unique tmp
+        # names per process. The previous fixed `<path>.tmp` was vulnerable
+        # to two concurrent writers racing on the same tmp file and producing
+        # a truncated final json.
+        tmp_path: Optional[str] = None
+        try:
+            with tempfile.NamedTemporaryFile(
+                mode="w",
+                dir=str(json_path.parent),
+                prefix=json_path.name + ".",
+                suffix=".tmp",
+                delete=False,
+            ) as f:
+                tmp_path = f.name
+                json.dump(sidecar, f, indent=2)
+            os.replace(tmp_path, str(json_path))
+        except Exception:
+            # Best-effort cleanup of the unique tmp file if replace failed.
+            if tmp_path is not None:
+                try:
+                    os.remove(tmp_path)
+                except Exception:
+                    pass
+            raise
 
     def save_checkpoint(self, state_dir: Path, prefix: str = "checkpoint") -> None:
         """Save rolling checkpoint (overwrites fixed filenames per D-02).
