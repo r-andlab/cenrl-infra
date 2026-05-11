@@ -38,6 +38,22 @@ class BatchUCB(UCBNaive):
     def choose_targets(
         self, selected_arm_key: str, selected_arm_name: str, selection_size: int = 10
     ) -> List[str]:
+        """Select target node_ids for a given arm.
+
+        TOP_K_FROM_ARM (default): sample K via sample_successors from `selected_arm_key`.
+
+        UNIFORM_SPREAD / WEIGHTED_SPREAD: NOT supported via this per-arm API.
+        Per D-14, SPREAD modes allocate K across MULTIPLE leaf arms — they
+        cannot produce a correct per-target `arm_seq` from a single
+        `selected_arm_key`. The single legitimate SPREAD entry path is
+        `queue_measurement` -> `_queue_measurement_spread`, which builds
+        Pending objects with the correct per-leaf arm_seq via the
+        predecessors walk.
+
+        W4 fix: previously this path silently delegated to a fallback that
+        produced incorrect Pendings (no arm_seq). That fallback is removed;
+        misuse raises loudly.
+        """
         if self.selection_method is BatchSelectionMethod.TOP_K_FROM_ARM:
             """Method: Choose top-k from chosen arm"""
             chosen_targets = self.action_space.sample_successors(
@@ -46,12 +62,15 @@ class BatchUCB(UCBNaive):
                 use_rank_weights=self.sample_by_target_rank,
             )
             return chosen_targets[0:selection_size]
-        elif self.selection_method is BatchSelectionMethod.UNIFORM_SPREAD:
-            """Method: Spread selection over all arms equally"""
-            raise NotImplementedError
-        elif self.selection_method is BatchSelectionMethod.WEIGHTED_SPREAD:
-            """Method: Distribute k targets over arms depending on previous arm success"""
-            raise NotImplementedError
+        elif self.selection_method in (
+            BatchSelectionMethod.UNIFORM_SPREAD,
+            BatchSelectionMethod.WEIGHTED_SPREAD,
+        ):
+            raise NotImplementedError(
+                "SPREAD callers must use queue_measurement; choose_targets is "
+                "per-arm only — see D-14"
+            )
+        return []
 
     def _eligible_leaf_arms(self) -> List[tuple]:
         """D-10: enumerate eligible leaf arms = arms with >=1 non-SLEEPING target successor.
@@ -180,39 +199,112 @@ class BatchUCB(UCBNaive):
         seq.reverse()
         return seq
 
-    def queue_measurement(self, batch_size) -> list[str]:
-        """
-        Selects an arm, then selects a group of targets from that arm.
-        Returns a list of targets to measure.
-        """
-        arm_seq = self.choose_arm()
-        arm_key = arm_seq[-1]
-        arm_name = self.action_space.get(arm_key)[action_space_module.NAME]
+    def _queue_measurement_spread(self, batch_size: int) -> List[str]:
+        """D-14/D-15/D-16: SPREAD entry path. Per D-14 the per-arm chooser is
+        bypassed entirely; targets are allocated directly across eligible leaf arms.
 
-        if self.verbose and self.logfile:
-            self.logfile.write(str(arm_name) + LOG_FILE_DELIMITER)
+        For each eligible leaf arm:
+          1. Read Q-value via _eligible_leaf_arms (cheap; one pass).
+          2. Allocate K via Hare/Hamilton (UNIFORM equal share or WEIGHTED softmax).
+          3. Sample `allocation` targets via sample_successors with rank-weighting
+             matching self.sample_by_target_rank (D-15: reuse existing call).
+          4. Build a Pending per target with arm_key = leaf arm and arm_seq =
+             _arm_seq_for_leaf walk (D-14).
+          5. Apply the existing dedup against self._selected_targets (preserves
+             SPREAD's per-batch-window safety).
 
-        node_ids = self.choose_targets(arm_key, arm_name, batch_size)
+        Short-batch (D-16): if the sum of per-arm samples is M < K, return
+        what was found. The orchestrator's in_flight accounting and the
+        iteration-quota guard already handle short batches.
+        """
+        eligible = self._eligible_leaf_arms()
+        if not eligible:
+            return []
+
+        allocations = self._compute_arm_allocations(eligible, batch_size, self.selection_method)
+        if not allocations:
+            return []
 
         new_targets: Dict[str, Pending] = {}
-        for node_id in node_ids:
-            t_name = self.action_space.get(node_id)[action_space_module.NAME]
-            # skip targets already in-flight to avoid duplicate measurements
-            if t_name in self._selected_targets or t_name in new_targets:
-                continue
-
-            new_targets[t_name] = Pending(
-                node_id=node_id,
-                arm_key=arm_key,
-                arm_seq=arm_seq,
+        for arm_key, allocation in allocations.items():
+            # D-15: reuse existing sample_successors with the per-arm allocation.
+            sampled_node_ids = self.action_space.sample_successors(
+                arm_key,
+                n_samples=allocation,
+                use_rank_weights=self.sample_by_target_rank,
             )
+            if not sampled_node_ids:
+                continue
+            # D-14: per-target arm_seq from leaf arm upward (one walk per arm; reused for all this arm's targets).
+            arm_seq = self._arm_seq_for_leaf(arm_key)
+            for node_id in sampled_node_ids[:allocation]:
+                t_name = self.action_space.get(node_id)[action_space_module.NAME]
+                # Per-batch-window dedup (matches BatchUCB.py:73 idiom).
+                if t_name in self._selected_targets or t_name in new_targets:
+                    continue
+                new_targets[t_name] = Pending(
+                    node_id=node_id,
+                    arm_key=arm_key,
+                    arm_seq=arm_seq,
+                )
 
         self._selected_targets.update(new_targets)
-        
-        if self.verbose and self.logfile:
-            self.logfile.write(f"Selection Size {batch_size}" + LOG_FILE_DELIMITER)
 
+        if self.verbose and self.logfile:
+            # SPREAD per-batch summary (Claude's discretion in CONTEXT.md):
+            # write "SPREAD" tag plus arm count and total selection size.
+            arms_used = sorted(allocations.keys())
+            self.logfile.write(
+                f"SPREAD arms={len(arms_used)} alloc={allocations} k={batch_size}"
+                + LOG_FILE_DELIMITER
+                + f"Selection Size {len(new_targets)}"
+                + LOG_FILE_DELIMITER
+            )
+
+        # D-16: return what was found, even if M < batch_size.
         return list(new_targets.keys())
+
+    def queue_measurement(self, batch_size) -> list[str]:
+        """
+        Selects targets according to self.selection_method.
+
+        TOP_K_FROM_ARM (default): pick one arm via choose_arm(), sample K targets from it.
+        UNIFORM_SPREAD / WEIGHTED_SPREAD (D-14): bypass choose_arm(); allocate K
+        across all eligible leaf arms via _compute_arm_allocations and sample
+        per-arm via sample_successors.
+        """
+        if self.selection_method is BatchSelectionMethod.TOP_K_FROM_ARM:
+            arm_seq = self.choose_arm()
+            arm_key = arm_seq[-1]
+            arm_name = self.action_space.get(arm_key)[action_space_module.NAME]
+
+            if self.verbose and self.logfile:
+                self.logfile.write(str(arm_name) + LOG_FILE_DELIMITER)
+
+            node_ids = self.choose_targets(arm_key, arm_name, batch_size)
+
+            new_targets: Dict[str, Pending] = {}
+            for node_id in node_ids:
+                t_name = self.action_space.get(node_id)[action_space_module.NAME]
+                # skip targets already in-flight to avoid duplicate measurements
+                if t_name in self._selected_targets or t_name in new_targets:
+                    continue
+
+                new_targets[t_name] = Pending(
+                    node_id=node_id,
+                    arm_key=arm_key,
+                    arm_seq=arm_seq,
+                )
+
+            self._selected_targets.update(new_targets)
+
+            if self.verbose and self.logfile:
+                self.logfile.write(f"Selection Size {batch_size}" + LOG_FILE_DELIMITER)
+
+            return list(new_targets.keys())
+
+        # SPREAD: bypass choose_arm(), allocate K across eligible arms.
+        return self._queue_measurement_spread(batch_size)
 
     def absorb_measurement(self, result: dict[str, str]):
         """
