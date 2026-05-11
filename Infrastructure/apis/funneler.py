@@ -24,6 +24,7 @@ from Infrastructure.utils.structures import (
     Tag,
     Job,
     MeasurementResponse,
+    AggregationMethod,
 )
 
 logger = logging.getLogger(__name__)
@@ -43,11 +44,15 @@ class HyperQuackAPI(Api):
         debug_block_prob: float = 0.15,
         debug_min_delay_s: float = 0.0,
         debug_max_delay_s: float = 0.0,
+        aggregation_method: AggregationMethod = AggregationMethod.MAJORITY_VOTE,
     ):
         """
         :param go_api_url: Base URL of the Go API (e.g. http://127.0.0.1:8080)
         :param eval_store: Shared EvalStore for VP evaluation results
         :param vantage_points: VantagePoints instance for port lookups
+        :param aggregation_method: Phase 4 D-01 — VP-vote aggregation method
+            threaded into MeasurementAggregator. Defaults to MAJORITY_VOTE so
+            omitting the CLI flag preserves Phase 02.1/03 behavior bit-for-bit.
         """
         self.go_api_url = go_api_url.rstrip("/")
         self.retries = 5
@@ -56,7 +61,7 @@ class HyperQuackAPI(Api):
         self.vantage_points = vantage_points
         self.store: MeasurementStore = MeasurementStore()
         self.eval_store = eval_store
-        self.aggregator = MeasurementAggregator()
+        self.aggregator = MeasurementAggregator(aggregation_method=aggregation_method)
         self.receiver: MeasurementReceiver = MeasurementReceiver(
             self.store, eval_store=self.eval_store
         )

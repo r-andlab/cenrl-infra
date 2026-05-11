@@ -10,6 +10,7 @@ import threading
 import time
 from collections import defaultdict
 from datetime import datetime, timezone, timedelta, time as dtime
+from enum import Enum
 from pathlib import Path
 from time import sleep
 from typing import Dict, List, Optional, Set, Tuple
@@ -20,7 +21,15 @@ from Infrastructure.models.BatchUCB import BatchUCB
 from Infrastructure.main.node import RegionalNode
 from Infrastructure.main.vantage_points import VantagePoints
 from Infrastructure.utils.eval_store import EvalStore
-from Infrastructure.utils.structures import NodeState, TestPayload, Tag
+from Infrastructure.utils.structures import (
+    NodeState,
+    TestPayload,
+    Tag,
+    AggregationMethod,
+    BatchSelectionMethod,
+    BatchSizeMethod,
+    PropagationMethod,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -40,6 +49,7 @@ class Orchestrator:
         previous_values_folder: str = None,
         debug: bool = False,
         vp_pool_config: Optional[Dict] = None,
+        aggregation_method: AggregationMethod = AggregationMethod.MAJORITY_VOTE,
     ):
         self.params = params
         self.output_folder = params.get("output_directory", None)
@@ -69,12 +79,17 @@ class Orchestrator:
         # Shared eval store for VP evaluation results
         self.eval_store = EvalStore()
 
+        # Phase 4 D-01: cache the aggregation enum so future code paths
+        # (and the run_config snapshot) can read it from self.
+        self._aggregation_method: AggregationMethod = aggregation_method
+
         # Create API with shared eval store
         self.api = HyperQuackAPI(
             go_api_endpoint,
             eval_store=self.eval_store,
             vantage_points=vantage_points,
             debug=debug,
+            aggregation_method=aggregation_method,
         )
 
         # Nodes are created lazily once a VP passes evaluation.
@@ -893,17 +908,76 @@ class Orchestrator:
         return any(c not in self.agents for c in self.target_countries)
 
 
+# D-03: CLI string -> enum resolver. Lives at module scope so __main__ can use
+# it without re-creating per process. Extending here is the canonical place
+# when adding new strategy axes (e.g., Phase 5 ASN strategy variants).
+STRATEGY_MAP: Dict[str, Dict[str, Enum]] = {
+    "aggregation": {
+        "majority": AggregationMethod.MAJORITY_VOTE,
+        "weighted": AggregationMethod.WEIGHTED_VOTE,
+    },
+    "batch_size_method": {
+        "constant":        BatchSizeMethod.CONSTANT_VAL,
+        "vary-on-success": BatchSizeMethod.VARY_ON_SUCCESS,
+    },
+    "target_selection": {
+        "top-k":           BatchSelectionMethod.TOP_K_FROM_ARM,
+        "uniform-spread":  BatchSelectionMethod.UNIFORM_SPREAD,
+        "weighted-spread": BatchSelectionMethod.WEIGHTED_SPREAD,
+    },
+    "propagation": {
+        "on-receipt": PropagationMethod.ON_RECEIPT,
+        "in-order":   PropagationMethod.IN_ORDER,
+    },
+}
+
+
 class OrchestrationParser(UCBNaiveParserOptions):
+
+    def add_arguments(self):
+        super().add_arguments()
+        self.parser.add_argument(
+            "--aggregation",
+            choices=["majority", "weighted"], default="majority",
+            help="VP-vote aggregation method",
+        )
+        self.parser.add_argument(
+            "--batch-size",
+            choices=["constant", "vary-on-success"], default="constant",
+            help="Batch-size policy",
+        )
+        self.parser.add_argument(
+            "--target-selection",
+            choices=["top-k", "uniform-spread", "weighted-spread"], default="top-k",
+            help="Target-selection method within an arm",
+        )
+        self.parser.add_argument(
+            "--propagation",
+            choices=["on-receipt", "in-order"], default="on-receipt",
+            help="Reward-propagation policy",
+        )
 
     def set_params(self, args):
         if args.outfile[-1] != "/":
             args.outfile += "/"
         super().set_params(args)
+        # Raw strings preserved for run_config.json cli_params group;
+        # resolution to enums happens in __main__ via STRATEGY_MAP.
+        self.params["aggregation"]       = args.aggregation
+        self.params["batch_size_method"] = getattr(args, "batch_size")
+        self.params["target_selection"]  = getattr(args, "target_selection")
+        self.params["propagation"]       = args.propagation
 
 
 if __name__ == "__main__":
     parser = OrchestrationParser()
     params = parser.parse()
+
+    # D-03: resolve raw CLI strings to enum members
+    agg_enum  = STRATEGY_MAP["aggregation"][params["aggregation"]]
+    size_enum = STRATEGY_MAP["batch_size_method"][params["batch_size_method"]]
+    sel_enum  = STRATEGY_MAP["target_selection"][params["target_selection"]]
+    prop_enum = STRATEGY_MAP["propagation"][params["propagation"]]
 
     # Phase 3 D-13: vp_pool_inputs group of run_config.json. Built from the
     # same literals consumed by VantagePoints below so the snapshot is the
@@ -924,6 +998,7 @@ if __name__ == "__main__":
         services=["https"],
         vps_per_country=3,
         vp_pool_config=vp_pool_config,
+        aggregation_method=agg_enum,
     )
     m.run_forever()
     # python3 Infrastructure/main/orchestrator.py -E 1 -m 1000 -v -f "categories" -a inputs/tranco/tranco_categories_subdomain_tld_entities_top10k.csv -f "categories" -s 0.0 -c 0.03 -V 0.0 -o outputs/outtest
