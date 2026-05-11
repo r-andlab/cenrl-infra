@@ -1,6 +1,7 @@
 from models.ucb.ucb_naive import UCBNaive
 import models.base.action_space as action_space_module
 from typing import List, Dict
+import numpy as np
 from Infrastructure.utils.structures import (
     BatchSizeMethod,
     BatchSelectionMethod,
@@ -51,6 +52,133 @@ class BatchUCB(UCBNaive):
         elif self.selection_method is BatchSelectionMethod.WEIGHTED_SPREAD:
             """Method: Distribute k targets over arms depending on previous arm success"""
             raise NotImplementedError
+
+    def _eligible_leaf_arms(self) -> List[tuple]:
+        """D-10: enumerate eligible leaf arms = arms with >=1 non-SLEEPING target successor.
+
+        Returns: list of (arm_key, q_value) pairs. Insertion order = NetworkX
+        descendant order from root, which gives a stable tie-break for
+        leftover allocation (D-11/D-12).
+
+        A "leaf arm" is the lowest-level non-target node — its direct successors
+        are IS_TARGET_NODE leaves. We enumerate the active leaf-target population
+        (gen_active_target_nodes_and_data, action_space.py:344) and lift each one
+        to its parent arm via NetworkX predecessors. This guarantees we only see
+        arms with >=1 awake target.
+        """
+        seen_arms: Dict[str, float] = {}
+        graph = self.action_space.get_graph()
+        for leaf_node, _n_data in self.action_space.gen_active_target_nodes_and_data():
+            # Each active leaf has exactly one parent in this DAG (per action_space construction).
+            for parent in graph.predecessors(leaf_node):
+                if parent in seen_arms:
+                    continue
+                arm_data = self.action_space.get(parent)
+                seen_arms[parent] = arm_data[action_space_module.Q_VALUE]
+        # Stable ordering = arm insertion order (dict preserves insertion since 3.7).
+        return list(seen_arms.items())
+
+    def _compute_arm_allocations(
+        self, arms: List[tuple], k: int, method: BatchSelectionMethod
+    ) -> Dict[str, int]:
+        """D-11/D-12: Hare/Hamilton apportionment of K targets across `arms`.
+
+        UNIFORM (D-11): equal floor share + leftover to highest-Q arms.
+        WEIGHTED (D-12): softmax(Q/T) shares + leftover to highest-weight arms.
+
+        Both share the same leftover-distribution rule: sort by descending
+        weight (UNIFORM uses Q-value; WEIGHTED uses softmax weight); leftover
+        targets go to the top of that ordering, with insertion order as the
+        secondary key (stable Python sort gives this for free).
+
+        Zero-allocation arms (D-13): not included in the returned dict at all
+        (callers must skip arms not in the dict). No minimum-1-per-arm
+        guarantee — coverage is the bandit's outer-loop responsibility.
+
+        Returns: {arm_key: allocation_count} for arms with >=1 allocation.
+        """
+        if not arms or k <= 0:
+            return {}
+
+        n_arms = len(arms)
+        arm_keys = [a for a, _q in arms]
+        q_values = np.array([q for _a, q in arms], dtype=float)
+
+        if method is BatchSelectionMethod.UNIFORM_SPREAD:
+            # D-11: equal floor share, leftover to highest-Q arms.
+            base_share = k // n_arms
+            leftover = k % n_arms
+            allocations = [base_share] * n_arms
+            # Sort indices by descending Q (stable, so insertion order breaks ties).
+            order = sorted(range(n_arms), key=lambda i: -q_values[i])
+            for j in range(leftover):
+                allocations[order[j]] += 1
+        elif method is BatchSelectionMethod.WEIGHTED_SPREAD:
+            # D-12: softmax(Q/T), default temperature = 1.0 (hard-coded constant per CONTEXT.md).
+            # Pitfall 8 mitigation: log-sum-exp shift via subtracting Q.max() before exp,
+            # so the largest exp argument is 0.0 (no overflow even at extreme Q values).
+            temperature = 1.0
+            shifted = (q_values - q_values.max()) / temperature
+            exps = np.exp(shifted)
+            weights = exps / exps.sum()  # stable softmax in [0,1]
+            # Floor allocation per arm + leftover to highest-weight arms.
+            float_allocs = weights * k
+            floor_allocs = np.floor(float_allocs).astype(int)
+            leftover = k - int(floor_allocs.sum())
+            allocations = floor_allocs.tolist()
+            if leftover > 0:
+                # Distribute leftover to highest-weight arms (insertion-order tie-break via stable sort).
+                order = sorted(range(n_arms), key=lambda i: -weights[i])
+                for j in range(leftover):
+                    allocations[order[j]] += 1
+        else:
+            # Defensive: should be unreachable because the caller already
+            # branched. Fall back to UNIFORM rather than raise.
+            return self._compute_arm_allocations(arms, k, BatchSelectionMethod.UNIFORM_SPREAD)
+
+        # D-13: skip zero-allocation arms by omitting them from the dict.
+        return {arm_keys[i]: int(allocations[i]) for i in range(n_arms) if allocations[i] > 0}
+
+    def _arm_seq_for_leaf(self, leaf_arm_key: str) -> List[str]:
+        """D-14: rebuild arm_seq for a chosen leaf arm by walking parents up to root.
+
+        Mirrors the shape that `choose_arm()` returns for non-SPREAD modes:
+        a list of arm keys from root-child down to the leaf arm (root EXCLUDED,
+        leaf included). The downstream `is_optimal_action`/`propagate_rewards`
+        consumers iterate this list and skip the root themselves
+        (model.py:168 root-skip in propagate_rewards), so excluding root here
+        matches the existing convention.
+
+        Implementation: NetworkX predecessors walk (model.py:181 idiom);
+        each non-target node has exactly one parent in this DAG so each step
+        is unambiguous.
+
+        W3 fix: assert single-parent invariant (D-14: action-space DAG is a tree
+        by construction). A future graph topology change that introduced
+        multi-parent nodes would silently corrupt arm_seq via the bare
+        `parents[0]` selection — propagating rewards to the wrong arm. The
+        assertion converts that silent corruption into a loud failure at the
+        point of the bad assumption.
+        """
+        graph = self.action_space.get_graph()
+        root = self.action_space.get_root()
+        seq: List[str] = []
+        node = leaf_arm_key
+        # Walk upward; stop when we reach root (do not include root itself).
+        while node is not None and node != root:
+            seq.append(node)
+            parents = list(graph.predecessors(node))
+            # W3: D-14 single-parent-walk assumption made explicit.
+            assert len(parents) <= 1, (
+                f"action-space DAG has multi-parent node: {node} "
+                f"(parents={parents}); D-14 single-parent-walk invariant violated"
+            )
+            if not parents:
+                break  # disconnected (shouldn't happen for an eligible arm)
+            node = parents[0]  # single-parent DAG by construction
+        # Reverse so order is root-child -> leaf, matching choose_arm() shape.
+        seq.reverse()
+        return seq
 
     def queue_measurement(self, batch_size) -> list[str]:
         """
