@@ -50,6 +50,9 @@ class Orchestrator:
         debug: bool = False,
         vp_pool_config: Optional[Dict] = None,
         aggregation_method: AggregationMethod = AggregationMethod.MAJORITY_VOTE,
+        target_selection: BatchSelectionMethod = BatchSelectionMethod.TOP_K_FROM_ARM,
+        batch_size_method: BatchSizeMethod = BatchSizeMethod.CONSTANT_VAL,
+        qval_propagation_method: PropagationMethod = PropagationMethod.ON_RECEIPT,
     ):
         self.params = params
         self.output_folder = params.get("output_directory", None)
@@ -79,9 +82,13 @@ class Orchestrator:
         # Shared eval store for VP evaluation results
         self.eval_store = EvalStore()
 
-        # Phase 4 D-01: cache the aggregation enum so future code paths
-        # (and the run_config snapshot) can read it from self.
+        # Phase 4 D-01/D-03: cache strategy enums so the lazy RegionalNode
+        # instantiation (and run_config snapshot) can read them from self.
+        # Defaults (D-04) match Phase 02.1/03 behavior bit-for-bit.
         self._aggregation_method: AggregationMethod = aggregation_method
+        self._target_selection: BatchSelectionMethod = target_selection
+        self._batch_size_method: BatchSizeMethod = batch_size_method
+        self._qval_propagation_method: PropagationMethod = qval_propagation_method
 
         # Create API with shared eval store
         self.api = HyperQuackAPI(
@@ -814,6 +821,13 @@ class Orchestrator:
                         action_space_folder=self.previous_values_folder,
                         batch_size=5,
                         on_reset=self._on_country_reset,
+                        # Phase 4 D-01/D-03: thread strategy enums down to
+                        # BatchUCB (via RegionalNode **kwargs) and cache
+                        # aggregation_method on the node for sidecar I/O.
+                        target_selection=self._target_selection,
+                        batch_size_method=self._batch_size_method,
+                        qval_propagation_method=self._qval_propagation_method,
+                        aggregation_method=self._aggregation_method,
                     )
                 # NOTE: aggregator expected VPs are updated at scheduling
                 # time, not here, to avoid snapshot mismatches with
@@ -999,6 +1013,9 @@ if __name__ == "__main__":
         vps_per_country=3,
         vp_pool_config=vp_pool_config,
         aggregation_method=agg_enum,
+        target_selection=sel_enum,
+        batch_size_method=size_enum,
+        qval_propagation_method=prop_enum,
     )
     m.run_forever()
     # python3 Infrastructure/main/orchestrator.py -E 1 -m 1000 -v -f "categories" -a inputs/tranco/tranco_categories_subdomain_tld_entities_top10k.csv -f "categories" -s 0.0 -c 0.03 -V 0.0 -o outputs/outtest
