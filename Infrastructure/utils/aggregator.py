@@ -43,6 +43,9 @@ class MeasurementAggregator:
         self.aggregation_method: AggregationMethod = aggregation_method
         # country -> {vp_ip: weight in [0,1]}; populated by Wave 2
         self._vp_weights: Dict[str, Dict[str, float]] = {}
+        # Per-target weight snapshot taken at register_targets time (D-02 + WR-06).
+        # Drained in _try_finalize alongside _target_expected.
+        self._target_weights: Dict[Tuple, Dict[str, float]] = {}
 
     def set_expected_vps(self, country: str, vps: Set[str]) -> None:
         """Update the set of VPs whose responses are required for *future*
@@ -50,6 +53,18 @@ class MeasurementAggregator:
         snapshot."""
         with self._lock:
             self._expected_vps[country] = set(vps)
+
+    def set_vp_weights(self, country: str, weights: Dict[str, float]) -> None:
+        """Update per-VP weights for *country* (Phase 4 D-02).
+
+        Pushed by the orchestrator at the same scheduling cadence as
+        register_targets (RESEARCH Pitfall 9 / Assumption A4). The actual
+        per-target snapshotting happens inside register_targets so a target's
+        weight vector is frozen at scheduling time. Already-registered targets
+        keep their original snapshot (WR-06 invariant).
+        """
+        with self._lock:
+            self._vp_weights[country] = dict(weights)
 
     def register_targets(
         self, country: str, targets: List[str], vps: Set[str],
@@ -87,6 +102,10 @@ class MeasurementAggregator:
                 self._target_expected[key] = snapshot
                 if schedule_times is not None and target in schedule_times:
                     self._schedule_times[key] = schedule_times[target]
+                # Phase 4 D-02 per-target weight snapshot — frozen at scheduling time.
+                # Empty dict if no weights pushed yet (cold-start handled by
+                # _try_finalize via 0.5 default in weights.get(vp, 0.5)).
+                self._target_weights[key] = dict(self._vp_weights.get(country, {}))
             # Keep _expected_vps updated for drop_vp() compatibility
             self._expected_vps[country] = set(vps)
 
@@ -169,6 +188,7 @@ class MeasurementAggregator:
             )
             self._pending.pop(key, None)
             del self._target_expected[key]
+            self._target_weights.pop(key, None)  # Phase 4 D-02 cleanup
             return
         vp_map = self._pending.get(key)
         if vp_map is None:
@@ -191,3 +211,4 @@ class MeasurementAggregator:
         )
         del self._pending[key]
         del self._target_expected[key]
+        self._target_weights.pop(key, None)  # Phase 4 D-02 cleanup

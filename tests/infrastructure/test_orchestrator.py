@@ -232,6 +232,8 @@ class _OrchestratorTestHelper:
         orch._last_delay_warn = defaultdict(dict)
         orch._inflight_times = defaultdict(dict)
         orch._vp_failure_counts = defaultdict(int)
+        # Phase 4 D-02: cumulative (success, fail) ledger for WEIGHTED_VOTE.
+        orch._vp_outcomes = defaultdict(lambda: [0, 0])
         orch.api = MagicMock()
         orch.api.receiver._process = None
         orch.api.debug = False

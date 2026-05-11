@@ -106,6 +106,13 @@ class Orchestrator:
         # VP health tracking: (country, vp) -> consecutive failure count
         self._vp_failure_counts: Dict[Tuple[str, str], int] = defaultdict(int)
 
+        # D-02: per-(country, vp) (success, fail) ledger for WEIGHTED_VOTE.
+        # Independent of _vp_failure_counts (which controls VP rejection at
+        # VP_FAILURE_THRESHOLD). _vp_outcomes is NEVER popped on success — Beta
+        # smoothing relies on cumulative history. The two-element list (not a
+        # tuple) is mutable for in-place index increments inside _check_vp_health.
+        self._vp_outcomes: Dict[Tuple[str, str], List[int]] = defaultdict(lambda: [0, 0])  # [success, fail]
+
         # Determine target countries
         if countries is None:
             countries = self.vantage_points.countries()
@@ -378,6 +385,13 @@ class Orchestrator:
             # aggregator can attach scheduled_at_monotonic to the finalized response.
             now = time.monotonic()
             schedule_times = {t: now for t in targets}
+
+            # Phase 4 D-02: push fresh per-VP weights so register_targets snapshots
+            # them per-target (matches WR-06 invariant: snapshot at scheduling time
+            # to prevent finalize-against-stale-weights races, RESEARCH Pitfall 9).
+            vp_weights = self._compute_vp_weights(country, set(active_vps))
+            self.api.aggregator.set_vp_weights(country, vp_weights)
+
             self.api.aggregator.register_targets(
                 country, targets, set(active_vps),
                 schedule_times=schedule_times,
@@ -893,6 +907,7 @@ class Orchestrator:
             key = (country, r.vp)
             if r.controls_failed:
                 self._vp_failure_counts[key] += 1
+                self._vp_outcomes[key][1] += 1   # D-02: cumulative fail count
                 if self._vp_failure_counts[key] >= VP_FAILURE_THRESHOLD:
                     logger.warning(
                         "VP %s in %s exceeded failure threshold, removing",
@@ -907,11 +922,40 @@ class Orchestrator:
                         self.api.update_vps([replacement], self.services, tag=country)
                         if self.api.debug:
                             self.api._inject_debug_eval_results([replacement])
+                    # D-02: intentionally do NOT delete self._vp_outcomes[key] here.
+                    # The rejected VP's history stays in the ledger (it is no longer
+                    # in any country's active set, so it will not be queried again).
+                    # A new VP IP gets a fresh (0, 0) entry from defaultdict
+                    # (cold-start neutral 0.5 weight via Beta smoothing).
                     del self._vp_failure_counts[key]
             else:
                 # Reset counter on success
                 self._vp_failure_counts.pop(key, None)
+                self._vp_outcomes[key][0] += 1   # D-02: cumulative success count
         return dropped_vps
+
+    @staticmethod
+    def _beta_smoothed_weight(success: int, fail: int) -> float:
+        """Beta(1,1) Laplace-smoothed posterior mean for one VP (D-02 + RESEARCH Pitfall 2).
+
+        Returns (s+1) / (s+f+2). Cold-start (0,0) -> 0.5 (neutral); single-success
+        VP -> 2/3 (not 1.0, the brand-new-VP trap of naive ratios); long-history
+        VP converges to true success rate. Avoids divide-by-zero by construction.
+        """
+        return (success + 1) / (success + fail + 2)
+
+    def _compute_vp_weights(self, country: str, vps: Set[str]) -> Dict[str, float]:
+        """Build {vp_ip: weight} for one country's active VPs from _vp_outcomes.
+
+        Used inline at scheduling time to push weights into the aggregator
+        per-target (matches WR-06 snapshotting invariant). Weights for VPs
+        with no recorded outcomes default to 0.5 (Beta(1,1) cold start).
+        """
+        weights: Dict[str, float] = {}
+        for vp in vps:
+            s, f = self._vp_outcomes.get((country, vp), [0, 0])
+            weights[vp] = self._beta_smoothed_weight(s, f)
+        return weights
 
     # ------------------------------------------------------------------
     # helpers
