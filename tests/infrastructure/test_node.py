@@ -34,6 +34,8 @@ class TestSoftReset(unittest.TestCase):
         node._current_batch_size = 0
         node._last_batch_fraction = None
         node._pending_batch_target = 0
+        # Phase 4 Plan 05: monotonic batch_id counter for IN_ORDER scheduling.
+        node._batch_id_counter = 0
         node.in_flight = 3
         node.episode_idx = 1
         node.episode_stats = [{"episode": 1, "time": 1}]
@@ -116,6 +118,8 @@ class TestFinishEpisodeIdleNotDone(unittest.TestCase):
         node._current_batch_size = 0
         node._last_batch_fraction = None
         node._pending_batch_target = 0
+        # Phase 4 Plan 05: monotonic batch_id counter for IN_ORDER scheduling.
+        node._batch_id_counter = 0
         node.in_flight = 0
         node.episode_stats = [{"episode": 1, "time": 1}]
         node.episode_all_stats = []
@@ -1128,6 +1132,8 @@ class TestMeasurementsCsv(unittest.TestCase):
         node._current_batch_size = 0
         node._last_batch_fraction = None
         node._pending_batch_target = 0
+        # Phase 4 Plan 05: monotonic batch_id counter for IN_ORDER scheduling.
+        node._batch_id_counter = 0
         node.state = NodeState.IDLE
         node.in_flight = 0
         node.model.action_space = MagicMock()
@@ -1347,6 +1353,8 @@ class TestVaryOnSuccess(unittest.TestCase):
         node._current_batch_size = 0
         node._last_batch_fraction = None
         node._pending_batch_target = 0
+        # Phase 4 Plan 05: monotonic batch_id counter for IN_ORDER scheduling.
+        node._batch_id_counter = 0
         node.episode_idx = 1
         node.episode_stats = []
         node.episode_all_stats = []
