@@ -3,7 +3,7 @@ import threading
 from collections import defaultdict
 from typing import Dict, List, Set, Tuple
 
-from Infrastructure.utils.structures import MeasurementResponse
+from Infrastructure.utils.structures import MeasurementResponse, AggregationMethod
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +24,7 @@ class MeasurementAggregator:
     result arrival.
     """
 
-    def __init__(self):
+    def __init__(self, aggregation_method: AggregationMethod = AggregationMethod.MAJORITY_VOTE):
         self._lock = threading.Lock()
         # (country, target) -> {vp_ip: blocked}
         self._pending: Dict[Tuple, Dict[str, bool]] = defaultdict(dict)
@@ -37,6 +37,12 @@ class MeasurementAggregator:
         # (country, target) -> monotonic time captured at register_targets() call.
         # Drained in _try_finalize so finalized MeasurementResponse can carry latency source. (Phase 3 D-04)
         self._schedule_times: Dict[Tuple, float] = {}
+        # Phase 4 D-01: aggregation method selector. Default preserves existing
+        # majority-vote behavior bit-for-bit (D-04). Wave 2 owns the
+        # WEIGHTED_VOTE branch in _try_finalize.
+        self.aggregation_method: AggregationMethod = aggregation_method
+        # country -> {vp_ip: weight in [0,1]}; populated by Wave 2
+        self._vp_weights: Dict[str, Dict[str, float]] = {}
 
     def set_expected_vps(self, country: str, vps: Set[str]) -> None:
         """Update the set of VPs whose responses are required for *future*

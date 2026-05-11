@@ -10,7 +10,14 @@ import tempfile
 import time
 from Infrastructure.models.BatchUCB import BatchUCB
 from Infrastructure.utils.persistence import find_latest_state, load_graph_and_sidecar, validate_sidecar
-from Infrastructure.utils.structures import MeasurementResponse, BatchSelectionMethod, BatchSizeMethod, PropagationMethod, NodeState
+from Infrastructure.utils.structures import (
+    MeasurementResponse,
+    BatchSelectionMethod,
+    BatchSizeMethod,
+    PropagationMethod,
+    AggregationMethod,
+    NodeState,
+)
 import pandas as pd
 from models.base.model import run_preprocessor
 import models.base.action_space as action_space_module
@@ -29,6 +36,7 @@ class RegionalNode:
         batch_size: int = 10,
         action_space_folder: str = None,
         on_reset: Optional[Callable[[str], None]] = None,
+        aggregation_method: AggregationMethod = AggregationMethod.MAJORITY_VOTE,
         **kwargs: Any,
     ):
         self.params = params.copy()
@@ -67,6 +75,10 @@ class RegionalNode:
             self._measurements_writer: Optional[csv.DictWriter] = None
             self._measurements_header_written: bool = False
         self.country: str = country_name
+        # Phase 4 D-01 carryover: cache aggregation_method on the node so
+        # _write_sidecar can serialize it. NOT forwarded to BatchUCB because
+        # aggregation lives on MeasurementAggregator (orchestrator-owned).
+        self.aggregation_method: AggregationMethod = aggregation_method
         self.model: BatchUCB = model_klass(self.params, country_name, **kwargs)
         self.model.output_directory = os.path.dirname(self.params["outfile_csv"])
         self.model.outfile = Path(self.model.output_directory) / f"{self.country_name_standard}.csv"
@@ -215,6 +227,7 @@ class RegionalNode:
             "selection_method": self.model.selection_method.name,
             "size_method": self.model.size_method.name,
             "prop_method": self.model.prop_method.name,
+            "aggregation_method": self.aggregation_method.name,   # Phase 4 D-01 carryover
             # Metadata
             "save_timestamp": datetime.now(timezone.utc).isoformat(),
             "country_code": self.country,
@@ -385,6 +398,20 @@ class RegionalNode:
         except KeyError:
             logger.warning(
                 "%s: unknown enum name for prop_method in sidecar — keeping current value",
+                self.country,
+            )
+        try:
+            # Phase 4 D-01 carryover. Forward-compat: Phase 02/02.1/03 sidecars
+            # on disk lack this key, so bare sidecar["aggregation_method"] would
+            # raise from the dict subscript BEFORE the try/except catches the
+            # enum lookup. sidecar.get(..., "MAJORITY_VOTE") defaults to the
+            # current behavior so old sidecars round-trip cleanly.
+            self.aggregation_method = AggregationMethod[
+                sidecar.get("aggregation_method", "MAJORITY_VOTE")
+            ]
+        except KeyError:
+            logger.warning(
+                "%s: unknown enum name for aggregation_method in sidecar — keeping current value",
                 self.country,
             )
 

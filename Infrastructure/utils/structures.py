@@ -38,6 +38,10 @@ class PropagationMethod(Enum):
     ON_RECEIPT = 1
     IN_ORDER = 2
 
+class AggregationMethod(Enum):
+    MAJORITY_VOTE = 1
+    WEIGHTED_VOTE = 2
+
 
 # Classes for requests and responses from Go API -----------------
 
