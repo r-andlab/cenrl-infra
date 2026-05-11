@@ -10,6 +10,7 @@ from Infrastructure.utils.structures import (
     BatchSelectionMethod,
     BatchSizeMethod,
     PropagationMethod,
+    AggregationMethod,
 )
 
 
@@ -408,6 +409,7 @@ class TestSaveCheckpoint(unittest.TestCase):
         node.model.size_method = BatchSizeMethod.CONSTANT_VAL
         node.model.prop_method = PropagationMethod.ON_RECEIPT
         node.model.output_directory = str(tmp_path)
+        node.aggregation_method = AggregationMethod.MAJORITY_VOTE
         return node
 
     def test_save_checkpoint_creates_graphml_and_json(self):
@@ -559,6 +561,7 @@ class TestSaveIteration(unittest.TestCase):
         node.model.size_method = BatchSizeMethod.CONSTANT_VAL
         node.model.prop_method = PropagationMethod.ON_RECEIPT
         node.model.output_directory = str(tmp_path)
+        node.aggregation_method = AggregationMethod.MAJORITY_VOTE
         return node
 
     def test_save_iteration_creates_iter_subdir(self):
