@@ -86,6 +86,25 @@ class RegionalNode:
             self.model.action_value_file = action_space_csv
         self.state: int = NodeState.IDLE
         self.batch_size = batch_size
+        # D-08: hard cap = 4 * configured base; lower bound = 1.
+        # `base_batch_size` is the original constructor kwarg, snapshotted so
+        # soft_reset can snap back without re-reading from the orchestrator.
+        self.base_batch_size: int = batch_size
+        # D-05: per-batch hit-ratio tracker. Counters accumulate while a batch
+        # is in flight; when `_current_batch_size` reaches the size at scheduling
+        # time, fraction_blocked is computed and stored in `_last_batch_fraction`
+        # for the next `_adjust_batch_size_if_needed` call.
+        self._current_batch_blocked: int = 0
+        self._current_batch_size: int = 0
+        # `None` -> no signal yet (very first batch, or post-soft_reset). The
+        # adjuster treats None as "hold" so the first batch under VARY runs at
+        # base size before any adaptation kicks in.
+        self._last_batch_fraction: Optional[float] = None
+        # `_pending_batch_target` records the in-flight batch's intended size
+        # (set when maybe_request_more returns a non-empty list). Without this
+        # we'd compare `_current_batch_size` to `self.batch_size` AFTER the
+        # adjuster mutated `self.batch_size`, breaking the per-batch fence.
+        self._pending_batch_target: int = 0
         self.in_flight = 0
         self.model.current_epoch_num = 0
         self.episode_stats = []
@@ -436,6 +455,16 @@ class RegionalNode:
         self.state = NodeState.IDLE
         self.episode_stats = []
         self.episode_idx += 1
+        # Claude's discretion (CONTEXT.md): snap dynamic batch size back to
+        # base on iteration boundary. wake_up_all_nodes() re-enables the action
+        # space, and the prior batch trajectory may not generalize across
+        # iteration restarts. Per-batch tracker state is also cleared so the
+        # next iteration's first batch runs at base before adaptation resumes.
+        self.batch_size = self.base_batch_size
+        self._current_batch_blocked = 0
+        self._current_batch_size = 0
+        self._pending_batch_target = 0
+        self._last_batch_fraction = None
 
     def _remaining_capacity(self) -> int:
         return max(self.batch_size - self.in_flight, 0)
@@ -448,6 +477,55 @@ class RegionalNode:
         # how many more we can *request* without exceeding measurements_per_episode
         return max(self.model.measurements_per_episode - (self.model.current_epoch_num + self.in_flight), 0)
 
+    def _adjust_batch_size_if_needed(self) -> None:
+        """D-05..D-09: per-batch adaptive sizing under VARY_ON_SUCCESS.
+
+        Called from `maybe_request_more` BEFORE `_remaining_capacity()` so the
+        clamp uses the freshly-adjusted `self.batch_size`. No-op for
+        CONSTANT_VAL (D-04: defaults preserve current behavior).
+
+        Step function (D-07): multiplicative x2 on grow, /2 (integer floor)
+        on shrink. Threshold (D-08) = 0.5 strict; exact 0.5 holds. Bounds
+        (D-08) = [1, 4 * base_batch_size]. Hard cap mitigates MIMD oscillation
+        (RESEARCH Pitfall 3).
+        """
+        # Skip for non-VARY policies. `self.model.size_method` is set by
+        # BatchUCB.__init__ from the `batch_size_method` kwarg threaded through
+        # Plan 01.
+        if self.model.size_method is not BatchSizeMethod.VARY_ON_SUCCESS:
+            return
+
+        frac = self._last_batch_fraction
+        if frac is None:
+            # No completed batch since construction or soft_reset: hold at
+            # current size. (First batch under VARY runs at base; adaptation
+            # begins from the second batch onward.)
+            return
+
+        prev = self.batch_size
+        if frac > 0.5:
+            new = prev * 2
+        elif frac < 0.5:
+            new = max(prev // 2, 1)   # integer floor (D-07); minimum 1
+        else:
+            new = prev                # exact 0.5 holds (D-06)
+
+        # D-08 bounds clamp. base_batch_size is the immutable post-construction snapshot.
+        upper = 4 * self.base_batch_size
+        new = max(1, min(new, upper))
+
+        if new != prev:
+            logger.info(
+                "%s: VARY_ON_SUCCESS adjust batch_size %d -> %d (frac=%.3f, base=%d, cap=%d)",
+                self.country, prev, new, frac, self.base_batch_size, upper,
+            )
+            self.batch_size = new
+
+        # Consume the signal: avoid re-applying the same fraction to back-to-back
+        # adjustments before a new batch completes. (Pitfall 7 mitigation: one
+        # decision per fully-absorbed batch.)
+        self._last_batch_fraction = None
+
     def maybe_request_more(self) -> Optional[List[str]]:
         if self.state is NodeState.IDLE:
             self.state = NodeState.READY
@@ -456,6 +534,11 @@ class RegionalNode:
 
         if not self.model.can_step():
             return None
+
+        # D-05..D-09: VARY_ON_SUCCESS reads _last_batch_fraction (set by
+        # _append_measurements when the prior batch fully drained) and mutates
+        # self.batch_size. No-op when size_method is CONSTANT_VAL.
+        self._adjust_batch_size_if_needed()
 
         requestable = min(self._remaining_capacity(), self._remaining_steps_including_inflight())
         if requestable <= 0:
@@ -466,6 +549,19 @@ class RegionalNode:
             return None
 
         self.in_flight += len(targets)
+        # D-05: record the intended batch size at scheduling time. The per-result
+        # counter compares against this value, NOT against self.batch_size, which
+        # the next maybe_request_more invocation may have mutated.
+        if self._pending_batch_target == 0:
+            # New batch starting (no in-flight batch tail). Reset counters too.
+            self._current_batch_blocked = 0
+            self._current_batch_size = 0
+            self._pending_batch_target = len(targets)
+        else:
+            # Append-to-batch: rare path where an earlier maybe_request_more
+            # returned fewer than requestable due to action-space exhaustion
+            # (BatchUCB short-batch). Extend the pending count.
+            self._pending_batch_target += len(targets)
         return targets
 
     def _append_measurements(self, measurements: List[MeasurementResponse]) -> int:
@@ -536,7 +632,27 @@ class RegionalNode:
 
             self.episode_stats.append(episode_stat)
             absorbed += 1
+            # D-05: per-batch hit-ratio tracker.
+            # `result.get("is_blocked")` is BatchUCB's per-target blocked flag
+            # (truthy=blocked). Count toward the current pending batch.
+            if result.get("is_blocked"):
+                self._current_batch_blocked += 1
+            self._current_batch_size += 1
             consumed += 1
+
+        # D-05: when the pending batch has fully drained (counter reaches the
+        # scheduled size), compute fraction_blocked and clear the fence.
+        # _adjust_batch_size_if_needed will consume this on the next
+        # maybe_request_more call.
+        if self._pending_batch_target > 0 and self._current_batch_size >= self._pending_batch_target:
+            self._last_batch_fraction = (
+                self._current_batch_blocked / self._current_batch_size
+                if self._current_batch_size > 0 else None
+            )
+            # Reset for the next batch - adjuster will pick up the fraction.
+            self._current_batch_blocked = 0
+            self._current_batch_size = 0
+            self._pending_batch_target = 0
 
         self.model.current_epoch_num += absorbed
         return consumed
