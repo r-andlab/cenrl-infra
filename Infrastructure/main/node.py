@@ -105,6 +105,22 @@ class RegionalNode:
         # we'd compare `_current_batch_size` to `self.batch_size` AFTER the
         # adjuster mutated `self.batch_size`, breaking the per-batch fence.
         self._pending_batch_target: int = 0
+        # D-18/D-19: monotonic batch_id assigned per batch under IN_ORDER.
+        # The counter is owned by the node (not the model) so a hard restart
+        # via load_checkpoint does not leak old batch IDs into the new
+        # in-memory model. NOTE: held batches are NOT persisted across
+        # process restarts -- D-23 forces flush BEFORE write_stats at the
+        # iteration boundary (Task 2 below), and Phase 1 D-05 SIGTERM flush
+        # plus B1 midnight flush handle the other persistence boundaries.
+        #
+        # W2 fix: counter stays MONOTONIC across iterations (no reset in
+        # soft_reset). Rationale: if flush_held_batches raised under per-
+        # country fault isolation, _held_batches may retain stale entries
+        # with old batch_ids. Resetting this counter to 0 would let a fresh
+        # `register_batch(1, ...)` overwrite the stale `_held_batches[1]`.
+        # Monotonic stamping eliminates that collision window and matches
+        # MAB literature convention.
+        self._batch_id_counter = 0
         self.in_flight = 0
         self.model.current_epoch_num = 0
         self.episode_stats = []
@@ -466,6 +482,67 @@ class RegionalNode:
         self._pending_batch_target = 0
         self._last_batch_fraction = None
 
+        # W1/Pitfall 6 defense: held buffer should be empty by now (D-23
+        # flush ran before us inside _finish_episode_if_ready). If
+        # flush_held_batches raised under per-country fault isolation,
+        # leftover entries with batch_ids from this iteration may remain.
+        # Clearing them here prevents the next iteration from encountering
+        # ghost batches; the warning surfaces the underlying flush failure
+        # for diagnosis. Hard `assert` was rejected (a transient
+        # propagate_rewards exception should not crash the iteration
+        # boundary -- the soft variant of Pitfall 6 is preferred per the
+        # plan's W1 directive).
+        # isinstance(..., dict) guard prevents the test-harness MagicMock
+        # from triggering the warning branch when soft_reset runs with a
+        # stubbed model (MagicMock auto-creates a truthy attribute on
+        # getattr access).
+        held = getattr(self.model, "_held_batches", None)
+        if isinstance(held, dict) and held:
+            logger.warning(
+                "%s: soft_reset entered with %d held batches; clearing "
+                "(likely due to a prior flush_held_batches exception "
+                "under fault isolation -- investigate logs from this "
+                "iteration)",
+                self.country, len(held),
+            )
+            self.model._held_batches.clear()
+            # Companion buffers must also clear; otherwise stale
+            # target_set / decremented counters would influence the next
+            # iteration's _release_complete_batches.
+            for attr in ("_batch_target_set", "_batch_decremented", "_target_to_batch"):
+                companion = getattr(self.model, attr, None)
+                if isinstance(companion, dict):
+                    companion.clear()
+        # W2: do NOT reset self._batch_id_counter. Monotonic stamping
+        # across iterations prevents the "fresh register_batch(1, ...)
+        # overwrites a stale _held_batches[1]" collision that would
+        # otherwise be possible if a flush exception left held entries
+        # behind. Counter growth is bounded (Python int; thesis-scale
+        # runs see < 10^6 batches/year).
+
+    def flush_held_batches(self) -> int:
+        """D-23 + Phase 1 D-05 + RESEARCH OQ-3 passthrough: force-release any
+        IN_ORDER held batches.
+
+        Called by:
+          - self._finish_episode_if_ready BEFORE write_stats AND BEFORE
+            soft_reset (D-23: held rewards must land in the iteration's CSV
+            before soft_reset clears the action_space via
+            wake_up_all_nodes()).
+          - Orchestrator._shutdown BEFORE node.write_stats (Phase 1 D-05
+            carryover: SIGTERM/SIGINT graceful shutdown loses zero held
+            learning).
+          - Orchestrator.run_forever BEFORE node.save_daily(...) at midnight
+            UTC (B1 fix; RESEARCH Open Question 3 RESOLVED -- daily
+            snapshots consistent with iteration CSVs under IN_ORDER).
+
+        No-op under ON_RECEIPT (the model's flush_held_batches early-returns
+        on an empty buffer).
+
+        Returns: number of held results released.
+        """
+        return self.model.flush_held_batches()
+
     def _remaining_capacity(self) -> int:
         return max(self.batch_size - self.in_flight, 0)
 
@@ -547,6 +624,16 @@ class RegionalNode:
         targets = self.model.queue_measurement(requestable)
         if not targets:
             return None
+
+        # D-18/D-19: assign a monotonic batch_id and register the batch with
+        # the model BEFORE in_flight is incremented. register_batch is a
+        # no-op under ON_RECEIPT (D-04 default preserved); under IN_ORDER it
+        # populates _held_batches[batch_id] = []. The per-batch identifier
+        # is owned by the node; the counter is monotonic across the process
+        # lifetime (W2 fix -- no reset in soft_reset to prevent collision
+        # with stale held entries surviving a flush exception).
+        self._batch_id_counter += 1
+        self.model.register_batch(self._batch_id_counter, targets)
 
         self.in_flight += len(targets)
         # D-05: record the intended batch size at scheduling time. The per-result
@@ -753,6 +840,29 @@ class RegionalNode:
         # Resolve state_dir via the same convention as Orchestrator._state_dir_for —
         # node has self.model.output_directory == "<output>/<country>/" already.
         state_dir = Path(self.model.output_directory) / "state"
+
+        # D-23: IN_ORDER force-flush BEFORE write_stats so held rewards reach
+        # the iteration's CSV (write_stats reads per-arm Q-values that
+        # propagate_rewards updates) AND BEFORE soft_reset (so the cleared
+        # action_space does not lose held rewards). Per-country fault
+        # isolation (Phase 02.1 D-04 invariant) wraps the flush so a
+        # propagate_rewards exception does not block write_stats /
+        # save_iteration / soft_reset for this country. The defensive
+        # clear-and-warn inside soft_reset (W1) is the second line of
+        # defense if this except branch fires and leaves held entries
+        # behind.
+        try:
+            released = self.flush_held_batches()
+            if released:
+                logger.info(
+                    "%s: flushed %d held IN_ORDER results at iteration %d boundary",
+                    self.country, released, self.episode_idx,
+                )
+        except Exception as exc:
+            logger.error(
+                "%s: flush_held_batches failed at iteration %d boundary: %s",
+                self.country, self.episode_idx, exc,
+            )
 
         # Per-country fault isolation: D-04 invariant means a failed save MUST NOT
         # prevent soft_reset from running for this country.

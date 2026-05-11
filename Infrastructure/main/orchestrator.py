@@ -481,6 +481,31 @@ class Orchestrator:
                     len(self.agents), date_str,
                 )
                 for country, node in self.agents.items():
+                    # B1 fix (RESEARCH OQ-3 RESOLVED): under IN_ORDER, flush held
+                    # batches BEFORE save_daily so the date-stamped snapshot is
+                    # consistent with the iteration CSV. Mirrors the iteration-
+                    # boundary invariant (D-23) and the SIGTERM/SIGINT shutdown
+                    # invariant (Phase 1 D-05). Per-country fault isolation
+                    # (Phase 02.1 D-04): a flush failure for one country logs
+                    # an error and continues to that country's save_daily AND
+                    # to the next country.
+                    #
+                    # No-op when prop_method is not IN_ORDER (the model's
+                    # flush_held_batches early-returns on empty buffer); this
+                    # path adds zero overhead to ON_RECEIPT runs.
+                    # Traceability: B1 fix; RESEARCH OQ-3 RESOLVED.
+                    try:
+                        released = node.flush_held_batches()
+                        if released:
+                            logger.info(
+                                "Midnight save_daily: flushed %d held IN_ORDER results for %s",
+                                released, country,
+                            )
+                    except Exception as exc:
+                        logger.error(
+                            "Midnight save_daily: flush_held_batches failed for %s: %s",
+                            country, exc,
+                        )
                     try:
                         state_dir = self._state_dir_for(country)
                         node.save_daily(date_str, state_dir)
@@ -598,6 +623,26 @@ class Orchestrator:
         """
         logger.info("Shutting down — writing stats for %d active nodes", len(self.agents))
         for country, node in self.agents.items():
+            # Phase 1 D-05 carryover + D-23 invariant: graceful shutdown
+            # must flush IN_ORDER held batches BEFORE write_stats so any
+            # propagated rewards land in the final CSV. Per-country fault
+            # isolation (Phase 02.1 D-04): a flush failure for one country
+            # logs an error and does not block this country's subsequent
+            # write_stats / checkpoint / close_measurements calls; nor the
+            # next country's flush + save sequence. No-op under ON_RECEIPT
+            # (model-level early-return on empty buffer).
+            try:
+                released = node.flush_held_batches()
+                if released:
+                    logger.info(
+                        "Shutdown: flushed %d held IN_ORDER results for %s",
+                        released, country,
+                    )
+            except Exception as exc:
+                logger.error(
+                    "Failed to flush held batches for %s on shutdown: %s",
+                    country, exc,
+                )
             try:
                 node.write_stats()
             except Exception as exc:
