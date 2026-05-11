@@ -598,6 +598,26 @@ class Orchestrator:
         """
         logger.info("Shutting down — writing stats for %d active nodes", len(self.agents))
         for country, node in self.agents.items():
+            # Phase 1 D-05 carryover + D-23 invariant: graceful shutdown
+            # must flush IN_ORDER held batches BEFORE write_stats so any
+            # propagated rewards land in the final CSV. Per-country fault
+            # isolation (Phase 02.1 D-04): a flush failure for one country
+            # logs an error and does not block this country's subsequent
+            # write_stats / checkpoint / close_measurements calls; nor the
+            # next country's flush + save sequence. No-op under ON_RECEIPT
+            # (model-level early-return on empty buffer).
+            try:
+                released = node.flush_held_batches()
+                if released:
+                    logger.info(
+                        "Shutdown: flushed %d held IN_ORDER results for %s",
+                        released, country,
+                    )
+            except Exception as exc:
+                logger.error(
+                    "Failed to flush held batches for %s on shutdown: %s",
+                    country, exc,
+                )
             try:
                 node.write_stats()
             except Exception as exc:
