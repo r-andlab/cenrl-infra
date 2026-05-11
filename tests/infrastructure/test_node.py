@@ -27,6 +27,13 @@ class TestSoftReset(unittest.TestCase):
         node.model.action_space.wake_up_all_nodes = MagicMock()
         node.model.current_epoch_num = 50
         node.state = NodeState.AWAITING_MEASUREMENTS
+        node.batch_size = 5
+        # Phase 4 Plan 03: VARY_ON_SUCCESS tracker fields read by soft_reset.
+        node.base_batch_size = 5
+        node._current_batch_blocked = 0
+        node._current_batch_size = 0
+        node._last_batch_fraction = None
+        node._pending_batch_target = 0
         node.in_flight = 3
         node.episode_idx = 1
         node.episode_stats = [{"episode": 1, "time": 1}]
@@ -99,7 +106,16 @@ class TestFinishEpisodeIdleNotDone(unittest.TestCase):
         node.model.selection_method = BatchSelectionMethod.TOP_K_FROM_ARM
         node.model.size_method = BatchSizeMethod.CONSTANT_VAL
         node.model.prop_method = PropagationMethod.ON_RECEIPT
+        # Phase 4 Plan 01: aggregation_method cached on node for sidecar I/O.
+        node.aggregation_method = AggregationMethod.MAJORITY_VOTE
         node.state = NodeState.READY
+        node.batch_size = 5
+        # Phase 4 Plan 03: VARY_ON_SUCCESS tracker fields read by soft_reset.
+        node.base_batch_size = 5
+        node._current_batch_blocked = 0
+        node._current_batch_size = 0
+        node._last_batch_fraction = None
+        node._pending_batch_target = 0
         node.in_flight = 0
         node.episode_stats = [{"episode": 1, "time": 1}]
         node.episode_all_stats = []
@@ -1102,6 +1118,20 @@ class TestMeasurementsCsv(unittest.TestCase):
                 "coverage":   0.5,
             }
         node.model.absorb_measurement.side_effect = fake_absorb
+        # Phase 4 Plan 03: VARY_ON_SUCCESS per-batch counters and snap-to-base
+        # fields. _append_measurements increments these on each absorbed result;
+        # soft_reset (exercised by test_measurements_writer_survives_soft_reset)
+        # snaps batch_size back to base_batch_size.
+        node.batch_size = 5
+        node.base_batch_size = 5
+        node._current_batch_blocked = 0
+        node._current_batch_size = 0
+        node._last_batch_fraction = None
+        node._pending_batch_target = 0
+        node.state = NodeState.IDLE
+        node.in_flight = 0
+        node.model.action_space = MagicMock()
+        node.model.action_space.wake_up_all_nodes = MagicMock()
         return node
 
     def _read_csv(self, path):
@@ -1280,6 +1310,323 @@ class TestMeasurementsCsv(unittest.TestCase):
             self.assertIsNone(node._measurements_file)
             node.close_measurements()  # must not raise
             self.assertIsNone(node._measurements_file)
+
+
+class TestVaryOnSuccess(unittest.TestCase):
+    """Tests for RegionalNode VARY_ON_SUCCESS batch sizing (Phase 4 Plan 03 / STRT-02 SC2).
+
+    Covers D-05..D-09:
+    - D-05 per-batch hit-ratio trigger
+    - D-06 grow on success (>0.5) / shrink on failure (<0.5) / hold on tie
+    - D-07 multiplicative x2 / //2 step with floor 1
+    - D-08 threshold 0.5, bounds [1, 4*base]
+    - D-09 dispatch at RegionalNode (not BatchUCB), BEFORE _remaining_capacity
+    - Claude's discretion: soft_reset snaps batch_size back to base
+    - D-04 invariant: CONSTANT_VAL runs are bit-for-bit unchanged
+    """
+
+    def _make_node(self, base_batch_size=5, size_method=BatchSizeMethod.VARY_ON_SUCCESS):
+        """Build a RegionalNode bypassing __init__, then prime VARY tracker fields."""
+        from Infrastructure.main.node import RegionalNode
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = "TestCountry"
+        node.country_name_standard = "TestCountry"
+        node.model = MagicMock()
+        node.model.measurements_per_episode = 1000
+        node.model.current_epoch_num = 0
+        node.model.can_step = MagicMock(return_value=True)
+        node.model.size_method = size_method
+        node.model.action_space = MagicMock()
+        node.model.action_space.wake_up_all_nodes = MagicMock()
+        node.state = NodeState.IDLE
+        node.batch_size = base_batch_size
+        node.base_batch_size = base_batch_size
+        node.in_flight = 0
+        node._current_batch_blocked = 0
+        node._current_batch_size = 0
+        node._last_batch_fraction = None
+        node._pending_batch_target = 0
+        node.episode_idx = 1
+        node.episode_stats = []
+        node.episode_all_stats = []
+        # Bypass measurements-csv writer
+        node._measurements_path = None
+        node._measurements_file = None
+        node._measurements_writer = None
+        node._measurements_header_written = False
+        return node
+
+    # --- Pure step-function tests (D-05..D-08) ---
+
+    def test_adjuster_noop_under_constant_val(self):
+        """D-04: CONSTANT_VAL must not mutate batch_size even with a >0.5 signal."""
+        node = self._make_node(size_method=BatchSizeMethod.CONSTANT_VAL)
+        node._last_batch_fraction = 1.0  # would force grow under VARY
+        node._adjust_batch_size_if_needed()
+        self.assertEqual(node.batch_size, 5, "CONSTANT_VAL must be no-op")
+
+    def test_adjuster_grows_x2_above_threshold(self):
+        """D-06/D-07: fraction > 0.5 doubles batch_size."""
+        node = self._make_node()
+        node._last_batch_fraction = 0.7
+        node._adjust_batch_size_if_needed()
+        self.assertEqual(node.batch_size, 10)
+
+    def test_adjuster_shrinks_half_below_threshold(self):
+        """D-06/D-07: fraction < 0.5 halves batch_size (integer floor)."""
+        node = self._make_node()
+        node.batch_size = 10
+        node._last_batch_fraction = 0.3
+        node._adjust_batch_size_if_needed()
+        self.assertEqual(node.batch_size, 5)
+
+    def test_adjuster_holds_at_exact_threshold(self):
+        """D-08: fraction == 0.5 holds (strict-greater grow, strict-less shrink)."""
+        node = self._make_node()
+        node.batch_size = 8
+        node._last_batch_fraction = 0.5
+        node._adjust_batch_size_if_needed()
+        self.assertEqual(node.batch_size, 8)
+
+    def test_adjuster_caps_at_4x_base(self):
+        """D-08 upper bound: 4 * base_batch_size (5 -> 20)."""
+        node = self._make_node()
+        node.batch_size = 16  # would grow to 32 without cap
+        node._last_batch_fraction = 1.0
+        node._adjust_batch_size_if_needed()
+        self.assertEqual(node.batch_size, 20)
+
+    def test_adjuster_floors_at_one(self):
+        """D-08 lower bound: 1 (integer floor of 1//2 = 0, clamped to 1)."""
+        node = self._make_node()
+        node.batch_size = 1
+        node._last_batch_fraction = 0.0
+        node._adjust_batch_size_if_needed()
+        self.assertEqual(node.batch_size, 1)
+
+    def test_adjuster_consumes_signal(self):
+        """D-05: one decision per fully-absorbed batch -- fraction is reset to None after use."""
+        node = self._make_node()
+        node._last_batch_fraction = 0.7
+        node._adjust_batch_size_if_needed()
+        self.assertIsNone(node._last_batch_fraction)
+
+    def test_adjuster_holds_on_none_signal(self):
+        """First batch under VARY (no prior signal): hold at current size."""
+        node = self._make_node()
+        node._last_batch_fraction = None
+        node._adjust_batch_size_if_needed()
+        self.assertEqual(node.batch_size, 5)
+
+    # --- Dispatch order & integration tests (D-09) ---
+
+    def test_maybe_request_more_calls_adjuster_before_capacity(self):
+        """D-09: _adjust_batch_size_if_needed must run BEFORE _remaining_capacity so the
+        new batch_size is honored this scheduling round."""
+        node = self._make_node()
+        node.state = NodeState.READY
+        # Prime: prior batch was all blocked -> should grow
+        node._last_batch_fraction = 1.0
+        node.model.queue_measurement = MagicMock(return_value=["t1", "t2"])
+
+        observed_capacity_calls = []
+        original_cap = node._remaining_capacity
+
+        def capture_cap():
+            observed_capacity_calls.append(node.batch_size)
+            return original_cap()
+
+        with patch.object(node, '_remaining_capacity', side_effect=capture_cap):
+            node.maybe_request_more()
+
+        # When _remaining_capacity was invoked, batch_size had already been adjusted to 10.
+        self.assertEqual(observed_capacity_calls, [10],
+            f"capacity observed batch_size at moment of call: {observed_capacity_calls}")
+
+    def test_maybe_request_more_records_pending_batch_target(self):
+        """D-05: scheduling a new batch initializes _pending_batch_target to the count
+        actually returned by queue_measurement (which may be less than requestable)."""
+        node = self._make_node()
+        node.state = NodeState.READY
+        node.model.queue_measurement = MagicMock(return_value=["t1", "t2", "t3"])
+        node.maybe_request_more()
+        self.assertEqual(node._pending_batch_target, 3)
+        self.assertEqual(node._current_batch_blocked, 0)
+        self.assertEqual(node._current_batch_size, 0)
+        self.assertEqual(node.in_flight, 3)
+
+    def test_maybe_request_more_append_to_batch_extends_target(self):
+        """D-05 short-batch path: if action space is partially exhausted and a second
+        maybe_request_more lands while the first batch is still in flight, the pending
+        count extends rather than starting a new fence."""
+        node = self._make_node()
+        node.state = NodeState.READY
+        # First scheduling round: queue_measurement returns 3
+        node.model.queue_measurement = MagicMock(return_value=["t1", "t2", "t3"])
+        node.maybe_request_more()
+        self.assertEqual(node._pending_batch_target, 3)
+        # Second scheduling round while the first batch hasn't fully drained:
+        # _pending_batch_target should extend, not reset.
+        node.model.queue_measurement = MagicMock(return_value=["t4", "t5"])
+        node.maybe_request_more()
+        self.assertEqual(node._pending_batch_target, 5,
+            "append-to-batch path must extend pending target, not start a new fence")
+
+    # --- Per-result counter hook in _append_measurements (D-05) ---
+
+    def _abs_result(self, blocked: int) -> dict:
+        """Stub BatchUCB.absorb_measurement return shape."""
+        return {
+            "action": "armA",
+            "targets": "example.com",
+            "rewards": float(blocked),
+            "q_value": 0.5,
+            "is_blocked": blocked,
+            "is_optimal": 0,
+            "coverage": 0.0,
+        }
+
+    def _mk_measurement(self):
+        """Real MeasurementResponse dataclass instance -- _append_measurements
+        calls asdict() on it, which requires an actual dataclass."""
+        from Infrastructure.utils.structures import MeasurementResponse
+        return MeasurementResponse(
+            target="example.com",
+            blocked=True,
+            scheduled_at_monotonic=None,
+            vp_count=1,
+        )
+
+    def test_append_measurements_increments_per_batch_counters(self):
+        """D-05: per-result loop increments _current_batch_blocked and _current_batch_size."""
+        node = self._make_node()
+        node._pending_batch_target = 3  # simulate a 3-target pending batch
+        # Two blocked, one unblocked
+        node.model.absorb_measurement = MagicMock(side_effect=[
+            self._abs_result(1),
+            self._abs_result(0),
+            self._abs_result(1),
+        ])
+        measurements = [self._mk_measurement() for _ in range(3)]
+        node._append_measurements(measurements)
+        # All 3 contributed; fence completed -> counters reset and fraction set.
+        self.assertEqual(node._last_batch_fraction, 2 / 3)
+        self.assertEqual(node._current_batch_blocked, 0)
+        self.assertEqual(node._current_batch_size, 0)
+        self.assertEqual(node._pending_batch_target, 0)
+
+    def test_append_measurements_partial_batch_does_not_set_fraction(self):
+        """D-05: a partial batch (results < pending target) leaves the fence open."""
+        node = self._make_node()
+        node._pending_batch_target = 5
+        node.model.absorb_measurement = MagicMock(side_effect=[
+            self._abs_result(1),
+            self._abs_result(0),
+        ])
+        node._append_measurements([self._mk_measurement() for _ in range(2)])
+        # Fence still open: 2 of 5 absorbed.
+        self.assertIsNone(node._last_batch_fraction)
+        self.assertEqual(node._current_batch_blocked, 1)
+        self.assertEqual(node._current_batch_size, 2)
+        self.assertEqual(node._pending_batch_target, 5)
+
+    def test_append_measurements_duplicate_skip_does_not_poison_counter(self):
+        """D-05 + WR-02: duplicate/stale results raise KeyError in absorb_measurement
+        and are caught; they must NOT increment the per-batch counters (which would
+        skew the fraction with absent is_blocked data)."""
+        node = self._make_node()
+        node._pending_batch_target = 2
+        # First absorb succeeds blocked=1, second raises KeyError (duplicate)
+        node.model.absorb_measurement = MagicMock(side_effect=[
+            self._abs_result(1),
+            KeyError("dup"),
+        ])
+        node._append_measurements([self._mk_measurement(), self._mk_measurement()])
+        # Only one result contributed to the counters; fence still open at 1/2.
+        self.assertIsNone(node._last_batch_fraction)
+        self.assertEqual(node._current_batch_size, 1)
+        self.assertEqual(node._current_batch_blocked, 1)
+        self.assertEqual(node._pending_batch_target, 2)
+
+    def test_append_measurements_zero_blocked_yields_zero_fraction(self):
+        """D-05 edge: a fully unblocked batch produces fraction=0.0 (not None)."""
+        node = self._make_node()
+        node._pending_batch_target = 2
+        node.model.absorb_measurement = MagicMock(side_effect=[
+            self._abs_result(0),
+            self._abs_result(0),
+        ])
+        node._append_measurements([self._mk_measurement(), self._mk_measurement()])
+        self.assertEqual(node._last_batch_fraction, 0.0)
+
+    # --- soft_reset snap-to-base (Claude's discretion) ---
+
+    def test_soft_reset_snaps_batch_size_to_base(self):
+        """soft_reset() snaps batch_size back to base_batch_size on iteration boundary."""
+        node = self._make_node()
+        node.batch_size = 20  # had drifted up under VARY
+        node.base_batch_size = 5
+        node.soft_reset()
+        self.assertEqual(node.batch_size, 5)
+
+    def test_soft_reset_clears_per_batch_tracker_state(self):
+        """soft_reset() clears the per-batch counters and pending target so the next
+        iteration's first batch runs at base before adaptation resumes."""
+        node = self._make_node()
+        node._current_batch_blocked = 7
+        node._current_batch_size = 12
+        node._pending_batch_target = 20
+        node._last_batch_fraction = 0.8
+        node.soft_reset()
+        self.assertEqual(node._current_batch_blocked, 0)
+        self.assertEqual(node._current_batch_size, 0)
+        self.assertEqual(node._pending_batch_target, 0)
+        self.assertIsNone(node._last_batch_fraction)
+
+    def test_soft_reset_under_constant_is_noop_on_batch_size(self):
+        """D-04: under CONSTANT_VAL, batch_size never drifts, so soft_reset's
+        snap-to-base is observationally a no-op."""
+        node = self._make_node(size_method=BatchSizeMethod.CONSTANT_VAL)
+        # Constant runs never mutate batch_size, so it equals base going in.
+        self.assertEqual(node.batch_size, node.base_batch_size)
+        node.soft_reset()
+        self.assertEqual(node.batch_size, node.base_batch_size)
+
+    # --- End-to-end trajectory (per-batch decision granularity, D-05) ---
+
+    def test_two_batch_trajectory_grow_then_shrink(self):
+        """End-to-end: a high-hit batch grows the next batch; a low-hit batch shrinks it."""
+        node = self._make_node()
+        node.state = NodeState.READY
+
+        # Batch 1: schedule 5, all blocked -> fraction=1.0
+        node.model.queue_measurement = MagicMock(return_value=["t1", "t2", "t3", "t4", "t5"])
+        node.maybe_request_more()
+        self.assertEqual(node._pending_batch_target, 5)
+        node.model.absorb_measurement = MagicMock(
+            side_effect=[self._abs_result(1)] * 5
+        )
+        node._append_measurements([self._mk_measurement() for _ in range(5)])
+        node.in_flight = 0  # simulate orchestrator's in_flight bookkeeping
+        self.assertEqual(node._last_batch_fraction, 1.0)
+
+        # Batch 2: next maybe_request_more grows batch_size 5 -> 10
+        node.model.queue_measurement = MagicMock(return_value=["t6"] * 10)
+        node.maybe_request_more()
+        self.assertEqual(node.batch_size, 10)
+        # Now drain batch 2 with all unblocked -> fraction=0.0
+        node.model.absorb_measurement = MagicMock(
+            side_effect=[self._abs_result(0)] * 10
+        )
+        node._append_measurements([self._mk_measurement() for _ in range(10)])
+        node.in_flight = 0
+        self.assertEqual(node._last_batch_fraction, 0.0)
+
+        # Batch 3: maybe_request_more shrinks 10 -> 5
+        node.model.queue_measurement = MagicMock(return_value=["t16"] * 5)
+        node.maybe_request_more()
+        self.assertEqual(node.batch_size, 5)
 
 
 if __name__ == "__main__":
