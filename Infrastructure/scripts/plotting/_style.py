@@ -129,3 +129,76 @@ def savefig(fig: "matplotlib.figure.Figure", out_dir: Path, name: str) -> Path:
     plt.close(fig)
     print(f"  saved: {out_path}")
     return out_path
+
+
+def add_monotonic_index(df: pd.DataFrame) -> pd.DataFrame:
+    """Return a copy of df sorted by utc_timestamp ascending with a fresh
+    measurement_idx column (0..len(df)-1). Used by all *_monotonic.png charts.
+
+    - Stable sort so equal timestamps keep their original order.
+    - Resets the dataframe index (drop=True) so iloc/positional ops are sane.
+    - Returns a new DataFrame; never mutates the input.
+    - If utc_timestamp is missing or all-NaT, falls back to the existing row order.
+    """
+    if len(df) == 0:
+        return df.assign(measurement_idx=np.arange(len(df), dtype=int))
+
+    if "utc_timestamp" not in df.columns or df["utc_timestamp"].isna().all():
+        logger.debug(
+            "add_monotonic_index: utc_timestamp missing or all-NaT; preserving original order"
+        )
+        out = df.copy().reset_index(drop=True)
+    else:
+        out = df.sort_values("utc_timestamp", kind="stable").reset_index(drop=True)
+
+    out["measurement_idx"] = np.arange(len(out), dtype=int)
+    return out
+
+
+def episode_mean_band(
+    ax,
+    df: pd.DataFrame,
+    x_col: str,
+    y_col: str,
+    *,
+    label: Optional[str] = None,
+    color=None,
+    linewidth: float = 1.4,
+    band_alpha: float = 0.2,
+) -> None:
+    """Plot mean(y_col) vs x_col grouped across episodes, with +/- std band.
+
+    - groupby(x_col).agg(mean, std) on y_col.
+    - ax.plot the mean curve; ax.fill_between mean +/- std if std is finite
+      and >0 anywhere (single-episode runs skip the band).
+    - Caller still owns ax labels / title / legend.
+    """
+    if len(df) == 0 or x_col not in df.columns or y_col not in df.columns:
+        return
+
+    grouped = (
+        df.groupby(x_col)[y_col]
+        .agg(["mean", "std"])
+        .reset_index()
+        .sort_values(x_col)
+    )
+
+    line, = ax.plot(
+        grouped[x_col],
+        grouped["mean"],
+        label=label,
+        color=color,
+        linewidth=linewidth,
+    )
+    band_color = color if color is not None else line.get_color()
+
+    std_series = grouped["std"]
+    if std_series.notna().any() and (std_series.fillna(0) > 0).any():
+        ax.fill_between(
+            grouped[x_col],
+            grouped["mean"] - std_series,
+            grouped["mean"] + std_series,
+            color=band_color,
+            alpha=band_alpha,
+            linewidth=0,
+        )
