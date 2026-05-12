@@ -1,10 +1,11 @@
 """Join per-country measurement CSVs against a ground-truth blocklist and plot accuracy.
 
-For each per-country dir under <run-dir>, emits three PNGs into
+For each per-country dir under <run-dir>, emits PNGs into
 <country>/plots/ (or <out>/<country>/ if --out is given):
-  - accuracy_summary.png     precision/recall/F1/accuracy bars (full run)
-  - confusion_matrix.png     2x2 heatmap (tn/fp/fn/tp)
-  - f1_over_time.png         rolling precision/recall/F1 vs step_idx
+  - accuracy_summary.png             precision/recall/F1/accuracy bars (full run)
+  - confusion_matrix.png             2x2 heatmap (tn/fp/fn/tp)
+  - f1_over_time_monotonic.png       rolling precision/recall/F1 vs measurement_idx
+  - f1_over_time_episode_mean.png    within-episode rolling P/R/F1, mean +/- std across episodes
 
 Ground-truth format (sniffed on first line):
   - CSV with header `domain`, one domain per row (matches inputs/gfwatch/,
@@ -30,8 +31,10 @@ import pandas as pd
 import seaborn as sns
 
 from Infrastructure.scripts.plotting._style import (
+    add_monotonic_index,
     apply_paper_style,
     ensure_out_dir,
+    episode_mean_band,
     iter_country_dirs,
     load_run_config,
     savefig,
@@ -188,7 +191,7 @@ def _plot_confusion_matrix(
     savefig(fig, out_dir, "confusion_matrix")
 
 
-def _plot_f1_over_time(
+def _plot_f1_over_time_monotonic(
     df: pd.DataFrame,
     expected: pd.Series,
     country: str,
@@ -198,15 +201,16 @@ def _plot_f1_over_time(
 ) -> None:
     if len(df) < window:
         print(
-            f"  skipping f1_over_time for {country}: only {len(df)} rows, window={window}"
+            f"  skipping f1_over_time_monotonic for {country}: only {len(df)} rows, window={window}"
         )
         return
 
-    # Ensure deterministic order along step_idx for the rolling metrics.
-    sorted_idx = df["step_idx"].argsort(kind="stable")
-    steps = df["step_idx"].to_numpy()[sorted_idx]
-    b = df["blocked"].astype(int).to_numpy()[sorted_idx]
-    e = expected.astype(int).to_numpy()[sorted_idx]
+    # Attach expected, then order by utc_timestamp via add_monotonic_index.
+    work = df.assign(_expected=expected.values)
+    work_m = add_monotonic_index(work)
+
+    b = work_m["blocked"].astype(int).to_numpy()
+    e = work_m["_expected"].astype(int).to_numpy()
 
     tp_seq = (b == 1) & (e == 1)
     fp_seq = (b == 1) & (e == 0)
@@ -223,18 +227,96 @@ def _plot_f1_over_time(
     denom_f = (precision + recall).replace(0, np.nan)
     f1 = (2 * precision * recall / denom_f).fillna(0.0)
 
+    xs = work_m["measurement_idx"].to_numpy()
     fig, ax = plt.subplots(figsize=(12, 5))
-    ax.plot(steps, precision, label="precision", linewidth=1.2)
-    ax.plot(steps, recall, label="recall", linewidth=1.2)
-    ax.plot(steps, f1, label="f1", linewidth=1.6)
-    ax.set_xlabel("step_idx")
+    ax.plot(xs, precision, label="precision", linewidth=1.2)
+    ax.plot(xs, recall, label="recall", linewidth=1.2)
+    ax.plot(xs, f1, label="f1", linewidth=1.6)
+    ax.set_xlabel("measurement_idx (time-ordered)")
     ax.set_ylabel(f"score (rolling, w={window})")
     ax.set_ylim(0, 1)
-    ax.set_title(f"{country}: precision/recall/F1 over time - {label}")
+    ax.set_title(f"{country}: precision/recall/F1 over time (monotonic) - {label}")
     ax.legend(loc="best")
     sns.despine(fig=fig)
     fig.tight_layout()
-    savefig(fig, out_dir, "f1_over_time")
+    savefig(fig, out_dir, "f1_over_time_monotonic")
+
+
+def _plot_f1_over_time_episode_mean(
+    df: pd.DataFrame,
+    expected: pd.Series,
+    country: str,
+    label: str,
+    window: int,
+    out_dir: Path,
+) -> None:
+    if "episode_idx" not in df.columns or "step_idx" not in df.columns:
+        return
+    if len(df) < window:
+        print(
+            f"  skipping f1_over_time_episode_mean for {country}: only {len(df)} rows, window={window}"
+        )
+        return
+
+    work = df.assign(_expected=expected.values).copy()
+
+    per_ep_frames: list[pd.DataFrame] = []
+    for ep_id, ep_df in work.groupby("episode_idx"):
+        if len(ep_df) < window:
+            continue
+        ep_df = ep_df.sort_values("step_idx", kind="stable")
+        b = ep_df["blocked"].astype(int).to_numpy()
+        e = ep_df["_expected"].astype(int).to_numpy()
+
+        tp_seq = (b == 1) & (e == 1)
+        fp_seq = (b == 1) & (e == 0)
+        fn_seq = (b == 0) & (e == 1)
+
+        s_tp = pd.Series(tp_seq.astype(int)).rolling(window=window, min_periods=window).sum()
+        s_fp = pd.Series(fp_seq.astype(int)).rolling(window=window, min_periods=window).sum()
+        s_fn = pd.Series(fn_seq.astype(int)).rolling(window=window, min_periods=window).sum()
+
+        denom_p = (s_tp + s_fp).replace(0, np.nan)
+        denom_r = (s_tp + s_fn).replace(0, np.nan)
+        precision = (s_tp / denom_p).fillna(0.0)
+        recall = (s_tp / denom_r).fillna(0.0)
+        denom_f = (precision + recall).replace(0, np.nan)
+        f1 = (2 * precision * recall / denom_f).fillna(0.0)
+
+        ep_out = pd.DataFrame(
+            {
+                "step_idx": ep_df["step_idx"].values,
+                "precision": precision.values,
+                "recall": recall.values,
+                "f1": f1.values,
+                "episode_idx": ep_id,
+            }
+        )
+        per_ep_frames.append(ep_out)
+
+    if not per_ep_frames:
+        print(
+            f"  skipping f1_over_time_episode_mean for {country}: no episode >= window={window}"
+        )
+        return
+
+    combined = pd.concat(per_ep_frames, ignore_index=True)
+    palette = sns.color_palette("deep", n_colors=3)
+
+    fig, ax = plt.subplots(figsize=(12, 5))
+    episode_mean_band(ax, combined, "step_idx", "precision", label="precision", color=palette[0])
+    episode_mean_band(ax, combined, "step_idx", "recall", label="recall", color=palette[1])
+    episode_mean_band(ax, combined, "step_idx", "f1", label="f1", color=palette[2], linewidth=1.8)
+    ax.set_xlabel("step_idx (per-episode)")
+    ax.set_ylabel(
+        f"score (rolling within-episode, w={window}; mean +/- std across episodes)"
+    )
+    ax.set_ylim(0, 1)
+    ax.set_title(f"{country}: precision/recall/F1 (episode mean) - {label}")
+    ax.legend(loc="best")
+    sns.despine(fig=fig)
+    fig.tight_layout()
+    savefig(fig, out_dir, "f1_over_time_episode_mean")
 
 
 def _resolve_country_out(run_dir: Path, country_dir: Path, out_override: Path | None) -> Path:
@@ -280,8 +362,13 @@ def _plot_country(
         tp, fp, fn, tn, country, label, country_out,
     )
     _safe_plot(
-        "f1_over_time",
-        _plot_f1_over_time,
+        "f1_over_time_monotonic",
+        _plot_f1_over_time_monotonic,
+        df, expected, country, label, rolling, country_out,
+    )
+    _safe_plot(
+        "f1_over_time_episode_mean",
+        _plot_f1_over_time_episode_mean,
         df, expected, country, label, rolling, country_out,
     )
 

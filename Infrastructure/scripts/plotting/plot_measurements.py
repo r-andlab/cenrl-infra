@@ -1,16 +1,27 @@
 """Visualize per-country <country>_measurements.csv files for learning/quality analysis.
 
-For each per-country dir under <run-dir>, emits nine PNGs into
-<country>/plots/ (or <out>/<country>/ if --out is given):
-  - reward_cumulative.png         cumulative reward vs step_idx
-  - reward_rolling.png            rolling-mean reward vs step_idx
-  - blocked_rate_rolling.png      rolling-mean blocked rate vs step_idx
-  - latency_distribution.png      latency_ms histogram + KDE
-  - vp_count_distribution.png     vp_count discrete histogram
-  - coverage_over_time.png        coverage vs step_idx (hue=episode_idx if >1)
-  - optimal_arm_rate.png          rolling-mean is_optimal vs step_idx
-  - q_value_top_arms.png          q_value vs step_idx for top-N arms
-  - arm_counts.png                bar chart of arm visit counts (top-N + other)
+For each per-country dir under <run-dir>, emits PNGs into
+<country>/plots/ (or <out>/<country>/ if --out is given). Per-step charts emit
+two variants each (see ``## Notes`` in the README): ``*_monotonic.png`` plots
+the run as one continuous trajectory ordered by ``utc_timestamp``, and
+``*_episode_mean.png`` aggregates across episodes by ``step_idx`` with a
+mean +/- std band.
+
+  - reward_cumulative_monotonic.png       cumulative reward vs measurement_idx
+  - reward_cumulative_episode_mean.png    per-episode cumsum mean +/- std across episodes
+  - reward_rolling_monotonic.png          rolling-mean reward vs measurement_idx
+  - reward_rolling_episode_mean.png       reward mean +/- std across episodes by step_idx
+  - blocked_rate_rolling_monotonic.png    rolling-mean blocked rate vs measurement_idx
+  - blocked_rate_rolling_episode_mean.png blocked mean +/- std across episodes by step_idx
+  - latency_distribution.png              latency_ms histogram + KDE
+  - vp_count_distribution.png             vp_count discrete histogram
+  - coverage_over_time_monotonic.png      coverage vs measurement_idx
+  - coverage_over_time_episode_mean.png   coverage mean +/- std across episodes by step_idx
+  - optimal_arm_rate_monotonic.png        rolling-mean is_optimal vs measurement_idx
+  - optimal_arm_rate_episode_mean.png     is_optimal mean +/- std across episodes by step_idx
+  - q_value_top_arms_monotonic.png        q_value vs measurement_idx for top-N arms
+  - q_value_top_arms_episode_mean.png     q_value mean +/- std across episodes for top-N arms
+  - arm_counts.png                        bar chart of arm visit counts (top-N + other)
 
 Example:
     python3 Infrastructure/scripts/plotting/plot_measurements.py --run-dir outputs/run1 \\
@@ -29,8 +40,10 @@ import pandas as pd
 import seaborn as sns
 
 from Infrastructure.scripts.plotting._style import (
+    add_monotonic_index,
     apply_paper_style,
     ensure_out_dir,
+    episode_mean_band,
     iter_country_dirs,
     load_run_config,
     savefig,
@@ -62,7 +75,7 @@ def _parse_args() -> argparse.Namespace:
         "--top-arms",
         type=int,
         default=10,
-        help="How many arms (by visit count) to show in q_value_top_arms.png and arm_counts.png. Default 10.",
+        help="How many arms (by visit count) to show in q_value_top_arms_*.png and arm_counts.png. Default 10.",
     )
     p.add_argument(
         "--rolling",
@@ -95,46 +108,92 @@ def _safe_plot(name: str, fn, *args, **kwargs) -> None:
         print(f"  ERROR plotting {name}: {exc}", file=sys.stderr)
 
 
-def _plot_reward_cumulative(df: pd.DataFrame, country: str, label: str, out_dir: Path) -> None:
+def _plot_reward_cumulative_monotonic(df: pd.DataFrame, country: str, label: str, out_dir: Path) -> None:
+    df_m = add_monotonic_index(df)
     fig, ax = plt.subplots(figsize=(12, 5))
-    ax.plot(df["step_idx"], df["reward"].cumsum(), linewidth=1.2)
-    ax.set_xlabel("step_idx")
+    ax.plot(df_m["measurement_idx"], df_m["reward"].cumsum(), linewidth=1.2)
+    ax.set_xlabel("measurement_idx (time-ordered)")
     ax.set_ylabel("cumulative reward")
-    ax.set_title(f"{country}: cumulative reward - {label}")
+    ax.set_title(f"{country}: cumulative reward (monotonic) - {label}")
     sns.despine(fig=fig)
     fig.tight_layout()
-    savefig(fig, out_dir, "reward_cumulative")
+    savefig(fig, out_dir, "reward_cumulative_monotonic")
 
 
-def _plot_reward_rolling(df: pd.DataFrame, country: str, label: str, window: int, out_dir: Path) -> None:
+def _plot_reward_cumulative_episode_mean(df: pd.DataFrame, country: str, label: str, out_dir: Path) -> None:
+    if "episode_idx" not in df.columns or "step_idx" not in df.columns:
+        return
+    # cumsum WITHIN each episode, then aggregate across episodes by step_idx
+    per_ep = df.copy()
+    per_ep["reward_cumsum"] = per_ep.groupby("episode_idx")["reward"].cumsum()
+    fig, ax = plt.subplots(figsize=(12, 5))
+    episode_mean_band(ax, per_ep, "step_idx", "reward_cumsum")
+    ax.set_xlabel("step_idx (per-episode)")
+    ax.set_ylabel("cumulative reward (mean +/- std across episodes)")
+    ax.set_title(f"{country}: cumulative reward (episode mean) - {label}")
+    sns.despine(fig=fig)
+    fig.tight_layout()
+    savefig(fig, out_dir, "reward_cumulative_episode_mean")
+
+
+def _plot_reward_rolling_monotonic(df: pd.DataFrame, country: str, label: str, window: int, out_dir: Path) -> None:
+    df_m = add_monotonic_index(df)
     fig, ax = plt.subplots(figsize=(12, 5))
     ax.plot(
-        df["step_idx"],
-        df["reward"].rolling(window=window, min_periods=1).mean(),
+        df_m["measurement_idx"],
+        df_m["reward"].rolling(window=window, min_periods=1).mean(),
         linewidth=1.2,
     )
-    ax.set_xlabel("step_idx")
+    ax.set_xlabel("measurement_idx (time-ordered)")
     ax.set_ylabel(f"reward (rolling mean, w={window})")
-    ax.set_title(f"{country}: rolling reward - {label}")
+    ax.set_title(f"{country}: rolling reward (monotonic) - {label}")
     sns.despine(fig=fig)
     fig.tight_layout()
-    savefig(fig, out_dir, "reward_rolling")
+    savefig(fig, out_dir, "reward_rolling_monotonic")
 
 
-def _plot_blocked_rate(df: pd.DataFrame, country: str, label: str, window: int, out_dir: Path) -> None:
+def _plot_reward_rolling_episode_mean(df: pd.DataFrame, country: str, label: str, out_dir: Path) -> None:
+    if "episode_idx" not in df.columns or "step_idx" not in df.columns:
+        return
+    fig, ax = plt.subplots(figsize=(12, 5))
+    episode_mean_band(ax, df, "step_idx", "reward")
+    ax.set_xlabel("step_idx (per-episode)")
+    ax.set_ylabel("reward (mean +/- std across episodes)")
+    ax.set_title(f"{country}: reward (episode mean) - {label}")
+    sns.despine(fig=fig)
+    fig.tight_layout()
+    savefig(fig, out_dir, "reward_rolling_episode_mean")
+
+
+def _plot_blocked_rate_monotonic(df: pd.DataFrame, country: str, label: str, window: int, out_dir: Path) -> None:
+    df_m = add_monotonic_index(df)
     fig, ax = plt.subplots(figsize=(12, 5))
     ax.plot(
-        df["step_idx"],
-        df["blocked"].rolling(window=window, min_periods=1).mean(),
+        df_m["measurement_idx"],
+        df_m["blocked"].rolling(window=window, min_periods=1).mean(),
         linewidth=1.2,
     )
-    ax.set_xlabel("step_idx")
+    ax.set_xlabel("measurement_idx (time-ordered)")
     ax.set_ylabel(f"blocked rate (rolling mean, w={window})")
     ax.set_ylim(0, 1)
-    ax.set_title(f"{country}: rolling blocked rate - {label}")
+    ax.set_title(f"{country}: rolling blocked rate (monotonic) - {label}")
     sns.despine(fig=fig)
     fig.tight_layout()
-    savefig(fig, out_dir, "blocked_rate_rolling")
+    savefig(fig, out_dir, "blocked_rate_rolling_monotonic")
+
+
+def _plot_blocked_rate_episode_mean(df: pd.DataFrame, country: str, label: str, out_dir: Path) -> None:
+    if "episode_idx" not in df.columns or "step_idx" not in df.columns:
+        return
+    fig, ax = plt.subplots(figsize=(12, 5))
+    episode_mean_band(ax, df, "step_idx", "blocked")
+    ax.set_xlabel("step_idx (per-episode)")
+    ax.set_ylabel("blocked rate (mean +/- std across episodes)")
+    ax.set_ylim(0, 1)
+    ax.set_title(f"{country}: blocked rate (episode mean) - {label}")
+    sns.despine(fig=fig)
+    fig.tight_layout()
+    savefig(fig, out_dir, "blocked_rate_rolling_episode_mean")
 
 
 def _plot_latency_distribution(df: pd.DataFrame, country: str, label: str, out_dir: Path) -> None:
@@ -170,56 +229,119 @@ def _plot_vp_count_distribution(df: pd.DataFrame, country: str, label: str, out_
     savefig(fig, out_dir, "vp_count_distribution")
 
 
-def _plot_coverage_over_time(df: pd.DataFrame, country: str, label: str, out_dir: Path) -> None:
+def _plot_coverage_over_time_monotonic(df: pd.DataFrame, country: str, label: str, out_dir: Path) -> None:
+    df_m = add_monotonic_index(df)
     fig, ax = plt.subplots(figsize=(12, 5))
-    if "episode_idx" in df.columns and df["episode_idx"].nunique() > 1:
-        sns.lineplot(data=df, x="step_idx", y="coverage", hue="episode_idx", ax=ax)
-    else:
-        ax.plot(df["step_idx"], df["coverage"], linewidth=1.0)
-    ax.set_xlabel("step_idx")
+    ax.plot(df_m["measurement_idx"], df_m["coverage"], linewidth=1.0)
+    ax.set_xlabel("measurement_idx (time-ordered)")
     ax.set_ylabel("coverage")
     ax.set_ylim(0, 1)
-    ax.set_title(f"{country}: coverage over time - {label}")
+    ax.set_title(f"{country}: coverage over time (monotonic) - {label}")
     sns.despine(fig=fig)
     fig.tight_layout()
-    savefig(fig, out_dir, "coverage_over_time")
+    savefig(fig, out_dir, "coverage_over_time_monotonic")
 
 
-def _plot_optimal_arm_rate(df: pd.DataFrame, country: str, label: str, window: int, out_dir: Path) -> None:
-    if "is_optimal" not in df.columns:
-        print(f"  skipping optimal_arm_rate for {country}: is_optimal column missing")
+def _plot_coverage_over_time_episode_mean(df: pd.DataFrame, country: str, label: str, out_dir: Path) -> None:
+    if "episode_idx" not in df.columns or "step_idx" not in df.columns:
         return
     fig, ax = plt.subplots(figsize=(12, 5))
-    ax.plot(
-        df["step_idx"],
-        df["is_optimal"].rolling(window=window, min_periods=1).mean(),
-        linewidth=1.2,
-    )
-    ax.set_xlabel("step_idx")
-    ax.set_ylabel(f"optimal-arm rate (rolling, w={window})")
+    episode_mean_band(ax, df, "step_idx", "coverage")
+    ax.set_xlabel("step_idx (per-episode)")
+    ax.set_ylabel("coverage (mean +/- std across episodes)")
     ax.set_ylim(0, 1)
-    ax.set_title(f"{country}: optimal arm rate - {label}")
+    ax.set_title(f"{country}: coverage over time (episode mean) - {label}")
     sns.despine(fig=fig)
     fig.tight_layout()
-    savefig(fig, out_dir, "optimal_arm_rate")
+    savefig(fig, out_dir, "coverage_over_time_episode_mean")
 
 
-def _plot_q_value_top_arms(df: pd.DataFrame, country: str, label: str, top_n: int, out_dir: Path) -> None:
-    arm_counts = df["arm"].value_counts()
-    top_arms = list(arm_counts.head(top_n).index)
+def _plot_optimal_arm_rate_monotonic(df: pd.DataFrame, country: str, label: str, window: int, out_dir: Path) -> None:
+    if "is_optimal" not in df.columns:
+        print(f"  skipping optimal_arm_rate_monotonic for {country}: is_optimal column missing")
+        return
+    df_m = add_monotonic_index(df)
+    fig, ax = plt.subplots(figsize=(12, 5))
+    ax.plot(
+        df_m["measurement_idx"],
+        df_m["is_optimal"].rolling(window=window, min_periods=1).mean(),
+        linewidth=1.2,
+    )
+    ax.set_xlabel("measurement_idx (time-ordered)")
+    ax.set_ylabel(f"optimal-arm rate (rolling, w={window})")
+    ax.set_ylim(0, 1)
+    ax.set_title(f"{country}: optimal arm rate (monotonic) - {label}")
+    sns.despine(fig=fig)
+    fig.tight_layout()
+    savefig(fig, out_dir, "optimal_arm_rate_monotonic")
+
+
+def _plot_optimal_arm_rate_episode_mean(df: pd.DataFrame, country: str, label: str, out_dir: Path) -> None:
+    if "is_optimal" not in df.columns:
+        print(f"  skipping optimal_arm_rate_episode_mean for {country}: is_optimal column missing")
+        return
+    if "episode_idx" not in df.columns or "step_idx" not in df.columns:
+        return
+    fig, ax = plt.subplots(figsize=(12, 5))
+    episode_mean_band(ax, df, "step_idx", "is_optimal")
+    ax.set_xlabel("step_idx (per-episode)")
+    ax.set_ylabel("optimal-arm rate (mean +/- std across episodes)")
+    ax.set_ylim(0, 1)
+    ax.set_title(f"{country}: optimal arm rate (episode mean) - {label}")
+    sns.despine(fig=fig)
+    fig.tight_layout()
+    savefig(fig, out_dir, "optimal_arm_rate_episode_mean")
+
+
+def _plot_q_value_top_arms_monotonic(
+    df: pd.DataFrame, country: str, label: str, top_n: int, top_arms: list, out_dir: Path
+) -> None:
     top_df = df[df["arm"].isin(top_arms)]
     if len(top_df) == 0:
-        print(f"  skipping q_value_top_arms for {country}: no rows after top-N filter")
+        print(f"  skipping q_value_top_arms_monotonic for {country}: no rows after top-N filter")
         return
+    df_m_top = add_monotonic_index(top_df)
     fig, ax = plt.subplots(figsize=(12, 6))
-    sns.lineplot(data=top_df, x="step_idx", y="q_value", hue="arm", ax=ax)
-    ax.set_xlabel("step_idx")
+    sns.lineplot(data=df_m_top, x="measurement_idx", y="q_value", hue="arm", ax=ax)
+    ax.set_xlabel("measurement_idx (time-ordered)")
     ax.set_ylabel("q_value")
-    ax.set_title(f"{country}: q_value for top-{len(top_arms)} arms - {label}")
+    ax.set_title(f"{country}: q_value for top-{len(top_arms)} arms (monotonic) - {label}")
     ax.legend(loc="best", fontsize="x-small", ncol=2)
     sns.despine(fig=fig)
     fig.tight_layout()
-    savefig(fig, out_dir, "q_value_top_arms")
+    savefig(fig, out_dir, "q_value_top_arms_monotonic")
+
+
+def _plot_q_value_top_arms_episode_mean(
+    df: pd.DataFrame, country: str, label: str, top_n: int, top_arms: list, out_dir: Path
+) -> None:
+    top_df = df[df["arm"].isin(top_arms)]
+    if len(top_df) == 0:
+        print(f"  skipping q_value_top_arms_episode_mean for {country}: no rows after top-N filter")
+        return
+    if "episode_idx" not in df.columns or "step_idx" not in df.columns:
+        return
+    palette = sns.color_palette("deep", n_colors=max(len(top_arms), 1))
+    fig, ax = plt.subplots(figsize=(12, 6))
+    for i, arm in enumerate(top_arms):
+        arm_df = top_df[top_df["arm"] == arm]
+        if len(arm_df) == 0:
+            continue
+        episode_mean_band(
+            ax,
+            arm_df,
+            "step_idx",
+            "q_value",
+            label=str(arm),
+            color=palette[i % len(palette)],
+        )
+    ax.set_xlabel("step_idx (per-episode)")
+    ax.set_ylabel("q_value (mean +/- std across episodes)")
+    ax.set_title(f"{country}: q_value for top-{len(top_arms)} arms (episode mean) - {label}")
+    ax.legend(loc="best", fontsize="x-small", ncol=2)
+    sns.despine(fig=fig)
+    fig.tight_layout()
+    savefig(fig, out_dir, "q_value_top_arms_episode_mean")
 
 
 def _plot_arm_counts(df: pd.DataFrame, country: str, label: str, top_n: int, out_dir: Path) -> None:
@@ -262,14 +384,23 @@ def _plot_country(
     country_out = _resolve_country_out(run_dir, country_dir, out_override)
     print(f"Plotting {country} ({len(df)} rows) -> {country_out}")
 
-    _safe_plot("reward_cumulative", _plot_reward_cumulative, df, country, label, country_out)
-    _safe_plot("reward_rolling", _plot_reward_rolling, df, country, label, rolling, country_out)
-    _safe_plot("blocked_rate_rolling", _plot_blocked_rate, df, country, label, rolling, country_out)
+    # Identify top-N arms once from full df so both q_value variants stay aligned.
+    top_arm_names = list(df["arm"].value_counts().head(top_arms).index)
+
+    _safe_plot("reward_cumulative_monotonic", _plot_reward_cumulative_monotonic, df, country, label, country_out)
+    _safe_plot("reward_cumulative_episode_mean", _plot_reward_cumulative_episode_mean, df, country, label, country_out)
+    _safe_plot("reward_rolling_monotonic", _plot_reward_rolling_monotonic, df, country, label, rolling, country_out)
+    _safe_plot("reward_rolling_episode_mean", _plot_reward_rolling_episode_mean, df, country, label, country_out)
+    _safe_plot("blocked_rate_rolling_monotonic", _plot_blocked_rate_monotonic, df, country, label, rolling, country_out)
+    _safe_plot("blocked_rate_rolling_episode_mean", _plot_blocked_rate_episode_mean, df, country, label, country_out)
+    _safe_plot("coverage_over_time_monotonic", _plot_coverage_over_time_monotonic, df, country, label, country_out)
+    _safe_plot("coverage_over_time_episode_mean", _plot_coverage_over_time_episode_mean, df, country, label, country_out)
+    _safe_plot("optimal_arm_rate_monotonic", _plot_optimal_arm_rate_monotonic, df, country, label, rolling, country_out)
+    _safe_plot("optimal_arm_rate_episode_mean", _plot_optimal_arm_rate_episode_mean, df, country, label, country_out)
+    _safe_plot("q_value_top_arms_monotonic", _plot_q_value_top_arms_monotonic, df, country, label, top_arms, top_arm_names, country_out)
+    _safe_plot("q_value_top_arms_episode_mean", _plot_q_value_top_arms_episode_mean, df, country, label, top_arms, top_arm_names, country_out)
     _safe_plot("latency_distribution", _plot_latency_distribution, df, country, label, country_out)
     _safe_plot("vp_count_distribution", _plot_vp_count_distribution, df, country, label, country_out)
-    _safe_plot("coverage_over_time", _plot_coverage_over_time, df, country, label, country_out)
-    _safe_plot("optimal_arm_rate", _plot_optimal_arm_rate, df, country, label, rolling, country_out)
-    _safe_plot("q_value_top_arms", _plot_q_value_top_arms, df, country, label, top_arms, country_out)
     _safe_plot("arm_counts", _plot_arm_counts, df, country, label, top_arms, country_out)
 
 
