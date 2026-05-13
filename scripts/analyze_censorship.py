@@ -20,6 +20,11 @@ Outputs:
     * A Markdown-formatted table on stdout mirroring the CSV. The category
       column may be truncated in the Markdown view for readability; the CSV
       remains untruncated.
+    * ``<run_dir>/censorship_summary.png`` — a matplotlib-rendered table with
+      a title block above (run name, date, measurements per episode, total
+      countries, total episodes). When the row count exceeds ``--max-rows``
+      (default 60), the PNG shows the top-N pairs by ``total_blocks`` and a
+      footer notes the truncation; the CSV is always the full data.
 
 Per-country CSV schema (verified):
     episode,time,action,targets,rewards,q_value,is_blocked,is_optimal,coverage
@@ -29,14 +34,16 @@ Per-country CSV schema (verified):
       script does not crash on mixed-feature runs.
     * Ordering for "first detection" is (episode ASC, time ASC).
 
-This script is a leaf utility: stdlib only, no imports from ``models/``,
-``Infrastructure/``, ``common/``, ``api/``, or ``baselines/``.
+This script depends only on the stdlib plus matplotlib (already a project
+dep). It does not import from ``models/``, ``Infrastructure/``, ``common/``,
+``api/``, or ``baselines/``.
 """
 
 from __future__ import annotations
 
 import argparse
 import csv
+import datetime as dt
 import sys
 from collections import defaultdict
 from dataclasses import dataclass, field
@@ -66,6 +73,17 @@ class PairAggregator:
     distinct_blocked_targets: set[str] = field(default_factory=set)
     # (episode, time) of the lexicographically first is_blocked=1 row.
     first_block: tuple[int, int] | None = None
+
+
+@dataclass
+class RunMeta:
+    """Run-level metadata surfaced in the PNG title block."""
+
+    run_name: str
+    date: str
+    measurements_per_episode: int
+    total_countries: int
+    total_episodes: int
 
 
 def discover_country_csvs(run_dir: Path) -> list[tuple[str, Path]]:
@@ -211,6 +229,269 @@ def render_markdown(rows: list[dict[str, object]]) -> str:
     return "\n".join(lines)
 
 
+# ---------------------------------------------------------------------------
+# Run-level metadata + PNG rendering
+# ---------------------------------------------------------------------------
+
+# Match the leading timestamp in app.log lines of the form
+# "2026-04-27 12:55:22,052 - INFO - ..."  — keep date+time only.
+_APP_LOG_TS_LEN = len("YYYY-MM-DD HH:MM:SS")
+
+
+def _read_app_log_timestamp(run_dir: Path) -> str | None:
+    """Best-effort: return the YYYY-MM-DD date from app.log line 1, else None."""
+    log_path = run_dir / "app.log"
+    if not log_path.is_file():
+        return None
+    try:
+        with log_path.open("r", encoding="utf-8", errors="replace") as fh:
+            first = fh.readline()
+    except OSError:
+        return None
+    if len(first) < _APP_LOG_TS_LEN:
+        return None
+    candidate = first[:_APP_LOG_TS_LEN]
+    try:
+        dt.datetime.strptime(candidate, "%Y-%m-%d %H:%M:%S")
+    except ValueError:
+        # Fall back to just the date portion if the time part is malformed.
+        try:
+            dt.datetime.strptime(candidate[:10], "%Y-%m-%d")
+            return candidate[:10]
+        except ValueError:
+            return None
+    return candidate
+
+
+def _mtime_date(run_dir: Path) -> str:
+    """Fallback date source: the run directory's mtime as YYYY-MM-DD HH:MM:SS."""
+    ts = dt.datetime.fromtimestamp(run_dir.stat().st_mtime)
+    return ts.strftime("%Y-%m-%d %H:%M:%S")
+
+
+def collect_run_meta(
+    run_dir: Path, country_csvs: list[tuple[str, Path]]
+) -> RunMeta:
+    """Build a ``RunMeta`` by scanning ``country_csvs`` for episode/step caps.
+
+    ``measurements_per_episode`` is ``max(time)`` observed across all rows
+    and episodes (CenRL caps ``time`` at the per-episode batch size, so the
+    max value is the canonical batch size for the run). If no data rows
+    exist, both episode-count and measurements default to 0.
+    """
+    date = _read_app_log_timestamp(run_dir) or _mtime_date(run_dir)
+
+    max_step = 0
+    episodes_seen: set[int] = set()
+    for _country, csv_path in country_csvs:
+        try:
+            with csv_path.open("r", newline="", encoding="utf-8") as fh:
+                reader = csv.DictReader(fh)
+                for row in reader:
+                    try:
+                        ep = int(row["episode"])
+                        st = int(row["time"])
+                    except (KeyError, ValueError):
+                        continue
+                    episodes_seen.add(ep)
+                    if st > max_step:
+                        max_step = st
+        except OSError:
+            # If a single per-country file is unreadable, skip it — the main
+            # aggregation pass will surface the failure if it matters.
+            continue
+
+    return RunMeta(
+        run_name=run_dir.name,
+        date=date,
+        measurements_per_episode=max_step,
+        total_countries=len(country_csvs),
+        total_episodes=len(episodes_seen),
+    )
+
+
+# Default PNG row cap. matplotlib's table renderer degrades badly past a few
+# hundred rows on a single figure; 60 keeps the PNG legible and the CSV
+# remains the source of truth for full data.
+_DEFAULT_MAX_PNG_ROWS = 60
+
+
+def _select_png_rows(
+    rows: list[dict[str, object]], max_rows: int
+) -> tuple[list[dict[str, object]], bool]:
+    """Return (rows_to_render, truncated). ``max_rows<=0`` means unlimited.
+
+    When truncated, the top ``max_rows`` pairs by ``total_blocks`` DESC are
+    selected (ties broken by ``total_tests`` DESC, then country/category for
+    determinism), then re-sorted into the canonical display order so the
+    PNG ordering matches the CSV.
+    """
+    if max_rows <= 0 or len(rows) <= max_rows:
+        return rows, False
+    ranked = sorted(
+        rows,
+        key=lambda r: (
+            -int(r["total_blocks"]),
+            -int(r["total_tests"]),
+            str(r["country"]),
+            str(r["category"]),
+        ),
+    )
+    picked = ranked[:max_rows]
+    picked.sort(
+        key=lambda r: (
+            r["country"],
+            r["first_detection_episode"],
+            r["first_detection_step"],
+        )
+    )
+    return picked, True
+
+
+def render_png(
+    out_path: Path,
+    rows: list[dict[str, object]],
+    meta: RunMeta,
+    max_rows: int = _DEFAULT_MAX_PNG_ROWS,
+) -> None:
+    """Render a PNG table with a metadata title block above the rows.
+
+    Uses ``matplotlib.pyplot.table`` with mathtext only (no system LaTeX
+    dependency). When ``rows`` is empty the PNG still renders, showing only
+    the title block and a "No censorship detected" note.
+    """
+    # Import lazily so the CSV-only path still works on minimal environments
+    # without matplotlib installed.
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    display_rows, truncated = _select_png_rows(rows, max_rows)
+    total_pairs = len(rows)
+    shown_pairs = len(display_rows)
+
+    title_lines = [
+        rf"$\bf{{Run:}}$ {meta.run_name}",
+        rf"$\bf{{Date:}}$ {meta.date}",
+        (
+            rf"$\bf{{Measurements/episode:}}$ {meta.measurements_per_episode}"
+            rf"   $\bf{{Episodes:}}$ {meta.total_episodes}"
+            rf"   $\bf{{Countries:}}$ {meta.total_countries}"
+        ),
+    ]
+    title_text = "\n".join(title_lines)
+
+    # Cell strings — use the same Markdown truncation rule for the category
+    # column so very long category names do not blow out the figure width.
+    headers = list(CSV_HEADER)
+    body_cells: list[list[str]] = []
+    for r in display_rows:
+        body_cells.append(
+            [
+                str(r["country"]),
+                _truncate(str(r["category"]), STDOUT_CATEGORY_MAX),
+                str(r["first_detection_episode"]),
+                str(r["first_detection_step"]),
+                str(r["total_blocks"]),
+                str(r["total_tests"]),
+                str(r["distinct_blocked_targets"]),
+            ]
+        )
+
+    # Heuristic figure sizing: 11 in wide, ~0.32 in per body row, + title/footer.
+    fig_width = 11.0
+    row_height = 0.32
+    title_height = 1.1
+    footer_height = 0.6 if truncated or shown_pairs == 0 else 0.25
+    body_height = max(shown_pairs, 1) * row_height + 0.6  # +header allowance
+    fig_height = title_height + body_height + footer_height
+
+    fig, ax = plt.subplots(figsize=(fig_width, fig_height))
+    ax.axis("off")
+
+    # Title block: anchored at the top of the axes.
+    ax.text(
+        0.0,
+        1.0,
+        title_text,
+        transform=ax.transAxes,
+        ha="left",
+        va="top",
+        fontsize=12,
+        family="DejaVu Sans",
+    )
+
+    if shown_pairs == 0:
+        ax.text(
+            0.5,
+            0.5,
+            "No censorship detected in this run.",
+            transform=ax.transAxes,
+            ha="center",
+            va="center",
+            fontsize=12,
+            color="#555555",
+        )
+    else:
+        # Reserve roughly the top (title_height / fig_height) of the axes
+        # for the title block, place the table below it.
+        table_top = 1.0 - (title_height / fig_height)
+        table = ax.table(
+            cellText=body_cells,
+            colLabels=headers,
+            loc="upper left",
+            bbox=[0.0, 0.05, 1.0, table_top - 0.05],
+            cellLoc="left",
+            colLoc="left",
+        )
+        table.auto_set_font_size(False)
+        # Shrink font when many rows.
+        font_size = 9 if shown_pairs <= 40 else 7
+        table.set_fontsize(font_size)
+
+        # Style header row + zebra-stripe body rows for readability.
+        n_cols = len(headers)
+        header_face = "#d9d9d9"
+        zebra = "#f4f4f4"
+        for col_idx in range(n_cols):
+            cell = table[0, col_idx]
+            cell.set_facecolor(header_face)
+            cell.set_text_props(weight="bold")
+        for r_idx in range(1, shown_pairs + 1):
+            for col_idx in range(n_cols):
+                cell = table[r_idx, col_idx]
+                if r_idx % 2 == 0:
+                    cell.set_facecolor(zebra)
+
+    # Footer: truncation note (if applicable) plus a CSV pointer.
+    footer_parts: list[str] = []
+    if truncated:
+        footer_parts.append(
+            f"Showing top {shown_pairs} of {total_pairs} pairs by total_blocks. "
+            "Full data: censorship_summary.csv"
+        )
+    elif total_pairs > 0:
+        footer_parts.append(
+            f"{total_pairs} (country, category) pairs with censorship."
+        )
+    if footer_parts:
+        ax.text(
+            0.0,
+            0.0,
+            "\n".join(footer_parts),
+            transform=ax.transAxes,
+            ha="left",
+            va="bottom",
+            fontsize=9,
+            color="#555555",
+        )
+
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=(
@@ -222,6 +503,20 @@ def main(argv: list[str] | None = None) -> int:
         "run_dir",
         type=Path,
         help="Path to a run directory (e.g. outputs/outtest7).",
+    )
+    parser.add_argument(
+        "--max-rows",
+        type=int,
+        default=_DEFAULT_MAX_PNG_ROWS,
+        help=(
+            "Cap rows in the PNG table (default %(default)s). Use 0 for "
+            "unlimited. CSV output is never capped."
+        ),
+    )
+    parser.add_argument(
+        "--no-png",
+        action="store_true",
+        help="Skip PNG rendering (CSV + stdout only).",
     )
     args = parser.parse_args(argv)
 
@@ -257,6 +552,12 @@ def main(argv: list[str] | None = None) -> int:
         print(render_markdown(rows))
     else:
         print(f"No censorship detected in {run_dir}.")
+
+    if not args.no_png:
+        meta = collect_run_meta(run_dir, country_csvs)
+        png_path = run_dir / "censorship_summary.png"
+        render_png(png_path, rows, meta, max_rows=args.max_rows)
+        print(f"Wrote PNG: {png_path}")
 
     return 0
 
