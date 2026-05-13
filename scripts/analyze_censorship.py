@@ -11,11 +11,11 @@ one ``is_blocked=1`` row was observed.
 Outputs:
     * ``<run_dir>/censorship_summary.csv`` — always written. Header is::
 
-          country,category,first_detection_episode,first_detection_step,
-          total_blocks,total_tests,distinct_blocked_targets
+          country,category,first_det_ep,first_det_step,
+          total_blocks,total_tests,distinct
 
-      Rows are sorted by (country ASC, first_detection_episode ASC,
-      first_detection_step ASC). When no detections exist anywhere in the
+      Rows are sorted by (country ASC, first_det_ep ASC,
+      first_det_step ASC). When no detections exist anywhere in the
       run, the file is header-only.
     * A Markdown-formatted table on stdout mirroring the CSV. The category
       column may be truncated in the Markdown view for readability; the CSV
@@ -54,11 +54,11 @@ CATEGORY_PREFIX = "categories "
 CSV_HEADER = [
     "country",
     "category",
-    "first_detection_episode",
-    "first_detection_step",
+    "first_det_ep",
+    "first_det_step",
     "total_blocks",
     "total_tests",
-    "distinct_blocked_targets",
+    "distinct",
 ]
 # Stdout-only truncation cap for the category column.
 STDOUT_CATEGORY_MAX = 40
@@ -70,7 +70,7 @@ class PairAggregator:
 
     total_tests: int = 0
     total_blocks: int = 0
-    distinct_blocked_targets: set[str] = field(default_factory=set)
+    distinct: set[str] = field(default_factory=set)
     # (episode, time) of the lexicographically first is_blocked=1 row.
     first_block: tuple[int, int] | None = None
 
@@ -116,7 +116,7 @@ def aggregate_country(
                 # Defensive: ignore non-categories rows (e.g. other feature
                 # modes in mixed runs) rather than crashing.
                 continue
-            category = action[len(CATEGORY_PREFIX):]
+            category = action[len(CATEGORY_PREFIX) :]
             key = (country, category)
             agg = pairs.get(key)
             if agg is None:
@@ -136,7 +136,7 @@ def aggregate_country(
                 agg.total_blocks += 1
                 target = row.get("targets", "")
                 if target:
-                    agg.distinct_blocked_targets.add(target)
+                    agg.distinct.add(target)
                 candidate = (episode, step)
                 if agg.first_block is None or candidate < agg.first_block:
                     agg.first_block = candidate
@@ -155,18 +155,18 @@ def build_rows(
             {
                 "country": country,
                 "category": category,
-                "first_detection_episode": episode,
-                "first_detection_step": step,
+                "first_det_ep": episode,
+                "first_det_step": step,
                 "total_blocks": agg.total_blocks,
                 "total_tests": agg.total_tests,
-                "distinct_blocked_targets": len(agg.distinct_blocked_targets),
+                "distinct": len(agg.distinct),
             }
         )
     rows.sort(
         key=lambda r: (
             r["country"],
-            r["first_detection_episode"],
-            r["first_detection_step"],
+            r["first_det_ep"],
+            r["first_det_step"],
         )
     )
     return rows
@@ -199,11 +199,11 @@ def render_markdown(rows: list[dict[str, object]]) -> str:
             [
                 str(row["country"]),
                 _truncate(str(row["category"]), STDOUT_CATEGORY_MAX),
-                str(row["first_detection_episode"]),
-                str(row["first_detection_step"]),
+                str(row["first_det_ep"]),
+                str(row["first_det_step"]),
                 str(row["total_blocks"]),
                 str(row["total_tests"]),
-                str(row["distinct_blocked_targets"]),
+                str(row["distinct"]),
             ]
         )
 
@@ -269,9 +269,7 @@ def _mtime_date(run_dir: Path) -> str:
     return ts.strftime("%Y-%m-%d %H:%M:%S")
 
 
-def collect_run_meta(
-    run_dir: Path, country_csvs: list[tuple[str, Path]]
-) -> RunMeta:
+def collect_run_meta(run_dir: Path, country_csvs: list[tuple[str, Path]]) -> RunMeta:
     """Build a ``RunMeta`` by scanning ``country_csvs`` for episode/step caps.
 
     ``measurements_per_episode`` is ``max(time)`` observed across all rows
@@ -341,8 +339,8 @@ def _select_png_rows(
     picked.sort(
         key=lambda r: (
             r["country"],
-            r["first_detection_episode"],
-            r["first_detection_step"],
+            r["first_det_ep"],
+            r["first_det_step"],
         )
     )
     return picked, True
@@ -391,11 +389,11 @@ def render_png(
             [
                 str(r["country"]),
                 _truncate(str(r["category"]), STDOUT_CATEGORY_MAX),
-                str(r["first_detection_episode"]),
-                str(r["first_detection_step"]),
+                str(r["first_det_ep"]),
+                str(r["first_det_step"]),
                 str(r["total_blocks"]),
                 str(r["total_tests"]),
-                str(r["distinct_blocked_targets"]),
+                str(r["distinct"]),
             ]
         )
 
@@ -472,9 +470,7 @@ def render_png(
             "Full data: censorship_summary.csv"
         )
     elif total_pairs > 0:
-        footer_parts.append(
-            f"{total_pairs} (country, category) pairs with censorship."
-        )
+        footer_parts.append(f"{total_pairs} (country, category) pairs with censorship.")
     if footer_parts:
         ax.text(
             0.0,
