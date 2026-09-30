@@ -128,13 +128,12 @@ class HyperQuackAPI(Api):
         parsed_output = []
         for r in results:
             target = r.test_url
-            blocked = False
-            if r.response:
-                blocked = not r.response[0].matches_template
+            # Bug #1 fix: use Hyperquack's own final, retry-aware verdict
+            # (anomaly) instead of response[0].matches_template (first
+            # attempt only, which misreads a transient failure a later
+            # retry recovered from as "blocked").
             parsed_output.append(
-                MeasurementResponse(
-                    target=target, blocked=(r.stateful_block or blocked)
-                )
+                MeasurementResponse(target=target, blocked=r.anomaly)
             )
         return parsed_output
 
@@ -169,7 +168,7 @@ class HyperQuackAPI(Api):
         for ip in ips:
             if ip not in self.vps:
                 self.vps.add(ip)
-        response = self.call_go_api(endpoint, body)
+        response = self.call_go_api(endpoint, body, timeout=600)
         # logging.info(f"Received response\n{response}")
         return response
 
@@ -182,7 +181,12 @@ class HyperQuackAPI(Api):
         if not self.debug:
             endpoint = "/add-work"
             body = {"work": [asdict(j) for j in jobs]}
-            return self.call_go_api(endpoint, body)
+            # Single attempt, long timeout: add-work can legitimately take a
+            # long time to drain under all-VPs-scale load. Retrying on
+            # timeout (the old 10s/5-retry default) queued the same work
+            # again on the Go side while the first attempt was often still
+            # succeeding, just slowly -- duplicate work, not a real failure.
+            return self.call_go_api(endpoint, body, timeout=900, max_tries=1)
         return
 
     def _inject_debug_results(self, country: str, jobs: List["Job"]) -> None:
@@ -277,25 +281,37 @@ class HyperQuackAPI(Api):
         return result
 
     # ---------------------------- HELPERS ----------------------------
-    def call_go_api(self, endpoint: str, data: dict = {}, method: str = "POST"):
-        """Send a request to the Go API and return JSON response."""
+    def call_go_api(
+        self, endpoint: str, data: dict = {}, method: str = "POST",
+        timeout: int = 10, max_tries: Optional[int] = None,
+    ):
+        """Send a request to the Go API and return JSON response.
+
+        timeout: per-attempt request timeout in seconds.
+        max_tries: attempts before giving up; defaults to self.retries.
+            All-VPs-scale calls (add_work, add_vantage_points) override both
+            of these -- a slow-but-still-succeeding request that hits the old
+            fixed 10s timeout + 5 retries got retried into duplicate work on
+            the Go side rather than just taking longer to finish.
+        """
         method = method.upper()
         if method not in ["POST", "GET"]:
             logging.warning(f"Invalid method: {method}")
             return {"error": "invalid method"}
+        tries = max_tries if max_tries is not None else self.retries
         retries = 0
-        for _ in range(self.retries):
+        for _ in range(tries):
             try:
                 url = f"{self.go_api_url}{endpoint}"
                 if method == "GET":
-                    response = requests.get(url, timeout=10)
+                    response = requests.get(url, timeout=timeout)
                 else:
-                    response = requests.post(url, json=data, timeout=10)
+                    response = requests.post(url, json=data, timeout=timeout)
                 response.raise_for_status()
                 return response.json()
             except Exception as e:
                 retries += 1
-                if retries == self.retries:
+                if retries == tries:
                     logging.warning(f"[Error] Failed to call Go API: {e}")
                     return {"error": str(e)}
                 else:

@@ -51,8 +51,8 @@ class TestResponseData(BaseModel):
     end_time: str
 
 class LocationData(BaseModel):
-    country_name: str
-    country_code: str
+    country_name: str | None = None
+    country_code: str | None = None
 
 class EvalPayload(BaseModel):
     vp: str
@@ -63,7 +63,7 @@ class EvalPayload(BaseModel):
 
 class TestPayload(BaseModel):
     vp: str
-    location: LocationData
+    location: LocationData = LocationData()
     service: str
     test_url: str
     response: List[TestResponseData]
@@ -97,3 +97,4 @@ class MeasurementResponse:
     blocked: bool
     scheduled_at_monotonic: float | None = None  # D-04: schedule -> absorb latency source
     vp_count: int | None = None                  # D-05: actual VP votes in majority
+    vote_fraction: float = 0.0                   # Ex 6: fraction of voting (non-abstained) VPs that voted blocked

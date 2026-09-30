@@ -113,9 +113,13 @@ class MeasurementAggregator:
             # Keep _expected_vps updated for drop_vp() compatibility
             self._expected_vps[country] = set(vps)
 
-    def record(self, country: str, vp: str, target: str, blocked: bool) -> None:
-        """Record one VP's result.  If all expected VPs have now reported
-        for this target, finalize via majority vote and enqueue."""
+    def record(self, country: str, vp: str, target: str, blocked: bool | None) -> None:
+        """Record one VP's result. ``blocked=None`` means the VP reported
+        (so the target stops waiting on it) but the result is ambiguous
+        (e.g. a controls_failed VP that looks broken rather than censored)
+        and should abstain from the vote entirely -- see _try_finalize's
+        vote-filtering below. If all expected VPs have now reported for this
+        target, finalize via majority vote and enqueue."""
         with self._lock:
             key = (country, target)
             if key not in self._target_expected:
@@ -188,6 +192,7 @@ class MeasurementAggregator:
                     blocked=False,
                     scheduled_at_monotonic=sched_mono,
                     vp_count=0,
+                    vote_fraction=0.0,
                 )
             )
             self._pending.pop(key, None)
@@ -203,7 +208,28 @@ class MeasurementAggregator:
         # Phase 4 D-01: dispatch on aggregation_method. votes_pairs carries the
         # vp_ip alongside its boolean vote so WEIGHTED_VOTE can look up each
         # VP's per-target weight without zipping against `expected` separately.
-        votes_pairs = [(v, vp_map[v]) for v in expected]
+        # Ex 6: VPs recorded with blocked=None abstained (reported, but their
+        # result was too ambiguous to count either way) -- filtered out here so
+        # neither the majority vote nor vote_fraction below ever sees a None.
+        votes_pairs = [(v, vp_map[v]) for v in expected if vp_map[v] is not None]
+
+        if not votes_pairs:
+            # Every expected VP abstained -- same no-vote shape as the
+            # expected-drained-to-empty case above.
+            sched_mono = self._schedule_times.pop(key, None)
+            self._ready[key[0]].append(
+                MeasurementResponse(
+                    target=key[1],
+                    blocked=False,
+                    scheduled_at_monotonic=sched_mono,
+                    vp_count=0,
+                    vote_fraction=0.0,
+                )
+            )
+            del self._pending[key]
+            del self._target_expected[key]
+            self._target_weights.pop(key, None)
+            return
 
         if self.aggregation_method is AggregationMethod.MAJORITY_VOTE:
             # Original behavior preserved exactly (D-04).
@@ -238,6 +264,11 @@ class MeasurementAggregator:
 
         # Preserve `votes` for the unchanged vp_count=len(votes) line below.
         votes = [b for _, b in votes_pairs]
+        # Ex 6: unweighted fraction of voting (non-abstained) VPs that voted
+        # blocked -- regardless of aggregation_method. WEIGHTED_VOTE's per-VP
+        # weights stay a majority-decision concept only; this is "percentage
+        # of VPs," not a weighted percentage.
+        vote_fraction = sum(votes) / len(votes)
         # Phase 3 D-04: pop the schedule timestamp so the response carries it
         # and the dict does not accumulate orphan entries.
         sched_mono = self._schedule_times.pop(key, None)
@@ -247,6 +278,7 @@ class MeasurementAggregator:
                 blocked=majority_blocked,
                 scheduled_at_monotonic=sched_mono,
                 vp_count=len(votes),
+                vote_fraction=vote_fraction,
             )
         )
         del self._pending[key]

@@ -245,6 +245,28 @@ class _OrchestratorTestHelper:
         return orch
 
 
+class TestTickStopsWhenAllCountriesFinished(unittest.TestCase):
+    """tick() sets _stop_event once target_countries has drained to empty --
+    otherwise run_forever loops forever doing nothing once every country is
+    DONE or dead, and the process needs a manual kill even though the run
+    is, by definition, complete."""
+
+    def test_stop_event_set_when_target_countries_empties(self):
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch._stop_event = threading.Event()
+        orch.target_countries = set()   # already drained by a prior tick
+        self.assertFalse(orch._stop_event.is_set())
+        orch.tick()
+        self.assertTrue(orch._stop_event.is_set())
+
+    def test_stop_event_not_set_while_countries_remain(self):
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch._stop_event = threading.Event()
+        orch.target_countries = {"US"}
+        orch.tick()
+        self.assertFalse(orch._stop_event.is_set())
+
+
 class TestRegisterTargetsWiring(unittest.TestCase):
     """Verify tick() calls aggregator.register_targets, not update_aggregator_vps."""
 
@@ -876,6 +898,7 @@ class TestTickReturnsTimings(unittest.TestCase):
         orch._process_eval_results = MagicMock()
         orch.vantage_points = MagicMock()
         orch.services = ["https"]
+        orch._stop_event = threading.Event()
         return orch
 
     def test_tick_returns_six_step_timings(self):
@@ -1139,6 +1162,208 @@ class TestRunConfigSnapshot(unittest.TestCase):
         with open(tmp / "run_config.json") as f:
             data = _json.load(f)
         assert data["cli_params"]["some_path"] == "/tmp/x"
+
+
+class TestRewardModeValidation(unittest.TestCase):
+    """Orchestrator.__init__ validates reward_mode before any other
+    construction work -- an invalid value raises immediately."""
+
+    def test_invalid_reward_mode_raises(self):
+        from Infrastructure.main.orchestrator import Orchestrator
+        with self.assertRaises(ValueError):
+            Orchestrator(
+                params={}, vantage_points=MagicMock(), go_api_endpoint="http://x",
+                services=["https"], reward_mode="not-a-real-mode",
+            )
+
+    def test_default_reward_mode_is_majority(self):
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch._reward_mode = "majority"
+        self.assertEqual(orch._reward_mode, "majority")
+
+
+class TestRewardModeWiring(unittest.TestCase):
+    """reward_mode threads through to each RegionalNode as it's created."""
+
+    def test_regional_node_receives_reward_mode(self):
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch._reward_mode = "percentage"
+        orch._model_klass = MagicMock()
+        orch._target_selection = MagicMock()
+        orch._batch_size_method = MagicMock()
+        orch._qval_propagation_method = MagicMock()
+        orch._aggregation_method = MagicMock()
+        orch.params = {}
+        orch.output_folder = None
+        orch.previous_values_folder = None
+
+        payload = MagicMock()
+        payload.vp = "1.1.1.1"
+        payload.template = "some_template"
+        payload.issue = None
+        orch.eval_store.drain.return_value = [payload]
+        orch.eval_store.get_country.return_value = "US"
+
+        with patch("Infrastructure.main.orchestrator.RegionalNode") as MockNode:
+            orch._process_eval_results()
+            self.assertEqual(MockNode.call_args.kwargs["reward_mode"], "percentage")
+
+
+class TestQuarantineSystem(unittest.TestCase):
+    """all_vps_mode quarantine: backoff doubling, permanent drop after too
+    many strikes, and availability filtering."""
+
+    def _orch(self):
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch._all_vps_mode = True
+        return orch
+
+    def test_first_quarantine_uses_base_window(self):
+        orch = self._orch()
+        orch._quarantine_vp("US", "1.1.1.1", "test reason")
+        until = orch._quarantine_map()[("US", "1.1.1.1")]
+        # Should be roughly ALL_VPS_QUARANTINE_MIN (30) minutes from now.
+        remaining_min = (until - time.monotonic()) / 60
+        self.assertAlmostEqual(remaining_min, 30, delta=0.1)
+        orch.api.aggregator.drop_vp.assert_called_once_with("US", "1.1.1.1")
+
+    def test_backoff_doubles_each_strike(self):
+        orch = self._orch()
+        orch._quarantine_vp("US", "1.1.1.1", "r1")
+        orch._quarantine_vp("US", "1.1.1.1", "r2")
+        until = orch._quarantine_map()[("US", "1.1.1.1")]
+        remaining_min = (until - time.monotonic()) / 60
+        self.assertAlmostEqual(remaining_min, 60, delta=0.1)   # 30 * 2^(2-1)
+
+    def test_backoff_caps_at_max(self):
+        orch = self._orch()
+        for _ in range(4):   # 30, 60, 120, 240 -- hits the 240 cap
+            orch._quarantine_vp("US", "1.1.1.1", "r")
+        until = orch._quarantine_map()[("US", "1.1.1.1")]
+        remaining_min = (until - time.monotonic()) / 60
+        self.assertAlmostEqual(remaining_min, 240, delta=0.1)
+
+    def test_dropped_for_good_after_max_strikes(self):
+        orch = self._orch()
+        for _ in range(5):   # strikes 1-5: quarantined each time
+            orch._quarantine_vp("US", "1.1.1.1", "r")
+        self.assertIn(("US", "1.1.1.1"), orch._quarantine_map())
+        orch.vantage_points.reject_vp.reset_mock()
+        orch.api.remove_vantage_points.reset_mock()
+        orch._quarantine_vp("US", "1.1.1.1", "r")   # strike 6: give up for good
+        orch.vantage_points.reject_vp.assert_called_once_with("US", "1.1.1.1")
+        orch.api.remove_vantage_points.assert_called_once_with(["1.1.1.1"], expect_unstarted=True)
+        self.assertNotIn(("US", "1.1.1.1"), orch._quarantine_map())
+
+    def test_available_vps_excludes_quarantined(self):
+        orch = self._orch()
+        orch._quarantine_vp("US", "1.1.1.1", "r")
+        available = orch._available_vps("US", ["1.1.1.1", "2.2.2.2"])
+        self.assertEqual(available, ["2.2.2.2"])
+
+    def test_available_vps_is_noop_outside_all_vps_mode(self):
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch._all_vps_mode = False
+        self.assertEqual(
+            orch._available_vps("US", ["1.1.1.1"]), ["1.1.1.1"],
+        )
+
+    def test_release_expired_quarantine_frees_vp(self):
+        orch = self._orch()
+        orch._quarantine_vp("US", "1.1.1.1", "r")
+        orch._quarantine_map()[("US", "1.1.1.1")] = time.monotonic() - 1  # force-expire
+        orch._release_expired_quarantine()
+        self.assertNotIn(("US", "1.1.1.1"), orch._quarantine_map())
+        self.assertEqual(orch._available_vps("US", ["1.1.1.1"]), ["1.1.1.1"])
+
+    def test_strikes_persist_across_release(self):
+        """Strike count is memory that survives release -- the point of the
+        whole system is recognizing repeat offenders."""
+        orch = self._orch()
+        orch._quarantine_vp("US", "1.1.1.1", "r")
+        orch._quarantine_map()[("US", "1.1.1.1")] = time.monotonic() - 1
+        orch._release_expired_quarantine()
+        self.assertEqual(orch._quarantine_strikes()[("US", "1.1.1.1")], 1)
+        orch._quarantine_vp("US", "1.1.1.1", "r")
+        self.assertEqual(orch._quarantine_strikes()[("US", "1.1.1.1")], 2)
+
+
+class TestAllVpsModeAbstention(unittest.TestCase):
+    """_feed_aggregator abstains exactly the results _check_vp_health flagged
+    this tick, and nothing else."""
+
+    def test_feed_aggregator_abstains_flagged_ids(self):
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch._all_vps_mode = True
+
+        blocked_result = MagicMock()
+        blocked_result.anomaly = True
+        blocked_result.stateful_block = False
+        blocked_result.vp = "1.1.1.1"
+        blocked_result.test_url = "example.com"
+
+        abstained_result = MagicMock()
+        abstained_result.anomaly = True
+        abstained_result.stateful_block = False
+        abstained_result.vp = "2.2.2.2"
+        abstained_result.test_url = "example.com"
+
+        orch._abstain_set().add(id(abstained_result))
+
+        orch._feed_aggregator("US", [blocked_result, abstained_result])
+
+        calls = orch.api.aggregator.record.call_args_list
+        recorded = {c.args[1]: c.args[3] for c in calls}
+        self.assertEqual(recorded["1.1.1.1"], True)
+        self.assertIsNone(recorded["2.2.2.2"])
+
+    def test_abstain_set_cleared_at_start_of_check_vp_health(self):
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch._all_vps_mode = True
+        orch._abstain_set().add(12345)   # stale id from a previous tick
+        orch._check_vp_health("US", [])
+        self.assertEqual(orch._abstain_set(), set())
+
+
+class TestBug1Fix(unittest.TestCase):
+    """_feed_aggregator must use Hyperquack's final anomaly verdict, not
+    response[0].matches_template (the first-attempt-only bug)."""
+
+    def test_retry_rescued_result_is_not_blocked(self):
+        """Trial 1 failed but Hyperquack's own retry sequence recovered
+        (anomaly=False) -- must NOT be recorded as blocked."""
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch._all_vps_mode = False
+        r = MagicMock()
+        r.anomaly = False
+        r.vp = "1.1.1.1"
+        r.test_url = "example.com"
+        orch._feed_aggregator("US", [r])
+        orch.api.aggregator.record.assert_called_once_with("US", "1.1.1.1", "example.com", False)
+
+    def test_genuine_anomaly_is_blocked(self):
+        r = MagicMock()
+        r.anomaly = True
+        r.vp = "1.1.1.1"
+        r.test_url = "example.com"
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch._all_vps_mode = False
+        orch._feed_aggregator("US", [r])
+        orch.api.aggregator.record.assert_called_once_with("US", "1.1.1.1", "example.com", True)
+
+    def test_controls_failed_result_is_not_blocked_outside_all_vps_mode(self):
+        """anomaly is always False when controls_failed is True (trial.go),
+        so this falls out as not-blocked by construction, matching
+        filter_false_positive_blocks.py's offline cleaning."""
+        r = MagicMock()
+        r.anomaly = False
+        r.controls_failed = True
+        r.vp = "1.1.1.1"
+        r.test_url = "example.com"
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch._all_vps_mode = False
+        orch._feed_aggregator("US", [r])
+        orch.api.aggregator.record.assert_called_once_with("US", "1.1.1.1", "example.com", False)
 
 
 if __name__ == "__main__":
