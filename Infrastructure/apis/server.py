@@ -9,23 +9,38 @@ from Infrastructure.utils.structures import TestPayload, EvalPayload
 logger = logging.getLogger("uvicorn.error")
 
 
-def _run_server(measurement_queue, eval_queue, host, port, log_level):
-    """Entry point for the server subprocess.
+def _build_app(measurement_queue, eval_queue):
+    """Build the FastAPI app that puts received payloads onto queue-like
+    objects (either multiprocessing.Queue for the real subprocess, or a
+    plain queue.Queue in tests -- both just need .put()).
 
-    Runs a fresh FastAPI/Uvicorn instance that puts received payloads onto
-    multiprocessing queues so the main process can consume them.
+    A payload that fails pydantic validation used to be a silent 422 with
+    nothing logged -- Hyperquack sending `location: {}` for a VP missing
+    from its geolocation DB meant the receiver rejected EVERY result from
+    that VP, and the aggregator waited on that VP's vote forever, freezing
+    the whole country (Germany/Turkey in experiment_five/output4, 0 targets
+    finalized). LocationData's fields are Optional now, so that specific
+    case validates -- but any OTHER validation failure should be visible,
+    not silent. Rate-limited to the first 20 rejections so a persistently
+    malformed sender can't spam the log forever.
     """
     app = FastAPI()
+    rejected_count = [0]
 
-    # @app.exception_handler(RequestValidationError)
-    # async def validation_exception_handler(request: Request, exc: RequestValidationError):
-    #     # Log the detailed error message and the request body
-    #     logger.error(f"Validation error: {exc.errors()} | Body: {exc.body}")
-    #     return JSONResponse(
-    #         status_code=422,
-    #         content={"detail": exc.errors(), "body": exc.body},
-    #     )
-    
+    @app.exception_handler(RequestValidationError)
+    async def validation_exception_handler(request: Request, exc: RequestValidationError):
+        rejected_count[0] += 1
+        vp = exc.body.get("vp") if isinstance(exc.body, dict) else None
+        if rejected_count[0] <= 20:
+            logger.warning(
+                "REJECTED payload #%d (vp=%s) for %s %s: %s",
+                rejected_count[0], vp, request.method, request.url, exc.errors(),
+            )
+        return JSONResponse(
+            status_code=422,
+            content={"detail": exc.errors()},
+        )
+
     @app.middleware("http")
     async def log_requests(request: Request, call_next):
         try:
@@ -45,6 +60,16 @@ def _run_server(measurement_queue, eval_queue, host, port, log_level):
         eval_queue.put(req.model_dump())
         return {"status": "ok"}
 
+    return app
+
+
+def _run_server(measurement_queue, eval_queue, host, port, log_level):
+    """Entry point for the server subprocess.
+
+    Runs a fresh FastAPI/Uvicorn instance that puts received payloads onto
+    multiprocessing queues so the main process can consume them.
+    """
+    app = _build_app(measurement_queue, eval_queue)
     uvicorn.run(app, host=host, port=port, log_level=log_level)
 
 
@@ -88,6 +113,12 @@ class MeasurementReceiver:
             data = self._measurement_queue.get_nowait()
             payload = TestPayload(**data)
             country = payload.tag if payload.tag else payload.location.country_name
+            if not country:
+                logger.warning(
+                    "Dropping result for VP %s: no tag and no country "
+                    "(empty/unresolved geolocation)", payload.vp,
+                )
+                continue
             self.store.record_result(country, payload)
 
         while not self._eval_queue.empty():

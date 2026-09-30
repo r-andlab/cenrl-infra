@@ -36,6 +36,30 @@ logger = logging.getLogger(__name__)
 # A VP is removed from service after this many controls_failed results.
 VP_FAILURE_THRESHOLD = 5
 
+# all_vps_mode: a VP that has NEVER returned a working result and then fails
+# its controls this many times in a row is quarantined (its results abstain).
+ALL_VPS_CONSECUTIVE_FAILURE_THRESHOLD = 10
+# all_vps_mode: a VP that worked before but then fails its controls SLOWLY
+# (>= SLOW_CF_SECONDS, i.e. timeouts) this many times in a row is quarantined.
+ALL_VPS_SLOW_CF_THRESHOLD = 5
+SLOW_CF_SECONDS = 60.0
+# Hyperquack's own lifetime bad-evaluations drop is effectively disabled in
+# all_vps_mode -- CenRL's quarantine system is the sole VP-health authority
+# there (see config_allvps.json's MaxBadEvaluations, which mirrors this).
+ALL_VPS_BAD_EVALUATIONS_THRESHOLD = 1_000_000
+# A measurement is resent (to the same VP) only after this many minutes, and
+# only if the VP is neither queued for it nor currently running anything.
+ALL_VPS_LOST_RESEND_MIN = 30
+# Quarantine window: excluded from new dispatches, not dropped -- stays
+# registered with Hyperquack and is retried after the window. Doubles per
+# strike up to the max, then the VP is dropped for good after
+# ALL_VPS_QUARANTINE_MAX_STRIKES cycles. output5's evidence: re-probing that
+# run's 137 permanent drops after it finished found roughly half would have
+# recovered -- hence retry-with-backoff instead of a hard one-shot drop.
+ALL_VPS_QUARANTINE_MIN = 30
+ALL_VPS_QUARANTINE_MAX_MIN = 240
+ALL_VPS_QUARANTINE_MAX_STRIKES = 5
+
 
 class Orchestrator:
     def __init__(
@@ -53,7 +77,17 @@ class Orchestrator:
         target_selection: BatchSelectionMethod = BatchSelectionMethod.TOP_K_FROM_ARM,
         batch_size_method: BatchSizeMethod = BatchSizeMethod.CONSTANT_VAL,
         qval_propagation_method: PropagationMethod = PropagationMethod.ON_RECEIPT,
+        model_klass=BatchUCB,
+        action_space_klass=None,
+        all_vps_mode: bool = False,
+        reward_mode: str = "majority",
     ):
+        if reward_mode not in ("majority", "percentage"):
+            raise ValueError(f"reward_mode must be 'majority' or 'percentage', got {reward_mode!r}")
+        self._reward_mode = reward_mode
+        self._model_klass = model_klass
+        self._action_space_klass = action_space_klass
+        self._all_vps_mode = all_vps_mode
         self.params = params
         self.output_folder = params.get("output_directory", None)
         self.previous_values_folder = previous_values_folder
@@ -317,6 +351,10 @@ class Orchestrator:
         self._process_eval_results()
         t2 = time.perf_counter()
 
+        # all_vps_mode: release any VPs whose quarantine window has passed
+        # before this tick schedules anything.
+        self._release_expired_quarantine()
+
         # Per-country sub-step accumulators (Phase 3 D-07: summed across countries).
         agg_time = 0.0
         model_update_time = 0.0
@@ -372,6 +410,15 @@ class Orchestrator:
                 schedule_time += time.perf_counter() - _s5
                 continue
 
+            # all_vps_mode: quarantined VPs are excluded from new dispatches
+            # without being dropped. A no-op outside all_vps_mode. Empty here
+            # (everyone quarantined this instant) just skips scheduling this
+            # tick -- not a dead region, so no finished_nodes append.
+            active_vps = self._available_vps(country, active_vps)
+            if not active_vps:
+                schedule_time += time.perf_counter() - _s5
+                continue
+
             targets = node.maybe_request_more()
             if not targets:
                 schedule_time += time.perf_counter() - _s5
@@ -379,37 +426,26 @@ class Orchestrator:
             logger.info(
                 f"{country} requesting {len(targets)} measurements: {targets}"
                 )
-            # Snapshot the expected VPs at scheduling time so the aggregator
-            # knows exactly which VPs should report for each target (D-02).
-            # Phase 3 D-04: also pass per-target schedule monotonic time so the
-            # aggregator can attach scheduled_at_monotonic to the finalized response.
             now = time.monotonic()
-            schedule_times = {t: now for t in targets}
-
-            # Phase 4 D-02: push fresh per-VP weights so register_targets snapshots
-            # them per-target (matches WR-06 invariant: snapshot at scheduling time
-            # to prevent finalize-against-stale-weights races, RESEARCH Pitfall 9).
-            vp_weights = self._compute_vp_weights(country, set(active_vps))
-            self.api.aggregator.set_vp_weights(country, vp_weights)
-
-            self.api.aggregator.register_targets(
-                country, targets, set(active_vps),
-                schedule_times=schedule_times,
-            )
-
-            self.api.schedule_measurements(
-                vps=active_vps,
-                services=self.services,
-                targets=targets,
-                country=country,
-            )
-            for t in targets:
-                self._inflight_times[country][t] = now
+            self._dispatch(country, active_vps, targets, now)
             schedule_time += time.perf_counter() - _s5
 
         for country in finished_nodes:
             self.agents.pop(country, None)
             self.target_countries.discard(country)
+
+        # Every target country has either hit its num_episodes cap (DONE) or
+        # died (no VPs left) -- nothing left to schedule, ever. Without this,
+        # the main loop (run(), while not self._stop_event.is_set()) would
+        # keep calling tick() forever doing nothing once self.agents is
+        # empty, and the process would need a manual Ctrl+C even though the
+        # run is already, by definition, complete. target_countries only
+        # shrinks via the two discard() calls in this file (here and in
+        # _process_eval_results), both meaning "this country is finished,"
+        # so this can't fire prematurely during startup.
+        if not self.target_countries:
+            logger.info("All target countries finished, stopping run.")
+            self._stop_event.set()
 
         t_end = time.perf_counter()
         return {
@@ -420,6 +456,46 @@ class Orchestrator:
             "schedule":        round(schedule_time, 6),
             "total":           round(t_end - t0, 6),
         }
+
+    def _dispatch(
+        self, country: str, active_vps: List[str], targets: List[str], now: float
+    ) -> None:
+        """Register expected VPs with the aggregator and schedule measurements
+        for *targets* against *active_vps* (extracted from tick()'s Step 5 so
+        subclasses -- e.g. CDN-collision-aware scheduling -- can override just
+        this dispatch unit instead of duplicating the rest of tick()).
+
+        register_targets() and schedule_measurements() must always be called
+        with the same VP set: register_targets() tells the aggregator which
+        VPs it should wait for before finalizing a target, so any VP that is
+        registered but never actually sent the work (e.g. a subclass that
+        schedules to a filtered subset) will make that target hang forever.
+        """
+        # Snapshot the expected VPs at scheduling time so the aggregator
+        # knows exactly which VPs should report for each target (D-02).
+        # Phase 3 D-04: also pass per-target schedule monotonic time so the
+        # aggregator can attach scheduled_at_monotonic to the finalized response.
+        schedule_times = {t: now for t in targets}
+
+        # Phase 4 D-02: push fresh per-VP weights so register_targets snapshots
+        # them per-target (matches WR-06 invariant: snapshot at scheduling time
+        # to prevent finalize-against-stale-weights races, RESEARCH Pitfall 9).
+        vp_weights = self._compute_vp_weights(country, set(active_vps))
+        self.api.aggregator.set_vp_weights(country, vp_weights)
+
+        self.api.aggregator.register_targets(
+            country, targets, set(active_vps),
+            schedule_times=schedule_times,
+        )
+
+        self.api.schedule_measurements(
+            vps=active_vps,
+            services=self.services,
+            targets=targets,
+            country=country,
+        )
+        for t in targets:
+            self._inflight_times[country][t] = now
 
     def run_forever(self) -> None:
         self._install_signal_handlers()
@@ -875,7 +951,7 @@ class Orchestrator:
                     self.agents[country] = RegionalNode(
                         params=self.params,
                         country_name=country,
-                        model_klass=BatchUCB,
+                        model_klass=self._model_klass,
                         output_folder=self.output_folder,
                         action_space_folder=self.previous_values_folder,
                         batch_size=5,
@@ -887,6 +963,7 @@ class Orchestrator:
                         batch_size_method=self._batch_size_method,
                         qval_propagation_method=self._qval_propagation_method,
                         aggregation_method=self._aggregation_method,
+                        reward_mode=self._reward_mode,
                     )
                 # NOTE: aggregator expected VPs are updated at scheduling
                 # time, not here, to avoid snapshot mismatches with
@@ -938,6 +1015,15 @@ class Orchestrator:
             if r.response:
                 blocked = not r.response[0].matches_template
             blocked = r.stateful_block or blocked
+            # all_vps_mode: _check_vp_health (which runs first on this same
+            # batch) flags the controls_failed results that come from a VP that
+            # looks broken rather than censored; those abstain -- the target
+            # stops waiting on the VP but the vote ignores it. Other
+            # controls_failed results (a VP that has worked, failing fast the
+            # way residual censorship does) keep the original blocked vote.
+            # (Normal runs keep the original behavior bit-for-bit.)
+            if getattr(self, "_all_vps_mode", False) and id(r) in self._abstain_set():
+                blocked = None
             self.api.aggregator.record(country, r.vp, r.test_url, blocked)
 
     def _check_vp_health(
@@ -948,8 +1034,24 @@ class Orchestrator:
         Returns the set of VP IPs that were dropped during this call.
         """
         dropped_vps: Set[str] = set()
+        # ids of this batch's results to abstain on (consumed by _feed_aggregator
+        # right after; cleared each call so a recycled id can never leak).
+        self._abstain_set().clear()
         for r in raw_results:
             key = (country, r.vp)
+            if getattr(self, "_all_vps_mode", False):
+                if not self._all_vps_note_result(key, r):
+                    continue
+                if key not in self._ever_worked_set():
+                    reason = (f"never returned a working result after "
+                              f"{ALL_VPS_CONSECUTIVE_FAILURE_THRESHOLD} failures")
+                else:
+                    reason = f"unreachable after {ALL_VPS_SLOW_CF_THRESHOLD} slow failures"
+                dropped_vps.add(r.vp)
+                self._quarantine_vp(country, r.vp, reason)
+                self._vp_failure_counts.pop(key, None)
+                self._slow_cf_counts().pop(key, None)
+                continue
             if r.controls_failed:
                 self._vp_failure_counts[key] += 1
                 self._vp_outcomes[key][1] += 1   # D-02: cumulative fail count
@@ -978,6 +1080,138 @@ class Orchestrator:
                 self._vp_failure_counts.pop(key, None)
                 self._vp_outcomes[key][0] += 1   # D-02: cumulative success count
         return dropped_vps
+
+    # -- all_vps_mode: quarantine + VP-health bookkeeping ------------------
+    def _abstain_set(self) -> Set[int]:
+        """ids (via id()) of this tick's results that should abstain rather
+        than vote -- populated by _check_vp_health, consumed and cleared by
+        _feed_aggregator right after."""
+        return self.__dict__.setdefault("_abstain_ids", set())
+
+    def _ever_worked_set(self) -> Set[Tuple[str, str]]:
+        """(country, vp) pairs that have returned at least one working
+        (non-controls_failed) result at some point in this run."""
+        return self.__dict__.setdefault("_ever_worked", set())
+
+    def _slow_cf_counts(self) -> Dict[Tuple[str, str], int]:
+        """Consecutive SLOW controls_failed count per (country, vp), for VPs
+        that have worked before (see ALL_VPS_SLOW_CF_THRESHOLD)."""
+        return self.__dict__.setdefault("_slow_cf", defaultdict(int))
+
+    def _all_vps_note_result(self, key: Tuple[str, str], r: TestPayload) -> bool:
+        """all_vps_mode VP-health bookkeeping for one result. Returns True iff
+        this VP just crossed a quarantine threshold (a drop signal) -- the
+        caller (_check_vp_health) quarantines it.
+
+        Three-way classification of controls_failed results:
+          - VP has never returned a working result: consecutive failures count
+            toward ALL_VPS_CONSECUTIVE_FAILURE_THRESHOLD. Abstains.
+          - VP worked before, fails SLOWLY (>= SLOW_CF_SECONDS, a timeout):
+            consecutive slow failures count toward ALL_VPS_SLOW_CF_THRESHOLD.
+            Abstains.
+          - VP worked before, fails FAST (a quick reset): NOT quarantined,
+            NOT abstained -- kept as a real "blocked" vote (residual
+            censorship after a blocked domain, not a dead VP).
+        A non-controls_failed result marks the VP as having worked and
+        resets both counters.
+        """
+        if not r.controls_failed:
+            self._ever_worked_set().add(key)
+            self._vp_failure_counts.pop(key, None)
+            self._slow_cf_counts().pop(key, None)
+            return False
+
+        duration = 0.0
+        if r.response:
+            try:
+                start = datetime.fromisoformat(r.response[0].start_time[:26].rstrip("Z"))
+                end = datetime.fromisoformat(r.response[-1].end_time[:26].rstrip("Z"))
+                duration = (end - start).total_seconds()
+            except (ValueError, IndexError):
+                duration = 0.0
+
+        if key not in self._ever_worked_set():
+            self._abstain_set().add(id(r))
+            self._vp_failure_counts[key] += 1
+            return self._vp_failure_counts[key] >= ALL_VPS_CONSECUTIVE_FAILURE_THRESHOLD
+
+        if duration >= SLOW_CF_SECONDS:
+            self._abstain_set().add(id(r))
+            counts = self._slow_cf_counts()
+            counts[key] += 1
+            return counts[key] >= ALL_VPS_SLOW_CF_THRESHOLD
+
+        # Worked before, failed fast -- residual censorship signature, not a
+        # dead VP. Not quarantined, not abstained.
+        self._slow_cf_counts().pop(key, None)
+        return False
+
+    def _quarantine_map(self) -> Dict[Tuple[str, str], float]:
+        return self.__dict__.setdefault("_quarantined_until", {})
+
+    def _available_vps(self, country: str, vps: List[str]) -> List[str]:
+        """vps minus any of that country's VPs still in quarantine. A no-op
+        outside all_vps_mode. Checks the release time directly (not just
+        membership) so this stays correct even if _release_expired_quarantine
+        hasn't run yet this tick."""
+        if not getattr(self, "_all_vps_mode", False):
+            return vps
+        q = self._quarantine_map()
+        if not q:
+            return vps
+        now = time.monotonic()
+        return [v for v in vps if q.get((country, v), 0.0) <= now]
+
+    def _quarantine_strikes(self) -> Dict[Tuple[str, str], int]:
+        """Cumulative quarantine count per (country, vp), never reset (not
+        even on release/success) -- this is the "memory" behind
+        ALL_VPS_QUARANTINE_MIN's doubling backoff and the eventual
+        permanent drop after ALL_VPS_QUARANTINE_MAX_STRIKES cycles."""
+        return self.__dict__.setdefault("_quarantine_strike_counts", defaultdict(int))
+
+    def _quarantine_vp(self, country: str, vp: str, reason: str) -> None:
+        key = (country, vp)
+        strikes = self._quarantine_strikes()
+        strikes[key] += 1
+        n = strikes[key]
+        if n > ALL_VPS_QUARANTINE_MAX_STRIKES:
+            logger.info(
+                "%s: VP %s given up on for good after %d quarantine cycles "
+                "(%s); no longer worth retrying",
+                country, vp, n - 1, reason,
+            )
+            self.vantage_points.reject_vp(country, vp)
+            self.api.aggregator.drop_vp(country, vp)
+            self.api.remove_vantage_points([vp], expect_unstarted=True)
+            self._quarantine_map().pop(key, None)
+            strikes.pop(key, None)
+            return
+        minutes = min(ALL_VPS_QUARANTINE_MIN * (2 ** (n - 1)), ALL_VPS_QUARANTINE_MAX_MIN)
+        self._quarantine_map()[key] = time.monotonic() + minutes * 60
+        self.api.aggregator.drop_vp(country, vp)
+        logger.info(
+            "%s: quarantining VP %s for %d min (%s, strike %d/%d); will retest then",
+            country, vp, minutes, reason, n, ALL_VPS_QUARANTINE_MAX_STRIKES,
+        )
+
+    def _release_expired_quarantine(self) -> None:
+        """Called each tick in all_vps_mode: drop (country, vp) entries whose
+        quarantine window has passed, so _available_vps sees them as
+        available again. Resets the failure counters that led to the
+        quarantine (a fresh chance), but NOT the strike count (that memory
+        persists for the life of the run)."""
+        if not getattr(self, "_all_vps_mode", False):
+            return
+        q = self._quarantine_map()
+        if not q:
+            return
+        now = time.monotonic()
+        expired = [key for key, until in q.items() if until <= now]
+        for key in expired:
+            q.pop(key, None)
+            self._vp_failure_counts.pop(key, None)
+            self._slow_cf_counts().pop(key, None)
+            logger.info("%s: VP %s released from quarantine, will retest", key[0], key[1])
 
     @staticmethod
     def _beta_smoothed_weight(success: int, fail: int) -> float:
@@ -1040,6 +1274,14 @@ class OrchestrationParser(UCBNaiveParserOptions):
     def add_arguments(self):
         super().add_arguments()
         self.parser.add_argument(
+            "--previous-values-folder",
+            default=None,
+            help="Optional prior run's per-country action_space CSVs, used to "
+                 "warm-start Q-values for matching arms (passed straight through "
+                 "to Orchestrator's previous_values_folder / RegionalNode's "
+                 "action_space_folder).",
+        )
+        self.parser.add_argument(
             "--aggregation",
             choices=["majority", "weighted"], default="majority",
             help="VP-vote aggregation method",
@@ -1059,17 +1301,25 @@ class OrchestrationParser(UCBNaiveParserOptions):
             choices=["on-receipt", "in-order"], default="on-receipt",
             help="Reward-propagation policy",
         )
+        self.parser.add_argument(
+            "--reward-mode",
+            choices=["majority", "percentage"], default="majority",
+            help="Reward signal: 'majority' (Ex 5, the aggregation verdict's 0.0/1.0) "
+                 "or 'percentage' (Ex 6, fraction of voting VPs that voted blocked)",
+        )
 
     def set_params(self, args):
         if args.outfile[-1] != "/":
             args.outfile += "/"
         super().set_params(args)
+        self.params["previous_values_folder"] = getattr(args, "previous_values_folder", None)
         # Raw strings preserved for run_config.json cli_params group;
         # resolution to enums happens in __main__ via STRATEGY_MAP.
         self.params["aggregation"]       = args.aggregation
         self.params["batch_size_method"] = getattr(args, "batch_size")
         self.params["target_selection"]  = getattr(args, "target_selection")
         self.params["propagation"]       = args.propagation
+        self.params["reward_mode"]       = getattr(args, "reward_mode")
 
 
 if __name__ == "__main__":

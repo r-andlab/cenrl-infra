@@ -37,6 +37,7 @@ class RegionalNode:
         action_space_folder: str = None,
         on_reset: Optional[Callable[[str], None]] = None,
         aggregation_method: AggregationMethod = AggregationMethod.MAJORITY_VOTE,
+        reward_mode: str = "majority",
         **kwargs: Any,
     ):
         self.params = params.copy()
@@ -80,6 +81,15 @@ class RegionalNode:
         # aggregation lives on MeasurementAggregator (orchestrator-owned).
         self.aggregation_method: AggregationMethod = aggregation_method
         self.model: BatchUCB = model_klass(self.params, country_name, **kwargs)
+        # Ex 6: set as a plain post-construction attribute, NOT forwarded via
+        # **kwargs into model_klass -- kwargs is forwarded verbatim to every
+        # model_klass (including the LinUCB/ClusterLinUCB track's
+        # BatchLinUCBMixin chain), which does not know about reward_mode and
+        # would raise TypeError on an unexpected keyword argument. Only
+        # BatchUCB reads this attribute (getattr(..., "majority") default);
+        # it's silently inert (an unread attribute) on every other model
+        # class, so this is zero-risk to that other track.
+        self.model.reward_mode = reward_mode
         self.model.output_directory = os.path.dirname(self.params["outfile_csv"])
         self.model.outfile = Path(self.model.output_directory) / f"{self.country_name_standard}.csv"
         if action_space_csv:

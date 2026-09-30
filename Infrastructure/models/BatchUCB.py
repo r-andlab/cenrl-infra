@@ -377,7 +377,15 @@ class BatchUCB(UCBNaive):
         pending: Pending = self._selected_targets[t_name]
 
         is_blocked = result["blocked"]
-        reward = 1.0 if is_blocked else 0.0
+        # Ex 6: reward_mode picks what number counts as the reward. is_blocked
+        # (and everything derived from it below -- the CSV is_blocked column,
+        # update_blocklist_target_found) stays the boolean majority verdict
+        # regardless of reward_mode; only the reward itself changes.
+        reward_mode = getattr(self, "reward_mode", "majority")
+        if reward_mode == "percentage":
+            reward = float(result.get("vote_fraction", 1.0 if is_blocked else 0.0))
+        else:
+            reward = 1.0 if is_blocked else 0.0
         pending.reward = reward
         pending.blocked = is_blocked
 
