@@ -52,6 +52,30 @@ class TestCallGoApiGetDispatch:
         assert result == {"status": "ok"}
 
 
+class TestBug1Fix:
+    """parse_measurements must use Hyperquack's final anomaly verdict, not
+    response[0].matches_template (the first-attempt-only bug)."""
+
+    def _payload(self, anomaly, controls_failed=False):
+        p = MagicMock()
+        p.test_url = "example.com"
+        p.anomaly = anomaly
+        p.controls_failed = controls_failed
+        return p
+
+    def test_retry_rescued_result_is_not_blocked(self, api):
+        results = api.parse_measurements([self._payload(anomaly=False)])
+        assert results[0].blocked is False
+
+    def test_genuine_anomaly_is_blocked(self, api):
+        results = api.parse_measurements([self._payload(anomaly=True)])
+        assert results[0].blocked is True
+
+    def test_controls_failed_result_is_not_blocked(self, api):
+        results = api.parse_measurements([self._payload(anomaly=False, controls_failed=True)])
+        assert results[0].blocked is False
+
+
 class TestRemoveVantagePoints:
     """Tests for remove_vantage_points() method."""
 

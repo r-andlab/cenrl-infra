@@ -128,13 +128,12 @@ class HyperQuackAPI(Api):
         parsed_output = []
         for r in results:
             target = r.test_url
-            blocked = False
-            if r.response:
-                blocked = not r.response[0].matches_template
+            # Bug #1 fix: use Hyperquack's own final, retry-aware verdict
+            # (anomaly) instead of response[0].matches_template (first
+            # attempt only, which misreads a transient failure a later
+            # retry recovered from as "blocked").
             parsed_output.append(
-                MeasurementResponse(
-                    target=target, blocked=(r.stateful_block or blocked)
-                )
+                MeasurementResponse(target=target, blocked=r.anomaly)
             )
         return parsed_output
 

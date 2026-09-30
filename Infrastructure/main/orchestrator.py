@@ -1011,10 +1011,17 @@ class Orchestrator:
     ) -> None:
         """Parse raw TestPayloads and feed into the aggregator."""
         for r in raw_results:
-            blocked = False
-            if r.response:
-                blocked = not r.response[0].matches_template
-            blocked = r.stateful_block or blocked
+            # Bug #1 fix: use Hyperquack's own final, retry-aware verdict
+            # (anomaly -- already true for both a plain block and a stateful
+            # block, see trial.go) instead of response[0].matches_template
+            # (the first attempt only). The old formula misread a transient
+            # first-try failure that a later retry recovered from as
+            # "blocked"; r.anomaly already accounts for the full retry
+            # sequence. controls_failed results correctly fall out as
+            # blocked=False here (anomaly is always False when
+            # controls_failed is True), matching filter_false_positive_
+            # blocks.py's offline cleaning logic.
+            blocked = r.anomaly
             # all_vps_mode: _check_vp_health (which runs first on this same
             # batch) flags the controls_failed results that come from a VP that
             # looks broken rather than censored; those abstain -- the target

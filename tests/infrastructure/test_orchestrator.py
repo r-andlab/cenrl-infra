@@ -1297,13 +1297,13 @@ class TestAllVpsModeAbstention(unittest.TestCase):
         orch._all_vps_mode = True
 
         blocked_result = MagicMock()
-        blocked_result.response = [MagicMock(matches_template=False)]
+        blocked_result.anomaly = True
         blocked_result.stateful_block = False
         blocked_result.vp = "1.1.1.1"
         blocked_result.test_url = "example.com"
 
         abstained_result = MagicMock()
-        abstained_result.response = [MagicMock(matches_template=False)]
+        abstained_result.anomaly = True
         abstained_result.stateful_block = False
         abstained_result.vp = "2.2.2.2"
         abstained_result.test_url = "example.com"
@@ -1323,6 +1323,47 @@ class TestAllVpsModeAbstention(unittest.TestCase):
         orch._abstain_set().add(12345)   # stale id from a previous tick
         orch._check_vp_health("US", [])
         self.assertEqual(orch._abstain_set(), set())
+
+
+class TestBug1Fix(unittest.TestCase):
+    """_feed_aggregator must use Hyperquack's final anomaly verdict, not
+    response[0].matches_template (the first-attempt-only bug)."""
+
+    def test_retry_rescued_result_is_not_blocked(self):
+        """Trial 1 failed but Hyperquack's own retry sequence recovered
+        (anomaly=False) -- must NOT be recorded as blocked."""
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch._all_vps_mode = False
+        r = MagicMock()
+        r.anomaly = False
+        r.vp = "1.1.1.1"
+        r.test_url = "example.com"
+        orch._feed_aggregator("US", [r])
+        orch.api.aggregator.record.assert_called_once_with("US", "1.1.1.1", "example.com", False)
+
+    def test_genuine_anomaly_is_blocked(self):
+        r = MagicMock()
+        r.anomaly = True
+        r.vp = "1.1.1.1"
+        r.test_url = "example.com"
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch._all_vps_mode = False
+        orch._feed_aggregator("US", [r])
+        orch.api.aggregator.record.assert_called_once_with("US", "1.1.1.1", "example.com", True)
+
+    def test_controls_failed_result_is_not_blocked_outside_all_vps_mode(self):
+        """anomaly is always False when controls_failed is True (trial.go),
+        so this falls out as not-blocked by construction, matching
+        filter_false_positive_blocks.py's offline cleaning."""
+        r = MagicMock()
+        r.anomaly = False
+        r.controls_failed = True
+        r.vp = "1.1.1.1"
+        r.test_url = "example.com"
+        orch = _OrchestratorTestHelper.make_orchestrator()
+        orch._all_vps_mode = False
+        orch._feed_aggregator("US", [r])
+        orch.api.aggregator.record.assert_called_once_with("US", "1.1.1.1", "example.com", False)
 
 
 if __name__ == "__main__":

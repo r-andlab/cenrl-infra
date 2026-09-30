@@ -79,14 +79,12 @@ def _parse_args() -> argparse.Namespace:
 
 def _is_anomalous(row: dict) -> bool:
     """Same blocked-heuristic used elsewhere in the pipeline (orchestrator.py
-    _feed_aggregator, analyze_censorship.py): stateful_block, or the first
-    response not matching the VP's established template."""
-    if row.get("stateful_block"):
-        return True
-    response = row.get("response") or []
-    if response and not response[0].get("matches_template", True):
-        return True
-    return False
+    _feed_aggregator, funneler.py's parse_measurements): Hyperquack's own
+    final, retry-aware anomaly verdict (already true for a plain OR a
+    stateful block), not response[0]['matches_template'] (first attempt
+    only, which misreads a transient failure a later retry recovered from
+    as "blocked" -- Bug #1)."""
+    return bool(row.get("anomaly"))
 
 
 def _resolve_domain_ip(domain: str, cache: dict) -> Optional[str]:
