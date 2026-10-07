@@ -39,9 +39,12 @@ DEFAULT_COUNTRIES = [
 ]
 
 
-def build_pool(countries):
+DEFAULT_EV_FILE = "local/ev-certs-monthly-000000000000.csv.gz"
+
+
+def build_pool(countries, ev_file=DEFAULT_EV_FILE):
     return AsnAwareVantagePoints(
-        ev_file="local/ev-certs-monthly-000000000000.csv.gz",
+        ev_file=ev_file,
         blocklist_file="local/blocklist.txt",
         max_countries=0,
         blocked_countries=[],
@@ -109,6 +112,8 @@ def main():
     ap.add_argument("--only", default=None,
                     help="usable_vps.json from an earlier pass: evaluate ONLY the VPs "
                          "listed there (to refresh a usable list quickly)")
+    ap.add_argument("--ev-file", default=DEFAULT_EV_FILE,
+                    help="Census file to evaluate (default: the September census)")
     ap.add_argument("--chunk", type=int, default=1000)
     ap.add_argument("--stall-secs", type=int, default=300)
     ap.add_argument("--max-secs", type=int, default=7200)
@@ -118,7 +123,7 @@ def main():
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    pool = build_pool(args.countries)
+    pool = build_pool(args.countries, args.ev_file)
     cand = candidates(pool, args.countries)
     if args.only:
         keep = {ip for ips in json.load(open(args.only)).values() for ip in ips}

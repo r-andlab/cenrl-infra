@@ -478,9 +478,12 @@ class RegionalNode:
         self.model.action_space.wake_up_all_nodes()
         self.model.current_epoch_num = 0
         self.in_flight = 0
-        self.state = NodeState.IDLE
         self.episode_stats = []
         self.episode_idx += 1
+        if self.episode_idx - 1 >= self.model.num_episodes:
+            self.state = NodeState.DONE
+        else:
+            self.state = NodeState.IDLE
         # Claude's discretion (CONTEXT.md): snap dynamic batch size back to
         # base on iteration boundary. wake_up_all_nodes() re-enables the action
         # space, and the prior batch trajectory may not generalize across

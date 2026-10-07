@@ -64,11 +64,7 @@ exercise the Python side at full VP count.
 import json
 
 from Infrastructure.main.asn_aware_vantage_points import AsnAwareVantagePoints
-from Infrastructure.main.vp_pool_adapter import VpPoolAdapter
-from Infrastructure.main.asn_resolver import AsnResolver
-from Infrastructure.main.cdn_collision_filter import CdnCollisionFilter
-from Infrastructure.main.collision_aware_orchestrator import CollisionAwareOrchestrator
-from Infrastructure.main.orchestrator import OrchestrationParser, STRATEGY_MAP
+from Infrastructure.main.orchestrator import Orchestrator, OrchestrationParser, STRATEGY_MAP
 
 
 class AllVpsParser(OrchestrationParser):
@@ -83,6 +79,10 @@ class AllVpsParser(OrchestrationParser):
             help="Synthetic in-process results instead of Hyperquack (no network)",
         )
         self.parser.add_argument(
+            "--ev-file", default="local/ev-certs-monthly-000000000000.csv.gz",
+            help="Census the candidate pool is built from; must contain every VP in --usable-vps",
+        )
+        self.parser.add_argument(
             "--endpoint", default="http://127.0.0.1:8888",
             help="Hyperquack API endpoint",
         )
@@ -92,6 +92,7 @@ class AllVpsParser(OrchestrationParser):
         self.params["usable_vps"] = args.usable_vps
         self.params["dry_run"] = args.dry_run
         self.params["endpoint"] = args.endpoint
+        self.params["ev_file"] = args.ev_file
 
 
 if __name__ == "__main__":
@@ -107,7 +108,7 @@ if __name__ == "__main__":
     countries = sorted(usable)
 
     vp_pool_config = {
-        "ev_file":           "local/ev-certs-monthly-000000000000.csv.gz",
+        "ev_file":           params["ev_file"],
         "blocklist_file":    "local/blocklist.txt",
         "max_countries":     0,
         "blocked_countries": [],
@@ -121,14 +122,9 @@ if __name__ == "__main__":
     for c in countries:
         n = base_pool.restrict_to(c, usable[c])
         print(f"{c}: {n} usable VPs in pool (census listed {len(usable[c])})", flush=True)
-    vp_pool = VpPoolAdapter(base_pool)
-    collision_filter = CdnCollisionFilter(
-        AsnResolver(vp_pool_config["caida_dat"]), vp_pool, min_vps=2,
-    )
-
-    m = CollisionAwareOrchestrator(
+    m = Orchestrator(
         params=params,
-        vantage_points=vp_pool,
+        vantage_points=base_pool,
         go_api_endpoint=params["endpoint"],
         services=["https"],
         countries=countries,
@@ -139,7 +135,6 @@ if __name__ == "__main__":
         target_selection=sel_enum,
         batch_size_method=size_enum,
         qval_propagation_method=prop_enum,
-        collision_filter=collision_filter,
         debug=params["dry_run"],
         all_vps_mode=True,
         reward_mode=params["reward_mode"],

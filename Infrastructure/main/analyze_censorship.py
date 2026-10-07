@@ -602,16 +602,26 @@ def main():
                         help="Directory containing country CSV files")
     parser.add_argument("--out", default="/home/claude/plots",
                         help="Directory to save plots")
+    parser.add_argument("--episode", type=int, default=None,
+                        help="Analyze only this episode (e.g. 1 or 2). Default: all "
+                             "episodes. Plot filenames get an _epN suffix when set.")
     args = parser.parse_args()
 
     os.makedirs(args.out, exist_ok=True)
 
     run_label = extract_run_label(args.output_dir)
+    if args.episode is not None:
+        run_label = f"{run_label}_ep{args.episode}"
     def plot_path(name: str) -> str:
         return os.path.join(args.out, f"{run_label}-{name}")
 
     print(f"Loading CSVs from: {args.output_dir}")
     df = load_all(args.output_dir)
+    if args.episode is not None:
+        df = df[df["episode"] == args.episode].reset_index(drop=True)
+        if df.empty:
+            raise SystemExit(f"No rows for episode {args.episode} in {args.output_dir}")
+        print(f"Filtered to episode {args.episode}")
     print(f"Loaded {len(df):,} rows across "
           f"{df['country'].nunique()} countries: "
           f"{sorted(df['country'].unique())}")
@@ -654,6 +664,8 @@ def main():
     )
 
     measurements_df = load_measurements(args.output_dir)
+    if args.episode is not None and not measurements_df.empty and "episode_idx" in measurements_df.columns:
+        measurements_df = measurements_df[measurements_df["episode_idx"] == args.episode]
     confidence_df = blocked_domains_with_confidence(measurements_df)
     if not confidence_df.empty:
         plot_blocked_domains_table(
