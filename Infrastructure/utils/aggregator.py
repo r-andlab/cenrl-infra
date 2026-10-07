@@ -123,7 +123,7 @@ class MeasurementAggregator:
         with self._lock:
             key = (country, target)
             if key not in self._target_expected:
-                logger.warning("record() for unregistered target %s/%s, dropping", country, target)
+                logger.info("record() for already-finalized target %s/%s, dropping late result", country, target)
                 return
             self._pending[key][vp] = blocked
             self._try_finalize(key)

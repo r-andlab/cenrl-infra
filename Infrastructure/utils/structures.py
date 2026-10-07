@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from pydantic import BaseModel
+from pydantic import BaseModel, model_validator
 from enum import Enum
 from typing import List, Dict
 
@@ -49,6 +49,19 @@ class TestResponseData(BaseModel):
     matches_template: bool
     start_time: str
     end_time: str
+    error: str | None = None
+    control_url: str | None = None
+    status_line: str | None = None
+
+    @model_validator(mode="before")
+    @classmethod
+    def _lift_status_line(cls, data):
+        if isinstance(data, dict) and "response" in data:
+            data = dict(data)
+            resp = data.pop("response")
+            if isinstance(resp, dict):
+                data["status_line"] = resp.get("status_line")
+        return data
 
 class LocationData(BaseModel):
     country_name: str | None = None
