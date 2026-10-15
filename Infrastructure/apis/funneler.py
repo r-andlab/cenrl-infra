@@ -45,6 +45,7 @@ class HyperQuackAPI(Api):
         debug_min_delay_s: float = 0.0,
         debug_max_delay_s: float = 0.0,
         aggregation_method: AggregationMethod = AggregationMethod.MAJORITY_VOTE,
+        receiver_port: int = 9000,
     ):
         """
         :param go_api_url: Base URL of the Go API (e.g. http://127.0.0.1:8080)
@@ -63,7 +64,7 @@ class HyperQuackAPI(Api):
         self.eval_store = eval_store
         self.aggregator = MeasurementAggregator(aggregation_method=aggregation_method)
         self.receiver: MeasurementReceiver = MeasurementReceiver(
-            self.store, eval_store=self.eval_store
+            self.store, eval_store=self.eval_store, port=receiver_port
         )
         self.debug = debug
         if not self.debug:

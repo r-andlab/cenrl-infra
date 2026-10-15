@@ -112,6 +112,7 @@ class Orchestrator:
         action_space_klass=None,
         all_vps_mode: bool = False,
         reward_mode: str = "majority",
+        receiver_port: int = 9000,
     ):
         if reward_mode not in ("majority", "percentage"):
             raise ValueError(f"reward_mode must be 'majority' or 'percentage', got {reward_mode!r}")
@@ -162,6 +163,7 @@ class Orchestrator:
             vantage_points=vantage_points,
             debug=debug,
             aggregation_method=aggregation_method,
+            receiver_port=receiver_port,
         )
 
         # Nodes are created lazily once a VP passes evaluation.

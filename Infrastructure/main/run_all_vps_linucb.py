@@ -117,6 +117,15 @@ class AllVpsLinUCBParser(ClusterLinUCBParserOptions):
             "--endpoint", default="http://127.0.0.1:8888",
             help="Hyperquack API endpoint",
         )
+        self.parser.add_argument(
+            "--receiver-port", type=int, default=9000,
+            help="Port this process's own MeasurementReceiver listens on for "
+                 "Hyperquack's callbacks (Infrastructure/apis/server.py). "
+                 "Hardcoded to 9000 everywhere before this flag existed, which "
+                 "meant no two CenRL orchestrator processes could ever run on "
+                 "the same machine at once. Only needs changing to run a "
+                 "second process alongside an existing one.",
+        )
 
     def set_params(self, args):
         if args.outfile[-1] != "/":
@@ -133,6 +142,7 @@ class AllVpsLinUCBParser(ClusterLinUCBParserOptions):
         self.params["vp_cap"] = args.vp_cap
         self.params["dry_run"] = args.dry_run
         self.params["endpoint"] = args.endpoint
+        self.params["receiver_port"] = args.receiver_port
         self.params["ev_file"] = args.ev_file
 
 
@@ -214,5 +224,6 @@ if __name__ == "__main__":
         reward_mode=params["reward_mode"],
         model_klass=model_klass,
         action_space_klass=LinUCBActionSpace,
+        receiver_port=params["receiver_port"],
     )
     m.run_forever()
