@@ -265,9 +265,13 @@ class RegionalNode:
             "current_epoch_num": self.model.current_epoch_num,
             # Daily progress
             "measurements_completed_today": self.model.current_epoch_num,
-            # Run config snapshot
-            "c": self.model.c,
-            "step_size": self.model.step_size,
+            # Run config snapshot -- c/step_size are UCB-only hyperparameters
+            # (LinUCB/ClusterLinUCB use alpha instead, and have no step_size
+            # at all); getattr avoids crashing save_checkpoint for those
+            # model classes, confirmed via a real LinUCB run where this
+            # raised AttributeError on self.model.c every checkpoint attempt.
+            "c": getattr(self.model, "c", None),
+            "step_size": getattr(self.model, "step_size", None),
             "initial_value_estimate": self.model.initial_value_estimate,
             "selection_method": self.model.selection_method.name,
             "size_method": self.model.size_method.name,

@@ -275,7 +275,19 @@ class BatchLinUCBMixin:
         pending: Pending = self._selected_targets[t_name]
 
         is_blocked = result["blocked"]
-        reward = 1.0 if is_blocked else 0.0
+        # Ex 6: reward_mode picks what number counts as the reward. is_blocked
+        # (and everything derived from it below -- the CSV is_blocked column,
+        # update_blocklist_target_found) stays the boolean majority verdict
+        # regardless of reward_mode; only the reward itself changes. Mirrors
+        # BatchUCB.absorb_measurement's identical branch (Infrastructure/
+        # models/BatchUCB.py) -- this mixin had no reward_mode handling at
+        # all before, so every LinUCB-family run silently got binary reward
+        # even when --reward-mode percentage was passed.
+        reward_mode = getattr(self, "reward_mode", "majority")
+        if reward_mode == "percentage":
+            reward = float(result.get("vote_fraction", 1.0 if is_blocked else 0.0))
+        else:
+            reward = 1.0 if is_blocked else 0.0
         pending.reward = reward
         pending.blocked = is_blocked
 
