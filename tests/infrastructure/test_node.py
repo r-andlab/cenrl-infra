@@ -23,6 +23,7 @@ class TestSoftReset(unittest.TestCase):
             node = RegionalNode.__new__(RegionalNode)
         node.country = "TestCountry"
         node.model = MagicMock()
+        node.model.num_episodes = 10
         node.model.action_space = MagicMock()
         node.model.action_space.wake_up_all_nodes = MagicMock()
         node.model.current_epoch_num = 50
@@ -151,9 +152,25 @@ class TestFinishEpisodeIdleNotDone(unittest.TestCase):
         node.save_iteration = MagicMock(side_effect=tracked_save)
         node.soft_reset = MagicMock(side_effect=tracked_soft)
 
-    def test_finish_episode_sets_idle_not_done(self):
-        """When quota is reached and in_flight == 0, the per-country reset fires:
-        write_stats → save_iteration → soft_reset, ending in NodeState.IDLE."""
+    def test_finish_episode_sets_idle_when_episodes_remain(self):
+        """When quota is reached, in_flight == 0, and more episodes remain, the
+        per-country reset fires: write_stats → save_iteration → soft_reset, ending in IDLE."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.model.num_episodes = 2
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            self.assertEqual(node.state, NodeState.IDLE)
+            # All three were called exactly once, in the correct order.
+            self.assertEqual(calls, ["write_stats", "save_iteration", "soft_reset"])
+
+    def test_finish_episode_sets_done_when_last_episode_finishes(self):
+        """With num_episodes=1, finishing the first episode marks the country DONE."""
         import tempfile
         with tempfile.TemporaryDirectory() as tmp_dir:
             tmp_path = Path(tmp_dir)
@@ -163,9 +180,7 @@ class TestFinishEpisodeIdleNotDone(unittest.TestCase):
 
             node._finish_episode_if_ready(save_stats=True)
 
-            self.assertEqual(node.state, NodeState.IDLE)
-            self.assertNotEqual(node.state, NodeState.DONE)
-            # All three were called exactly once, in the correct order.
+            self.assertEqual(node.state, NodeState.DONE)
             self.assertEqual(calls, ["write_stats", "save_iteration", "soft_reset"])
 
     def test_finish_episode_does_not_call_reset(self):
@@ -1339,6 +1354,7 @@ class TestVaryOnSuccess(unittest.TestCase):
         node.country = "TestCountry"
         node.country_name_standard = "TestCountry"
         node.model = MagicMock()
+        node.model.num_episodes = 10
         node.model.measurements_per_episode = 1000
         node.model.current_epoch_num = 0
         node.model.can_step = MagicMock(return_value=True)
