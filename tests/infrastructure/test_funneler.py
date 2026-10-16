@@ -52,6 +52,30 @@ class TestCallGoApiGetDispatch:
         assert result == {"status": "ok"}
 
 
+class TestBug1Fix:
+    """parse_measurements must use Hyperquack's final anomaly verdict, not
+    response[0].matches_template (the first-attempt-only bug)."""
+
+    def _payload(self, anomaly, controls_failed=False):
+        p = MagicMock()
+        p.test_url = "example.com"
+        p.anomaly = anomaly
+        p.controls_failed = controls_failed
+        return p
+
+    def test_retry_rescued_result_is_not_blocked(self, api):
+        results = api.parse_measurements([self._payload(anomaly=False)])
+        assert results[0].blocked is False
+
+    def test_genuine_anomaly_is_blocked(self, api):
+        results = api.parse_measurements([self._payload(anomaly=True)])
+        assert results[0].blocked is True
+
+    def test_controls_failed_result_is_not_blocked(self, api):
+        results = api.parse_measurements([self._payload(anomaly=False, controls_failed=True)])
+        assert results[0].blocked is False
+
+
 class TestRemoveVantagePoints:
     """Tests for remove_vantage_points() method."""
 
@@ -112,3 +136,61 @@ class TestRemoveVantagePoints:
         assert result == {}
         # VP should NOT be removed in debug mode
         assert "1.1.1.1" in api.vps
+
+
+class TestCallGoApiTimeoutAndRetries:
+    """call_go_api's timeout/max_tries params -- fixes the retry-storm where
+    a slow-but-succeeding add-work call got retried into duplicate queued
+    work under the old fixed 10s timeout + 5 retries."""
+
+    @patch("Infrastructure.apis.funneler.requests.post")
+    def test_custom_timeout_is_passed_through(self, mock_post, api):
+        mock_resp = MagicMock()
+        mock_resp.json.return_value = {"status": "ok"}
+        mock_post.return_value = mock_resp
+        api.call_go_api("/endpoint", {}, timeout=600)
+        mock_post.assert_called_once_with(
+            "http://127.0.0.1:8080/endpoint", json={}, timeout=600,
+        )
+
+    @patch("Infrastructure.apis.funneler.requests.post")
+    def test_max_tries_one_does_not_retry_on_failure(self, mock_post, api):
+        """max_tries=1 must give up after a single failed attempt, not the
+        default self.retries=5."""
+        mock_post.side_effect = Exception("boom")
+        result = api.call_go_api("/endpoint", {}, timeout=900, max_tries=1)
+        assert mock_post.call_count == 1
+        assert "error" in result
+
+    @patch("Infrastructure.apis.funneler.requests.post")
+    def test_default_max_tries_still_uses_self_retries(self, mock_post, api):
+        """Omitting max_tries preserves the original behavior bit-for-bit."""
+        mock_post.side_effect = Exception("boom")
+        api.call_go_api("/endpoint", {})
+        assert mock_post.call_count == api.retries
+
+
+class TestAddWorkAndAddVantagePointsTimeouts:
+    """add_work and add_vantage_points each override call_go_api's defaults
+    for all-VPs-scale traffic."""
+
+    @patch.object(HyperQuackAPI, "call_go_api")
+    def test_add_work_uses_single_long_attempt(self, mock_call, api):
+        from Infrastructure.utils.structures import Job, Tag
+        mock_call.return_value = {"status": "ok"}
+        job = Job("example.com", ["https"], "1.1.1.1", Tag(
+            tag="US", result_output_file="r.jsonl", eval_output_file="e.jsonl",
+        ))
+        api.add_work([job])
+        _, kwargs = mock_call.call_args
+        assert mock_call.call_args.args[0] == "/add-work"
+        assert kwargs.get("timeout") == 900
+        assert kwargs.get("max_tries") == 1
+
+    @patch.object(HyperQuackAPI, "call_go_api")
+    def test_add_vantage_points_uses_longer_timeout(self, mock_call, api):
+        api.vantage_points = None
+        mock_call.return_value = {"status": "ok"}
+        api.add_vantage_points(["1.1.1.1"], ["https"])
+        _, kwargs = mock_call.call_args
+        assert kwargs.get("timeout") == 600

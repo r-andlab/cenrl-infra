@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from pydantic import BaseModel
+from pydantic import BaseModel, model_validator
 from enum import Enum
 from typing import List, Dict
 
@@ -49,10 +49,23 @@ class TestResponseData(BaseModel):
     matches_template: bool
     start_time: str
     end_time: str
+    error: str | None = None
+    control_url: str | None = None
+    status_line: str | None = None
+
+    @model_validator(mode="before")
+    @classmethod
+    def _lift_status_line(cls, data):
+        if isinstance(data, dict) and "response" in data:
+            data = dict(data)
+            resp = data.pop("response")
+            if isinstance(resp, dict):
+                data["status_line"] = resp.get("status_line")
+        return data
 
 class LocationData(BaseModel):
-    country_name: str
-    country_code: str
+    country_name: str | None = None
+    country_code: str | None = None
 
 class EvalPayload(BaseModel):
     vp: str
@@ -63,7 +76,7 @@ class EvalPayload(BaseModel):
 
 class TestPayload(BaseModel):
     vp: str
-    location: LocationData
+    location: LocationData = LocationData()
     service: str
     test_url: str
     response: List[TestResponseData]
@@ -97,3 +110,4 @@ class MeasurementResponse:
     blocked: bool
     scheduled_at_monotonic: float | None = None  # D-04: schedule -> absorb latency source
     vp_count: int | None = None                  # D-05: actual VP votes in majority
+    vote_fraction: float = 0.0                   # Ex 6: fraction of voting (non-abstained) VPs that voted blocked
