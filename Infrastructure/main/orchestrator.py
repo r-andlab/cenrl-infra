@@ -51,6 +51,22 @@ ALL_VPS_BAD_EVALUATIONS_THRESHOLD = 1_000_000
 # A measurement is resent (to the same VP) only after this many minutes, and
 # only if the VP is neither queued for it nor currently running anything.
 ALL_VPS_LOST_RESEND_MIN = 30
+# _check_and_resend_stuck() normally trusts Hyperquack's /debug response: if
+# a VP still reports the target in its unstarted_work queue, the measurement
+# is assumed to just be waiting its turn and is left alone. That trust has
+# no ceiling by default -- confirmed directly on a live run (Oct 15-16,
+# experiment_three/output1_cluster) where a China target sat behind a
+# backed-up-but-not-silent VP for 90+ minutes with zero resend activity,
+# while that same run's silent-VP drops accelerated (19 -> 58 -> 78 across
+# consecutive 30-min sweeps) and China's real progress nearly flatlined --
+# consistent with more VPs backing up as survivors absorb the orphaned
+# queue depth of each dropped VP. Once a target has been stuck for this
+# long, force a resend to a different VP regardless of what /debug reports,
+# rather than waiting on it indefinitely. Set well above
+# ALL_VPS_LOST_RESEND_MIN (30) and above the 35-minute mark a separate,
+# legitimately-slow batch of targets was observed to resolve on its own at,
+# so this only overrides genuinely-stuck cases, not ordinary slow ones.
+ALL_VPS_FORCE_RESEND_MIN = 60
 # Quarantine window: excluded from new dispatches, not dropped -- stays
 # registered with Hyperquack and is retried after the window. Doubles per
 # strike up to the max, then the VP is dropped for good after
@@ -939,6 +955,12 @@ class Orchestrator:
         still has the target in its unstarted_work queue. If not, the measurement
         was lost -- resend to the same VP, or to an alternative if the VP is
         pending_removal (D-05).
+
+        Once a target has been stuck for ALL_VPS_FORCE_RESEND_MIN minutes,
+        resend to a different VP even if the original VP still claims to
+        have it queued -- trusting that claim indefinitely let a target sit
+        behind a backed-up-but-not-silent VP for 90+ minutes on a live run,
+        see that constant's comment for the full incident.
         """
         if self.api.debug:
             return
@@ -950,9 +972,11 @@ class Orchestrator:
 
         # Build lookup: ip -> VP debug info
         vp_status = {entry["ip"]: entry for entry in debug_response}
+        now = time.monotonic()
 
         for country, stuck_targets in stuck_by_country.items():
             active_vps = self.vantage_points.get_active(country)
+            inflight = self._inflight_times.get(country, {})
 
             # WR-03 fix: snapshot aggregator state via the public API instead
             # of reaching into private attributes. The aggregator owns its own
@@ -968,6 +992,9 @@ class Orchestrator:
                     target, (frozenset(), frozenset()),
                 )
                 missing_vps = expected - received
+                force_resend = (
+                    now - inflight.get(target, now) >= ALL_VPS_FORCE_RESEND_MIN * 60
+                )
 
                 for vp_ip in missing_vps:
                     info = vp_status.get(vp_ip)
@@ -978,11 +1005,26 @@ class Orchestrator:
 
                     # Check if VP still has this target in its unstarted_work
                     unstarted_keywords = {w["keyword"] for w in info.get("unstarted_work", [])}
-                    if target in unstarted_keywords:
-                        continue  # VP still has it queued, not lost yet
+                    still_queued = target in unstarted_keywords
+                    if still_queued and not force_resend:
+                        continue  # VP still has it queued, not lost yet -- and
+                                  # hasn't been stuck long enough to override that
 
                     is_pending_removal = info.get("pending_removal", False)
-                    resend_list.append((target, vp_ip, is_pending_removal))
+                    # Redirect to a different VP whenever we're overriding the
+                    # VP's own queue (force_resend on a still-queued target) or
+                    # Hyperquack flagged it pending removal -- sending back to
+                    # the same VP in either case would likely just repeat the
+                    # same stall.
+                    redirect = is_pending_removal or (still_queued and force_resend)
+                    resend_list.append((target, vp_ip, redirect))
+                    if still_queued and force_resend:
+                        logger.warning(
+                            "%s: forcing resend of %s off VP %s after %.0fmin stuck "
+                            "(still shows queued, not actually lost)",
+                            country, target, vp_ip,
+                            (now - inflight.get(target, now)) / 60.0,
+                        )
 
             # Now resend outside the lock
             for target, vp_ip, is_pending_removal in resend_list:
