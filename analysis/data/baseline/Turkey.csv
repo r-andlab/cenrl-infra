@@ -1,0 +1,2001 @@
+episode,time,action,targets,rewards,q_value,is_blocked,is_optimal,coverage
+1,1,categories Search Engines,google.com,0.0,0.0,0,0,0
+1,2,categories Technology,amazonaws.com,0.0,0.0,0,0,0
+1,3,categories Social Networks,facebook.com,0.0,0.0,0,0,0
+1,4,categories Business,microsoft.com,0.0,0.0,0,0,0
+1,5,categories Information Technology,apple.com,0.0,0.0,0,0,0
+1,6,categories Content Servers,googleapis.com,0.0,0.0,0,0,0
+1,7,categories Video Streaming,youtube.com,0.0,0.0,0,0,0
+1,8,categories Content Servers,akamaiedge.net,0.0,0.0,0,0,0
+1,9,categories Search Engines,www.google.com,0.0,0.0,0,0,0
+1,10,categories Content Servers,akamai.net,0.0,0.0,0,0,0
+1,11,categories Content Servers,a-msedge.net,0.0,0.0,0,0,0
+1,12,categories Social Networks,twitter.com,0.0,0.0,0,0,0
+1,13,categories Technology,azure.com,0.0,0.0,0,0,0
+1,14,categories Search Engines,googlevideo.com,0.0,0.0,0,0,0
+1,15,categories Technology,data.microsoft.com,0.0,0.0,0,0,0
+1,16,categories Social Networks,instagram.com,0.0,0.0,0,0,0
+1,17,categories Content Servers,gstatic.com,0.0,0.0,0,0,0
+1,18,categories Technology,cloudflare.com,0.0,0.0,0,0,0
+1,19,categories Business,events.data.microsoft.com,0.0,0.0,0,0,0
+1,20,categories Advertisements,doubleclick.net,0.0,0.0,0,0,0
+1,21,categories Professional Networking,linkedin.com,0.0,0.0,0,0,0
+1,22,categories Technology,live.com,0.0,0.0,0,0,0
+1,23,categories Social Networks,tiktokcdn.com,0.0,0.0,0,0,0
+1,24,categories Content Servers,gtld-servers.net,0.0,0.0,0,0,0
+1,25,categories Technology,office.com,0.0,0.0,0,0,0
+1,26,categories Content Servers,googletagmanager.com,0.0,0.0,0,0,0
+1,27,categories Content Servers,akadns.net,0.0,0.0,0,0,0
+1,28,categories Movies,netflix.com,0.0,0.0,0,0,0
+1,29,categories Business,windowsupdate.com,0.0,0.0,0,0,0
+1,30,categories Content Servers,apple-dns.net,0.0,0.0,0,0,0
+1,31,categories Ecommerce,amazon.com,0.0,0.0,0,0,0
+1,32,categories Content Servers,trafficmanager.net,0.0,0.0,0,0,0
+1,33,categories Content Servers,googleusercontent.com,0.0,0.0,0,0,0
+1,34,categories Education,wikipedia.org,0.0,0.0,0,0,0
+1,35,categories Social Networks,fbcdn.net,0.0,0.0,0,0,0
+1,36,categories Content Servers,domaincontrol.com,0.0,0.0,0,0,0
+1,37,categories Search Engines,bing.com,0.0,0.0,0,0,0
+1,38,categories File Sharing,icloud.com,0.0,0.0,0,0,0
+1,39,categories Business,ctldl.windowsupdate.com,0.0,0.0,0,0,0
+1,40,categories Technology,microsoftonline.com,0.0,0.0,0,0,0
+1,41,categories Technology,play.google.com,0.0,0.0,0,0,0
+1,42,categories Technology,fastly.net,0.0,0.0,0,0,0
+1,43,categories Information Technology,wordpress.org,0.0,0.0,0,0,0
+1,44,categories Content Servers,root-servers.net,0.0,0.0,0,0,0
+1,45,categories Webmail,mail.ru,0.0,0.0,0,0,0
+1,46,categories Video Streaming,youtu.be,0.0,0.0,0,0,0
+1,47,categories News & Media,yahoo.com,0.0,0.0,0,0,0
+1,48,categories Content Servers,safebrowsing.googleapis.com,0.0,0.0,0,0,0
+1,49,categories Education,en.wikipedia.org,0.0,0.0,0,0,0
+1,50,categories Photography,pinterest.com,0.0,0.0,0,0,0
+1,51,categories Technology,ui.com,0.0,0.0,0,0,0
+1,52,categories Information Technology,aaplimg.com,0.0,0.0,0,0,0
+1,53,categories Information Security,digicert.com,0.0,0.0,0,0,0
+1,54,categories Business,login.microsoftonline.com,0.0,0.0,0,0,0
+1,55,categories Technology,github.com,0.0,0.0,0,0,0
+1,56,categories Technology,windows.net,0.0,0.0,0,0,0
+1,57,categories Advertisements,googlesyndication.com,0.0,0.0,0,0,0
+1,58,categories Content Servers,l-msedge.net,0.0,0.0,0,0,0
+1,59,categories Social Networks,tiktokv.com,0.0,0.0,0,0,0
+1,60,categories Technology,adobe.com,0.0,0.0,0,0,0
+1,61,categories Business,google-analytics.com,0.0,0.0,0,0,0
+1,62,categories Redirect,goo.gl,0.0,0.0,0,0,0
+1,63,categories Technology,docs.google.com,0.0,0.0,0,0,0
+1,64,categories Content Servers,nflxso.net,0.0,0.0,0,0,0
+1,65,categories Content Servers,t-msedge.net,0.0,0.0,0,0,0
+1,66,categories Video Streaming,vimeo.com,0.0,0.0,0,0,0
+1,67,categories Information Technology,gandi.net,0.0,0.0,0,0,0
+1,68,categories Content Servers,cloudfront.net,0.0,0.0,0,0,0
+1,69,categories Audio Streaming,spotify.com,0.0,0.0,0,0,0
+1,70,categories Content Servers,clientservices.googleapis.com,0.0,0.0,0,0,0
+1,71,categories New Domains,sharepoint.com,0.0,0.0,0,0,0
+1,72,categories Advertisements,g.doubleclick.net,0.0,0.0,0,0,0
+1,73,categories Education,maps.google.com,0.0,0.0,0,0,0
+1,74,categories Information Technology,itunes.apple.com,0.0,0.0,0,0,0
+1,75,categories Technology,zoom.us,0.0,0.0,0,0,0
+1,76,categories Information Technology,wordpress.com,0.0,0.0,0,0,0
+1,77,categories News & Media,yandex.net,0.0,0.0,0,0,0
+1,78,categories Content Servers,edgekey.net,0.0,0.0,0,0,0
+1,79,categories Content Servers,office.net,0.0,0.0,0,0,0
+1,80,categories Content Servers,gvt2.com,0.0,0.0,0,0,0
+1,81,categories Redirect,bit.ly,0.0,0.0,0,0,0
+1,82,categories News & Media,yandex.ru,0.0,0.0,0,0,0
+1,83,categories News & Media,msn.com,0.0,0.0,0,0,0
+1,84,categories Movies,ftl.netflix.com,0.0,0.0,0,0,0
+1,85,categories Instant Messengers,whatsapp.net,0.0,0.0,0,0,0
+1,86,categories Social Networks,plus.google.com,0.0,0.0,0,0,0
+1,87,categories News & Media,qq.com,0.0,0.0,0,0,0
+1,88,categories Technology,mozilla.org,0.0,0.0,0,0,0
+1,89,categories Information Security,accounts.google.com,0.0,0.0,0,0,0
+1,90,categories Technology,office365.com,0.0,0.0,0,0,0
+1,91,categories Content Servers,update.googleapis.com,0.0,0.0,0,0,0
+1,92,categories Search Engines,googledomains.com,0.0,0.0,0,0,0
+1,93,categories Instant Messengers,skype.com,0.0,0.0,0,0,0
+1,94,categories Instant Messengers,whatsapp.com,0.0,0.0,0,0,0
+1,95,categories Information Technology,cloudflare.net,0.0,0.0,0,0,0
+1,96,categories Newly Seen Domains,bytefcdn-oversea.com,0.0,0.0,0,0,0
+1,97,categories Personal Blogs,blogspot.com,0.0,0.0,0,0,0
+1,98,categories Movies,logs.netflix.com,0.0,0.0,0,0,0
+1,99,categories Information Technology,apps.apple.com,0.0,0.0,0,0,0
+1,100,categories Video Streaming,player.vimeo.com,0.0,0.0,0,0,0
+1,101,categories File Sharing,drive.google.com,0.0,0.0,0,0,0
+1,102,categories Newly Seen Domains,cloudflare-dns.com,0.0,0.0,0,0,0
+1,103,categories Content Servers,app-measurement.com,0.0,0.0,0,0,0
+1,104,categories Movies,prod.ftl.netflix.com,0.0,0.0,0,0,0
+1,105,categories Technology,ntp.org,0.0,0.0,0,0,0
+1,106,categories Webmail,outlook.com,0.0,0.0,0,0,0
+1,107,categories Business,settings-win.data.microsoft.com,0.0,0.0,0,0,0
+1,108,categories Content Servers,trbcdn.net,0.0,0.0,0,0,0
+1,109,categories Content Servers,ytimg.com,0.0,0.0,0,0,0
+1,110,categories Content Servers,www.googleapis.com,0.0,0.0,0,0,0
+1,111,categories Chat,roblox.com,0.0,0.0,0,0,0
+1,112,categories Business,self.events.data.microsoft.com,0.0,0.0,0,0,0
+1,113,categories Content Servers,gvt1.com,0.0,0.0,0,0,0
+1,114,categories Content Servers,s-msedge.net,0.0,0.0,0,0,0
+1,115,categories News & Media,tds.net,0.0,0.0,0,0,0
+1,116,categories Content Servers,facebook-hardware.com,0.0,0.0,0,0,0
+1,117,categories Content Servers,tiktokcdn-us.com,0.0,0.0,0,0,0
+1,118,categories Forums,reddit.com,0.0,0.0,0,0,0
+1,119,categories Information Technology,nic.ru,0.0,0.0,0,0,0
+1,120,categories Video Streaming,tiktok.com,0.0,0.0,0,0,0
+1,121,categories Newly Seen Domains,wac-msedge.net,0.0,0.0,0,0,0
+1,122,categories Business,edge.microsoft.com,0.0,0.0,0,0,0
+1,123,categories Technology,opera.com,0.0,0.0,0,0,0
+1,124,categories Technology,officeapps.live.com,0.0,0.0,0,0,0
+1,125,categories Photography,snapchat.com,0.0,0.0,0,0,0
+1,126,categories Information Security,ocsp.digicert.com,0.0,0.0,0,0,0
+1,127,categories Information Security,pki.goog,0.0,0.0,0,0,0
+1,128,categories Content Servers,mp.microsoft.com,0.0,0.0,0,0,0
+1,129,categories Business,macromedia.com,0.0,0.0,0,0,0
+1,130,"categories Politics, Advocacy, and Government-Related",europa.eu,0.0,0.0,0,0,0
+1,131,categories Advertisements,amazon-adsystem.com,0.0,0.0,0,0,0
+1,132,categories File Sharing,dropbox.com,0.0,0.0,0,0,0
+1,133,categories Content Servers,adnxs.com,0.0,0.0,0,0,0
+1,134,categories Health & Fitness,nih.gov,0.0,0.0,0,0,0
+1,135,categories Social Networks,tumblr.com,0.0,0.0,0,0,0
+1,136,categories Ecommerce,epicgames.com,0.0,0.0,0,0,0
+1,137,categories Newly Seen Domains,ruidongcloud.com,0.0,0.0,0,0,0
+1,138,categories Business,criteo.com,0.0,0.0,0,0,0
+1,139,categories Instant Messengers,api.whatsapp.com,0.0,0.0,0,0,0
+1,140,categories Content Servers,cdn77.org,0.0,0.0,0,0,0
+1,141,categories Search Engines,baidu.com,0.0,0.0,0,0,0
+1,142,categories Business,www.google-analytics.com,0.0,0.0,0,0,0
+1,143,categories Content Servers,com.akadns.net,0.0,0.0,0,0,0
+1,144,categories Business,intuit.com,0.0,0.0,0,0,0
+1,145,categories Search Engines,policies.google.com,0.0,0.0,0,0,0
+1,146,categories Technology,gravatar.com,0.0,0.0,0,0,0
+1,147,categories Education,support.google.com,0.0,0.0,0,0,0
+1,148,categories Information Technology,comcast.net,0.0,0.0,0,0,0
+1,149,categories Content Servers,nr-data.net,0.0,0.0,0,0,0
+1,150,categories Video Streaming,netflix.net,0.0,0.0,0,0,0
+1,151,categories Movies,nrdp-ipv6.prod.ftl.netflix.com,0.0,0.0,0,0,0
+1,152,categories Information Technology,ls.apple.com,0.0,0.0,0,0,0
+1,153,categories Photography,flickr.com,0.0,0.0,0,0,0
+1,154,categories News & Media,nytimes.com,0.0,0.0,0,0,0
+1,155,categories Content Servers,cloudapp.net,0.0,0.0,0,0,0
+1,156,categories Advertisements,googleads.g.doubleclick.net,0.0,0.0,0,0,0
+1,157,categories Technology,github.io,0.0,0.0,0,0,0
+1,158,categories Content Servers,fonts.googleapis.com,0.0,0.0,0,0,0
+1,159,categories Information Technology,lencr.org,0.0,0.0,0,0,0
+1,160,categories Information Technology,windows.com,0.0,0.0,0,0,0
+1,161,categories Information Technology,one.one,0.0,0.0,0,0,0
+1,162,categories Content Servers,msftncsi.com,0.0,0.0,0,0,0
+1,163,categories Information Technology,registrar-servers.com,0.0,0.0,0,0,0
+1,164,categories Content Servers,akamaized.net,0.0,0.0,0,0,0
+1,165,categories Content Servers,worldfcdn2.com,0.0,0.0,0,0,0
+1,166,categories Content Servers,ttlivecdn.com,0.0,0.0,0,0,0
+1,167,categories Advertisements,rubiconproject.com,0.0,0.0,0,0,0
+1,168,categories Redirect,t.co,0.0,0.0,0,0,0
+1,169,categories Content Servers,azureedge.net,0.0,0.0,0,0,0
+1,170,categories Advertisements,googleadservices.com,0.0,0.0,0,0,0
+1,171,categories Information Technology,sites.google.com,0.0,0.0,0,0,0
+1,172,categories Content Servers,ggpht.com,0.0,0.0,0,0,0
+1,173,categories Instant Messengers,t.me,0.0,0.0,0,0,0
+1,174,categories Technology,sberdevices.ru,0.0,0.0,0,0,0
+1,175,categories Content Servers,msedge.net,0.0,0.0,0,0,0
+1,176,categories Search Engines,mozilla.com,0.0,0.0,0,0,0
+1,177,categories Business,sentry.io,0.0,0.0,0,0,0
+1,178,categories Content Servers,a2z.com,0.0,0.0,0,0,0
+1,179,categories Technology,teams.microsoft.com,0.0,0.0,0,0,0
+1,180,categories Home & Garden,samsung.com,0.0,0.0,0,0,0
+1,181,categories Newly Seen Domains,bytefcdn-ttpeu.com,0.0,0.0,0,0,0
+1,182,categories Content Servers,2mdn.net,0.0,0.0,0,0,0
+1,183,categories Content Servers,cdninstagram.com,0.0,0.0,0,0,0
+1,184,categories Webmail,outlook.office365.com,0.0,0.0,0,0,0
+1,185,categories Content Servers,edgesuite.net,0.0,0.0,0,0,0
+1,186,categories Technology,webex.com,0.0,0.0,0,0,0
+1,187,categories Gaming,unity3d.com,0.0,0.0,0,0,0
+1,188,categories Content Servers,wa.me,0.0,0.0,0,0,0
+1,189,categories News & Media,att.net,0.0,0.0,0,0,0
+1,190,categories Content Servers,forms.gle,0.0,0.0,0,0,0
+1,191,categories Technology,apache.org,0.0,0.0,0,0,0
+1,192,categories Video Streaming,partner.netflix.net,0.0,0.0,0,0,0
+1,193,categories Movies,prod.netflix.com,0.0,0.0,0,0,0
+1,194,categories Advertisements,casalemedia.com,0.0,0.0,0,0,0
+1,195,categories Newly Seen Domains,mangosip.ru,0.0,0.0,0,0,0
+1,196,categories Economy & Finance,paypal.com,0.0,0.0,0,0,0
+1,197,categories Content Servers,www.googletagmanager.com,0.0,0.0,0,0,0
+1,198,categories Education,archive.org,0.0,0.0,0,0,0
+1,199,categories Video Streaming,prod.partner.netflix.net,0.0,0.0,0,0,0
+1,200,categories News & Media,rambler.ru,0.0,0.0,0,0,0
+1,201,categories Movies,push.prod.netflix.com,0.0,0.0,0,0,0
+1,202,categories Search Engines,www.bing.com,0.0,0.0,0,0,0
+1,203,categories Information Technology,frontapp.com,0.0,0.0,0,0,0
+1,204,categories Content Servers,fe.apple-dns.net,0.0,0.0,0,0,0
+1,205,categories Content Servers,b-msedge.net,0.0,0.0,0,0,0
+1,206,categories Video Streaming,cnn.com,0.0,0.0,0,0,0
+1,207,categories Content Servers,o365filtering.com,0.0,0.0,0,0,0
+1,208,categories Audio Streaming,soundcloud.com,0.0,0.0,0,0,0
+1,209,categories Content Servers,omtrdc.net,0.0,0.0,0,0,0
+1,210,categories Video Streaming,preapp.prod.partner.netflix.net,0.0,0.0,0,0,0
+1,211,"categories Politics, Advocacy, and Government-Related",miit.gov.cn,0.0,0.0,0,0,0
+1,212,categories Content Servers,spo-msedge.net,0.0,0.0,0,0,0
+1,213,categories Content Servers,salesforceliveagent.com,0.0,0.0,0,0,0
+1,214,categories Business,doubleverify.com,0.0,0.0,0,0,0
+1,215,categories Magazines,medium.com,0.0,0.0,0,0,0
+1,216,categories Business,pubmatic.com,0.0,0.0,0,0,0
+1,217,categories Business,salesforce.com,0.0,0.0,0,0,0
+1,218,categories Social Networks,vk.com,0.0,0.0,0,0,0
+1,219,categories Business,v10.events.data.microsoft.com,0.0,0.0,0,0,0
+1,220,categories Search Engines,mtalk.google.com,0.0,0.0,0,0,0
+1,221,categories Health & Fitness,www.ncbi.nlm.nih.gov,0.0,0.0,0,0,0
+1,222,"categories Politics, Advocacy, and Government-Related",ec.europa.eu,0.0,0.0,0,0,0
+1,223,categories News & Media,theguardian.com,0.0,0.0,0,0,0
+1,224,categories Education,azurewebsites.net,0.0,0.0,0,0,0
+1,225,categories Newly Seen Domains,abusix.zone,0.0,0.0,0,0,0
+1,226,categories Webmail,gmail.com,0.0,0.0,0,0,0
+1,227,"categories Politics, Advocacy, and Government-Related",beian.miit.gov.cn,0.0,0.0,0,0,0
+1,228,categories Technology,outlook.office.com,0.0,0.0,0,0,0
+1,229,categories Technology,datadoghq.com,0.0,0.0,0,0,0
+1,230,categories File Sharing,gateway.icloud.com,0.0,0.0,0,0,0
+1,231,"categories Politics, Advocacy, and Government-Related",w3.org,0.0,0.0,0,0,0
+1,232,categories Audio Streaming,open.spotify.com,0.0,0.0,0,0,0
+1,233,categories Auctions & Marketplaces,ebay.com,0.0,0.0,0,0,0
+1,234,categories Information Technology,g.aaplimg.com,0.0,0.0,0,0,0
+1,235,categories Content Servers,wsdvs.com,0.0,0.0,0,0,0
+1,236,categories Economy & Finance,forbes.com,0.0,0.0,0,0,0
+1,237,categories Business,zemanta.com,0.0,0.0,0,0,0
+1,238,categories Health & Fitness,health.mil,0.0,0.0,0,0,0
+1,239,categories Content Servers,lh3.googleusercontent.com,0.0,0.0,0,0,0
+1,240,categories Content Servers,appsflyersdk.com,0.0,0.0,0,0,0
+1,241,categories Content Servers,gateway.fe.apple-dns.net,0.0,0.0,0,0,0
+1,242,categories Advertisements,adsrvr.org,0.0,0.0,0,0,0
+1,243,categories Search Engines,clients4.google.com,0.0,0.0,0,0,0
+1,244,categories News & Media,bbc.co.uk,0.0,0.0,0,0,0
+1,245,categories Content Servers,demdex.net,0.0,0.0,0,0,0
+1,246,categories Business,taboola.com,0.0,0.0,0,0,0
+1,247,categories Business,adobe.io,0.0,0.0,0,0,0
+1,248,categories Content Servers,optimizationguide-pa.googleapis.com,0.0,0.0,0,0,0
+1,249,categories Video Streaming,www.youtube.com,0.0,0.0,0,0,0
+1,250,categories Technology,meraki.com,0.0,0.0,0,0,0
+1,251,categories Information Technology,comfortel.pro,0.0,0.0,0,0,0
+1,252,categories Ecommerce,staples.com,0.0,0.0,0,0,0
+1,253,categories Gaming,applovin.com,0.0,0.0,0,0,0
+1,254,categories Content Servers,dns.cn,0.0,0.0,0,0,0
+1,255,categories Instant Messengers,edge.skype.com,0.0,0.0,0,0,0
+1,256,categories Newly Seen Domains,dns.google,0.0,0.0,0,0,0
+1,257,categories Business,config.teams.microsoft.com,0.0,0.0,0,0,0
+1,258,categories Personal Blogs,googleblog.com,0.0,0.0,0,0,0
+1,259,categories Content Servers,rbxcdn.com,0.0,0.0,0,0,0
+1,260,categories Technology,miui.com,0.0,0.0,0,0,0
+1,261,categories Education,sciencedirect.com,0.0,0.0,0,0,0
+1,262,categories Content Servers,config.edge.skype.com,0.0,0.0,0,0,0
+1,263,categories Advertisements,openx.net,0.0,0.0,0,0,0
+1,264,categories Business,dsp.mp.microsoft.com,0.0,0.0,0,0,0
+1,265,categories Technology,login.live.com,0.0,0.0,0,0,0
+1,266,categories Technology,xiaomi.com,0.0,0.0,0,0,0
+1,267,categories News & Media,bbc.com,0.0,0.0,0,0,0
+1,268,"categories Politics, Advocacy, and Government-Related",creativecommons.org,0.0,0.0,0,0,0
+1,269,categories Newly Seen Domains,edgecdn.ru,0.0,0.0,0,0,0
+1,270,categories Webmail,mail.google.com,0.0,0.0,0,0,0
+1,271,categories Business,appsflyer.com,0.0,0.0,0,0,0
+1,272,categories Advertisements,adsafeprotected.com,0.0,0.0,0,0,0
+1,273,categories Content Servers,shifen.com,0.0,0.0,0,0,0
+1,274,categories Technology,kaspersky.com,0.0,0.0,0,0,0
+1,275,categories Technology,cisco.com,0.0,0.0,0,0,0
+1,276,categories Advertisements,smartadserver.com,0.0,0.0,0,0,0
+1,277,categories Content Servers,googletagservices.com,0.0,0.0,0,0,0
+1,278,categories Business,sourceforge.net,0.0,0.0,0,0,0
+1,279,categories Social Networks,userapi.com,0.0,0.0,0,0,0
+1,280,categories Business,do.dsp.mp.microsoft.com,0.0,0.0,0,0,0
+1,281,categories Content Servers,aiv-cdn.net,0.0,0.0,0,0,0
+1,282,categories Business,graph.microsoft.com,0.0,0.0,0,0,0
+1,283,categories Movies,imdb.com,0.0,0.0,0,0,0
+1,284,categories Business,prod.do.dsp.mp.microsoft.com,0.0,0.0,0,0,0
+1,285,categories Instant Messengers,slack.com,0.0,0.0,0,0,0
+1,286,categories Information Technology,push.apple.com,0.0,0.0,0,0,0
+1,287,categories Instant Messengers,discord.com,0.0,0.0,0,0,0
+1,288,categories Content Servers,akamaihd.net,0.0,0.0,0,0,0
+1,289,categories Social Networks,facebook.net,0.0,0.0,0,0,0
+1,290,categories Information Technology,reg.ru,0.0,0.0,0,0,0
+1,291,categories Content Servers,dnsowl.com,0.0,0.0,0,0,0
+1,292,categories Education,mit.edu,0.0,0.0,0,0,0
+1,293,categories Technology,hp.com,0.0,0.0,0,0,0
+1,294,categories Gaming,twitch.tv,0.0,0.0,0,0,0
+1,295,categories Search Engines,business.bing.com,0.0,0.0,0,0,0
+1,296,categories Entertainment,nginx.org,0.0,0.0,0,0,0
+1,297,categories Health & Fitness,who.int,0.0,0.0,0,0,0
+1,298,categories Content Servers,play.googleapis.com,0.0,0.0,0,0,0
+1,299,categories Business,scorecardresearch.com,0.0,0.0,0,0,0
+1,300,categories Technology,ubuntu.com,0.0,0.0,0,0,0
+1,301,categories Content Servers,content-autofill.googleapis.com,0.0,0.0,0,0,0
+1,302,categories Information Technology,time.apple.com,0.0,0.0,0,0,0
+1,303,categories Newly Seen Domains,rocket-cdn.com,0.0,0.0,0,0,0
+1,304,categories Personal Blogs,workspaceupdates.googleblog.com,0.0,0.0,0,0,0
+1,305,categories Social Networks,www.facebook.com,0.0,0.0,0,0,0
+1,306,categories Technology,download.macromedia.com,0.0,0.0,0,0,0
+1,307,categories News & Media,washingtonpost.com,0.0,0.0,0,0,0
+1,308,categories Information Technology,wixsite.com,0.0,0.0,0,0,0
+1,309,categories Technology,substrate.office.com,0.0,0.0,0,0,0
+1,310,categories Information Technology,myfritz.net,0.0,0.0,0,0,0
+1,311,categories Information Technology,go.microsoft.com,0.0,0.0,0,0,0
+1,312,categories Television,amazonvideo.com,0.0,0.0,0,0,0
+1,313,categories Content Servers,cdn-apple.com,0.0,0.0,0,0,0
+1,314,categories Technology,web.archive.org,0.0,0.0,0,0,0
+1,315,categories Content Servers,msftconnecttest.com,0.0,0.0,0,0,0
+1,316,categories Information Technology,mzstatic.com,0.0,0.0,0,0,0
+1,317,categories Ecommerce,amazon.co.uk,0.0,0.0,0,0,0
+1,318,categories Magazines,issuu.com,0.0,0.0,0,0,0
+1,319,categories Technology,nginx.com,0.0,0.0,0,0,0
+1,320,categories Ecommerce,dell.com,0.0,0.0,0,0,0
+1,321,categories Ecommerce,shopify.com,0.0,0.0,0,0,0
+1,322,categories Education,researchgate.net,0.0,0.0,0,0,0
+1,323,categories No Content,jomodns.com,0.0,0.0,0,0,0
+1,324,categories Video Streaming,youtube-nocookie.com,0.0,0.0,0,0,0
+1,325,categories Business,hubspot.com,0.0,0.0,0,0,0
+1,326,categories Business,launchdarkly.com,0.0,0.0,0,0,0
+1,327,categories Business,teams.events.data.microsoft.com,0.0,0.0,0,0,0
+1,328,categories Content Servers,cdngslb.com,0.0,0.0,0,0,0
+1,329,categories Safe for Kids,go.com,0.0,0.0,0,0,0
+1,330,categories Information Technology,ampproject.org,0.0,0.0,0,0,0
+1,331,categories Education,wikimedia.org,0.0,0.0,0,0,0
+1,332,categories Gaming,playstation.net,0.0,0.0,0,0,0
+1,333,categories News & Media,dailymail.co.uk,0.0,0.0,0,0,0
+1,334,categories Government,cdc.gov,0.0,0.0,0,0,0
+1,335,categories Information Technology,wp.com,0.0,0.0,0,0,0
+1,336,categories Social Networks,badoo.com,0.0,0.0,0,0,0
+1,337,categories Newly Seen Domains,dual-s-msedge.net,0.0,0.0,0,0,0
+1,338,categories Information Technology,bag.itunes.apple.com,0.0,0.0,0,0,0
+1,339,categories Redirect,tinyurl.com,0.0,0.0,0,0,0
+1,340,categories Technology,android.com,0.0,0.0,0,0,0
+1,341,categories Content Servers,cedexis.net,0.0,0.0,0,0,0
+1,342,categories Technology,ibm.com,0.0,0.0,0,0,0
+1,343,categories Business,smartscreen.microsoft.com,0.0,0.0,0,0,0
+1,344,categories Content Servers,cdn.office.net,0.0,0.0,0,0,0
+1,345,categories Content Servers,sc-gw.com,0.0,0.0,0,0,0
+1,346,categories Information Technology,grammarly.com,0.0,0.0,0,0,0
+1,347,categories Content Servers,safebrowsing.apple,0.0,0.0,0,0,0
+1,348,categories News & Media,reuters.com,0.0,0.0,0,0,0
+1,349,categories Phishing,name-services.com,0.0,0.0,0,0,0
+1,350,categories Technology,httpd.apache.org,0.0,0.0,0,0,0
+1,351,categories Information Technology,weebly.com,0.0,0.0,0,0,0
+1,352,categories Business,azurefd.net,0.0,0.0,0,0,0
+1,353,categories Newly Seen Domains,stbid.ru,0.0,0.0,0,0,0
+1,354,categories Technology,atomile.com,0.0,0.0,0,0,0
+1,355,categories Content Servers,aliyuncs.com,0.0,0.0,0,0,0
+1,356,categories Education,slideshare.net,0.0,0.0,0,0,0
+1,357,categories Advertisements,adriver.ru,0.0,0.0,0,0,0
+1,358,categories Content Servers,rlcdn.com,0.0,0.0,0,0,0
+1,359,categories Technology,mcafee.com,0.0,0.0,0,0,0
+1,360,categories Search Engines,google.de,0.0,0.0,0,0,0
+1,361,categories Content Servers,media-amazon.com,0.0,0.0,0,0,0
+1,362,categories Login Screens,360yield.com,0.0,0.0,0,0,0
+1,363,categories Educational Institutions,harvard.edu,0.0,0.0,0,0,0
+1,364,categories Information Technology,c.lencr.org,0.0,0.0,0,0,0
+1,365,categories Economy & Finance,cnbc.com,0.0,0.0,0,0,0
+1,366,categories Technology,doi.org,0.0,0.0,0,0,0
+1,367,categories Business,3lift.com,0.0,0.0,0,0,0
+1,368,categories Arts,canva.com,0.0,0.0,0,0,0
+1,369,categories Content Servers,b-cdn.net,0.0,0.0,0,0,0
+1,370,categories Business,sharethrough.com,0.0,0.0,0,0,0
+1,371,categories Technology,ecs.office.com,0.0,0.0,0,0,0
+1,372,categories Technology,bidswitch.net,0.0,0.0,0,0,0
+1,373,categories Business,force.com,0.0,0.0,0,0,0
+1,374,categories Travel,booking.com,0.0,0.0,0,0,0
+1,375,categories Technology,avast.com,0.0,0.0,0,0,0
+1,376,categories Technology,oracle.com,0.0,0.0,0,0,0
+1,377,categories Business,moatads.com,0.0,0.0,0,0,0
+1,378,categories Information Technology,x1.c.lencr.org,0.0,0.0,0,0,0
+1,379,"categories Politics, Advocacy, and Government-Related",www.gov.uk,0.0,0.0,0,0,0
+1,380,categories Content Servers,i.ytimg.com,0.0,0.0,0,0,0
+1,381,categories Business,hotjar.com,0.0,0.0,0,0,0
+1,382,categories Content Servers,dsce9.akamaiedge.net,0.0,0.0,0,0,0
+1,383,categories Ecommerce,wildberries.ru,0.0,0.0,0,0,0
+1,384,categories Economy & Finance,wellsfargo.com,0.0,0.0,0,0,0
+1,385,categories Information Technology,teamviewer.com,0.0,0.0,0,0,0
+1,386,categories Search Engines,google.co.uk,0.0,0.0,0,0,0
+1,387,categories Social Networks,web.facebook.com,0.0,0.0,0,0,0
+1,388,categories Newly Seen Domains,telecid.ru,0.0,0.0,0,0,0
+1,389,categories Economy & Finance,bloomberg.com,0.0,0.0,0,0,0
+1,390,categories Government,nist.gov,0.0,0.0,0,0,0
+1,391,categories News & Media,aol.com,0.0,0.0,0,0,0
+1,392,categories Technology,appcenter.ms,0.0,0.0,0,0,0
+1,393,categories Ecommerce,etsy.com,0.0,0.0,0,0,0
+1,394,categories Video Streaming,espn.com,0.0,0.0,0,0,0
+1,395,categories Business,media.net,0.0,0.0,0,0,0
+1,396,categories Content Servers,example.com,0.0,0.0,0,0,0
+1,397,categories Adult Themes,deviantart.com,0.0,0.0,0,0,0
+1,398,categories Business,vungle.com,0.0,0.0,0,0,0
+1,399,categories Advertisements,stats.g.doubleclick.net,0.0,0.0,0,0,0
+1,400,categories Economy & Finance,wsj.com,0.0,0.0,0,0,0
+1,401,categories Social Networks,weibo.com,0.0,0.0,0,0,0
+1,402,categories Information Technology,crashlytics.com,0.0,0.0,0,0,0
+1,403,categories Ecommerce,wiley.com,0.0,0.0,0,0,0
+1,404,categories Information Technology,time.g.aaplimg.com,0.0,0.0,0,0,0
+1,405,categories Gaming,supersonicads.com,0.0,0.0,0,0,0
+1,406,categories Gaming,steampowered.com,0.0,0.0,0,0,0
+1,407,categories Information Technology,opendns.com,0.0,0.0,0,0,0
+1,408,categories Information Technology,dnsmadeeasy.com,0.0,0.0,0,0,0
+1,409,categories Content Servers,samsungqbe.com,0.0,0.0,0,0,0
+1,410,categories Content Servers,jsdelivr.net,0.0,0.0,0,0,0
+1,411,categories Content Servers,samsungcloudsolution.com,0.0,0.0,0,0,0
+1,412,categories Content Servers,ksyuncdn.com,0.0,0.0,0,0,0
+1,413,categories Business,criteo.net,0.0,0.0,0,0,0
+1,414,categories Education,nature.com,0.0,0.0,0,0,0
+1,415,categories Content Servers,quantserve.com,0.0,0.0,0,0,0
+1,416,categories News & Media,sohu.com,0.0,0.0,0,0,0
+1,417,categories Information Technology,php.net,0.0,0.0,0,0,0
+1,418,categories Content Servers,amazon.dev,0.0,0.0,0,0,0
+1,419,categories Content Servers,msidentity.com,0.0,0.0,0,0,0
+1,420,categories Job Search & Careers,indeed.com,0.0,0.0,0,0,0
+1,421,categories Economy & Finance,stripe.com,0.0,0.0,0,0,0
+1,422,categories Content Servers,twimg.com,0.0,0.0,0,0,0
+1,423,categories Business,branch.io,0.0,0.0,0,0,0
+1,424,categories Content Servers,alicdn.com,0.0,0.0,0,0,0
+1,425,categories Content Servers,alibabadns.com,0.0,0.0,0,0,0
+1,426,categories Business,delivery.mp.microsoft.com,0.0,0.0,0,0,0
+1,427,"categories Politics, Advocacy, and Government-Related",un.org,0.0,0.0,0,0,0
+1,428,categories Business,dotomi.com,0.0,0.0,0,0,0
+1,429,categories Technology,hichina.com,0.0,0.0,0,0,0
+1,430,categories Video Streaming,dailymotion.com,0.0,0.0,0,0,0
+1,431,categories Business,lijit.com,0.0,0.0,0,0,0
+1,432,categories News & Media,nease.net,0.0,0.0,0,0,0
+1,433,categories Technology,1c.ru,0.0,0.0,0,0,0
+1,434,categories News & Media,foxnews.com,0.0,0.0,0,0,0
+1,435,categories News & Media,yahoo.co.jp,0.0,0.0,0,0,0
+1,436,categories Information Technology,netangels.ru,0.0,0.0,0,0,0
+1,437,categories Economy & Finance,businessinsider.com,0.0,0.0,0,0,0
+1,438,categories Education,springer.com,0.0,0.0,0,0,0
+1,439,categories Information Security,ocsp.pki.goog,0.0,0.0,0,0,0
+1,440,categories Weather,weather.com,0.0,0.0,0,0,0
+1,441,categories Information Technology,godaddy.com,0.0,0.0,0,0,0
+1,442,categories Business,list-manage.com,0.0,0.0,0,0,0
+1,443,categories Content Servers,adform.net,0.0,0.0,0,0,0
+1,444,categories Government,nasa.gov,0.0,0.0,0,0,0
+1,445,categories Business,adobedtm.com,0.0,0.0,0,0,0
+1,446,categories Content Servers,id5-sync.com,0.0,0.0,0,0,0
+1,447,categories Business,outbrain.com,0.0,0.0,0,0,0
+1,448,categories Newly Seen Domains,cmediahub.ru,0.0,0.0,0,0,0
+1,449,categories Content Servers,sc-cdn.net,0.0,0.0,0,0,0
+1,450,categories Business,ups.com,0.0,0.0,0,0,0
+1,451,categories Forums,quora.com,0.0,0.0,0,0,0
+1,452,categories Technology,eset.com,0.0,0.0,0,0,0
+1,453,categories Content Servers,imrworldwide.com,0.0,0.0,0,0,0
+1,454,categories Content Servers,aws.dev,0.0,0.0,0,0,0
+1,455,categories News & Media,drom.ru,0.0,0.0,0,0,0
+1,456,categories Advertisements,pagead2.googlesyndication.com,0.0,0.0,0,0,0
+1,457,categories Educational Institutions,stanford.edu,0.0,0.0,0,0,0
+1,458,categories Information Technology,hostgator.com,0.0,0.0,0,0,0
+1,459,categories Content Servers,liadm.com,0.0,0.0,0,0,0
+1,460,categories Social Networks,graph.facebook.com,0.0,0.0,0,0,0
+1,461,categories Information Technology,gnu.org,0.0,0.0,0,0,0
+1,462,categories News & Media,npr.org,0.0,0.0,0,0,0
+1,463,"categories News, Portal & Search",unsplash.com,0.0,0.0,0,0,0
+1,464,categories Newly Seen Domains,mynetname.net,0.0,0.0,0,0,0
+1,465,categories Information Technology,ocsp2.apple.com,0.0,0.0,0,0,0
+1,466,categories Technology,mi.com,0.0,0.0,0,0,0
+1,467,categories Business,mobile.events.data.microsoft.com,0.0,0.0,0,0,0
+1,468,categories Technology,roaming.officeapps.live.com,0.0,0.0,0,0,0
+1,469,categories Search Engines,google.com.br,0.0,0.0,0,0,0
+1,470,categories Content Servers,creativecdn.com,0.0,0.0,0,0,0
+1,471,categories Advertisements,adservice.google.com,0.0,0.0,0,0,0
+1,472,categories Technology,arubanetworks.com,0.0,0.0,0,0,0
+1,473,categories Forums,stackoverflow.com,0.0,0.0,0,0,0
+1,474,categories Content Servers,measure.office.net,0.0,0.0,0,0,0
+1,475,categories Content Servers,e673.dsce9.akamaiedge.net,0.0,0.0,0,0,0
+1,476,categories Newly Seen Domains,dzeninfra.ru,0.0,0.0,0,0,0
+1,477,categories Business,bitrix24.ru,0.0,0.0,0,0,0
+1,478,categories Entertainment,eventbrite.com,0.0,0.0,0,0,0
+1,479,categories Internet Phone & VOIP,discord.gg,0.0,0.0,0,0,0
+1,480,categories Advertisements,teads.tv,0.0,0.0,0,0,0
+1,481,categories Content Servers,nel.measure.office.net,0.0,0.0,0,0,0
+1,482,categories Business,presence.teams.microsoft.com,0.0,0.0,0,0,0
+1,483,categories Information Technology,cpanel.net,0.0,0.0,0,0,0
+1,484,categories Content Servers,go-mpulse.net,0.0,0.0,0,0,0
+1,485,categories Gaming,ea.com,0.0,0.0,0,0,0
+1,486,categories Shopping,trustpilot.com,0.0,0.0,0,0,0
+1,487,categories Content Servers,bamgrid.com,0.0,0.0,0,0,0
+1,488,categories Technology,elasticbeanstalk.com,0.0,0.0,0,0,0
+1,489,categories Content Servers,clarity.ms,0.0,0.0,0,0,0
+1,490,categories Content Servers,3gppnetwork.org,0.0,0.0,0,0,0
+1,491,categories Gaming,xboxlive.com,0.0,0.0,0,0,0
+1,492,categories Information Technology,ess.apple.com,0.0,0.0,0,0,0
+1,493,categories Search Engines,clients6.google.com,0.0,0.0,0,0,0
+1,494,categories Ecommerce,roku.com,0.0,0.0,0,0,0
+1,495,categories Information Technology,wix.com,0.0,0.0,0,0,0
+1,496,categories File Sharing,hicloud.com,0.0,0.0,0,0,0
+1,497,categories News & Media,wpa.qq.com,0.0,0.0,0,0,0
+1,498,categories Information Technology,ngenix.net,0.0,0.0,0,0,0
+1,499,categories Technology,rackspace.net,0.0,0.0,0,0,0
+1,500,categories News & Media,usatoday.com,0.0,0.0,0,0,0
+1,501,categories Information Technology,gsp-ssl.ls.apple.com,0.0,0.0,0,0,0
+1,502,categories Technology,giphy.com,0.0,0.0,0,0,0
+1,503,categories Television,comcast.com,0.0,0.0,0,0,0
+1,504,categories News & Media,telegraph.co.uk,0.0,0.0,0,0,0
+1,505,categories Ecommerce,walmart.com,0.0,0.0,0,0,0
+1,506,categories Information Technology,sophos.com,0.0,0.0,0,0,0
+1,507,categories Ecommerce,amazon.de,0.0,0.0,0,0,0
+1,508,categories Technology,mozilla.net,0.0,0.0,0,0,0
+1,509,categories Ecommerce,taobao.com,0.0,0.0,0,0,0
+1,510,categories Education,goodreads.com,0.0,0.0,0,0,0
+1,511,categories Content Servers,avcdn.net,0.0,0.0,0,0,0
+1,512,categories Shopping,tripadvisor.com,0.0,0.0,0,0,0
+1,513,categories Content Servers,amazonalexa.com,0.0,0.0,0,0,0
+1,514,categories News & Media,globo.com,0.0,0.0,0,0,0
+1,515,categories Economy & Finance,tradingview.com,0.0,0.0,0,0,0
+1,516,categories Magazines,time.com,0.0,0.0,0,0,0
+1,517,categories Information Technology,att.com,0.0,0.0,0,0,0
+1,518,categories Business,linktr.ee,0.0,0.0,0,0,0
+1,519,categories Content Servers,officeclient.microsoft.com,0.0,0.0,0,0,0
+1,520,categories Technology,openai.com,0.0,0.0,0,0,0
+1,521,categories Business,cdek.ru,0.0,0.0,0,0,0
+1,522,categories Search Engines,duckduckgo.com,0.0,0.0,0,0,0
+1,523,categories Content Servers,rzone.de,0.0,0.0,0,0,0
+1,524,categories Technology,core.windows.net,0.0,0.0,0,0,0
+1,525,categories Business,g.page,0.0,0.0,0,0,0
+1,526,categories Newly Seen Domains,azure-dns.com,0.0,0.0,0,0,0
+1,527,categories Content Servers,samsungcloud.com,0.0,0.0,0,0,0
+1,528,categories Personal Blogs,blogger.com,0.0,0.0,0,0,0
+1,529,"categories Politics, Advocacy, and Government-Related",gosuslugi.ru,0.0,0.0,0,0,0
+1,530,"categories Politics, Advocacy, and Government-Related",consultant.ru,0.0,0.0,0,0,0
+1,531,categories Ecommerce,ozon.ru,0.0,0.0,0,0,0
+1,532,categories Content Servers,byteoversea.net,0.0,0.0,0,0,0
+1,533,categories Information Security,checkpoint.com,0.0,0.0,0,0,0
+1,534,categories Travel,viator.com,0.0,0.0,0,0,0
+1,535,categories Technology,apis.google.com,0.0,0.0,0,0,0
+1,536,categories Content Servers,apple.com.akadns.net,0.0,0.0,0,0,0
+1,537,categories News & Media,wired.com,0.0,0.0,0,0,0
+1,538,categories Content Servers,storage.live.com,0.0,0.0,0,0,0
+1,539,categories Education,statista.com,0.0,0.0,0,0,0
+1,540,categories Technology,addtoany.com,0.0,0.0,0,0,0
+1,541,categories Photography,pixabay.com,0.0,0.0,0,0,0
+1,542,categories Education,scribd.com,0.0,0.0,0,0,0
+1,543,categories Social Networks,m.facebook.com,0.0,0.0,0,0,0
+1,544,categories Content Servers,pangle.io,0.0,0.0,0,0,0
+1,545,categories News & Media,chinamobile.com,0.0,0.0,0,0,0
+1,546,categories Technology,measure.office.com,0.0,0.0,0,0,0
+1,547,categories File Sharing,sfx.ms,0.0,0.0,0,0,0
+1,548,categories Business,adtelligent.com,0.0,0.0,0,0,0
+1,549,categories Newly Seen Domains,mtgglobals.com,0.0,0.0,0,0,0
+1,550,categories Technology,blob.core.windows.net,0.0,0.0,0,0,0
+1,551,categories Ecommerce,myshopify.com,0.0,0.0,0,0,0
+1,552,categories Business,verkada.com,0.0,0.0,0,0,0
+1,553,categories Health & Fitness,healthline.com,0.0,0.0,0,0,0
+1,554,categories Video Streaming,bilibili.com,0.0,0.0,0,0,0
+1,555,categories Ecommerce,support.apple.com,0.0,0.0,0,0,0
+1,556,categories News & Media,independent.co.uk,0.0,0.0,0,0,0
+1,557,categories Technology,fp.measure.office.com,0.0,0.0,0,0,0
+1,558,categories Ecommerce,wal-mart.com,0.0,0.0,0,0,0
+1,559,categories Technology,t-mobile.com,0.0,0.0,0,0,0
+1,560,categories Gaming,gamepass.com,0.0,0.0,0,0,0
+1,561,categories File Sharing,kwai.net,0.0,0.0,0,0,0
+1,562,categories Content Servers,clients2.google.com,0.0,0.0,0,0,0
+1,563,categories Content Servers,spcsdns.net,0.0,0.0,0,0,0
+1,564,categories Information Technology,configuration.ls.apple.com,0.0,0.0,0,0,0
+1,565,categories Technology,outlook.live.com,0.0,0.0,0,0,0
+1,566,categories Travel,uber.com,0.0,0.0,0,0,0
+1,567,categories Technology,crwdcntrl.net,0.0,0.0,0,0,0
+1,568,categories Information Technology,weather-data.apple.com,0.0,0.0,0,0,0
+1,569,categories News & Media,cnet.com,0.0,0.0,0,0,0
+1,570,categories Information Technology,verisign.com,0.0,0.0,0,0,0
+1,571,categories News & Media,assets.msn.com,0.0,0.0,0,0,0
+1,572,categories Information Technology,speedtest.net,0.0,0.0,0,0,0
+1,573,categories Video Streaming,ft.com,0.0,0.0,0,0,0
+1,574,categories Shopping,surveymonkey.com,0.0,0.0,0,0,0
+1,575,categories Content Servers,imgsmail.ru,0.0,0.0,0,0,0
+1,576,categories Content Servers,scdn.co,0.0,0.0,0,0,0
+1,577,categories Ecommerce,amzn.to,0.0,0.0,0,0,0
+1,578,categories Religion,churchcenter.com,0.0,0.0,0,0,0
+1,579,categories Movies,nflximg.com,0.0,0.0,0,0,0
+1,580,categories Technology,nvidia.com,0.0,0.0,0,0,0
+1,581,categories Education,debian.org,0.0,0.0,0,0,0
+1,582,categories Newly Seen Domains,dzen.ru,0.0,0.0,0,0,0
+1,583,categories Auctions & Marketplaces,alibaba.com,0.0,0.0,0,0,0
+1,584,categories Social Networks,ok.ru,0.0,0.0,0,0,0
+1,585,categories Content Servers,itunes-apple.com.akadns.net,0.0,0.0,0,0,0
+1,586,categories News & Media,naver.com,0.0,0.0,0,0,0
+1,587,categories Information Security,trendmicro.com,0.0,0.0,0,0,0
+1,588,categories Business,flashtalking.com,0.0,0.0,0,0,0
+1,589,categories Ecommerce,aliexpress.com,0.0,0.0,0,0,0
+1,590,categories Social Networks,behance.net,0.0,0.0,0,0,0
+1,591,categories Entertainment,ted.com,0.0,0.0,0,0,0
+1,592,categories Health & Fitness,mayoclinic.org,0.0,0.0,0,0,0
+1,593,categories Education,britannica.com,0.0,0.0,0,0,0
+1,594,categories Information Technology,iphone-ld.apple.com,0.0,0.0,0,0,0
+1,595,categories Business,ring.com,0.0,0.0,0,0,0
+1,596,categories Photography,imgur.com,0.0,0.0,0,0,0
+1,597,categories Technology,mikrotik.com,0.0,0.0,0,0,0
+1,598,categories Information Security,forter.com,0.0,0.0,0,0,0
+1,599,"categories Politics, Advocacy, and Government-Related",beian.gov.cn,0.0,0.0,0,0,0
+1,600,categories Technology,amazontrust.com,0.0,0.0,0,0,0
+1,601,categories Business,zendesk.com,0.0,0.0,0,0,0
+1,602,categories Advertisements,ad.doubleclick.net,0.0,0.0,0,0,0
+1,603,categories Business,manage.microsoft.com,0.0,0.0,0,0,0
+1,604,categories Advertisements,www.googleadservices.com,0.0,0.0,0,0,0
+1,605,categories Information Technology,dnspod.net,0.0,0.0,0,0,0
+1,606,categories Pornography,xhamster.com,0.0,0.0,0,0,0
+1,607,categories Information Technology,timeweb.ru,0.0,0.0,0,0,0
+1,608,categories Social Networks,livejournal.com,0.0,0.0,0,0,0
+1,609,categories Education,academia.edu,0.0,0.0,0,0,0
+1,610,categories Content Servers,yahoodns.net,0.0,0.0,0,0,0
+1,611,categories Content Servers,cloudflareclient.com,0.0,0.0,0,0,0
+1,612,categories Movies,warnerbros.com,0.0,0.0,0,0,0
+1,613,categories Information Technology,squarespace.com,0.0,0.0,0,0,0
+1,614,categories Health & Fitness,webmd.com,0.0,0.0,0,0,0
+1,615,categories Education,translate.google.com,0.0,0.0,0,0,0
+1,616,categories Technology,mysql.com,0.0,0.0,0,0,0
+1,617,categories Video Streaming,buzzfeed.com,0.0,0.0,0,0,0
+1,618,categories Technology,dns.com,0.0,0.0,0,0,0
+1,619,categories Technology,disqus.com,0.0,0.0,0,0,0
+1,620,categories Gaming,playstation.com,0.0,0.0,0,0,0
+1,621,categories Technology,kaspersky-labs.com,0.0,0.0,0,0,0
+1,622,categories Search Engines,google.ca,0.0,0.0,0,0,0
+1,623,categories Content Servers,isnssdk.com,0.0,0.0,0,0,0
+1,624,categories Newly Seen Domains,gravitational.io,0.0,0.0,0,0,0
+1,625,categories Information Technology,aria.microsoft.com,0.0,0.0,0,0,0
+1,626,categories Information Technology,beeline.ru,0.0,0.0,0,0,0
+1,627,categories Information Technology,activity.windows.com,0.0,0.0,0,0,0
+1,628,categories Content Servers,online-metrix.net,0.0,0.0,0,0,0
+1,629,categories Educational Institutions,berkeley.edu,0.0,0.0,0,0,0
+1,630,categories Instant Messengers,web.whatsapp.com,0.0,0.0,0,0,0
+1,631,categories Movies,ivi.ru,0.0,0.0,0,0,0
+1,632,categories Business,pipe.aria.microsoft.com,0.0,0.0,0,0,0
+1,633,categories Content Servers,xcal.tv,0.0,0.0,0,0,0
+1,634,categories News & Media,163.com,0.0,0.0,0,0,0
+1,635,categories Search Engines,google.fr,0.0,0.0,0,0,0
+1,636,categories Content Servers,firetvcaptiveportal.com,0.0,0.0,0,0,0
+1,637,categories Search Engines,tpc.googlesyndication.com,0.0,0.0,0,0,0
+1,638,categories Ecommerce,rakuten.co.jp,0.0,0.0,0,0,0
+1,639,categories Education,cambridge.org,0.0,0.0,0,0,0
+1,640,categories File Sharing,icloud-content.com,0.0,0.0,0,0,0
+1,641,categories Technology,upload.fp.measure.office.com,0.0,0.0,0,0,0
+1,642,categories Information Technology,i0.wp.com,0.0,0.0,0,0,0
+1,643,categories Technology,mediatek.com,0.0,0.0,0,0,0
+1,644,categories Technology,developers.google.com,0.0,0.0,0,0,0
+1,645,categories Business,braze.com,0.0,0.0,0,0,0
+1,646,categories Instant Messengers,line.me,0.0,0.0,0,0,0
+1,647,categories Information Technology,chrome.google.com,0.0,0.0,0,0,0
+1,648,categories Technology,herokuapp.com,0.0,0.0,0,0,0
+1,649,categories Education,loc.gov,0.0,0.0,0,0,0
+1,650,categories Social Networks,c10r.facebook.com,0.0,0.0,0,0,0
+1,651,categories Search Engines,google.es,0.0,0.0,0,0,0
+1,652,categories Instant Messengers,telegram.me,0.0,0.0,0,0,0
+1,653,categories Business,smaato.net,0.0,0.0,0,0,0
+1,654,categories Information Technology,www.apple.com,0.0,0.0,0,0,0
+1,655,categories Video Streaming,ttvnw.net,0.0,0.0,0,0,0
+1,656,categories Technology,wbx2.com,0.0,0.0,0,0,0
+1,657,categories Search Engines,google.co.jp,0.0,0.0,0,0,0
+1,658,categories Information Technology,worldnic.com,0.0,0.0,0,0,0
+1,659,categories News & Media,cbsnews.com,0.0,0.0,0,0,0
+1,660,"categories Politics, Advocacy, and Government-Related",gc.ca,0.0,0.0,0,0,0
+1,661,categories Content Servers,shalltry.com,0.0,0.0,0,0,0
+1,662,categories Government,ca.gov,0.0,0.0,0,0,0
+1,663,categories Education,duolingo.com,0.0,0.0,0,0,0
+1,664,categories Content Servers,mncdn.com,0.0,0.0,0,0,0
+1,665,categories Content Servers,herokudns.com,0.0,0.0,0,0,0
+1,666,categories Ecommerce,amazon.co.jp,0.0,0.0,0,0,0
+1,667,categories Audio Streaming,pandora.com,0.0,0.0,0,0,0
+1,668,categories News & Media,sina.com.cn,0.0,0.0,0,0,0
+1,669,categories Information Security,entrust.net,0.0,0.0,0,0,0
+1,670,categories Ecommerce,nike.com,0.0,0.0,0,0,0
+1,671,categories Business,mailchimp.com,0.0,0.0,0,0,0
+1,672,categories Search Engines,yelp.com,0.0,0.0,0,0,0
+1,673,categories Content Servers,ls-apple.com.akadns.net,0.0,0.0,0,0,0
+1,674,categories Social Networks,myspace.com,0.0,0.0,0,0,0
+1,675,categories Information Technology,duckdns.org,0.0,0.0,0,0,0
+1,676,categories Newly Seen Domains,dns-parking.com,0.0,0.0,0,0,0
+1,677,categories Search Engines,hipages.com.au,0.0,0.0,0,0,0
+1,678,categories Search Engines,google.it,0.0,0.0,0,0,0
+1,679,categories Technology,validator.w3.org,0.0,0.0,0,0,0
+1,680,categories Business,browser.events.data.microsoft.com,0.0,0.0,0,0,0
+1,681,categories Content Servers,config.office.net,0.0,0.0,0,0,0
+1,682,categories Technology,huawei.com,0.0,0.0,0,0,0
+1,683,categories Technology,digitalocean.com,0.0,0.0,0,0,0
+1,684,categories Information Technology,ecdns.net,0.0,0.0,0,0,0
+1,685,categories Content Servers,clients.config.office.net,0.0,0.0,0,0,0
+1,686,categories News & Media,latimes.com,0.0,0.0,0,0,0
+1,687,categories Parked & For Sale Domains,hugedomains.com,0.0,0.0,0,0,0
+1,688,categories Information Technology,rt.ru,0.0,0.0,0,0,0
+1,689,categories Information Technology,free.fr,0.0,0.0,0,0,0
+1,690,categories Business,aboutads.info,0.0,0.0,0,0,0
+1,691,categories Technology,jquery.com,0.0,0.0,0,0,0
+1,692,categories Technology,theverge.com,0.0,0.0,0,0,0
+1,693,categories Information Technology,cloudns.net,0.0,0.0,0,0,0
+1,694,categories News & Media,api.msn.com,0.0,0.0,0,0,0
+1,695,categories Content Servers,nstld.com,0.0,0.0,0,0,0
+1,696,categories Social Networks,fb.com,0.0,0.0,0,0,0
+1,697,categories Content Servers,grammarly.io,0.0,0.0,0,0,0
+1,698,categories Business,onetrust.com,0.0,0.0,0,0,0
+1,699,categories Technology,techcrunch.com,0.0,0.0,0,0,0
+1,700,categories Technology,nelreports.net,0.0,0.0,0,0,0
+1,701,categories Social Networks,edge-mqtt.facebook.com,0.0,0.0,0,0,0
+1,702,categories Technology,atlassian.com,0.0,0.0,0,0,0
+1,703,categories Educational Institutions,oup.com,0.0,0.0,0,0,0
+1,704,categories Forums,steamcommunity.com,0.0,0.0,0,0,0
+1,705,categories Information Security,sorbs.net,0.0,0.0,0,0,0
+1,706,categories Search Engines,scholar.google.com,0.0,0.0,0,0,0
+1,707,categories Business,www.microsoft.com,0.0,0.0,0,0,0
+1,708,categories Business,newrelic.com,0.0,0.0,0,0,0
+1,709,categories Information Technology,mts.ru,0.0,0.0,0,0,0
+1,710,categories Education,tandfonline.com,0.0,0.0,0,0,0
+1,711,categories Information Technology,smoot.apple.com,0.0,0.0,0,0,0
+1,712,categories Business,patreon.com,0.0,0.0,0,0,0
+1,713,categories Technology,launchpad.net,0.0,0.0,0,0,0
+1,714,categories Personal Blogs,bp.blogspot.com,0.0,0.0,0,0,0
+1,715,categories Content Servers,gcp.gvt2.com,0.0,0.0,0,0,0
+1,716,categories Webmail,hostgator.com.br,0.0,0.0,0,0,0
+1,717,categories News & Media,netease.com,0.0,0.0,0,0,0
+1,718,categories Business,ezvizlife.com,0.0,0.0,0,0,0
+1,719,categories Information Technology,gdmf.apple.com,0.0,0.0,0,0,0
+1,720,categories Content Servers,akam.net,0.0,0.0,0,0,0
+1,721,categories Technology,ietf.org,0.0,0.0,0,0,0
+1,722,categories Educational Institutions,cornell.edu,0.0,0.0,0,0,0
+1,723,categories Information Technology,mesu.apple.com,0.0,0.0,0,0,0
+1,724,categories Content Servers,dbankcloud.cn,0.0,0.0,0,0,0
+1,725,categories Travel,marriott.com,0.0,0.0,0,0,0
+1,726,categories Technology,mob.com,0.0,0.0,0,0,0
+1,727,categories Information Technology,visualstudio.com,0.0,0.0,0,0,0
+1,728,categories Government,noaa.gov,0.0,0.0,0,0,0
+1,729,categories Business,autodesk.com,0.0,0.0,0,0,0
+1,730,categories Business,analytics.google.com,0.0,0.0,0,0,0
+1,731,categories Content Servers,beacons.gcp.gvt2.com,0.0,0.0,0,0,0
+1,732,categories News & Media,accuweather.com,0.0,0.0,0,0,0
+1,733,categories Content Servers,ovscdns.com,0.0,0.0,0,0,0
+1,734,"categories News, Portal & Search",freepik.com,0.0,0.0,0,0,0
+1,735,categories Business,ikea.com,0.0,0.0,0,0,0
+1,736,categories Education,merriam-webster.com,0.0,0.0,0,0,0
+1,737,categories Search Engines,yandex.com,0.0,0.0,0,0,0
+1,738,categories Search Engines,google.co.in,0.0,0.0,0,0,0
+1,739,categories Information Technology,gs-loc.apple.com,0.0,0.0,0,0,0
+1,740,categories Information Technology,spaceweb.pro,0.0,0.0,0,0,0
+1,741,categories Movies,hulu.com,0.0,0.0,0,0,0
+1,742,categories Technology,getpocket.com,0.0,0.0,0,0,0
+1,743,categories Technology,intel.com,0.0,0.0,0,0,0
+1,744,categories Newly Seen Domains,byteglb.com,0.0,0.0,0,0,0
+1,745,categories Content Servers,licdn.com,0.0,0.0,0,0,0
+1,746,categories Business,exelator.com,0.0,0.0,0,0,0
+1,747,categories Content Servers,nintendo.net,0.0,0.0,0,0,0
+1,748,categories Photography,pinimg.com,0.0,0.0,0,0,0
+1,749,categories News & Media,nbcnews.com,0.0,0.0,0,0,0
+1,750,categories Content Servers,edgecastdns.net,0.0,0.0,0,0,0
+1,751,categories Content Servers,sentinelone.net,0.0,0.0,0,0,0
+1,752,categories Business,amplitude.com,0.0,0.0,0,0,0
+1,753,categories Newly Seen Domains,apple.news,0.0,0.0,0,0,0
+1,754,categories Business,yieldmo.com,0.0,0.0,0,0,0
+1,755,categories Information Security,cookielaw.org,0.0,0.0,0,0,0
+1,756,categories Information Security,agkn.com,0.0,0.0,0,0,0
+1,757,categories Ecommerce,homedepot.com,0.0,0.0,0,0,0
+1,758,categories News & Media,rbc.ru,0.0,0.0,0,0,0
+1,759,categories Technology,rackspace.com,0.0,0.0,0,0,0
+1,760,categories Content Servers,ocsp2-lb.apple.com.akadns.net,0.0,0.0,0,0,0
+1,761,categories Technology,calendly.com,0.0,0.0,0,0,0
+1,762,categories Business,qualtrics.com,0.0,0.0,0,0,0
+1,763,categories News & Media,huffingtonpost.com,0.0,0.0,0,0,0
+1,764,categories News & Media,news.google.com,0.0,0.0,0,0,0
+1,765,categories Business,adobe.net,0.0,0.0,0,0,0
+1,766,categories Education,wattpad.com,0.0,0.0,0,0,0
+1,767,categories Hobbies & Interests,fontawesome.com,0.0,0.0,0,0,0
+1,768,categories Business,sb.scorecardresearch.com,0.0,0.0,0,0,0
+1,769,categories Information Technology,init.push.apple.com,0.0,0.0,0,0,0
+1,770,categories Business,optimizely.com,0.0,0.0,0,0,0
+1,771,categories Technology,rspamd.com,0.0,0.0,0,0,0
+1,772,categories Technology,conviva.com,0.0,0.0,0,0,0
+1,773,categories Business,update.microsoft.com,0.0,0.0,0,0,0
+1,774,categories Magazines,theatlantic.com,0.0,0.0,0,0,0
+1,775,categories Technology,lenovo.com,0.0,0.0,0,0,0
+1,776,categories Content Servers,inner-active.mobi,0.0,0.0,0,0,0
+1,777,categories Content Servers,rncdn7.com,0.0,0.0,0,0,0
+1,778,categories Business,us-v20.events.data.microsoft.com,0.0,0.0,0,0,0
+1,779,categories Content Servers,xx.fbcdn.net,0.0,0.0,0,0,0
+1,780,categories Content Servers,mozgcp.net,0.0,0.0,0,0,0
+1,781,categories File Sharing,mega.nz,0.0,0.0,0,0,0
+1,782,categories Social Networks,connect.facebook.net,0.0,0.0,0,0,0
+1,783,categories Information Technology,bluehost.com,0.0,0.0,0,0,0
+1,784,categories File Sharing,mega.co.nz,0.0,0.0,0,0,0
+1,785,categories Business,prnewswire.com,0.0,0.0,0,0,0
+1,786,categories Content Servers,omnitagjs.com,0.0,0.0,0,0,0
+1,787,categories Business,tapad.com,0.0,0.0,0,0,0
+1,788,categories Ecommerce,target.com,0.0,0.0,0,0,0
+1,789,categories Gaming,riotgames.com,0.0,0.0,0,0,0
+1,790,categories Newly Seen Domains,qlivecdn.com,0.0,0.0,0,0,0
+1,791,categories Business,v20.events.data.microsoft.com,0.0,0.0,0,0,0
+1,792,categories Education,virtualearth.net,0.0,0.0,0,0,0
+1,793,categories Content Servers,bidr.io,0.0,0.0,0,0,0
+1,794,categories News & Media,mp.weixin.qq.com,0.0,0.0,0,0,0
+1,795,categories News & Media,uol.com.br,0.0,0.0,0,0,0
+1,796,categories Technology,res.office365.com,0.0,0.0,0,0,0
+1,797,categories Business,addthis.com,0.0,0.0,0,0,0
+1,798,categories Newly Seen Domains,temu.com,0.0,0.0,0,0,0
+1,799,categories Educational Institutions,washington.edu,0.0,0.0,0,0,0
+1,800,categories News & Media,elpais.com,0.0,0.0,0,0,0
+1,801,categories Business,livechatinc.com,0.0,0.0,0,0,0
+1,802,categories Content Servers,exo.nel.measure.office.net,0.0,0.0,0,0,0
+1,803,categories Search Engines,google.com.hk,0.0,0.0,0,0,0
+1,804,categories Pornography,pornhub.com,0.0,0.0,0,0,0
+1,805,categories Information Technology,bugsnag.com,0.0,0.0,0,0,0
+1,806,categories Social Networks,gateway.facebook.com,0.0,0.0,0,0,0
+1,807,categories Content Servers,typekit.net,0.0,0.0,0,0,0
+1,808,categories Information Technology,name.com,0.0,0.0,0,0,0
+1,809,categories Newly Seen Domains,allawnos.com,0.0,0.0,0,0,0
+1,810,categories Newly Seen Domains,ai-lawandorder.com,0.0,0.0,0,0,0
+1,811,categories Business,dl.delivery.mp.microsoft.com,0.0,0.0,0,0,0
+1,812,categories Technology,appspot.com,0.0,0.0,0,0,0
+1,813,categories News & Media,indiatimes.com,0.0,0.0,0,0,0
+1,814,categories Search Engines,signaler-pa.clients6.google.com,0.0,0.0,0,0,0
+1,815,categories Information Technology,init.itunes.apple.com,0.0,0.0,0,0,0
+1,816,categories Technology,aliyun.com,0.0,0.0,0,0,0
+1,817,categories Video Streaming,fandom.com,0.0,0.0,0,0,0
+1,818,categories Parked & For Sale Domains,namebrightdns.com,0.0,0.0,0,0,0
+1,819,categories Ecommerce,dns-shop.ru,0.0,0.0,0,0,0
+1,820,categories Search Engines,google.pl,0.0,0.0,0,0,0
+1,821,categories Business,browser.pipe.aria.microsoft.com,0.0,0.0,0,0,0
+1,822,categories Business,intercom.io,0.0,0.0,0,0,0
+1,823,categories Health & Fitness,fda.gov,0.0,0.0,0,0,0
+1,824,categories Technology,calendar.google.com,0.0,0.0,0,0,0
+1,825,categories Business,contextweb.com,0.0,0.0,0,0,0
+1,826,categories Content Servers,oath.cloud,0.0,0.0,0,0,0
+1,827,categories Content Servers,live.net,0.0,0.0,0,0,0
+1,828,categories Information Technology,life360.com,0.0,0.0,0,0,0
+1,829,categories Education,w3schools.com,0.0,0.0,0,0,0
+1,830,categories Business,stackadapt.com,0.0,0.0,0,0,0
+1,831,categories Food & Drink,takeaway.com,0.0,0.0,0,0,0
+1,832,categories Instant Messengers,viber.com,0.0,0.0,0,0,0
+1,833,categories Technology,delve.office.com,0.0,0.0,0,0,0
+1,834,categories Magazines,hbr.org,0.0,0.0,0,0,0
+1,835,categories Technology,bluekai.com,0.0,0.0,0,0,0
+1,836,categories Business,inmobi.com,0.0,0.0,0,0,0
+1,837,categories Business,tlu.dl.delivery.mp.microsoft.com,0.0,0.0,0,0,0
+1,838,categories Content Servers,ovscdns.net,0.0,0.0,0,0,0
+1,839,categories Content Servers,yimg.com,0.0,0.0,0,0,0
+1,840,categories Content Servers,everesttech.net,0.0,0.0,0,0,0
+1,841,categories Information Technology,xserver.jp,0.0,0.0,0,0,0
+1,842,categories Technology,loki.delve.office.com,0.0,0.0,0,0,0
+1,843,categories Ecommerce,amazon.fr,0.0,0.0,0,0,0
+1,844,categories Newly Seen Domains,abovedomains.com,0.0,0.0,0,0,0
+1,845,categories Content Servers,igamecj.com,0.0,0.0,0,0,0
+1,846,categories Education,udemy.com,0.0,0.0,0,0,0
+1,847,categories Information Security,bitdefender.com,0.0,0.0,0,0,0
+1,848,categories Business,incapdns.net,0.0,0.0,0,0,0
+1,849,categories Ecommerce,nest.com,0.0,0.0,0,0,0
+1,850,categories Business,markmonitor.com,0.0,0.0,0,0,0
+1,851,categories Business,adjust.com,0.0,0.0,0,0,0
+1,852,categories Translator,deepl.com,0.0,0.0,0,0,0
+1,853,"categories Militancy, Hate & Extremism",mediafire.com,0.0,0.0,0,0,0
+1,854,categories Business,fe3cr.delivery.mp.microsoft.com,0.0,0.0,0,0,0
+1,855,categories Content Servers,res.cdn.office.net,0.0,0.0,0,0,0
+1,856,categories Business,nationalgeographic.com,0.0,0.0,0,0,0
+1,857,categories Information Technology,gspe79-ssl.ls.apple.com,0.0,0.0,0,0,0
+1,858,categories Economy & Finance,coinmarketcap.com,0.0,0.0,0,0,0
+1,859,categories Ecommerce,amazon.ca,0.0,0.0,0,0,0
+1,860,categories Technology,samsungapps.com,0.0,0.0,0,0,0
+1,861,categories Content Servers,lh5.googleusercontent.com,0.0,0.0,0,0,0
+1,862,categories Content Servers,cdnvideo.ru,0.0,0.0,0,0,0
+1,863,categories File Sharing,box.com,0.0,0.0,0,0,0
+1,864,categories Education,sagepub.com,0.0,0.0,0,0,0
+1,865,categories Ecommerce,themeforest.net,0.0,0.0,0,0,0
+1,866,categories Content Servers,contentsquare.net,0.0,0.0,0,0,0
+1,867,categories Content Servers,ogs.google.com,0.0,0.0,0,0,0
+1,868,categories Economy & Finance,investopedia.com,0.0,0.0,0,0,0
+1,869,categories Search Engines,google.com.mx,0.0,0.0,0,0,0
+1,870,categories Newly Seen Domains,mediahils.ru,0.0,0.0,0,0,0
+1,871,categories Information Technology,xp.apple.com,0.0,0.0,0,0,0
+1,872,categories Information Technology,webrootcloudav.com,0.0,0.0,0,0,0
+1,873,categories Ecommerce,kohls.com,0.0,0.0,0,0,0
+1,874,categories Search Engines,google.com.tr,0.0,0.0,0,0,0
+1,875,categories News & Media,arc.msn.com,0.0,0.0,0,0,0
+1,876,categories News & Media,yahoo.net,0.0,0.0,0,0,0
+1,877,categories Social Networks,mirtesen.ru,0.0,0.0,0,0,0
+1,878,categories Audio Streaming,bandcamp.com,0.0,0.0,0,0,0
+1,879,categories Pornography,xvideos.com,0.0,0.0,0,0,0
+1,880,categories Health & Fitness,pubmed.ncbi.nlm.nih.gov,0.0,0.0,0,0,0
+1,881,categories Ecommerce,shein.com,0.0,0.0,0,0,0
+1,882,categories Newly Seen Domains,rocket-cdnbp.com,0.0,0.0,0,0,0
+1,883,categories Business,33across.com,0.0,0.0,0,0,0
+1,884,"categories Politics, Advocacy, and Government-Related",service.gov.uk,0.0,0.0,0,0,0
+1,885,categories Newly Seen Domains,douyincdn.com,0.0,0.0,0,0,0
+1,886,categories Business,usda.gov,0.0,0.0,0,0,0
+1,887,categories Ecommerce,bestbuy.com,0.0,0.0,0,0,0
+1,888,categories Content Servers,r4.res.office365.com,0.0,0.0,0,0,0
+1,889,categories Business,attn.tv,0.0,0.0,0,0,0
+1,890,categories Business,klaviyo.com,0.0,0.0,0,0,0
+1,891,"categories Politics, Advocacy, and Government-Related",unesco.org,0.0,0.0,0,0,0
+1,892,categories Education,allaboutcookies.org,0.0,0.0,0,0,0
+1,893,categories Business,w55c.net,0.0,0.0,0,0,0
+1,894,categories Travel,airbnb.com,0.0,0.0,0,0,0
+1,895,categories Newly Seen Domains,pv-cdn.net,0.0,0.0,0,0,0
+1,896,categories Real Estate,zillow.com,0.0,0.0,0,0,0
+1,897,categories Technology,docker.com,0.0,0.0,0,0,0
+1,898,categories Hobbies & Interests,kickstarter.com,0.0,0.0,0,0,0
+1,899,categories Video Streaming,youku.com,0.0,0.0,0,0,0
+1,900,categories Information Technology,enterprise.activity.windows.com,0.0,0.0,0,0,0
+1,901,categories Newly Seen Domains,ohthree.com,0.0,0.0,0,0,0
+1,902,categories Content Servers,tremorhub.com,0.0,0.0,0,0,0
+1,903,categories Content Servers,bytetcdn.com,0.0,0.0,0,0,0
+1,904,categories Instant Messengers,telegram.org,0.0,0.0,0,0,0
+1,905,categories Business,gumgum.com,0.0,0.0,0,0,0
+1,906,categories Information Security,norton.com,0.0,0.0,0,0,0
+1,907,categories Newly Seen Domains,gandi-ns.fr,0.0,0.0,0,0,0
+1,908,categories Technology,xiaomi.net,0.0,0.0,0,0,0
+1,909,categories Technology,pccc.com,0.0,0.0,0,0,0
+1,910,categories Search Engines,fiverr.com,0.0,0.0,0,0,0
+1,911,categories Movies,nflxvideo.net,0.0,0.0,0,0,0
+1,912,categories News & Media,huffpost.com,0.0,0.0,0,0,0
+1,913,categories Television,pbs.org,0.0,0.0,0,0,0
+1,914,categories News & Media,lemonde.fr,0.0,0.0,0,0,0
+1,915,categories Information Technology,yximgs.com,0.0,0.0,0,0,0
+1,916,categories Advertisements,1rx.io,0.0,0.0,0,0,0
+1,917,categories Content Servers,e-msedge.net,0.0,0.0,0,0,0
+1,918,categories Newly Seen Domains,ttoverseaus.net,0.0,0.0,0,0,0
+1,919,categories Content Servers,clients3.google.com,0.0,0.0,0,0,0
+1,920,categories Advertisements,securepubads.g.doubleclick.net,0.0,0.0,0,0,0
+1,921,categories Business,mailchi.mp,0.0,0.0,0,0,0
+1,922,categories Business,fedex.com,0.0,0.0,0,0,0
+1,923,categories Video Streaming,m.youtube.com,0.0,0.0,0,0,0
+1,924,categories Video Streaming,people.com,0.0,0.0,0,0,0
+1,925,categories Ecommerce,shopee.co.id,0.0,0.0,0,0,0
+1,926,categories Business,business.site,0.0,0.0,0,0,0
+1,927,categories Business,kennasecurity.com,0.0,0.0,0,0,0
+1,928,categories Social Networks,l.facebook.com,0.0,0.0,0,0,0
+1,929,categories Business,quantummetric.com,0.0,0.0,0,0,0
+1,930,categories Content Servers,yt3.ggpht.com,0.0,0.0,0,0,0
+1,931,categories Information Technology,elisa.fi,0.0,0.0,0,0,0
+1,932,categories Educational Institutions,princeton.edu,0.0,0.0,0,0,0
+1,933,categories Business,mixpanel.com,0.0,0.0,0,0,0
+1,934,categories Business,networkadvertising.org,0.0,0.0,0,0,0
+1,935,categories Information Security,safebrowsing.google.com,0.0,0.0,0,0,0
+1,936,categories Technology,footprintdns.com,0.0,0.0,0,0,0
+1,937,categories Ecommerce,macys.com,0.0,0.0,0,0,0
+1,938,categories Pornography,chaturbate.com,0.0,0.0,0,0,0
+1,939,categories Content Servers,www.msftconnecttest.com,0.0,0.0,0,0,0
+1,940,categories Information Technology,fast.com,0.0,0.0,0,0,0
+1,941,categories Content Servers,gihc.net,0.0,0.0,0,0,0
+1,942,categories Information Technology,jotform.com,0.0,0.0,0,0,0
+1,943,categories Business,stickyadstv.com,0.0,0.0,0,0,0
+1,944,categories Business,kargo.com,0.0,0.0,0,0,0
+1,945,categories File Sharing,me.com,0.0,0.0,0,0,0
+1,946,categories Content Servers,ssl-images-amazon.com,0.0,0.0,0,0,0
+1,947,categories Technology,statuspage.io,0.0,0.0,0,0,0
+1,948,categories Business,sitescout.com,0.0,0.0,0,0,0
+1,949,categories Job Search & Careers,upwork.com,0.0,0.0,0,0,0
+1,950,categories Ecommerce,allegro.pl,0.0,0.0,0,0,0
+1,951,categories Content Servers,dbankcloud.com,0.0,0.0,0,0,0
+1,952,categories News & Media,t-online.de,0.0,0.0,0,0,0
+1,953,categories Search Engines,google.cn,0.0,0.0,0,0,0
+1,954,categories Advertisements,a-mo.net,0.0,0.0,0,0,0
+1,955,categories Search Engines,addons-pa.clients6.google.com,0.0,0.0,0,0,0
+1,956,categories Business,adrta.com,0.0,0.0,0,0,0
+1,957,categories Ecommerce,amazon.es,0.0,0.0,0,0,0
+1,958,categories File Sharing,mask.icloud.com,0.0,0.0,0,0,0
+1,959,categories Content Servers,origin-apple.com.akadns.net,0.0,0.0,0,0,0
+1,960,categories Pornography,erome.com,0.0,0.0,0,0,0
+1,961,categories Education,es.wikipedia.org,0.0,0.0,0,0,0
+1,962,"categories Politics, Advocacy, and Government-Related",change.org,0.0,0.0,0,0,0
+1,963,categories News & Media,news.com.au,0.0,0.0,0,0,0
+1,964,categories Technology,ks-cdn.com,0.0,0.0,0,0,0
+1,965,categories Economy & Finance,bankofamerica.com,0.0,0.0,0,0,0
+1,966,categories Auctions & Marketplaces,ebay.co.uk,0.0,0.0,0,0,0
+1,967,categories Information Technology,guzzoni.apple.com,0.0,0.0,0,0,0
+1,968,categories Technology,quickconnect.to,0.0,0.0,0,0,0
+1,969,categories Social Networks,fb.me,0.0,0.0,0,0,0
+1,970,categories Content Servers,steamstatic.com,0.0,0.0,0,0,0
+1,971,categories Pornography,xnxx.com,0.0,0.0,0,0,0
+1,972,"categories Politics, Advocacy, and Government-Related",ieee.org,0.0,0.0,0,0,0
+1,973,categories Business,turn.com,0.0,0.0,0,0,0
+1,974,categories Technology,redhat.com,0.0,0.0,0,0,0
+1,975,categories Technology,ipify.org,0.0,0.0,0,0,0
+1,976,categories Advertisements,ads-twitter.com,0.0,0.0,0,0,0
+1,977,categories Content Servers,rfihub.com,0.0,0.0,0,0,0
+1,978,categories File Sharing,s3.amazonaws.com,0.0,0.0,0,0,0
+1,979,categories Information Technology,ovh.net,0.0,0.0,0,0,0
+1,980,categories Content Servers,krxd.net,0.0,0.0,0,0,0
+1,981,categories Ecommerce,hm.com,0.0,0.0,0,0,0
+1,982,categories Ecommerce,www.amazon.com,0.0,0.0,0,0,0
+1,983,categories Video Streaming,lefigaro.fr,0.0,0.0,0,0,0
+1,984,categories Content Servers,ipredictive.com,0.0,0.0,0,0,0
+1,985,categories Technology,nexusrules.officeapps.live.com,0.0,0.0,0,0,0
+1,986,categories Technology,tencent-cloud.net,0.0,0.0,0,0,0
+1,987,categories Business,odc.officeapps.live.com,0.0,0.0,0,0,0
+1,988,categories Newly Seen Domains,heytapdl.com,0.0,0.0,0,0,0
+1,989,categories Content Servers,www.googletagservices.com,0.0,0.0,0,0,0
+1,990,categories Auctions & Marketplaces,milanuncios.com,0.0,0.0,0,0,0
+1,991,categories Business,intentiq.com,0.0,0.0,0,0,0
+1,992,categories Content Servers,cdn20.com,0.0,0.0,0,0,0
+1,993,categories Content Servers,indexww.com,0.0,0.0,0,0,0
+1,994,categories Content Servers,ibyteimg.com,0.0,0.0,0,0,0
+1,995,"categories Politics, Advocacy, and Government-Related",whitehouse.gov,0.0,0.0,0,0,0
+1,996,categories Business,iris.microsoft.com,0.0,0.0,0,0,0
+1,997,categories Technology,cloudapp.azure.com,0.0,0.0,0,0,0
+1,998,categories Ecommerce,amazon.in,0.0,0.0,0,0,0
+1,999,"categories Politics, Advocacy, and Government-Related",iso.org,0.0,0.0,0,0,0
+1,1000,categories Content Servers,bootstrapcdn.com,0.0,0.0,0,0,0
+1,1001,categories Business,api.iris.microsoft.com,0.0,0.0,0,0,0
+1,1002,categories Business,simpli.fi,0.0,0.0,0,0,0
+1,1003,categories Information Technology,boostmobile.com,0.0,0.0,0,0,0
+1,1004,categories Parked & For Sale Domains,nic.do,0.0,0.0,0,0,0
+1,1005,categories Business,aniview.com,0.0,0.0,0,0,0
+1,1006,categories Newly Seen Domains,bbtec.net,0.0,0.0,0,0,0
+1,1007,categories Ecommerce,amazon.it,0.0,0.0,0,0,0
+1,1008,categories Business,statcounter.com,0.0,0.0,0,0,0
+1,1009,categories Ecommerce,lowes.com,0.0,0.0,0,0,0
+1,1010,categories Content Servers,ssacdn.com,0.0,0.0,0,0,0
+1,1011,"categories News, Portal & Search",istockphoto.com,0.0,0.0,0,0,0
+1,1012,categories News & Media,www.msn.com,0.0,0.0,0,0,0
+1,1013,categories Information Technology,ertelecom.ru,0.0,0.0,0,0,0
+1,1014,categories Photography,shutterstock.com,0.0,0.0,0,0,0
+1,1015,categories Business,netgear.com,0.0,0.0,0,0,0
+1,1016,categories Content Servers,phicdn.net,0.0,0.0,0,0,0
+1,1017,categories Technology,githubusercontent.com,0.0,0.0,0,0,0
+1,1018,categories Content Servers,cdnhwc1.com,0.0,0.0,0,0,0
+1,1019,"categories Politics, Advocacy, and Government-Related",epa.gov,0.0,0.0,0,0,0
+1,1020,categories Business,swrve.com,0.0,0.0,0,0,0
+1,1021,categories Technology,appier.net,0.0,0.0,0,0,0
+1,1022,categories Business,unrulymedia.com,0.0,0.0,0,0,0
+1,1023,categories Professional Networking,www.linkedin.com,0.0,0.0,0,0,0
+1,1024,categories Content Servers,samsungacr.com,0.0,0.0,0,0,0
+1,1025,categories Newly Seen Domains,shopee.com.br,0.0,0.0,0,0,0
+1,1026,categories Content Servers,samsungosp.com,0.0,0.0,0,0,0
+1,1027,categories Personal Blogs,ameblo.jp,0.0,0.0,0,0,0
+1,1028,categories Content Servers,impervadns.net,0.0,0.0,0,0,0
+1,1029,categories Pornography,eporner.com,0.0,0.0,0,0,0
+1,1030,categories Content Servers,imcmdb.net,0.0,0.0,0,0,0
+1,1031,categories Technology,clever.com,0.0,0.0,0,0,0
+1,1032,categories Government,state.gov,0.0,0.0,0,0,0
+1,1033,categories Technology,miwifi.com,0.0,0.0,0,0,0
+1,1034,categories Technology,pool.ntp.org,0.0,0.0,0,0,0
+1,1035,categories Content Servers,bdydns.com,0.0,0.0,0,0,0
+1,1036,categories File Sharing,oneclient.sfx.ms,0.0,0.0,0,0,0
+1,1037,categories Search Engines,google.com.tw,0.0,0.0,0,0,0
+1,1038,categories Social Networks,onlyfans.com,0.0,0.0,0,0,0
+1,1039,categories News & Media,seznam.cz,0.0,0.0,0,0,0
+1,1040,categories Business,wayfair.com,0.0,0.0,0,0,0
+1,1041,categories Advertisements,onetag-sys.com,0.0,0.0,0,0,0
+1,1042,categories Information Technology,discordapp.com,0.0,0.0,0,0,0
+1,1043,categories Technology,360.cn,0.0,0.0,0,0,0
+1,1044,categories Social Networks,star.c10r.facebook.com,0.0,0.0,0,0,0
+1,1045,categories Information Technology,brave.com,0.0,0.0,0,0,0
+1,1046,categories Content Servers,jnn-pa.googleapis.com,0.0,0.0,0,0,0
+1,1047,categories Information Technology,dreamhost.com,0.0,0.0,0,0,0
+1,1048,"categories Politics, Advocacy, and Government-Related",worldbank.org,0.0,0.0,0,0,0
+1,1049,categories Search Engines,history.google.com,0.0,0.0,0,0,0
+1,1050,categories Business,mgid.com,0.0,0.0,0,0,0
+1,1051,categories Content Servers,fbsbx.com,0.0,0.0,0,0,0
+1,1052,categories Information Technology,gitlab.com,0.0,0.0,0,0,0
+1,1053,categories News & Media,economist.com,0.0,0.0,0,0,0
+1,1054,categories Educational Institutions,umich.edu,0.0,0.0,0,0,0
+1,1055,categories Technology,tp-link.com,0.0,0.0,0,0,0
+1,1056,categories Information Technology,mgts.ru,0.0,0.0,0,0,0
+1,1057,categories File Sharing,onedrive.live.com,0.0,0.0,0,0,0
+1,1058,categories Information Security,mathtag.com,0.0,0.0,0,0,0
+1,1059,categories Content Servers,usgovcloudapi.net,0.0,0.0,0,0,0
+1,1060,categories File Sharing,1drv.com,0.0,0.0,0,0,0
+1,1061,categories Webmail,typeform.com,0.0,0.0,0,0,0
+1,1062,categories Information Security,paloaltonetworks.com,0.0,0.0,0,0,0
+1,1063,categories Educational Institutions,columbia.edu,0.0,0.0,0,0,0
+1,1064,categories Information Technology,v.aaplimg.com,0.0,0.0,0,0,0
+1,1065,categories Content Servers,teams.cdn.office.net,0.0,0.0,0,0,0
+1,1066,categories Content Servers,goskope.com,0.0,0.0,0,0,0
+1,1067,categories Business,tribalfusion.com,0.0,0.0,0,0,0
+1,1068,categories Ecommerce,costco.com,0.0,0.0,0,0,0
+1,1069,categories Content Servers,heytapmobile.com,0.0,0.0,0,0,0
+1,1070,categories News & Media,usnews.com,0.0,0.0,0,0,0
+1,1071,categories Newly Seen Domains,cdnbuild.net,0.0,0.0,0,0,0
+1,1072,categories Information Technology,firefox.com,0.0,0.0,0,0,0
+1,1073,categories Newly Seen Domains,gouv.fr,0.0,0.0,0,0,0
+1,1074,categories Content Servers,statics.teams.cdn.office.net,0.0,0.0,0,0,0
+1,1075,categories Business,okta.com,0.0,0.0,0,0,0
+1,1076,categories Information Technology,dan.com,0.0,0.0,0,0,0
+1,1077,categories File Sharing,cloudinary.com,0.0,0.0,0,0,0
+1,1078,categories Business,chartbeat.net,0.0,0.0,0,0,0
+1,1079,categories Social Networks,vkontakte.ru,0.0,0.0,0,0,0
+1,1080,categories Information Security,globalsign.com,0.0,0.0,0,0,0
+1,1081,categories News & Media,bild.de,0.0,0.0,0,0,0
+1,1082,categories Music,genius.com,0.0,0.0,0,0,0
+1,1083,categories Content Servers,apigee.net,0.0,0.0,0,0,0
+1,1084,categories Movies,disneyplus.com,0.0,0.0,0,0,0
+1,1085,categories Business,connatix.com,0.0,0.0,0,0,0
+1,1086,categories Business,dpm.demdex.net,0.0,0.0,0,0,0
+1,1087,categories New Domains,jimdo.com,0.0,0.0,0,0,0
+1,1088,categories News & Media,daum.net,0.0,0.0,0,0,0
+1,1089,categories Business,wd.microsoft.com,0.0,0.0,0,0,0
+1,1090,categories Technology,vmware.com,0.0,0.0,0,0,0
+1,1091,categories Content Servers,e2ro.com,0.0,0.0,0,0,0
+1,1092,categories Information Security,sectigo.com,0.0,0.0,0,0,0
+1,1093,categories Business,fd.api.iris.microsoft.com,0.0,0.0,0,0,0
+1,1094,categories Content Servers,browser-intake-datadoghq.com,0.0,0.0,0,0,0
+1,1095,categories Content Servers,unpkg.com,0.0,0.0,0,0,0
+1,1096,categories Economy & Finance,kaspi.kz,0.0,0.0,0,0,0
+1,1097,categories Content Servers,cloudflareinsights.com,0.0,0.0,0,0,0
+1,1098,categories Technology,firebaseio.com,0.0,0.0,0,0,0
+1,1099,categories News & Media,repubblica.it,0.0,0.0,0,0,0
+1,1100,categories Business,cp.wd.microsoft.com,0.0,0.0,0,0,0
+1,1101,categories Business,chartboost.com,0.0,0.0,0,0,0
+1,1102,categories Content Servers,bttrack.com,0.0,0.0,0,0,0
+1,1103,categories Technology,arcgis.com,0.0,0.0,0,0,0
+1,1104,categories Video Streaming,nypost.com,0.0,0.0,0,0,0
+1,1105,categories Movies,primevideo.com,0.0,0.0,0,0,0
+1,1106,categories Education,wikihow.com,0.0,0.0,0,0,0
+1,1107,categories Economy & Finance,binance.com,0.0,0.0,0,0,0
+1,1108,categories Content Servers,azure-devices.net,0.0,0.0,0,0,0
+1,1109,categories Auctions & Marketplaces,avito.ru,0.0,0.0,0,0,0
+1,1110,categories Content Servers,beacons.gvt2.com,0.0,0.0,0,0,0
+1,1111,categories Business,businesswire.com,0.0,0.0,0,0,0
+1,1112,categories Content Servers,myqcloud.com,0.0,0.0,0,0,0
+1,1113,categories Business,segment.io,0.0,0.0,0,0,0
+1,1114,categories Business,spot.im,0.0,0.0,0,0,0
+1,1115,categories Search Engines,ya.ru,0.0,0.0,0,0,0
+1,1116,categories News & Media,theconversation.com,0.0,0.0,0,0,0
+1,1117,categories Technology,cdnjs.cloudflare.com,0.0,0.0,0,0,0
+1,1118,categories Business,ys7.com,0.0,0.0,0,0,0
+1,1119,categories Webmail,hotmail.com,0.0,0.0,0,0,0
+1,1120,categories Newly Seen Domains,ctdns.cn,0.0,0.0,0,0,0
+1,1121,categories Advertisements,ad.gt,0.0,0.0,0,0,0
+1,1122,categories Technology,dns.ne.jp,0.0,0.0,0,0,0
+1,1123,categories Content Servers,llnwi.net,0.0,0.0,0,0,0
+1,1124,categories Economy & Finance,deloitte.com,0.0,0.0,0,0,0
+1,1125,categories Religion,biblegateway.com,0.0,0.0,0,0,0
+1,1126,categories Content Servers,btloader.com,0.0,0.0,0,0,0
+1,1127,categories Content Servers,yellowblue.io,0.0,0.0,0,0,0
+1,1128,categories Education,classroom.google.com,0.0,0.0,0,0,0
+1,1129,categories Information Security,rapid7.com,0.0,0.0,0,0,0
+1,1130,categories Business,mediavine.com,0.0,0.0,0,0,0
+1,1131,categories Information Security,immunet.com,0.0,0.0,0,0,0
+1,1132,categories Audio Streaming,discogs.com,0.0,0.0,0,0,0
+1,1133,categories Newly Seen Domains,vip-svr.com,0.0,0.0,0,0,0
+1,1134,categories Travel,hilton.com,0.0,0.0,0,0,0
+1,1135,categories Business,asyncgw.teams.microsoft.com,0.0,0.0,0,0,0
+1,1136,categories Auctions & Marketplaces,ebay.de,0.0,0.0,0,0,0
+1,1137,categories Ecommerce,tbcache.com,0.0,0.0,0,0,0
+1,1138,categories Technology,pendo.io,0.0,0.0,0,0,0
+1,1139,categories Technology,g.live.com,0.0,0.0,0,0,0
+1,1140,categories Technology,vivoglobal.com,0.0,0.0,0,0,0
+1,1141,categories Information Security,savvis.net,0.0,0.0,0,0,0
+1,1142,categories Technology,xerox.com,0.0,0.0,0,0,0
+1,1143,categories Information Technology,init.ess.apple.com,0.0,0.0,0,0,0
+1,1144,categories Education,fr.wikipedia.org,0.0,0.0,0,0,0
+1,1145,categories Content Servers,rings.solutions,0.0,0.0,0,0,0
+1,1146,categories Technology,heylink.me,0.0,0.0,0,0,0
+1,1147,categories News & Media,cbc.ca,0.0,0.0,0,0,0
+1,1148,categories Ecommerce,superhosting.bg,0.0,0.0,0,0,0
+1,1149,categories Technology,canonical.com,0.0,0.0,0,0,0
+1,1150,categories Content Servers,spotifycdn.com,0.0,0.0,0,0,0
+1,1151,categories Technology,recaptcha.net,0.0,0.0,0,0,0
+1,1152,categories Information Security,akismet.com,0.0,0.0,0,0,0
+1,1153,categories Business,ioam.de,0.0,0.0,0,0,0
+1,1154,categories Forums,redd.it,0.0,0.0,0,0,0
+1,1155,categories Business,sharethis.com,0.0,0.0,0,0,0
+1,1156,categories Content Servers,rackspaceclouddb.com,0.0,0.0,0,0,0
+1,1157,categories Login Screens,eyeota.net,0.0,0.0,0,0,0
+1,1158,categories Business,glance.net,0.0,0.0,0,0,0
+1,1159,categories Technology,adgrx.com,0.0,0.0,0,0,0
+1,1160,categories News & Media,onet.pl,0.0,0.0,0,0,0
+1,1161,categories Content Servers,samsungcloudsolution.net,0.0,0.0,0,0,0
+1,1162,categories Technology,synology.com,0.0,0.0,0,0,0
+1,1163,categories Webmail,mckinsey.com,0.0,0.0,0,0,0
+1,1164,categories Education,quizlet.com,0.0,0.0,0,0,0
+1,1165,categories Content Servers,dscw154.akamai.net,0.0,0.0,0,0,0
+1,1166,categories Content Servers,websitewelcome.com,0.0,0.0,0,0,0
+1,1167,categories Hobbies & Interests,ancestry.com,0.0,0.0,0,0,0
+1,1168,categories Content Servers,awsglobalaccelerator.com,0.0,0.0,0,0,0
+1,1169,categories Ecommerce,amazon.com.br,0.0,0.0,0,0,0
+1,1170,categories Business,onesignal.com,0.0,0.0,0,0,0
+1,1171,categories Advertisements,adroll.com,0.0,0.0,0,0,0
+1,1172,categories Shopping,skroutz.gr,0.0,0.0,0,0,0
+1,1173,categories Television,xfinity.com,0.0,0.0,0,0,0
+1,1174,categories Ecommerce,api.amazon.com,0.0,0.0,0,0,0
+1,1175,categories Search Engines,2gis.com,0.0,0.0,0,0,0
+1,1176,categories Search Engines,clients.google.com,0.0,0.0,0,0,0
+1,1177,categories Content Servers,postrelease.com,0.0,0.0,0,0,0
+1,1178,categories Education,instructure.com,0.0,0.0,0,0,0
+1,1179,categories Content Servers,firebaselogging-pa.googleapis.com,0.0,0.0,0,0,0
+1,1180,categories Advertisements,cm.g.doubleclick.net,0.0,0.0,0,0,0
+1,1181,categories Content Servers,android.clients.google.com,0.0,0.0,0,0,0
+1,1182,categories Business,flurry.com,0.0,0.0,0,0,0
+1,1183,categories Content Servers,serving-sys.com,0.0,0.0,0,0,0
+1,1184,categories Content Servers,tiqcdn.com,0.0,0.0,0,0,0
+1,1185,categories Technology,elb.amazonaws.com,0.0,0.0,0,0,0
+1,1186,categories Business,innovid.com,0.0,0.0,0,0,0
+1,1187,categories Business,notamedia.ru,0.0,0.0,0,0,0
+1,1188,categories Content Servers,c.bing.com,0.0,0.0,0,0,0
+1,1189,categories News & Media,corriere.it,0.0,0.0,0,0,0
+1,1190,categories Technology,cookiedatabase.org,0.0,0.0,0,0,0
+1,1191,categories Business,shipt.com,0.0,0.0,0,0,0
+1,1192,categories Newly Seen Domains,cachenow.net,0.0,0.0,0,0,0
+1,1193,categories News & Media,elmundo.es,0.0,0.0,0,0,0
+1,1194,categories News & Media,apnews.com,0.0,0.0,0,0,0
+1,1195,categories Parked & For Sale Domains,mmcdn.com,0.0,0.0,0,0,0
+1,1196,"categories Politics, Advocacy, and Government-Related",weforum.org,0.0,0.0,0,0,0
+1,1197,categories Content Servers,4dex.io,0.0,0.0,0,0,0
+1,1198,categories Webmail,mail.yahoo.com,0.0,0.0,0,0,0
+1,1199,categories Business,qwest.net,0.0,0.0,0,0,0
+1,1200,categories Information Technology,spectrum.com,0.0,0.0,0,0,0
+1,1201,categories Content Servers,aiv-delivery.net,0.0,0.0,0,0,0
+1,1202,categories Content Servers,redditstatic.com,0.0,0.0,0,0,0
+1,1203,categories News & Media,wp.pl,0.0,0.0,0,0,0
+1,1204,categories Sports,si.com,0.0,0.0,0,0,0
+1,1205,categories Clothing,asos.com,0.0,0.0,0,0,0
+1,1206,categories Personal Blogs,pikabu.ru,0.0,0.0,0,0,0
+1,1207,categories Ecommerce,bol.com,0.0,0.0,0,0,0
+1,1208,categories Business,tynt.com,0.0,0.0,0,0,0
+1,1209,categories Dating & Relationships,bumble.com,0.0,0.0,0,0,0
+1,1210,categories New Domains,aa-rt.sharepoint.com,0.0,0.0,0,0,0
+1,1211,categories Education,arxiv.org,0.0,0.0,0,0,0
+1,1212,categories Redirect,eepurl.com,0.0,0.0,0,0,0
+1,1213,categories Search Engines,withgoogle.com,0.0,0.0,0,0,0
+1,1214,categories Technology,pusher.com,0.0,0.0,0,0,0
+1,1215,categories Business,ib.adnxs.com,0.0,0.0,0,0,0
+1,1216,categories Information Technology,doh.opendns.com,0.0,0.0,0,0,0
+1,1217,categories Economy & Finance,marketwatch.com,0.0,0.0,0,0,0
+1,1218,categories P2P,utorrent.com,0.0,0.0,0,0,0
+1,1219,categories Health & Fitness,psychologytoday.com,0.0,0.0,0,0,0
+1,1220,categories Content Servers,twitchcdn.net,0.0,0.0,0,0,0
+1,1221,categories Business,doubleclick.com,0.0,0.0,0,0,0
+1,1222,categories Gaming,epicgames.dev,0.0,0.0,0,0,0
+1,1223,categories Video Streaming,newyorker.com,0.0,0.0,0,0,0
+1,1224,categories Real Estate,pik.ru,0.0,0.0,0,0,0
+1,1225,categories Unreachable,dbankcloud.ru,0.0,0.0,0,0,0
+1,1226,categories Audio Streaming,www.spotify.com,0.0,0.0,0,0,0
+1,1227,categories Arts,pixiv.net,0.0,0.0,0,0,0
+1,1228,categories News & Media,vice.com,0.0,0.0,0,0,0
+1,1229,categories News & Media,francetvinfo.fr,0.0,0.0,0,0,0
+1,1230,categories Technology,ubnt.com,0.0,0.0,0,0,0
+1,1231,categories News & Media,interia.pl,0.0,0.0,0,0,0
+1,1232,categories Photography,pexels.com,0.0,0.0,0,0,0
+1,1233,categories Technology,avira.com,0.0,0.0,0,0,0
+1,1234,categories Magazines,fortune.com,0.0,0.0,0,0,0
+1,1235,categories Education,classlink.com,0.0,0.0,0,0,0
+1,1236,categories Content Servers,socdm.com,0.0,0.0,0,0,0
+1,1237,categories Search Engines,th.bing.com,0.0,0.0,0,0,0
+1,1238,categories Education,plos.org,0.0,0.0,0,0,0
+1,1239,categories Gaming,kahoot.it,0.0,0.0,0,0,0
+1,1240,categories Technology,support.mozilla.org,0.0,0.0,0,0,0
+1,1241,categories Business,chartbeat.com,0.0,0.0,0,0,0
+1,1242,categories Ecommerce,amazon.com.au,0.0,0.0,0,0,0
+1,1243,categories Ecommerce,flipkart.com,0.0,0.0,0,0,0
+1,1244,categories Content Servers,vkuser.net,0.0,0.0,0,0,0
+1,1245,categories Information Security,truste.com,0.0,0.0,0,0,0
+1,1246,categories Movies,plex.tv,0.0,0.0,0,0,0
+1,1247,categories Content Servers,configuration.apple.com,0.0,0.0,0,0,0
+1,1248,categories Business,vidazoo.com,0.0,0.0,0,0,0
+1,1249,categories Business,atlassian.net,0.0,0.0,0,0,0
+1,1250,categories Economy & Finance,creditkarma.com,0.0,0.0,0,0,0
+1,1251,categories Education,chegg.com,0.0,0.0,0,0,0
+1,1252,categories Business,split.io,0.0,0.0,0,0,0
+1,1253,categories Information Technology,gsp85-ssl.ls.apple.com,0.0,0.0,0,0,0
+1,1254,categories Content Servers,byteoversea.com,0.0,0.0,0,0,0
+1,1255,categories Information Security,trustarc.com,0.0,0.0,0,0,0
+1,1256,categories Economy & Finance,allianz.com,0.0,0.0,0,0,0
+1,1257,categories Photography,dribbble.com,0.0,0.0,0,0,0
+1,1258,categories Economy & Finance,finance.yahoo.com,0.0,0.0,0,0,0
+1,1259,categories Newly Seen Domains,mosmedzdrav.ru,0.0,0.0,0,0,0
+1,1260,categories Coupons,agoda.com,0.0,0.0,0,0,0
+1,1261,categories News & Media,mashable.com,0.0,0.0,0,0,0
+1,1262,categories Fashion,trendyol.com,0.0,0.0,0,0,0
+1,1263,categories Education,openstreetmap.org,0.0,0.0,0,0,0
+1,1264,categories Business,geo.prod.do.dsp.mp.microsoft.com,0.0,0.0,0,0,0
+1,1265,categories Auctions & Marketplaces,olx.ua,0.0,0.0,0,0,0
+1,1266,categories Educational Institutions,yale.edu,0.0,0.0,0,0,0
+1,1267,categories Pornography,spankbang.com,0.0,0.0,0,0,0
+1,1268,categories Education,mdpi.com,0.0,0.0,0,0,0
+1,1269,categories Educational Institutions,psu.edu,0.0,0.0,0,0,0
+1,1270,categories Pornography,highwebmedia.com,0.0,0.0,0,0,0
+1,1271,categories Information Technology,grserver.gr,0.0,0.0,0,0,0
+1,1272,categories Information Technology,online.net,0.0,0.0,0,0,0
+1,1273,categories Video Streaming,nicovideo.jp,0.0,0.0,0,0,0
+1,1274,categories Technology,ripn.net,0.0,0.0,0,0,0
+1,1275,categories Business,youronlinechoices.com,0.0,0.0,0,0,0
+1,1276,categories Content Servers,osi.office.net,0.0,0.0,0,0,0
+1,1277,"categories Politics, Advocacy, and Government-Related",www.gov.br,0.0,0.0,0,0,0
+1,1278,categories Personal Blogs,1.bp.blogspot.com,0.0,0.0,0,0,0
+1,1279,categories Hobbies & Interests,chess.com,0.0,0.0,0,0,0
+1,1280,categories Information Technology,alidns.com,0.0,0.0,0,0,0
+1,1281,categories Coupons,joinhoney.com,0.0,0.0,0,0,0
+1,1282,categories Content Servers,youtubei.googleapis.com,0.0,0.0,0,0,0
+1,1283,categories Information Security,360safe.com,0.0,0.0,0,0,0
+1,1284,categories Video Streaming,redditmedia.com,0.0,0.0,0,0,0
+1,1285,"categories Politics, Advocacy, and Government-Related",ecosia.org,0.0,0.0,0,0,0
+1,1286,categories Content Servers,bam.nr-data.net,0.0,0.0,0,0,0
+1,1287,categories Business,springserve.com,0.0,0.0,0,0,0
+1,1288,categories News & Media,idnes.cz,0.0,0.0,0,0,0
+1,1289,categories Information Technology,webhostbox.net,0.0,0.0,0,0,0
+1,1290,categories Business,constantcontact.com,0.0,0.0,0,0,0
+1,1291,categories Video Streaming,marca.com,0.0,0.0,0,0,0
+1,1292,categories Content Servers,dnsv1.com,0.0,0.0,0,0,0
+1,1293,categories News & Media,166.com,0.0,0.0,0,0,0
+1,1294,categories Content Servers,mozaws.net,0.0,0.0,0,0,0
+1,1295,categories Auctions & Marketplaces,olx.com.br,0.0,0.0,0,0,0
+1,1296,categories Newly Seen Domains,share-dns.com,0.0,0.0,0,0,0
+1,1297,categories P2P,surfshark.com,0.0,0.0,0,0,0
+1,1298,categories Technology,service-now.com,0.0,0.0,0,0,0
+1,1299,categories Economy & Finance,moneycontrol.com,0.0,0.0,0,0,0
+1,1300,categories Newly Seen Domains,character.ai,0.0,0.0,0,0,0
+1,1301,categories Business,adcolony.com,0.0,0.0,0,0,0
+1,1302,categories File Sharing,beget.com,0.0,0.0,0,0,0
+1,1303,categories Instant Messengers,g.whatsapp.net,0.0,0.0,0,0,0
+1,1304,categories Content Servers,cdnhwc2.com,0.0,0.0,0,0,0
+1,1305,categories Content Servers,dropboxapi.com,0.0,0.0,0,0,0
+1,1306,categories Newly Seen Domains,kwai-pro.com,0.0,0.0,0,0,0
+1,1307,categories Business,ilovepdf.com,0.0,0.0,0,0,0
+1,1308,categories Information Technology,no-ip.com,0.0,0.0,0,0,0
+1,1309,categories News & Media,welt.de,0.0,0.0,0,0,0
+1,1310,categories Technology,vivo.com.cn,0.0,0.0,0,0,0
+1,1311,categories Content Servers,lgtvsdp.com,0.0,0.0,0,0,0
+1,1312,categories Content Servers,rackcdn.com,0.0,0.0,0,0,0
+1,1313,categories Business,rayjump.com,0.0,0.0,0,0,0
+1,1314,categories Home & Garden,samsungelectronics.com,0.0,0.0,0,0,0
+1,1315,categories Information Technology,perfectdomain.com,0.0,0.0,0,0,0
+1,1316,categories Search Engines,google.ru,0.0,0.0,0,0,0
+1,1317,categories Instant Messengers,asm.skype.com,0.0,0.0,0,0,0
+1,1318,categories Business,churnzero.net,0.0,0.0,0,0,0
+1,1319,categories Content Servers,colossusssp.com,0.0,0.0,0,0,0
+1,1320,categories Content Servers,s-onetag.com,0.0,0.0,0,0,0
+1,1321,categories Educational Institutions,ox.ac.uk,0.0,0.0,0,0,0
+1,1322,categories News & Media,abc.net.au,0.0,0.0,0,0,0
+1,1323,categories Content Servers,samsungcloud.tv,0.0,0.0,0,0,0
+1,1324,categories Education,about.com,0.0,0.0,0,0,0
+1,1325,"categories Politics, Advocacy, and Government-Related",tayninh.gov.vn,0.0,0.0,0,0,0
+1,1326,categories Educational Institutions,ucla.edu,0.0,0.0,0,0,0
+1,1327,categories Business,dynamicyield.com,0.0,0.0,0,0,0
+1,1328,categories Auctions & Marketplaces,mercadolibre.com.ar,0.0,0.0,0,0,0
+1,1329,categories Information Technology,beget.ru,0.0,0.0,0,0,0
+1,1330,categories File Sharing,onedrive.com,0.0,0.0,0,0,0
+1,1331,categories Technology,bitdefender.net,0.0,0.0,0,0,0
+1,1332,categories Ecommerce,otto.de,0.0,0.0,0,0,0
+1,1333,categories Business,zoho.com,0.0,0.0,0,0,0
+1,1334,categories Advertisements,static.doubleclick.net,0.0,0.0,0,0,0
+1,1335,categories Economy & Finance,vtb.ru,0.0,0.0,0,0,0
+1,1336,categories News & Media,livedoor.jp,0.0,0.0,0,0,0
+1,1337,categories Sports,as.com,0.0,0.0,0,0,0
+1,1338,categories News & Media,n-tv.de,0.0,0.0,0,0,0
+1,1339,categories Ecommerce,tokopedia.com,0.0,0.0,0,0,0
+1,1340,categories Business,permutive.com,0.0,0.0,0,0,0
+1,1341,categories Magazines,newsweek.com,0.0,0.0,0,0,0
+1,1342,categories Shopping,gsmarena.com,0.0,0.0,0,0,0
+1,1343,categories Gaming,nexusmods.com,0.0,0.0,0,0,0
+1,1344,categories Video Streaming,screenrant.com,0.0,0.0,0,0,0
+1,1345,categories News & Media,nba.com,0.0,0.0,0,0,0
+1,1346,"categories Politics, Advocacy, and Government-Related",gofundme.com,0.0,0.0,0,0,0
+1,1347,categories Content Servers,id.google.com,0.0,0.0,0,0,0
+1,1348,categories Content Servers,adnxs-simple.com,0.0,0.0,0,0,0
+1,1349,categories Technology,plesk.com,0.0,0.0,0,0,0
+1,1350,categories Personal Blogs,ameba.jp,0.0,0.0,0,0,0
+1,1351,categories News & Media,www.yahoo.com,0.0,0.0,0,0,0
+1,1352,categories Content Servers,topdns.me,0.0,0.0,0,0,0
+1,1353,categories Educational Institutions,upenn.edu,0.0,0.0,0,0,0
+1,1354,categories Educational Institutions,uchi.ru,0.0,0.0,0,0,0
+1,1355,categories News & Media,infobae.com,0.0,0.0,0,0,0
+1,1356,categories Technology,polyfill.io,0.0,0.0,0,0,0
+1,1357,categories Instant Messengers,messenger.com,0.0,0.0,0,0,0
+1,1358,categories Video Streaming,goal.com,0.0,0.0,0,0,0
+1,1359,categories Education,quizizz.com,0.0,0.0,0,0,0
+1,1360,categories Social Networks,graph.instagram.com,0.0,0.0,0,0,0
+1,1361,categories News & Media,ouest-france.fr,0.0,0.0,0,0,0
+1,1362,categories Technology,linode.com,0.0,0.0,0,0,0
+1,1363,categories Search Engines,l.google.com,0.0,0.0,0,0,0
+1,1364,categories Webmail,protection.outlook.com,0.0,0.0,0,0,0
+1,1365,categories News & Media,sportskeeda.com,0.0,0.0,0,0,0
+1,1366,categories Ecommerce,oculus.com,0.0,0.0,0,0,0
+1,1367,categories Ecommerce,store.steampowered.com,0.0,0.0,0,0,0
+1,1368,categories Professional Networking,xing.com,0.0,0.0,0,0,0
+1,1369,categories Ecommerce,amazon.com.mx,0.0,0.0,0,0,0
+1,1370,categories Translator,reverso.net,0.0,0.0,0,0,0
+1,1371,categories Ecommerce,mercadolivre.com.br,0.0,0.0,0,0,0
+1,1372,categories Newly Seen Domains,ui-dns.com,0.0,0.0,0,0,0
+1,1373,categories News & Media,sciencedaily.com,0.0,0.0,0,0,0
+1,1374,categories Education,biomedcentral.com,0.0,0.0,0,0,0
+1,1375,categories News & Media,bfmtv.com,0.0,0.0,0,0,0
+1,1376,categories Content Servers,sc-static.net,0.0,0.0,0,0,0
+1,1377,categories Business,ingest.sentry.io,0.0,0.0,0,0,0
+1,1378,categories Content Servers,mwbsys.com,0.0,0.0,0,0,0
+1,1379,categories Vehicles,mobile.de,0.0,0.0,0,0,0
+1,1380,categories Content Servers,bytefcdn.com,0.0,0.0,0,0,0
+1,1381,categories Content Servers,me.gvt1.com,0.0,0.0,0,0,0
+1,1382,categories News & Media,docomo.ne.jp,0.0,0.0,0,0,0
+1,1383,categories Education,dnevnik.ru,0.0,0.0,0,0,0
+1,1384,categories Business,airslate.com,0.0,0.0,0,0,0
+1,1385,categories News & Media,clarin.com,0.0,0.0,0,0,0
+1,1386,categories Business,mparticle.com,0.0,0.0,0,0,0
+1,1387,categories Information Technology,splashtop.com,0.0,0.0,0,0,0
+1,1388,categories News & Media,nu.nl,0.0,0.0,0,0,0
+1,1389,categories Business,meethue.com,0.0,0.0,0,0,0
+1,1390,categories Content Servers,edgedl.me.gvt1.com,0.0,0.0,0,0,0
+1,1391,categories Information Technology,lwsdns.com,0.0,0.0,0,0,0
+1,1392,categories Information Technology,tencent.com,0.0,0.0,0,0,0
+1,1393,categories Movies,cloud.netflix.com,0.0,0.0,0,0,0
+1,1394,categories Education,ja.wikipedia.org,0.0,0.0,0,0,0
+1,1395,categories Movies,hotstar.com,0.0,0.0,0,0,0
+1,1396,categories Gaming,poki.com,0.0,0.0,0,0,0
+1,1397,categories Gaming,pvp.net,0.0,0.0,0,0,0
+1,1398,categories Movies,prod.cloud.netflix.com,0.0,0.0,0,0,0
+1,1399,categories Content Servers,android.googleapis.com,0.0,0.0,0,0,0
+1,1400,categories Education,wordreference.com,0.0,0.0,0,0,0
+1,1401,categories Business,b.tlu.dl.delivery.mp.microsoft.com,0.0,0.0,0,0,0
+1,1402,categories Gaming,curseforge.com,0.0,0.0,0,0,0
+1,1403,categories News & Media,lanacion.com.ar,0.0,0.0,0,0,0
+1,1404,categories Education,uci.edu,0.0,0.0,0,0,0
+1,1405,categories Video Streaming,fastcompany.com,0.0,0.0,0,0,0
+1,1406,categories Business,msedge.b.tlu.dl.delivery.mp.microsoft.com,0.0,0.0,0,0,0
+1,1407,categories Pornography,fetlife.com,0.0,0.0,0,0,0
+1,1408,categories Photography,www.instagram.com,0.0,0.0,0,0,0
+1,1409,categories News & Media,gismeteo.ru,0.0,0.0,0,0,0
+1,1410,categories Technology,vivo.com,0.0,0.0,0,0,0
+1,1411,categories Information Technology,typepad.com,0.0,0.0,0,0,0
+1,1412,categories Auctions & Marketplaces,olx.pl,0.0,0.0,0,0,0
+1,1413,categories Information Technology,watchguard.com,0.0,0.0,0,0,0
+1,1414,categories Education,frontiersin.org,0.0,0.0,0,0,0
+1,1415,categories Gaming,apkpure.com,0.0,0.0,0,0,0
+1,1416,categories Information Technology,gcdn.co,0.0,0.0,0,0,0
+1,1417,categories News & Media,analytics.yahoo.com,0.0,0.0,0,0,0
+1,1418,categories Video Streaming,aparat.com,0.0,0.0,0,0,0
+1,1419,categories Education,en.m.wikipedia.org,0.0,0.0,0,0,0
+1,1420,categories Economy & Finance,caixa.gov.br,0.0,0.0,0,0,0
+1,1421,categories Questionable Activities,quillbot.com,0.0,0.0,0,0,0
+1,1422,categories Auctions & Marketplaces,kleinanzeigen.de,0.0,0.0,0,0,0
+1,1423,categories Video Streaming,ad.nl,0.0,0.0,0,0,0
+1,1424,categories Education,bmj.com,0.0,0.0,0,0,0
+1,1425,categories Education,launchpad.classlink.com,0.0,0.0,0,0,0
+1,1426,categories Advertisements,ade.googlesyndication.com,0.0,0.0,0,0,0
+1,1427,categories Newly Seen Domains,beelinegprs.ru,0.0,0.0,0,0,0
+1,1428,categories Audio Streaming,fb.watch,0.0,0.0,0,0,0
+1,1429,categories Technology,tealiumiq.com,0.0,0.0,0,0,0
+1,1430,categories Search Engines,google.com.au,0.0,0.0,0,0,0
+1,1431,categories Video Streaming,20minutos.es,0.0,0.0,0,0,0
+1,1432,categories News & Media,terra.com.br,0.0,0.0,0,0,0
+1,1433,categories Content Servers,dbankcdn.com,0.0,0.0,0,0,0
+1,1434,categories Gambling,bet365.com,0.0,0.0,0,0,0
+1,1435,categories Newly Seen Domains,i18n-pglstatp.com,0.0,0.0,0,0,0
+1,1436,categories Technology,nakheelteam.cc,0.0,0.0,0,0,0
+1,1437,categories Technology,arin.net,0.0,0.0,0,0,0
+1,1438,categories Hobbies & Interests,dafont.com,0.0,0.0,0,0,0
+1,1439,categories Education,myapps.classlink.com,0.0,0.0,0,0,0
+1,1440,categories News & Media,india.com,0.0,0.0,0,0,0
+1,1441,categories News & Media,telegraaf.nl,0.0,0.0,0,0,0
+1,1442,categories Technology,www.adobe.com,0.0,0.0,0,0,0
+1,1443,"categories Politics, Advocacy, and Government-Related",apa.org,0.0,0.0,0,0,0
+1,1444,categories Auctions & Marketplaces,leboncoin.fr,0.0,0.0,0,0,0
+1,1445,categories Education,code.org,0.0,0.0,0,0,0
+1,1446,categories Search Engines,google.nl,0.0,0.0,0,0,0
+1,1447,categories Content Servers,dscx.akamaiedge.net,0.0,0.0,0,0,0
+1,1448,categories Business,n-able.com,0.0,0.0,0,0,0
+1,1449,categories Education,archiveofourown.org,0.0,0.0,0,0,0
+1,1450,categories Pornography,dmm.co.jp,0.0,0.0,0,0,0
+1,1451,categories Content Servers,cspserver.net,0.0,0.0,0,0,0
+1,1452,categories Ecommerce,coupang.com,0.0,0.0,0,0,0
+1,1453,categories Technology,trello.com,0.0,0.0,0,0,0
+1,1454,categories Content Servers,msftauth.net,0.0,0.0,0,0,0
+1,1455,categories Movies,www.netflix.com,0.0,0.0,0,0,0
+1,1456,categories News & Media,vox.com,0.0,0.0,0,0,0
+1,1457,categories Educational Institutions,umn.edu,0.0,0.0,0,0,0
+1,1458,categories News & Media,udn.com,0.0,0.0,0,0,0
+1,1459,categories Education,ixl.com,0.0,0.0,0,0,0
+1,1460,categories Technology,cxense.com,0.0,0.0,0,0,0
+1,1461,categories Technology,meet.google.com,0.0,0.0,0,0,0
+1,1462,categories Advertisements,tsyndicate.com,0.0,0.0,0,0,0
+1,1463,categories Internet Phone & VOIP,twilio.com,0.0,0.0,0,0,0
+1,1464,categories Content Servers,orderbox-dns.com,0.0,0.0,0,0,0
+1,1465,categories Technology,myhostadmin.net,0.0,0.0,0,0,0
+1,1466,categories Real Estate,realtor.com,0.0,0.0,0,0,0
+1,1467,categories Gambling,flashscore.com,0.0,0.0,0,0,0
+1,1468,categories Content Servers,svc.ms,0.0,0.0,0,0,0
+1,1469,categories Education,readthedocs.io,0.0,0.0,0,0,0
+1,1470,categories News & Media,zdnet.com,0.0,0.0,0,0,0
+1,1471,categories Internet Phone & VOIP,agora.io,0.0,0.0,0,0,0
+1,1472,categories Business,usps.com,0.0,0.0,0,0,0
+1,1473,categories Newly Seen Domains,mmechocaptiveportal.com,0.0,0.0,0,0,0
+1,1474,categories Pornography,tnaflix.com,0.0,0.0,0,0,0
+1,1475,categories Newly Seen Domains,tiktokv.us,0.0,0.0,0,0,0
+1,1476,categories Economy & Finance,tinkoff.ru,0.0,0.0,0,0,0
+1,1477,categories News & Media,ynet.co.il,0.0,0.0,0,0,0
+1,1478,categories New Domains,global.aa-rt.sharepoint.com,0.0,0.0,0,0,0
+1,1479,categories Video Streaming,hurriyet.com.tr,0.0,0.0,0,0,0
+1,1480,categories Sports,livescore.com,0.0,0.0,0,0,0
+1,1481,categories Economy & Finance,www.paypal.com,0.0,0.0,0,0,0
+1,1482,categories Shopping,tabelog.com,0.0,0.0,0,0,0
+1,1483,categories Ecommerce,alipaydns.com,0.0,0.0,0,0,0
+1,1484,categories Fashion,garmin.com,0.0,0.0,0,0,0
+1,1485,categories News & Media,vg.no,0.0,0.0,0,0,0
+1,1486,categories Content Servers,footprint.net,0.0,0.0,0,0,0
+1,1487,categories New Domains,gr.global.aa-rt.sharepoint.com,0.0,0.0,0,0,0
+1,1488,categories Video Streaming,gazzetta.it,0.0,0.0,0,0,0
+1,1489,categories News & Media,detik.com,0.0,0.0,0,0,0
+1,1490,categories Education,coursehero.com,0.0,0.0,0,0,0
+1,1491,categories Auctions & Marketplaces,sahibinden.com,0.0,0.0,0,0,0
+1,1492,categories Photography,in.pinterest.com,0.0,0.0,0,0,0
+1,1493,categories Pornography,youporn.com,0.0,0.0,0,0,0
+1,1494,categories Business,us-prod.asyncgw.teams.microsoft.com,0.0,0.0,0,0,0
+1,1495,categories Auctions & Marketplaces,finn.no,0.0,0.0,0,0,0
+1,1496,categories Education,jstor.org,0.0,0.0,0,0,0
+1,1497,categories Business,us-v10c.events.data.microsoft.com,0.0,0.0,0,0,0
+1,1498,categories Television,sky.com,0.0,0.0,0,0,0
+1,1499,categories Ecommerce,argos.co.uk,0.0,0.0,0,0,0
+1,1500,categories Travel,expedia.com,0.0,0.0,0,0,0
+1,1501,categories Personal Blogs,blog.livedoor.jp,0.0,0.0,0,0,0
+1,1502,categories Technology,datadome.co,0.0,0.0,0,0,0
+1,1503,categories Video Streaming,espncricinfo.com,0.0,0.0,0,0,0
+1,1504,categories Religion,jw.org,0.0,0.0,0,0,0
+1,1505,categories Technology,wyzecam.com,0.0,0.0,0,0,0
+1,1506,categories News & Media,vnexpress.net,0.0,0.0,0,0,0
+1,1507,categories Business,data-edge.smartscreen.microsoft.com,0.0,0.0,0,0,0
+1,1508,categories Economy & Finance,americanexpress.com,0.0,0.0,0,0,0
+1,1509,categories Pornography,pornpics.com,0.0,0.0,0,0,0
+1,1510,categories News & Media,infoseek.co.jp,0.0,0.0,0,0,0
+1,1511,categories Pornography,boyfriendtv.com,0.0,0.0,0,0,0
+1,1512,categories Real Estate,rightmove.co.uk,0.0,0.0,0,0,0
+1,1513,categories News & Media,hinet.net,0.0,0.0,0,0,0
+1,1514,categories Newly Seen Domains,ttdns2.com,0.0,0.0,0,0,0
+1,1515,"categories Politics, Advocacy, and Government-Related",acesso.gov.br,0.0,0.0,0,0,0
+1,1516,categories Pornography,nhentai.net,0.0,0.0,0,0,0
+1,1517,categories Content Servers,xhcdn.com,0.0,0.0,0,0,0
+1,1518,categories Pornography,redtube.com,0.0,0.0,0,0,0
+1,1519,categories News & Media,livedoor.com,0.0,0.0,0,0,0
+1,1520,categories Content Servers,dropbox-dns.com,0.0,0.0,0,0,0
+1,1521,categories Social Networks,cookpad.com,0.0,0.0,0,0,0
+1,1522,categories Auctions & Marketplaces,vinted.fr,0.0,0.0,0,0,0
+1,1523,categories Pornography,rule34.xxx,0.0,0.0,0,0,0
+1,1524,categories Newly Seen Domains,or.kr,0.0,0.0,0,0,0
+1,1525,categories Pornography,faphouse.com,0.0,0.0,0,0,0
+1,1526,categories Ecommerce,magazineluiza.com.br,0.0,0.0,0,0,0
+1,1527,categories Technology,dyndns.org,0.0,0.0,0,0,0
+1,1528,categories News & Media,varzesh3.com,0.0,0.0,0,0,0
+1,1529,categories Content Servers,gsp-ssl.ls-apple.com.akadns.net,0.0,0.0,0,0,0
+1,1530,categories News & Media,hln.be,0.0,0.0,0,0,0
+1,1531,categories Information Technology,wpengine.com,0.0,0.0,0,0,0
+1,1532,categories Search Engines,www.baidu.com,0.0,0.0,0,0,0
+1,1533,categories File Sharing,www.dropbox.com,0.0,0.0,0,0,0
+1,1534,categories Education,classdojo.com,0.0,0.0,0,0,0
+1,1535,categories Technology,remove.bg,0.0,0.0,0,0,0
+1,1536,categories Pornography,xhamster.desi,0.0,0.0,0,0,0
+1,1537,categories Forums,furaffinity.net,0.0,0.0,0,0,0
+1,1538,categories Information Technology,verizon.com,0.0,0.0,0,0,0
+1,1539,categories Pornography,hitomi.la,0.0,0.0,0,0,0
+1,1540,categories Gaming,lichess.org,0.0,0.0,0,0,0
+1,1541,categories Business,datto.com,0.0,0.0,0,0,0
+1,1542,categories Pornography,rule34video.com,0.0,0.0,0,0,0
+1,1543,categories Technology,kontur.ru,0.0,0.0,0,0,0
+1,1544,categories Auctions & Marketplaces,mercadolibre.com.mx,0.0,0.0,0,0,0
+1,1545,categories Ecommerce,elcorteingles.es,0.0,0.0,0,0,0
+1,1546,categories Content Servers,jtvnw.net,0.0,0.0,0,0,0
+1,1547,categories Advertisements,login.yahoo.com,0.0,0.0,0,0,0
+1,1548,categories Content Servers,e10499.dsce9.akamaiedge.net,0.0,0.0,0,0,0
+1,1549,categories Auctions & Marketplaces,indiamart.com,0.0,0.0,0,0,0
+1,1550,categories Business,serasa.com.br,0.0,0.0,0,0,0
+1,1551,categories Pornography,missav.com,0.0,0.0,0,0,0
+1,1552,categories Information Security,symantec.com,0.0,0.0,0,0,0
+1,1553,categories Auctions & Marketplaces,marktplaats.nl,0.0,0.0,0,0,0
+1,1554,categories Economy & Finance,irs.gov,0.0,0.0,0,0,0
+1,1555,categories News & Media,tribunnews.com,0.0,0.0,0,0,0
+1,1556,categories Ecommerce,amazon.com.tr,0.0,0.0,0,0,0
+1,1557,categories Content Servers,betano.com,0.0,0.0,0,0,0
+1,1558,categories Arts,www.canva.com,0.0,0.0,0,0,0
+1,1559,categories News & Media,timesofindia.com,0.0,0.0,0,0,0
+1,1560,categories Education,fanfiction.net,0.0,0.0,0,0,0
+1,1561,categories Education,blooket.com,0.0,0.0,0,0,0
+1,1562,categories Content Servers,adobedc.net,0.0,0.0,0,0,0
+1,1563,categories Gaming,nintendo.com,0.0,0.0,0,0,0
+1,1564,categories Social Networks,meetup.com,0.0,0.0,0,0,0
+1,1565,categories Search Engines,www.google.co.uk,0.0,0.0,0,0,0
+1,1566,categories Pornography,txxx.com,0.0,0.0,0,0,0
+1,1567,categories Video Streaming,xinhuanet.com,0.0,0.0,0,0,0
+1,1568,categories Search Engines,search.yahoo.com,0.0,0.0,0,0,0
+1,1569,categories Auctions & Marketplaces,ebay.it,0.0,0.0,0,0,0
+1,1570,categories Science,sciencemag.org,0.0,0.0,0,0,0
+1,1571,categories Newly Seen Domains,avsxappcaptiveportal.com,0.0,0.0,0,0,0
+1,1572,categories Content Servers,nleditor.osi.office.net,0.0,0.0,0,0,0
+1,1573,categories Content Servers,oauthaccountmanager.googleapis.com,0.0,0.0,0,0,0
+1,1574,categories Gaming,ubi.com,0.0,0.0,0,0,0
+1,1575,categories Newly Seen Domains,squarespacedns.com,0.0,0.0,0,0,0
+1,1576,categories Auctions & Marketplaces,ria.com,0.0,0.0,0,0,0
+1,1577,categories Information Technology,kt-prod.ess.apple.com,0.0,0.0,0,0,0
+1,1578,categories News & Media,ixbt.com,0.0,0.0,0,0,0
+1,1579,categories Food & Drink,hotpepper.jp,0.0,0.0,0,0,0
+1,1580,categories Content Servers,play-fe.googleapis.com,0.0,0.0,0,0,0
+1,1581,categories Forums,www.reddit.com,0.0,0.0,0,0,0
+1,1582,categories Education,studocu.com,0.0,0.0,0,0,0
+1,1583,categories News & Media,cricbuzz.com,0.0,0.0,0,0,0
+1,1584,categories News & Media,mundodeportivo.com,0.0,0.0,0,0,0
+1,1585,categories Photography,www.pinterest.com,0.0,0.0,0,0,0
+1,1586,categories Technology,dashlane.com,0.0,0.0,0,0,0
+1,1587,categories Educational Institutions,wisc.edu,0.0,0.0,0,0,0
+1,1588,categories Business,msg.teams.microsoft.com,0.0,0.0,0,0,0
+1,1589,categories Ecommerce,cdiscount.com,0.0,0.0,0,0,0
+1,1590,categories Education,zhihu.com,0.0,0.0,0,0,0
+1,1591,categories Ecommerce,myntra.com,0.0,0.0,0,0,0
+1,1592,categories Ecommerce,hepsiburada.com,0.0,0.0,0,0,0
+1,1593,categories Gaming,my.com,0.0,0.0,0,0,0
+1,1594,categories Pornography,phncdn.com,0.0,0.0,0,0,0
+1,1595,categories Information Technology,algolia.net,0.0,0.0,0,0,0
+1,1596,categories Economy & Finance,credit-agricole.fr,0.0,0.0,0,0,0
+1,1597,categories News & Media,milliyet.com.tr,0.0,0.0,0,0,0
+1,1598,"categories Politics, Advocacy, and Government-Related",spamhaus.org,0.0,0.0,0,0,0
+1,1599,categories News & Media,donga.com,0.0,0.0,0,0,0
+1,1600,categories Pornography,sex.com,0.0,0.0,0,0,0
+1,1601,categories Business,ng.msg.teams.microsoft.com,0.0,0.0,0,0,0
+1,1602,categories News & Media,auone.jp,0.0,0.0,0,0,0
+1,1603,categories Information Technology,ddns.net,0.0,0.0,0,0,0
+1,1604,categories Technology,chat.openai.com,0.0,0.0,0,0,0
+1,1605,categories Newly Seen Domains,go.id,0.0,0.0,0,0,0
+1,1606,categories Photography,tplinkcloud.com,0.0,0.0,0,0,0
+1,1607,categories Education,namu.wiki,0.0,0.0,0,0,0
+1,1608,categories Travel,latamairlines.com,0.0,0.0,0,0,0
+1,1609,categories Home & Garden,www.samsung.com,0.0,0.0,0,0,0
+1,1610,categories Information Security,ocsp.entrust.net,0.0,0.0,0,0,0
+1,1611,categories Travel,makemytrip.com,0.0,0.0,0,0,0
+1,1612,categories Social Networks,dgw.c10r.facebook.com,0.0,0.0,0,0,0
+1,1613,categories Dating & Relationships,tabor.ru,0.0,0.0,0,0,0
+1,1614,categories Real Estate,idealista.com,0.0,0.0,0,0,0
+1,1615,categories Information Technology,dondominio.com,0.0,0.0,0,0,0
+1,1616,categories Education,byjus.com,0.0,0.0,0,0,0
+1,1617,categories Newly Seen Domains,www.temu.com,0.0,0.0,0,0,0
+1,1618,categories Video Streaming,www.tiktok.com,0.0,0.0,0,0,0
+1,1619,categories Content Servers,s0.2mdn.net,0.0,0.0,0,0,0
+1,1620,categories Ecommerce,digikala.com,0.0,0.0,0,0,0
+1,1621,categories Advertisements,s.amazon-adsystem.com,0.0,0.0,0,0,0
+1,1622,categories Newly Seen Domains,strpst.com,0.0,0.0,0,0,0
+1,1623,categories Technology,ntppool.org,0.0,0.0,0,0,0
+1,1624,categories News & Media,tvn24.pl,0.0,0.0,0,0,0
+1,1625,categories Education,kundelik.kz,0.0,0.0,0,0,0
+1,1626,categories News & Media,g1.globo.com,0.0,0.0,0,0,0
+1,1627,categories Pornography,dlsite.com,0.0,0.0,0,0,0
+1,1628,categories News & Media,www.nytimes.com,0.0,0.0,0,0,0
+1,1629,categories Business,cdp.microsoft.com,0.0,0.0,0,0,0
+1,1630,categories Gaming,xbox.com,0.0,0.0,0,0,0
+1,1631,categories Gaming,coolmathgames.com,0.0,0.0,0,0,0
+1,1632,categories Forums,pantip.com,0.0,0.0,0,0,0
+1,1633,categories News & Media,dagbladet.no,0.0,0.0,0,0,0
+1,1634,categories News & Media,mynet.com,0.0,0.0,0,0,0
+1,1635,categories Education,acronis.com,0.0,0.0,0,0,0
+1,1636,categories Gaming,mbga.jp,0.0,0.0,0,0,0
+1,1637,categories News & Media,pewresearch.org,0.0,0.0,0,0,0
+1,1638,categories Newly Seen Domains,kemono.su,0.0,0.0,0,0,0
+1,1639,categories Gaming,hltv.org,0.0,0.0,0,0,0
+1,1640,categories Movies,www.imdb.com,0.0,0.0,0,0,0
+1,1641,categories Content Servers,company-target.com,0.0,0.0,0,0,0
+1,1642,categories Economy & Finance,allianz.de,0.0,0.0,0,0,0
+1,1643,categories Pornography,imagefap.com,0.0,0.0,0,0,0
+1,1644,categories Search Engines,noodlemagazine.com,0.0,0.0,0,0,0
+1,1645,categories Business,api.cdp.microsoft.com,0.0,0.0,0,0,0
+1,1646,categories Auctions & Marketplaces,subito.it,0.0,0.0,0,0,0
+1,1647,categories Gaming,inven.co.kr,0.0,0.0,0,0,0
+1,1648,categories Education,coursera.org,0.0,0.0,0,0,0
+1,1649,categories Education,oreilly.com,0.0,0.0,0,0,0
+1,1650,categories Information Technology,fc2.com,0.0,0.0,0,0,0
+1,1651,categories Economy & Finance,funpay.com,0.0,0.0,0,0,0
+1,1652,categories Technology,cloud.com,0.0,0.0,0,0,0
+1,1653,categories Government,va.gov,0.0,0.0,0,0,0
+1,1654,"categories Politics, Advocacy, and Government-Related",roskazna.ru,0.0,0.0,0,0,0
+1,1655,categories Social Networks,i.instagram.com,0.0,0.0,0,0,0
+1,1656,categories News & Media,dcinside.com,0.0,0.0,0,0,0
+1,1657,categories Gaming,bilibili.tv,0.0,0.0,0,0,0
+1,1658,categories Gaming,futbin.com,0.0,0.0,0,0,0
+1,1659,categories Technology,samsungknox.com,0.0,0.0,0,0,0
+1,1660,categories News & Media,tsn.ua,0.0,0.0,0,0,0
+1,1661,categories Pornography,donmai.us,0.0,0.0,0,0,0
+1,1662,categories Business,msedge.api.cdp.microsoft.com,0.0,0.0,0,0,0
+1,1663,categories Forums,gelbooru.com,0.0,0.0,0,0,0
+1,1664,categories Content Servers,unifi-ai.com,0.0,0.0,0,0,0
+1,1665,categories Ecommerce,www.homedepot.com,0.0,0.0,0,0,0
+1,1666,categories Sports,fmkorea.com,0.0,0.0,0,0,0
+1,1667,categories Video Streaming,ilmessaggero.it,0.0,0.0,0,0,0
+1,1668,categories News & Media,dantri.com.vn,0.0,0.0,0,0,0
+1,1669,categories Business,amocrm.ru,0.0,0.0,0,0,0
+1,1670,categories Ecommerce,www.walmart.com,0.0,0.0,0,0,0
+1,1671,categories News & Media,ilmeteo.it,0.0,0.0,0,0,0
+1,1672,categories Pornography,youjizz.com,0.0,0.0,0,0,0
+1,1673,"categories Politics, Advocacy, and Government-Related",oecd.org,0.0,0.0,0,0,0
+1,1674,categories Information Technology,sedo.com,0.0,0.0,0,0,0
+1,1675,categories Pornography,xnxx-cdn.com,0.0,0.0,0,0,0
+1,1676,categories Information Technology,init-p01md.apple.com,0.0,0.0,0,0,0
+1,1677,categories News & Media,actu.fr,0.0,0.0,0,0,0
+1,1678,categories Pornography,xgroovy.com,0.0,0.0,0,0,0
+1,1679,categories Education,starfall.com,0.0,0.0,0,0,0
+1,1680,categories Ecommerce,emag.ro,0.0,0.0,0,0,0
+1,1681,categories Education,litnet.com,0.0,0.0,0,0,0
+1,1682,categories Economy & Finance,tagesschau.de,0.0,0.0,0,0,0
+1,1683,categories Video Streaming,www.espn.com,0.0,0.0,0,0,0
+1,1684,categories News & Media,haberler.com,0.0,0.0,0,0,0
+1,1685,categories News & Media,aljazeera.com,0.0,0.0,0,0,0
+1,1686,"categories Politics, Advocacy, and Government-Related",jusbrasil.com.br,0.0,0.0,0,0,0
+1,1687,categories Business,notion.so,0.0,0.0,0,0,0
+1,1688,categories Newly Seen Domains,ds2play.com,0.0,0.0,0,0,0
+1,1689,categories Newly Seen Domains,yts.mx,0.0,0.0,0,0,0
+1,1690,categories News & Media,sinoptik.ua,0.0,0.0,0,0,0
+1,1691,categories News & Media,dw.com,0.0,0.0,0,0,0
+1,1692,categories Gaming,aternos.org,0.0,0.0,0,0,0
+1,1693,categories Search Engines,www.google.de,0.0,0.0,0,0,0
+1,1694,categories Real Estate,redfin.com,0.0,0.0,0,0,0
+1,1695,categories Pornography,thisvid.com,0.0,0.0,0,0,0
+1,1696,categories Technology,smartthings.com,0.0,0.0,0,0,0
+1,1697,categories Newly Seen Domains,1024tera.com,0.0,0.0,0,0,0
+1,1698,categories Education,ficbook.net,0.0,0.0,0,0,0
+1,1699,categories Business,sun.com,0.0,0.0,0,0,0
+1,1700,categories Cartoons & Anime,jut.su,0.0,0.0,0,0,0
+1,1701,categories Ecommerce,zozo.jp,0.0,0.0,0,0,0
+1,1702,categories Gambling,nesine.com,0.0,0.0,0,0,0
+1,1703,categories Food & Drink,russianfood.com,0.0,0.0,0,0,0
+1,1704,categories Pornography,imhentai.xxx,0.0,0.0,0,0,0
+1,1705,categories Video Streaming,www.cnn.com,0.0,0.0,0,0,0
+1,1706,categories Ecommerce,www.etsy.com,0.0,0.0,0,0,0
+1,1707,categories Pornography,aznude.com,0.0,0.0,0,0,0
+1,1708,categories News & Media,sozcu.com.tr,0.0,0.0,0,0,0
+1,1709,categories News & Media,24h.com.vn,0.0,0.0,0,0,0
+1,1710,categories Pornography,mat6tube.com,0.0,0.0,0,0,0
+1,1711,categories Pornography,xhamster2.com,0.0,0.0,0,0,0
+1,1712,categories Advertisements,betweendigital.com,0.0,0.0,0,0,0
+1,1713,categories Newly Seen Domains,aniwave.to,0.0,0.0,0,0,0
+1,1714,"categories News, Portal & Search",e621.net,0.0,0.0,0,0,0
+1,1715,categories Newly Seen Domains,doods.pro,0.0,0.0,0,0,0
+1,1716,categories Forums,nairaland.com,0.0,0.0,0,0,0
+1,1717,categories Pornography,e-hentai.org,0.0,0.0,0,0,0
+1,1718,categories Newly Seen Domains,vedcdnlb.com,0.0,0.0,0,0,0
+1,1719,categories Social Networks,fallback.c10r.facebook.com,0.0,0.0,0,0,0
+1,1720,categories Information Technology,windows.microsoft.com,0.0,0.0,0,0,0
+1,1721,categories Gaming,neopets.com,0.0,0.0,0,0,0
+1,1722,categories Pornography,iporntv.net,0.0,0.0,0,0,0
+1,1723,categories Newly Seen Domains,asuratoon.com,0.0,0.0,0,0,0
+1,1724,categories Pornography,kompoz2.com,0.0,0.0,0,0,0
+1,1725,categories News & Media,3bmeteo.com,0.0,0.0,0,0,0
+1,1726,categories Humor,funnyjunk.com,0.0,0.0,0,0,0
+1,1727,categories Advertisements,safeframe.googlesyndication.com,0.0,0.0,0,0,0
+1,1728,categories Parked & For Sale Domains,aniwatch.to,0.0,0.0,0,0,0
+1,1729,categories Pornography,vjav.com,0.0,0.0,0,0,0
+1,1730,categories Content Servers,cedexis-test.com,0.0,0.0,0,0,0
+1,1731,categories Travel,jalan.net,0.0,0.0,0,0,0
+1,1732,categories Auctions & Marketplaces,craigslist.org,0.0,0.0,0,0,0
+1,1733,categories Pornography,4kporn.xxx,0.0,0.0,0,0,0
+1,1734,categories Pornography,ixxx.com,0.0,0.0,0,0,0
+1,1735,categories Pornography,jable.tv,0.0,0.0,0,0,0
+1,1736,categories Pornography,pornhat.com,0.0,0.0,0,0,0
+1,1737,categories News & Media,ekstrabladet.dk,0.0,0.0,0,0,0
+1,1738,categories Information Technology,co.com,0.0,0.0,0,0,0
+1,1739,categories Advertisements,c.amazon-adsystem.com,0.0,0.0,0,0,0
+1,1740,categories Technology,vidoomy.com,0.0,0.0,0,0,0
+1,1741,categories Business,app.hubspot.com,0.0,0.0,0,0,0
+1,1742,categories Pornography,hqporner.com,0.0,0.0,0,0,0
+1,1743,categories News & Media,cnnindonesia.com,0.0,0.0,0,0,0
+1,1744,categories Pornography,sxyprn.com,0.0,0.0,0,0,0
+1,1745,categories News & Media,nikkansports.com,0.0,0.0,0,0,0
+1,1746,categories Pornography,ok.xxx,0.0,0.0,0,0,0
+1,1747,categories Ecommerce,netshoes.com.br,0.0,0.0,0,0,0
+1,1748,categories News & Media,index.hr,0.0,0.0,0,0,0
+1,1749,categories Pornography,sexvid.xxx,0.0,0.0,0,0,0
+1,1750,categories Health & Fitness,medicalnewstoday.com,0.0,0.0,0,0,0
+1,1751,categories Pornography,love4porn.com,0.0,0.0,0,0,0
+1,1752,categories Pornography,xvideos2.com,0.0,0.0,0,0,0
+1,1753,categories Content Servers,aadrm.com,0.0,0.0,0,0,0
+1,1754,categories Pornography,hdtube.porn,0.0,0.0,0,0,0
+1,1755,categories Pornography,xnxx.tv,0.0,0.0,0,0,0
+1,1756,categories Gaming,cardgames.io,0.0,0.0,0,0,0
+1,1757,categories Pornography,xnxx2.com,0.0,0.0,0,0,0
+1,1758,categories Pornography,exhentai.org,0.0,0.0,0,0,0
+1,1759,categories Pornography,xnxx.health,0.0,0.0,0,0,0
+1,1760,categories Ecommerce,jd.com,0.0,0.0,0,0,0
+1,1761,categories News & Media,tenki.jp,0.0,0.0,0,0,0
+1,1762,categories Content Servers,secure.livechatinc.com,0.0,0.0,0,0,0
+1,1763,categories Information Security,myaccount.google.com,0.0,0.0,0,0,0
+1,1764,categories Education,www.ixl.com,0.0,0.0,0,0,0
+1,1765,categories Information Technology,mgslb.com,0.0,0.0,0,0,0
+1,1766,categories News & Media,oricon.co.jp,0.0,0.0,0,0,0
+1,1767,categories Information Technology,geocities.com,0.0,0.0,0,0,0
+1,1768,categories Pornography,motherless.com,0.0,0.0,0,0,0
+1,1769,categories Ecommerce,www.macys.com,0.0,0.0,0,0,0
+1,1770,categories Education,syosetu.com,0.0,0.0,0,0,0
+1,1771,categories Parked & For Sale Domains,porno365.pics,0.0,0.0,0,0,0
+1,1772,categories Newly Seen Domains,c7vkn.com,0.0,0.0,0,0,0
+1,1773,categories Social Networks,star.fallback.c10r.facebook.com,0.0,0.0,0,0,0
+1,1774,categories Newly Seen Domains,teleport.sh,0.0,0.0,0,0,0
+1,1775,categories News & Media,iltalehti.fi,0.0,0.0,0,0,0
+1,1776,categories Gaming,gamewith.jp,0.0,0.0,0,0,0
+1,1777,categories Education,wordwall.net,0.0,0.0,0,0,0
+1,1778,categories Ecommerce,www.amazon.co.uk,0.0,0.0,0,0,0
+1,1779,categories Technology,ocws.officeapps.live.com,0.0,0.0,0,0,0
+1,1780,categories Auctions & Marketplaces,www.ebay.com,0.0,0.0,0,0,0
+1,1781,categories News & Media,www.bbc.com,0.0,0.0,0,0,0
+1,1782,"categories Politics, Advocacy, and Government-Related",gst.gov.in,0.0,0.0,0,0,0
+1,1783,categories News & Media,cronista.com,0.0,0.0,0,0,0
+1,1784,categories Education,play.blooket.com,0.0,0.0,0,0,0
+1,1785,categories Pornography,xvideos-cdn.com,0.0,0.0,0,0,0
+1,1786,categories Video Streaming,fanpage.it,0.0,0.0,0,0,0
+1,1787,categories Economy & Finance,cnbcindonesia.com,0.0,0.0,0,0,0
+1,1788,categories Social Networks,mqtt.c10r.facebook.com,0.0,0.0,0,0,0
+1,1789,categories Health & Fitness,elsevier.com,0.0,0.0,0,0,0
+1,1790,categories Real Estate,www.zillow.com,0.0,0.0,0,0,0
+1,1791,categories Business,leroymerlin.fr,0.0,0.0,0,0,0
+1,1792,categories Content Servers,akamaitechnologies.com,0.0,0.0,0,0,0
+1,1793,"categories Politics, Advocacy, and Government-Related",turkiye.gov.tr,0.0,0.0,0,0,0
+1,1794,categories Business,adswizz.com,0.0,0.0,0,0,0
+1,1795,categories Content Servers,img-s-msn-com.akamaized.net,0.0,0.0,0,0,0
+1,1796,categories Gaming,granbluefantasy.jp,0.0,0.0,0,0,0
+1,1797,categories Search Engines,justdial.com,0.0,0.0,0,0,0
+1,1798,categories Ecommerce,www.amazon.de,0.0,0.0,0,0,0
+1,1799,categories Real Estate,suumo.jp,0.0,0.0,0,0,0
+1,1800,categories Personal Blogs,www.google.com.mx,0.0,0.0,0,0,0
+1,1801,categories Audio Streaming,accounts.spotify.com,0.0,0.0,0,0,0
+1,1802,categories Entertainment,bookmyshow.com,0.0,0.0,0,0,0
+1,1803,categories News & Media,haber7.com,0.0,0.0,0,0,0
+1,1804,categories Chat,www.roblox.com,0.0,0.0,0,0,0
+1,1805,categories Ecommerce,mediaexpert.pl,0.0,0.0,0,0,0
+1,1806,categories Newly Seen Domains,vivint.ai,0.0,0.0,0,0,0
+1,1807,categories News & Media,protothema.gr,0.0,0.0,0,0,0
+1,1808,categories News & Media,khabaronline.ir,0.0,0.0,0,0,0
+1,1809,categories Forums,ptt.cc,0.0,0.0,0,0,0
+1,1810,categories News & Media,jutarnji.hr,0.0,0.0,0,0,0
+1,1811,categories Video Streaming,scientificamerican.com,0.0,0.0,0,0,0
+1,1812,categories Television,programme-tv.net,0.0,0.0,0,0,0
+1,1813,categories Clothing,sinsay.com,0.0,0.0,0,0,0
+1,1814,categories Information Technology,y2mate.com,0.0,0.0,0,0,0
+1,1815,categories Gambling,betnacional.com,0.0,0.0,0,0,0
+1,1816,categories Vehicles,carsensor.net,0.0,0.0,0,0,0
+1,1817,categories Information Technology,support.microsoft.com,0.0,0.0,0,0,0
+1,1818,categories Education,mathplayground.com,0.0,0.0,0,0,0
+1,1819,categories Content Servers,playrix.com,0.0,0.0,0,0,0
+1,1820,categories Video Streaming,www.foxnews.com,0.0,0.0,0,0,0
+1,1821,categories Search Engines,www.google.ca,0.0,0.0,0,0,0
+1,1822,categories Ecommerce,www.target.com,0.0,0.0,0,0,0
+1,1823,categories News & Media,www.theguardian.com,0.0,0.0,0,0,0
+1,1824,categories News & Media,blic.rs,0.0,0.0,0,0,0
+1,1825,categories Comic Books,mangabuddy.com,0.0,0.0,0,0,0
+1,1826,categories Information Technology,buydomains.com,0.0,0.0,0,0,0
+1,1827,categories Fashion,ajio.com,0.0,0.0,0,0,0
+1,1828,categories Content Servers,cbsivideo.com,0.0,0.0,0,0,0
+1,1829,categories News & Media,kooora.com,0.0,0.0,0,0,0
+1,1830,categories Educational Institutions,utexas.edu,0.0,0.0,0,0,0
+1,1831,categories Education,brainly.com.br,0.0,0.0,0,0,0
+1,1832,categories Ecommerce,www.bestbuy.com,0.0,0.0,0,0,0
+1,1833,categories Technology,snaptik.app,0.0,0.0,0,0,0
+1,1834,categories Education,lausd.net,0.0,0.0,0,0,0
+1,1835,categories Education,toppr.com,0.0,0.0,0,0,0
+1,1836,categories Economy & Finance,robinhood.com,0.0,0.0,0,0,0
+1,1837,categories Content Servers,notifications-pa.googleapis.com,0.0,0.0,0,0,0
+1,1838,categories Education,librus.pl,0.0,0.0,0,0,0
+1,1839,categories Pornography,tokyomotion.net,0.0,0.0,0,0,0
+1,1840,categories Business,www.ups.com,0.0,0.0,0,0,0
+1,1841,categories Technology,fantia.jp,0.0,0.0,0,0,0
+1,1842,categories Content Servers,weborama.fr,0.0,0.0,0,0,0
+1,1843,categories Gaming,ruliweb.com,0.0,0.0,0,0,0
+1,1844,categories Education,69shuba.com,0.0,0.0,0,0,0
+1,1845,categories Education,www.coolmathgames.com,0.0,0.0,0,0,0
+1,1846,categories Pornography,myreadingmanga.info,0.0,0.0,0,0,0
+1,1847,categories Questionable Activities,rezka.ag,0.0,0.0,0,0,0
+1,1848,categories Forums,ppomppu.co.kr,0.0,0.0,0,0,0
+1,1849,categories News & Media,eenadu.net,0.0,0.0,0,0,0
+1,1850,categories Personal Blogs,ssstik.io,0.0,0.0,0,0,0
+1,1851,categories Newly Seen Domains,pubmnet.com,0.0,0.0,0,0,0
+1,1852,categories Information Technology,ucweb.com,0.0,0.0,0,0,0
+1,1853,categories Pornography,luxuretv.com,0.0,0.0,0,0,0
+1,1854,categories Business,sendgrid.net,0.0,0.0,0,0,0
+1,1855,categories Video Streaming,namasha.com,0.0,0.0,0,0,0
+1,1856,categories Magazines,science.org,0.0,0.0,0,0,0
+1,1857,categories News & Media,bt.dk,0.0,0.0,0,0,0
+1,1858,categories Comic Books,mangago.me,0.0,0.0,0,0,0
+1,1859,categories Technology,python.org,0.0,0.0,0,0,0
+1,1860,categories Forums,www.quora.com,0.0,0.0,0,0,0
+1,1861,categories Sports,hollywoodbets.net,0.0,0.0,0,0,0
+1,1862,categories Technology,dynatrace.com,0.0,0.0,0,0,0
+1,1863,categories Gaming,game8.jp,0.0,0.0,0,0,0
+1,1864,categories Economy & Finance,rakuten-sec.co.jp,0.0,0.0,0,0,0
+1,1865,categories Pornography,fuq.com,0.0,0.0,0,0,0
+1,1866,categories Newly Seen Domains,peachavocado.com,0.0,0.0,0,0,0
+1,1867,categories Search Engines,www.google.com.tr,0.0,0.0,0,0,0
+1,1868,categories Travel,www.booking.com,0.0,0.0,0,0,0
+1,1869,categories Educational Institutions,zearn.org,0.0,0.0,0,0,0
+1,1870,categories Education,brainly.co.id,0.0,0.0,0,0,0
+1,1871,categories Newly Seen Domains,9animetv.to,0.0,0.0,0,0,0
+1,1872,categories Gambling,caliente.mx,0.0,0.0,0,0,0
+1,1873,categories Technology,evernote.com,0.0,0.0,0,0,0
+1,1874,categories Video Streaming,www.bbc.co.uk,0.0,0.0,0,0,0
+1,1875,categories Movies,www.disneyplus.com,0.0,0.0,0,0,0
+1,1876,categories Personal Blogs,fapello.com,0.0,0.0,0,0,0
+1,1877,categories Food & Drink,marmiton.org,0.0,0.0,0,0,0
+1,1878,categories Comic Books,mangakakalot.com,0.0,0.0,0,0,0
+1,1879,categories Gambling,sportybet.com,0.0,0.0,0,0,0
+1,1880,categories Pornography,pussyspace.com,0.0,0.0,0,0,0
+1,1881,categories Pornography,xhamster1.desi,0.0,0.0,0,0,0
+1,1882,categories Instant Messengers,www.whatsapp.com,0.0,0.0,0,0,0
+1,1883,categories Comic Books,manganato.com,0.0,0.0,0,0,0
+1,1884,categories Comic Books,bato.to,0.0,0.0,0,0,0
+1,1885,categories Education,znanija.com,0.0,0.0,0,0,0
+1,1886,categories Pornography,joyclub.de,0.0,0.0,0,0,0
+1,1887,categories Newly Seen Domains,zorox.to,0.0,0.0,0,0,0
+1,1888,categories Gaming,www.twitch.tv,0.0,0.0,0,0,0
+1,1889,categories Pornography,porn300.com,0.0,0.0,0,0,0
+1,1890,categories News & Media,livehindustan.com,0.0,0.0,0,0,0
+1,1891,categories Cartoons & Anime,cmoa.jp,0.0,0.0,0,0,0
+1,1892,categories Adult Themes,cityheaven.net,0.0,0.0,0,0,0
+1,1893,categories News & Media,kurir.rs,0.0,0.0,0,0,0
+1,1894,categories Login Screens,kidsa-z.com,0.0,0.0,0,0,0
+1,1895,categories Job Search & Careers,www.indeed.com,0.0,0.0,0,0,0
+1,1896,categories Sports,netkeiba.com,0.0,0.0,0,0,0
+1,1897,categories Search Engines,www.google.com.hk,0.0,0.0,0,0,0
+1,1898,categories Pornography,www.pornhub.com,0.0,0.0,0,0,0
+1,1899,categories Pornography,serviporno.com,0.0,0.0,0,0,0
+1,1900,categories Information Technology,snapinsta.app,0.0,0.0,0,0,0
+1,1901,categories Comic Books,mangatoto.com,0.0,0.0,0,0,0
+1,1902,categories Newly Seen Domains,nettruyenus.com,0.0,0.0,0,0,0
+1,1903,categories News & Media,fararu.com,0.0,0.0,0,0,0
+1,1904,categories News & Media,aajtak.in,0.0,0.0,0,0,0
+1,1905,categories Information Technology,saveinsta.app,0.0,0.0,0,0,0
+1,1906,categories Pornography,servicewebly.com,0.0,0.0,0,0,0
+1,1907,categories Parked & For Sale Domains,upwitheaway.info,0.0,0.0,0,0,0
+1,1908,categories Video Streaming,www.dailymotion.com,0.0,0.0,0,0,0
+1,1909,categories Sports,betway.co.za,0.0,0.0,0,0,0
+1,1910,categories Content Servers,proxy.safebrowsing.apple,0.0,0.0,0,0,0
+1,1911,categories Newly Seen Domains,mechacomic.jp,0.0,0.0,0,0,0
+1,1912,categories Ecommerce,www.nike.com,0.0,0.0,0,0,0
+1,1913,categories Forums,theqoo.net,0.0,0.0,0,0,0
+1,1914,categories Pornography,spankbang.party,0.0,0.0,0,0,0
+1,1915,categories Education,gdz.ru,0.0,0.0,0,0,0
+1,1916,categories Personal Blogs,3.bp.blogspot.com,0.0,0.0,0,0,0
+1,1917,categories Pornography,tukif.com,0.0,0.0,0,0,0
+1,1918,categories Pornography,xvideos3.com,0.0,0.0,0,0,0
+1,1919,categories Adult Themes,fabswingers.com,0.0,0.0,0,0,0
+1,1920,categories Newly Seen Domains,colamanga.com,0.0,0.0,0,0,0
+1,1921,categories Forums,arca.live,0.0,0.0,0,0,0
+1,1922,categories Pornography,xvideos.es,0.0,0.0,0,0,0
+1,1923,categories News & Media,www.dailymail.co.uk,0.0,0.0,0,0,0
+1,1924,categories Photography,photos.google.com,0.0,0.0,0,0,0
+1,1925,categories Business,fwmrm.net,0.0,0.0,0,0,0
+1,1926,categories Information Technology,www.speedtest.net,0.0,0.0,0,0,0
+1,1927,categories Newly Seen Domains,visortmo.com,0.0,0.0,0,0,0
+1,1928,categories Economy & Finance,banvenez.com,0.0,0.0,0,0,0
+1,1929,categories Newly Seen Domains,sex-studentki.pics,0.0,0.0,0,0,0
+1,1930,categories Music,music-fa.com,0.0,0.0,0,0,0
+1,1931,categories Video Streaming,ifilo.net,0.0,0.0,0,0,0
+1,1932,categories Pornography,supjav.com,0.0,0.0,0,0,0
+1,1933,categories Pornography,xhtab3.com,0.0,0.0,0,0,0
+1,1934,categories Personal Blogs,ijavhd.com,0.0,0.0,0,0,0
+1,1935,categories News & Media,azet.sk,0.0,0.0,0,0,0
+1,1936,categories Pornography,xxx18.uno,0.0,0.0,0,0,0
+1,1937,categories Parenting,ninisite.com,0.0,0.0,0,0,0
+1,1938,categories Newly Seen Domains,doujindesu.tv,0.0,0.0,0,0,0
+1,1939,categories Pornography,hot-sex-tube.com,0.0,0.0,0,0,0
+1,1940,categories Pornography,www.xnxx.com,0.0,0.0,0,0,0
+1,1941,categories Educational Institutions,scratch.mit.edu,0.0,0.0,0,0,0
+1,1942,categories Education,brainly.in,0.0,0.0,0,0,0
+1,1943,categories Newly Seen Domains,emaktab.uz,0.0,0.0,0,0,0
+1,1944,categories Pornography,www.xvideos.com,0.0,0.0,0,0,0
+1,1945,categories Search Engines,www.google.co.in,0.0,0.0,0,0,0
+1,1946,categories Pornography,tktube.com,0.0,0.0,0,0,0
+1,1947,categories Cartoons & Anime,mangalib.me,0.0,0.0,0,0,0
+1,1948,categories Pornography,sexvid.pro,0.0,0.0,0,0,0
+1,1949,categories Newly Seen Domains,rajwap.cc,0.0,0.0,0,0,0
+1,1950,categories Gaming,nitrotype.com,0.0,0.0,0,0,0
+1,1951,categories Photography,imgsrc.ru,0.0,0.0,0,0,0
+1,1952,categories Photography,br.pinterest.com,0.0,0.0,0,0,0
+1,1953,categories Technology,gspe35-ssl.ls.apple.com,0.0,0.0,0,0,0
+1,1954,categories Adult Themes,shahvani.com,0.0,0.0,0,0,0
+1,1955,categories Spam,pixbet.com,0.0,0.0,0,0,0
+1,1956,categories Dating & Relationships,beboo.ru,0.0,0.0,0,0,0
+1,1957,categories Economy & Finance,secure.bankofamerica.com,0.0,0.0,0,0,0
+1,1958,categories P2P,freeip.me,0.0,0.0,0,0,0
+1,1959,categories Pornography,pornocarioca.com,0.0,0.0,0,0,0
+1,1960,categories Education,spaggiari.eu,0.0,0.0,0,0,0
+1,1961,categories Business,revcontent.com,0.0,0.0,0,0,0
+1,1962,categories Education,www.goodreads.com,0.0,0.0,0,0,0
+1,1963,categories Search Engines,www.google.pl,0.0,0.0,0,0,0
+1,1964,categories Translator,www.deepl.com,0.0,0.0,0,0,0
+1,1965,categories Adult Themes,fatalmodel.com,0.0,0.0,0,0,0
+1,1966,"categories Politics, Advocacy, and Government-Related",epfindia.gov.in,0.0,0.0,0,0,0
+1,1967,categories Newly Seen Domains,lermanga.org,0.0,0.0,0,0,0
+1,1968,categories Pornography,eroterest.net,0.0,0.0,0,0,0
+1,1969,categories Ecommerce,www.lowes.com,0.0,0.0,0,0,0
+1,1970,categories Content Servers,mask.apple-dns.net,0.0,0.0,0,0,0
+1,1971,categories News & Media,prokerala.com,0.0,0.0,0,0,0
+1,1972,categories Health & Fitness,1mg.com,0.0,0.0,0,0,0
+1,1973,categories Content Servers,xosodaiphat.com,0.0,0.0,0,0,0
+1,1974,categories Education,www.wattpad.com,0.0,0.0,0,0,0
+1,1975,categories Video Streaming,studio.youtube.com,0.0,0.0,0,0,0
+1,1976,categories Newly Seen Domains,shinigami.sh,0.0,0.0,0,0,0
+1,1977,categories Search Engines,www.google.fr,0.0,0.0,0,0,0
+1,1978,categories Movies,goojara.to,0.0,0.0,0,0,0
+1,1979,categories Adult Themes,listcrawler.eu,0.0,0.0,0,0,0
+1,1980,categories Hobbies & Interests,www.chess.com,0.0,0.0,0,0,0
+1,1981,categories Ecommerce,www.kohls.com,0.0,0.0,0,0,0
+1,1982,categories Social Networks,business.facebook.com,0.0,0.0,0,0,0
+1,1983,categories News & Media,www.accuweather.com,0.0,0.0,0,0,0
+1,1984,categories Content Servers,patria.org.ve,0.0,0.0,0,0,0
+1,1985,categories News & Media,bartarinha.ir,0.0,0.0,0,0,0
+1,1986,categories Search Engines,www.google.com.br,0.0,0.0,0,0,0
+1,1987,categories Business,redislabs.com,0.0,0.0,0,0,0
+1,1988,categories Ecommerce,www.costco.com,0.0,0.0,0,0,0
+1,1989,categories News & Media,spiegel.de,0.0,0.0,0,0,0
+1,1990,categories Instant Messengers,faq.whatsapp.com,0.0,0.0,0,0,0
+1,1991,categories Business,coinpayu.com,0.0,0.0,0,0,0
+1,1992,categories Hobbies & Interests,toyhou.se,0.0,0.0,0,0,0
+1,1993,categories Business,www.wayfair.com,0.0,0.0,0,0,0
+1,1994,categories Search Engines,www.google.com.tw,0.0,0.0,0,0,0
+1,1995,categories Economy & Finance,onlinesbi.sbi,0.0,0.0,0,0,0
+1,1996,categories Education,www.researchgate.net,0.0,0.0,0,0,0
+1,1997,categories Information Technology,webempresa.eu,0.0,0.0,0,0,0
+1,1998,categories Educational Institutions,www.zearn.org,0.0,0.0,0,0,0
+1,1999,categories Video Streaming,www.bilibili.com,0.0,0.0,0,0,0
+1,2000,categories Ecommerce,www.amazon.ca,0.0,0.0,0,0,0

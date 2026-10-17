@@ -1,0 +1,2001 @@
+episode,time,action,targets,rewards,q_value,is_blocked,is_optimal,coverage
+1,1,categories Content Servers,contacts.fe.apple-dns.net,0.0,0.0,0,1,0
+1,2,categories Content Servers,uninet.net.mx,0.0,0.0,0,1,0
+1,3,categories Content Servers,zdassets.com,0.0,0.0,0,1,0
+1,4,categories Content Servers,clmbtech.com,0.0,0.0,0,1,0
+1,5,categories Content Servers,apple-cloudkit.com,0.0,0.0,0,1,0
+1,6,categories Technology,beacons.ai,0.0,0.0,0,1,0
+1,7,categories Technology,eu-west-1.amazonaws.com,0.0,0.0,0,1,0
+1,8,categories Technology,image8.pubmatic.com,0.0,0.0,0,1,0
+1,9,categories Technology,spamhaus.net,0.0,0.0,0,1,0
+1,10,categories Technology,dell.com,0.0,0.0,0,1,0
+1,11,categories Business,chartbeat.net,0.0,0.0,0,1,0
+1,12,categories Business,meta.com,0.0,0.0,0,1,0
+1,13,categories Business,crazyegg.com,0.0,0.0,0,1,0
+1,14,categories Business,xero.com,0.0,0.0,0,1,0
+1,15,categories Business,formstack.com,0.0,0.0,0,1,0
+1,16,categories News & Media,www.ilmeteo.it,0.0,0.0,0,1,0
+1,17,categories News & Media,birminghammail.co.uk,0.0,0.0,0,1,0
+1,18,categories News & Media,francebleu.fr,0.0,0.0,0,1,0
+1,19,categories News & Media,derstandard.at,0.0,0.0,0,1,0
+1,20,categories News & Media,aol.co.uk,0.0,0.0,0,1,0
+1,21,categories Information Technology,360qhcdn.com,0.0,0.0,0,1,0
+1,22,categories Information Technology,aruba.it,0.0,0.0,0,1,0
+1,23,categories Information Technology,sakura.ne.jp,0.0,0.0,0,1,0
+1,24,categories Information Technology,tencent.com,0.0,0.0,0,1,0
+1,25,categories Information Technology,auth.grammarly.com,0.09,0.02,0,1,0
+1,26,categories Newly Seen Domains,163img.com,0.01,0.01,0,0,0
+1,27,categories Newly Seen Domains,bzsn.ru,0.0,0.01,0,0,0
+1,28,categories Newly Seen Domains,virginm.net,0.0,0.01,0,0,0
+1,29,categories Newly Seen Domains,steamserver.net,0.03,0.01,0,0,0
+1,30,categories Newly Seen Domains,tiktokv.us,0.0,0.01,0,0,0
+1,31,categories Video Streaming,daum.net,0.0,0.0,0,0,0
+1,32,categories Video Streaming,people.com,0.0,0.0,0,0,0
+1,33,categories Video Streaming,allocine.fr,0.0,0.0,0,0,0
+1,34,categories Video Streaming,firstpost.com,0.0,0.0,0,0,0
+1,35,categories Video Streaming,thanhnien.vn,0.0,0.0,0,0,0
+1,36,categories Education,ibiblio.org,0.0,0.0,0,0,0
+1,37,categories Education,myapps.classlink.com,0.0,0.0,0,0,0
+1,38,categories Education,amap.com,0.0,0.0,0,0,0
+1,39,categories Education,babbel.com,0.0,0.0,0,0,0
+1,40,categories Education,teachable.com,0.0,0.0,0,0,0
+1,41,categories Ecommerce,vizio.com,0.0,0.0,0,0,0
+1,42,categories Ecommerce,p-bandai.jp,0.0,0.0,0,0,0
+1,43,categories Ecommerce,www.amazon.ae,0.0,0.0,0,0,0
+1,44,categories Ecommerce,device-metrics-us.amazon.com,0.0,0.0,0,0,0
+1,45,categories Ecommerce,www.amazon.com.tr,0.0,0.0,0,0,0
+1,46,categories Search Engines,push.services.mozilla.com,0.0,0.0,0,0,0
+1,47,categories Search Engines,lycos.com,0.0,0.0,0,0,0
+1,48,categories Search Engines,google.ne,0.0,0.0,0,0,0
+1,49,categories Search Engines,google.co.ve,0.0,0.0,0,0,0
+1,50,categories Search Engines,safeframe.googlesyndication.com,0.1,0.02,0,0,0
+1,51,categories Pornography,id.xhamster.com,0.08,0.08,0,0,0
+1,52,categories Pornography,poringa.net,0.07,0.07,0,1,0
+1,53,categories Pornography,pornhub.com,0.07,0.07,0,1,0
+1,54,categories Pornography,id.spankbang.com,0.07,0.07,0,1,0
+1,55,categories Pornography,indianpornvideos.me,0.07,0.07,0,1,0
+1,56,"categories Politics, Advocacy, and Government-Related",unesco.org,0.0,0.0,0,0,0
+1,57,"categories Politics, Advocacy, and Government-Related",unfccc.int,0.0,0.0,0,0,0
+1,58,"categories Politics, Advocacy, and Government-Related",return.gst.gov.in,0.0,0.0,0,0,0
+1,59,"categories Politics, Advocacy, and Government-Related",ns5.kaluga.ru,0.0,0.0,0,0,0
+1,60,"categories Politics, Advocacy, and Government-Related",ohchr.org,0.0,0.0,0,0,0
+1,61,categories Economy & Finance,stlouisfed.org,0.0,0.0,0,0,0
+1,62,categories Economy & Finance,nomura.com,0.0,0.0,0,0,0
+1,63,categories Economy & Finance,login.caixa.gov.br,0.0,0.0,0,0,0
+1,64,categories Economy & Finance,allianz.at,0.0,0.0,0,0,0
+1,65,categories Economy & Finance,sbicard.com,0.0,0.0,0,0,0
+1,66,categories Social Networks,pull-flv-f77-tt02.fcdn.us.tiktokv.com,0.1,0.1,0,0,0
+1,67,categories Social Networks,facebook.net,0.0,0.05,0,1,0
+1,68,categories Social Networks,us-east1-aws.api.snapchat.com,0.09,0.06,0,0,0
+1,69,categories Social Networks,nextdoor.com,0.0,0.05,0,0,0
+1,70,categories Social Networks,weibo.cn,0.0,0.04,0,0,0
+1,71,categories Gaming,gamebanana.com,0.01,0.01,0,0,0
+1,72,categories Gaming,thesimsresource.com,0.01,0.01,0,0,0
+1,73,categories Gaming,gamespot.com,0.02,0.01,0,0,0
+1,74,categories Gaming,metacritic.com,0.0,0.01,0,0,0
+1,75,categories Gaming,liquipedia.net,0.0,0.01,0,0,0
+1,76,categories Educational Institutions,britishmuseum.org,0.0,0.0,0,0,0
+1,77,categories Educational Institutions,illinois.edu,0.0,0.0,0,0,0
+1,78,categories Educational Institutions,iu.edu,0.0,0.0,0,0,0
+1,79,categories Educational Institutions,vt.edu,0.0,0.0,0,0,0
+1,80,categories Educational Institutions,hopkinsmedicine.org,0.0,0.0,0,0,0
+1,81,categories Sports,thescore.com,0.0,0.0,0,0,0
+1,82,categories Sports,nbcsports.com,0.0,0.0,0,0,0
+1,83,categories Sports,espn.com.br,0.0,0.0,0,0,0
+1,84,categories Sports,matchtv.ru,0.0,0.0,0,0,0
+1,85,categories Sports,www.thscore.mobi,0.0,0.0,0,0,0
+1,86,categories Information Security,avira.net,0.0,0.0,0,0,0
+1,87,categories Information Security,trendmicro.com,0.0,0.0,0,0,0
+1,88,categories Information Security,entrust.net,0.0,0.0,0,0,0
+1,89,categories Information Security,main.endpoint.ingress.rapid7.com,0.0,0.0,0,0,0
+1,90,categories Information Security,virustotal.com,0.0,0.0,0,0,0
+1,91,categories Advertisements,infolinks.com,0.0,0.0,0,0,0
+1,92,categories Advertisements,js.adsrvr.org,0.0,0.0,0,0,0
+1,93,categories Advertisements,adaether.com,0.0,0.0,0,0,0
+1,94,categories Advertisements,teads.tv,0.0,0.0,0,0,0
+1,95,categories Advertisements,smilewanted.com,0.0,0.0,0,0,0
+1,96,categories Travel,boeing.com,0.0,0.0,0,0,0
+1,97,categories Travel,tripadvisor.in,0.0,0.0,0,0,0
+1,98,categories Travel,aa.com,0.0,0.0,0,0,0
+1,99,categories Travel,vatican.va,0.0,0.0,0,0,0
+1,100,categories Travel,mini.de,0.0,0.0,0,0,0
+1,101,categories Personal Blogs,zinmanga.com,0.07,0.07,0,0,0
+1,102,categories Personal Blogs,opaque.net,0.0,0.03,0,1,0
+1,103,categories Personal Blogs,blogger.com,0.07,0.05,0,0,0
+1,104,categories Personal Blogs,colorlib.com,0.0,0.03,0,0,0
+1,105,categories Personal Blogs,i2.wp.com,0.0,0.03,0,0,0
+1,106,categories Television,mydramalist.com,0.0,0.0,0,0,0
+1,107,categories Television,paramountplus.com,0.09,0.05,0,0,0
+1,108,categories Television,cbsi.com,0.0,0.03,0,0,0
+1,109,categories Television,uiboot.netflix.com,0.09,0.05,0,0,0
+1,110,categories Television,tokyvideo.com,0.0,0.04,0,0,0
+1,111,categories Magazines,caranddriver.com,0.0,0.0,0,0,0
+1,112,categories Magazines,goodhousekeeping.com,0.0,0.0,0,0,0
+1,113,categories Magazines,parents.com,0.0,0.0,0,0,0
+1,114,categories Magazines,itmedia.co.jp,0.0,0.0,0,0,0
+1,115,categories Magazines,abola.pt,0.0,0.0,0,0,0
+1,116,categories Health & Fitness,netlify.com,0.0,0.0,0,0,0
+1,117,categories Health & Fitness,medicalxpress.com,0.0,0.0,0,0,0
+1,118,categories Health & Fitness,betterhelp.com,0.0,0.0,0,0,0
+1,119,categories Health & Fitness,goodrx.com,0.0,0.0,0,0,0
+1,120,categories Health & Fitness,aafp.org,0.0,0.0,0,0,0
+1,121,categories Auctions & Marketplaces,ria.com,0.0,0.0,0,0,0
+1,122,categories Auctions & Marketplaces,mercadolibre.com,0.0,0.0,0,0,0
+1,123,categories Auctions & Marketplaces,articulo.mercadolibre.com.ar,0.0,0.0,0,0,0
+1,124,categories Auctions & Marketplaces,m.999.md,0.0,0.0,0,0,0
+1,125,categories Auctions & Marketplaces,milanuncios.com,0.0,0.0,0,0,0
+1,126,categories Gambling,www.flashscore.co,0.0,0.0,0,0,0
+1,127,categories Gambling,geny.com,0.07,0.03,0,0,0
+1,128,categories Gambling,www.betpawa.ug,0.07,0.04,0,0,0
+1,129,categories Gambling,www.winzogames.com,0.01,0.04,0,0,0
+1,130,categories Gambling,xoso.com.vn,0.07,0.04,0,0,0
+1,131,categories Movies,v.qq.com,0.09,0.09,0,0,0
+1,132,categories Movies,prod.ftl.netflix.com,0.09,0.09,0,1,0
+1,133,categories Movies,xyz.ibomma.link,0.0,0.06,0,1,0
+1,134,categories Movies,jiocinema.com,0.0,0.05,0,0,0
+1,135,categories Movies,pro.ibomma.link,0.0,0.04,0,0,0
+1,136,categories Photography,imgsrc.ru,0.05,0.05,0,0,0
+1,137,categories Photography,c10r.instagram.com,0.09,0.07,0,0,0
+1,138,categories Photography,gettyimages.com,0.0,0.05,0,1,0
+1,139,categories Photography,dreamstime.com,0.0,0.04,0,0,0
+1,140,categories Photography,twitpic.com,0.0,0.03,0,0,0
+1,141,categories File Sharing,mail.me.com,0.09,0.09,0,0,0
+1,142,categories File Sharing,dropboxusercontent.com,0.0,0.05,0,1,0
+1,143,categories File Sharing,www.dogdrip.net,0.0,0.03,0,0,0
+1,144,categories File Sharing,www.1377x.to,0.01,0.03,0,0,0
+1,145,categories File Sharing,mobcup.net,0.0,0.02,0,0,0
+1,146,categories Forums,fanfiction.net,0.07,0.07,0,0,0
+1,147,categories Forums,rateyourmusic.com,0.0,0.03,0,1,0
+1,148,categories Forums,www.nairaland.com,0.0,0.02,0,0,0
+1,149,categories Forums,wien.gv.at,0.0,0.02,0,0,0
+1,150,categories Forums,apachelounge.com,0.0,0.01,0,0,0
+1,151,categories Government,tn.gov,0.0,0.0,0,0,0
+1,152,categories Government,maricopa.gov,0.0,0.0,0,0,0
+1,153,categories Government,faa.gov,0.0,0.0,0,0,0
+1,154,categories Government,va.gov,0.0,0.0,0,0,0
+1,155,categories Government,ny.gov,0.0,0.0,0,0,0
+1,156,categories Entertainment,variety.com,0.0,0.0,0,0,0
+1,157,categories Entertainment,akamaistream.net,0.0,0.0,0,0,0
+1,158,categories Entertainment,16personalities.com,0.0,0.0,0,0,0
+1,159,categories Entertainment,starhit.ru,0.0,0.0,0,0,0
+1,160,categories Entertainment,indiewire.com,0.0,0.0,0,0,0
+1,161,categories Hobbies & Interests,blogspot.co.uk,0.02,0.02,0,0,0
+1,162,categories Hobbies & Interests,www.ancestry.com,0.0,0.01,0,0,0
+1,163,categories Hobbies & Interests,indiegogo.com,0.0,0.01,0,0,0
+1,164,categories Hobbies & Interests,chess-results.com,0.0,0.0,0,0,0
+1,165,categories Hobbies & Interests,runescape.com,0.01,0.01,0,0,0
+1,166,categories Clothing,www.netshoes.com.br,0.0,0.0,0,0,0
+1,167,categories Clothing,fanatics.com,0.0,0.0,0,0,0
+1,168,categories Clothing,www.sinsay.com,0.0,0.0,0,0,0
+1,169,categories Clothing,dior.com,0.0,0.0,0,0,0
+1,170,categories Clothing,onepeloton.com,0.0,0.0,0,0,0
+1,171,categories Vehicles,www.bikewale.com,0.0,0.0,0,0,0
+1,172,categories No Content,ezvizru.com,0.0,0.0,0,0,0
+1,173,categories No Content,eukdns.com,0.0,0.0,0,0,0
+1,174,categories Vehicles,tesla.com,0.0,0.0,0,0,0
+1,175,categories Food & Drink,marthastewart.com,0.0,0.0,0,0,0
+1,176,categories No Content,brevo.com,0.0,0.0,0,0,0
+1,177,categories Food & Drink,just-eat.es,0.0,0.0,0,0,0
+1,178,categories Food & Drink,giallozafferano.it,0.0,0.0,0,0,0
+1,179,categories Food & Drink,tacobell.com,0.0,0.0,0,0,0
+1,180,categories Login Screens,kasserver.com,0.0,0.0,0,0,0
+1,181,categories Login Screens,www.kidsa-z.com,0.0,0.0,0,0,0
+1,182,categories Login Screens,app.launchdarkly.com,0.0,0.0,0,0,0
+1,183,categories Login Screens,www.betproexch.com,0.0,0.0,0,0,0
+1,184,categories Login Screens,centrastage.net,0.0,0.0,0,0,0
+1,185,categories Shopping,digitaltrends.com,0.0,0.0,0,0,0
+1,186,categories Shopping,stradivarius.com,0.0,0.0,0,0,0
+1,187,categories Shopping,producthunt.com,0.0,0.0,0,0,0
+1,188,categories Shopping,rentalcars.com,0.0,0.0,0,0,0
+1,189,categories Shopping,moneysupermarket.com,0.0,0.0,0,0,0
+1,190,categories Webmail,convertkit.com,0.0,0.0,0,0,0
+1,191,categories Webmail,hotmail.com,0.09,0.05,0,0,0
+1,192,categories Webmail,login.yahoo.com,0.0,0.03,0,0,0
+1,193,categories Webmail,mckinsey.com,0.0,0.02,0,0,0
+1,194,categories Webmail,twnic.net.tw,0.0,0.02,0,0,0
+1,195,categories Audio Streaming,azurewebsites.net,0.0,0.0,0,0,0
+1,196,categories Audio Streaming,open.spotify.com,0.09,0.04,0,0,0
+1,197,categories Audio Streaming,dual-gslb.spotify.com,0.0,0.03,0,0,0
+1,198,categories Audio Streaming,login5.spotify.com,0.0,0.02,0,0,0
+1,199,categories Audio Streaming,radio-canada.ca,0.0,0.02,0,0,0
+1,200,categories Instant Messengers,kakao.com,0.0,0.0,0,0,0
+1,201,categories Instant Messengers,spot.im,0.0,0.0,0,0,0
+1,202,categories Instant Messengers,chat.google.com,0.09,0.03,0,0,0
+1,203,categories Instant Messengers,spotim.market,0.0,0.02,0,0,0
+1,204,categories Instant Messengers,api.whatsapp.com,0.09,0.03,0,0,0
+1,205,categories Fashion,underarmour.com,0.0,0.0,0,0,0
+1,206,categories Fashion,m.shein.com,0.0,0.0,0,0,0
+1,207,categories Fashion,www.bathandbodyworks.com,0.0,0.0,0,0,0
+1,208,categories Fashion,wwd.com,0.0,0.0,0,0,0
+1,209,categories Fashion,gq.com,0.0,0.0,0,0,0
+1,210,categories Parked & For Sale Domains,minkatu.com,0.0,0.0,0,0,0
+1,211,categories Parked & For Sale Domains,com.se,0.0,0.0,0,0,0
+1,212,categories Parked & For Sale Domains,audrte.com,0.0,0.0,0,0,0
+1,213,categories Parked & For Sale Domains,sascdn.com,0.0,0.0,0,0,0
+1,214,categories Parked & For Sale Domains,csof.net,0.0,0.0,0,0,0
+1,215,categories Real Estate,homes.co.jp,0.0,0.0,0,0,0
+1,216,categories Real Estate,airee.ru,0.0,0.0,0,0,0
+1,217,categories Real Estate,idealista.it,0.0,0.0,0,0,0
+1,218,categories Real Estate,idealista.com,0.0,0.0,0,0,0
+1,219,categories Real Estate,immowelt.de,0.0,0.0,0,0,0
+1,220,categories Job Search & Careers,azurerms.com,0.0,0.0,0,0,0
+1,221,categories Job Search & Careers,pg.com,0.0,0.0,0,0,0
+1,222,categories Job Search & Careers,naukri.com,0.0,0.0,0,0,0
+1,223,categories Job Search & Careers,careerbuilder.com,0.0,0.0,0,0,0
+1,224,categories Job Search & Careers,hh.ru,0.0,0.0,0,0,0
+1,225,categories Adult Themes,4chan.org,0.07,0.07,0,0,0
+1,226,categories Adult Themes,br.skokka.com,0.07,0.07,0,1,0
+1,227,categories Adult Themes,onlyfans.com,0.07,0.07,0,1,0
+1,228,categories Adult Themes,etoote.com,0.0,0.05,0,1,0
+1,229,categories Adult Themes,cosmopolitan.com,0.0,0.04,0,0,0
+1,230,categories Questionable Activities,www.123-hd.com,0.0,0.0,0,0,0
+1,231,categories Questionable Activities,rezka.ag,0.0,0.0,0,0,0
+1,232,categories Questionable Activities,gov.ibomma.link,0.0,0.0,0,0,0
+1,233,categories Internet Phone & VOIP,wechat.com,0.09,0.09,0,0,0
+1,234,categories Questionable Activities,int.ibomma.link,0.0,0.0,0,0,0
+1,235,categories Internet Phone & VOIP,whatsapp.com,0.09,0.09,0,1,0
+1,236,categories Internet Phone & VOIP,asm.skype.com,0.0,0.06,0,1,0
+1,237,categories Internet Phone & VOIP,mcm.ru,0.0,0.05,0,0,0
+1,238,categories Music,long.tv,0.0,0.0,0,0,0
+1,239,categories Music,onlineradiobox.com,0.01,0.01,0,0,0
+1,240,categories Music,allmusic.com,0.0,0.0,0,0,0
+1,241,categories Music,setlist.fm,0.0,0.0,0,0,0
+1,242,categories Music,audiomack.com,0.0,0.0,0,0,0
+1,243,categories Weather,wmo.int,0.0,0.0,0,0,0
+1,244,categories Weather,windy.com,0.0,0.0,0,0,0
+1,245,categories Weather,theweathernetwork.com,0.0,0.0,0,0,0
+1,246,categories Weather,wetteronline.de,0.0,0.0,0,0,0
+1,247,categories Weather,ilmeteo.it,0.0,0.0,0,0,0
+1,248,categories Comic Books,manganato.com,0.07,0.07,0,0,0
+1,249,categories Comic Books,m.happymh.com,0.0,0.03,0,1,0
+1,250,categories Comic Books,mangakakalot.com,0.07,0.04,0,0,0
+1,251,categories Comic Books,harimanga.com,0.0,0.03,0,0,0
+1,252,categories Comic Books,mangabuddy.com,0.07,0.04,0,0,0
+1,253,categories Dating & Relationships,tinder.com,0.0,0.0,0,0,0
+1,254,categories Dating & Relationships,pof.com,0.0,0.0,0,0,0
+1,255,categories Dating & Relationships,doublelist.com,0.07,0.02,0,0,0
+1,256,categories Dating & Relationships,550909.com,0.0,0.02,0,0,0
+1,257,categories Dating & Relationships,badoocdn.com,0.0,0.01,0,0,0
+1,258,categories Safe for Kids,www.neopets.com,0.01,0.01,0,0,0
+1,259,categories Safe for Kids,www.blooket.com,0.09,0.05,0,0,0
+1,260,categories Safe for Kids,abcya.com,0.0,0.03,0,0,0
+1,261,categories Safe for Kids,disneyplus.com,0.09,0.04,0,0,0
+1,262,categories Safe for Kids,lego.com,0.0,0.04,0,0,0
+1,263,categories Home & Garden,nespresso.com,0.0,0.0,0,0,0
+1,264,categories Home & Garden,samsungelectronics.com,0.0,0.0,0,0,0
+1,265,categories Home & Garden,panasonic.com,0.0,0.0,0,0,0
+1,266,categories Home & Garden,apartmenttherapy.com,0.0,0.0,0,0,0
+1,267,categories Home & Garden,houzz.com,0.0,0.0,0,0,0
+1,268,categories Cartoons & Anime,anime-planet.com,0.07,0.07,0,0,0
+1,269,categories Cartoons & Anime,dto.to,0.07,0.06,0,1,0
+1,270,categories Cartoons & Anime,cbr.com,0.0,0.04,0,0,0
+1,271,categories Cartoons & Anime,cmoa.jp,0.0,0.03,0,0,0
+1,272,categories Cartoons & Anime,wto.to,0.0,0.03,0,0,0
+1,273,categories Chat,freshchat.com,0.0,0.0,0,0,0
+1,274,categories Chat,vivox.com,0.0,0.0,0,0,0
+1,275,categories Chat,livechat.com,0.0,0.0,0,0,0
+1,276,categories Chat,crisp.chat,0.0,0.0,0,0,0
+1,277,categories Chat,roblox.com,0.03,0.01,0,0,0
+1,278,categories Science,pnas.org,0.0,0.0,0,0,0
+1,279,categories Science,livescience.com,0.0,0.0,0,0,0
+1,280,categories Science,newscientist.com,0.0,0.0,0,0,0
+1,281,categories Science,sciencealert.com,0.0,0.0,0,0,0
+1,282,categories Science,nationalgeographic.com,0.0,0.0,0,0,0
+1,283,categories Redirect,is.gd,0.0,0.0,0,0,0
+1,284,categories Redirect,tinyurl.com,0.0,0.0,0,0,0
+1,285,categories Redirect,ojrq.net,0.0,0.0,0,0,0
+1,286,categories Redirect,avito.st,0.0,0.0,0,0,0
+1,287,categories Redirect,kqzyfj.com,0.0,0.0,0,0,0
+1,288,categories Arts,deviantart.com,0.0,0.0,0,0,0
+1,289,categories Arts,pixiv.net,0.0,0.0,0,0,0
+1,290,categories Unreachable,blogspot.fr,0.02,0.02,0,0,0
+1,291,categories Unreachable,blogspot.de,0.01,0.01,0,0,0
+1,292,categories Unreachable,blogspot.it,0.01,0.01,0,0,0
+1,293,categories Unreachable,shopee.io,0.0,0.01,0,0,0
+1,294,categories Unreachable,devicetask.com,0.0,0.01,0,0,0
+1,295,categories Coupons,wowma.jp,0.0,0.0,0,0,0
+1,296,categories Coupons,honey.io,0.0,0.0,0,0,0
+1,297,categories Coupons,blackfriday.com,0.0,0.0,0,0,0
+1,298,categories Coupons,ozbargain.com.au,0.0,0.0,0,0,0
+1,299,categories Coupons,rakuten.com,0.0,0.0,0,0,0
+1,300,"categories News, Portal & Search",depositphotos.com,0.0,0.0,0,0,0
+1,301,"categories News, Portal & Search",alamy.com,0.0,0.0,0,0,0
+1,302,"categories News, Portal & Search",www.istockphoto.com,0.0,0.0,0,0,0
+1,303,"categories News, Portal & Search",www.freepik.com,0.0,0.0,0,0,0
+1,304,"categories News, Portal & Search",freepik.es,0.0,0.0,0,0,0
+1,305,categories P2P,freeip.me,0.0,0.0,0,0,0
+1,306,categories P2P,nordvpn.com,0.1,0.04,0,0,0
+1,307,categories P2P,urban-vpn.com,0.01,0.03,0,0,0
+1,308,categories P2P,surfshark.com,0.0,0.02,0,0,0
+1,309,categories P2P,ipvanish.com,0.0,0.02,0,0,0
+1,310,categories Professional Networking,www.linkedin.com,0.1,0.1,0,0,0
+1,311,categories Professional Networking,hubpages.com,0.0,0.05,0,1,0
+1,312,categories Professional Networking,ads.linkedin.com,0.1,0.06,0,0,0
+1,313,categories Professional Networking,xing.com,0.0,0.04,0,0,0
+1,314,categories Professional Networking,lnkd.in,0.0,0.03,0,0,0
+1,315,categories Humor,humoruniv.com,0.0,0.0,0,0,0
+1,316,categories Humor,knowyourmeme.com,0.0,0.0,0,0,0
+1,317,categories Humor,9gag.com,0.06,0.02,0,0,0
+1,318,categories Humor,movie.eroterest.net,0.06,0.02,0,0,0
+1,319,categories Humor,joyreactor.cc,0.07,0.02,0,0,0
+1,320,categories Miscellaneous,mimecast.net,0.0,0.0,0,0,0
+1,321,categories Spam,mpsuadv.ru,0.0,0.0,0,0,0
+1,322,categories Miscellaneous,gda.pl,0.0,0.0,0,0,0
+1,323,categories Religion,churchcenter.com,0.0,0.0,0,0,0
+1,324,categories Religion,biblegateway.com,0.0,0.0,0,0,0
+1,325,categories Religion,jw.org,0.0,0.0,0,0,0
+1,326,categories Translator,translate.goog,0.0,0.0,0,0,0
+1,327,categories Translator,translate.google.com,0.09,0.04,0,0,0
+1,328,categories Translator,spanishdict.com,0.0,0.03,0,0,0
+1,329,categories Translator,www.deepl.com,0.09,0.03,0,0,0
+1,330,categories Translator,lingojam.com,0.0,0.02,0,0,0
+1,331,categories Parenting,select.mamastar.jp,0.0,0.0,0,0,0
+1,332,categories Parenting,ninisite.com,0.0,0.0,0,0,0
+1,333,categories Parenting,www.ninisite.com,0.0,0.0,0,0,0
+1,334,categories Parenting,mumsnet.com,0.0,0.0,0,0,0
+1,335,categories Parenting,mamastar.jp,0.0,0.0,0,0,0
+1,336,categories New Domains,sharepoint.com,0.0,0.0,0,0,0
+1,337,categories Pets,petfinder.com,0.0,0.0,0,0,0
+1,338,categories Phishing,tendawifi.com,0.0,0.0,0,0,0
+1,339,categories Malware,poe.com,0.0,0.0,0,0,0
+1,340,categories Pets,chewy.com,0.0,0.0,0,0,0
+1,341,categories Phishing,name-services.com,0.0,0.0,0,0,0
+1,342,categories Phishing,bgdns.net,0.0,0.0,0,0,0
+1,343,categories Malware,ru.com,0.0,0.0,0,0,0
+1,344,categories Anonymizer,proxysite.com,0.02,0.02,0,0,0
+1,345,categories Anonymizer,torproject.org,0.1,0.04,0,0,0
+1,346,categories Anonymizer,croxyproxy.com,0.0,0.03,0,0,0
+1,347,categories Anonymizer,www.croxyproxy.com,0.0,0.01,0,0,0
+1,348,categories Violence,mil.ru,0.0,0.0,0,0,0
+1,349,categories Violence,nipr.mil,0.0,0.0,0,0,0
+1,350,categories Lifestyle,grindr.com,0.0,0.0,0,0,0
+1,351,categories Lifestyle,fabguys.com,0.0,0.0,0,0,0
+1,352,categories Lifestyle,m.fabguys.com,0.0,0.0,0,0,0
+1,353,categories Lifestyle,sniffies.com,0.06,0.0,0,0,0
+1,354,categories Messaging,bizport.cn,0.0,0.0,0,0,0
+1,355,categories Messaging,attentivemobile.com,0.0,0.0,0,0,0
+1,356,categories Messaging,telefonica.de,0.0,0.0,0,0,0
+1,357,categories Lingerie & Bikini,juicyads.com,0.07,0.06,0,0,0
+1,358,categories Lingerie & Bikini,intimissimi.com,0.0,0.03,0,0,0
+1,359,categories Lingerie & Bikini,victoriassecret.com,0.0,0.01,0,0,0
+1,360,categories Astrology,horoscope.com,0.0,0.0,0,0,0
+1,361,categories Astrology,astro.com,0.0,0.0,0,0,0
+1,362,categories Astrology,dailyinnovation.biz,0.0,0.0,0,0,0
+1,363,categories DGA Domains,takedwn.ws,0.0,0.0,0,0,0
+1,364,categories DGA Domains,knt9.xyz,0.0,0.0,0,0,0
+1,365,categories DGA Domains,volcfcdndvs.com,0.0,0.0,0,0,0
+1,366,categories Radio,surriel.com,0.0,0.0,0,0,0
+1,367,categories Radio,asuscomm.com,0.0,0.0,0,0,0
+1,368,categories Hacking,ccc.de,0.0,0.0,0,0,0
+1,369,categories Hacking,pavietnam.net,0.0,0.0,0,0,0
+1,370,categories Space & Astronomy,nasa.gov,0.0,0.0,0,0,0
+1,371,categories Space & Astronomy,space.com,0.0,0.0,0,0,0
+1,372,categories Weapons,gunbroker.com,0.06,0.05,0,0,0
+1,373,categories Weapons,palmettostatearmory.com,0.06,0.03,0,0,0
+1,374,categories Arts & Crafts,joann.com,0.0,0.0,0,0,0
+1,375,categories Arts & Crafts,elo7.com.br,0.0,0.0,0,0,0
+1,376,categories Nudity,jimdo.com,0.0,0.0,0,0,0
+1,377,categories Digital Postcards,evite.com,0.0,0.0,0,0,0
+1,378,categories Body Art,jimdosite.com,0.01,0.01,0,0,0
+1,379,categories APIs,nghttp2.org,0.0,0.0,0,0,0
+1,380,"categories Militancy, Hate & Extremism",mediafire.com,0.0,0.0,0,0,0
+1,381,categories Fine Art,metmuseum.org,0.0,0.0,0,0,0
+1,382,categories Home Video/DVD,dmm.com,0.0,0.0,0,0,0
+1,383,categories Spam,pixbet.com,0.06,0.02,0,0,0
+1,384,categories Spam,www.clarity.ms,0.0,0.01,0,0,0
+1,385,categories Spam,tradplusad.com,0.0,0.01,0,0,0
+1,386,categories Spam,nkiri.com,0.0,0.01,0,0,0
+1,387,categories Spam,ktkjmp.com,0.0,0.0,0,0,0
+1,388,categories Vehicles,volvocars.com,0.0,0.0,0,0,0
+1,389,categories Vehicles,www.mobile.de,0.0,0.0,0,0,0
+1,390,categories Vehicles,rst.ua,0.0,0.0,0,0,0
+1,391,categories Vehicles,mercedes-benz.com,0.0,0.0,0,0,0
+1,392,categories Vehicles,drive2.ru,0.0,0.0,0,0,0
+1,393,categories New Domains,aa-rt.sharepoint.com,0.09,0.02,0,0,0
+1,394,categories New Domains,global.aa-rt.sharepoint.com,0.09,0.02,0,0,0
+1,395,categories New Domains,gr.global.aa-rt.sharepoint.com,0.09,0.01,0,0,0
+1,396,categories Pornography,wonporn.com,0.07,0.07,0,1,0
+1,397,categories Pornography,m.porno365.pics,0.06,0.07,0,1,0
+1,398,categories Pornography,my.xhtab3.com,0.06,0.07,0,1,0
+1,399,categories Pornography,www.youporn.com,0.08,0.07,0,1,0
+1,400,categories Pornography,www.xnxx.com,0.07,0.07,0,1,0
+1,401,categories Arts,slidesgo.com,0.0,0.0,0,0,0
+1,402,categories Arts,www.pixiv.net,0.0,0.0,0,0,0
+1,403,categories Arts,moma.org,0.0,0.0,0,0,0
+1,404,categories Arts,canva.com,0.09,0.01,0,0,0
+1,405,categories Arts,www.deviantart.com,0.0,0.01,0,0,0
+1,406,categories Miscellaneous,value-domain.com,0.0,0.0,0,0,0
+1,407,categories Miscellaneous,hostmonster.com,0.0,0.0,0,0,0
+1,408,categories Miscellaneous,mine.nu,0.0,0.0,0,0,0
+1,409,categories Miscellaneous,canonet.ne.jp,0.0,0.0,0,0,0
+1,410,categories Miscellaneous,mantraonline.com,0.0,0.0,0,0,0
+1,411,categories No Content,videowalldirect.com,0.0,0.0,0,0,0
+1,412,categories No Content,amcdn.msftauth.net,0.0,0.0,0,0,0
+1,413,categories No Content,zg-api.com,0.0,0.0,0,0,0
+1,414,categories No Content,skwstat.ru,0.0,0.0,0,0,0
+1,415,categories No Content,sprig.com,0.0,0.0,0,0,0
+1,416,categories Internet Phone & VOIP,symphony.com,0.0,0.04,0,0,0
+1,417,categories Internet Phone & VOIP,discord.com,0.07,0.04,0,0,0
+1,418,categories Internet Phone & VOIP,us-api.asm.skype.com,0.0,0.03,0,0,0
+1,419,categories Internet Phone & VOIP,faq.whatsapp.com,0.09,0.04,0,0,0
+1,420,categories Internet Phone & VOIP,web.whatsapp.com,0.09,0.04,0,0,0
+1,421,"categories News, Portal & Search",istockphoto.com,0.0,0.0,0,0,0
+1,422,"categories News, Portal & Search",freepik.com,0.0,0.0,0,0,0
+1,423,"categories News, Portal & Search",e621.net,0.07,0.02,0,0,0
+1,424,"categories News, Portal & Search",stock.adobe.com,0.0,0.01,0,0,0
+1,425,"categories News, Portal & Search",unsplash.com,0.0,0.01,0,0,0
+1,426,"categories News, Portal & Search",google.co.vi,0.0,0.01,0,0,0
+1,427,categories Adult Themes,www.destacamos.com,0.07,0.03,0,0,0
+1,428,categories Adult Themes,destacamos.com,0.07,0.04,0,0,0
+1,429,categories Adult Themes,s.dto.jp,0.07,0.04,0,0,0
+1,430,categories Adult Themes,escortalligator.com.listcrawler.eu,0.07,0.04,0,0,0
+1,431,categories Adult Themes,fabswingers.com,0.07,0.05,0,0,0
+1,432,categories Adult Themes,imgflip.com,0.0,0.04,0,0,0
+1,433,categories Social Networks,pull-flv-l77-gcp01.tiktokcdn.com,0.1,0.05,0,0,0
+1,434,categories Social Networks,m.ok.ru,0.0,0.04,0,0,0
+1,435,categories Social Networks,aws.duplex.snapchat.com,0.09,0.05,0,0,0
+1,436,categories Social Networks,pull-f5-gcp01.tiktokcdn.com,0.1,0.05,0,0,0
+1,437,categories Social Networks,connect.facebook.net,0.09,0.05,0,0,0
+1,438,categories Gambling,flashscore.co,0.0,0.03,0,0,0
+1,439,categories Gambling,bet365.com,0.07,0.04,0,0,0
+1,440,categories Gambling,jra.go.jp,0.07,0.04,0,0,0
+1,441,categories Gambling,bingoplus.com,0.07,0.04,0,0,0
+1,442,categories Gambling,m.wplay.co,0.07,0.05,0,0,0
+1,443,categories Professional Networking,linkedin.com,0.1,0.03,0,0,0
+1,444,categories Professional Networking,tradingview.com,0.0,0.02,0,0,0
+1,445,categories Professional Networking,in.linkedin.com,0.1,0.03,0,0,0
+1,446,categories Professional Networking,fr.linkedin.com,0.09,0.04,0,0,0
+1,447,categories Professional Networking,yammer.com,0.0,0.03,0,0,0
+1,448,categories Television,api-global.netflix.com,0.09,0.04,0,0,0
+1,449,categories Television,more.tv,0.0,0.04,0,0,0
+1,450,categories Television,nbc.com,0.0,0.03,0,0,0
+1,451,categories Television,eonline.com,0.0,0.03,0,0,0
+1,452,categories Television,filimo.com,0.0,0.03,0,0,0
+1,453,categories Search Engines,firefox.settings.services.mozilla.com,0.0,0.02,0,0,0
+1,454,categories Search Engines,google.gl,0.0,0.01,0,0,0
+1,455,categories Search Engines,google.cat,0.0,0.01,0,0,0
+1,456,categories Search Engines,google.ee,0.0,0.01,0,0,0
+1,457,categories Search Engines,google.com.sa,0.0,0.01,0,0,0
+1,458,categories Information Technology,fe2cr.update.microsoft.com,0.1,0.03,0,0,0
+1,459,categories Information Technology,netangels.ru,0.0,0.03,0,0,0
+1,460,categories Information Technology,brave.com,0.0,0.02,0,0,0
+1,461,categories Information Technology,firebase-settings.crashlytics.com,0.0,0.02,0,0,0
+1,462,categories Information Technology,y2mate.com,0.07,0.03,0,0,0
+1,463,categories P2P,utorrent.com,0.0,0.01,0,0,0
+1,464,categories P2P,bittorrent.com,0.0,0.01,0,0,0
+1,465,categories P2P,surfsharkstatus.com,0.0,0.0,0,0,0
+1,466,categories P2P,expressvpn.com,0.08,0.02,0,0,0
+1,467,categories P2P,hola.org,0.1,0.03,0,0,0
+1,468,categories P2P,cyberghostvpn.com,0.0,0.03,0,0,0
+1,469,categories Instant Messengers,chat.cdn.whatsapp.net,0.09,0.04,0,0,0
+1,470,categories Instant Messengers,mattermost.com,0.0,0.03,0,0,0
+1,471,categories Instant Messengers,livechatinc.com,0.0,0.03,0,0,0
+1,472,categories Instant Messengers,intercom.io,0.01,0.03,0,0,0
+1,473,categories Instant Messengers,loom.com,0.0,0.02,0,0,0
+1,474,categories Personal Blogs,2.bp.blogspot.com,0.07,0.03,0,0,0
+1,475,categories Personal Blogs,bp.blogspot.com,0.07,0.04,0,0,0
+1,476,categories Personal Blogs,over-blog.com,0.0,0.03,0,0,0
+1,477,categories Personal Blogs,www.blogger.com,0.07,0.04,0,0,0
+1,478,categories Personal Blogs,gingerall.com,0.0,0.03,0,0,0
+1,479,categories Pets,petsmart.com,0.0,0.0,0,0,0
+1,480,categories Pets,akc.org,0.0,0.0,0,0,0
+1,481,categories Pets,petco.com,0.0,0.0,0,0,0
+1,482,categories Newly Seen Domains,vedcdnlb.com,0.0,0.01,0,0,0
+1,483,categories Newly Seen Domains,streamlabs.com,0.0,0.01,0,0,0
+1,484,categories Newly Seen Domains,kiev.ua,0.0,0.01,0,0,0
+1,485,categories Newly Seen Domains,pemsrv.com,0.0,0.01,0,0,0
+1,486,categories Newly Seen Domains,batcg.org,0.0,0.01,0,0,0
+1,487,categories Questionable Activities,m.animeflv.net,0.0,0.0,0,0,0
+1,488,categories Questionable Activities,lookmovie2.to,0.0,0.0,0,0,0
+1,489,categories Questionable Activities,battwo.com,0.07,0.01,0,0,0
+1,490,categories Questionable Activities,openbittorrent.com,0.0,0.01,0,0,0
+1,491,categories Questionable Activities,bio.ibomma.link,0.0,0.01,0,0,0
+1,492,categories File Sharing,beget.com,0.0,0.02,0,0,0
+1,493,categories File Sharing,mask-api.icloud.com,0.09,0.03,0,0,0
+1,494,categories File Sharing,drive.google.com,0.09,0.03,0,0,0
+1,495,categories Adult Themes,www.omegle.com,0.07,0.04,0,0,0
+1,496,categories Adult Themes,adam4adam.com,0.07,0.05,0,0,0
+1,497,categories Adult Themes,skokka.com,0.07,0.05,0,0,0
+1,498,categories Adult Themes,fatalmodel.com,0.07,0.05,0,0,0
+1,499,categories Adult Themes,express.de,0.0,0.04,0,0,0
+1,500,categories Adult Themes,listcrawler.eu,0.07,0.05,0,0,0
+1,501,categories Adult Themes,shahvani.com,0.07,0.05,0,0,0
+1,502,categories Adult Themes,escortbabylon.net,0.07,0.05,0,0,0
+1,503,categories Adult Themes,cityheaven.net,0.07,0.05,0,0,0
+1,504,categories Audio Streaming,bandcamp.com,0.0,0.01,0,0,0
+1,505,categories Audio Streaming,podbean.com,0.0,0.01,0,0,0
+1,506,categories Audio Streaming,iheart.com,0.0,0.01,0,0,0
+1,507,categories Audio Streaming,wbur.org,0.0,0.01,0,0,0
+1,508,categories Audio Streaming,gaana.com,0.0,0.01,0,0,0
+1,509,categories Pornography,tukif.com,0.07,0.07,0,1,0
+1,510,categories Pornography,dmm.co.jp,0.07,0.07,0,1,0
+1,511,categories Pornography,superporn.com,0.07,0.07,0,1,0
+1,512,categories Pornography,gayboystube.com,0.07,0.07,0,1,0
+1,513,categories Pornography,xgx.mobi,0.08,0.07,0,1,0
+1,514,categories Safe for Kids,bricklink.com,0.0,0.03,0,0,0
+1,515,categories Safe for Kids,brainpop.com,0.0,0.02,0,0,0
+1,516,categories Safe for Kids,pbskids.org,0.0,0.02,0,0,0
+1,517,categories Safe for Kids,mathplayground.com,0.01,0.02,0,0,0
+1,518,categories Safe for Kids,id.blooket.com,0.09,0.02,0,0,0
+1,519,categories Food & Drink,vk.ru,0.07,0.01,0,0,0
+1,520,categories Food & Drink,s.tabelog.com,0.0,0.01,0,0,0
+1,521,categories Food & Drink,tabelog.com,0.0,0.01,0,0,0
+1,522,categories Food & Drink,starbucks.com.cn,0.0,0.01,0,0,0
+1,523,categories Food & Drink,zomato.com,0.0,0.01,0,0,0
+1,524,categories Content Servers,alicdn.com,0.0,0.0,0,0,0
+1,525,categories Content Servers,1447723502.rsc.cdn77.org,0.0,0.0,0,0,0
+1,526,categories Content Servers,vi-serve.com,0.0,0.0,0,0,0
+1,527,categories Content Servers,qh-lb.com,0.0,0.0,0,0,0
+1,528,categories Content Servers,akamaitech.net,0.0,0.0,0,0,0
+1,529,categories Photography,www.pinterest.com,0.09,0.03,0,0,0
+1,530,categories Photography,smugmug.com,0.0,0.03,0,0,0
+1,531,categories Photography,i.pinimg.com,0.09,0.04,0,0,0
+1,532,categories Photography,ct.pinterest.com,0.09,0.04,0,0,0
+1,533,categories Photography,pinterest.co.uk,0.09,0.04,0,0,0
+1,534,categories Adult Themes,www.cityheaven.net,0.07,0.05,0,0,0
+1,535,categories Adult Themes,archiveofourown.org,0.0,0.05,0,0,0
+1,536,categories Adult Themes,adultfriendfinder.com,0.07,0.05,0,0,0
+1,537,categories Adult Themes,danbooru.donmai.us,0.07,0.05,0,0,0
+1,538,categories Adult Themes,omegle.com,0.07,0.05,0,0,0
+1,539,categories Adult Themes,m.fabswingers.com,0.07,0.05,0,0,0
+1,540,categories Technology,getpocket.com,0.0,0.0,0,0,0
+1,541,categories Dating & Relationships,m.beboo.ru,0.0,0.01,0,0,0
+1,542,categories Dating & Relationships,waplog.com,0.0,0.01,0,0,0
+1,543,categories Dating & Relationships,www.sexlog.com,0.07,0.01,0,0,0
+1,544,categories Dating & Relationships,hotornot.com,0.0,0.01,0,0,0
+1,545,categories Dating & Relationships,love.ru,0.0,0.01,0,0,0
+1,546,categories Dating & Relationships,theknot.com,0.0,0.01,0,0,0
+1,547,categories Chat,onlar.az,0.0,0.0,0,0,0
+1,548,categories Chat,www.roblox.com,0.11,0.02,0,0,0
+1,549,categories Chat,jivosite.com,0.0,0.02,0,0,0
+1,550,categories Chat,discord.media,0.0,0.02,0,0,0
+1,551,categories Chat,sharechat.com,0.0,0.01,0,0,0
+1,552,categories Chat,olark.com,0.0,0.01,0,0,0
+1,553,categories Chat,tango.me,0.0,0.01,0,0,0
+1,554,categories Chat,boldchat.com,0.0,0.01,0,0,0
+1,555,categories Chat,mfms.ru,0.0,0.01,0,0,0
+1,556,categories Chat,jivo.ru,0.0,0.01,0,0,0
+1,557,categories Chat,kik.com,0.0,0.0,0,0,0
+1,558,categories Business,tsfe.trafficshaping.dsp.mp.microsoft.com,0.0,0.0,0,0,0
+1,559,categories Business,ada.support,0.0,0.0,0,0,0
+1,560,categories Business,adthrive.com,0.0,0.0,0,0,0
+1,561,categories Business,eu-teams.events.data.microsoft.com,0.01,0.0,0,0,0
+1,562,categories Business,scorecardresearch.com,0.0,0.0,0,0,0
+1,563,categories News & Media,sputniknews.com,0.0,0.0,0,0,0
+1,564,categories News & Media,m.naver.com,0.0,0.0,0,0,0
+1,565,categories News & Media,aif.ru,0.0,0.0,0,0,0
+1,566,categories News & Media,goo.ne.jp,0.0,0.0,0,0,0
+1,567,categories News & Media,ocn.ne.jp,0.0,0.0,0,0,0
+1,568,categories Gaming,epicgames.dev,0.01,0.01,0,0,0
+1,569,categories Gaming,fortnitetracker.com,0.01,0.01,0,0,0
+1,570,categories Gaming,playbattlegrounds.com,0.02,0.01,0,0,0
+1,571,categories Gaming,lilithgame.com,0.01,0.01,0,0,0
+1,572,categories Gaming,kotaku.com,0.01,0.01,0,0,0
+1,573,categories Forums,ropro.io,0.0,0.01,0,0,0
+1,574,categories Forums,csdn.net,0.0,0.01,0,0,0
+1,575,categories Forums,bigthink.com,0.0,0.01,0,0,0
+1,576,categories Forums,m.pantip.com,0.0,0.01,0,0,0
+1,577,categories Forums,cnblogs.com,0.0,0.01,0,0,0
+1,578,categories Movies,prod.cloud.netflix.com,0.09,0.04,0,0,0
+1,579,categories Movies,boxofficemojo.com,0.0,0.03,0,0,0
+1,580,categories Movies,gall.dcinside.com,0.09,0.04,0,0,0
+1,581,categories Movies,imdb.com,0.0,0.04,0,0,0
+1,582,categories Movies,sonypictures.com,0.0,0.03,0,0,0
+1,583,categories Economy & Finance,geico.com,0.0,0.0,0,0,0
+1,584,categories Economy & Finance,mizuhobank.co.jp,0.0,0.0,0,0,0
+1,585,categories Economy & Finance,bankbazaar.com,0.0,0.0,0,0,0
+1,586,categories Economy & Finance,coinbase.com,0.0,0.0,0,0,0
+1,587,categories Economy & Finance,imf.org,0.0,0.0,0,0,0
+1,588,"categories Politics, Advocacy, and Government-Related",beian.miit.gov.cn,0.0,0.0,0,0,0
+1,589,"categories Politics, Advocacy, and Government-Related",unwomen.org,0.0,0.0,0,0,0
+1,590,"categories Politics, Advocacy, and Government-Related",nps.gov,0.0,0.0,0,0,0
+1,591,"categories Politics, Advocacy, and Government-Related",lzptt.gx.cn,0.0,0.0,0,0,0
+1,592,"categories Politics, Advocacy, and Government-Related",sat.gob.mx,0.0,0.0,0,0,0
+1,593,categories Information Security,ico.org.uk,0.0,0.0,0,0,0
+1,594,categories Information Security,pki.goog,0.0,0.0,0,0,0
+1,595,categories Information Security,egnyte.com,0.09,0.01,0,0,0
+1,596,categories Information Security,owasp.org,0.0,0.01,0,0,0
+1,597,categories Information Security,thawte.com,0.0,0.01,0,0,0
+1,598,categories Education,www.getepic.com,0.0,0.0,0,0,0
+1,599,categories Education,prosv.ru,0.0,0.0,0,0,0
+1,600,categories Education,gsu.edu,0.0,0.0,0,0,0
+1,601,categories Video Streaming,bitchute.com,0.0,0.0,0,0,0
+1,602,categories Video Streaming,www.maxpreps.com,0.0,0.0,0,0,0
+1,603,categories Video Streaming,player.vimeo.com,0.09,0.01,0,0,0
+1,604,categories Video Streaming,www.reuters.com,0.0,0.01,0,0,0
+1,605,categories Video Streaming,dailycaller.com,0.0,0.01,0,0,0
+1,606,categories Sports,formula1.com,0.0,0.0,0,0,0
+1,607,categories Travel,travelandleisure.com,0.0,0.0,0,0,0
+1,608,categories Travel,www.tripadvisor.com,0.0,0.0,0,0,0
+1,609,categories Travel,www.latamairlines.com,0.0,0.0,0,0,0
+1,610,categories Travel,airbnb.com,0.0,0.0,0,0,0
+1,611,categories Travel,tripadvisor.it,0.0,0.0,0,0,0
+1,612,categories Educational Institutions,cornell.edu,0.0,0.0,0,0,0
+1,613,categories Educational Institutions,monash.edu,0.0,0.0,0,0,0
+1,614,categories Educational Institutions,kth.se,0.0,0.0,0,0,0
+1,615,categories Educational Institutions,sydney.edu.au,0.0,0.0,0,0,0
+1,616,categories Educational Institutions,rae.es,0.0,0.0,0,0,0
+1,617,categories Ecommerce,steelseries.com,0.0,0.0,0,0,0
+1,618,categories Ecommerce,gap.com,0.0,0.0,0,0,0
+1,619,categories Ecommerce,abercrombie.com,0.0,0.0,0,0,0
+1,620,categories Ecommerce,falabella.com,0.0,0.0,0,0,0
+1,621,categories Ecommerce,gigaset-elements.com,0.0,0.0,0,0,0
+1,622,categories Auctions & Marketplaces,list.am,0.0,0.0,0,0,0
+1,623,categories Auctions & Marketplaces,ebay.it,0.0,0.0,0,0,0
+1,624,categories Auctions & Marketplaces,stockx.com,0.0,0.0,0,0,0
+1,625,categories Auctions & Marketplaces,meshok.net,0.0,0.0,0,0,0
+1,626,categories Auctions & Marketplaces,teacherspayteachers.com,0.0,0.0,0,0,0
+1,627,categories Advertisements,prebid.a-mo.net,0.0,0.0,0,0,0
+1,628,categories Advertisements,adsbynimbus.com,0.0,0.0,0,0,0
+1,629,categories Advertisements,ko-fi.com,0.0,0.0,0,0,0
+1,630,categories Advertisements,a-mo.net,0.0,0.0,0,0,0
+1,631,categories Advertisements,tsyndicate.com,0.0,0.0,0,0,0
+1,632,categories Cartoons & Anime,manhwatop.com,0.07,0.03,0,0,0
+1,633,categories Cartoons & Anime,kakuyomu.jp,0.0,0.02,0,0,0
+1,634,categories Cartoons & Anime,myanimelist.net,0.0,0.02,0,0,0
+1,635,categories Cartoons & Anime,animesuge.to,0.0,0.02,0,0,0
+1,636,categories Cartoons & Anime,jut.su,0.0,0.02,0,0,0
+1,637,categories Music,billboard.com,0.0,0.0,0,0,0
+1,638,categories Music,sweetwater.com,0.0,0.0,0,0,0
+1,639,categories Music,thomann.de,0.0,0.0,0,0,0
+1,640,categories Music,hostingradio.ru,0.0,0.0,0,0,0
+1,641,categories Music,ximalaya.com,0.0,0.0,0,0,0
+1,642,categories Government,up.gov.in,0.0,0.0,0,0,0
+1,643,categories Government,dhs.gov,0.0,0.0,0,0,0
+1,644,categories Government,studentaid.gov,0.0,0.0,0,0,0
+1,645,categories Government,medlineplus.gov,0.0,0.0,0,0,0
+1,646,categories Government,idaho.gov,0.0,0.0,0,0,0
+1,647,categories Health & Fitness,sleepfoundation.org,0.0,0.0,0,0,0
+1,648,categories Health & Fitness,rosminzdrav.ru,0.0,0.0,0,0,0
+1,649,categories Health & Fitness,nih.gov,0.0,0.0,0,0,0
+1,650,categories Magazines,gamesradar.com,0.01,0.0,0,0,0
+1,651,categories Magazines,gizmodo.com,0.0,0.0,0,0,0
+1,652,categories Magazines,chip.de,0.0,0.0,0,0,0
+1,653,categories Magazines,adweek.com,0.0,0.0,0,0,0
+1,654,categories Magazines,slate.com,0.0,0.0,0,0,0
+1,655,categories Social Networks,fb.watch,0.0,0.05,0,0,0
+1,656,categories Social Networks,p16-sign-sg.tiktokcdn.com,0.1,0.05,0,0,0
+1,657,categories Social Networks,pinterest.com,0.09,0.06,0,0,0
+1,658,categories Social Networks,br.pinterest.com,0.09,0.06,0,0,0
+1,659,categories Social Networks,pinterest.fr,0.09,0.06,0,0,0
+1,660,categories Dating & Relationships,meetme.com,0.0,0.01,0,0,0
+1,661,categories Dating & Relationships,badoo.com,0.0,0.01,0,0,0
+1,662,categories Dating & Relationships,m.tabor.ru,0.0,0.0,0,0,0
+1,663,categories Dating & Relationships,bumble.com,0.0,0.0,0,0,0
+1,664,categories Dating & Relationships,tantanapp.com,0.0,0.0,0,0,0
+1,665,categories Hobbies & Interests,spacebattles.com,0.0,0.0,0,0,0
+1,666,categories Hobbies & Interests,starwars.com,0.0,0.0,0,0,0
+1,667,categories Hobbies & Interests,ultimate-guitar.com,0.0,0.0,0,0,0
+1,668,categories Hobbies & Interests,lichess.org,0.01,0.0,0,0,0
+1,669,categories Hobbies & Interests,op.gg,0.01,0.01,0,0,0
+1,670,categories Parked & For Sale Domains,yutex.ru,0.0,0.0,0,0,0
+1,671,categories Parked & For Sale Domains,likee.com,0.0,0.0,0,0,0
+1,672,categories Parked & For Sale Domains,sedoparking.com,0.0,0.0,0,0,0
+1,673,categories Parked & For Sale Domains,js7k.com,0.0,0.0,0,0,0
+1,674,categories Parked & For Sale Domains,vivawebhost.com,0.0,0.0,0,0,0
+1,675,categories Redirect,bitly.com,0.0,0.0,0,0,0
+1,676,categories Redirect,lc.chat,0.0,0.0,0,0,0
+1,677,categories Redirect,rb.gy,0.0,0.0,0,0,0
+1,678,categories Redirect,goo.gl,0.0,0.0,0,0,0
+1,679,categories Redirect,ow.ly,0.0,0.0,0,0,0
+1,680,categories Fashion,www.trendyol.com,0.0,0.0,0,0,0
+1,681,categories Fashion,fitbit.com,0.0,0.0,0,0,0
+1,682,categories Fashion,self.com,0.0,0.0,0,0,0
+1,683,categories Fashion,shein.com.mx,0.0,0.0,0,0,0
+1,684,categories Fashion,avon.com,0.0,0.0,0,0,0
+1,685,categories Redirect,skyrock.net,0.0,0.0,0,0,0
+1,686,categories Redirect,eepurl.com,0.0,0.0,0,0,0
+1,687,categories Redirect,shorturl.at,0.0,0.0,0,0,0
+1,688,categories Redirect,tiny.cc,0.0,0.0,0,0,0
+1,689,categories Redirect,cutt.ly,0.02,0.0,0,0,0
+1,690,categories Redirect,bit.ly,0.0,0.0,0,0,0
+1,691,categories Redirect,t.co,0.0,0.0,0,0,0
+1,692,categories Redirect,rebrand.ly,0.0,0.0,0,0,0
+1,693,categories Webmail,inbox.google.com,0.09,0.03,0,0,0
+1,694,categories Webmail,schoology.com,0.0,0.02,0,0,0
+1,695,categories Webmail,mail.ru,0.0,0.02,0,0,0
+1,696,categories Webmail,mail-ads.google.com,0.09,0.03,0,0,0
+1,697,categories Webmail,outlook.office365.com,0.09,0.03,0,0,0
+1,698,categories Weather,weather.gov,0.0,0.0,0,0,0
+1,699,categories Weather,kr-weathernews.com,0.0,0.0,0,0,0
+1,700,categories Weather,weathercn.com,0.0,0.0,0,0,0
+1,701,categories Weather,zuimeitianqi.com,0.0,0.0,0,0,0
+1,702,categories Weather,eltiempo.es,0.0,0.0,0,0,0
+1,703,categories Technology,dvr163.com,0.0,0.0,0,0,0
+1,704,categories Technology,moodle.com,0.0,0.0,0,0,0
+1,705,categories Technology,playwire.com,0.0,0.0,0,0,0
+1,706,categories Technology,wondershare.com,0.0,0.0,0,0,0
+1,707,categories Technology,1password.com,0.0,0.0,0,0,0
+1,708,categories File Sharing,vecteezy.com,0.0,0.03,0,0,0
+1,709,categories File Sharing,mask-h2.icloud.com,0.09,0.03,0,0,0
+1,710,categories File Sharing,mega.co.nz,0.09,0.04,0,0,0
+1,711,categories File Sharing,nyaa.si,0.03,0.04,0,0,0
+1,712,categories File Sharing,hicloud.com,0.0,0.03,0,0,0
+1,713,categories Violence,topwar.ru,0.0,0.0,0,0,0
+1,714,categories Violence,military.com,0.0,0.0,0,0,0
+1,715,categories Entertainment,vseosvita.ua,0.0,0.0,0,0,0
+1,716,categories Entertainment,www.aznude.com,0.07,0.01,0,0,0
+1,717,categories Entertainment,www.imdb.com,0.0,0.01,0,0,0
+1,718,categories Entertainment,lotterysambadresult.in,0.06,0.01,0,0,0
+1,719,categories Entertainment,rottentomatoes.com,0.01,0.01,0,0,0
+1,720,categories Real Estate,hud.gov,0.0,0.0,0,0,0
+1,721,categories Real Estate,pik.ru,0.0,0.0,0,0,0
+1,722,categories Real Estate,redfin.com,0.0,0.0,0,0,0
+1,723,categories Real Estate,www.realtor.com,0.0,0.0,0,0,0
+1,724,categories Real Estate,www.idealista.it,0.0,0.0,0,0,0
+1,725,categories Dating & Relationships,tabor.ru,0.0,0.0,0,0,0
+1,726,categories Dating & Relationships,beboo.ru,0.0,0.0,0,0,0
+1,727,categories Dating & Relationships,fotostrana.ru,0.0,0.0,0,0,0
+1,728,categories Dating & Relationships,gotinder.com,0.0,0.0,0,0,0
+1,729,categories Dating & Relationships,match.com,0.0,0.0,0,0,0
+1,730,categories Job Search & Careers,seek.com.au,0.0,0.0,0,0,0
+1,731,categories Job Search & Careers,freelancer.com,0.0,0.0,0,0,0
+1,732,categories Job Search & Careers,osha.gov,0.0,0.0,0,0,0
+1,733,categories Job Search & Careers,www.upwork.com,0.0,0.0,0,0,0
+1,734,categories Job Search & Careers,greenhouse.io,0.0,0.0,0,0,0
+1,735,categories Pornography,porno365.pics,0.07,0.07,0,1,0
+1,736,categories Pornography,pornhat.com,0.08,0.07,0,1,0
+1,737,categories Pornography,www.porno-zona.com,0.07,0.07,0,1,0
+1,738,categories Pornography,fap2bed.com,0.07,0.07,0,1,0
+1,739,categories Pornography,www.eporner.com,0.07,0.07,0,1,0
+1,740,categories Sports,m.forebet.com,0.07,0.01,0,0,0
+1,741,categories Sports,flashscore.com,0.0,0.01,0,0,0
+1,742,categories Sports,tjk.org,0.07,0.01,0,0,0
+1,743,categories Sports,mackolik.com,0.07,0.02,0,0,0
+1,744,categories Sports,tycsports.com,0.0,0.02,0,0,0
+1,745,categories Clothing,www.nike.com,0.0,0.0,0,0,0
+1,746,categories Clothing,zappos.com,0.0,0.0,0,0,0
+1,747,categories Clothing,nike.com,0.0,0.0,0,0,0
+1,748,categories Clothing,hottopic.com,0.0,0.0,0,0,0
+1,749,categories Clothing,sinsay.com,0.0,0.0,0,0,0
+1,750,categories Religion,wol.jw.org,0.0,0.0,0,0,0
+1,751,categories Religion,bible.com,0.0,0.0,0,0,0
+1,752,categories Religion,www.biblegateway.com,0.0,0.0,0,0,0
+1,753,categories Religion,www.jw.org,0.0,0.0,0,0,0
+1,754,categories Comic Books,animanch.com,0.0,0.03,0,0,0
+1,755,categories Comic Books,bbs.animanch.com,0.0,0.02,0,0,0
+1,756,categories Comic Books,mangabat.com,0.0,0.02,0,0,0
+1,757,categories Comic Books,bato.to,0.07,0.02,0,0,0
+1,758,categories Comic Books,hto.to,0.07,0.02,0,0,0
+1,759,categories Login Screens,passport.yandex.ru,0.0,0.0,0,0,0
+1,760,categories Login Screens,unmsapp.com,0.0,0.0,0,0,0
+1,761,categories Login Screens,static.hotjar.com,0.0,0.0,0,0,0
+1,762,categories Login Screens,action.com,0.0,0.0,0,0,0
+1,763,categories Login Screens,office365.us,0.0,0.0,0,0,0
+1,764,categories Shopping,tomshardware.com,0.0,0.0,0,0,0
+1,765,categories Shopping,gadgets360.com,0.0,0.0,0,0,0
+1,766,categories Shopping,vxxx.com,0.07,0.01,0,0,0
+1,767,categories Shopping,swagbucks.com,0.0,0.01,0,0,0
+1,768,categories Shopping,kaggle.com,0.0,0.01,0,0,0
+1,769,categories Science,science.org,0.0,0.0,0,0,0
+1,770,categories Science,symbolab.com,0.0,0.0,0,0,0
+1,771,categories Science,scientificamerican.com,0.0,0.0,0,0,0
+1,772,categories Science,sciencedirect.com,0.0,0.0,0,0,0
+1,773,categories Science,rsc.org,0.0,0.0,0,0,0
+1,774,categories Personal Blogs,fapello.com,0.07,0.04,0,0,0
+1,775,categories Personal Blogs,blogspot.ca,0.02,0.03,0,0,0
+1,776,categories Personal Blogs,androidpolice.com,0.0,0.03,0,0,0
+1,777,categories Personal Blogs,1.bp.blogspot.com,0.07,0.03,0,0,0
+1,778,categories Personal Blogs,wp.com,0.0,0.03,0,0,0
+1,779,categories Social Networks,star-mini.c10r.facebook.com,0.12,0.06,0,0,0
+1,780,categories Social Networks,pinimg.com,0.0,0.06,0,0,0
+1,781,categories Social Networks,pinterest.ph,0.09,0.06,0,0,0
+1,782,categories Social Networks,pull-a5-va01.tiktokcdn.com,0.1,0.06,0,0,0
+1,783,categories Social Networks,gcp.api.snapchat.com,0.09,0.06,0,0,0
+1,784,categories Social Networks,web.facebook.com,0.12,0.06,0,0,0
+1,785,categories Instant Messengers,zalo.me,0.0,0.02,0,0,0
+1,786,categories Instant Messengers,myvzw.com,0.0,0.02,0,0,0
+1,787,categories Instant Messengers,sendbird.com,0.0,0.02,0,0,0
+1,788,categories Instant Messengers,intercom.com,0.0,0.01,0,0,0
+1,789,categories Instant Messengers,telegram.me,0.1,0.02,0,0,0
+1,790,categories Gambling,www.sportybet.com,0.08,0.05,0,0,0
+1,791,categories Gambling,covers.com,0.07,0.05,0,0,0
+1,792,categories Gambling,race.sp.netkeiba.com,0.07,0.05,0,0,0
+1,793,categories Gambling,sisal.it,0.07,0.05,0,0,0
+1,794,categories Gambling,f12.bet,0.07,0.05,0,0,0
+1,795,categories Information Technology,manualslib.com,0.0,0.02,0,0,0
+1,796,categories Information Technology,jetbrains.com,0.0,0.02,0,0,0
+1,797,categories Information Technology,prod-eastus.access-point.cloudmessaging.edge.microsoft.com,0.0,0.02,0,0,0
+1,798,categories Information Technology,boostmobile.com,0.0,0.02,0,0,0
+1,799,categories Information Technology,prismic.io,0.0,0.02,0,0,0
+1,800,categories Pornography,www.xvideos5.com,0.07,0.07,0,1,0
+1,801,categories Pornography,skipthegames.com,0.07,0.07,0,1,0
+1,802,categories Pornography,xhamster3.com,0.08,0.07,0,1,0
+1,803,categories Pornography,xhtab3.com,0.07,0.07,0,1,0
+1,804,categories Pornography,www.bhojpurisex.site,0.07,0.07,0,1,0
+1,805,categories Home & Garden,homedepot.com,0.0,0.0,0,0,0
+1,806,categories Home & Garden,www.samsung.com,0.0,0.0,0,0,0
+1,807,categories Home & Garden,lgthinq.com,0.0,0.0,0,0,0
+1,808,categories Home & Garden,www.lg.com,0.0,0.0,0,0,0
+1,809,categories Home & Garden,hgtv.com,0.0,0.0,0,0,0
+1,810,categories Television,fox.com,0.0,0.02,0,0,0
+1,811,categories Television,disney.co.jp,0.0,0.02,0,0,0
+1,812,categories Television,comcast.net,0.0,0.02,0,0,0
+1,813,categories Television,sky.it,0.0,0.02,0,0,0
+1,814,categories Television,ftl.netflix.com,0.09,0.02,0,0,0
+1,815,categories Unreachable,cafe24.com,0.0,0.01,0,0,0
+1,816,categories Unreachable,merlincdn.net,0.0,0.01,0,0,0
+1,817,categories Unreachable,blogspot.in,0.01,0.0,0,0,0
+1,818,categories Unreachable,dbankcloud.ru,0.0,0.0,0,0,0
+1,819,categories Unreachable,1gb.ru,0.0,0.0,0,0,0
+1,820,categories Social Networks,vk.com,0.0,0.06,0,0,0
+1,821,categories Social Networks,pull-f5-vr-gcp01.tiktokcdn.com,0.1,0.06,0,0,0
+1,822,categories Social Networks,pull-flv-l16-sg01.tiktokcdn.com,0.1,0.06,0,0,0
+1,823,categories Social Networks,gab.com,0.0,0.06,0,0,0
+1,824,categories Social Networks,pull-cmaf-f16-gcp01.tiktokcdn.com,0.1,0.06,0,0,0
+1,825,categories Internet Phone & VOIP,grandstream.com,0.0,0.04,0,0,0
+1,826,categories Internet Phone & VOIP,g.whatsapp.net,0.09,0.04,0,0,0
+1,827,categories Internet Phone & VOIP,whatsapp.net,0.0,0.03,0,0,0
+1,828,categories Internet Phone & VOIP,discord.gg,0.0,0.03,0,0,0
+1,829,categories Internet Phone & VOIP,discordapp.com,0.09,0.03,0,0,0
+1,830,categories File Sharing,icloud-content.com,0.0,0.03,0,0,0
+1,831,categories Instant Messengers,pps.whatsapp.net,0.09,0.02,0,0,0
+1,832,categories Instant Messengers,edge.skype.com,0.0,0.02,0,0,0
+1,833,categories Instant Messengers,noam.cc.skype.com,0.0,0.02,0,0,0
+1,834,categories Instant Messengers,threema.ch,0.0,0.02,0,0,0
+1,835,categories Instant Messengers,app.slack.com,0.09,0.02,0,0,0
+1,836,categories Instant Messengers,dingtalk.com,0.09,0.03,0,0,0
+1,837,categories Instant Messengers,messenger.com,0.09,0.03,0,0,0
+1,838,categories Instant Messengers,groupme.com,0.0,0.03,0,0,0
+1,839,categories Instant Messengers,www.whatsapp.com,0.09,0.04,0,0,0
+1,840,categories Instant Messengers,zaloapp.com,0.0,0.03,0,0,0
+1,841,categories Instant Messengers,chat.zalo.me,0.09,0.04,0,0,0
+1,842,categories Instant Messengers,viber.com,0.0,0.04,0,0,0
+1,843,categories Instant Messengers,cc.skype.com,0.0,0.03,0,0,0
+1,844,categories Instant Messengers,lin.ee,0.0,0.03,0,0,0
+1,845,categories Instant Messengers,dit.whatsapp.net,0.09,0.04,0,0,0
+1,846,categories Instant Messengers,edgeapi.slack.com,0.0,0.03,0,0,0
+1,847,categories Instant Messengers,icq.com,0.0,0.03,0,0,0
+1,848,categories Instant Messengers,skype.com,0.0,0.03,0,0,0
+1,849,categories Instant Messengers,cdn.whatsapp.net,0.09,0.03,0,0,0
+1,850,categories Instant Messengers,linecorp.com,0.0,0.03,0,0,0
+1,851,categories Instant Messengers,telegram.org,0.1,0.04,0,0,0
+1,852,categories Instant Messengers,tawk.to,0.01,0.03,0,0,0
+1,853,categories Instant Messengers,t.me,0.0,0.03,0,0,0
+1,854,categories Instant Messengers,slack.com,0.0,0.03,0,0,0
+1,855,categories Instant Messengers,www.messenger.com,0.09,0.03,0,0,0
+1,856,categories Instant Messengers,mmx-ds.cdn.whatsapp.net,0.09,0.04,0,0,0
+1,857,categories Instant Messengers,m.me,0.0,0.04,0,0,0
+1,858,categories Instant Messengers,line.me,0.0,0.03,0,0,0
+1,859,categories Vehicles,autoblog.com,0.0,0.0,0,0,0
+1,860,categories Vehicles,hyundai.com,0.0,0.0,0,0,0
+1,861,categories Vehicles,volkswagen.de,0.0,0.0,0,0,0
+1,862,categories Vehicles,dealer.com,0.0,0.0,0,0,0
+1,863,categories Vehicles,auto.drom.ru,0.0,0.0,0,0,0
+1,864,categories Education,unm.edu,0.0,0.0,0,0,0
+1,865,categories Education,thesaurus.com,0.0,0.0,0,0,0
+1,866,categories Education,howstuffworks.com,0.0,0.0,0,0,0
+1,867,categories Education,ja.m.wikipedia.org,0.0,0.0,0,0,0
+1,868,categories Education,utk.edu,0.0,0.0,0,0,0
+1,869,categories Photography,photobucket.com,0.0,0.04,0,0,0
+1,870,categories Photography,pinterest.com.mx,0.09,0.04,0,0,0
+1,871,categories Photography,123rf.com,0.0,0.04,0,0,0
+1,872,categories Photography,cargocollective.com,0.0,0.03,0,0,0
+1,873,categories Photography,postimg.cc,0.0,0.03,0,0,0
+1,874,categories Pornography,javhdporn.net,0.07,0.07,0,1,0
+1,875,categories Pornography,boyfriendtv.com,0.07,0.07,0,1,0
+1,876,categories Pornography,theporndude.com,0.08,0.07,0,1,0
+1,877,categories Pornography,en.luxuretv.com,0.07,0.07,0,1,0
+1,878,categories Pornography,www.pornhub.com,0.07,0.07,0,1,0
+1,879,categories Music,avid.com,0.0,0.0,0,0,0
+1,880,categories Music,www.discogs.com,0.0,0.0,0,0,0
+1,881,categories Music,pitchfork.com,0.0,0.0,0,0,0
+1,882,categories Music,castbox.fm,0.0,0.0,0,0,0
+1,883,categories Music,spreaker.com,0.0,0.0,0,0,0
+1,884,categories File Sharing,me.com,0.0,0.03,0,0,0
+1,885,categories File Sharing,onedrive.com,0.0,0.03,0,0,0
+1,886,categories Music,kugou.com,0.0,0.0,0,0,0
+1,887,categories Music,su.itunes.apple.com,0.09,0.01,0,0,0
+1,888,categories Music,music-fa.com,0.0,0.01,0,0,0
+1,889,categories Music,discogs.com,0.0,0.01,0,0,0
+1,890,categories Music,musescore.com,0.0,0.01,0,0,0
+1,891,categories Music,starmakerstudios.com,0.0,0.01,0,0,0
+1,892,categories Music,lnk.to,0.0,0.01,0,0,0
+1,893,categories Music,larkplayerapp.com,0.01,0.01,0,0,0
+1,894,categories Music,itunes.apple.com,0.09,0.02,0,0,0
+1,895,categories Music,cdbaby.com,0.0,0.02,0,0,0
+1,896,categories Music,nme.com,0.0,0.02,0,0,0
+1,897,categories Music,genius.com,0.0,0.01,0,0,0
+1,898,categories Music,www.chordtela.com,0.0,0.01,0,0,0
+1,899,categories Music,radiofrance.fr,0.0,0.01,0,0,0
+1,900,categories Music,chordtela.com,0.0,0.01,0,0,0
+1,901,categories Music,reverb.com,0.0,0.01,0,0,0
+1,902,categories Audio Streaming,last.fm,0.0,0.0,0,0,0
+1,903,categories Audio Streaming,rfi.fr,0.02,0.01,0,0,0
+1,904,categories Audio Streaming,www.spotify.com,0.0,0.01,0,0,0
+1,905,categories Audio Streaming,pandora.com,0.09,0.01,0,0,0
+1,906,categories Audio Streaming,anchor.fm,0.0,0.01,0,0,0
+1,907,categories Audio Streaming,acast.com,0.0,0.01,0,0,0
+1,908,categories Audio Streaming,omny.fm,0.0,0.01,0,0,0
+1,909,categories Audio Streaming,npr.org,0.0,0.01,0,0,0
+1,910,categories Audio Streaming,reverbnation.com,0.0,0.01,0,0,0
+1,911,categories Audio Streaming,sandiegouniontribune.com,0.0,0.01,0,0,0
+1,912,categories Audio Streaming,buzzsprout.com,0.0,0.01,0,0,0
+1,913,categories Audio Streaming,musicdel.ir,0.0,0.01,0,0,0
+1,914,categories Audio Streaming,letras.mus.br,0.0,0.0,0,0,0
+1,915,categories Search Engines,www.google.es,0.09,0.02,0,0,0
+1,916,categories Search Engines,google.vg,0.0,0.02,0,0,0
+1,917,categories Search Engines,www.finn.no,0.0,0.01,0,0,0
+1,918,categories Search Engines,google.com.do,0.0,0.01,0,0,0
+1,919,categories Search Engines,g.bing.com,0.0,0.01,0,0,0
+1,920,categories Search Engines,google.com.tr,0.0,0.01,0,0,0
+1,921,categories Social Networks,tagged.com,0.0,0.06,0,0,0
+1,922,categories Social Networks,pull-flv-f77-tt03.fcdn.us.tiktokcdn.com,0.1,0.06,0,0,0
+1,923,categories Social Networks,fetlife.com,0.06,0.06,0,0,0
+1,924,categories Social Networks,pull-f5-tt01.fcdn.eu.tiktokcdn.com,0.1,0.06,0,0,0
+1,925,categories Social Networks,pull-o5-gcp01.tiktokcdn.com,0.1,0.06,0,0,0
+1,926,categories Newly Seen Domains,douyinpic.com,0.0,0.0,0,0,0
+1,927,categories Newly Seen Domains,piojm.tech,0.0,0.0,0,0,0
+1,928,categories Newly Seen Domains,dns-tm.com,0.0,0.0,0,0,0
+1,929,categories Newly Seen Domains,waw.pl,0.0,0.0,0,0,0
+1,930,categories Newly Seen Domains,pgf-asw0zz.com,0.0,0.0,0,0,0
+1,931,categories No Content,relap.io,0.0,0.0,0,0,0
+1,932,categories No Content,cust-service.com,0.0,0.0,0,0,0
+1,933,categories No Content,kunlungr.com,0.0,0.0,0,0,0
+1,934,categories No Content,rbx.com,0.0,0.0,0,0,0
+1,935,categories No Content,cbsaavideo.com,0.0,0.0,0,0,0
+1,936,categories Video Streaming,arte.tv,0.0,0.01,0,0,0
+1,937,categories Video Streaming,globalnews.ca,0.0,0.01,0,0,0
+1,938,categories Video Streaming,thepioneerwoman.com,0.0,0.01,0,0,0
+1,939,categories Video Streaming,pull-flv-f77-tt01.fcdn.us.tiktokv.com,0.1,0.01,0,0,0
+1,940,categories Video Streaming,afreecatv.com,0.0,0.01,0,0,0
+1,941,categories Personal Blogs,3.bp.blogspot.com,0.07,0.03,0,0,0
+1,942,categories Personal Blogs,home.blog,0.01,0.03,0,0,0
+1,943,categories Personal Blogs,nosv.org,0.0,0.03,0,0,0
+1,944,categories Personal Blogs,i0.wp.com,0.0,0.03,0,0,0
+1,945,categories Personal Blogs,digg.com,0.0,0.03,0,0,0
+1,946,categories Personal Blogs,github.blog,0.0,0.02,0,0,0
+1,947,categories Health & Fitness,protek.ru,0.0,0.0,0,0,0
+1,948,categories Health & Fitness,nami.org,0.0,0.0,0,0,0
+1,949,categories Health & Fitness,cigna.com,0.0,0.0,0,0,0
+1,950,categories Health & Fitness,jamanetwork.com,0.0,0.0,0,0,0
+1,951,categories Health & Fitness,aappublications.org,0.0,0.0,0,0,0
+1,952,categories Gambling,www.bet365.com,0.07,0.05,0,0,0
+1,953,categories Gambling,centraldasapostas.net,0.06,0.05,0,0,0
+1,954,categories Gambling,betika.com,0.07,0.05,0,0,0
+1,955,categories Gambling,pragmaticplay.net,0.0,0.05,0,0,0
+1,956,categories Gambling,www.geny.com,0.06,0.05,0,0,0
+1,957,categories Information Security,identrust.com,0.0,0.01,0,0,0
+1,958,categories Information Security,securitycode.ru,0.0,0.01,0,0,0
+1,959,categories Information Security,f-secure.com,0.0,0.01,0,0,0
+1,960,categories Information Security,reson8.com,0.0,0.01,0,0,0
+1,961,categories Information Security,lookout.com,0.0,0.01,0,0,0
+1,962,categories Webmail,debian.org,0.0,0.03,0,0,0
+1,963,categories Webmail,nexus.officeapps.live.com,0.0,0.02,0,0,0
+1,964,categories Webmail,safelinks.protection.outlook.com,0.09,0.03,0,0,0
+1,965,categories Webmail,typeform.com,0.0,0.03,0,0,0
+1,966,categories Webmail,waconatm.officeapps.live.com,0.0,0.02,0,0,0
+1,967,categories Pornography,in3x.net,0.07,0.07,0,1,0
+1,968,categories Pornography,sex4arab.xxx,0.06,0.07,0,1,0
+1,969,categories Pornography,e-hentai.org,0.06,0.07,0,1,0
+1,970,categories Pornography,tmohentai.com,0.06,0.07,0,1,0
+1,971,categories Pornography,www.sexvid.pro,0.07,0.07,0,1,0
+1,972,categories Forums,dogdrip.net,0.0,0.01,0,0,0
+1,973,categories Forums,pantip.com,0.0,0.0,0,0,0
+1,974,categories Forums,elastic.co,0.0,0.0,0,0,0
+1,975,categories Forums,m.fanfiction.net,0.06,0.01,0,0,0
+1,976,categories Forums,5ch.net,0.09,0.01,0,0,0
+1,977,categories Content Servers,acsbapp.com,0.0,0.0,0,0,0
+1,978,categories Content Servers,content.office.net,0.0,0.0,0,0,0
+1,979,categories Content Servers,ytimg.com,0.0,0.0,0,0,0
+1,980,categories Content Servers,nel.goog,0.0,0.0,0,0,0
+1,981,categories Content Servers,i.ytimg.com,0.09,0.01,0,0,0
+1,982,categories Social Networks,mastodon.social,0.09,0.06,0,0,0
+1,983,categories Social Networks,b-graph.facebook.com,0.12,0.07,0,0,0
+1,984,categories Social Networks,secondlife.com,0.02,0.06,0,1,0
+1,985,categories Social Networks,pull-flv-l10-va01.tiktokcdn.com,0.1,0.06,0,0,0
+1,986,categories Social Networks,pull-cmaf-l16-va01.tiktokcdn.com,0.1,0.07,0,0,0
+1,987,categories Social Networks,lookaside.facebook.com,0.12,0.07,0,1,0
+1,988,categories Social Networks,pull-cmaf-f16-tt02.fcdn.us.tiktokv.com,0.1,0.07,0,1,0
+1,989,categories File Sharing,probe.icloud.com,0.09,0.03,0,0,0
+1,990,categories File Sharing,pearltrees.com,0.0,0.03,0,0,0
+1,991,categories File Sharing,1337x.to,0.01,0.03,0,0,0
+1,992,categories Social Networks,eskimi.com,0.0,0.07,0,1,0
+1,993,categories Social Networks,mqtt-mini.facebook.com,0.12,0.07,0,1,0
+1,994,categories File Sharing,oneclient.sfx.ms,0.0,0.02,0,0,0
+1,995,categories Social Networks,push-rtmp-f5-tt02.fcdn.us.tiktokv.com,0.1,0.07,0,1,0
+1,996,categories Social Networks,fallback.c10r.facebook.com,0.12,0.07,0,1,0
+1,997,categories Audio Streaming,spotify.com,0.0,0.0,0,0,0
+1,998,categories Audio Streaming,www.npr.org,0.0,0.0,0,0,0
+1,999,categories Audio Streaming,soundcloud.com,0.09,0.01,0,0,0
+1,1000,categories Audio Streaming,wynk.in,0.0,0.01,0,0,0
+1,1001,categories Social Networks,duplex.snapchat.com,0.09,0.07,0,1,0
+1,1002,categories Social Networks,pull-flv-l16-va01.tiktokcdn.com,0.1,0.07,0,1,0
+1,1003,categories Social Networks,skyrock.com,0.0,0.07,0,1,0
+1,1004,categories Audio Streaming,audacy.com,0.0,0.01,0,0,0
+1,1005,categories Audio Streaming,libsyn.com,0.0,0.01,0,0,0
+1,1006,categories Audio Streaming,music.apple.com,0.0,0.01,0,0,0
+1,1007,categories Audio Streaming,blogtalkradio.com,0.0,0.01,0,0,0
+1,1008,categories Audio Streaming,deezer.com,0.0,0.01,0,0,0
+1,1009,categories Audio Streaming,stitcher.com,0.0,0.0,0,0,0
+1,1010,categories Audio Streaming,www.letras.mus.br,0.0,0.0,0,0,0
+1,1011,categories Business,smore.com,0.0,0.0,0,0,0
+1,1012,categories Business,moz.com,0.0,0.0,0,0,0
+1,1013,categories Business,hubapi.com,0.0,0.0,0,0,0
+1,1014,categories Business,custhelp.com,0.0,0.0,0,0,0
+1,1015,categories Business,www.ikea.com,0.0,0.0,0,0,0
+1,1016,categories Malware,omnatuor.com,0.05,0.0,0,0,0
+1,1017,categories Malware,linklist.bio,0.0,0.0,0,0,0
+1,1018,categories Social Networks,star.c10r.facebook.com,0.12,0.07,0,1,0
+1,1019,categories Social Networks,netseer-ipaddr-assoc.xy.fbcdn.net,0.1,0.07,0,1,0
+1,1020,categories Social Networks,mirtesen.ru,0.0,0.07,0,1,0
+1,1021,categories Social Networks,aws.api.snapchat.com,0.09,0.07,0,1,0
+1,1022,categories Social Networks,edge-mqtt.facebook.com,0.12,0.07,0,1,0
+1,1023,categories Social Networks,pinterest.jp,0.09,0.07,0,1,0
+1,1024,categories Social Networks,twitter.com,0.09,0.07,0,1,0
+1,1025,categories Gaming,sp.mbga.jp,0.01,0.01,0,0,0
+1,1026,categories Gaming,king.com,0.01,0.01,0,0,0
+1,1027,categories Social Networks,pull-hls-f77-gcp01.tiktokcdn.com,0.1,0.07,0,1,0
+1,1028,categories Social Networks,app.snapchat.com,0.09,0.07,0,1,0
+1,1029,categories Social Networks,pull-f5-va01.tiktokcdn.com,0.1,0.07,0,1,0
+1,1030,categories Social Networks,pull-w5-sg01.fcdn.eu.tiktokcdn.com,0.1,0.07,0,1,0
+1,1031,categories Social Networks,pull-o5-sg01.tiktokcdn.com,0.1,0.07,0,1,0
+1,1032,categories Social Networks,pull-f5-sg01.fcdn.eu.tiktokcdn.com,0.1,0.07,0,1,0
+1,1033,categories Social Networks,pull-flv-f77-tt02.tiktokcdn.com,0.1,0.08,0,1,0
+1,1034,categories Social Networks,livejournal.com,0.0,0.07,0,1,0
+1,1035,categories Social Networks,fbcdn.net,0.0,0.07,0,1,0
+1,1036,categories Social Networks,pull-o5-va01.tiktokcdn.com,0.1,0.07,0,1,0
+1,1037,categories Social Networks,behance.net,0.0,0.07,0,1,0
+1,1038,categories Social Networks,p16-sign-useast2a.tiktokcdn.com,0.1,0.07,0,1,0
+1,1039,categories Social Networks,strava.com,0.0,0.07,0,1,0
+1,1040,categories Social Networks,chat-e2ee.facebook.com,0.12,0.07,0,1,0
+1,1041,categories Social Networks,fcdn.us.tiktokcdn.com,0.1,0.07,0,1,0
+1,1042,categories Social Networks,usc1-gcp-v61.api.snapchat.com,0.09,0.07,0,1,0
+1,1043,categories Social Networks,us-east4-gcp.api.snapchat.com,0.09,0.07,0,1,0
+1,1044,categories Magazines,giga.de,0.0,0.0,0,0,0
+1,1045,categories Social Networks,m.facebook.com,0.12,0.07,0,1,0
+1,1046,categories Social Networks,pull-a5-gcp01.tiktokcdn.com,0.1,0.07,0,1,0
+1,1047,categories Social Networks,mon16-platform-useast5.us.tiktokv.com,0.1,0.07,0,1,0
+1,1048,categories Social Networks,tumblr.com,0.01,0.07,0,1,0
+1,1049,categories Social Networks,tiktok.com,0.01,0.07,0,1,0
+1,1050,categories Social Networks,xz.fbcdn.net,0.1,0.07,0,1,0
+1,1051,categories Social Networks,graph.instagram.com,0.09,0.07,0,1,0
+1,1052,categories Social Networks,pull-flv-f77-gcp01.tiktokcdn.com,0.1,0.07,0,1,0
+1,1053,categories Social Networks,pull-w5-gcp01.tiktokcdn.com,0.1,0.07,0,1,0
+1,1054,categories Social Networks,pinterest.ca,0.09,0.07,0,1,0
+1,1055,categories Social Networks,chat-e2ee.c10r.facebook.com,0.12,0.07,0,1,0
+1,1056,categories Social Networks,p16-sign-va.tiktokcdn.com,0.1,0.08,0,1,0
+1,1057,categories Social Networks,pull-hls-f77-sg01.tiktokcdn.com,0.1,0.08,0,1,0
+1,1058,categories Social Networks,pull-c5-va01.tiktokcdn.com,0.09,0.08,0,1,0
+1,1059,categories Social Networks,us.tiktokv.com,0.1,0.08,0,1,0
+1,1060,categories Social Networks,pull-flv-l16-gcp01.tiktokcdn.com,0.09,0.08,0,1,0
+1,1061,categories Social Networks,pull-f5-vr-sg01.tiktokcdn.com,0.09,0.08,0,1,0
+1,1062,categories Social Networks,pull-f5-vr-va01.tiktokcdn.com,0.1,0.08,0,1,0
+1,1063,categories Social Networks,pull-flv-f62-va01.tiktokcdn.com,0.09,0.08,0,1,0
+1,1064,categories Social Networks,pull-flv-l77-va01.tiktokcdn.com,0.09,0.08,0,1,0
+1,1065,categories Social Networks,pull-cmaf-f77-tt03.fcdn.eu.tiktokcdn.com,0.09,0.08,0,1,0
+1,1066,categories Social Networks,ning.com,0.0,0.08,0,1,0
+1,1067,categories Social Networks,pull-cmaf-f16-tt03.tiktokcdn.com,0.1,0.08,0,1,0
+1,1068,categories Social Networks,p16-sg.tiktokcdn.com,0.1,0.08,0,1,0
+1,1069,categories Social Networks,cookpad.com,0.0,0.08,0,1,0
+1,1070,categories Social Networks,dgw.c10r.facebook.com,0.12,0.08,0,1,0
+1,1071,categories Social Networks,graph.facebook.com,0.12,0.08,0,1,0
+1,1072,categories Social Networks,mbasic.facebook.com,0.12,0.08,0,1,0
+1,1073,categories Social Networks,pull-cmaf-f77-gcp01.tiktokcdn.com,0.1,0.08,0,1,0
+1,1074,categories Social Networks,pull-o5-va01.fcdn.eu.tiktokcdn.com,0.1,0.08,0,1,0
+1,1075,categories Social Networks,fna.fbcdn.net,0.1,0.08,0,1,0
+1,1076,categories Social Networks,pull-flv-f62-sg01.tiktokcdn.com,0.1,0.08,0,1,0
+1,1077,categories Social Networks,pull-f5-tt03.tiktokcdn.com,0.09,0.08,0,1,0
+1,1078,categories Social Networks,pull-f5-tt02.tiktokcdn.com,0.09,0.08,0,1,0
+1,1079,categories Social Networks,pinterest.it,0.09,0.08,0,1,0
+1,1080,categories Social Networks,xy.fbcdn.net,0.09,0.08,0,1,0
+1,1081,categories Social Networks,pull-f5-tt03.fcdn.eu.tiktokcdn.com,0.1,0.08,0,1,0
+1,1082,categories Social Networks,imgur.io,0.0,0.08,0,1,0
+1,1083,categories Social Networks,pull-o5-sg01.fcdn.eu.tiktokcdn.com,0.09,0.08,0,1,0
+1,1084,categories Social Networks,b-api.facebook.com,0.11,0.08,0,1,0
+1,1085,categories Social Networks,mobile.twitter.com,0.09,0.08,0,1,0
+1,1086,categories Social Networks,fcdn.us.tiktokv.com,0.1,0.08,0,1,0
+1,1087,categories Social Networks,note.com,0.0,0.08,0,1,0
+1,1088,categories Social Networks,letterboxd.com,0.0,0.08,0,1,0
+1,1089,categories Social Networks,mqtt.c10r.facebook.com,0.11,0.08,0,1,0
+1,1090,categories Social Networks,pull-cmaf-f16-tt01.tiktokcdn.com,0.09,0.08,0,1,0
+1,1091,categories Social Networks,www.facebook.com,0.11,0.08,0,1,0
+1,1092,categories Social Networks,pull-f5-tt02.fcdn.eu.tiktokcdn.com,0.09,0.08,0,1,0
+1,1093,categories Social Networks,pull-f5-tt01.tiktokcdn.com,0.1,0.08,0,1,0
+1,1094,categories Social Networks,instagram.com,0.09,0.08,0,1,0
+1,1095,categories Social Networks,platform.twitter.com,0.09,0.08,0,1,0
+1,1096,categories Social Networks,pull-hls-f77-va01.tiktokcdn.com,0.1,0.08,0,1,0
+1,1097,categories Social Networks,classmates.com,0.0,0.08,0,1,0
+1,1098,categories Social Networks,pinterest.de,0.09,0.08,0,1,0
+1,1099,categories Social Networks,gateway.facebook.com,0.12,0.08,0,1,0
+1,1100,categories Social Networks,www.tiktok.com,0.1,0.08,0,1,0
+1,1101,categories Social Networks,pull-flv-f77-tt02-tt03.fcdn.eu.tiktokcdn.com,0.1,0.08,0,1,0
+1,1102,categories Social Networks,instagram.c10r.instagram.com,0.09,0.08,0,1,0
+1,1103,categories Social Networks,pull-c5-gcp01.tiktokcdn.com,0.1,0.08,0,1,0
+1,1104,categories Social Networks,fcdn.eu.tiktokcdn.com,0.1,0.08,0,1,0
+1,1105,categories Social Networks,aws-proxy-gcp.api.snapchat.com,0.09,0.09,0,1,0
+1,1106,categories Social Networks,api.snapchat.com,0.09,0.09,0,1,0
+1,1107,categories Social Networks,vkontakte.ru,0.0,0.08,0,1,0
+1,1108,categories Social Networks,pinterest.es,0.09,0.08,0,1,0
+1,1109,categories Social Networks,pull-f5-tt03.fcdn.us.tiktokv.com,0.1,0.08,0,1,0
+1,1110,categories Social Networks,api16-normal-useast5.us.tiktokv.com,0.1,0.08,0,1,0
+1,1111,categories Social Networks,apps.facebook.com,0.12,0.09,0,1,0
+1,1112,categories Social Networks,pull-cmaf-l10-gcp01.tiktokcdn.com,0.1,0.09,0,1,0
+1,1113,categories Social Networks,analytics.tiktok.com,0.1,0.09,0,1,0
+1,1114,categories Social Networks,internalfb.com,0.0,0.08,0,1,0
+1,1115,categories Social Networks,pull-cmaf-f16-tt03.fcdn.eu.tiktokcdn.com,0.1,0.08,0,1,0
+1,1116,categories Social Networks,chat-e2ee-ig-p42.c10r.facebook.com,0.12,0.09,0,1,0
+1,1117,categories Social Networks,z-p42-chat-e2ee-ig.facebook.com,0.12,0.09,0,1,0
+1,1118,categories Social Networks,pull-flv-f77-va01.tiktokcdn.com,0.1,0.09,0,1,0
+1,1119,categories Social Networks,us.tiktokcdn.com,0.1,0.09,0,1,0
+1,1120,categories Social Networks,pull-f5-sg01.tiktokcdn.com,0.1,0.09,0,1,0
+1,1121,categories Social Networks,free.facebook.com,0.12,0.09,0,1,0
+1,1122,categories Social Networks,weibocdn.com,0.0,0.09,0,1,0
+1,1123,categories Social Networks,myspace.com,0.03,0.08,0,1,0
+1,1124,categories Social Networks,pull-f5-gcp01.fcdn.us.tiktokv.com,0.1,0.09,0,1,0
+1,1125,categories Social Networks,c10r.facebook.com,0.12,0.09,0,1,0
+1,1126,categories Social Networks,business.facebook.com,0.12,0.09,0,1,0
+1,1127,categories Social Networks,pull-hls-l77-gcp01.tiktokcdn.com,0.1,0.09,0,1,0
+1,1128,categories Social Networks,pull-hls-l77-va01.tiktokcdn.com,0.1,0.09,0,1,0
+1,1129,categories Social Networks,static.xx.fbcdn.net,0.09,0.09,0,1,0
+1,1130,categories Social Networks,i.instagram.com,0.09,0.09,0,1,0
+1,1131,categories Social Networks,fb.me,0.07,0.09,0,1,0
+1,1132,categories Social Networks,pin.it,0.0,0.09,0,1,0
+1,1133,categories Social Networks,pull-flv-l77-gcp01.eu.tiktokcdn.com,0.1,0.09,0,1,0
+1,1134,categories Social Networks,syndication.twitter.com,0.09,0.09,0,1,0
+1,1135,categories Social Networks,pull-cmaf-f16-tt02.tiktokcdn.com,0.1,0.09,0,1,0
+1,1136,categories Social Networks,pull-cmaf-f77-sg01.tiktokcdn.com,0.1,0.09,0,1,0
+1,1137,categories Social Networks,pull-flv-l10-gcp01.tiktokcdn.com,0.1,0.09,0,1,0
+1,1138,categories Social Networks,userapi.com,0.0,0.09,0,1,0
+1,1139,categories Social Networks,star.fallback.c10r.facebook.com,0.12,0.09,0,1,0
+1,1140,categories Social Networks,pull-cmaf-f16-va01.tiktokcdn.com,0.1,0.09,0,1,0
+1,1141,categories Social Networks,eu.tiktokcdn.com,0.1,0.09,0,1,0
+1,1142,categories Social Networks,pull-flv-f77-tt01-tt03.fcdn.eu.tiktokcdn.com,0.09,0.09,0,1,0
+1,1143,categories Social Networks,api.facebook.com,0.11,0.09,0,1,0
+1,1144,categories Social Networks,www.instagram.com,0.09,0.09,0,1,0
+1,1145,categories Social Networks,pull-flv-f77-tt03.tiktokcdn.com,0.09,0.09,0,1,0
+1,1146,categories Social Networks,pull-cmaf-l16-gcp01.tiktokcdn.com,0.1,0.09,0,1,0
+1,1147,categories Social Networks,pull-cmaf-f16-tt03.fcdn.us.tiktokcdn.com,0.09,0.09,0,1,0
+1,1148,categories Social Networks,pull-cmaf-l10-sg01.tiktokcdn.com,0.09,0.09,0,1,0
+1,1149,categories Social Networks,weibo.com,0.0,0.09,0,1,0
+1,1150,categories Social Networks,pull-cmaf-f16-sg01.tiktokcdn.com,0.09,0.09,0,1,0
+1,1151,categories Social Networks,fb.com,0.08,0.09,0,1,0
+1,1152,categories Social Networks,www.tumblr.com,0.1,0.09,0,1,0
+1,1153,categories Social Networks,facebook.com,0.03,0.09,0,1,0
+1,1154,categories Social Networks,api.twitter.com,0.09,0.09,0,1,0
+1,1155,categories Social Networks,service.weibo.com,0.01,0.08,0,1,0
+1,1156,categories Social Networks,douban.com,0.0,0.08,0,1,0
+1,1157,categories Social Networks,snapchat.com,0.0,0.08,0,1,0
+1,1158,categories Social Networks,pull-q5-sg01.fcdn.eu.tiktokcdn.com,0.1,0.08,0,1,0
+1,1159,categories Social Networks,chat-e2ee-mini.facebook.com,0.12,0.08,0,1,0
+1,1160,categories Social Networks,pull-f5-tt02.fcdn.us.tiktokv.com,0.1,0.08,0,1,0
+1,1161,categories Social Networks,pull-a5-tt02-infra.fcdn.us.tiktokv.com,0.1,0.08,0,1,0
+1,1162,categories News & Media,azet.sk,0.0,0.0,0,0,0
+1,1163,categories News & Media,vedomosti.ru,0.0,0.0,0,0,0
+1,1164,categories Social Networks,pull-w5-sg01.tiktokcdn.com,0.09,0.08,0,1,0
+1,1165,categories Social Networks,app-analytics-v2.snapchat.com,0.09,0.08,0,1,0
+1,1166,categories Social Networks,netseer-ipaddr-assoc.xz.fbcdn.net,0.09,0.08,0,1,0
+1,1167,categories Social Networks,pull-flv-f77-tt03.fcdn.eu.tiktokcdn.com,0.09,0.08,0,1,0
+1,1168,categories Social Networks,pull-w5-va01.tiktokcdn.com,0.09,0.08,0,1,0
+1,1169,categories Social Networks,ok.ru,0.0,0.08,0,1,0
+1,1170,categories Social Networks,pull-q5-gcp01.tiktokcdn.com,0.09,0.08,0,1,0
+1,1171,categories Social Networks,odnoklassniki.ru,0.0,0.08,0,1,0
+1,1172,categories Social Networks,stumbleupon.com,0.0,0.08,0,1,0
+1,1173,categories Sports,sp.jra.jp,0.07,0.02,0,0,0
+1,1174,categories Sports,m.kooora.com,0.0,0.02,0,0,0
+1,1175,categories Sports,active.com,0.0,0.02,0,0,0
+1,1176,categories Sports,www.mundodeportivo.com,0.0,0.02,0,0,0
+1,1177,categories Sports,sbnation.com,0.0,0.01,0,0,0
+1,1178,categories Economy & Finance,www.sexybluefilm.com,0.07,0.01,0,0,0
+1,1179,categories Economy & Finance,morganstanley.com,0.0,0.01,0,0,0
+1,1180,categories Economy & Finance,klarna.com,0.0,0.01,0,0,0
+1,1181,categories Economy & Finance,rakuten-sec.co.jp,0.02,0.01,0,0,0
+1,1182,categories Economy & Finance,credit-agricole.fr,0.0,0.01,0,0,0
+1,1183,"categories Politics, Advocacy, and Government-Related",www.nhs.uk,0.0,0.0,0,0,0
+1,1184,"categories Politics, Advocacy, and Government-Related",kremlin.ru,0.0,0.0,0,0,0
+1,1185,"categories Politics, Advocacy, and Government-Related",iowa.gov,0.0,0.0,0,0,0
+1,1186,"categories Politics, Advocacy, and Government-Related",theintercept.com,0.0,0.0,0,0,0
+1,1187,"categories Politics, Advocacy, and Government-Related",tfl.gov.uk,0.0,0.0,0,0,0
+1,1188,categories Pornography,tporn.xxx,0.07,0.07,0,0,0
+1,1189,categories Pornography,rule34.xxx,0.06,0.07,0,0,0
+1,1190,categories Pornography,eroterest.net,0.07,0.07,0,0,0
+1,1191,categories Pornography,pornzog.com,0.07,0.07,0,0,0
+1,1192,categories Pornography,youporn.com,0.07,0.07,0,0,0
+1,1193,categories Pornography,xxxdan.com,0.06,0.06,0,0,0
+1,1194,categories File Sharing,softpedia.com,0.0,0.02,0,0,0
+1,1195,categories File Sharing,1drv.com,0.0,0.02,0,0,0
+1,1196,categories File Sharing,sync.com,0.0,0.02,0,0,0
+1,1197,categories File Sharing,gifshow.com,0.0,0.02,0,0,0
+1,1198,categories File Sharing,acronis.com,0.0,0.02,0,0,0
+1,1199,categories Educational Institutions,uiowa.edu,0.0,0.0,0,0,0
+1,1200,categories Educational Institutions,in.ua,0.0,0.0,0,0,0
+1,1201,categories Educational Institutions,dartmouth.edu,0.0,0.0,0,0,0
+1,1202,categories Educational Institutions,columbia.edu,0.0,0.0,0,0,0
+1,1203,categories Educational Institutions,scratch.mit.edu,0.0,0.0,0,0,0
+1,1204,categories Social Networks,tiktokcdn.com,0.0,0.08,0,1,0
+1,1205,categories Social Networks,pull-w5-va01.fcdn.eu.tiktokcdn.com,0.09,0.08,0,1,0
+1,1206,categories Social Networks,pull-cmaf-l16-sg01.tiktokcdn.com,0.09,0.08,0,1,0
+1,1207,categories Social Networks,pull-q5-sg01.tiktokcdn.com,0.09,0.08,0,1,0
+1,1208,categories Social Networks,meetup.com,0.0,0.08,0,1,0
+1,1209,categories Audio Streaming,wg.spotify.com,0.0,0.0,0,0,0
+1,1210,categories Audio Streaming,accounts.spotify.com,0.09,0.01,0,0,0
+1,1211,categories Audio Streaming,jiosaavn.com,0.01,0.01,0,0,0
+1,1212,categories Audio Streaming,mixcloud.com,0.0,0.01,0,0,0
+1,1213,categories Audio Streaming,guc3-spclient.spotify.com,0.0,0.01,0,0,0
+1,1214,categories Magazines,www.si.com,0.0,0.0,0,0,0
+1,1215,categories Audio Streaming,podtrac.com,0.0,0.01,0,0,0
+1,1216,categories Audio Streaming,tunein.com,0.0,0.01,0,0,0
+1,1217,categories Audio Streaming,spclient.wg.spotify.com,0.0,0.01,0,0,0
+1,1218,categories Audio Streaming,xp.itunes-apple.com.akadns.net,0.0,0.01,0,0,0
+1,1219,categories Audio Streaming,dealer.spotify.com,0.0,0.01,0,0,0
+1,1220,categories Television,vix.com,0.0,0.02,0,0,0
+1,1221,categories Television,cloud.netflix.com,0.09,0.02,0,0,0
+1,1222,categories Television,discovery.com,0.0,0.02,0,0,0
+1,1223,categories Television,kino.de,0.0,0.02,0,0,0
+1,1224,categories Television,cc.com,0.0,0.02,0,0,0
+1,1225,categories Ecommerce,eufylife.com,0.01,0.0,0,0,0
+1,1226,categories Ecommerce,myshopify.com,0.0,0.0,0,0,0
+1,1227,categories Ecommerce,zalando.pl,0.0,0.0,0,0,0
+1,1228,categories Ecommerce,flipkart.com,0.0,0.0,0,0,0
+1,1229,categories Ecommerce,dlink.com,0.0,0.0,0,0,0
+1,1230,categories Advertisements,ad.doubleclick.net,0.1,0.01,0,0,0
+1,1231,categories Advertisements,aax-us-east.amazon-adsystem.com,0.0,0.01,0,0,0
+1,1232,categories Advertisements,openxcdn.net,0.0,0.01,0,0,0
+1,1233,categories Advertisements,mobilefuse.com,0.0,0.01,0,0,0
+1,1234,categories Advertisements,adsafeprotected.com,0.0,0.01,0,0,0
+1,1235,categories Advertisements,trafficjunky.net,0.0,0.01,0,0,0
+1,1236,categories Technology,xataka.com,0.0,0.0,0,0,0
+1,1237,categories Technology,unicode.org,0.0,0.0,0,0,0
+1,1238,categories Technology,sundaysky.com,0.0,0.0,0,0,0
+1,1239,categories Technology,betterttv.net,0.0,0.0,0,0,0
+1,1240,categories Technology,adobe.com,0.0,0.0,0,0,0
+1,1241,categories Social Networks,push-rtmp-f5-tt01.fcdn.us.tiktokv.com,0.1,0.08,0,1,0
+1,1242,categories Social Networks,pull-cmaf-l77-gcp01.tiktokcdn.com,0.1,0.08,0,1,0
+1,1243,categories Social Networks,pull-flv-l10-sg01.tiktokcdn.com,0.1,0.08,0,1,0
+1,1244,categories Social Networks,pull-f5-va01.fcdn.eu.tiktokcdn.com,0.1,0.08,0,1,0
+1,1245,categories Social Networks,tiktokv.com,0.01,0.08,0,1,0
+1,1246,categories Social Networks,m.vk.com,0.09,0.08,0,1,0
+1,1247,categories Social Networks,pull-cmaf-l77-va01.tiktokcdn.com,0.1,0.08,0,1,0
+1,1248,categories Social Networks,pull-cmaf-f77-tt03.tiktokcdn.com,0.1,0.08,0,1,0
+1,1249,categories Social Networks,pscp.tv,0.0,0.08,0,1,0
+1,1250,categories Food & Drink,thespruceeats.com,0.0,0.01,0,0,0
+1,1251,categories Food & Drink,www.marmiton.org,0.0,0.01,0,0,0
+1,1252,categories Social Networks,s.pinimg.com,0.09,0.08,0,1,0
+1,1253,categories Social Networks,pull-f5-tt01.fcdn.us.tiktokv.com,0.1,0.08,0,1,0
+1,1254,categories Food & Drink,starbucks.com,0.0,0.01,0,0,0
+1,1255,categories Pornography,infinix.servicewebly.com,0.0,0.06,0,0,0
+1,1256,categories Pornography,xvideosporno.blog.br,0.07,0.06,0,0,0
+1,1257,categories Pornography,www.wapoz.info,0.07,0.06,0,0,0
+1,1258,categories Pornography,sxyprn.net,0.07,0.06,0,0,0
+1,1259,categories Pornography,hdhindisex.com,0.07,0.06,0,0,0
+1,1260,categories Forums,redd.it,0.0,0.01,0,0,0
+1,1261,categories Forums,gelbooru.com,0.07,0.02,0,0,0
+1,1262,categories Forums,planetminecraft.com,0.01,0.02,0,0,0
+1,1263,categories Forums,zhihu.com,0.0,0.01,0,0,0
+1,1264,categories Forums,stackexchange.com,0.0,0.01,0,0,0
+1,1265,categories Personal Blogs,azure.cn,0.0,0.02,0,0,0
+1,1266,categories Personal Blogs,techtudo.com.br,0.0,0.02,0,0,0
+1,1267,categories Personal Blogs,johnnys-web.com,0.0,0.02,0,0,0
+1,1268,categories Personal Blogs,bustle.com,0.0,0.02,0,0,0
+1,1269,categories Personal Blogs,slashdot.org,0.0,0.02,0,0,0
+1,1270,categories Social Networks,pull-cmaf-f16-tt01.fcdn.us.tiktokv.com,0.1,0.08,0,1,0
+1,1271,categories Social Networks,gateway.instagram.com,0.09,0.08,0,1,0
+1,1272,categories Social Networks,pull-cmaf-f77-va01.tiktokcdn.com,0.1,0.08,0,1,0
+1,1273,categories Social Networks,pull-q5-va01.tiktokcdn.com,0.09,0.08,0,1,0
+1,1274,categories Social Networks,pull-flv-f77-sg01.tiktokcdn.com,0.1,0.08,0,1,0
+1,1275,categories Social Networks,pull-a5-sg01.tiktokcdn.com,0.09,0.08,0,1,0
+1,1276,categories Social Networks,pull-cmaf-f16-tt02-tt03.fcdn.eu.tiktokcdn.com,0.09,0.08,0,1,0
+1,1277,categories Social Networks,analytics.twitter.com,0.09,0.08,0,1,0
+1,1278,categories Social Networks,pull-flv-f77-tt01.tiktokcdn.com,0.09,0.08,0,1,0
+1,1279,categories Social Networks,push-rtmp-f5-tt03.fcdn.eu.tiktokcdn.com,0.09,0.08,0,1,0
+1,1280,categories Social Networks,plus.google.com,0.1,0.08,0,1,0
+1,1281,categories Social Networks,mixi.jp,0.0,0.08,0,1,0
+1,1282,categories Social Networks,l.facebook.com,0.12,0.08,0,1,0
+1,1283,categories Social Networks,in.pinterest.com,0.09,0.08,0,1,0
+1,1284,categories Social Networks,usc1-gcp-v62.api.snapchat.com,0.09,0.08,0,1,0
+1,1285,categories Social Networks,pull-flv-f61-va01.tiktokcdn.com,0.1,0.08,0,1,0
+1,1286,categories Social Networks,pull-q5-va01.fcdn.eu.tiktokcdn.com,0.1,0.08,0,1,0
+1,1287,categories Magazines,smashingmagazine.com,0.0,0.0,0,0,0
+1,1288,categories Magazines,realsimple.com,0.0,0.0,0,0,0
+1,1289,categories Magazines,vanityfair.com,0.0,0.0,0,0,0
+1,1290,categories Magazines,dezeen.com,0.0,0.0,0,0,0
+1,1291,categories Magazines,nymag.com,0.0,0.0,0,0,0
+1,1292,categories Travel,wa.gov,0.0,0.0,0,0,0
+1,1293,categories Travel,ihg.com,0.0,0.0,0,0,0
+1,1294,categories Travel,goibibo.com,0.0,0.0,0,0,0
+1,1295,categories Travel,www.booking.com,0.0,0.0,0,0,0
+1,1296,categories Travel,hyatt.com,0.0,0.0,0,0,0
+1,1297,categories Hobbies & Interests,ancestry.com,0.0,0.0,0,0,0
+1,1298,categories Hobbies & Interests,cifraclub.com.br,0.0,0.0,0,0,0
+1,1299,categories Hobbies & Interests,ancestry.co.uk,0.0,0.0,0,0,0
+1,1300,categories Hobbies & Interests,tcgplayer.com,0.0,0.0,0,0,0
+1,1301,categories Hobbies & Interests,fontawesome.com,0.0,0.0,0,0,0
+1,1302,categories Gaming,palmplaystore.com,0.0,0.01,0,0,0
+1,1303,categories Gaming,huya.com,0.0,0.01,0,0,0
+1,1304,categories Gaming,activision.com,0.01,0.01,0,0,0
+1,1305,categories Gaming,www.twitch.tv,0.1,0.01,0,0,0
+1,1306,categories Gaming,curseforge.com,0.02,0.01,0,0,0
+1,1307,categories Auctions & Marketplaces,m.avito.ru,0.0,0.0,0,0,0
+1,1308,categories Auctions & Marketplaces,willhaben.at,0.0,0.0,0,0,0
+1,1309,categories Auctions & Marketplaces,gumtree.com,0.0,0.0,0,0,0
+1,1310,categories Auctions & Marketplaces,www.subito.it,0.0,0.0,0,0,0
+1,1311,categories Auctions & Marketplaces,mercadolivre.com,0.0,0.0,0,0,0
+1,1312,categories Movies,amazonvideo.com,0.0,0.03,0,0,0
+1,1313,categories Movies,www.goojara.to,0.0,0.02,0,0,0
+1,1314,categories Movies,nrdp52-appboot.netflix.com,0.09,0.03,0,0,0
+1,1315,categories Movies,csfd.cz,0.0,0.03,0,0,0
+1,1316,categories Movies,ivi.ru,0.0,0.02,0,0,0
+1,1317,categories Audio Streaming,tidal.com,0.0,0.01,0,0,0
+1,1318,categories Information Technology,tmweb.ru,0.0,0.02,0,0,0
+1,1319,categories Information Technology,beeline.ru,0.0,0.02,0,0,0
+1,1320,categories Information Technology,wixsite.com,0.0,0.01,0,0,0
+1,1321,categories Information Technology,parklogic.com,0.0,0.01,0,0,0
+1,1322,categories Information Technology,pavietnam.vn,0.0,0.01,0,0,0
+1,1323,categories Pornography,sexindrag.com,0.07,0.06,0,1,0
+1,1324,categories Pornography,eporner.com,0.07,0.06,0,1,0
+1,1325,categories Pornography,cn.pornhub.com,0.07,0.06,0,1,0
+1,1326,categories Pornography,dlsite.com,0.06,0.06,0,1,0
+1,1327,categories Pornography,xnxx.tv,0.07,0.06,0,1,0
+1,1328,categories Forums,arca.live,0.0,0.01,0,0,0
+1,1329,categories Forums,dnspod.com,0.0,0.01,0,0,0
+1,1330,categories Forums,mql5.com,0.0,0.01,0,0,0
+1,1331,categories Forums,ravelry.com,0.0,0.01,0,0,0
+1,1332,categories Forums,www.furaffinity.net,0.06,0.01,0,0,0
+1,1333,categories Video Streaming,haberturk.com,0.0,0.01,0,0,0
+1,1334,categories Video Streaming,euronews.com,0.0,0.01,0,0,0
+1,1335,categories Video Streaming,ynet.co.il,0.0,0.01,0,0,0
+1,1336,categories Video Streaming,newsdig.tbs.co.jp,0.0,0.01,0,0,0
+1,1337,categories Forums,gutefrage.net,0.0,0.01,0,0,0
+1,1338,categories Forums,flightrising.com,0.01,0.01,0,0,0
+1,1339,categories Forums,phpbb.com,0.0,0.01,0,0,0
+1,1340,categories Forums,servidoresdns.net,0.0,0.01,0,0,0
+1,1341,categories Forums,www.reddit.com,0.09,0.02,0,0,0
+1,1342,categories Forums,www.quora.com,0.09,0.02,0,0,0
+1,1343,categories Forums,rutracker.org,0.01,0.02,0,0,0
+1,1344,categories File Sharing,amagi.tv,0.0,0.01,0,0,0
+1,1345,categories File Sharing,oupeng.com,0.0,0.01,0,0,0
+1,1346,categories Forums,nn.gx.cn,0.0,0.02,0,0,0
+1,1347,categories Forums,qiita.com,0.0,0.02,0,0,0
+1,1348,categories Forums,f95zone.to,0.07,0.02,0,0,0
+1,1349,categories Forums,ppomppu.co.kr,0.0,0.02,0,0,0
+1,1350,categories Forums,dev.to,0.0,0.02,0,0,0
+1,1351,categories Forums,girlschannel.net,0.0,0.02,0,0,0
+1,1352,categories Forums,bakusai.com,0.0,0.02,0,0,0
+1,1353,categories Forums,skyscrapercity.com,0.0,0.02,0,0,0
+1,1354,categories Forums,forexfactory.com,0.01,0.02,0,0,0
+1,1355,categories Forums,www.ptt.cc,0.0,0.01,0,0,0
+1,1356,categories Forums,theqoo.net,0.0,0.01,0,0,0
+1,1357,categories Forums,thingiverse.com,0.0,0.01,0,0,0
+1,1358,categories Forums,wikiquote.org,0.0,0.01,0,0,0
+1,1359,categories Forums,resetera.com,0.01,0.01,0,0,0
+1,1360,categories Forums,brainly.lat,0.0,0.01,0,0,0
+1,1361,categories Forums,4channel.org,0.06,0.01,0,0,0
+1,1362,categories Forums,habr.com,0.0,0.01,0,0,0
+1,1363,categories Forums,furaffinity.net,0.06,0.02,0,0,0
+1,1364,categories Forums,yaplakal.com,0.0,0.01,0,0,0
+1,1365,categories File Sharing,onedrive.live.com,0.09,0.02,0,0,0
+1,1366,categories Forums,ptt.cc,0.0,0.01,0,0,0
+1,1367,categories File Sharing,box.com,0.0,0.02,0,0,0
+1,1368,categories Forums,dailykos.com,0.0,0.01,0,0,0
+1,1369,categories Forums,stackoverflow.com,0.09,0.02,0,0,0
+1,1370,categories File Sharing,jiathis.com,0.0,0.01,0,0,0
+1,1371,categories File Sharing,softonic.com,0.0,0.01,0,0,0
+1,1372,categories File Sharing,www.dropbox.com,0.09,0.02,0,0,0
+1,1373,categories File Sharing,sfx.ms,0.0,0.02,0,0,0
+1,1374,categories File Sharing,backblaze.com,0.0,0.01,0,0,0
+1,1375,categories Forums,chime.aws,0.0,0.02,0,0,0
+1,1376,categories Forums,business2community.com,0.01,0.02,0,0,0
+1,1377,categories File Sharing,box.net,0.0,0.01,0,0,0
+1,1378,categories File Sharing,justpaste.it,0.0,0.01,0,0,0
+1,1379,categories Forums,steamcommunity.com,0.12,0.02,0,0,0
+1,1380,categories File Sharing,spectrum.s3.amazonaws.com,0.0,0.01,0,0,0
+1,1381,categories File Sharing,symcd.com,0.0,0.01,0,0,0
+1,1382,categories File Sharing,getdropbox.com,0.0,0.01,0,0,0
+1,1383,categories Television,tvsquared.com,0.0,0.02,0,0,0
+1,1384,categories Forums,quora.com,0.0,0.02,0,0,0
+1,1385,categories Forums,www.wowhead.com,0.01,0.02,0,0,0
+1,1386,categories Forums,reddit.com,0.0,0.02,0,0,0
+1,1387,categories Forums,gamer.com.tw,0.01,0.02,0,0,0
+1,1388,categories Forums,alb.reddit.com,0.09,0.02,0,0,0
+1,1389,categories Forums,m.ppomppu.co.kr,0.0,0.02,0,0,0
+1,1390,categories Forums,nairaland.com,0.0,0.02,0,0,0
+1,1391,categories Forums,hoyolab.com,0.01,0.02,0,0,0
+1,1392,categories Forums,yougov.com,0.0,0.02,0,0,0
+1,1393,categories Forums,old.reddit.com,0.09,0.02,0,0,0
+1,1394,categories Forums,detail.chiebukuro.yahoo.co.jp,0.0,0.02,0,0,0
+1,1395,categories Forums,wowhead.com,0.01,0.02,0,0,0
+1,1396,categories Pornography,fulldesisex.com,0.06,0.06,0,1,0
+1,1397,categories Pornography,ita.xhamster.com,0.06,0.06,0,1,0
+1,1398,categories Pornography,www.hdhindisex.com,0.06,0.06,0,1,0
+1,1399,categories Pornography,missav.com,0.07,0.06,0,1,0
+1,1400,categories Pornography,xnxx.com,0.07,0.06,0,1,0
+1,1401,categories News & Media,www.yahoo.co.jp,0.0,0.0,0,0,0
+1,1402,categories News & Media,timesofindia.indiatimes.com,0.0,0.0,0,0,0
+1,1403,categories News & Media,in.gr,0.0,0.0,0,0,0
+1,1404,categories News & Media,index.hr,0.0,0.0,0,0,0
+1,1405,categories News & Media,rte.ie,0.0,0.0,0,0,0
+1,1406,categories Entertainment,ticketone.it,0.0,0.01,0,0,0
+1,1407,categories Entertainment,hollywoodreporter.com,0.0,0.01,0,0,0
+1,1408,categories Entertainment,digitalspy.com,0.0,0.01,0,0,0
+1,1409,categories Entertainment,lenreg.ru,0.0,0.01,0,0,0
+1,1410,categories Entertainment,lolesports.com,0.01,0.01,0,0,0
+1,1411,categories Pornography,www.xvideos4.com,0.08,0.06,0,1,0
+1,1412,categories Pornography,fr.pornhub.com,0.07,0.06,0,1,0
+1,1413,categories Pornography,rule34video.com,0.07,0.06,0,1,0
+1,1414,categories Pornography,sxyprn.com,0.08,0.06,0,1,0
+1,1415,categories Pornography,jp.pornhub.com,0.07,0.06,0,1,0
+1,1416,categories Pornography,m.sexemodel.com,0.06,0.06,0,1,0
+1,1417,categories Pornography,literotica.com,0.07,0.06,0,1,0
+1,1418,categories Pornography,camwhores.tv,0.08,0.06,0,1,0
+1,1419,categories Pornography,tubecup.net,0.07,0.06,0,1,0
+1,1420,categories Pornography,fuq.com,0.07,0.06,0,1,0
+1,1421,categories Pornography,3hentai.net,0.07,0.06,0,1,0
+1,1422,categories Pornography,sexlog.com,0.07,0.06,0,1,0
+1,1423,categories Pornography,xxxvideos247.com,0.07,0.06,0,1,0
+1,1424,categories Pornography,hotmovs.com,0.07,0.06,0,1,0
+1,1425,categories Pornography,nl.pornhub.com,0.07,0.06,0,1,0
+1,1426,categories Pornography,myreadingmanga.info,0.07,0.06,0,1,0
+1,1427,categories Pornography,redwap-xxx.com,0.07,0.06,0,1,0
+1,1428,categories Pornography,br.spankbang.com,0.07,0.06,0,1,0
+1,1429,categories Pornography,pussyspace.com,0.07,0.06,0,1,0
+1,1430,categories Pornography,xnxxsex.net,0.06,0.06,0,1,0
+1,1431,categories Pornography,www.sex.com,0.07,0.06,0,1,0
+1,1432,categories Pornography,cz.pornhub.com,0.07,0.06,0,1,0
+1,1433,categories Pornography,gaymaletube.com,0.07,0.06,0,1,0
+1,1434,categories Pornography,www.serviporno.com,0.07,0.06,0,1,0
+1,1435,categories Pornography,www.joyclub.de,0.06,0.06,0,1,0
+1,1436,categories Pornography,www.fuq.com,0.07,0.06,0,1,0
+1,1437,categories Pornography,xhamster.desi,0.07,0.06,0,1,0
+1,1438,categories Pornography,vjav.com,0.07,0.06,0,1,0
+1,1439,categories Pornography,www.dmm.co.jp,0.06,0.06,0,1,0
+1,1440,categories Pornography,erome.com,0.06,0.06,0,1,0
+1,1441,categories Pornography,pornpics.com,0.07,0.06,0,1,0
+1,1442,categories Pornography,th.spankbang.com,0.07,0.06,0,1,0
+1,1443,categories Pornography,motherless.com,0.07,0.06,0,1,0
+1,1444,categories Pornography,xnxx3.com,0.07,0.06,0,1,0
+1,1445,categories Pornography,hentai.name,0.07,0.06,0,1,0
+1,1446,categories Pornography,amp.xhamster.com,0.07,0.06,0,1,0
+1,1447,categories Pornography,contentabc.com,0.0,0.06,0,1,0
+1,1448,categories Pornography,txxx.tube,0.06,0.06,0,1,0
+1,1449,categories Pornography,www.freepornvideo.sex,0.07,0.06,0,1,0
+1,1450,categories Pornography,boafoda.com,0.07,0.06,0,1,0
+1,1451,categories Television,prod.netflix.com,0.09,0.02,0,0,0
+1,1452,categories Television,atv.com.tr,0.0,0.02,0,0,0
+1,1453,categories Television,www.netflix.com,0.09,0.02,0,0,0
+1,1454,categories Television,peacocktv.com,0.0,0.02,0,0,0
+1,1455,categories Television,spectrum.net,0.0,0.02,0,0,0
+1,1456,categories Television,tv-asahi.co.jp,0.0,0.02,0,0,0
+1,1457,categories Television,warnerbros.com,0.0,0.02,0,0,0
+1,1458,categories Television,vrt.be,0.0,0.02,0,0,0
+1,1459,categories Television,nhk.jp,0.0,0.02,0,0,0
+1,1460,categories Pornography,hnext.jp,0.06,0.06,0,1,0
+1,1461,categories Pornography,www.youjizz.com,0.07,0.06,0,1,0
+1,1462,categories Pornography,sextb.net,0.08,0.06,0,1,0
+1,1463,categories Pornography,highwebmedia.com,0.07,0.06,0,1,0
+1,1464,categories Pornography,www.xvideos.es,0.08,0.06,0,1,0
+1,1465,categories Pornography,annunci69.it,0.07,0.06,0,1,0
+1,1466,categories Pornography,clip2vip.com,0.06,0.06,0,1,0
+1,1467,categories Pornography,hentaihaven.xxx,0.07,0.06,0,1,0
+1,1468,categories Pornography,toonily.com,0.07,0.06,0,1,0
+1,1469,categories Pornography,thisav.com,0.08,0.06,0,1,0
+1,1470,categories Pornography,www.pornhub.org,0.07,0.06,0,1,0
+1,1471,categories Pornography,www.ixxx.com,0.08,0.06,0,1,0
+1,1472,categories Pornography,www.hentai.name,0.07,0.06,0,1,0
+1,1473,categories Pornography,arbada.com,0.07,0.06,0,1,0
+1,1474,categories Pornography,pt.pornhub.com,0.07,0.06,0,1,0
+1,1475,categories Pornography,porno-zona.com,0.06,0.06,0,1,0
+1,1476,categories Pornography,www.xvideos2.com,0.07,0.06,0,1,0
+1,1477,categories Pornography,www.erome.com,0.06,0.06,0,1,0
+1,1478,categories Pornography,www.pornpics.com,0.08,0.06,0,1,0
+1,1479,categories Pornography,xvideos4.com,0.07,0.06,0,1,0
+1,1480,categories Pornography,xnxx-cdn.com,0.07,0.06,0,1,0
+1,1481,categories Pornography,xhwide4.com,0.0,0.06,0,1,0
+1,1482,categories Pornography,pl.xhamster.com,0.07,0.06,0,1,0
+1,1483,categories Pornography,tokyomotion.net,0.06,0.06,0,1,0
+1,1484,categories Pornography,xvideos.es,0.08,0.06,0,1,0
+1,1485,categories Pornography,cam4.com,0.07,0.06,0,1,0
+1,1486,categories Pornography,heo69.top,0.07,0.06,0,1,0
+1,1487,categories Pornography,bhojpurisex.site,0.07,0.06,0,1,0
+1,1488,categories Pornography,82xnxx.com,0.07,0.06,0,1,0
+1,1489,categories Pornography,zbiornik.com,0.07,0.06,0,1,0
+1,1490,categories Pornography,gekso.xyz,0.07,0.06,0,1,0
+1,1491,categories Pornography,jp.spankbang.com,0.07,0.06,0,1,0
+1,1492,categories Pornography,xhamsterlive.com,0.07,0.06,0,1,0
+1,1493,categories Pornography,love4porn.com,0.07,0.06,0,1,0
+1,1494,categories Pornography,pornkai.com,0.07,0.06,0,1,0
+1,1495,categories Pornography,kompoz2.com,0.07,0.06,0,1,0
+1,1496,categories Pornography,phim.heo69.top,0.07,0.06,0,1,0
+1,1497,categories Pornography,sexvid.pro,0.07,0.06,0,1,0
+1,1498,categories Pornography,hanime.tv,0.07,0.06,0,1,0
+1,1499,categories Pornography,xvideos2.com,0.08,0.06,0,1,0
+1,1500,categories Pornography,evexxx.com,0.07,0.06,0,1,0
+1,1501,categories Pornography,bestjavporn.com,0.07,0.06,0,1,0
+1,1502,categories Pornography,servicewebly.com,0.0,0.06,0,1,0
+1,1503,categories Pornography,xhamster1.desi,0.08,0.06,0,1,0
+1,1504,categories Pornography,xv-videos1.com,0.06,0.06,0,1,0
+1,1505,categories Pornography,hoes.tube,0.07,0.06,0,1,0
+1,1506,categories Pornography,pornozavr.net,0.07,0.06,0,1,0
+1,1507,categories Pornography,www.hdtube.porn,0.07,0.06,0,1,0
+1,1508,categories Pornography,hot.noodlemagazine.com,0.07,0.06,0,1,0
+1,1509,categories Pornography,www.pornhat.com,0.07,0.06,0,1,0
+1,1510,categories Pornography,gekso.com,0.07,0.06,0,1,0
+1,1511,categories Pornography,www.rat.xxx,0.07,0.06,0,1,0
+1,1512,categories Pornography,imhentai.xxx,0.07,0.06,0,1,0
+1,1513,categories Pornography,www.xnxx.tv,0.07,0.06,0,1,0
+1,1514,categories Pornography,hentaifox.com,0.06,0.06,0,1,0
+1,1515,categories Pornography,beeg.com,0.07,0.06,0,1,0
+1,1516,categories Pornography,www.indianpornvideos.me,0.06,0.06,0,1,0
+1,1517,categories Pornography,xxxnd.com,0.0,0.06,0,1,0
+1,1518,categories Pornography,chaturbate.com,0.07,0.06,0,1,0
+1,1519,categories File Sharing,harry.lu,0.0,0.01,0,0,0
+1,1520,categories Pornography,www.fulldesisex.com,0.06,0.06,0,1,0
+1,1521,categories File Sharing,catchthemes.com,0.0,0.01,0,0,0
+1,1522,categories File Sharing,desync.com,0.0,0.0,0,0,0
+1,1523,categories File Sharing,icloud.com,0.0,0.0,0,0,0
+1,1524,categories Fashion,salonboard.com,0.0,0.0,0,0,0
+1,1525,categories Fashion,hm.com,0.0,0.0,0,0,0
+1,1526,categories Fashion,puma.com,0.0,0.0,0,0,0
+1,1527,categories Fashion,therealreal.com,0.0,0.0,0,0,0
+1,1528,categories Fashion,www.ajio.com,0.0,0.0,0,0,0
+1,1529,categories Pornography,spankbang.com,0.07,0.06,0,1,0
+1,1530,categories Pornography,www.apornvideo.com,0.07,0.06,0,1,0
+1,1531,categories Pornography,pictoa.com,0.07,0.06,0,1,0
+1,1532,categories Pornography,stripchat.com,0.07,0.06,0,1,0
+1,1533,categories Pornography,sexnhanh.co,0.01,0.06,0,1,0
+1,1534,categories Pornography,freepornvideo.sex,0.07,0.06,0,1,0
+1,1535,categories Pornography,www.porn300.com,0.07,0.06,0,1,0
+1,1536,categories Pornography,pornone.com,0.07,0.06,0,1,0
+1,1537,categories Pornography,porn300.com,0.07,0.06,0,1,0
+1,1538,categories Personal Blogs,ijavhd.com,0.07,0.02,0,0,0
+1,1539,categories Personal Blogs,tedata.net,0.0,0.02,0,0,0
+1,1540,categories Personal Blogs,venturebeat.com,0.0,0.02,0,0,0
+1,1541,categories Personal Blogs,jetpack.wordpress.com,0.0,0.01,0,0,0
+1,1542,categories Personal Blogs,perl.com,0.0,0.01,0,0,0
+1,1543,categories Personal Blogs,lifehacker.com,0.0,0.01,0,0,0
+1,1544,categories Content Servers,oauthaccountmanager.googleapis.com,0.09,0.01,0,0,0
+1,1545,categories Content Servers,tm.ak.prd.aadg.akadns.net,0.0,0.01,0,0,0
+1,1546,categories Content Servers,tags.bluekai.com,0.0,0.01,0,0,0
+1,1547,categories Content Servers,drivefrontend-pa.googleapis.com,0.09,0.01,0,0,0
+1,1548,categories Content Servers,vimeocdn.com,0.0,0.01,0,0,0
+1,1549,categories Content Servers,a3cloud.net,0.0,0.01,0,0,0
+1,1550,categories Gambling,dpboss.services,0.0,0.04,0,0,0
+1,1551,categories Coupons,groupon.com,0.0,0.0,0,0,0
+1,1552,categories Coupons,slickdeals.net,0.0,0.0,0,0,0
+1,1553,categories Coupons,humblebundle.com,0.01,0.0,0,0,0
+1,1554,categories Coupons,agoda.com,0.0,0.0,0,0,0
+1,1555,categories Coupons,joinhoney.com,0.0,0.0,0,0,0
+1,1556,categories Pornography,ge.xhamster.desi,0.07,0.06,0,1,0
+1,1557,categories Pornography,xnxx.health,0.07,0.06,0,1,0
+1,1558,categories Pornography,xxx18.uno,0.07,0.06,0,1,0
+1,1559,categories Pornography,ashemaletube.com,0.07,0.06,0,1,0
+1,1560,categories Pornography,www.arbada.com,0.06,0.06,0,1,0
+1,1561,categories Pornography,www.indianbfvideos.com,0.06,0.06,0,1,0
+1,1562,categories Pornography,imagefap.com,0.06,0.06,0,1,0
+1,1563,categories Pornography,yadongtube.net,0.0,0.06,0,1,0
+1,1564,categories Pornography,jable.tv,0.07,0.06,0,1,0
+1,1565,categories Pornography,rule34.us,0.06,0.06,0,1,0
+1,1566,categories Pornography,hentailib.me,0.06,0.06,0,1,0
+1,1567,categories Search Engines,google.com.uy,0.0,0.01,0,0,0
+1,1568,categories Search Engines,google.cd,0.0,0.01,0,0,0
+1,1569,categories Search Engines,clients6.google.com,0.09,0.01,0,0,0
+1,1570,categories Search Engines,tools.google.com,0.09,0.02,0,0,0
+1,1571,categories Search Engines,google.ru,0.0,0.02,0,0,0
+1,1572,categories Parked & For Sale Domains,uisp.com,0.0,0.0,0,0,0
+1,1573,categories Parked & For Sale Domains,nic.do,0.0,0.0,0,0,0
+1,1574,categories Parked & For Sale Domains,de.com,0.0,0.0,0,0,0
+1,1575,categories Parked & For Sale Domains,rs6.net,0.0,0.0,0,0,0
+1,1576,categories Parked & For Sale Domains,binance.info,0.0,0.0,0,0,0
+1,1577,categories Shopping,surveymonkey.com,0.0,0.0,0,0,0
+1,1578,categories Shopping,engadget.com,0.0,0.0,0,0,0
+1,1579,categories Shopping,affirm.com,0.0,0.0,0,0,0
+1,1580,categories Shopping,made-in-china.com,0.0,0.0,0,0,0
+1,1581,categories Shopping,consumerreports.org,0.0,0.0,0,0,0
+1,1582,categories File Sharing,kwai.net,0.0,0.0,0,0,0
+1,1583,categories File Sharing,razersynapse.com,0.0,0.0,0,0,0
+1,1584,categories File Sharing,apkmirror.com,0.0,0.0,0,0,0
+1,1585,categories File Sharing,pan.baidu.com,0.1,0.01,0,0,0
+1,1586,categories File Sharing,4shared.com,0.0,0.01,0,0,0
+1,1587,categories Pornography,www.imagefap.com,0.06,0.06,0,1,0
+1,1588,categories Pornography,wnacg.com,0.06,0.06,0,1,0
+1,1589,categories Pornography,xhamster2.com,0.07,0.06,0,1,0
+1,1590,categories File Sharing,cloudinary.com,0.01,0.01,0,0,0
+1,1591,categories File Sharing,platform.hicloud.com,0.0,0.0,0,0,0
+1,1592,categories File Sharing,samsungiotcloud.com,0.0,0.0,0,0,0
+1,1593,categories File Sharing,transmissionbt.com,0.0,0.0,0,0,0
+1,1594,categories File Sharing,wetransfer.com,0.09,0.01,0,0,0
+1,1595,categories File Sharing,connectivitycheck.platform.hicloud.com,0.0,0.01,0,0,0
+1,1596,categories Pornography,me.porno666.link,0.06,0.06,0,1,0
+1,1597,categories Pornography,www.pornhat.one,0.06,0.06,0,1,0
+1,1598,categories Pornography,hot-sex-tube.com,0.07,0.06,0,1,0
+1,1599,categories File Sharing,icons8.com,0.0,0.01,0,0,0
+1,1600,categories Pornography,okxxx1.com,0.07,0.06,0,1,0
+1,1601,categories Newly Seen Domains,firstbyte.club,0.0,0.0,0,0,0
+1,1602,categories Newly Seen Domains,nic.in,0.0,0.0,0,0,0
+1,1603,categories Newly Seen Domains,ww7.5movierulz.gg,0.0,0.0,0,0,0
+1,1604,categories Newly Seen Domains,s.au,0.0,0.0,0,0,0
+1,1605,categories Newly Seen Domains,goodoo.ru,0.0,0.0,0,0,0
+1,1606,categories Pornography,ok.xxx,0.07,0.06,0,1,0
+1,1607,categories Pornography,www.wnacg.com,0.06,0.06,0,1,0
+1,1608,categories Pornography,tecno.servicewebly.com,0.0,0.06,0,1,0
+1,1609,categories Pornography,xvideos3.com,0.08,0.06,0,1,0
+1,1610,categories Pornography,zbporn.com,0.06,0.06,0,1,0
+1,1611,categories Pornography,phncdn.com,0.07,0.06,0,1,0
+1,1612,categories Pornography,la.spankbang.com,0.08,0.06,0,1,0
+1,1613,categories Education,archive.is,0.0,0.0,0,0,0
+1,1614,categories Education,tsinghua.edu.cn,0.0,0.0,0,0,0
+1,1615,categories Education,upload.wikimedia.org,0.0,0.0,0,0,0
+1,1616,categories Television,mediaset.it,0.0,0.01,0,0,0
+1,1617,categories Television,nrdp.prod.ftl.netflix.com,0.09,0.02,0,0,0
+1,1618,categories Television,rtl.de,0.0,0.02,0,0,0
+1,1619,categories Television,itv.com,0.0,0.02,0,0,0
+1,1620,categories Television,iq.com,0.01,0.02,0,0,0
+1,1621,categories Job Search & Careers,in.indeed.com,0.0,0.0,0,0,0
+1,1622,categories Television,comcast.com,0.0,0.01,0,0,0
+1,1623,categories Television,history.com,0.0,0.01,0,0,0
+1,1624,categories Job Search & Careers,ziprecruiter.com,0.0,0.0,0,0,0
+1,1625,categories Video Streaming,www.expressen.se,0.0,0.01,0,0,0
+1,1626,categories Video Streaming,www.nicovideo.jp,0.09,0.01,0,0,0
+1,1627,categories Video Streaming,s.youtube.com,0.09,0.02,0,0,0
+1,1628,categories Video Streaming,video.qq.com,0.09,0.02,0,0,0
+1,1629,categories Video Streaming,www.sport.es,0.0,0.02,0,0,0
+1,1630,categories Government,ca.gov,0.0,0.0,0,0,0
+1,1631,categories Government,archives.gov,0.0,0.0,0,0,0
+1,1632,categories Video Streaming,tw.news.yahoo.com,0.0,0.02,0,0,0
+1,1633,categories Video Streaming,www.cbssports.com,0.0,0.02,0,0,0
+1,1634,categories Government,cisa.gov,0.0,0.0,0,0,0
+1,1635,categories Gambling,web.centraldasapostas.net,0.06,0.04,0,0,0
+1,1636,categories Gambling,netkeiba.com,0.07,0.04,0,0,0
+1,1637,categories Gambling,betway.co.za,0.06,0.04,0,0,0
+1,1638,categories Gambling,unibet.com,0.07,0.04,0,0,0
+1,1639,categories Gambling,nesine.com,0.07,0.04,0,0,0
+1,1640,categories Pornography,multporn.net,0.07,0.06,0,1,0
+1,1641,categories Pornography,fuckmoral.com,0.07,0.06,0,1,0
+1,1642,categories Pornography,www.annunci69.it,0.07,0.06,0,1,0
+1,1643,categories Pornography,wapoz.info,0.06,0.06,0,1,0
+1,1644,categories Pornography,ru.xhamster.com,0.07,0.06,0,1,0
+1,1645,categories Pornography,tubesafari.com,0.07,0.06,0,1,0
+1,1646,categories Pornography,mat6tube.com,0.08,0.06,0,1,0
+1,1647,categories Pornography,sexemodel.com,0.07,0.06,0,1,0
+1,1648,categories File Sharing,entelchile.net,0.0,0.01,0,0,0
+1,1649,categories File Sharing,mask.icloud.com,0.09,0.01,0,0,0
+1,1650,categories File Sharing,we.tl,0.0,0.01,0,0,0
+1,1651,categories File Sharing,www.icloud.com,0.09,0.01,0,0,0
+1,1652,categories File Sharing,miniclippt.com,0.01,0.01,0,0,0
+1,1653,categories Pornography,xxxvideo.best,0.06,0.06,0,1,0
+1,1654,categories File Sharing,gateway.icloud.com,0.09,0.02,0,0,0
+1,1655,categories File Sharing,subway.com,0.0,0.02,0,0,0
+1,1656,categories File Sharing,slideshare.net,0.0,0.02,0,0,0
+1,1657,categories File Sharing,sharefile.com,0.0,0.01,0,0,0
+1,1658,categories File Sharing,dropbox.com,0.0,0.01,0,0,0
+1,1659,categories File Sharing,mxplay.com,0.0,0.01,0,0,0
+1,1660,categories File Sharing,wallpapers.com,0.0,0.01,0,0,0
+1,1661,categories File Sharing,mega.nz,0.09,0.02,0,0,0
+1,1662,categories File Sharing,setup.icloud.com,0.09,0.02,0,0,0
+1,1663,categories File Sharing,1377x.to,0.01,0.02,0,0,0
+1,1664,categories File Sharing,s3.amazonaws.com,0.0,0.02,0,0,0
+1,1665,categories Pornography,www.xvideos3.com,0.07,0.06,0,1,0
+1,1666,categories File Sharing,efscloud.net,0.0,0.02,0,0,0
+1,1667,categories File Sharing,www.slideshare.net,0.09,0.02,0,0,0
+1,1668,categories File Sharing,metrics.icloud.com,0.09,0.02,0,0,0
+1,1669,categories Pornography,hindixxxhd.com,0.06,0.06,0,1,0
+1,1670,categories Pornography,jav.guru,0.08,0.06,0,1,0
+1,1671,categories Pornography,xnxx.com.se,0.06,0.06,0,1,0
+1,1672,categories Pornography,donmai.us,0.06,0.06,0,1,0
+1,1673,categories Pornography,pornocarioca.com,0.06,0.06,0,1,0
+1,1674,categories Economy & Finance,bradesco.com.br,0.0,0.01,0,0,0
+1,1675,categories Pornography,4kporn.xxx,0.06,0.06,0,1,0
+1,1676,categories Economy & Finance,coindesk.com,0.0,0.01,0,0,0
+1,1677,categories Economy & Finance,secure.bankofamerica.com,0.0,0.0,0,0,0
+1,1678,categories Economy & Finance,etoro.com,0.02,0.01,0,0,0
+1,1679,categories Magazines,medium.com,0.02,0.0,0,0,0
+1,1680,categories Magazines,southernliving.com,0.0,0.0,0,0,0
+1,1681,categories Magazines,teleprogramma.pro,0.0,0.0,0,0,0
+1,1682,categories Magazines,thrillist.com,0.0,0.0,0,0,0
+1,1683,categories Magazines,inc.com,0.0,0.0,0,0,0
+1,1684,categories Pornography,fpo.xxx,0.08,0.06,0,1,0
+1,1685,categories Pornography,sankakucomplex.com,0.06,0.06,0,1,0
+1,1686,categories Pornography,thisvid.com,0.07,0.06,0,1,0
+1,1687,categories Pornography,es.pornhub.com,0.07,0.06,0,1,0
+1,1688,categories Pornography,hotindianporn.mobi,0.07,0.06,0,1,0
+1,1689,categories Pornography,xxx18hot.com,0.07,0.06,0,1,0
+1,1690,categories Pornography,luxuretv.com,0.07,0.06,0,1,0
+1,1691,categories Pornography,goodporn.to,0.06,0.06,0,1,0
+1,1692,categories Pornography,br.xhamster.com,0.07,0.06,0,1,0
+1,1693,categories Pornography,xvideos5.com,0.07,0.06,0,1,0
+1,1694,categories Pornography,aznude.com,0.06,0.06,0,1,0
+1,1695,categories Pornography,tktube.com,0.06,0.06,0,1,0
+1,1696,categories Translator,context.reverso.net,0.0,0.02,0,0,0
+1,1697,categories Translator,deepl.com,0.09,0.01,0,0,0
+1,1698,categories Business,rudderstack.com,0.0,0.0,0,0,0
+1,1699,categories Business,packet8.net,0.0,0.0,0,0,0
+1,1700,categories Business,segment.com,0.0,0.0,0,0,0
+1,1701,categories Business,resetdigital.co,0.0,0.0,0,0,0
+1,1702,categories Business,pm.w55c.net,0.0,0.0,0,0,0
+1,1703,categories Pornography,xxxbule.com,0.07,0.06,0,1,0
+1,1704,categories Pornography,sex.com,0.07,0.06,0,1,0
+1,1705,categories Pornography,exhentai.org,0.08,0.06,0,1,0
+1,1706,categories Pornography,tnaflix.com,0.07,0.06,0,1,0
+1,1707,categories Pornography,xhwide3.com,0.05,0.06,0,1,0
+1,1708,categories Pornography,xvideos-cdn.com,0.07,0.06,0,1,0
+1,1709,categories Pornography,nhentai.net,0.07,0.06,0,1,0
+1,1710,categories Pornography,jizzbunker.com,0.07,0.06,0,1,0
+1,1711,categories Pornography,de.pornhub.org,0.07,0.06,0,1,0
+1,1712,categories Pornography,redgifs.com,0.07,0.06,0,1,0
+1,1713,categories Personal Blogs,gobankingrates.com,0.0,0.01,0,0,0
+1,1714,categories Pornography,www.sexindrag.com,0.08,0.06,0,1,0
+1,1715,categories Pornography,xvideos.com,0.07,0.06,0,1,0
+1,1716,categories Personal Blogs,snapinsta.app,0.01,0.01,0,0,0
+1,1717,categories Personal Blogs,bleepingcomputer.com,0.0,0.01,0,0,0
+1,1718,categories Pornography,hqporner.com,0.07,0.06,0,1,0
+1,1719,categories Pornography,porntrex.com,0.07,0.06,0,1,0
+1,1720,categories Pornography,www.xnxx3.com,0.08,0.06,0,1,0
+1,1721,categories Pornography,txxx.com,0.07,0.06,0,1,0
+1,1722,categories Pornography,hdzog.com,0.07,0.06,0,1,0
+1,1723,categories Pornography,iporntv.net,0.09,0.06,0,1,0
+1,1724,categories Pornography,indianbfvideos.com,0.07,0.06,0,1,0
+1,1725,categories Pornography,www.sexvid.xxx,0.07,0.06,0,1,0
+1,1726,categories Pornography,m.hqporner.com,0.08,0.06,0,1,0
+1,1727,categories Pornography,hentaiera.com,0.08,0.06,0,1,0
+1,1728,categories Pornography,sexvid.xxx,0.07,0.06,0,1,0
+1,1729,categories Pornography,pl.pornhub.com,0.07,0.06,0,1,0
+1,1730,categories Pornography,mrdeepfakes.com,0.06,0.06,0,1,0
+1,1731,categories Pornography,www.kamababa.desi,0.07,0.06,0,1,0
+1,1732,categories Pornography,hanime1.me,0.07,0.06,0,1,0
+1,1733,categories Pornography,hdporncomics.com,0.07,0.06,0,1,0
+1,1734,categories Pornography,www.pussyspace.com,0.07,0.06,0,1,0
+1,1735,categories Pornography,dto.jp,0.07,0.06,0,1,0
+1,1736,categories Pornography,xfreehd.com,0.06,0.06,0,1,0
+1,1737,categories Pornography,bongacams.com,0.07,0.06,0,1,0
+1,1738,categories Pornography,sexalarab.com,0.06,0.06,0,1,0
+1,1739,categories Pornography,rt.pornhub.com,0.07,0.06,0,1,0
+1,1740,categories Pornography,video.hnext.jp,0.06,0.06,0,1,0
+1,1741,categories Television,pbs.org,0.0,0.01,0,0,0
+1,1742,categories Television,viki.com,0.0,0.01,0,0,0
+1,1743,categories Television,nflximg.com,0.0,0.01,0,0,0
+1,1744,categories Television,tbs.co.jp,0.0,0.01,0,0,0
+1,1745,categories Television,logs.netflix.com,0.09,0.01,0,0,0
+1,1746,categories Real Estate,plentific.com,0.0,0.0,0,0,0
+1,1747,categories Real Estate,homes.com,0.0,0.0,0,0,0
+1,1748,categories Real Estate,zoopla.co.uk,0.0,0.0,0,0,0
+1,1749,categories Real Estate,dotloop.com,0.0,0.0,0,0,0
+1,1750,categories Television,www.jiocinema.com,0.0,0.01,0,0,0
+1,1751,categories Television,sky.com,0.0,0.01,0,0,0
+1,1752,categories Television,www.tamildhool.net,0.0,0.01,0,0,0
+1,1753,categories Television,sling.com,0.0,0.01,0,0,0
+1,1754,categories Television,hotstar.com,0.0,0.01,0,0,0
+1,1755,categories Pornography,www.pornocarioca.com,0.06,0.06,0,1,0
+1,1756,categories Pornography,redtube.com,0.07,0.06,0,1,0
+1,1757,categories Pornography,xhamster.com,0.06,0.06,0,1,0
+1,1758,categories Pornography,videosection.com,0.07,0.06,0,1,0
+1,1759,categories Pornography,rat.xxx,0.07,0.06,0,1,0
+1,1760,categories Information Security,spectraguard.net,0.0,0.01,0,0,0
+1,1761,categories Pornography,crazyporn.xxx,0.06,0.06,0,1,0
+1,1762,categories Information Security,fortinet.com,0.0,0.01,0,0,0
+1,1763,categories Information Security,ocsp.edge.digicert.com,0.0,0.0,0,0,0
+1,1764,categories Information Security,api.endpoint.ingress.rapid7.com,0.0,0.0,0,0,0
+1,1765,categories Pornography,www.xnxx2.com,0.08,0.06,0,1,0
+1,1766,categories Pornography,yadongkorea.org,0.07,0.06,0,1,0
+1,1767,categories Pornography,tube8.com,0.09,0.07,0,1,0
+1,1768,categories Pornography,fr.xhamster.com,0.07,0.07,0,1,0
+1,1769,categories Pornography,serviporno.com,0.07,0.07,0,1,0
+1,1770,categories Pornography,upornia.com,0.07,0.07,0,1,0
+1,1771,categories Pornography,m.chaturbate.com,0.07,0.07,0,1,0
+1,1772,categories Pornography,javbus.com,0.07,0.07,0,1,0
+1,1773,categories Pornography,hdtube.porn,0.08,0.07,0,1,0
+1,1774,categories Pornography,milf33.com,0.07,0.07,0,1,0
+1,1775,categories Pornography,xxx.com,0.08,0.07,0,1,0
+1,1776,categories Pornography,18comic.vip,0.07,0.07,0,1,0
+1,1777,categories Pornography,3movs.com,0.08,0.07,0,1,0
+1,1778,categories Pornography,pornhat.one,0.07,0.07,0,1,0
+1,1779,categories Pornography,es.xhamster.com,0.07,0.07,0,1,0
+1,1780,categories Pornography,www.redtube.com,0.08,0.07,0,1,0
+1,1781,categories Pornography,de.pornhub.com,0.07,0.07,0,1,0
+1,1782,categories Pornography,erothots.co,0.07,0.07,0,1,0
+1,1783,categories Pornography,beeg.porn,0.08,0.07,0,1,0
+1,1784,categories Pornography,tubev.sex,0.08,0.07,0,1,0
+1,1785,categories Pornography,www.boyfriendtv.com,0.07,0.07,0,1,0
+1,1786,categories Pornography,pornhub.org,0.07,0.07,0,1,0
+1,1787,categories Pornography,zbporn.tv,0.07,0.07,0,1,0
+1,1788,categories Pornography,manyvids.com,0.07,0.07,0,1,0
+1,1789,categories Pornography,supjav.com,0.08,0.07,0,1,0
+1,1790,categories Pornography,spankbang.party,0.07,0.07,0,1,0
+1,1791,categories Pornography,www.tokyomotion.net,0.07,0.07,0,1,0
+1,1792,categories Pornography,hitomi.la,0.08,0.07,0,1,0
+1,1793,categories Video Streaming,lrytas.lt,0.0,0.02,0,0,0
+1,1794,categories Pornography,dewafilm.xyz,0.02,0.07,0,1,0
+1,1795,categories Pornography,qorno.com,0.07,0.07,0,1,0
+1,1796,categories Video Streaming,timesnownews.com,0.0,0.02,0,0,0
+1,1797,categories Pornography,xnxx2.com,0.07,0.07,0,1,0
+1,1798,categories Pornography,myfreecams.com,0.07,0.07,0,1,0
+1,1799,"categories Politics, Advocacy, and Government-Related",epfindia.gov.in,0.0,0.0,0,0,0
+1,1800,"categories Politics, Advocacy, and Government-Related",www.universal-credit.service.gov.uk,0.0,0.0,0,0,0
+1,1801,"categories Politics, Advocacy, and Government-Related",nsf.gov,0.0,0.0,0,0,0
+1,1802,"categories Politics, Advocacy, and Government-Related",acm.org,0.0,0.0,0,0,0
+1,1803,"categories Politics, Advocacy, and Government-Related",iubenda.com,0.0,0.0,0,0,0
+1,1804,categories Weather,weathernews.jp,0.0,0.0,0,0,0
+1,1805,categories Weather,sinoptik.ua,0.0,0.0,0,0,0
+1,1806,categories Weather,meteofrance.com,0.0,0.0,0,0,0
+1,1807,categories Weather,metoffice.gov.uk,0.0,0.0,0,0,0
+1,1808,categories Weather,yr.no,0.0,0.0,0,0,0
+1,1809,categories Login Screens,purl.org,0.0,0.0,0,0,0
+1,1810,categories Login Screens,your-server.de,0.0,0.0,0,0,0
+1,1811,categories Login Screens,pro-market.net,0.0,0.0,0,0,0
+1,1812,categories Login Screens,www.colaboraread.com.br,0.0,0.0,0,0,0
+1,1813,categories Login Screens,bloglovin.com,0.02,0.0,0,0,0
+1,1814,categories Pornography,www.xvideos.com,0.07,0.07,0,1,0
+1,1815,categories Pornography,noodlemagazine.com,0.09,0.07,0,1,0
+1,1816,categories Pornography,heavy-r.com,0.07,0.07,0,1,0
+1,1817,categories Pornography,m.tnaflix.com,0.07,0.07,0,1,0
+1,1818,categories Pornography,porno18.site,0.07,0.07,0,1,0
+1,1819,categories Pornography,hlebo.mobi,0.07,0.07,0,1,0
+1,1820,categories Pornography,xxxshake.com,0.07,0.07,0,1,0
+1,1821,categories Pornography,ixxx.com,0.08,0.07,0,1,0
+1,1822,categories Pornography,it.pornhub.com,0.07,0.07,0,1,0
+1,1823,categories Pornography,kemono.party,0.07,0.07,0,1,0
+1,1824,categories Pornography,thegay.com,0.07,0.07,0,1,0
+1,1825,categories Pornography,www.qorno.com,0.07,0.07,0,1,0
+1,1826,categories Pornography,xgroovy.com,0.07,0.07,0,1,0
+1,1827,categories Pornography,webx.sexnhanh.co,0.0,0.07,0,1,0
+1,1828,categories Pornography,anysex.com,0.07,0.07,0,1,0
+1,1829,categories Pornography,kamababa.desi,0.07,0.07,0,1,0
+1,1830,categories Pornography,allporncomic.com,0.07,0.07,0,1,0
+1,1831,categories Pornography,incestflix.com,0.07,0.07,0,1,0
+1,1832,categories Search Engines,google.al,0.0,0.02,0,0,0
+1,1833,categories Search Engines,google.gr,0.0,0.02,0,0,0
+1,1834,categories Search Engines,www.google.com.mx,0.09,0.02,0,0,0
+1,1835,categories Search Engines,google.fi,0.0,0.02,0,0,0
+1,1836,categories Search Engines,anses.gob.ar,0.0,0.02,0,0,0
+1,1837,categories Sports,boatrace.jp,0.07,0.02,0,0,0
+1,1838,categories Sports,www.boatrace.jp,0.07,0.02,0,0,0
+1,1839,categories Personal Blogs,pikabu.ru,0.0,0.01,0,0,0
+1,1840,categories Personal Blogs,webdav.org,0.0,0.01,0,0,0
+1,1841,categories Personal Blogs,blogspot.com.au,0.0,0.01,0,0,0
+1,1842,categories Personal Blogs,people.cn,0.0,0.01,0,0,0
+1,1843,categories Personal Blogs,4.bp.blogspot.com,0.07,0.01,0,0,0
+1,1844,categories Personal Blogs,pcpartpicker.com,0.0,0.01,0,0,0
+1,1845,categories Pornography,www.clip2vip.com,0.07,0.07,0,1,0
+1,1846,categories Pornography,ge.xhamster.com,0.07,0.07,0,1,0
+1,1847,categories Pornography,youjizz.sex,0.07,0.07,0,1,0
+1,1848,categories Pornography,paheal.net,0.07,0.07,0,1,0
+1,1849,categories Pornography,apornvideo.com,0.07,0.07,0,1,0
+1,1850,categories Pornography,tube4world.com,0.07,0.07,0,1,0
+1,1851,categories Pornography,porno666.link,0.07,0.07,0,1,0
+1,1852,categories Clothing,carters.com,0.0,0.0,0,0,0
+1,1853,categories Clothing,levi.com,0.0,0.0,0,0,0
+1,1854,categories Clothing,rei.com,0.0,0.0,0,0,0
+1,1855,categories Clothing,www2.hm.com,0.0,0.0,0,0,0
+1,1856,categories Clothing,lululemon.com,0.0,0.0,0,0,0
+1,1857,categories Pornography,joyclub.de,0.07,0.07,0,1,0
+1,1858,categories Pornography,faphouse.com,0.07,0.07,0,1,0
+1,1859,categories Pornography,youjizz.com,0.07,0.07,0,1,0
+1,1860,categories Health & Fitness,1mg.com,0.0,0.0,0,0,0
+1,1861,categories Health & Fitness,diabetes.org,0.06,0.0,0,0,0
+1,1862,categories Health & Fitness,pharmeasy.in,0.0,0.0,0,0,0
+1,1863,categories Health & Fitness,womenshealthmag.com,0.0,0.0,0,0,0
+1,1864,categories Health & Fitness,www.ojogodobicho.com,0.06,0.01,0,0,0
+1,1865,categories Comic Books,webtoons.com,0.02,0.02,0,0,0
+1,1866,categories Comic Books,topmanhua.com,0.06,0.02,0,0,0
+1,1867,categories Comic Books,manga168.com,0.0,0.02,0,0,0
+1,1868,categories Magazines,smithsonianmag.com,0.0,0.0,0,0,0
+1,1869,categories Magazines,mindbodygreen.com,0.0,0.0,0,0,0
+1,1870,categories Magazines,forbes.com,0.0,0.0,0,0,0
+1,1871,categories Magazines,popsci.com,0.0,0.0,0,0,0
+1,1872,categories Magazines,flipboard.com,0.0,0.0,0,0,0
+1,1873,categories Personal Blogs,feeds.feedburner.com,0.0,0.01,0,0,0
+1,1874,categories Personal Blogs,blogs.com,0.0,0.01,0,0,0
+1,1875,categories Personal Blogs,sheknows.com,0.0,0.01,0,0,0
+1,1876,categories Personal Blogs,gemius.pl,0.01,0.0,0,0,0
+1,1877,categories Personal Blogs,openssl.org,0.0,0.0,0,0,0
+1,1878,categories Personal Blogs,canalblog.com,0.0,0.0,0,0,0
+1,1879,categories Sports,www.livescore.com,0.0,0.02,0,0,0
+1,1880,categories Sports,www.fmkorea.com,0.0,0.02,0,0,0
+1,1881,categories Sports,lequipe.fr,0.0,0.02,0,0,0
+1,1882,categories Sports,nfl.com,0.0,0.02,0,0,0
+1,1883,categories Sports,sportskeeda.com,0.0,0.02,0,0,0
+1,1884,categories Vehicles,edmunds.com,0.0,0.0,0,0,0
+1,1885,categories Vehicles,m.rst.ua,0.0,0.0,0,0,0
+1,1886,categories Vehicles,carsales.com.au,0.0,0.0,0,0,0
+1,1887,categories Vehicles,mythad.com,0.0,0.0,0,0,0
+1,1888,categories Vehicles,carsensor.net,0.0,0.0,0,0,0
+1,1889,categories Television,api.amazonvideo.com,0.0,0.01,0,0,0
+1,1890,categories Television,www.primevideo.com,0.09,0.01,0,0,0
+1,1891,categories Television,vudu.com,0.0,0.01,0,0,0
+1,1892,categories Television,telecinco.es,0.0,0.01,0,0,0
+1,1893,categories Television,cbs.com,0.0,0.01,0,0,0
+1,1894,categories Video Streaming,videa.hu,0.0,0.02,0,0,0
+1,1895,categories Television,push.prod.netflix.com,0.09,0.01,0,0,0
+1,1896,categories Television,www.hotstar.com,0.0,0.01,0,0,0
+1,1897,categories Video Streaming,www.lefigaro.fr,0.0,0.02,0,0,0
+1,1898,categories Video Streaming,handelsblatt.com,0.0,0.01,0,0,0
+1,1899,categories Educational Institutions,si.edu,0.0,0.0,0,0,0
+1,1900,categories Television,la7.it,0.0,0.01,0,0,0
+1,1901,categories Television,directv.com,0.0,0.01,0,0,0
+1,1902,categories Television,tamildhool.net,0.0,0.01,0,0,0
+1,1903,categories Television,hulu.com,0.01,0.01,0,0,0
+1,1904,categories Television,nova.cz,0.0,0.01,0,0,0
+1,1905,categories Television,pluto.tv,0.0,0.01,0,0,0
+1,1906,categories Television,wikia.com,0.0,0.01,0,0,0
+1,1907,categories Content Servers,devices.a2z.com,0.0,0.01,0,0,0
+1,1908,categories Content Servers,d.akamaiedge.net,0.0,0.01,0,0,0
+1,1909,categories Content Servers,nflximg.net,0.0,0.01,0,0,0
+1,1910,categories Content Servers,listrakbi.com,0.0,0.01,0,0,0
+1,1911,categories Content Servers,shawcable.net,0.0,0.01,0,0,0
+1,1912,categories Gaming,easyanticheat.net,0.01,0.01,0,0,0
+1,1913,categories Gaming,steampowered.com,0.04,0.01,0,0,0
+1,1914,categories Gaming,m.ruliweb.com,0.01,0.01,0,0,0
+1,1915,categories Gaming,playstation.com,0.01,0.01,0,0,0
+1,1916,categories Gaming,winzogames.com,0.01,0.01,0,0,0
+1,1917,categories Information Technology,browser.pipe.aria.microsoft.com,0.0,0.01,0,0,0
+1,1918,categories Information Technology,aternos.org,0.01,0.01,0,0,0
+1,1919,categories Information Technology,orange.fr,0.0,0.01,0,0,0
+1,1920,categories Information Technology,php.net,0.0,0.01,0,0,0
+1,1921,categories Information Technology,use.fontawesome.com,0.0,0.01,0,0,0
+1,1922,categories Food & Drink,tripadvisor.co.uk,0.0,0.0,0,0,0
+1,1923,categories Food & Drink,www.russianfood.com,0.0,0.0,0,0,0
+1,1924,categories Food & Drink,beauty.hotpepper.jp,0.0,0.0,0,0,0
+1,1925,categories Food & Drink,russianfood.com,0.0,0.0,0,0,0
+1,1926,categories Food & Drink,coca-cola.com,0.0,0.0,0,0,0
+1,1927,categories Technology,icio.us,0.0,0.0,0,0,0
+1,1928,categories Technology,pendo.io,0.0,0.0,0,0,0
+1,1929,categories Technology,opensource.org,0.0,0.0,0,0,0
+1,1930,categories Technology,init.itunes.apple.com,0.09,0.0,0,0,0
+1,1931,categories Technology,azure.com,0.0,0.0,0,0,0
+1,1932,categories No Content,keenetic.link,0.0,0.0,0,0,0
+1,1933,categories No Content,myteksi.net,0.0,0.0,0,0,0
+1,1934,categories No Content,playfamily.ru,0.0,0.0,0,0,0
+1,1935,categories No Content,aws-prd.net,0.0,0.0,0,0,0
+1,1936,categories No Content,dcloudstc.com,0.0,0.0,0,0,0
+1,1937,categories Ecommerce,bedbathandbeyond.com,0.0,0.0,0,0,0
+1,1938,categories Ecommerce,myntra.com,0.0,0.0,0,0,0
+1,1939,categories Ecommerce,leroymerlin.com.br,0.0,0.0,0,0,0
+1,1940,categories Ecommerce,shopee.tw,0.0,0.0,0,0,0
+1,1941,categories Ecommerce,buyee.jp,0.0,0.0,0,0,0
+1,1942,categories Video Streaming,onefootball.com,0.0,0.01,0,0,0
+1,1943,categories Video Streaming,sports.ru,0.0,0.01,0,0,0
+1,1944,categories Video Streaming,heraldo.es,0.0,0.01,0,0,0
+1,1945,categories Video Streaming,www.aparat.com,0.0,0.01,0,0,0
+1,1946,categories Video Streaming,eska.pl,0.0,0.01,0,0,0
+1,1947,categories Magazines,techrepublic.com,0.0,0.0,0,0,0
+1,1948,categories Magazines,phys.org,0.0,0.0,0,0,0
+1,1949,categories Magazines,musinsa.com,0.0,0.0,0,0,0
+1,1950,categories Magazines,pcmag.com,0.0,0.0,0,0,0
+1,1951,categories Magazines,technologyreview.com,0.0,0.0,0,0,0
+1,1952,categories Advertisements,cm.g.doubleclick.net,0.1,0.01,0,0,0
+1,1953,categories Advertisements,td.doubleclick.net,0.1,0.01,0,0,0
+1,1954,categories Advertisements,rtb.openx.net,0.0,0.01,0,0,0
+1,1955,categories Advertisements,onetag-sys.com,0.0,0.01,0,0,0
+1,1956,categories Advertisements,ade.googlesyndication.com,0.1,0.02,0,0,0
+1,1957,categories Advertisements,mintegral.net,0.0,0.02,0,0,0
+1,1958,categories Advertisements,ad-delivery.net,0.0,0.02,0,0,0
+1,1959,categories News & Media,asahi.com,0.0,0.0,0,0,0
+1,1960,categories News & Media,www.bartarinha.ir,0.0,0.0,0,0,0
+1,1961,categories News & Media,ilmessaggero.it,0.0,0.0,0,0,0
+1,1962,categories News & Media,aljazeera.net,0.0,0.0,0,0,0
+1,1963,categories News & Media,francetvinfo.fr,0.0,0.0,0,0,0
+1,1964,categories Safe for Kids,blooket.com,0.0,0.02,0,0,0
+1,1965,categories Safe for Kids,www.starfall.com,0.0,0.02,0,0,0
+1,1966,categories Safe for Kids,play.blooket.com,0.09,0.02,0,0,0
+1,1967,categories Safe for Kids,bigbadtoystore.com,0.0,0.01,0,0,0
+1,1968,categories Safe for Kids,www.disneyplus.com,0.09,0.01,0,0,0
+1,1969,categories Television,sbs.com.au,0.0,0.01,0,0,0
+1,1970,categories Television,sonyliv.com,0.09,0.01,0,0,0
+1,1971,categories Television,filmaffinity.com,0.0,0.01,0,0,0
+1,1972,categories Television,tf1.fr,0.0,0.01,0,0,0
+1,1973,categories Television,1tv.ru,0.0,0.01,0,0,0
+1,1974,categories Educational Institutions,queensu.ca,0.0,0.0,0,0,0
+1,1975,categories Television,joyn.de,0.0,0.01,0,0,0
+1,1976,categories Television,ardmediathek.de,0.0,0.01,0,0,0
+1,1977,categories Television,nrdp-ipv6.prod.ftl.netflix.com,0.09,0.01,0,0,0
+1,1978,categories Educational Institutions,bluebook.app.collegeboard.org,0.0,0.0,0,0,0
+1,1979,categories Magazines,csmonitor.com,0.0,0.0,0,0,0
+1,1980,categories Magazines,entrepreneur.com,0.0,0.0,0,0,0
+1,1981,categories Magazines,issuu.com,0.0,0.0,0,0,0
+1,1982,categories Television,telewebion.com,0.0,0.01,0,0,0
+1,1983,categories Television,zdf.de,0.0,0.01,0,0,0
+1,1984,categories Television,fandom.com,0.0,0.01,0,0,0
+1,1985,categories Television,channel4.com,0.09,0.01,0,0,0
+1,1986,categories Television,samba.tv,0.0,0.01,0,0,0
+1,1987,categories Television,secure.netflix.com,0.09,0.02,0,0,0
+1,1988,categories Personal Blogs,kriesi.at,0.0,0.0,0,0,0
+1,1989,categories Personal Blogs,extra.cz,0.0,0.0,0,0,0
+1,1990,categories Television,www.hulu.com,0.09,0.02,0,0,0
+1,1991,categories Television,m.imdb.com,0.0,0.02,0,0,0
+1,1992,categories Television,xfinity.com,0.0,0.02,0,0,0
+1,1993,categories Television,tmdb.org,0.0,0.02,0,0,0
+1,1994,categories Television,zee5.com,0.0,0.02,0,0,0
+1,1995,categories Television,raiplay.it,0.0,0.01,0,0,0
+1,1996,categories Television,tubitv.com,0.1,0.02,0,0,0
+1,1997,categories Television,netflix.com,0.09,0.02,0,0,0
+1,1998,categories Television,tvbs.com.tw,0.0,0.02,0,0,0
+1,1999,categories Video Streaming,stuff.co.nz,0.0,0.01,0,0,0
+1,2000,categories Video Streaming,rttv.ru,0.0,0.01,0,0,0
