@@ -172,6 +172,33 @@ class MeasurementAggregator:
                 self._target_expected[key] = self._target_expected[key] - {vp}
                 self._try_finalize(key)
 
+    def reassign_target_vp(self, country: str, target: str, old_vp: str, new_vp: str) -> None:
+        """Swap which VP a single target is waiting on, without touching any
+        other target old_vp is registered against (unlike drop_vp, which
+        removes a VP everywhere at once).
+
+        Needed because schedule_measurements() alone does not update
+        _target_expected -- confirmed directly: a target resent to a VP that
+        was never in its original expected set gets its vote recorded by
+        record() but never read by _try_finalize() (which only iterates
+        _target_expected), so the resend was silently a no-op and the target
+        stayed stuck on old_vp regardless of how many times it got
+        "resent" elsewhere. Call this alongside schedule_measurements() any
+        time the orchestrator redirects a stuck target to a different VP
+        (register_targets() cannot be reused here -- it rejects
+        re-registering an already-registered target by design, see its own
+        docstring).
+        """
+        with self._lock:
+            key = (country, target)
+            expected = self._target_expected.get(key)
+            if expected is None:
+                return  # already finalized/dropped; nothing to reassign
+            if key in self._pending:
+                self._pending[key].pop(old_vp, None)
+            self._target_expected[key] = (expected - {old_vp}) | {new_vp}
+            self._try_finalize(key)
+
     # ------------------------------------------------------------------
     # internals (caller must hold self._lock)
     # ------------------------------------------------------------------

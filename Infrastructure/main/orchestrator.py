@@ -1036,6 +1036,16 @@ class Orchestrator:
                         continue
                     send_to = alternatives[0]
 
+                if send_to != vp_ip:
+                    # Redirecting to a different VP: schedule_measurements()
+                    # alone does not update who the aggregator is waiting on
+                    # (register_targets() can't be reused -- it refuses to
+                    # re-register an already-registered target). Without
+                    # this, send_to's eventual result gets recorded but
+                    # never counted, and the target stays stuck on vp_ip
+                    # forever regardless of how many times it's "resent".
+                    self.api.aggregator.reassign_target_vp(country, target, vp_ip, send_to)
+
                 logger.warning("Resending lost measurement %s/%s to %s (original VP: %s)",
                                country, target, send_to, vp_ip)
                 self.api.schedule_measurements(

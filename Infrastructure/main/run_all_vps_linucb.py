@@ -5,8 +5,9 @@ LinUCB-family counterpart to run_all_vps.py (which drove output3-output12
 with BatchUCB): same all-VPs pipeline -- every target measured from every
 usable VP in each country at once, same VP health/quarantine/silent-drop
 logic in orchestrator.py (none of that is UCB-specific, see that file) --
-but driven by BatchLinUCB (or BatchClusterLinUCB via --no-cluster omitted)
-instead of BatchUCB.
+but driven by BatchLinUCB (--no-cluster), BatchClusterLinUCB (default), or
+BatchLinUCBShared (--shared, one global A/b across every arm instead of one
+per arm) instead of BatchUCB.
 
 Deliberately does NOT reuse run_experiment_one_linucb.py's orchestrator
 wiring: that file uses CollisionAwareOrchestrator, which was removed from
@@ -46,7 +47,7 @@ from Infrastructure.main.asn_aware_vantage_points import AsnAwareVantagePoints
 from Infrastructure.main.orchestrator import Orchestrator, STRATEGY_MAP
 from models.contextual_bandit.cluster_linucb import ClusterLinUCBParserOptions
 from models.contextual_bandit.linucb import LinUCBActionSpace
-from models.contextual_bandit.batch_linucb import BatchLinUCB, BatchClusterLinUCB
+from models.contextual_bandit.batch_linucb import BatchLinUCB, BatchClusterLinUCB, BatchLinUCBShared
 
 
 class AllVpsLinUCBParser(ClusterLinUCBParserOptions):
@@ -93,7 +94,14 @@ class AllVpsLinUCBParser(ClusterLinUCBParserOptions):
         )
         self.parser.add_argument(
             "--no-cluster", action="store_true",
-            help="Use plain LinUCB (BatchLinUCB) instead of ClusterLinUCB (BatchClusterLinUCB)",
+            help="Use plain LinUCB (BatchLinUCB) instead of ClusterLinUCB (BatchClusterLinUCB). "
+                 "Ignored if --shared is also passed.",
+        )
+        self.parser.add_argument(
+            "--shared", action="store_true",
+            help="Use LinUCBShared (one global A/b matrix shared across every arm, "
+                 "instead of one per arm) via BatchLinUCBShared. Takes priority over "
+                 "--no-cluster if both are passed.",
         )
         self.parser.add_argument(
             "--usable-vps", required=True,
@@ -138,6 +146,7 @@ class AllVpsLinUCBParser(ClusterLinUCBParserOptions):
         self.params["reward_mode"] = getattr(args, "reward_mode")
         self.params["previous_values_folder"] = getattr(args, "previous_values_folder")
         self.params["no_cluster"] = args.no_cluster
+        self.params["shared"] = args.shared
         self.params["usable_vps"] = args.usable_vps
         self.params["vp_cap"] = args.vp_cap
         self.params["dry_run"] = args.dry_run
@@ -182,7 +191,12 @@ if __name__ == "__main__":
     sel_enum  = STRATEGY_MAP["target_selection"][params["target_selection"]]
     prop_enum = STRATEGY_MAP["propagation"][params["propagation"]]
 
-    model_klass = BatchLinUCB if params["no_cluster"] else BatchClusterLinUCB
+    if params["shared"]:
+        model_klass = BatchLinUCBShared
+    elif params["no_cluster"]:
+        model_klass = BatchLinUCB
+    else:
+        model_klass = BatchClusterLinUCB
 
     usable = json.load(open(params["usable_vps"]))
     countries = sorted(usable)

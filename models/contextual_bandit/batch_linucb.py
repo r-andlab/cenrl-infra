@@ -63,6 +63,7 @@ from Infrastructure.utils.structures import (
 from common.utils import LOG_FILE_DELIMITER
 from models.contextual_bandit.linucb import LinUCB
 from models.contextual_bandit.cluster_linucb import ClusterLinUCB
+from models.contextual_bandit.linucb_shared import LinUCBShared
 
 logger = logging.getLogger(__name__)
 
@@ -419,4 +420,19 @@ class BatchLinUCB(BatchLinUCBMixin, LinUCB):
 
 class BatchClusterLinUCB(BatchLinUCBMixin, ClusterLinUCB):
     """ClusterLinUCB (semantic cluster oracle on top of LinUCB), live-orchestrator-compatible."""
+    pass
+
+
+class BatchLinUCBShared(BatchLinUCBMixin, LinUCBShared):
+    """LinUCB with a single shared (global) A/b across all arms, live-orchestrator-compatible.
+
+    Same reasoning as BatchLinUCB/BatchClusterLinUCB above: LinUCBShared
+    only exposes the synchronous choose_arm()/observe()/step()/reset()
+    interface (built for its own standalone __main__/run_multiprocessing
+    path), not the five batching methods node.py's live flow calls. Mixing
+    in BatchLinUCBMixin gives it those for free, including the
+    reward_mode="percentage" branch ported into absorb_measurement -- no
+    extra work needed since that fix lives on the shared mixin, not on
+    BatchLinUCB specifically.
+    """
     pass
