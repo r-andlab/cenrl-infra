@@ -52,10 +52,18 @@ result senders, MaxBadEvaluations=1,000,000) and a fresh --logoutdir. In
 Usage (from /home/cenrl/cenrl; add --reward-mode percentage for Ex 6):
     python3 -m Infrastructure.main.run_all_vps \
         --usable-vps /home/cenrl/cenrl_outputs/vp_evaluation_all/usable_vps.json \
+        --vp-cap 2000 \
         -E 1 -m 2000 -v -f "categories" \
         -a inputs/tranco/tranco_categories_subdomain_tld_entities_top10k.csv \
         -s 0.0 -c 0.03 -V 0.0 --reward-mode percentage \
         -o /home/cenrl/cenrl_outputs/experiment_six/output1
+
+--vp-cap is optional (omit for no cap, the pre-existing behavior); without
+it, a country with a much larger raw VP pool than others (e.g. China's
+thousands of candidates vs. Iran's handful) finalizes every target far
+slower than the rest, since all_vps_mode waits for every active VP to
+report before a target finalizes -- so pool size directly sets the pace.
+Ported from run_all_vps_linucb.py's --vp-cap/asn_round_robin_select.
 
 --dry-run swaps Hyperquack for synthetic in-process results (no network) to
 exercise the Python side at full VP count.
@@ -86,6 +94,12 @@ class AllVpsParser(OrchestrationParser):
             "--endpoint", default="http://127.0.0.1:8888",
             help="Hyperquack API endpoint",
         )
+        self.parser.add_argument(
+            "--vp-cap", type=int, default=None,
+            help="Hard per-country VP pool limit, applied with the same "
+                 "round-robin-across-ASN diversity get_n_vantages() uses internally. "
+                 "Omit for no cap (whole usable-vps pool).",
+        )
 
     def set_params(self, args):
         super().set_params(args)
@@ -93,6 +107,35 @@ class AllVpsParser(OrchestrationParser):
         self.params["dry_run"] = args.dry_run
         self.params["endpoint"] = args.endpoint
         self.params["ev_file"] = args.ev_file
+        self.params["vp_cap"] = args.vp_cap
+
+
+def asn_round_robin_select(pool: AsnAwareVantagePoints, country: str, cap: int) -> list:
+    """Pick at most `cap` VPs for `country`, round-robining across ASN
+    groups (largest-pool-first, one VP per visited ASN per pass) the same
+    way AsnAwareVantagePoints.get_n_vantages() does internally -- but
+    read-only: built purely from get_inactive()/get_asn(), never touches
+    the pool's active/inactive state. Safe to call before Orchestrator
+    exists, since nothing has been drawn yet at that point anyway.
+    Ported verbatim from run_all_vps_linucb.py's asn_round_robin_select.
+    """
+    ips = pool.get_inactive(country)
+    if len(ips) <= cap:
+        return ips
+
+    by_asn = {}
+    for ip in ips:
+        by_asn.setdefault(pool.get_asn(ip), []).append(ip)
+
+    asns = sorted(by_asn, key=lambda a: -len(by_asn[a]))
+    selected = []
+    i = 0
+    while len(selected) < cap and any(by_asn[a] for a in asns):
+        asn = asns[i % len(asns)]
+        if by_asn[asn]:
+            selected.append(by_asn[asn].pop(0))
+        i += 1
+    return selected
 
 
 if __name__ == "__main__":
@@ -121,6 +164,9 @@ if __name__ == "__main__":
     base_pool = AsnAwareVantagePoints(**vp_pool_config)
     for c in countries:
         n = base_pool.restrict_to(c, usable[c])
+        if params["vp_cap"] is not None and n > params["vp_cap"]:
+            capped = asn_round_robin_select(base_pool, c, params["vp_cap"])
+            n = base_pool.restrict_to(c, capped)
         print(f"{c}: {n} usable VPs in pool (census listed {len(usable[c])})", flush=True)
     m = Orchestrator(
         params=params,
