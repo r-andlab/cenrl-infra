@@ -384,6 +384,8 @@ class BatchUCB(UCBNaive):
         reward_mode = getattr(self, "reward_mode", "majority")
         if reward_mode == "percentage":
             reward = float(result.get("vote_fraction", 1.0 if is_blocked else 0.0))
+        elif reward_mode == "asn-percentage":
+            reward = float(result.get("asn_vote_fraction", 1.0 if is_blocked else 0.0))
         else:
             reward = 1.0 if is_blocked else 0.0
         pending.reward = reward

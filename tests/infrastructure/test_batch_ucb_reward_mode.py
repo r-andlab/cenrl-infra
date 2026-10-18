@@ -86,3 +86,33 @@ class TestPercentageRewardMode:
             ucb._selected_targets["a.com"] = _pending()
             out = ucb.absorb_measurement({"target": "a.com", "blocked": frac > 0.5, "vote_fraction": frac})
             assert out["rewards"] == frac
+
+
+class TestAsnPercentageRewardMode:
+    def test_uses_asn_vote_fraction_as_reward(self):
+        ucb = _ucb(reward_mode="asn-percentage")
+        ucb._selected_targets["a.com"] = _pending()
+        out = ucb.absorb_measurement(
+            {"target": "a.com", "blocked": False, "vote_fraction": 0.9, "asn_vote_fraction": 0.37}
+        )
+        # vote_fraction is ignored in this mode -- only asn_vote_fraction is read.
+        assert out["rewards"] == 0.37
+        ucb.observe.assert_called_once_with("categories Pornography", 0.37)
+
+    def test_is_blocked_unaffected_by_reward_mode(self):
+        ucb = _ucb(reward_mode="asn-percentage")
+        ucb._selected_targets["a.com"] = _pending()
+        out = ucb.absorb_measurement(
+            {"target": "a.com", "blocked": True, "asn_vote_fraction": 0.12}
+        )
+        assert out["is_blocked"] == 1
+        assert out["rewards"] == 0.12
+
+    def test_missing_asn_vote_fraction_falls_back_to_zero_or_one(self):
+        """Old-shape input (no asn_vote_fraction key) must not crash --
+        falls back to the 0.0/1.0 value, same as the percentage mode does
+        for a missing vote_fraction."""
+        ucb = _ucb(reward_mode="asn-percentage")
+        ucb._selected_targets["a.com"] = _pending()
+        out = ucb.absorb_measurement({"target": "a.com", "blocked": True})
+        assert out["rewards"] == 1.0

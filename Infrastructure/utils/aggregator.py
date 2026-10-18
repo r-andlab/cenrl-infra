@@ -1,7 +1,7 @@
 import logging
 import threading
 from collections import defaultdict
-from typing import Dict, List, Set, Tuple
+from typing import Callable, Dict, List, Optional, Set, Tuple
 
 from Infrastructure.utils.structures import MeasurementResponse, AggregationMethod
 
@@ -24,7 +24,11 @@ class MeasurementAggregator:
     result arrival.
     """
 
-    def __init__(self, aggregation_method: AggregationMethod = AggregationMethod.MAJORITY_VOTE):
+    def __init__(
+        self,
+        aggregation_method: AggregationMethod = AggregationMethod.MAJORITY_VOTE,
+        vote_group_key: Optional[Callable[[str], str]] = None,
+    ):
         self._lock = threading.Lock()
         # (country, target) -> {vp_ip: blocked}
         self._pending: Dict[Tuple, Dict[str, bool]] = defaultdict(dict)
@@ -50,6 +54,12 @@ class MeasurementAggregator:
         # Discretion). Set keys are (country, target) tuples; an entry is added
         # the first time we fall back to majority due to zero total weight.
         self._weighted_fallback_warned: Set[Tuple[str, str]] = set()
+        # Maps a VP IP to whatever key its votes should be grouped under
+        # (e.g. ASN) for asn_vote_fraction below. Default groups each VP
+        # under itself, which makes asn_vote_fraction identical to
+        # vote_fraction -- so this degrades safely when no grouping is
+        # available (see funneler.py's HyperQuackAPI.__init__).
+        self._vote_group_key: Callable[[str], str] = vote_group_key or (lambda v: v)
 
     def set_expected_vps(self, country: str, vps: Set[str]) -> None:
         """Update the set of VPs whose responses are required for *future*
@@ -220,6 +230,7 @@ class MeasurementAggregator:
                     scheduled_at_monotonic=sched_mono,
                     vp_count=0,
                     vote_fraction=0.0,
+                    asn_vote_fraction=0.0,
                 )
             )
             self._pending.pop(key, None)
@@ -251,6 +262,7 @@ class MeasurementAggregator:
                     scheduled_at_monotonic=sched_mono,
                     vp_count=0,
                     vote_fraction=0.0,
+                    asn_vote_fraction=0.0,
                 )
             )
             del self._pending[key]
@@ -296,6 +308,16 @@ class MeasurementAggregator:
         # weights stay a majority-decision concept only; this is "percentage
         # of VPs," not a weighted percentage.
         vote_fraction = sum(votes) / len(votes)
+        # Same idea as vote_fraction, but averaged within each vote-group
+        # (e.g. ASN, via self._vote_group_key) first, then across groups --
+        # so a group with many VPs can't outvote a group with few. Default
+        # vote_group_key makes every VP its own group, so this is
+        # identical to vote_fraction unless a real grouping function was
+        # supplied (see funneler.py's HyperQuackAPI.__init__).
+        groups: Dict[str, List[bool]] = defaultdict(list)
+        for v, b in votes_pairs:
+            groups[self._vote_group_key(v)].append(b)
+        asn_vote_fraction = sum(sum(g) / len(g) for g in groups.values()) / len(groups)
         # Phase 3 D-04: pop the schedule timestamp so the response carries it
         # and the dict does not accumulate orphan entries.
         sched_mono = self._schedule_times.pop(key, None)
@@ -306,6 +328,7 @@ class MeasurementAggregator:
                 scheduled_at_monotonic=sched_mono,
                 vp_count=len(votes),
                 vote_fraction=vote_fraction,
+                asn_vote_fraction=asn_vote_fraction,
             )
         )
         del self._pending[key]

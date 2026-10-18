@@ -78,10 +78,11 @@ class AllVpsLinUCBParser(ClusterLinUCBParserOptions):
             help="Reward-propagation policy",
         )
         self.parser.add_argument(
-            "--reward-mode", choices=["majority", "percentage"], default="majority",
-            help="Reward signal: 'majority' (the aggregation verdict's 0.0/1.0) or "
-                 "'percentage' (Ex 6, fraction of voting VPs that voted blocked) -- "
-                 "requires the reward_mode branch in BatchLinUCBMixin.absorb_measurement "
+            "--reward-mode", choices=["majority", "percentage", "asn-percentage"], default="majority",
+            help="Reward signal: 'majority' (the aggregation verdict's 0.0/1.0), "
+                 "'percentage' (Ex 6, fraction of voting VPs that voted blocked), or "
+                 "'asn-percentage' (same fraction, averaged within each VP's ASN first) "
+                 "-- requires the reward_mode branch in BatchLinUCBMixin.absorb_measurement "
                  "(models/contextual_bandit/batch_linucb.py), ported there from "
                  "BatchUCB.py specifically so this flag isn't silently inert here.",
         )

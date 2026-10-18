@@ -464,3 +464,47 @@ class TestVoteFraction:
         agg.record("US", "b", "t", blocked=False)
         ready = agg.get_ready("US")[0]
         assert ready.vote_fraction == 0.5   # unweighted: 1 of 2 voted blocked
+
+
+class TestAsnVoteFraction:
+    """asn_vote_fraction: like vote_fraction, but averaged within each
+    vote-group (e.g. ASN, via vote_group_key) first, then across groups --
+    so a group with many VPs can't dominate a group with few."""
+
+    def test_default_grouping_matches_vote_fraction(self, agg):
+        """No vote_group_key given -> every VP is its own group -> identical
+        to the flat vote_fraction."""
+        agg.register_targets("US", ["t"], {"a", "b", "c"})
+        agg.record("US", "a", "t", blocked=True)
+        agg.record("US", "b", "t", blocked=True)
+        agg.record("US", "c", "t", blocked=False)
+        ready = agg.get_ready("US")[0]
+        assert ready.asn_vote_fraction == ready.vote_fraction == pytest.approx(2 / 3)
+
+    def test_uneven_groups_differ_from_flat_fraction(self):
+        """3 VPs in one group (all blocked) outvote 1 VP in another group
+        (not blocked) under the flat fraction, but not under grouping."""
+        group = {"a": "g1", "b": "g1", "c": "g1", "d": "g2"}
+        agg = MeasurementAggregator(vote_group_key=lambda vp: group[vp])
+        agg.register_targets("US", ["t"], {"a", "b", "c", "d"})
+        agg.record("US", "a", "t", blocked=True)
+        agg.record("US", "b", "t", blocked=True)
+        agg.record("US", "c", "t", blocked=True)
+        agg.record("US", "d", "t", blocked=False)
+        ready = agg.get_ready("US")[0]
+        assert ready.vote_fraction == pytest.approx(0.75)        # 3 of 4 VPs
+        assert ready.asn_vote_fraction == pytest.approx(0.5)     # g1=1.0, g2=0.0 -> avg 0.5
+
+    def test_abstained_vp_excluded_from_grouping(self):
+        """An abstaining VP (blocked=None) is excluded from asn_vote_fraction
+        the same way it's already excluded from vote_fraction."""
+        group = {"a": "g1", "b": "g2", "c": "g2"}
+        agg = MeasurementAggregator(vote_group_key=lambda vp: group[vp])
+        agg.register_targets("US", ["t"], {"a", "b", "c"})
+        agg.record("US", "a", "t", blocked=None)   # abstains
+        agg.record("US", "b", "t", blocked=True)
+        agg.record("US", "c", "t", blocked=False)
+        ready = agg.get_ready("US")[0]
+        # Only group g2 remains ({b: True, c: False} -> mean 0.5).
+        assert ready.vote_fraction == pytest.approx(0.5)
+        assert ready.asn_vote_fraction == pytest.approx(0.5)

@@ -130,8 +130,10 @@ class Orchestrator:
         reward_mode: str = "majority",
         receiver_port: int = 9000,
     ):
-        if reward_mode not in ("majority", "percentage"):
-            raise ValueError(f"reward_mode must be 'majority' or 'percentage', got {reward_mode!r}")
+        if reward_mode not in ("majority", "percentage", "asn-percentage"):
+            raise ValueError(
+                f"reward_mode must be 'majority', 'percentage', or 'asn-percentage', got {reward_mode!r}"
+            )
         self._reward_mode = reward_mode
         self._model_klass = model_klass
         self._action_space_klass = action_space_klass
@@ -1488,9 +1490,11 @@ class OrchestrationParser(UCBNaiveParserOptions):
         )
         self.parser.add_argument(
             "--reward-mode",
-            choices=["majority", "percentage"], default="majority",
-            help="Reward signal: 'majority' (Ex 5, the aggregation verdict's 0.0/1.0) "
-                 "or 'percentage' (Ex 6, fraction of voting VPs that voted blocked)",
+            choices=["majority", "percentage", "asn-percentage"], default="majority",
+            help="Reward signal: 'majority' (Ex 5, the aggregation verdict's 0.0/1.0), "
+                 "'percentage' (Ex 6, fraction of voting VPs that voted blocked), or "
+                 "'asn-percentage' (same fraction, but averaged within each VP's ASN "
+                 "first so one ASN with many VPs can't dominate)",
         )
 
     def set_params(self, args):

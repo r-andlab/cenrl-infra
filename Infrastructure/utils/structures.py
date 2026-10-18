@@ -111,3 +111,4 @@ class MeasurementResponse:
     scheduled_at_monotonic: float | None = None  # D-04: schedule -> absorb latency source
     vp_count: int | None = None                  # D-05: actual VP votes in majority
     vote_fraction: float = 0.0                   # Ex 6: fraction of voting (non-abstained) VPs that voted blocked
+    asn_vote_fraction: float = 0.0                # like vote_fraction, but averaged within each vote-group (e.g. ASN) first so one large group can't dominate

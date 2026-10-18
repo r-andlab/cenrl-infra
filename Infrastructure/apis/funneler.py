@@ -15,6 +15,7 @@ from datetime import datetime, timezone
 from Infrastructure.utils.store import MeasurementStore
 from Infrastructure.utils.eval_store import EvalStore
 from Infrastructure.utils.aggregator import MeasurementAggregator
+from Infrastructure.main.asn_aware_vantage_points import _UNKNOWN_ASN
 from Infrastructure.apis.server import MeasurementReceiver
 from Infrastructure.utils.structures import (
     TestPayload,
@@ -62,7 +63,22 @@ class HyperQuackAPI(Api):
         self.vantage_points = vantage_points
         self.store: MeasurementStore = MeasurementStore()
         self.eval_store = eval_store
-        self.aggregator = MeasurementAggregator(aggregation_method=aggregation_method)
+        # Groups votes by ASN for MeasurementAggregator's asn_vote_fraction,
+        # when vantage_points supports it (AsnAwareVantagePoints and its
+        # VpPoolAdapter wrapper do; plain VantagePoints does not, in which
+        # case asn_vote_fraction just degrades to vote_fraction). VPs with
+        # an unresolvable ASN each get their own singleton group instead of
+        # being merged together -- lumping unrelated unknown-ASN VPs into
+        # one group would treat them as the same network operator, which
+        # defeats the point of grouping by ASN at all.
+        vote_group_key = None
+        if hasattr(vantage_points, "get_asn"):
+            def vote_group_key(vp, _vps=vantage_points):
+                asn = _vps.get_asn(vp)
+                return f"vp:{vp}" if asn == _UNKNOWN_ASN else f"asn:{asn}"
+        self.aggregator = MeasurementAggregator(
+            aggregation_method=aggregation_method, vote_group_key=vote_group_key
+        )
         self.receiver: MeasurementReceiver = MeasurementReceiver(
             self.store, eval_store=self.eval_store, port=receiver_port
         )
