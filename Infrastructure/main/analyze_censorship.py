@@ -547,38 +547,22 @@ def plot_arm_health_checkpoints(health_df: pd.DataFrame, country: str, out_path:
                   f"by the {review_col} mark has at least {low_sample_threshold} attempts backing it up.")
 
 
-def plot_blocked_domains_table(confidence_df: pd.DataFrame, out_path: str):
+def save_blocked_domains_table(confidence_df: pd.DataFrame, out_path: str):
     """
-    Text-based table: country | blocked domain | category | VP votes | RL arm visits.
+    CSV table: country | blocked domain | category | VP votes | RL arm visits.
 
     VP votes = how many vantage points actually voted on this result (a
     3-VP unanimous result is solid evidence; a 1-VP result has no cross-check
     at all). RL arm visits = how many total measurements share this domain's
     arm/category, i.e. how well-explored that arm is for the model. Category
     makes it obvious at a glance what kind of content each block came from.
+
+    CSV rather than a rendered PNG table -- the domain list is hard to read
+    off an image and had to be re-extracted as a CSV by hand after every run.
     """
     if confidence_df.empty:
         return
-
-    rows = []
-    for _, r in confidence_df.iterrows():
-        rows.append(
-            f"  {r['country']:<16} {r['target']:<32} {r['category']:<28} "
-            f"{int(r['vp_confidence']):<10} {int(r['rl_confidence'])}"
-        )
-
-    fig, ax = plt.subplots(figsize=(16, max(4, len(rows) * 0.28)))
-    ax.axis("off")
-    text = "Blocked Domains by Country\n\n"
-    text += (f"  {'Country':<16} {'Domain':<32} {'Category':<28} "
-              f"{'VP Votes':<10} {'RL Arm Visits'}\n")
-    text += "  " + "-" * 98 + "\n"
-    text += "\n".join(rows)
-    ax.text(0.01, 0.99, text, transform=ax.transAxes,
-            fontsize=8, verticalalignment="top", family="monospace")
-    plt.tight_layout()
-    plt.savefig(out_path, bbox_inches="tight")
-    plt.close()
+    confidence_df.to_csv(out_path, index=False)
     print(f"Saved: {out_path}")
 
 
@@ -668,9 +652,9 @@ def main():
         measurements_df = measurements_df[measurements_df["episode_idx"] == args.episode]
     confidence_df = blocked_domains_with_confidence(measurements_df)
     if not confidence_df.empty:
-        plot_blocked_domains_table(
+        save_blocked_domains_table(
             confidence_df,
-            plot_path("05_blocked_domains_table.png")
+            plot_path("05_blocked_domains_table.csv")
         )
 
     plot_category_exploration(
