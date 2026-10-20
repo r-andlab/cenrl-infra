@@ -1,0 +1,2001 @@
+target,arm,blocked,reward,q_value,utc_timestamp,episode_idx,step_idx,is_optimal,coverage,latency_ms,vp_count
+cnews.fr,categories News & Media,0,0.0,0.0,2026-10-16T01:34:37+00:00,1,1,1,0,25381.3,15
+npr.org,categories News & Media,0,0.0,0.0,2026-10-16T01:34:49+00:00,1,2,1,0,37199.6,15
+timesofisrael.com,categories News & Media,1,1.0,0.67,2026-10-16T01:35:11+00:00,1,3,1,0,59075.2,15
+web.de,categories News & Media,0,0.0,0.5,2026-10-16T01:35:22+00:00,1,4,1,0,70885.1,15
+www.t-online.de,categories News & Media,0,0.0,0.4,2026-10-16T01:35:33+00:00,1,5,1,0,81864.7,15
+samsungqbe.com,categories Content Servers,0,0.0,0.0,2026-10-16T01:35:45+00:00,1,6,0,0,68000.3,15
+hybrid.ai,categories Content Servers,0,0.0,0.0,2026-10-16T01:35:57+00:00,1,7,0,0,67764.0,15
+sync.adotmob.com,categories Content Servers,0,0.0,0.0,2026-10-16T01:36:08+00:00,1,8,0,0,57210.7,15
+thetacdn.net,categories Content Servers,0,0.0,0.0,2026-10-16T01:36:19+00:00,1,9,0,0,56421.5,15
+images-amazon.com,categories Content Servers,0,0.0,0.0,2026-10-16T01:36:31+00:00,1,10,0,0,57228.8,15
+hbopenbid.pubmatic.com,categories Technology,0,0.0,0.0,2026-10-16T01:36:42+00:00,1,11,0,0,56682.6,15
+feedly.com,categories Technology,0,0.0,0.0,2026-10-16T01:36:54+00:00,1,12,0,0,57145.7,15
+itu.int,categories Technology,0,0.0,0.0,2026-10-16T01:37:05+00:00,1,13,0,0,56890.4,15
+csdn.net,categories Technology,1,0.87,0.22,2026-10-16T01:37:27+00:00,1,14,0,0,68406.6,15
+vivo.com.cn,categories Technology,0,0.0,0.17,2026-10-16T01:37:39+00:00,1,15,0,0,68548.1,15
+cloud.netflix.com,categories Video Streaming,1,0.93,1.0,2026-10-16T01:38:01+00:00,1,16,0,0,79370.3,15
+bhaskar.com,categories Video Streaming,1,0.87,1.0,2026-10-16T01:38:23+00:00,1,17,1,0,89132.8,15
+metro.co.uk,categories Video Streaming,0,0.0,1.0,2026-10-16T01:38:35+00:00,1,18,1,0,89836.6,15
+www.bbc.co.uk,categories Video Streaming,1,0.93,1.0,2026-10-16T01:38:57+00:00,1,19,1,0,89074.7,15
+sport.es,categories Video Streaming,0,0.0,1.0,2026-10-16T01:39:08+00:00,1,20,1,0,89156.3,15
+gladly.com,categories Business,0,0.0,0.0,2026-10-16T01:39:21+00:00,1,21,0,0,79682.6,15
+gallup.com,categories Business,0,0.0,0.0,2026-10-16T01:39:33+00:00,1,22,0,0,69993.8,15
+api.segment.io,categories Business,0,0.0,0.0,2026-10-16T01:39:45+00:00,1,23,0,0,70741.1,15
+nic.pw,categories Business,0,0.0,0.0,2026-10-16T01:39:57+00:00,1,24,0,0,60611.8,15
+scoop.it,categories Business,1,1.0,0.2,2026-10-16T01:40:20+00:00,1,25,0,0,71738.2,15
+serveriai.lt,categories Information Technology,0,0.0,0.0,2026-10-16T01:40:33+00:00,1,26,0,0,71617.8,15
+nic.ru,categories Information Technology,0,0.0,0.0,2026-10-16T01:40:55+00:00,1,27,0,0,81582.3,15
+dotvndns.vn,categories Information Technology,0,0.0,0.0,2026-10-16T01:41:06+00:00,1,28,0,0,80649.8,15
+www.mediafire.com,categories Information Technology,0,0.0,0.0,2026-10-16T01:41:17+00:00,1,29,0,0,79877.1,15
+firebaseapp.com,categories Information Technology,1,0.87,0.17,2026-10-16T01:41:40+00:00,1,30,0,0,79567.5,15
+google.com.bn,categories Search Engines,0,0.0,0.0,2026-10-16T01:41:51+00:00,1,31,0,0,78736.4,15
+google.ne,categories Search Engines,0,0.0,0.0,2026-10-16T01:42:16+00:00,1,32,0,0,81558.5,15
+zomato.com,categories Search Engines,0,0.0,0.0,2026-10-16T01:42:27+00:00,1,33,0,0,81108.2,15
+www.google.be,categories Search Engines,0,0.0,0.0,2026-10-16T01:42:39+00:00,1,34,0,0,81730.9,15
+google.co.mz,categories Search Engines,0,0.0,0.0,2026-10-16T01:42:51+00:00,1,35,0,0,70821.3,15
+c7vkn.com,categories Newly Seen Domains,0,0.0,0.0,2026-10-16T01:43:02+00:00,1,36,0,0,70902.4,15
+queniuco.com,categories Newly Seen Domains,0,0.0,0.0,2026-10-16T01:43:13+00:00,1,37,0,0,56973.1,15
+pg.access-33.com,categories Newly Seen Domains,0,0.0,0.0,2026-10-16T01:43:39+00:00,1,38,0,0,71435.3,15
+tiktokcdn.com.c.bytefcdn-oversea.com,categories Newly Seen Domains,0,0.0,0.0,2026-10-16T01:43:50+00:00,1,39,0,0,70942.7,15
+tlivepush.com,categories Newly Seen Domains,0,0.0,0.0,2026-10-16T01:44:01+00:00,1,40,0,0,70414.7,15
+mrdeepfakes.com,categories Pornography,1,0.87,1.0,2026-10-16T01:44:23+00:00,1,41,0,0,80860.1,15
+3movs.com,categories Pornography,1,1.0,1.0,2026-10-16T01:44:45+00:00,1,42,1,0,91918.9,15
+upornia.com,categories Pornography,1,0.87,1.0,2026-10-16T01:45:07+00:00,1,43,1,0,88728.9,15
+fuckmoral.com,categories Pornography,1,0.87,1.0,2026-10-16T01:45:30+00:00,1,44,1,0,100480.2,15
+hdzog.com,categories Pornography,1,1.0,1.0,2026-10-16T01:45:52+00:00,1,45,1,0,110464.3,15
+pull-hls-f77-va01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T01:46:14+00:00,1,46,0,0,110491.4,15
+chat-e2ee-ig-p42.c10r.facebook.com,categories Social Networks,1,0.87,1.0,2026-10-16T01:46:36+00:00,1,47,1,0,111173.9,15
+myspace.com,categories Social Networks,1,0.87,1.0,2026-10-16T01:46:58+00:00,1,48,1,0,110278.6,15
+pull-f5-tt01.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T01:47:21+00:00,1,49,1,0,110616.0,15
+tumblr.com,categories Social Networks,1,0.93,1.0,2026-10-16T01:47:42+00:00,1,50,1,0,110719.3,15
+archiveofourown.org,categories Education,0,0.0,0.0,2026-10-16T01:47:54+00:00,1,51,0,0,100681.1,15
+zearn.org,categories Education,0,0.0,0.0,2026-10-16T01:48:06+00:00,1,52,0,0,89568.2,15
+blogspot.co.uk,categories Education,1,0.93,0.31,2026-10-16T01:48:28+00:00,1,53,0,0,90485.1,15
+marinetraffic.com,categories Education,0,0.0,0.23,2026-10-16T01:48:39+00:00,1,54,0,0,78406.1,15
+ncode.syosetu.com,categories Education,1,0.87,0.36,2026-10-16T01:49:01+00:00,1,55,0,0,79008.6,15
+amazon.it,categories Ecommerce,0,0.13,0.13,2026-10-16T01:49:26+00:00,1,56,0,0,91825.5,15
+vseinstrumenti.ru,categories Ecommerce,0,0.0,0.07,2026-10-16T01:49:38+00:00,1,57,0,0,91723.5,15
+underarmour.com,categories Ecommerce,0,0.0,0.04,2026-10-16T01:49:49+00:00,1,58,0,0,80473.5,15
+l-tike.com,categories Ecommerce,1,0.87,0.25,2026-10-16T01:50:11+00:00,1,59,0,0,91191.4,15
+flipkart.com,categories Ecommerce,0,0.0,0.2,2026-10-16T01:50:22+00:00,1,60,0,0,80694.8,15
+bkn.go.id,"categories Politics, Advocacy, and Government-Related",0,0.0,0.04,2026-10-16T01:50:34+00:00,1,61,0,0,67504.8,15
+myaadhaar.uidai.gov.in,"categories Politics, Advocacy, and Government-Related",0,0.0,0.03,2026-10-16T01:50:45+00:00,1,62,0,0,66972.3,15
+redcross.org,"categories Politics, Advocacy, and Government-Related",0,0.0,0.03,2026-10-16T01:50:56+00:00,1,63,0,0,67434.3,15
+ewg.org,"categories Politics, Advocacy, and Government-Related",0,0.0,0.02,2026-10-16T01:51:08+00:00,1,64,0,0,57155.6,15
+sp.gov.br,"categories Politics, Advocacy, and Government-Related",0,0.0,0.02,2026-10-16T01:51:19+00:00,1,65,0,0,56465.3,15
+mizuhobank.co.jp,categories Economy & Finance,0,0.0,0.0,2026-10-16T01:51:30+00:00,1,66,0,0,56232.1,15
+ameli.fr,categories Economy & Finance,0,0.0,0.0,2026-10-16T01:51:43+00:00,1,67,0,0,58410.3,15
+finam.ru,categories Economy & Finance,0,0.0,0.0,2026-10-16T01:51:55+00:00,1,68,0,0,58410.9,15
+businessinsider.com,categories Economy & Finance,0,0.0,0.0,2026-10-16T01:52:06+00:00,1,69,0,0,58460.5,15
+caixa.gov.br,categories Economy & Finance,0,0.0,0.0,2026-10-16T01:52:18+00:00,1,70,0,0,59247.0,15
+nintendo.com,categories Gaming,0,0.0,0.0,2026-10-16T01:52:29+00:00,1,71,0,0,58472.9,15
+bigolive.tv,categories Gaming,1,1.0,0.5,2026-10-16T01:53:19+00:00,1,72,0,0,95828.9,15
+guildwars.com,categories Gaming,0,0.0,0.33,2026-10-16T01:53:31+00:00,1,73,0,0,95914.7,15
+riotgames.com,categories Gaming,0,0.0,0.25,2026-10-16T01:53:51+00:00,1,74,0,0,104966.7,15
+lilithgame.com,categories Gaming,0,0.0,0.2,2026-10-16T01:54:03+00:00,1,75,0,0,105393.7,15
+cuni.cz,categories Educational Institutions,0,0.0,0.0,2026-10-16T01:54:15+00:00,1,76,0,0,106609.3,15
+arizona.edu,categories Educational Institutions,0,0.0,0.0,2026-10-16T01:54:26+00:00,1,77,0,0,67080.5,15
+hopkinsmedicine.org,categories Educational Institutions,0,0.0,0.0,2026-10-16T01:54:37+00:00,1,78,0,0,66229.4,15
+imperial.ac.uk,categories Educational Institutions,0,0.0,0.0,2026-10-16T01:54:49+00:00,1,79,0,0,57264.4,15
+tudelft.nl,categories Educational Institutions,0,0.0,0.0,2026-10-16T01:55:01+00:00,1,80,0,0,57158.9,15
+subway.com,categories File Sharing,0,0.0,0.0,2026-10-16T01:55:11+00:00,1,81,0,0,56172.5,15
+pan.baidu.com,categories File Sharing,0,0.0,0.0,2026-10-16T01:55:23+00:00,1,82,0,0,57025.6,15
+entelchile.net,categories File Sharing,0,0.0,0.0,2026-10-16T01:55:36+00:00,1,83,0,0,58401.9,15
+connectivitycheck.platform.hicloud.com,categories File Sharing,0,0.0,0.0,2026-10-16T01:55:47+00:00,1,84,0,0,57716.4,15
+vecteezy.com,categories File Sharing,0,0.0,0.0,2026-10-16T01:55:58+00:00,1,85,0,0,57862.0,15
+hollywoodbets.net,categories Sports,1,0.93,0.93,2026-10-16T01:56:20+00:00,1,86,0,0,68663.3,15
+www.livescore.com,categories Sports,0,0.0,0.47,2026-10-16T01:56:37+00:00,1,87,0,0,73358.4,15
+komoot.de,categories Sports,0,0.0,0.31,2026-10-16T01:56:48+00:00,1,88,0,0,71880.9,15
+sbnation.com,categories Sports,0,0.0,0.23,2026-10-16T01:56:59+00:00,1,89,0,0,72149.3,15
+sanspo.com,categories Sports,1,0.93,0.37,2026-10-16T01:59:33+00:00,1,90,0,0,214438.1,15
+barracuda.com,categories Information Security,0,0.0,0.0,2026-10-16T01:59:44+00:00,1,91,0,0,203639.8,15
+avira.net,categories Information Security,0,0.0,0.0,2026-10-16T01:59:56+00:00,1,92,0,0,198927.9,15
+mathtag.com,categories Information Security,0,0.0,0.0,2026-10-16T02:00:07+00:00,1,93,0,0,198736.0,15
+huntress.io,categories Information Security,0,0.0,0.0,2026-10-16T02:00:18+00:00,1,94,0,0,199432.1,15
+sportradarserving.com,categories Information Security,0,0.0,0.0,2026-10-16T02:00:30+00:00,1,95,0,0,56857.0,15
+gr.global.aa-rt.sharepoint.com,categories Advertisements,0,0.0,0.0,2026-10-16T02:00:41+00:00,1,96,0,0,56836.2,15
+adaether.com,categories Advertisements,0,0.0,0.0,2026-10-16T02:00:53+00:00,1,97,0,0,56981.9,15
+mb.moatads.com,categories Advertisements,0,0.0,0.0,2026-10-16T02:01:04+00:00,1,98,0,0,57039.8,15
+newsmax.com,categories Advertisements,1,0.87,0.21,2026-10-16T02:01:26+00:00,1,99,0,0,67929.7,15
+htlb.casalemedia.com,categories Advertisements,0,0.0,0.17,2026-10-16T02:01:37+00:00,1,100,0,0,67355.6,15
+booking.com,categories Travel,0,0.0,0.0,2026-10-16T02:01:49+00:00,1,101,0,0,68107.3,15
+www.booking.com,categories Travel,0,0.0,0.0,2026-10-16T02:02:00+00:00,1,102,0,0,67388.3,15
+com.se,categories Travel,0,0.0,0.0,2026-10-16T02:02:12+00:00,1,103,0,0,67840.8,15
+wimt.confirmtkt.com,categories Travel,0,0.0,0.0,2026-10-16T02:02:23+00:00,1,104,0,0,57120.6,15
+garmin.com,categories Travel,0,0.0,0.0,2026-10-16T02:02:34+00:00,1,105,0,0,57069.6,15
+gimkit.com,categories Personal Blogs,0,0.0,0.0,2026-10-16T02:02:46+00:00,1,106,0,0,57137.7,15
+ameba.jp,categories Personal Blogs,0,0.0,0.0,2026-10-16T02:02:57+00:00,1,107,0,0,57273.3,15
+ameblo.jp,categories Personal Blogs,1,0.87,0.39,2026-10-16T02:03:19+00:00,1,108,0,0,67807.3,15
+xvideosporno.blog.br,categories Personal Blogs,1,0.87,0.62,2026-10-16T02:03:41+00:00,1,109,0,0,78045.1,15
+gamerant.com,categories Personal Blogs,1,0.87,0.77,2026-10-16T02:04:04+00:00,1,110,0,0,89257.3,15
+prod.cloud.netflix.com,categories Television,1,0.87,1.0,2026-10-16T02:04:26+00:00,1,111,0,0,99336.4,15
+vudu.com,categories Television,1,0.93,1.0,2026-10-16T02:04:48+00:00,1,112,1,0,110459.0,15
+ivi.ru,categories Television,1,0.87,1.0,2026-10-16T02:05:09+00:00,1,113,1,0,109908.4,15
+fandom.com,categories Television,1,0.93,1.0,2026-10-16T02:05:32+00:00,1,114,1,0,110104.4,15
+www.johnnys-web.com,categories Television,0,0.0,1.0,2026-10-16T02:05:43+00:00,1,115,1,0,98897.5,15
+newyorker.com,categories Magazines,0,0.0,0.24,2026-10-16T02:05:55+00:00,1,116,0,0,88891.7,15
+futurecdn.net,categories Magazines,0,0.0,0.22,2026-10-16T02:06:06+00:00,1,117,0,0,77756.6,15
+wwd.com,categories Magazines,0,0.0,0.2,2026-10-16T02:06:17+00:00,1,118,0,0,67251.0,15
+chip.de,categories Magazines,1,0.93,0.48,2026-10-16T02:06:39+00:00,1,119,0,0,67327.9,15
+thecut.com,categories Magazines,0,0.0,0.42,2026-10-16T02:06:51+00:00,1,120,0,0,68044.3,15
+www.1mg.com,categories Health & Fitness,1,0.87,0.87,2026-10-16T02:07:12+00:00,1,121,0,0,77667.2,15
+www.destacamos.com,categories Health & Fitness,1,0.93,0.9,2026-10-16T02:07:34+00:00,1,122,0,0,88881.2,15
+azurewebsites.net,categories Health & Fitness,0,0.0,0.6,2026-10-16T02:07:52+00:00,1,123,0,0,94801.5,15
+samsunghealth.com,categories Health & Fitness,0,0.0,0.45,2026-10-16T02:08:03+00:00,1,124,0,0,84123.1,15
+health.com,categories Health & Fitness,0,0.0,0.36,2026-10-16T02:08:15+00:00,1,125,0,0,83741.8,15
+ebay.co.uk,categories Auctions & Marketplaces,0,0.0,0.0,2026-10-16T02:08:26+00:00,1,126,0,0,73861.6,15
+www.cardmarket.com,categories Auctions & Marketplaces,0,0.0,0.0,2026-10-16T02:08:38+00:00,1,127,0,0,62646.2,15
+reverb.com,categories Auctions & Marketplaces,0,0.0,0.0,2026-10-16T02:08:49+00:00,1,128,0,0,57667.2,15
+avito.ru,categories Auctions & Marketplaces,0,0.0,0.0,2026-10-16T02:09:00+00:00,1,129,0,0,57212.5,15
+ebay.it,categories Auctions & Marketplaces,0,0.0,0.0,2026-10-16T02:09:12+00:00,1,130,0,0,57018.4,15
+livesport.cz,categories Gambling,1,0.93,0.93,2026-10-16T02:09:33+00:00,1,131,0,0,67153.6,15
+racingpost.com,categories Gambling,1,0.87,0.9,2026-10-16T02:09:56+00:00,1,132,0,0,77612.1,15
+centraldasapostas.net,categories Gambling,0,0.0,0.6,2026-10-16T02:10:07+00:00,1,133,0,0,77691.2,15
+sp.jra.jp,categories Gambling,0,0.0,0.45,2026-10-16T02:10:18+00:00,1,134,0,0,78020.3,15
+site777.jp,categories Gambling,0,0.0,0.36,2026-10-16T02:10:30+00:00,1,135,0,0,78369.4,15
+filimo.com,categories Movies,0,0.0,0.0,2026-10-16T02:10:41+00:00,1,136,0,0,67613.9,15
+xyz.ibomma.link,categories Movies,0,0.0,0.0,2026-10-16T02:10:53+00:00,1,137,0,0,57380.8,15
+indiewire.com,categories Movies,1,0.87,0.28,2026-10-16T02:11:15+00:00,1,138,0,0,67625.2,15
+primevideo.com,categories Movies,0,0.0,0.21,2026-10-16T02:11:26+00:00,1,139,0,0,67614.0,15
+app.ibomma.link,categories Movies,0,0.0,0.17,2026-10-16T02:11:38+00:00,1,140,0,0,67568.3,15
+123rf.com,categories Photography,1,0.87,0.87,2026-10-16T02:12:00+00:00,1,141,0,0,78429.6,15
+imgur.com,categories Photography,0,0.0,0.43,2026-10-16T02:12:24+00:00,1,142,0,0,91535.8,15
+aws-proxy-gcp.api.snapchat.com,categories Photography,1,0.93,0.59,2026-10-16T02:12:46+00:00,1,143,0,0,91483.4,15
+pixieset.com,categories Photography,0,0.0,0.44,2026-10-16T02:12:58+00:00,1,144,0,0,92289.1,15
+ezvizlife.com,categories Photography,0,0.0,0.36,2026-10-16T02:13:09+00:00,1,145,0,0,91448.8,15
+www.furaffinity.net,categories Forums,1,1.0,1.0,2026-10-16T02:13:31+00:00,1,146,0,0,91687.7,15
+planetminecraft.com,categories Forums,0,0.0,0.78,2026-10-16T02:13:43+00:00,1,147,1,0,78340.4,15
+old.reddit.com,categories Forums,1,0.87,0.93,2026-10-16T02:14:05+00:00,1,148,0,0,78550.3,15
+furaffinity.net,categories Forums,1,0.93,1.0,2026-10-16T02:14:27+00:00,1,149,0,0,88825.7,15
+m.pantip.com,categories Forums,1,0.93,1.0,2026-10-16T02:14:49+00:00,1,150,1,0,99804.0,15
+nyc.gov,categories Government,0,0.0,0.0,2026-10-16T02:15:01+00:00,1,151,0,0,89483.3,15
+mo.gov,categories Government,0,0.0,0.0,2026-10-16T02:15:25+00:00,1,152,0,0,101801.5,15
+ftc.gov,categories Government,0,0.0,0.0,2026-10-16T02:15:37+00:00,1,153,0,0,91786.7,15
+cbp.gov,categories Government,0,0.0,0.0,2026-10-16T02:16:02+00:00,1,154,0,0,94608.5,15
+medlineplus.gov,categories Government,0,0.0,0.0,2026-10-16T02:16:13+00:00,1,155,0,0,84465.9,15
+eventbrite.com,categories Entertainment,0,0.0,0.0,2026-10-16T02:16:24+00:00,1,156,0,0,83565.6,15
+setlist.fm,categories Entertainment,1,0.87,0.43,2026-10-16T02:18:57+00:00,1,157,0,0,212124.6,15
+tiket.com,categories Entertainment,0,0.0,0.28,2026-10-16T02:19:10+00:00,1,158,0,0,213548.3,15
+deadline.com,categories Entertainment,1,0.93,0.44,2026-10-16T02:19:31+00:00,1,159,0,0,208967.8,15
+ted.com,categories Entertainment,0,0.0,0.35,2026-10-16T02:19:43+00:00,1,160,0,0,209128.5,15
+autoscout24.de,categories Vehicles,0,0.0,0.0,2026-10-16T02:19:54+00:00,1,161,0,0,209151.0,15
+mythad.com,categories Vehicles,0,0.0,0.0,2026-10-16T02:20:05+00:00,1,162,0,0,68216.2,15
+landsend.com,categories Clothing,0,0.0,0.0,2026-10-16T02:20:16+00:00,1,163,0,0,65832.5,15
+spacebattles.com,categories Hobbies & Interests,0,0.0,0.0,2026-10-16T02:20:28+00:00,1,164,0,0,57050.8,15
+dior.com,categories Clothing,0,0.0,0.0,2026-10-16T02:20:40+00:00,1,165,0,0,57128.1,15
+ycombinator.com,categories Hobbies & Interests,0,0.0,0.0,2026-10-16T02:20:51+00:00,1,166,0,0,57098.5,15
+www.uniqlo.com,categories Clothing,1,0.87,0.28,2026-10-16T02:21:13+00:00,1,167,0,0,67310.3,15
+minecraft.net,categories Hobbies & Interests,0,0.0,0.0,2026-10-16T02:21:24+00:00,1,168,0,0,68006.9,15
+sliide.cloud,categories No Content,0,0.0,0.0,2026-10-16T02:21:35+00:00,1,169,0,0,67414.3,15
+ezvizru.com,categories No Content,0,0.0,0.0,2026-10-16T02:21:47+00:00,1,170,0,0,67182.3,15
+cloudbackup.management,categories No Content,0,0.0,0.0,2026-10-16T02:21:59+00:00,1,171,0,0,68021.8,15
+s-cloud.fi,categories No Content,0,0.0,0.0,2026-10-16T02:22:10+00:00,1,172,0,0,56959.4,15
+immedia-semi.com,categories No Content,0,0.0,0.0,2026-10-16T02:22:21+00:00,1,173,0,0,56998.2,15
+just-eat.es,categories Food & Drink,0,0.0,0.0,2026-10-16T02:22:32+00:00,1,174,0,0,57089.8,15
+marthastewart.com,categories Food & Drink,0,0.0,0.0,2026-10-16T02:22:44+00:00,1,175,0,0,57215.0,15
+tripadvisor.es,categories Food & Drink,0,0.13,0.04,2026-10-16T02:22:56+00:00,1,176,0,0,57247.4,15
+thespruceeats.com,categories Food & Drink,0,0.0,0.03,2026-10-16T02:23:07+00:00,1,177,0,0,57194.8,15
+wholefoodsmarket.com,categories Food & Drink,0,0.0,0.03,2026-10-16T02:23:18+00:00,1,178,0,0,56972.6,15
+tripadvisor.com,categories Shopping,0,0.0,0.0,2026-10-16T02:23:30+00:00,1,179,0,0,57031.6,15
+tomsguide.com,categories Shopping,0,0.0,0.0,2026-10-16T02:23:41+00:00,1,180,0,0,56857.0,15
+www.pch.com,categories Shopping,0,0.0,0.0,2026-10-16T02:23:53+00:00,1,181,0,0,56716.2,15
+www.skroutz.gr,categories Shopping,0,0.0,0.0,2026-10-16T02:24:04+00:00,1,182,0,0,56869.3,15
+pinduoduo.com,categories Shopping,0,0.0,0.0,2026-10-16T02:24:16+00:00,1,183,0,0,56907.0,15
+oktacdn.com,categories Login Screens,0,0.0,0.0,2026-10-16T02:24:26+00:00,1,184,0,0,56932.6,15
+www.kidsa-z.com,categories Login Screens,0,0.0,0.0,2026-10-16T02:24:38+00:00,1,185,0,0,57169.8,15
+eyeota.net,categories Login Screens,0,0.0,0.0,2026-10-16T02:24:49+00:00,1,186,0,0,56375.9,15
+wd2go.com,categories Login Screens,0,0.0,0.0,2026-10-16T02:25:01+00:00,1,187,0,0,57334.9,15
+your-server.de,categories Login Screens,0,0.0,0.0,2026-10-16T02:25:12+00:00,1,188,0,0,56535.8,15
+myvzw.com,categories Instant Messengers,0,0.0,0.12,2026-10-16T02:25:24+00:00,1,189,0,0,57471.6,15
+edgeapi.slack.com,categories Instant Messengers,0,0.0,0.08,2026-10-16T02:25:35+00:00,1,190,0,0,56660.5,15
+noam.cc.skype.com,categories Instant Messengers,0,0.0,0.06,2026-10-16T02:25:47+00:00,1,191,0,0,57565.2,15
+slack.com,categories Instant Messengers,0,0.0,0.05,2026-10-16T02:25:58+00:00,1,192,0,0,56761.8,15
+zaloapp.com,categories Instant Messengers,0,0.0,0.03,2026-10-16T02:26:10+00:00,1,193,0,0,57462.7,15
+schoology.com,categories Webmail,0,0.0,0.0,2026-10-16T02:26:21+00:00,1,194,0,0,56706.6,15
+jimdo.com,categories Webmail,0,0.0,0.0,2026-10-16T02:26:32+00:00,1,195,0,0,57384.6,15
+gmail.com,categories Webmail,0,0.0,0.0,2026-10-16T02:26:44+00:00,1,196,0,0,57313.5,15
+poczta.wp.pl,categories Webmail,1,1.0,0.24,2026-10-16T02:27:26+00:00,1,197,0,0,88083.5,15
+imgsmail.ru,categories Webmail,0,0.0,0.19,2026-10-16T02:27:37+00:00,1,198,0,0,87255.2,15
+acast.com,categories Audio Streaming,0,0.0,0.47,2026-10-16T02:27:49+00:00,1,199,0,0,88154.9,15
+guc3-spclient.spotify.com,categories Audio Streaming,0,0.0,0.41,2026-10-16T02:28:00+00:00,1,200,0,0,87449.4,15
+letras.mus.br,categories Audio Streaming,0,0.13,0.41,2026-10-16T02:28:50+00:00,1,201,0,0,125616.3,15
+wg.spotify.com,categories Audio Streaming,0,0.0,0.36,2026-10-16T02:29:02+00:00,1,202,0,0,95590.9,15
+www.npr.org,categories Audio Streaming,0,0.0,0.32,2026-10-16T02:29:13+00:00,1,203,0,0,94008.1,15
+yutex.ru,categories Parked & For Sale Domains,0,0.0,0.0,2026-10-16T02:29:24+00:00,1,204,0,0,94856.0,15
+prava-online.net,categories Parked & For Sale Domains,0,0.0,0.0,2026-10-16T02:29:35+00:00,1,205,0,0,95515.9,15
+eu.com,categories Parked & For Sale Domains,0,0.0,0.0,2026-10-16T02:29:46+00:00,1,206,0,0,56502.9,15
+cdn.house,categories Parked & For Sale Domains,0,0.0,0.0,2026-10-16T02:29:57+00:00,1,207,0,0,55657.2,15
+m.porno365.pics,categories Parked & For Sale Domains,1,0.87,0.16,2026-10-16T02:30:09+00:00,1,208,0,0,56474.4,15
+adidas.com,categories Fashion,0,0.0,0.0,2026-10-16T02:30:20+00:00,1,209,0,0,56457.5,15
+www.trendyol.com,categories Fashion,0,0.0,0.0,2026-10-16T02:30:32+00:00,1,210,0,0,56483.2,15
+grammarly.net,categories Fashion,0,0.0,0.0,2026-10-16T02:30:43+00:00,1,211,0,0,56482.9,15
+ajio.com,categories Fashion,0,0.0,0.0,2026-10-16T02:30:55+00:00,1,212,0,0,56700.2,15
+shein.com,categories Fashion,1,0.93,0.17,2026-10-16T02:31:17+00:00,1,213,0,0,67415.8,15
+redfin.com,categories Real Estate,0,0.0,0.0,2026-10-16T02:31:31+00:00,1,214,0,0,70821.4,15
+hud.gov,categories Real Estate,0,0.0,0.0,2026-10-16T02:31:42+00:00,1,215,0,0,69979.3,15
+archdaily.com,categories Real Estate,0,0.0,0.0,2026-10-16T02:31:54+00:00,1,216,0,0,70830.4,15
+www.idealista.com,categories Real Estate,0,0.0,0.0,2026-10-16T02:32:05+00:00,1,217,0,0,69991.2,15
+zoopla.co.uk,categories Real Estate,0,0.0,0.0,2026-10-16T02:32:16+00:00,1,218,0,0,59515.7,15
+www.indeed.com,categories Job Search & Careers,0,0.0,0.0,2026-10-16T02:32:28+00:00,1,219,0,0,56875.8,15
+indeed.com,categories Job Search & Careers,0,0.0,0.0,2026-10-16T02:32:39+00:00,1,220,0,0,57066.4,15
+arbeitsagentur.de,categories Job Search & Careers,0,0.0,0.0,2026-10-16T02:32:51+00:00,1,221,0,0,57155.9,15
+jooble.org,categories Job Search & Careers,0,0.0,0.0,2026-10-16T02:33:03+00:00,1,222,0,0,57896.7,15
+uidapi.com,categories Job Search & Careers,0,0.0,0.0,2026-10-16T02:33:14+00:00,1,223,0,0,57896.8,15
+bio.ibomma.link,categories Questionable Activities,0,0.0,0.0,2026-10-16T02:33:25+00:00,1,224,0,0,57019.5,15
+hdtoday.tv,categories Questionable Activities,1,0.87,0.42,2026-10-16T02:33:47+00:00,1,225,0,0,67740.0,15
+in.bookmyshow.com,categories Questionable Activities,1,0.87,0.55,2026-10-16T02:34:09+00:00,1,226,0,0,77856.4,15
+123-hd.com,categories Questionable Activities,0,0.0,0.41,2026-10-16T02:34:34+00:00,1,227,0,0,90072.9,15
+www.tamildhool.net,categories Questionable Activities,0,0.0,0.33,2026-10-16T02:34:54+00:00,1,228,0,0,100377.6,15
+omegle.com,categories Adult Themes,0,0.0,0.05,2026-10-16T02:35:06+00:00,1,229,0,0,101003.5,15
+sniffies.com,categories Adult Themes,0,0.0,0.03,2026-10-16T02:35:17+00:00,1,230,0,0,89934.5,15
+listcrawler.eu,categories Adult Themes,0,0.0,0.02,2026-10-16T02:35:29+00:00,1,231,0,0,79841.7,15
+joyreactor.cc,categories Adult Themes,1,1.0,0.44,2026-10-16T02:35:52+00:00,1,232,0,0,77665.3,15
+imgflip.com,categories Adult Themes,0,0.0,0.36,2026-10-16T02:36:03+00:00,1,233,0,0,68161.0,15
+g.whatsapp.net,categories Internet Phone & VOIP,1,0.93,0.93,2026-10-16T02:36:25+00:00,1,234,0,0,78800.9,15
+pps.whatsapp.net,categories Internet Phone & VOIP,1,0.87,0.89,2026-10-16T02:36:47+00:00,1,235,0,0,89572.1,15
+discord.gg,categories Internet Phone & VOIP,1,0.87,0.86,2026-10-16T02:37:08+00:00,1,236,0,0,98894.7,15
+asm.skype.com,categories Internet Phone & VOIP,0,0.0,0.65,2026-10-16T02:37:20+00:00,1,237,0,0,87244.6,15
+api.whatsapp.com,categories Internet Phone & VOIP,1,0.87,0.67,2026-10-16T02:37:42+00:00,1,238,0,0,99183.8,15
+larkplayerapp.com,categories Music,0,0.0,0.26,2026-10-16T02:37:54+00:00,1,239,0,0,88750.6,15
+long.tv,categories Music,0,0.0,0.23,2026-10-16T02:38:04+00:00,1,240,0,0,77780.7,15
+sweetwater.com,categories Music,0,0.0,0.21,2026-10-16T02:38:18+00:00,1,241,0,0,69357.0,15
+itunes.apple.com,categories Music,0,0.0,0.2,2026-10-16T02:38:28+00:00,1,242,0,0,68380.2,15
+starmakerstudios.com,categories Music,0,0.0,0.18,2026-10-16T02:38:40+00:00,1,243,0,0,57986.3,15
+buienradar.nl,categories Weather,0,0.0,0.0,2026-10-16T02:38:51+00:00,1,244,0,0,57179.8,15
+weather.com,categories Weather,0,0.0,0.0,2026-10-16T02:39:03+00:00,1,245,0,0,58041.7,15
+accuweather.com,categories Weather,0,0.0,0.0,2026-10-16T02:39:14+00:00,1,246,0,0,55795.7,15
+aemet.es,categories Weather,0,0.0,0.0,2026-10-16T02:39:25+00:00,1,247,0,0,57373.6,15
+api.weather.com,categories Weather,0,0.0,0.0,2026-10-16T02:39:37+00:00,1,248,0,0,57602.2,15
+gocomics.com,categories Comic Books,0,0.0,0.0,2026-10-16T02:39:49+00:00,1,249,0,0,57997.0,15
+mangabuddy.com,categories Comic Books,1,0.87,0.42,2026-10-16T02:40:11+00:00,1,250,0,0,68338.6,15
+harimanga.com,categories Comic Books,0,0.0,0.28,2026-10-16T02:40:22+00:00,1,251,0,0,68470.3,15
+mangabat.com,categories Comic Books,1,0.87,0.4,2026-10-16T02:40:44+00:00,1,252,0,0,78761.8,15
+lectortmo.com,categories Comic Books,1,0.87,0.47,2026-10-16T02:41:06+00:00,1,253,0,0,88852.0,15
+bumble.com,categories Dating & Relationships,1,0.87,1.0,2026-10-16T02:41:28+00:00,1,254,0,0,99472.8,15
+br.skokka.com,categories Dating & Relationships,1,0.93,1.0,2026-10-16T02:41:50+00:00,1,255,1,0,99473.6,15
+m.beboo.ru,categories Dating & Relationships,1,0.87,1.0,2026-10-16T02:42:13+00:00,1,256,1,0,111291.3,15
+pof.com,categories Dating & Relationships,1,0.87,1.0,2026-10-16T02:42:35+00:00,1,257,1,0,109829.5,15
+beboo.ru,categories Dating & Relationships,1,0.87,1.0,2026-10-16T02:42:57+00:00,1,258,1,0,110683.3,15
+pbskids.org,categories Safe for Kids,0,0.0,0.0,2026-10-16T02:43:08+00:00,1,259,0,0,99941.3,15
+mattel.com,categories Safe for Kids,0,0.0,0.0,2026-10-16T02:43:20+00:00,1,260,0,0,89539.7,15
+bricklink.com,categories Safe for Kids,0,0.0,0.0,2026-10-16T02:43:31+00:00,1,261,0,0,77651.4,15
+www.starfall.com,categories Safe for Kids,0,0.0,0.0,2026-10-16T02:43:43+00:00,1,262,0,0,67991.8,15
+brainpop.com,categories Safe for Kids,0,0.0,0.0,2026-10-16T02:43:54+00:00,1,263,0,0,56648.3,15
+lge.com,categories Home & Garden,0,0.0,0.0,2026-10-16T02:44:06+00:00,1,264,0,0,57261.5,15
+hgtv.com,categories Home & Garden,0,0.0,0.0,2026-10-16T02:44:16+00:00,1,265,0,0,56337.0,15
+gda.pl,categories Home & Garden,0,0.0,0.0,2026-10-16T02:44:28+00:00,1,266,0,0,57081.1,15
+houzz.com,categories Home & Garden,0,0.0,0.0,2026-10-16T02:44:40+00:00,1,267,0,0,57037.4,15
+apartmenttherapy.com,categories Home & Garden,0,0.0,0.0,2026-10-16T02:44:51+00:00,1,268,0,0,57169.4,15
+dto.to,categories Cartoons & Anime,0,0.0,0.0,2026-10-16T02:45:03+00:00,1,269,0,0,57257.6,15
+hto.to,categories Cartoons & Anime,0,0.0,0.0,2026-10-16T02:45:14+00:00,1,270,0,0,57371.0,15
+manhwatop.com,categories Cartoons & Anime,0,0.0,0.0,2026-10-16T02:45:26+00:00,1,271,0,0,57575.9,15
+www3.animeflv.net,categories Cartoons & Anime,1,0.87,0.18,2026-10-16T02:45:47+00:00,1,272,0,0,67332.3,15
+cmoa.jp,categories Cartoons & Anime,1,0.93,0.29,2026-10-16T02:46:10+00:00,1,273,0,0,78590.1,15
+skyrock.net,categories Redirect,1,1.0,1.0,2026-10-16T02:46:32+00:00,1,274,0,0,88836.3,15
+bit.ly,categories Redirect,1,0.93,1.0,2026-10-16T02:46:53+00:00,1,275,1,0,99247.7,15
+eepurl.com,categories Redirect,0,0.0,1.0,2026-10-16T02:47:05+00:00,1,276,1,0,98874.5,15
+goo.gl,categories Redirect,0,0.0,0.8,2026-10-16T02:47:16+00:00,1,277,1,0,88714.5,15
+rb.gy,categories Redirect,1,0.93,0.95,2026-10-16T02:47:38+00:00,1,278,0,0,88857.1,15
+olark.com,categories Chat,0,0.0,0.0,2026-10-16T02:48:00+00:00,1,279,0,0,88104.0,15
+jivosite.com,categories Chat,0,0.0,0.0,2026-10-16T02:48:12+00:00,1,280,0,0,78602.6,15
+boldchat.com,categories Chat,0,0.0,0.0,2026-10-16T02:48:28+00:00,1,281,0,0,82445.4,15
+tango.me,categories Chat,1,0.87,0.23,2026-10-16T02:48:50+00:00,1,282,0,0,93946.4,15
+freshchat.com,categories Chat,0,0.0,0.18,2026-10-16T02:49:02+00:00,1,283,0,0,81748.9,15
+sciencemag.org,categories Science,0,0.0,0.0,2026-10-16T02:49:13+00:00,1,284,0,0,72653.0,15
+discovermagazine.com,categories Science,0,0.0,0.0,2026-10-16T02:49:25+00:00,1,285,0,0,72914.5,15
+scientificamerican.com,categories Science,0,0.0,0.0,2026-10-16T02:49:36+00:00,1,286,0,0,67553.0,15
+symbolab.com,categories Science,0,0.0,0.0,2026-10-16T02:49:48+00:00,1,287,0,0,57405.9,15
+mathway.com,categories Science,0,0.0,0.0,2026-10-16T02:49:59+00:00,1,288,0,0,57415.6,15
+at.ua,categories Unreachable,0,0.0,0.0,2026-10-16T02:50:10+00:00,1,289,0,0,57600.4,15
+blogspot.it,categories Unreachable,1,1.0,0.46,2026-10-16T02:50:37+00:00,1,290,0,0,72225.8,15
+keydisk.ru,categories Unreachable,0,0.0,0.31,2026-10-16T02:50:48+00:00,1,291,0,0,72249.7,15
+devicetask.com,categories Unreachable,0,0.0,0.23,2026-10-16T02:51:09+00:00,1,292,0,0,81808.2,15
+whecloud.com,categories Unreachable,0,0.0,0.18,2026-10-16T02:51:21+00:00,1,293,0,0,81086.9,15
+myportfolio.com,categories Arts,0,0.0,0.0,2026-10-16T02:51:32+00:00,1,294,0,0,81147.3,15
+danbooru.donmai.us,categories Arts,1,0.87,0.4,2026-10-16T02:51:54+00:00,1,295,0,0,76924.4,15
+www.deviantart.com,categories Arts,1,0.8,0.49,2026-10-16T02:52:16+00:00,1,296,0,0,87941.7,15
+artnet.com,categories Arts,0,0.0,0.36,2026-10-16T02:52:28+00:00,1,297,0,0,78435.5,15
+slidesgo.com,categories Arts,0,0.0,0.28,2026-10-16T02:52:39+00:00,1,298,0,0,78380.3,15
+stock.adobe.com,"categories News, Portal & Search",1,1.0,1.0,2026-10-16T02:53:01+00:00,1,299,0,0,89312.1,15
+www.istockphoto.com,"categories News, Portal & Search",1,1.0,1.0,2026-10-16T02:53:23+00:00,1,300,1,0,89448.1,15
+istockphoto.com,"categories News, Portal & Search",1,0.93,1.0,2026-10-16T02:53:45+00:00,1,301,1,0,87621.7,15
+unsplash.com,"categories News, Portal & Search",1,0.87,1.0,2026-10-16T02:54:07+00:00,1,302,1,0,99056.3,15
+alamy.com,"categories News, Portal & Search",1,0.93,1.0,2026-10-16T02:54:29+00:00,1,303,1,0,109644.4,15
+freeip.me,categories P2P,1,0.87,1.0,2026-10-16T02:55:19+00:00,1,304,0,0,138377.5,15
+surfsharkstatus.com,categories P2P,0,0.0,0.89,2026-10-16T02:55:31+00:00,1,305,1,0,127915.3,15
+surfshark.com,categories P2P,1,0.87,1.0,2026-10-16T02:55:53+00:00,1,306,0,0,127715.8,15
+utorrent.com,categories P2P,0,0.0,0.83,2026-10-16T02:56:05+00:00,1,307,1,0,116950.5,15
+ipvanish.com,categories P2P,1,0.8,0.9,2026-10-16T02:56:27+00:00,1,308,0,0,114623.2,15
+joinhoney.com,categories Coupons,0,0.0,0.0,2026-10-16T02:56:51+00:00,1,309,0,0,91944.9,15
+agoda.com,categories Coupons,0,0.0,0.0,2026-10-16T02:57:03+00:00,1,310,0,0,91648.1,15
+ozbargain.com.au,categories Coupons,0,0.0,0.0,2026-10-16T02:57:28+00:00,1,311,0,0,94515.6,15
+www.agoda.com,categories Coupons,0,0.0,0.0,2026-10-16T02:57:39+00:00,1,312,0,0,94313.9,15
+slickdeals.net,categories Coupons,0,0.0,0.0,2026-10-16T02:57:50+00:00,1,313,0,0,83266.7,15
+linkedin.com,categories Professional Networking,0,0.0,0.02,2026-10-16T02:58:02+00:00,1,314,0,0,70658.2,15
+tradingview.com,categories Professional Networking,0,0.0,0.01,2026-10-16T02:58:13+00:00,1,315,0,0,70058.8,15
+hubpages.com,categories Professional Networking,1,0.87,0.32,2026-10-16T02:58:35+00:00,1,316,0,0,67795.0,15
+lnkd.in,categories Professional Networking,0,0.0,0.25,2026-10-16T02:58:47+00:00,1,317,0,0,67941.8,15
+xing.com,categories Professional Networking,1,0.87,0.41,2026-10-16T02:59:09+00:00,1,318,0,0,77419.2,15
+humoruniv.com,categories Humor,0,0.0,0.0,2026-10-16T02:59:21+00:00,1,319,0,0,78406.7,15
+funnyjunk.com,categories Humor,1,1.0,0.44,2026-10-16T02:59:42+00:00,1,320,0,0,88883.5,15
+movie.eroterest.net,categories Humor,1,0.87,0.51,2026-10-16T03:00:04+00:00,1,321,0,0,88972.9,15
+netlify.com,categories Humor,0,0.0,0.37,2026-10-16T03:00:16+00:00,1,322,0,0,88164.6,15
+m.humoruniv.com,categories Humor,0,0.0,0.27,2026-10-16T03:00:27+00:00,1,323,0,0,77615.7,15
+canonet.ne.jp,categories Miscellaneous,0,0.0,0.0,2026-10-16T03:00:39+00:00,1,324,0,0,78459.8,15
+spanishdict.com,categories Translator,0,0.0,0.0,2026-10-16T03:00:52+00:00,1,325,0,0,69516.3,15
+churchcenter.com,categories Religion,0,0.0,0.0,2026-10-16T03:01:03+00:00,1,326,0,0,58975.2,15
+mantraonline.com,categories Miscellaneous,0,0.0,0.0,2026-10-16T03:01:14+00:00,1,327,0,0,58238.8,15
+lingojam.com,categories Translator,0,0.0,0.0,2026-10-16T03:01:26+00:00,1,328,0,0,57567.5,15
+biblegateway.com,categories Religion,1,0.87,0.37,2026-10-16T03:01:48+00:00,1,329,0,0,69151.2,15
+bible.com,categories Religion,1,0.8,0.43,2026-10-16T03:02:10+00:00,1,330,0,0,78591.5,15
+nkiri.com,categories Spam,1,0.87,0.85,2026-10-16T03:02:32+00:00,1,331,0,0,88882.8,15
+mpsuadv.ru,categories Spam,0,0.0,0.42,2026-10-16T03:02:43+00:00,1,332,0,0,88679.2,15
+babycenter.com,categories Parenting,0,0.0,0.0,2026-10-16T03:02:55+00:00,1,333,0,0,89246.3,15
+www.clarity.ms,categories Spam,0,0.0,0.27,2026-10-16T03:03:07+00:00,1,334,0,0,78433.7,15
+parents.com,categories Parenting,0,0.0,0.0,2026-10-16T03:03:18+00:00,1,335,0,0,67405.7,15
+mamastar.jp,categories Parenting,0,0.0,0.0,2026-10-16T03:03:29+00:00,1,336,0,0,56352.5,15
+select.mamastar.jp,categories Parenting,0,0.0,0.0,2026-10-16T03:03:41+00:00,1,337,0,0,57891.9,15
+www.croxyproxy.com,categories Anonymizer,1,0.87,1.0,2026-10-16T03:04:03+00:00,1,338,0,0,68224.4,15
+croxyproxy.com,categories Anonymizer,1,0.93,1.0,2026-10-16T03:04:25+00:00,1,339,1,0,78363.7,15
+torproject.org,categories Anonymizer,1,0.8,1.0,2026-10-16T03:04:47+00:00,1,340,1,0,88055.6,15
+proxysite.com,categories Anonymizer,1,0.93,1.0,2026-10-16T03:05:09+00:00,1,341,1,0,96791.1,15
+petsmart.com,categories Pets,0,0.0,0.0,2026-10-16T03:05:20+00:00,1,342,0,0,76986.6,15
+akc.org,categories Pets,0,0.0,0.0,2026-10-16T03:05:32+00:00,1,343,0,0,88833.8,15
+name-services.com,categories Phishing,0,0.0,0.0,2026-10-16T03:05:43+00:00,1,344,0,0,77095.2,15
+petfinder.com,categories Pets,0,0.0,0.0,2026-10-16T03:05:55+00:00,1,345,0,0,67716.7,15
+lookmovie2.to,categories Phishing,1,0.87,0.33,2026-10-16T03:06:17+00:00,1,346,0,0,67584.5,15
+tendawifi.com,categories Phishing,0,0.0,0.2,2026-10-16T03:06:29+00:00,1,347,0,0,69185.7,15
+bgdns.net,categories Phishing,0,0.0,0.13,2026-10-16T03:06:40+00:00,1,348,0,0,65266.2,15
+www.sex.com,categories Pornography,1,0.87,1.0,2026-10-16T03:07:03+00:00,1,349,1,0,79949.5,15
+thisav.com,categories Pornography,1,0.93,1.0,2026-10-16T03:07:25+00:00,1,350,1,0,89977.1,15
+iporntv.net,categories Pornography,1,0.87,1.0,2026-10-16T03:07:47+00:00,1,351,1,0,90069.2,15
+pornhat.one,categories Pornography,1,0.87,1.0,2026-10-16T03:08:09+00:00,1,352,1,0,99824.0,15
+xvideos-cdn.com,categories Pornography,1,1.0,1.0,2026-10-16T03:08:31+00:00,1,353,1,0,110576.9,15
+victoriassecret.com,categories Lingerie & Bikini,1,0.8,1.0,2026-10-16T03:08:53+00:00,1,354,0,0,109885.4,15
+intimissimi.com,categories Lingerie & Bikini,1,0.87,1.0,2026-10-16T03:09:15+00:00,1,355,1,0,109028.7,15
+juicyads.com,categories Lingerie & Bikini,1,0.87,1.0,2026-10-16T03:09:37+00:00,1,356,1,0,109100.2,15
+pull-flv-f77-tt03.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T03:09:59+00:00,1,357,1,0,66118.4,15
+pull-f5-va01.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T03:10:21+00:00,1,358,1,0,88160.3,15
+pinterest.es,categories Social Networks,1,0.8,1.0,2026-10-16T03:10:43+00:00,1,359,1,0,110252.7,15
+www.tumblr.com,categories Social Networks,1,0.87,1.0,2026-10-16T03:11:05+00:00,1,360,1,0,110208.3,15
+deviantart.com,categories Social Networks,1,0.87,1.0,2026-10-16T03:11:27+00:00,1,361,1,0,110116.6,15
+nl.pornhub.com,categories Pornography,1,1.0,1.0,2026-10-16T03:12:00+00:00,1,362,1,0,120851.4,15
+xxx18.uno,categories Pornography,1,0.87,1.0,2026-10-16T03:12:22+00:00,1,363,1,0,120425.2,15
+hoes.tube,categories Pornography,1,0.87,1.0,2026-10-16T03:12:44+00:00,1,364,1,0,120395.1,15
+mat6tube.com,categories Pornography,1,0.8,1.0,2026-10-16T03:13:05+00:00,1,365,1,0,120391.9,15
+ge.xhamster.com,categories Pornography,1,0.87,1.0,2026-10-16T03:13:28+00:00,1,366,1,0,120401.9,15
+wonporn.com,categories Pornography,1,0.87,1.0,2026-10-16T03:13:41+00:00,1,367,1,0,100527.6,15
+www.indianpornvideos.me,categories Pornography,1,0.87,1.0,2026-10-16T03:14:03+00:00,1,368,1,0,101790.2,15
+beeg.com,categories Pornography,1,0.87,1.0,2026-10-16T03:14:26+00:00,1,369,1,0,102477.6,15
+javhdporn.net,categories Pornography,1,0.87,1.0,2026-10-16T03:14:49+00:00,1,370,1,0,103172.6,15
+xnxx.tv,categories Pornography,1,0.8,1.0,2026-10-16T03:15:12+00:00,1,371,1,0,104035.9,15
+google.co.vi,"categories News, Portal & Search",0,0.0,1.0,2026-10-16T03:15:24+00:00,1,372,1,0,103368.9,15
+www.freepik.com,"categories News, Portal & Search",0,0.0,0.96,2026-10-16T03:15:36+00:00,1,373,1,0,92496.3,15
+freepik.es,"categories News, Portal & Search",1,0.93,1.0,2026-10-16T03:15:59+00:00,1,374,0,0,92532.9,15
+depositphotos.com,"categories News, Portal & Search",1,0.87,1.0,2026-10-16T03:16:22+00:00,1,375,1,0,91979.7,15
+freepik.com,"categories News, Portal & Search",0,0.0,0.9,2026-10-16T03:16:34+00:00,1,376,1,0,81542.3,15
+linklist.bio,categories Malware,0,0.0,0.0,2026-10-16T03:16:46+00:00,1,377,0,0,81642.1,15
+omnatuor.com,categories Malware,0,0.0,0.0,2026-10-16T03:16:58+00:00,1,378,0,0,81617.5,15
+ru.com,categories Malware,0,0.0,0.0,2026-10-16T03:17:10+00:00,1,379,0,0,71454.7,15
+military.com,categories Violence,0,0.0,0.0,2026-10-16T03:17:22+00:00,1,380,0,0,58104.6,15
+poe.com,categories Malware,0,0.0,0.0,2026-10-16T03:17:34+00:00,1,381,0,0,60238.7,15
+nipr.mil,categories Violence,0,0.0,0.0,2026-10-16T03:17:47+00:00,1,382,0,0,60464.1,15
+topwar.ru,categories Violence,0,0.0,0.0,2026-10-16T03:18:04+00:00,1,383,0,0,62429.3,15
+mil.ru,categories Violence,0,0.0,0.0,2026-10-16T03:18:15+00:00,1,384,0,0,65336.5,15
+t.co,categories Social Networks,1,0.93,1.0,2026-10-16T03:18:40+00:00,1,385,1,0,77649.1,15
+letterboxd.com,categories Social Networks,1,0.87,1.0,2026-10-16T03:19:02+00:00,1,386,1,0,87158.5,15
+fna.fbcdn.net,categories Social Networks,1,0.87,1.0,2026-10-16T03:19:24+00:00,1,387,1,0,96573.6,15
+aws.duplex.snapchat.com,categories Social Networks,1,0.93,1.0,2026-10-16T03:19:45+00:00,1,388,1,0,100906.1,15
+usc1-gcp-v62.api.snapchat.com,categories Social Networks,1,0.93,1.0,2026-10-16T03:20:07+00:00,1,389,1,0,111969.7,15
+gateway.instagram.com,categories Social Networks,1,0.73,1.0,2026-10-16T03:20:29+00:00,1,390,1,0,109776.8,15
+edge-mqtt.facebook.com,categories Social Networks,1,0.87,1.0,2026-10-16T03:20:52+00:00,1,391,1,0,109854.2,15
+indianbfvideos.com,categories Pornography,1,0.87,1.0,2026-10-16T03:21:14+00:00,1,392,1,0,110400.2,15
+www.xvideos5.com,categories Pornography,1,1.0,1.0,2026-10-16T03:21:37+00:00,1,393,1,0,111365.9,15
+tokyomotion.net,categories Pornography,1,0.8,1.0,2026-10-16T03:21:59+00:00,1,394,1,0,111544.9,15
+m.tnaflix.com,categories Pornography,1,0.87,1.0,2026-10-16T03:22:21+00:00,1,395,1,0,111985.2,15
+tecno.servicewebly.com,categories Pornography,0,0.0,1.0,2026-10-16T03:22:33+00:00,1,396,1,0,101860.6,15
+xhamster2.com,categories Pornography,1,0.87,1.0,2026-10-16T03:22:57+00:00,1,397,1,0,102526.0,15
+donmai.us,categories Pornography,1,0.93,1.0,2026-10-16T03:23:19+00:00,1,398,1,0,101932.0,15
+infinix.servicewebly.com,categories Pornography,0,0.0,1.0,2026-10-16T03:23:32+00:00,1,399,1,0,92448.7,15
+jable.tv,categories Pornography,1,0.87,1.0,2026-10-16T03:23:55+00:00,1,400,1,0,93085.3,15
+pavietnam.net,categories Hacking,0,0.0,0.6,2026-10-16T03:24:07+00:00,1,401,0,0,93128.4,15
+ccc.de,categories Hacking,0,0.0,0.57,2026-10-16T03:24:18+00:00,1,402,0,0,81849.8,15
+fb.com,categories Social Networks,1,0.93,1.0,2026-10-16T03:24:41+00:00,1,403,1,0,34349.3,15
+graph.instagram.com,categories Social Networks,1,0.87,1.0,2026-10-16T03:25:04+00:00,1,404,1,0,57454.7,15
+xz.fbcdn.net,categories Social Networks,1,0.87,1.0,2026-10-16T03:25:27+00:00,1,405,1,0,80455.5,15
+pull-cmaf-f16-tt02-tt03.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T03:25:50+00:00,1,406,1,0,102954.9,15
+badoocdn.com,categories Social Networks,0,0.0,1.0,2026-10-16T03:26:02+00:00,1,407,1,0,103115.1,15
+pull-cmaf-f16-tt02.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T03:26:25+00:00,1,408,1,0,103607.5,15
+mbasic.facebook.com,categories Social Networks,1,0.93,1.0,2026-10-16T03:26:48+00:00,1,409,1,0,103504.3,15
+cookpad.com,categories Social Networks,0,0.0,1.0,2026-10-16T03:26:59+00:00,1,410,1,0,92337.8,15
+graph.facebook.com,categories Social Networks,1,0.87,1.0,2026-10-16T03:30:04+00:00,1,411,1,0,254689.2,15
+telefonica.de,categories Messaging,0,0.0,0.11,2026-10-16T03:30:16+00:00,1,412,0,0,254010.4,15
+bizport.cn,categories Messaging,0,0.0,0.1,2026-10-16T03:30:27+00:00,1,413,0,0,242718.9,15
+attentivemobile.com,categories Messaging,0,0.0,0.09,2026-10-16T03:30:39+00:00,1,414,0,0,228626.4,15
+servicewebly.com,categories Pornography,0,0.0,1.0,2026-10-16T03:30:50+00:00,1,415,1,0,34104.7,15
+sankakucomplex.com,categories Pornography,1,0.87,1.0,2026-10-16T03:31:16+00:00,1,416,1,0,60722.5,15
+xhamsterlive.com,categories Pornography,1,0.87,1.0,2026-10-16T03:31:34+00:00,1,417,1,0,78592.6,15
+vjav.com,categories Pornography,1,0.8,1.0,2026-10-16T03:31:56+00:00,1,418,1,0,88252.2,15
+manyvids.com,categories Pornography,1,0.87,1.0,2026-10-16T03:32:18+00:00,1,419,1,0,99279.3,15
+sxyprn.com,categories Pornography,1,0.93,1.0,2026-10-16T03:32:39+00:00,1,420,1,0,109614.2,15
+e621.net,categories Pornography,1,0.87,1.0,2026-10-16T03:33:01+00:00,1,421,1,0,105050.3,15
+multporn.net,categories Pornography,1,0.87,1.0,2026-10-16T03:33:24+00:00,1,422,1,0,110058.1,15
+heavy-r.com,categories Pornography,1,0.87,1.0,2026-10-16T03:36:47+00:00,1,423,1,0,291121.3,15
+www.xvideos3.com,categories Pornography,1,0.93,1.0,2026-10-16T03:37:09+00:00,1,424,1,0,290759.0,15
+xhtab3.com,categories Pornography,1,0.87,1.0,2026-10-16T03:37:31+00:00,1,425,1,0,291672.4,15
+fpo.xxx,categories Pornography,1,0.93,1.0,2026-10-16T03:37:53+00:00,1,426,1,0,291024.4,15
+xxxdan.com,categories Pornography,1,0.93,1.0,2026-10-16T03:38:15+00:00,1,427,1,0,290765.4,15
+ita.xhamster.com,categories Pornography,1,0.93,1.0,2026-10-16T03:38:37+00:00,1,428,1,0,109672.4,15
+noodlemagazine.com,categories Pornography,1,0.87,1.0,2026-10-16T03:38:59+00:00,1,429,1,0,110003.1,15
+yadongtube.net,categories Pornography,1,1.0,1.0,2026-10-16T03:39:20+00:00,1,430,1,0,109180.3,15
+www.eporner.com,categories Pornography,1,0.87,1.0,2026-10-16T03:39:42+00:00,1,431,1,0,109803.1,15
+okxxx1.com,categories Pornography,1,0.93,1.0,2026-10-16T03:40:05+00:00,1,432,1,0,109635.5,15
+sexnhanh.co,categories Pornography,0,0.0,1.0,2026-10-16T03:40:16+00:00,1,433,1,0,99300.2,15
+txxx.tube,categories Pornography,1,0.93,1.0,2026-10-16T03:40:38+00:00,1,434,1,0,99409.6,15
+xhwide4.com,categories Pornography,1,0.87,1.0,2026-10-16T03:41:00+00:00,1,435,1,0,99985.2,15
+bongacams.com,categories Pornography,1,0.93,1.0,2026-10-16T03:41:22+00:00,1,436,1,0,99472.4,15
+www.xvideos4.com,categories Pornography,1,0.87,1.0,2026-10-16T03:41:44+00:00,1,437,1,0,99682.2,15
+douban.com,categories Social Networks,1,0.87,1.0,2026-10-16T03:42:06+00:00,1,438,1,0,110306.8,15
+in.pinterest.com,categories Social Networks,0,0.0,1.0,2026-10-16T03:42:18+00:00,1,439,1,0,99516.9,15
+userapi.com,categories Social Networks,1,1.0,1.0,2026-10-16T03:42:40+00:00,1,440,1,0,99476.2,15
+pinterest.it,categories Social Networks,0,0.0,1.0,2026-10-16T03:42:51+00:00,1,441,1,0,89177.6,15
+classmates.com,categories Social Networks,0,0.0,1.0,2026-10-16T03:43:02+00:00,1,442,1,0,77726.4,15
+us.tiktokcdn.com,categories Social Networks,1,0.8,1.0,2026-10-16T03:43:25+00:00,1,443,1,0,78313.4,15
+www.rat.xxx,categories Pornography,1,1.0,1.0,2026-10-16T03:43:46+00:00,1,444,1,0,88407.9,15
+pussyspace.com,categories Pornography,1,0.87,1.0,2026-10-16T03:44:08+00:00,1,445,1,0,87959.4,15
+pornhub.org,categories Pornography,1,0.8,1.0,2026-10-16T03:44:30+00:00,1,446,1,0,99205.0,15
+sxyprn.net,categories Pornography,1,0.93,1.0,2026-10-16T03:44:52+00:00,1,447,1,0,109997.3,15
+redwap-xxx.com,categories Pornography,1,0.87,1.0,2026-10-16T03:45:14+00:00,1,448,1,0,109162.5,15
+xvideos4.com,categories Pornography,1,0.87,1.0,2026-10-16T03:45:36+00:00,1,449,1,0,109972.5,15
+xhamster.com,categories Pornography,1,0.87,1.0,2026-10-16T03:45:59+00:00,1,450,1,0,110670.4,15
+thegay.com,categories Pornography,1,0.87,1.0,2026-10-16T03:46:20+00:00,1,451,1,0,109677.1,15
+hnext.jp,categories Pornography,1,0.87,1.0,2026-10-16T03:46:42+00:00,1,452,1,0,109980.7,15
+tukif.com,categories Pornography,1,0.93,1.0,2026-10-16T03:47:04+00:00,1,453,1,0,110099.8,15
+hitomi.la,categories Pornography,1,0.87,1.0,2026-10-16T03:47:26+00:00,1,454,1,0,109858.0,15
+xvideos.com,categories Pornography,1,0.93,1.0,2026-10-16T03:47:48+00:00,1,455,1,0,109015.3,15
+boyfriendtv.com,categories Pornography,1,0.87,1.0,2026-10-16T03:48:10+00:00,1,456,1,0,110459.0,15
+porno365.pics,categories Pornography,1,0.87,1.0,2026-10-16T03:48:33+00:00,1,457,1,0,110248.6,15
+luxuretv.com,categories Pornography,1,0.93,1.0,2026-10-16T03:48:54+00:00,1,458,1,0,110008.2,15
+youjizz.com,categories Pornography,1,0.87,1.0,2026-10-16T03:49:16+00:00,1,459,1,0,109892.7,15
+boafoda.com,categories Pornography,1,0.87,1.0,2026-10-16T03:49:38+00:00,1,460,1,0,109696.8,15
+fr.pornhub.com,categories Pornography,1,1.0,1.0,2026-10-16T03:50:00+00:00,1,461,1,0,109650.7,15
+redgifs.com,categories Pornography,1,1.0,1.0,2026-10-16T03:50:22+00:00,1,462,1,0,109421.7,15
+www.youporn.com,categories Pornography,1,0.87,1.0,2026-10-16T03:50:44+00:00,1,463,1,0,109774.6,15
+porntrex.com,categories Pornography,1,0.87,1.0,2026-10-16T03:51:06+00:00,1,464,1,0,110115.1,15
+porno666.link,categories Pornography,1,0.87,1.0,2026-10-16T03:51:28+00:00,1,465,1,0,109613.5,15
+jizzbunker.com,categories Pornography,1,0.87,1.0,2026-10-16T03:51:50+00:00,1,466,1,0,109509.0,15
+hdporncomics.com,categories Pornography,1,0.87,1.0,2026-10-16T03:52:12+00:00,1,467,1,0,110099.8,15
+jav.guru,categories Pornography,1,0.87,1.0,2026-10-16T03:52:34+00:00,1,468,1,0,110271.0,15
+ge.xhamster.desi,categories Pornography,1,0.93,1.0,2026-10-16T03:52:56+00:00,1,469,1,0,109939.3,15
+www.tokyomotion.net,categories Pornography,1,0.87,1.0,2026-10-16T03:53:18+00:00,1,470,1,0,110474.6,15
+porn300.com,categories Pornography,1,0.87,1.0,2026-10-16T03:53:40+00:00,1,471,1,0,109905.1,15
+annunci69.it,categories Pornography,1,0.87,1.0,2026-10-16T03:54:02+00:00,1,472,1,0,109781.4,15
+javbus.com,categories Pornography,1,0.87,1.0,2026-10-16T03:54:24+00:00,1,473,1,0,110064.5,15
+hindixxxhd.com,categories Pornography,1,0.87,1.0,2026-10-16T03:54:46+00:00,1,474,1,0,109869.5,15
+erome.com,categories Pornography,1,0.93,1.0,2026-10-16T03:55:09+00:00,1,475,1,0,110357.0,15
+tnaflix.com,categories Pornography,1,0.87,1.0,2026-10-16T03:55:30+00:00,1,476,1,0,109890.3,15
+hotindianporn.mobi,categories Pornography,1,0.87,1.0,2026-10-16T03:55:52+00:00,1,477,1,0,109229.1,15
+zbporn.tv,categories Pornography,1,0.8,1.0,2026-10-16T03:56:14+00:00,1,478,1,0,109917.4,15
+hanime.tv,categories Pornography,1,0.93,1.0,2026-10-16T03:56:36+00:00,1,479,1,0,110092.0,15
+video.hnext.jp,categories Pornography,1,0.87,1.0,2026-10-16T03:56:58+00:00,1,480,1,0,109422.0,15
+tube4world.com,categories Pornography,1,0.8,1.0,2026-10-16T03:57:19+00:00,1,481,1,0,109002.4,15
+xxxvideo.best,categories Pornography,1,1.0,1.0,2026-10-16T03:57:41+00:00,1,482,1,0,109010.6,15
+toonily.com,categories Pornography,1,0.93,1.0,2026-10-16T03:58:03+00:00,1,483,1,0,108621.7,15
+phncdn.com,categories Pornography,1,1.0,1.0,2026-10-16T03:58:25+00:00,1,484,1,0,108553.2,15
+vxxx.com,categories Pornography,1,0.93,1.0,2026-10-16T03:58:47+00:00,1,485,1,0,108991.4,15
+id.spankbang.com,categories Pornography,1,0.93,1.0,2026-10-16T03:59:09+00:00,1,486,1,0,109877.5,15
+zbporn.com,categories Pornography,1,0.87,1.0,2026-10-16T03:59:31+00:00,1,487,1,0,109638.7,15
+gekso.xyz,categories Pornography,1,0.87,1.0,2026-10-16T03:59:53+00:00,1,488,1,0,110040.2,15
+superporn.com,categories Pornography,1,0.87,1.0,2026-10-16T04:00:15+00:00,1,489,1,0,110033.0,15
+nhentai.net,categories Pornography,1,0.87,1.0,2026-10-16T04:00:37+00:00,1,490,1,0,109668.9,15
+tporn.xxx,categories Pornography,1,1.0,1.0,2026-10-16T04:00:59+00:00,1,491,1,0,110051.2,15
+incestflix.com,categories Pornography,1,0.8,1.0,2026-10-16T04:01:21+00:00,1,492,1,0,109882.1,15
+kamababa.desi,categories Pornography,1,0.8,1.0,2026-10-16T04:01:43+00:00,1,493,1,0,109624.7,15
+erothots.co,categories Pornography,1,0.87,1.0,2026-10-16T04:02:05+00:00,1,494,1,0,110264.4,15
+imhentai.xxx,categories Pornography,1,1.0,1.0,2026-10-16T04:02:27+00:00,1,495,1,0,110440.6,15
+evexxx.com,categories Pornography,1,0.93,1.0,2026-10-16T04:02:49+00:00,1,496,1,0,109965.2,15
+jp.spankbang.com,categories Pornography,1,0.93,1.0,2026-10-16T04:03:11+00:00,1,497,1,0,110258.7,15
+www.redtube.com,categories Pornography,1,0.87,1.0,2026-10-16T04:03:33+00:00,1,498,1,0,109417.2,15
+m.sexemodel.com,categories Pornography,1,0.93,1.0,2026-10-16T04:06:57+00:00,1,499,1,0,292033.0,15
+fuq.com,categories Pornography,1,0.87,1.0,2026-10-16T04:07:19+00:00,1,500,1,0,291531.7,15
+www.hdhindisex.com,categories Pornography,1,0.87,1.0,2026-10-16T04:07:41+00:00,1,501,1,0,292160.5,15
+beeg.porn,categories Pornography,1,0.93,1.0,2026-10-16T04:08:03+00:00,1,502,1,0,292216.0,15
+spankbang.party,categories Pornography,1,0.93,1.0,2026-10-16T04:08:25+00:00,1,503,1,0,292692.3,15
+www.porno-zona.com,categories Pornography,1,0.8,1.0,2026-10-16T04:08:47+00:00,1,504,1,0,110074.6,15
+cam4.com,categories Pornography,1,0.87,1.0,2026-10-16T04:09:09+00:00,1,505,1,0,110185.5,15
+www.xvideos.es,categories Pornography,1,0.8,1.0,2026-10-16T04:09:31+00:00,1,506,1,0,109912.2,15
+xvideos.es,categories Pornography,1,0.8,1.0,2026-10-16T04:09:53+00:00,1,507,1,0,109755.3,15
+es.pornhub.com,categories Pornography,1,1.0,1.0,2026-10-16T04:10:15+00:00,1,508,1,0,109767.1,15
+myfreecams.com,categories Pornography,1,0.87,1.0,2026-10-16T04:10:37+00:00,1,509,1,0,110071.5,15
+www.hdtube.porn,categories Pornography,1,1.0,1.0,2026-10-16T04:10:59+00:00,1,510,1,0,110089.9,15
+rat.xxx,categories Pornography,1,0.93,1.0,2026-10-16T04:11:21+00:00,1,511,1,0,110116.6,15
+sex.com,categories Pornography,1,0.93,1.0,2026-10-16T04:11:43+00:00,1,512,1,0,109939.2,15
+www.pornhub.org,categories Pornography,1,0.87,1.0,2026-10-16T04:12:05+00:00,1,513,1,0,109863.1,15
+xnxx2.com,categories Pornography,1,0.87,1.0,2026-10-16T04:12:27+00:00,1,514,1,0,109823.0,15
+www.porn300.com,categories Pornography,1,0.87,1.0,2026-10-16T04:12:49+00:00,1,515,1,0,109478.1,15
+xv-videos1.com,categories Pornography,1,0.87,1.0,2026-10-16T04:13:11+00:00,1,516,1,0,109462.3,15
+xnxx.com.se,categories Pornography,1,0.93,1.0,2026-10-16T04:13:33+00:00,1,517,1,0,108876.4,15
+tubecup.net,categories Pornography,0,0.0,1.0,2026-10-16T04:13:44+00:00,1,518,1,0,98875.9,15
+clip2vip.com,categories Pornography,1,0.87,1.0,2026-10-16T04:14:06+00:00,1,519,1,0,98714.2,15
+contentabc.com,categories Pornography,1,0.87,1.0,2026-10-16T04:14:28+00:00,1,520,1,0,99045.3,15
+www.pussyspace.com,categories Pornography,1,0.87,1.0,2026-10-16T04:14:50+00:00,1,521,1,0,99217.8,15
+rule34video.com,categories Pornography,1,0.87,1.0,2026-10-16T04:15:12+00:00,1,522,1,0,98721.7,15
+bhojpurisex.site,categories Pornography,1,0.87,1.0,2026-10-16T04:15:34+00:00,1,523,1,0,109883.4,15
+rt.pornhub.com,categories Pornography,1,1.0,1.0,2026-10-16T04:15:56+00:00,1,524,1,0,109969.7,15
+www.joyclub.de,categories Pornography,1,0.93,1.0,2026-10-16T04:16:18+00:00,1,525,1,0,109225.4,15
+sex4arab.xxx,categories Pornography,1,1.0,1.0,2026-10-16T04:17:01+00:00,1,526,1,0,130177.4,15
+4kporn.xxx,categories Pornography,1,1.0,1.0,2026-10-16T04:17:52+00:00,1,527,1,0,159965.2,15
+tktube.com,categories Pornography,1,1.0,1.0,2026-10-16T04:18:42+00:00,1,528,1,0,188051.6,15
+eroterest.net,categories Pornography,1,0.87,1.0,2026-10-16T04:19:04+00:00,1,529,1,0,188078.7,15
+xxx.com,categories Pornography,1,0.93,1.0,2026-10-16T04:19:26+00:00,1,530,1,0,187824.9,15
+xxxshake.com,categories Pornography,1,0.8,1.0,2026-10-16T04:19:48+00:00,1,531,1,0,166192.4,15
+www.pornpics.com,categories Pornography,1,0.8,1.0,2026-10-16T04:20:00+00:00,1,532,1,0,127777.8,15
+www.pornhub.com,categories Pornography,1,1.0,1.0,2026-10-16T04:20:50+00:00,1,533,1,0,127555.9,15
+xnxx-cdn.com,categories Pornography,1,0.87,1.0,2026-10-16T04:21:11+00:00,1,534,1,0,126739.1,15
+ru.xhamster.com,categories Pornography,1,0.87,1.0,2026-10-16T04:21:33+00:00,1,535,1,0,126839.1,15
+xvideos5.com,categories Pornography,1,1.0,1.0,2026-10-16T04:22:23+00:00,1,536,1,0,155494.9,15
+ixxx.com,categories Pornography,1,0.87,1.0,2026-10-16T04:22:45+00:00,1,537,1,0,165738.2,15
+txxx.com,categories Pornography,1,0.87,1.0,2026-10-16T04:23:07+00:00,1,538,1,0,137604.8,15
+missav.com,categories Pornography,1,0.87,1.0,2026-10-16T04:23:29+00:00,1,539,1,0,138194.5,15
+rule34.xxx,categories Pornography,1,1.0,1.0,2026-10-16T04:24:20+00:00,1,540,1,0,166636.2,15
+www.boyfriendtv.com,categories Pornography,1,0.87,1.0,2026-10-16T04:24:31+00:00,1,541,1,0,127425.7,15
+www.kamababa.desi,categories Pornography,1,0.93,1.0,2026-10-16T04:24:53+00:00,1,542,1,0,127190.2,15
+videosection.com,categories Pornography,1,1.0,1.0,2026-10-16T04:25:43+00:00,1,543,1,0,155659.8,15
+xfreehd.com,categories Pornography,1,0.87,1.0,2026-10-16T04:27:02+00:00,1,544,1,0,212486.8,15
+me.porno666.link,categories Pornography,1,0.87,1.0,2026-10-16T04:27:24+00:00,1,545,1,0,184088.5,15
+ashemaletube.com,categories Pornography,1,0.8,1.0,2026-10-16T04:27:46+00:00,1,546,1,0,195045.7,15
+sexvid.pro,categories Pornography,1,0.93,1.0,2026-10-16T04:28:08+00:00,1,547,1,0,195293.8,15
+hotmovs.com,categories Pornography,1,0.87,1.0,2026-10-16T04:28:30+00:00,1,548,1,0,166726.8,15
+de.pornhub.org,categories Pornography,1,0.87,1.0,2026-10-16T04:28:52+00:00,1,549,1,0,109924.4,15
+chaturbate.com,categories Pornography,1,0.87,1.0,2026-10-16T04:29:14+00:00,1,550,1,0,110391.3,15
+heo69.top,categories Pornography,1,0.8,1.0,2026-10-16T04:29:35+00:00,1,551,1,0,109651.9,15
+xvideos3.com,categories Pornography,1,0.87,1.0,2026-10-16T04:29:58+00:00,1,552,1,0,110040.4,15
+sexindrag.com,categories Pornography,1,0.87,1.0,2026-10-16T04:30:20+00:00,1,553,1,0,110269.1,15
+aznude.com,categories Pornography,1,0.87,1.0,2026-10-16T04:30:42+00:00,1,554,1,0,110377.1,15
+camwhores.tv,categories Pornography,1,0.87,1.0,2026-10-16T04:31:04+00:00,1,555,1,0,109697.2,15
+hdhindisex.com,categories Pornography,1,0.87,1.0,2026-10-16T04:31:26+00:00,1,556,1,0,110308.2,15
+xhamster3.com,categories Pornography,1,0.87,1.0,2026-10-16T04:31:49+00:00,1,557,1,0,110801.9,15
+pornzog.com,categories Pornography,1,0.87,1.0,2026-10-16T04:32:10+00:00,1,558,1,0,109637.7,15
+poringa.net,categories Pornography,1,0.93,1.0,2026-10-16T04:32:32+00:00,1,559,1,0,110172.7,15
+xxxvideos247.com,categories Pornography,1,0.93,1.0,2026-10-16T04:32:55+00:00,1,560,1,0,110736.2,15
+id.xhamster.com,categories Pornography,1,0.87,1.0,2026-10-16T04:33:16+00:00,1,561,1,0,109604.1,15
+ok.xxx,categories Pornography,1,1.0,1.0,2026-10-16T04:33:39+00:00,1,562,1,0,109647.7,15
+hqporner.com,categories Pornography,1,0.87,1.0,2026-10-16T04:34:00+00:00,1,563,1,0,110400.9,15
+www.imagefap.com,categories Pornography,1,0.87,1.0,2026-10-16T04:34:22+00:00,1,564,1,0,110184.3,15
+tmohentai.com,categories Pornography,1,0.87,1.0,2026-10-16T04:34:44+00:00,1,565,1,0,109573.1,15
+www.xnxx2.com,categories Pornography,1,0.93,1.0,2026-10-16T04:35:07+00:00,1,566,1,0,110309.9,15
+youjizz.sex,categories Pornography,1,1.0,1.0,2026-10-16T04:37:08+00:00,1,567,1,0,209574.7,15
+dewafilm.xyz,categories Pornography,1,0.87,1.0,2026-10-16T04:37:30+00:00,1,568,1,0,209456.7,15
+www.pornocarioca.com,categories Pornography,1,0.87,1.0,2026-10-16T04:37:51+00:00,1,569,1,0,208798.2,15
+pt.pornhub.com,categories Pornography,1,0.93,1.0,2026-10-16T04:38:14+00:00,1,570,1,0,209143.4,15
+hot-sex-tube.com,categories Pornography,1,1.0,1.0,2026-10-16T04:38:36+00:00,1,571,1,0,208904.8,15
+xnxx.com,categories Pornography,1,0.93,1.0,2026-10-16T04:38:57+00:00,1,572,1,0,109185.6,15
+amp.xhamster.com,categories Pornography,1,0.87,1.0,2026-10-16T04:39:19+00:00,1,573,1,0,109140.1,15
+hentaiera.com,categories Pornography,1,0.87,1.0,2026-10-16T04:39:41+00:00,1,574,1,0,110022.3,15
+ijavhd.com,categories Pornography,1,0.93,1.0,2026-10-16T04:40:04+00:00,1,575,1,0,110468.1,15
+www.xnxx.tv,categories Pornography,1,0.87,1.0,2026-10-16T04:40:26+00:00,1,576,1,0,110165.6,15
+hentai.name,categories Pornography,1,0.87,1.0,2026-10-16T04:40:48+00:00,1,577,1,0,110672.2,15
+fulldesisex.com,categories Pornography,1,0.87,1.0,2026-10-16T04:41:10+00:00,1,578,1,0,110503.6,15
+highwebmedia.com,categories Pornography,1,1.0,1.0,2026-10-16T04:41:32+00:00,1,579,1,0,110873.1,15
+supjav.com,categories Pornography,1,0.93,1.0,2026-10-16T04:41:54+00:00,1,580,1,0,110062.1,15
+fapello.com,categories Pornography,1,0.87,1.0,2026-10-16T04:42:16+00:00,1,581,1,0,110577.4,15
+pornhat.com,categories Pornography,1,0.87,1.0,2026-10-16T04:42:38+00:00,1,582,1,0,110190.5,15
+pornpics.com,categories Pornography,1,0.8,1.0,2026-10-16T04:43:00+00:00,1,583,1,0,110403.9,15
+www.xnxx3.com,categories Pornography,1,0.87,1.0,2026-10-16T04:43:22+00:00,1,584,1,0,109812.8,15
+gayboystube.com,categories Pornography,1,0.87,1.0,2026-10-16T04:43:44+00:00,1,585,1,0,109012.1,15
+m.fabguys.com,categories Pornography,1,0.87,1.0,2026-10-16T04:44:06+00:00,1,586,1,0,109745.7,15
+hot.noodlemagazine.com,categories Pornography,1,0.87,1.0,2026-10-16T04:44:28+00:00,1,587,1,0,109450.4,15
+www.xvideos.com,categories Pornography,1,0.87,1.0,2026-10-16T04:44:50+00:00,1,588,1,0,109357.7,15
+www.sexvid.xxx,categories Pornography,1,1.0,1.0,2026-10-16T04:45:12+00:00,1,589,1,0,109857.1,15
+www.annunci69.it,categories Pornography,1,0.8,1.0,2026-10-16T04:45:33+00:00,1,590,1,0,109038.9,15
+webx.sexnhanh.co,categories Pornography,0,0.13,1.0,2026-10-16T04:45:45+00:00,1,591,1,0,98923.4,15
+www.bhojpurisex.site,categories Pornography,1,0.87,1.0,2026-10-16T04:46:07+00:00,1,592,1,0,98977.6,15
+tubesafari.com,categories Pornography,1,0.93,1.0,2026-10-16T04:46:29+00:00,1,593,1,0,99320.6,15
+82xnxx.com,categories Pornography,1,0.87,1.0,2026-10-16T04:46:51+00:00,1,594,1,0,99011.3,15
+www.sexvid.pro,categories Pornography,1,0.8,1.0,2026-10-16T04:47:13+00:00,1,595,1,0,98453.6,15
+theknot.com,categories Dating & Relationships,1,0.8,1.0,2026-10-16T04:47:35+00:00,1,596,1,0,109813.0,15
+waplog.com,categories Dating & Relationships,1,0.87,1.0,2026-10-16T04:47:57+00:00,1,597,1,0,109497.9,15
+tinder.com,categories Dating & Relationships,0,0.0,1.0,2026-10-16T04:48:08+00:00,1,598,1,0,99323.2,15
+fabswingers.com,categories Dating & Relationships,1,1.0,1.0,2026-10-16T04:48:38+00:00,1,599,1,0,106711.6,15
+match.com,categories Dating & Relationships,1,0.93,1.0,2026-10-16T04:49:28+00:00,1,600,1,0,135440.8,15
+kemono.party,categories Pornography,1,0.87,1.0,2026-10-16T04:49:50+00:00,1,601,1,0,134994.0,15
+www.xvideos2.com,categories Pornography,1,0.87,1.0,2026-10-16T04:50:37+00:00,1,602,1,0,160043.8,15
+fap2bed.com,categories Pornography,1,1.0,1.0,2026-10-16T04:50:59+00:00,1,603,1,0,170272.3,15
+freepornvideo.sex,categories Pornography,1,1.0,1.0,2026-10-16T04:51:48+00:00,1,604,1,0,190580.3,15
+th.spankbang.com,categories Pornography,1,0.87,1.0,2026-10-16T04:52:10+00:00,1,605,1,0,162011.8,15
+xhamster1.desi,categories Pornography,1,0.87,1.0,2026-10-16T04:52:32+00:00,1,606,1,0,162417.3,15
+www.pornhat.com,categories Pornography,1,0.87,1.0,2026-10-16T04:52:43+00:00,1,607,1,0,126280.0,15
+es.xhamster.com,categories Pornography,1,0.93,1.0,2026-10-16T04:53:05+00:00,1,608,1,0,125691.6,15
+www.fulldesisex.com,categories Pornography,1,0.93,1.0,2026-10-16T04:53:26+00:00,1,609,1,0,98039.3,15
+phim.heo69.top,categories Pornography,1,1.0,1.0,2026-10-16T04:53:48+00:00,1,610,1,0,97180.1,15
+sexlog.com,categories Pornography,1,0.93,1.0,2026-10-16T04:54:09+00:00,1,611,1,0,96866.9,15
+br.spankbang.com,categories Pornography,1,1.0,1.0,2026-10-16T04:54:59+00:00,1,612,1,0,136063.1,15
+hentaihaven.xxx,categories Pornography,1,1.0,1.0,2026-10-16T04:55:50+00:00,1,613,1,0,164981.0,15
+www.ixxx.com,categories Pornography,1,0.93,1.0,2026-10-16T04:56:11+00:00,1,614,1,0,164652.5,15
+www.erome.com,categories Pornography,1,0.8,1.0,2026-10-16T04:56:32+00:00,1,615,1,0,164462.2,15
+wapoz.info,categories Pornography,1,0.87,1.0,2026-10-16T04:56:54+00:00,1,616,1,0,164678.1,15
+de.pornhub.com,categories Pornography,1,1.0,1.0,2026-10-16T04:57:44+00:00,1,617,1,0,164652.4,15
+xhamster.desi,categories Pornography,1,1.0,1.0,2026-10-16T04:58:06+00:00,1,618,1,0,136280.5,15
+xnxxsex.net,categories Pornography,1,0.93,1.0,2026-10-16T04:58:28+00:00,1,619,1,0,136994.0,15
+18comic.vip,categories Pornography,1,1.0,1.0,2026-10-16T04:58:50+00:00,1,620,1,0,137639.7,15
+pl.xhamster.com,categories Pornography,1,0.87,1.0,2026-10-16T04:59:12+00:00,1,621,1,0,137733.9,15
+porno18.site,categories Pornography,1,0.87,1.0,2026-10-16T04:59:22+00:00,1,622,1,0,98207.4,15
+youporn.com,categories Pornography,1,0.87,1.0,2026-10-16T04:59:34+00:00,1,623,1,0,87572.7,15
+xhwide3.com,categories Pornography,1,0.87,1.0,2026-10-16T04:59:55+00:00,1,624,1,0,87157.0,15
+gaymaletube.com,categories Pornography,1,0.87,1.0,2026-10-16T05:00:06+00:00,1,625,1,0,75611.4,15
+rule34.us,categories Pornography,1,0.87,1.0,2026-10-16T05:00:28+00:00,1,626,1,0,75826.6,15
+dlsite.com,categories Pornography,1,1.0,1.0,2026-10-16T05:01:18+00:00,1,627,1,0,115857.8,15
+skipthegames.com,categories Pornography,1,1.0,1.0,2026-10-16T05:02:08+00:00,1,628,1,0,154045.1,15
+in3x.net,categories Pornography,1,0.93,1.0,2026-10-16T05:02:30+00:00,1,629,1,0,154110.5,15
+joyclub.de,categories Pornography,1,0.87,1.0,2026-10-16T05:02:51+00:00,1,630,1,0,164841.2,15
+motherless.com,categories Pornography,1,1.0,1.0,2026-10-16T05:03:41+00:00,1,631,1,0,193346.6,15
+www.arbada.com,categories Pornography,1,0.87,1.0,2026-10-16T05:04:02+00:00,1,632,1,0,164253.6,15
+imagefap.com,categories Pornography,1,0.93,1.0,2026-10-16T05:04:25+00:00,1,633,1,0,136948.9,15
+e-hentai.org,categories Pornography,1,0.87,1.0,2026-10-16T05:04:36+00:00,1,634,1,0,125995.1,15
+hentailib.me,categories Pornography,1,0.87,1.0,2026-10-16T05:04:47+00:00,1,635,1,0,115752.6,15
+yadongkorea.org,categories Pornography,1,0.87,1.0,2026-10-16T05:05:08+00:00,1,636,1,0,86776.7,15
+sextb.net,categories Pornography,1,0.87,1.0,2026-10-16T05:05:30+00:00,1,637,1,0,87148.1,15
+pornhub.com,categories Pornography,1,1.0,1.0,2026-10-16T05:06:20+00:00,1,638,1,0,114857.2,15
+www.dmm.co.jp,categories Pornography,1,1.0,1.0,2026-10-16T05:07:10+00:00,1,639,1,0,154004.0,15
+www.serviporno.com,categories Pornography,1,0.87,1.0,2026-10-16T05:07:21+00:00,1,640,1,0,153851.3,15
+cn.pornhub.com,categories Pornography,1,1.0,1.0,2026-10-16T05:08:11+00:00,1,641,1,0,183079.6,15
+hdtube.porn,categories Pornography,1,1.0,1.0,2026-10-16T05:09:01+00:00,1,642,1,0,211519.8,15
+www.qorno.com,categories Pornography,1,0.93,1.0,2026-10-16T05:09:22+00:00,1,643,1,0,182797.9,15
+xgroovy.com,categories Pornography,1,0.87,1.0,2026-10-16T05:09:45+00:00,1,644,1,0,154908.8,15
+pornocarioca.com,categories Pornography,1,0.87,1.0,2026-10-16T05:09:55+00:00,1,645,1,0,154255.8,15
+sexalarab.com,categories Pornography,1,0.87,1.0,2026-10-16T05:10:17+00:00,1,646,1,0,125657.1,15
+www.indianbfvideos.com,categories Pornography,1,1.0,1.0,2026-10-16T05:10:39+00:00,1,647,1,0,97283.5,15
+gekso.com,categories Pornography,1,0.87,1.0,2026-10-16T05:11:00+00:00,1,648,1,0,97392.5,15
+tube8.com,categories Pornography,1,0.87,1.0,2026-10-16T05:11:22+00:00,1,649,1,0,97304.4,15
+anysex.com,categories Pornography,1,0.87,1.0,2026-10-16T05:11:43+00:00,1,650,1,0,108193.5,15
+love4porn.com,categories Pornography,1,0.87,1.0,2026-10-16T05:11:55+00:00,1,651,1,0,98038.3,15
+www.fuq.com,categories Pornography,1,0.87,1.0,2026-10-16T05:12:16+00:00,1,652,1,0,97561.6,15
+it.pornhub.com,categories Pornography,1,0.93,1.0,2026-10-16T05:13:06+00:00,1,653,1,0,126303.4,15
+apornvideo.com,categories Pornography,1,0.87,1.0,2026-10-16T05:13:17+00:00,1,654,1,0,114898.8,15
+fetlife.com,categories Pornography,1,0.93,1.0,2026-10-16T05:13:39+00:00,1,655,1,0,115597.1,15
+eporner.com,categories Pornography,1,0.87,1.0,2026-10-16T05:13:50+00:00,1,656,1,0,115400.1,15
+br.xhamster.com,categories Pornography,1,0.8,1.0,2026-10-16T05:14:11+00:00,1,657,1,0,115094.8,15
+www.wnacg.com,categories Pornography,1,1.0,1.0,2026-10-16T05:15:02+00:00,1,658,1,0,115513.5,15
+pornozavr.net,categories Pornography,1,0.87,1.0,2026-10-16T05:15:12+00:00,1,659,1,0,115629.7,15
+zbiornik.com,categories Pornography,1,1.0,1.0,2026-10-16T05:16:02+00:00,1,660,1,0,143286.2,15
+allporncomic.com,categories Pornography,1,0.8,1.0,2026-10-16T05:16:14+00:00,1,661,1,0,143779.4,15
+serviporno.com,categories Pornography,1,0.87,1.0,2026-10-16T05:16:25+00:00,1,662,1,0,133454.5,15
+arbada.com,categories Pornography,1,1.0,1.0,2026-10-16T05:16:47+00:00,1,663,1,0,104956.4,15
+redtube.com,categories Pornography,1,0.87,1.0,2026-10-16T05:16:58+00:00,1,664,1,0,105462.8,15
+xxx18hot.com,categories Pornography,1,0.87,1.0,2026-10-16T05:17:19+00:00,1,665,1,0,76597.1,15
+xnxx.health,categories Pornography,1,0.93,1.0,2026-10-16T05:17:42+00:00,1,666,1,0,87442.0,15
+dto.jp,categories Pornography,1,1.0,1.0,2026-10-16T05:18:02+00:00,1,667,1,0,96516.5,15
+dmm.co.jp,categories Pornography,1,1.0,1.0,2026-10-16T05:18:53+00:00,1,668,1,0,126307.2,15
+porno-zona.com,categories Pornography,1,0.87,1.0,2026-10-16T05:19:03+00:00,1,669,1,0,125454.3,15
+crazyporn.xxx,categories Pornography,1,1.0,1.0,2026-10-16T05:19:54+00:00,1,670,1,0,154069.3,15
+xvideos2.com,categories Pornography,1,0.93,1.0,2026-10-16T05:20:44+00:00,1,671,1,0,182139.0,15
+literotica.com,categories Pornography,1,0.87,1.0,2026-10-16T05:20:55+00:00,1,672,1,0,172821.0,15
+la.spankbang.com,categories Pornography,1,1.0,1.0,2026-10-16T05:21:45+00:00,1,673,1,0,171643.7,15
+cz.pornhub.com,categories Pornography,1,1.0,1.0,2026-10-16T05:22:35+00:00,1,674,1,0,212010.4,15
+sexvid.xxx,categories Pornography,1,1.0,1.0,2026-10-16T05:23:25+00:00,1,675,1,0,211295.2,15
+jp.pornhub.com,categories Pornography,1,1.0,1.0,2026-10-16T05:24:15+00:00,1,676,1,0,211715.7,15
+xxxbule.com,categories Pornography,1,0.87,1.0,2026-10-16T05:24:37+00:00,1,677,1,0,221588.3,15
+pl.pornhub.com,categories Pornography,1,1.0,1.0,2026-10-16T05:25:27+00:00,1,678,1,0,222266.9,15
+exhentai.org,categories Pornography,0,0.0,1.0,2026-10-16T05:25:38+00:00,1,679,1,0,182999.0,15
+myreadingmanga.info,categories Pornography,1,0.93,1.0,2026-10-16T05:25:59+00:00,1,680,1,0,154012.1,15
+paheal.net,categories Pornography,0,0.13,1.0,2026-10-16T05:26:50+00:00,1,681,1,0,154084.0,15
+pornkai.com,categories Pornography,1,0.87,1.0,2026-10-16T05:27:00+00:00,1,682,1,0,143414.3,15
+kompoz2.com,categories Pornography,1,0.87,1.0,2026-10-16T05:27:23+00:00,1,683,1,0,115275.1,15
+thisvid.com,categories Pornography,1,0.8,1.0,2026-10-16T05:27:44+00:00,1,684,1,0,125241.1,15
+www.apornvideo.com,categories Pornography,1,0.87,1.0,2026-10-16T05:27:55+00:00,1,685,1,0,115313.1,15
+theporndude.com,categories Pornography,1,0.87,1.0,2026-10-16T05:28:06+00:00,1,686,1,0,76368.5,15
+my.xhtab3.com,categories Pornography,1,0.87,1.0,2026-10-16T05:28:28+00:00,1,687,1,0,88169.4,15
+sexemodel.com,categories Pornography,1,0.87,1.0,2026-10-16T05:29:19+00:00,1,688,1,0,116487.2,15
+hanime1.me,categories Pornography,1,0.87,1.0,2026-10-16T05:29:40+00:00,1,689,1,0,116477.9,15
+indianpornvideos.me,categories Pornography,1,0.87,1.0,2026-10-16T05:29:51+00:00,1,690,1,0,116383.9,15
+www.youjizz.com,categories Pornography,1,0.87,1.0,2026-10-16T05:30:02+00:00,1,691,1,0,116044.5,15
+wnacg.com,categories Pornography,1,1.0,1.0,2026-10-16T05:30:52+00:00,1,692,1,0,143758.3,15
+www.freepornvideo.sex,categories Pornography,1,1.0,1.0,2026-10-16T05:31:42+00:00,1,693,1,0,143177.1,15
+xnxx3.com,categories Pornography,1,0.93,1.0,2026-10-16T05:32:04+00:00,1,694,1,0,143791.9,15
+www.xnxx.com,categories Pornography,1,0.93,1.0,2026-10-16T05:32:26+00:00,1,695,1,0,154615.0,15
+fr.xhamster.com,categories Pornography,1,0.93,1.0,2026-10-16T05:32:47+00:00,1,696,1,0,165324.4,15
+xgx.mobi,categories Pornography,1,0.93,1.0,2026-10-16T05:33:09+00:00,1,697,1,0,137054.0,15
+www.clip2vip.com,categories Pornography,1,0.87,1.0,2026-10-16T05:33:31+00:00,1,698,1,0,108915.1,15
+en.luxuretv.com,categories Pornography,1,0.93,1.0,2026-10-16T05:33:52+00:00,1,699,1,0,108082.7,15
+f95zone.to,categories Pornography,1,1.0,1.0,2026-10-16T05:34:43+00:00,1,700,1,0,136810.1,15
+xxxnd.com,categories Pornography,1,0.87,1.0,2026-10-16T05:35:04+00:00,1,701,1,0,135415.7,15
+pornone.com,categories Pornography,1,0.87,1.0,2026-10-16T05:35:15+00:00,1,702,1,0,124523.2,15
+goodporn.to,categories Pornography,1,0.87,1.0,2026-10-16T05:35:26+00:00,1,703,1,0,114985.8,15
+stripchat.com,categories Pornography,1,0.87,1.0,2026-10-16T05:37:27+00:00,1,704,1,0,214480.8,15
+www.pornhat.one,categories Pornography,1,0.87,1.0,2026-10-16T05:37:49+00:00,1,705,1,0,185909.3,15
+m.chaturbate.com,categories Pornography,1,0.87,1.0,2026-10-16T05:38:11+00:00,1,706,1,0,187258.0,15
+qorno.com,categories Pornography,1,1.0,1.0,2026-10-16T05:38:33+00:00,1,707,1,0,197276.8,15
+bestjavporn.com,categories Pornography,1,0.87,1.0,2026-10-16T05:38:54+00:00,1,708,1,0,208136.8,15
+spankbang.com,categories Pornography,1,0.8,1.0,2026-10-16T05:39:17+00:00,1,709,1,0,109952.0,15
+hlebo.mobi,categories Pornography,1,0.93,1.0,2026-10-16T05:39:39+00:00,1,710,1,0,109163.2,15
+m.hqporner.com,categories Pornography,1,0.87,1.0,2026-10-16T05:40:01+00:00,1,711,1,0,109584.4,15
+www.sexlog.com,categories Pornography,1,0.87,1.0,2026-10-16T05:40:23+00:00,1,712,1,0,110170.5,15
+www.hentai.name,categories Pornography,1,0.87,1.0,2026-10-16T05:40:45+00:00,1,713,1,0,107838.8,15
+hentaifox.com,categories Pornography,1,0.87,1.0,2026-10-16T05:41:06+00:00,1,714,1,0,109405.2,15
+pictoa.com,categories Pornography,1,0.87,1.0,2026-10-16T05:41:29+00:00,1,715,1,0,110320.1,15
+milf33.com,categories Pornography,1,0.87,1.0,2026-10-16T05:41:51+00:00,1,716,1,0,110350.2,15
+www.wapoz.info,categories Pornography,1,0.87,1.0,2026-10-16T05:42:13+00:00,1,717,1,0,110089.2,15
+gelbooru.com,categories Pornography,1,1.0,1.0,2026-10-16T05:42:34+00:00,1,718,1,0,109809.2,15
+3hentai.net,categories Pornography,1,0.8,1.0,2026-10-16T05:42:57+00:00,1,719,1,0,110298.6,15
+faphouse.com,categories Pornography,1,0.87,1.0,2026-10-16T05:43:19+00:00,1,720,1,0,108307.5,15
+www.sexindrag.com,categories Pornography,1,1.0,1.0,2026-10-16T05:43:40+00:00,1,721,1,0,109162.3,15
+tubev.sex,categories Pornography,1,0.87,1.0,2026-10-16T05:44:03+00:00,1,722,1,0,102014.3,15
+adultfriendfinder.com,categories Dating & Relationships,1,0.93,1.0,2026-10-16T05:44:26+00:00,1,723,1,0,23167.6,15
+badoo.com,categories Dating & Relationships,1,0.87,1.0,2026-10-16T05:44:49+00:00,1,724,1,0,45768.3,15
+tabor.ru,categories Dating & Relationships,1,0.93,1.0,2026-10-16T05:45:11+00:00,1,725,1,0,68459.7,15
+m.fabswingers.com,categories Dating & Relationships,1,1.0,1.0,2026-10-16T05:45:59+00:00,1,726,1,0,116314.5,15
+fabguys.com,categories Dating & Relationships,1,1.0,1.0,2026-10-16T05:46:21+00:00,1,727,1,0,138277.0,15
+adam4adam.com,categories Dating & Relationships,1,1.0,1.0,2026-10-16T05:47:11+00:00,1,728,1,0,165233.4,15
+fotostrana.ru,categories Dating & Relationships,1,0.87,1.0,2026-10-16T05:47:33+00:00,1,729,1,0,163156.2,15
+hotornot.com,categories Dating & Relationships,1,1.0,1.0,2026-10-16T05:47:55+00:00,1,730,1,0,163984.5,15
+m.tabor.ru,categories Dating & Relationships,1,0.8,1.0,2026-10-16T05:48:17+00:00,1,731,1,0,136921.0,15
+550909.com,categories Dating & Relationships,0,0.0,1.0,2026-10-16T05:48:29+00:00,1,732,1,0,127932.8,15
+meetme.com,categories Dating & Relationships,1,0.93,1.0,2026-10-16T05:48:50+00:00,1,733,1,0,97606.0,15
+doublelist.com,categories Dating & Relationships,0,0.0,1.0,2026-10-16T05:49:01+00:00,1,734,1,0,84982.4,15
+love.ru,categories Dating & Relationships,1,0.93,1.0,2026-10-16T05:49:23+00:00,1,735,1,0,86816.2,15
+gotinder.com,categories Dating & Relationships,1,0.87,1.0,2026-10-16T05:49:45+00:00,1,736,1,0,88374.5,15
+tantanapp.com,categories Dating & Relationships,1,1.0,1.0,2026-10-16T05:50:07+00:00,1,737,1,0,95221.5,15
+biobiochile.cl,categories Video Streaming,1,1.0,1.0,2026-10-16T05:50:58+00:00,1,738,1,0,51025.2,15
+youtube.com,categories Video Streaming,1,0.87,1.0,2026-10-16T05:51:19+00:00,1,739,1,0,72709.8,15
+20minutos.es,categories Video Streaming,1,0.93,1.0,2026-10-16T05:51:41+00:00,1,740,1,0,94501.9,15
+eurosport.fr,categories Video Streaming,0,0.0,1.0,2026-10-16T05:51:53+00:00,1,741,1,0,106048.5,15
+lindependant.fr,categories Video Streaming,1,0.93,1.0,2026-10-16T05:52:14+00:00,1,742,1,0,127507.3,15
+jut.su,categories Video Streaming,0,0.0,1.0,2026-10-16T05:52:26+00:00,1,743,1,0,87964.3,15
+twitcasting.tv,categories Video Streaming,0,0.0,1.0,2026-10-16T05:52:37+00:00,1,744,1,0,78091.3,15
+nola.com,categories Video Streaming,0,0.13,1.0,2026-10-16T05:53:27+00:00,1,745,1,0,106149.1,15
+reuters.com,categories Video Streaming,0,0.0,0.95,2026-10-16T05:53:38+00:00,1,746,1,0,105693.8,15
+lavoixdunord.fr,categories Video Streaming,0,0.0,0.89,2026-10-16T05:53:50+00:00,1,747,0,0,95784.1,15
+pinterest.fr,categories Social Networks,1,0.93,1.0,2026-10-16T05:54:12+00:00,1,748,1,0,106083.7,15
+api16-normal-useast5.us.tiktokv.com,categories Social Networks,1,1.0,1.0,2026-10-16T05:54:34+00:00,1,749,1,0,116635.8,15
+aws.api.snapchat.com,categories Social Networks,1,0.93,1.0,2026-10-16T05:54:55+00:00,1,750,1,0,88074.6,15
+mobile.twitter.com,categories Social Networks,1,1.0,1.0,2026-10-16T05:55:17+00:00,1,751,1,0,98985.3,15
+pull-flv-f62-sg01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T05:55:49+00:00,1,752,1,0,118867.9,15
+chat-e2ee.facebook.com,categories Social Networks,1,0.87,1.0,2026-10-16T05:56:12+00:00,1,753,1,0,119677.0,15
+m.facebook.com,categories Social Networks,1,0.93,1.0,2026-10-16T05:56:33+00:00,1,754,1,0,118621.6,15
+pull-f5-gcp01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T05:56:55+00:00,1,755,1,0,119254.2,15
+eu.tiktokcdn.com,categories Social Networks,1,0.8,1.0,2026-10-16T05:57:17+00:00,1,756,1,0,119499.4,15
+pull-a5-tt02-infra.fcdn.us.tiktokv.com,categories Social Networks,1,1.0,1.0,2026-10-16T05:57:39+00:00,1,757,1,0,110192.5,15
+netseer-ipaddr-assoc.xy.fbcdn.net,categories Social Networks,1,0.8,1.0,2026-10-16T05:58:01+00:00,1,758,1,0,109059.3,15
+pull-hls-f77-sg01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T05:58:23+00:00,1,759,1,0,110027.2,15
+pull-a5-gcp01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T05:58:44+00:00,1,760,1,0,109137.9,15
+plus.google.com,categories Social Networks,0,0.0,1.0,2026-10-16T05:58:56+00:00,1,761,1,0,98748.4,15
+pull-cmaf-f16-tt03.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T05:59:18+00:00,1,762,1,0,98847.4,15
+note.com,categories Social Networks,1,0.87,1.0,2026-10-16T05:59:39+00:00,1,763,1,0,98704.1,15
+gab.com,categories Social Networks,0,0.0,1.0,2026-10-16T05:59:51+00:00,1,764,1,0,87778.1,15
+fbcdn.net,categories Social Networks,1,0.87,1.0,2026-10-16T06:00:13+00:00,1,765,1,0,88750.2,15
+i.instagram.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:00:34+00:00,1,766,1,0,98343.5,15
+ok.ru,categories Social Networks,0,0.0,1.0,2026-10-16T06:00:46+00:00,1,767,1,0,87724.9,15
+i.pinimg.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:01:08+00:00,1,768,1,0,88081.2,15
+dailyinnovation.biz,categories Astrology,0,0.0,0.0,2026-10-16T06:01:19+00:00,1,769,0,0,88608.7,15
+volcfcdndvs.com,categories DGA Domains,0,0.0,0.0,2026-10-16T06:01:30+00:00,1,770,0,0,76402.0,15
+aa-rt.sharepoint.com,categories New Domains,0,0.0,0.0,2026-10-16T06:01:42+00:00,1,771,0,0,66896.2,15
+knt9.xyz,categories DGA Domains,0,0.0,0.0,2026-10-16T06:01:53+00:00,1,772,0,0,67025.8,15
+takedwn.ws,categories DGA Domains,0,0.0,0.0,2026-10-16T06:02:04+00:00,1,773,0,0,55195.6,15
+global.aa-rt.sharepoint.com,categories New Domains,0,0.0,0.0,2026-10-16T06:02:16+00:00,1,774,0,0,51550.1,15
+sharepoint.com,categories New Domains,0,0.0,0.0,2026-10-16T06:02:27+00:00,1,775,0,0,56401.2,15
+pull-a5-sg01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:02:49+00:00,1,776,1,0,67146.5,15
+pull-flv-f77-va01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:03:10+00:00,1,777,1,0,77672.6,15
+chat-e2ee.c10r.facebook.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:03:32+00:00,1,778,1,0,88052.2,15
+mixi.jp,categories Social Networks,1,1.0,1.0,2026-10-16T06:03:55+00:00,1,779,1,0,98713.0,15
+pull-flv-f77-tt03.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:04:16+00:00,1,780,1,0,109717.4,15
+star-mini.c10r.facebook.com,categories Social Networks,1,0.8,1.0,2026-10-16T06:04:39+00:00,1,781,1,0,110097.1,15
+pull-cmaf-l16-gcp01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:05:00+00:00,1,782,1,0,109377.7,15
+tiktokv.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:05:22+00:00,1,783,1,0,109984.3,15
+chat-e2ee-mini.facebook.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:05:43+00:00,1,784,1,0,108710.9,15
+pull-f5-vr-sg01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:06:05+00:00,1,785,1,0,108793.7,15
+push-rtmp-f5-tt03.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:06:28+00:00,1,786,1,0,108684.3,15
+pull-flv-l77-gcp01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:06:49+00:00,1,787,1,0,109470.0,15
+www.instagram.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:07:11+00:00,1,788,1,0,108547.8,15
+pull-o5-gcp01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:07:33+00:00,1,789,1,0,109656.1,15
+push-rtmp-f5-tt02.fcdn.us.tiktokv.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:07:55+00:00,1,790,1,0,110101.7,15
+twitter.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:08:17+00:00,1,791,1,0,109109.6,15
+www.tiktok.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:08:39+00:00,1,792,1,0,109406.8,15
+pull-flv-f77-tt02.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:09:01+00:00,1,793,1,0,110050.1,15
+b-graph.facebook.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:09:23+00:00,1,794,1,0,109513.6,15
+grindr.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:09:45+00:00,1,795,1,0,109383.1,15
+pin.it,categories Social Networks,0,0.0,1.0,2026-10-16T06:09:56+00:00,1,796,1,0,99465.5,15
+platform.twitter.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:10:18+00:00,1,797,1,0,98256.6,15
+pull-c5-va01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:10:40+00:00,1,798,1,0,98687.6,15
+pull-q5-va01.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:11:02+00:00,1,799,1,0,99332.4,15
+pinimg.com,categories Social Networks,0,0.0,1.0,2026-10-16T06:11:13+00:00,1,800,1,0,88127.8,15
+p16-sg.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:11:35+00:00,1,801,1,0,98544.7,15
+mqtt-mini.facebook.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:11:57+00:00,1,802,1,0,98835.4,15
+pull-cmaf-f16-gcp01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:12:19+00:00,1,803,1,0,99318.8,15
+pull-flv-l10-va01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:12:41+00:00,1,804,1,0,99133.4,15
+internalfb.com,categories Social Networks,0,0.0,1.0,2026-10-16T06:12:52+00:00,1,805,1,0,99474.9,15
+api.facebook.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:13:15+00:00,1,806,1,0,99578.1,15
+pull-q5-va01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:13:36+00:00,1,807,1,0,99329.7,15
+pinterest.de,categories Social Networks,1,0.87,1.0,2026-10-16T06:13:58+00:00,1,808,1,0,99013.8,15
+pull-flv-f77-sg01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:14:20+00:00,1,809,1,0,98712.2,15
+fcdn.eu.tiktokcdn.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:14:42+00:00,1,810,1,0,109660.3,15
+pull-q5-sg01.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:15:03+00:00,1,811,1,0,108707.1,15
+pull-flv-l16-sg01.tiktokcdn.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:15:26+00:00,1,812,1,0,109847.6,15
+p16-sign-useast2a.tiktokcdn.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:18:11+00:00,1,813,1,0,253290.5,15
+pull-cmaf-f16-sg01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:18:34+00:00,1,814,1,0,253915.4,15
+vkontakte.ru,categories Social Networks,1,0.93,1.0,2026-10-16T06:18:55+00:00,1,815,1,0,253009.4,15
+pull-f5-tt03.fcdn.eu.tiktokcdn.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:19:17+00:00,1,816,1,0,253519.4,15
+pull-cmaf-f16-tt03.fcdn.us.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:19:39+00:00,1,817,1,0,252712.8,15
+z-p42-chat-e2ee-ig.facebook.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:20:01+00:00,1,818,1,0,109523.7,15
+tagged.com,categories Social Networks,0,0.0,1.0,2026-10-16T06:20:12+00:00,1,819,1,0,97942.1,15
+strava.com,categories Social Networks,0,0.0,1.0,2026-10-16T06:20:24+00:00,1,820,1,0,88400.4,15
+imgur.io,categories Social Networks,0,0.0,1.0,2026-10-16T06:20:35+00:00,1,821,1,0,78383.0,15
+pull-cmaf-l16-va01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:20:57+00:00,1,822,1,0,78325.8,15
+fcdn.us.tiktokv.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:21:19+00:00,1,823,1,0,78172.9,15
+ning.com,categories Social Networks,0,0.0,1.0,2026-10-16T06:21:30+00:00,1,824,1,0,78254.7,15
+pull-flv-f61-va01.tiktokcdn.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:21:52+00:00,1,825,1,0,88763.0,15
+asuscomm.com,categories Radio,0,0.0,0.16,2026-10-16T06:22:03+00:00,1,826,0,0,88024.1,15
+surriel.com,categories Radio,0,0.0,0.15,2026-10-16T06:22:15+00:00,1,827,0,0,77880.9,15
+facebook.net,categories Social Networks,0,0.0,1.0,2026-10-16T06:22:26+00:00,1,828,1,0,66718.6,15
+mastodon.social,categories Social Networks,1,0.87,1.0,2026-10-16T06:22:48+00:00,1,829,1,0,44571.9,15
+p16-sign-va.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:23:10+00:00,1,830,1,0,67152.2,15
+pull-flv-l16-va01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:23:32+00:00,1,831,1,0,88532.5,15
+pull-hls-f77-gcp01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:23:54+00:00,1,832,1,0,99406.0,15
+www.nairaland.com,categories Forums,0,0.0,0.96,2026-10-16T06:24:06+00:00,1,833,1,0,100114.0,15
+resetera.com,categories Forums,0,0.0,0.86,2026-10-16T06:24:17+00:00,1,834,0,0,89273.6,15
+stackexchange.com,categories Forums,0,0.0,0.78,2026-10-16T06:24:28+00:00,1,835,0,0,77721.7,15
+m.fanfiction.net,categories Forums,1,0.93,0.84,2026-10-16T06:24:50+00:00,1,836,0,0,78116.1,15
+pull-f5-tt02.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:25:12+00:00,1,837,1,0,77835.9,15
+gateway.facebook.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:25:34+00:00,1,838,1,0,87978.8,15
+pull-f5-vr-gcp01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:25:56+00:00,1,839,1,0,98601.1,15
+onlyfans.com,categories Social Networks,0,0.07,1.0,2026-10-16T06:26:07+00:00,1,840,1,0,99244.8,15
+static.xx.fbcdn.net,categories Social Networks,1,0.93,1.0,2026-10-16T06:26:29+00:00,1,841,1,0,98985.1,15
+instagram.c10r.instagram.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:26:52+00:00,1,842,1,0,99359.3,15
+pull-flv-l77-va01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:27:13+00:00,1,843,1,0,98823.1,15
+pull-f5-tt02.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:27:35+00:00,1,844,1,0,99668.2,15
+mon16-platform-useast5.us.tiktokv.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:27:57+00:00,1,845,1,0,109462.5,15
+pull-w5-va01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:28:19+00:00,1,846,1,0,109796.4,15
+pinterest.jp,categories Social Networks,1,0.87,1.0,2026-10-16T06:28:41+00:00,1,847,1,0,109497.7,15
+us.tiktokv.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:29:03+00:00,1,848,1,0,110382.0,15
+push-rtmp-f5-tt01.fcdn.us.tiktokv.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:29:25+00:00,1,849,1,0,109060.4,15
+pull-cmaf-f77-va01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:29:47+00:00,1,850,1,0,109875.5,15
+snapchat.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:30:09+00:00,1,851,1,0,109726.2,15
+us-east1-aws.api.snapchat.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:30:31+00:00,1,852,1,0,109753.0,15
+apps.facebook.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:30:53+00:00,1,853,1,0,109585.3,15
+www.facebook.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:31:17+00:00,1,854,1,0,112078.3,15
+www.pinterest.com,categories Social Networks,0,0.0,1.0,2026-10-16T06:31:26+00:00,1,855,1,0,99253.5,15
+pull-f5-tt01.fcdn.us.tiktokv.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:31:48+00:00,1,856,1,0,99580.7,15
+pull-hls-l77-va01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:32:11+00:00,1,857,1,0,99879.9,15
+nextdoor.com,categories Social Networks,0,0.0,1.0,2026-10-16T06:32:23+00:00,1,858,1,0,90034.7,15
+pull-f5-va01.tiktokcdn.com,categories Social Networks,1,0.8,1.0,2026-10-16T06:32:46+00:00,1,859,1,0,88869.9,15
+pull-cmaf-l77-gcp01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:33:08+00:00,1,860,1,0,102063.9,15
+netseer-ipaddr-assoc.xz.fbcdn.net,categories Social Networks,1,0.87,1.0,2026-10-16T06:33:31+00:00,1,861,1,0,102699.9,15
+pull-cmaf-f77-tt03.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:33:53+00:00,1,862,1,0,102618.3,15
+pull-cmaf-l77-va01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:34:17+00:00,1,863,1,0,113707.3,15
+pull-flv-l77-gcp01.eu.tiktokcdn.com,categories Social Networks,1,0.8,1.0,2026-10-16T06:34:40+00:00,1,864,1,0,114247.0,15
+usc1-gcp-v61.api.snapchat.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:35:02+00:00,1,865,1,0,114187.1,15
+star.fallback.c10r.facebook.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:35:25+00:00,1,866,1,0,114141.0,15
+c10r.instagram.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:35:48+00:00,1,867,1,0,114173.1,15
+pull-cmaf-f16-tt01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:36:10+00:00,1,868,1,0,113550.6,15
+pscp.tv,categories Social Networks,1,0.87,1.0,2026-10-16T06:36:33+00:00,1,869,1,0,113460.5,15
+pull-cmaf-l10-sg01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:36:56+00:00,1,870,1,0,113747.4,15
+gcp.api.snapchat.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:37:19+00:00,1,871,1,0,113404.4,15
+br.pinterest.com,categories Social Networks,0,0.0,1.0,2026-10-16T06:37:31+00:00,1,872,1,0,103323.8,15
+free.facebook.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:37:53+00:00,1,873,1,0,103163.6,15
+livejournal.com,categories Social Networks,0,0.0,1.0,2026-10-16T06:38:06+00:00,1,874,1,0,92212.3,15
+pull-flv-f77-gcp01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:38:29+00:00,1,875,1,0,92645.4,15
+pull-a5-va01.tiktokcdn.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:38:51+00:00,1,876,1,0,92684.1,15
+pull-o5-va01.tiktokcdn.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:39:14+00:00,1,877,1,0,102906.8,15
+tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:39:37+00:00,1,878,1,0,103671.4,15
+api.twitter.com,categories Social Networks,1,0.8,1.0,2026-10-16T06:40:00+00:00,1,879,1,0,114074.5,15
+c10r.facebook.com,categories Social Networks,1,0.8,1.0,2026-10-16T06:40:22+00:00,1,880,1,0,113204.2,15
+pull-c5-gcp01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:40:45+00:00,1,881,1,0,113364.2,15
+secondlife.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:41:08+00:00,1,882,1,0,114258.0,15
+mirtesen.ru,categories Social Networks,1,0.93,1.0,2026-10-16T06:41:31+00:00,1,883,1,0,113640.6,15
+weibo.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:41:53+00:00,1,884,1,0,113726.2,15
+pinterest.ca,categories Social Networks,1,0.93,1.0,2026-10-16T06:42:16+00:00,1,885,1,0,114078.4,15
+eskimi.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:42:39+00:00,1,886,1,0,113961.4,15
+pull-f5-tt03.fcdn.us.tiktokv.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:43:02+00:00,1,887,1,0,113783.2,15
+pull-o5-sg01.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:43:25+00:00,1,888,1,0,113798.7,15
+pull-flv-l10-sg01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:43:48+00:00,1,889,1,0,114264.2,15
+weibocdn.com,categories Social Networks,0,0.0,1.0,2026-10-16T06:44:00+00:00,1,890,1,0,103139.9,15
+pull-f5-gcp01.fcdn.us.tiktokv.com,categories Social Networks,1,0.8,1.0,2026-10-16T06:44:22+00:00,1,891,1,0,103295.8,15
+fcdn.us.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:44:45+00:00,1,892,1,0,102924.0,15
+twitpic.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:45:08+00:00,1,893,1,0,103698.9,15
+weibo.cn,categories Social Networks,0,0.0,1.0,2026-10-16T06:45:20+00:00,1,894,1,0,92148.1,15
+pinterest.com.mx,categories Social Networks,1,0.93,1.0,2026-10-16T06:45:43+00:00,1,895,1,0,103492.9,15
+s.pinimg.com,categories Social Networks,0,0.0,1.0,2026-10-16T06:45:55+00:00,1,896,1,0,92861.6,15
+pull-cmaf-f16-tt03.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:46:18+00:00,1,897,1,0,92666.5,15
+xy.fbcdn.net,categories Social Networks,1,0.8,1.0,2026-10-16T06:46:41+00:00,1,898,1,0,92235.8,15
+pull-flv-f77-tt03.fcdn.us.tiktokcdn.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:47:03+00:00,1,899,1,0,103189.9,15
+fallback.c10r.facebook.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:47:27+00:00,1,900,1,0,103586.0,15
+analytics.tiktok.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:47:49+00:00,1,901,1,0,114052.4,15
+m.vk.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:48:12+00:00,1,902,1,0,114093.6,15
+pull-flv-f77-tt02.fcdn.us.tiktokv.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:48:35+00:00,1,903,1,0,113525.9,15
+pull-f5-tt01.tiktokcdn.com,categories Social Networks,1,0.8,1.0,2026-10-16T06:48:57+00:00,1,904,1,0,114132.8,15
+meetup.com,categories Social Networks,0,0.0,1.0,2026-10-16T06:49:10+00:00,1,905,1,0,102993.5,15
+pull-flv-f62-va01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:49:33+00:00,1,906,1,0,103506.6,15
+ct.pinterest.com,categories Social Networks,0,0.0,1.0,2026-10-16T06:49:45+00:00,1,907,1,0,92650.9,15
+pull-cmaf-f16-tt02.fcdn.us.tiktokv.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:50:08+00:00,1,908,1,0,92982.3,15
+behance.net,categories Social Networks,1,0.93,1.0,2026-10-16T06:50:30+00:00,1,909,1,0,92787.1,15
+stumbleupon.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:50:53+00:00,1,910,1,0,103041.4,15
+us-east4-gcp.api.snapchat.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:51:16+00:00,1,911,1,0,103092.3,15
+business.facebook.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:51:39+00:00,1,912,1,0,113876.7,15
+pull-w5-sg01.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:52:01+00:00,1,913,1,0,113174.2,15
+pull-cmaf-f77-tt03.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:52:24+00:00,1,914,1,0,114033.6,15
+b-api.facebook.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:52:47+00:00,1,915,1,0,114060.5,15
+pull-cmaf-l16-sg01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:53:10+00:00,1,916,1,0,114070.3,15
+pull-o5-va01.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:53:32+00:00,1,917,1,0,113677.9,15
+pull-cmaf-f77-sg01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:53:56+00:00,1,918,1,0,114611.3,15
+pull-cmaf-f16-tt01.fcdn.us.tiktokv.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:54:18+00:00,1,919,1,0,113707.6,15
+pull-flv-f77-tt02-tt03.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:54:41+00:00,1,920,1,0,113838.3,15
+mqtt.c10r.facebook.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:55:03+00:00,1,921,1,0,113235.9,15
+pull-cmaf-l10-gcp01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:55:26+00:00,1,922,1,0,113616.4,15
+pinterest.co.uk,categories Social Networks,1,1.0,1.0,2026-10-16T06:55:49+00:00,1,923,1,0,113079.2,15
+pull-w5-sg01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:56:12+00:00,1,924,1,0,113913.5,15
+vk.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:56:34+00:00,1,925,1,0,113757.9,15
+l.facebook.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:56:58+00:00,1,926,1,0,114480.0,15
+pull-cmaf-f77-gcp01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:57:20+00:00,1,927,1,0,113984.6,15
+pull-cmaf-f16-va01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:57:43+00:00,1,928,1,0,114278.4,15
+pull-o5-sg01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:58:06+00:00,1,929,1,0,114346.7,15
+pull-flv-f77-tt01.fcdn.us.tiktokv.com,categories Social Networks,1,0.87,1.0,2026-10-16T06:58:28+00:00,1,930,1,0,113105.5,15
+pull-flv-f77-tt01-tt03.fcdn.eu.tiktokcdn.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:58:52+00:00,1,931,1,0,113723.0,15
+syndication.twitter.com,categories Social Networks,1,1.0,1.0,2026-10-16T06:59:14+00:00,1,932,1,0,113563.5,15
+pull-flv-l16-gcp01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T06:59:37+00:00,1,933,1,0,113453.5,15
+pull-q5-sg01.tiktokcdn.com,categories Social Networks,1,1.0,1.0,2026-10-16T07:00:00+00:00,1,934,1,0,113256.8,15
+fb.me,categories Social Networks,1,0.87,1.0,2026-10-16T07:00:22+00:00,1,935,1,0,113647.8,15
+pull-flv-f77-tt01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T07:00:45+00:00,1,936,1,0,113739.0,15
+facebook.com,categories Social Networks,1,0.87,1.0,2026-10-16T07:01:08+00:00,1,937,1,0,114327.9,15
+dgw.c10r.facebook.com,categories Social Networks,1,0.93,1.0,2026-10-16T07:01:31+00:00,1,938,1,0,113999.9,15
+pull-q5-gcp01.tiktokcdn.com,categories Social Networks,1,1.0,1.0,2026-10-16T07:01:53+00:00,1,939,1,0,113589.6,15
+pull-w5-gcp01.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T07:02:16+00:00,1,940,1,0,114006.2,15
+pull-f5-tt03.tiktokcdn.com,categories Social Networks,1,0.87,1.0,2026-10-16T07:02:39+00:00,1,941,1,0,113973.0,15
+fb.watch,categories Social Networks,0,0.0,1.0,2026-10-16T07:02:51+00:00,1,942,1,0,102006.8,15
+pull-f5-vr-va01.tiktokcdn.com,categories Social Networks,1,1.0,1.0,2026-10-16T07:03:14+00:00,1,943,1,0,103457.6,15
+pull-f5-sg01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T07:03:37+00:00,1,944,1,0,103589.6,15
+analytics.twitter.com,categories Social Networks,1,0.8,1.0,2026-10-16T07:04:00+00:00,1,945,1,0,103460.1,15
+api.snapchat.com,categories Social Networks,1,0.93,1.0,2026-10-16T07:04:22+00:00,1,946,1,0,102934.5,15
+instagram.com,categories Social Networks,1,1.0,1.0,2026-10-16T07:04:45+00:00,1,947,1,0,113502.3,15
+m.ok.ru,categories Social Networks,1,0.93,1.0,2026-10-16T07:05:08+00:00,1,948,1,0,113824.0,15
+pinterest.com,categories Social Networks,0,0.0,1.0,2026-10-16T07:05:20+00:00,1,949,1,0,102576.6,15
+star.c10r.facebook.com,categories Social Networks,1,0.93,1.0,2026-10-16T07:05:42+00:00,1,950,1,0,102106.3,15
+app-analytics-v2.snapchat.com,categories Social Networks,1,0.93,1.0,2026-10-16T07:06:05+00:00,1,951,1,0,103127.6,15
+web.facebook.com,categories Social Networks,1,1.0,1.0,2026-10-16T07:08:54+00:00,1,952,1,0,248692.4,14
+lookaside.facebook.com,categories Social Networks,1,0.93,1.0,2026-10-16T07:13:03+00:00,1,953,1,0,474685.7,14
+pull-f5-tt02.fcdn.us.tiktokv.com,categories Social Networks,1,0.93,1.0,2026-10-16T07:17:12+00:00,1,954,1,0,711906.9,14
+skyrock.com,categories Social Networks,0,0.07,1.0,2026-10-16T07:21:21+00:00,1,955,1,0,935995.1,14
+pull-flv-l10-gcp01.tiktokcdn.com,categories Social Networks,1,0.93,1.0,2026-10-16T07:25:30+00:00,1,956,1,0,1164910.1,14
+duplex.snapchat.com,categories Social Networks,1,1.0,1.0,2026-10-16T07:25:30+00:00,1,957,1,0,996087.6,14
+app.snapchat.com,categories Social Networks,1,1.0,1.0,2026-10-16T07:25:30+00:00,1,958,1,0,747489.0,14
+odnoklassniki.ru,categories Social Networks,1,0.92,1.0,2026-10-16T07:25:30+00:00,1,959,1,0,497940.6,13
+connect.facebook.net,categories Social Networks,0,0.0,1.0,2026-10-16T07:25:31+00:00,1,960,1,0,250205.5,13
+pull-f5-sg01.fcdn.eu.tiktokcdn.com,categories Social Networks,1,0.85,1.0,2026-10-16T07:29:40+00:00,1,961,1,0,249247.4,13
+pull-w5-va01.fcdn.eu.tiktokcdn.com,categories Social Networks,1,1.0,1.0,2026-10-16T07:33:49+00:00,1,962,1,0,498569.0,13
+pinterest.ph,categories Social Networks,1,0.92,1.0,2026-10-16T07:37:58+00:00,1,963,1,0,747668.9,13
+service.weibo.com,categories Social Networks,1,1.0,1.0,2026-10-16T07:37:58+00:00,1,964,1,0,745323.1,13
+tiktok.com,categories Social Networks,1,0.85,1.0,2026-10-16T07:37:58+00:00,1,965,1,0,744314.8,13
+p16-sign-sg.tiktokcdn.com,categories Social Networks,1,1.0,1.0,2026-10-16T07:37:58+00:00,1,966,1,0,497697.7,13
+pull-hls-l77-gcp01.tiktokcdn.com,categories Social Networks,1,0.92,1.0,2026-10-16T07:37:58+00:00,1,967,1,0,244605.5,13
+escortalligator.com.listcrawler.eu,categories Adult Themes,1,0.92,1.0,2026-10-16T07:38:21+00:00,1,968,0,0,23013.7,13
+www.omegle.com,categories Adult Themes,0,0.0,1.0,2026-10-16T07:38:33+00:00,1,969,1,0,34960.3,13
+9gag.com,categories Adult Themes,1,1.0,1.0,2026-10-16T07:38:56+00:00,1,970,1,0,57589.9,13
+skokka.com,categories Adult Themes,1,0.92,1.0,2026-10-16T07:39:18+00:00,1,971,1,0,79823.6,13
+s.dto.jp,categories Adult Themes,1,0.85,1.0,2026-10-16T07:39:41+00:00,1,972,1,0,102617.9,13
+express.de,categories Adult Themes,1,0.92,1.0,2026-10-16T07:40:15+00:00,1,973,1,0,114112.9,13
+www.cityheaven.net,categories Adult Themes,0,0.08,1.0,2026-10-16T07:41:05+00:00,1,974,1,0,151449.2,13
+etoote.com,categories Adult Themes,0,0.0,1.0,2026-10-16T07:41:16+00:00,1,975,1,0,139721.0,13
+4chan.org,categories Adult Themes,1,0.92,1.0,2026-10-16T07:41:38+00:00,1,976,1,0,139875.7,13
+fatalmodel.com,categories Adult Themes,1,0.92,1.0,2026-10-16T07:41:59+00:00,1,977,1,0,138241.3,13
+escortbabylon.net,categories Adult Themes,0,0.0,1.0,2026-10-16T07:42:10+00:00,1,978,1,0,114731.8,13
+destacamos.com,categories Adult Themes,1,1.0,1.0,2026-10-16T07:42:32+00:00,1,979,1,0,86738.3,13
+jimdosite.com,categories Adult Themes,1,0.92,1.0,2026-10-16T07:42:54+00:00,1,980,1,0,97324.9,13
+shahvani.com,categories Adult Themes,1,1.0,1.0,2026-10-16T07:43:15+00:00,1,981,1,0,96118.4,13
+cosmopolitan.com,categories Adult Themes,1,0.92,1.0,2026-10-16T07:44:06+00:00,1,982,1,0,125948.3,13
+cityheaven.net,categories Adult Themes,0,0.08,1.0,2026-10-16T07:44:55+00:00,1,983,1,0,164257.1,13
+www.linkedin.com,categories Professional Networking,0,0.0,0.9,2026-10-16T07:45:08+00:00,1,984,0,0,12472.3,13
+ads.linkedin.com,categories Professional Networking,0,0.0,0.84,2026-10-16T07:45:20+00:00,1,985,0,0,24922.4,13
+yammer.com,categories Professional Networking,0,0.0,0.78,2026-10-16T07:45:32+00:00,1,986,0,0,36666.5,13
+in.linkedin.com,categories Professional Networking,0,0.0,0.72,2026-10-16T07:45:45+00:00,1,987,0,0,49376.9,13
+fr.linkedin.com,categories Professional Networking,0,0.0,0.67,2026-10-16T07:45:56+00:00,1,988,0,0,61166.5,13
+tiny.cc,categories Redirect,1,0.92,1.0,2026-10-16T07:46:19+00:00,1,989,0,0,71706.9,13
+rebrand.ly,categories Redirect,1,0.92,1.0,2026-10-16T07:46:43+00:00,1,990,1,0,82700.1,13
+bitly.com,categories Redirect,1,0.85,1.0,2026-10-16T07:47:05+00:00,1,991,1,0,93204.3,13
+cutt.ly,categories Redirect,1,0.92,1.0,2026-10-16T07:47:28+00:00,1,992,1,0,102224.3,13
+ojrq.net,categories Redirect,0,0.0,1.0,2026-10-16T07:47:40+00:00,1,993,1,0,103666.6,13
+kqzyfj.com,categories Redirect,0,0.0,0.92,2026-10-16T07:47:52+00:00,1,994,1,0,92533.3,13
+shorturl.at,categories Redirect,1,0.92,1.0,2026-10-16T07:48:15+00:00,1,995,0,0,91751.4,13
+lc.chat,categories Redirect,0,0.0,0.89,2026-10-16T07:48:27+00:00,1,996,1,0,81350.6,13
+tinyurl.com,categories Redirect,1,1.0,0.99,2026-10-16T07:48:50+00:00,1,997,0,0,81850.0,13
+avito.st,categories Redirect,0,0.0,0.88,2026-10-16T07:49:02+00:00,1,998,0,0,81288.1,13
+expressvpn.com,categories P2P,1,1.0,1.0,2026-10-16T07:49:25+00:00,1,999,0,0,92919.6,13
+ow.ly,categories Redirect,1,0.92,1.0,2026-10-16T07:49:48+00:00,1,1000,0,0,91365.7,13
+nordvpn.com,categories P2P,1,1.0,1.0,2026-10-16T07:50:10+00:00,1,1001,1,0,101775.1,13
+is.gd,categories Redirect,1,0.92,1.0,2026-10-16T07:50:33+00:00,1,1002,1,0,101638.3,13
+www.jiocinema.com,categories Television,1,1.0,0.98,2026-10-16T07:50:56+00:00,1,1003,1,0,113401.1,13
+hola.org,categories P2P,1,0.92,1.0,2026-10-16T07:51:19+00:00,1,1004,1,0,112143.9,13
+bittorrent.com,categories P2P,0,0.0,1.0,2026-10-16T07:51:31+00:00,1,1005,1,0,102734.9,13
+cyberghostvpn.com,categories P2P,1,0.85,1.0,2026-10-16T07:51:54+00:00,1,1006,1,0,102966.9,13
+urban-vpn.com,categories P2P,1,0.92,1.0,2026-10-16T07:52:17+00:00,1,1007,1,0,100329.9,13
+itv.com,categories Television,1,1.0,1.0,2026-10-16T07:52:40+00:00,1,1008,0,0,23512.7,13
+ardmediathek.de,categories Television,1,0.92,1.0,2026-10-16T07:53:03+00:00,1,1009,1,0,45691.5,13
+secure.netflix.com,categories Television,1,1.0,1.0,2026-10-16T07:53:25+00:00,1,1010,1,0,68549.9,13
+newsdig.tbs.co.jp,categories Television,1,1.0,1.0,2026-10-16T07:53:48+00:00,1,1011,1,0,91217.3,13
+vix.com,categories Television,0,0.0,1.0,2026-10-16T07:54:00+00:00,1,1012,1,0,103658.3,13
+rtve.es,categories Television,0,0.0,0.99,2026-10-16T07:54:13+00:00,1,1013,1,0,92417.7,13
+uiboot.netflix.com,categories Television,1,0.92,1.0,2026-10-16T07:54:36+00:00,1,1014,1,0,93105.6,13
+spbtv.com,categories Television,1,1.0,1.0,2026-10-16T07:55:26+00:00,1,1015,1,0,121013.5,13
+tamildhool.net,categories Television,0,0.0,1.0,2026-10-16T07:55:39+00:00,1,1016,1,0,110985.2,13
+tvbs.com.tw,categories Television,0,0.0,0.94,2026-10-16T07:55:51+00:00,1,1017,1,0,110293.5,13
+nbc.com,categories Television,1,0.92,0.97,2026-10-16T07:56:14+00:00,1,1018,1,0,120736.3,13
+filmaffinity.com,categories Television,1,1.0,1.0,2026-10-16T07:56:37+00:00,1,1019,1,0,121036.7,13
+prod.netflix.com,categories Television,1,1.0,1.0,2026-10-16T07:57:00+00:00,1,1020,1,0,93218.0,13
+1tv.ru,categories Television,1,0.86,1.0,2026-10-16T07:57:23+00:00,1,1021,1,0,104282.9,14
+v.qq.com,categories Television,1,0.86,1.0,2026-10-16T07:57:45+00:00,1,1022,1,0,114685.8,14
+fox.com,categories Television,0,0.0,1.0,2026-10-16T07:57:58+00:00,1,1023,1,0,104015.6,14
+nrdp-ipv6.prod.ftl.netflix.com,categories Television,1,0.93,1.0,2026-10-16T07:58:21+00:00,1,1024,1,0,103916.9,14
+foodnetwork.com,categories Television,0,0.0,1.0,2026-10-16T07:58:33+00:00,1,1025,1,0,92917.8,14
+kino.de,categories Television,1,1.0,1.0,2026-10-16T07:58:55+00:00,1,1026,1,0,92091.5,14
+vrt.be,categories Television,0,0.0,0.98,2026-10-16T07:59:07+00:00,1,1027,1,0,81762.2,14
+plex.tv,categories Television,0,0.0,0.94,2026-10-16T07:59:20+00:00,1,1028,1,0,81800.1,14
+api-global.netflix.com,categories Television,1,0.86,0.95,2026-10-16T07:59:43+00:00,1,1029,1,0,81830.5,14
+tmdb.org,categories Television,1,0.93,0.98,2026-10-16T08:00:05+00:00,1,1030,1,0,92643.5,14
+spectrum.net,categories Television,0,0.0,0.94,2026-10-16T08:00:17+00:00,1,1031,1,0,81624.7,14
+zdf.de,categories Television,0,0.0,0.9,2026-10-16T08:00:30+00:00,1,1032,1,0,82291.0,14
+www.ynet.co.il,categories Video Streaming,1,1.0,0.95,2026-10-16T08:00:52+00:00,1,1033,0,0,92060.4,14
+samba.tv,categories Television,0,0.0,0.86,2026-10-16T08:01:05+00:00,1,1034,0,0,81866.1,14
+fubo.tv,categories Television,0,0.0,0.82,2026-10-16T08:01:17+00:00,1,1035,0,0,71693.0,14
+msnbc.com,categories Video Streaming,0,0.0,0.89,2026-10-16T08:01:29+00:00,1,1036,1,0,71736.8,14
+epicurious.com,categories Personal Blogs,0,0.0,0.74,2026-10-16T08:01:41+00:00,1,1037,0,0,71139.7,14
+www.goal.com,categories Video Streaming,0,0.0,0.85,2026-10-16T08:01:53+00:00,1,1038,1,0,60187.5,14
+deccanherald.com,categories Video Streaming,0,0.0,0.81,2026-10-16T08:02:06+00:00,1,1039,1,0,61059.8,14
+hindustantimes.com,categories Video Streaming,0,0.0,0.77,2026-10-16T08:02:18+00:00,1,1040,0,0,60755.0,14
+ably.io,categories Personal Blogs,0,0.0,0.67,2026-10-16T08:02:30+00:00,1,1041,0,0,60905.7,14
+telecinco.es,categories Video Streaming,0,0.14,0.75,2026-10-16T08:02:53+00:00,1,1042,0,0,72039.3,14
+servidoresdns.net,categories Forums,0,0.0,0.74,2026-10-16T08:03:05+00:00,1,1043,1,0,71872.0,14
+chime.aws,categories Forums,0,0.0,0.69,2026-10-16T08:03:16+00:00,1,1044,0,0,70351.6,14
+wowhead.com,categories Forums,0,0.0,0.64,2026-10-16T08:03:28+00:00,1,1045,0,0,70226.2,14
+cnblogs.com,categories Forums,0,0.0,0.59,2026-10-16T08:03:39+00:00,1,1046,0,0,69300.1,14
+thingiverse.com,categories Forums,0,0.0,0.55,2026-10-16T08:03:51+00:00,1,1047,0,0,57845.4,14
+vivox.com,categories Chat,0,0.0,0.75,2026-10-16T08:04:02+00:00,1,1048,0,0,57041.6,14
+roblox.com,categories Chat,0,0.0,0.72,2026-10-16T08:04:14+00:00,1,1049,0,0,57684.9,14
+onlar.az,categories Chat,0,0.0,0.69,2026-10-16T08:04:25+00:00,1,1050,0,0,56947.4,14
+jivo.ru,categories Chat,0,0.0,0.66,2026-10-16T08:04:37+00:00,1,1051,0,0,57539.0,14
+www.roblox.com,categories Chat,0,0.0,0.64,2026-10-16T08:04:48+00:00,1,1052,0,0,54571.4,14
+sharechat.com,categories Chat,0,0.0,0.62,2026-10-16T08:05:00+00:00,1,1053,0,0,56793.3,14
+elo7.com.br,categories Arts & Crafts,0,0.0,0.0,2026-10-16T08:05:20+00:00,1,1054,0,0,65591.4,14
+joann.com,categories Arts & Crafts,0,0.0,0.0,2026-10-16T08:05:31+00:00,1,1055,0,0,65712.6,14
+gunbroker.com,categories Weapons,1,0.93,0.74,2026-10-16T08:05:53+00:00,1,1056,0,0,75462.5,14
+nasa.gov,categories Space & Astronomy,0,0.0,0.0,2026-10-16T08:06:04+00:00,1,1057,0,0,75018.6,14
+palmettostatearmory.com,categories Weapons,0,0.0,0.31,2026-10-16T08:06:16+00:00,1,1058,0,0,76655.1,14
+space.com,categories Space & Astronomy,0,0.0,0.0,2026-10-16T08:06:27+00:00,1,1059,0,0,61771.2,14
+cbsi.com,categories Television,0,0.0,0.77,2026-10-16T08:06:39+00:00,1,1060,1,0,34825.7,14
+www.programme-tv.net,categories Television,0,0.14,0.75,2026-10-16T08:07:06+00:00,1,1061,1,0,62026.3,14
+sky.com,categories Television,0,0.0,0.71,2026-10-16T08:07:18+00:00,1,1062,1,0,73786.1,14
+eonline.com,categories Television,1,1.0,0.74,2026-10-16T08:08:08+00:00,1,1063,0,0,111997.5,14
+viki.com,categories Television,1,0.93,0.77,2026-10-16T08:08:30+00:00,1,1064,0,0,122151.6,14
+marvel.com,categories Video Streaming,0,0.0,0.72,2026-10-16T08:08:42+00:00,1,1065,0,0,122281.5,14
+serebii.net,categories Video Streaming,0,0.0,0.69,2026-10-16T08:08:52+00:00,1,1066,0,0,106051.5,14
+www.corriere.it,categories Video Streaming,0,0.0,0.66,2026-10-16T08:09:04+00:00,1,1067,0,0,105825.1,14
+mirror.co.uk,categories Video Streaming,1,1.0,0.71,2026-10-16T08:12:18+00:00,1,1068,0,0,249575.5,14
+tsn.ua,categories Video Streaming,1,0.93,0.75,2026-10-16T08:16:27+00:00,1,1069,0,0,476442.8,14
+xfinity.com,categories Television,0,0.0,0.74,2026-10-16T08:20:36+00:00,1,1070,1,0,714148.4,14
+nrdp.prod.ftl.netflix.com,categories Television,1,0.86,0.76,2026-10-16T08:24:45+00:00,1,1071,0,0,952214.7,14
+nrdp52-appboot.netflix.com,categories Television,1,0.93,0.79,2026-10-16T08:28:54+00:00,1,1072,1,0,1189935.6,14
+pluto.tv,categories Television,0,0.0,0.76,2026-10-16T08:28:54+00:00,1,1073,1,0,996065.0,14
+tvsquared.com,categories Television,0,0.0,0.72,2026-10-16T08:28:54+00:00,1,1074,1,0,747214.2,14
+skylinewebcams.com,categories Video Streaming,0,0.0,0.72,2026-10-16T08:28:54+00:00,1,1075,1,0,498271.3,14
+directv.com,categories Television,1,0.93,0.75,2026-10-16T08:28:54+00:00,1,1076,1,0,249238.5,14
+tvspielfilm.de,categories Television,1,0.86,0.78,2026-10-16T08:29:17+00:00,1,1077,1,0,23055.7,14
+abc.com,categories Television,1,1.0,0.81,2026-10-16T08:30:06+00:00,1,1078,1,0,72151.1,14
+lgappstv.com,categories Television,0,0.0,0.78,2026-10-16T08:30:18+00:00,1,1079,1,0,83617.7,14
+ftl.netflix.com,categories Television,1,0.79,0.8,2026-10-16T08:30:40+00:00,1,1080,1,0,105913.4,14
+atv.com.tr,categories Television,0,0.14,0.78,2026-10-16T08:31:30+00:00,1,1081,1,0,156062.0,14
+sbs.com.au,categories Television,0,0.0,0.74,2026-10-16T08:31:42+00:00,1,1082,1,0,144450.4,14
+tubitv.com,categories Television,1,0.93,0.77,2026-10-16T08:32:04+00:00,1,1083,1,0,117356.5,14
+pbs.org,categories Television,1,0.93,0.8,2026-10-16T08:32:25+00:00,1,1084,1,0,127782.6,14
+comcast.net,categories Television,0,0.0,0.77,2026-10-16T08:32:37+00:00,1,1085,1,0,116609.9,14
+rtl.de,categories Television,0,0.14,0.75,2026-10-16T08:33:27+00:00,1,1086,1,0,116748.0,14
+www.hotstar.com,categories Television,1,0.86,0.78,2026-10-16T08:33:48+00:00,1,1087,1,0,126859.7,14
+channel4.com,categories Television,1,1.0,0.81,2026-10-16T08:34:11+00:00,1,1088,1,0,126981.6,14
+hulu.com,categories Television,1,0.93,0.84,2026-10-16T08:34:32+00:00,1,1089,1,0,126850.5,14
+arte.tv,categories Television,1,1.0,0.87,2026-10-16T08:34:54+00:00,1,1090,1,0,136885.5,14
+hbo.com,categories Television,1,1.0,0.9,2026-10-16T08:35:44+00:00,1,1091,1,0,137158.1,14
+france.tv,categories Television,0,0.0,0.87,2026-10-16T08:35:56+00:00,1,1092,1,0,127272.8,14
+zee5.com,categories Television,1,0.86,0.9,2026-10-16T08:36:17+00:00,1,1093,1,0,126493.6,14
+vidio.com,categories Television,1,0.93,0.92,2026-10-16T08:36:40+00:00,1,1094,1,0,127217.6,14
+tokyvideo.com,categories Television,1,0.93,0.95,2026-10-16T08:37:02+00:00,1,1095,1,0,127918.1,14
+mgtv.com,categories Television,1,0.93,0.97,2026-10-16T08:37:23+00:00,1,1096,1,0,98994.7,14
+history.com,categories Television,0,0.0,0.94,2026-10-16T08:37:34+00:00,1,1097,1,0,98586.9,14
+discovery.com,categories Television,0,0.0,0.91,2026-10-16T08:37:46+00:00,1,1098,1,0,88943.3,14
+tv-asahi.co.jp,categories Television,0,0.0,0.88,2026-10-16T08:37:57+00:00,1,1099,1,0,76976.4,14
+logs.netflix.com,categories Television,1,1.0,0.91,2026-10-16T08:38:19+00:00,1,1100,1,0,77530.2,14
+www.hulu.com,categories Television,1,1.0,0.94,2026-10-16T08:38:41+00:00,1,1101,1,0,77647.0,14
+plutotv.net,categories Television,0,0.0,0.91,2026-10-16T08:38:52+00:00,1,1102,1,0,77762.5,14
+jiocinema.com,categories Television,1,0.93,0.94,2026-10-16T08:41:22+00:00,1,1103,1,0,215822.9,14
+sling.com,categories Television,0,0.0,0.91,2026-10-16T08:41:33+00:00,1,1104,1,0,215722.4,14
+www.primevideo.com,categories Television,0,0.0,0.88,2026-10-16T08:41:45+00:00,1,1105,1,0,205143.1,14
+disney.co.jp,categories Television,0,0.0,0.85,2026-10-16T08:41:56+00:00,1,1106,1,0,195274.1,14
+sonyliv.com,categories Television,0,0.0,0.82,2026-10-16T08:42:07+00:00,1,1107,1,0,195267.7,14
+tf1.fr,categories Television,1,0.86,0.85,2026-10-16T08:42:29+00:00,1,1108,1,0,67039.2,14
+hotstar.com,categories Television,1,0.93,0.87,2026-10-16T08:42:51+00:00,1,1109,1,0,78285.3,14
+daserste.de,categories Television,0,0.0,0.85,2026-10-16T08:43:02+00:00,1,1110,1,0,77713.3,14
+peacocktv.com,categories Television,0,0.0,0.82,2026-10-16T08:43:14+00:00,1,1111,1,0,77748.5,14
+amazonvideo.com,categories Television,0,0.0,0.79,2026-10-16T08:43:26+00:00,1,1112,1,0,77617.2,14
+m.imdb.com,categories Television,0,0.0,0.77,2026-10-16T08:43:37+00:00,1,1113,1,0,67466.2,14
+mediaset.it,categories Television,1,1.0,0.8,2026-10-16T08:43:59+00:00,1,1114,1,0,67175.3,14
+telewebion.com,categories Television,0,0.0,0.78,2026-10-16T08:44:18+00:00,1,1115,1,0,75920.3,14
+programme-tv.net,categories Television,0,0.14,0.76,2026-10-16T08:44:44+00:00,1,1116,1,0,89886.0,14
+paramountplus.com,categories Television,0,0.0,0.74,2026-10-16T08:44:56+00:00,1,1117,1,0,89884.9,14
+www.paramountplus.com,categories Television,0,0.0,0.72,2026-10-16T08:45:07+00:00,1,1118,1,0,90607.5,14
+olympics.com,categories Television,0,0.0,0.7,2026-10-16T08:45:19+00:00,1,1119,1,0,79882.7,14
+flingo.tv,categories Television,0,0.0,0.67,2026-10-16T08:45:29+00:00,1,1120,0,0,70987.7,14
+tbs.co.jp,categories Television,1,1.0,0.71,2026-10-16T08:45:52+00:00,1,1121,0,0,67550.9,14
+la7.it,categories Television,0,0.0,0.69,2026-10-16T08:46:03+00:00,1,1122,0,0,65505.2,14
+t.me,categories Instant Messengers,1,0.86,0.77,2026-10-16T08:46:25+00:00,1,1123,0,0,77512.3,14
+whatsapp.net,categories Instant Messengers,1,0.86,0.86,2026-10-16T08:46:47+00:00,1,1124,1,0,88269.3,14
+viber.com,categories Instant Messengers,0,0.14,0.85,2026-10-16T08:47:37+00:00,1,1125,1,0,127761.8,14
+sendbird.com,categories Instant Messengers,0,0.0,0.82,2026-10-16T08:47:48+00:00,1,1126,1,0,116642.5,14
+faq.whatsapp.com,categories Instant Messengers,1,0.86,0.88,2026-10-16T08:48:10+00:00,1,1127,1,0,127577.5,14
+telegram.org,categories Instant Messengers,1,0.93,0.94,2026-10-16T08:48:32+00:00,1,1128,1,0,127116.2,14
+livechatinc.com,categories Instant Messengers,0,0.0,0.91,2026-10-16T08:48:44+00:00,1,1129,1,0,116706.4,14
+web.whatsapp.com,categories Instant Messengers,1,0.79,0.95,2026-10-16T08:49:05+00:00,1,1130,1,0,87781.3,14
+cdn.whatsapp.net,categories Instant Messengers,1,1.0,1.0,2026-10-16T08:49:27+00:00,1,1131,1,0,98658.6,14
+chat.zalo.me,categories Instant Messengers,0,0.0,0.98,2026-10-16T08:49:39+00:00,1,1132,1,0,88241.3,14
+kakao.com,categories Instant Messengers,1,0.93,1.0,2026-10-16T08:50:00+00:00,1,1133,1,0,88525.7,14
+dit.whatsapp.net,categories Instant Messengers,1,1.0,1.0,2026-10-16T08:50:22+00:00,1,1134,1,0,97833.1,14
+loom.com,categories Instant Messengers,0,0.0,1.0,2026-10-16T08:50:34+00:00,1,1135,1,0,88522.5,14
+intercom.io,categories Instant Messengers,0,0.0,1.0,2026-10-16T08:50:45+00:00,1,1136,1,0,77713.6,14
+lin.ee,categories Instant Messengers,0,0.0,0.98,2026-10-16T08:50:56+00:00,1,1137,1,0,77652.9,14
+intercom.com,categories Instant Messengers,0,0.0,0.94,2026-10-16T08:51:08+00:00,1,1138,1,0,67203.2,14
+threema.ch,categories Instant Messengers,1,0.93,0.99,2026-10-16T08:51:29+00:00,1,1139,1,0,66409.8,14
+wechat.com,categories Instant Messengers,0,0.0,0.96,2026-10-16T08:51:41+00:00,1,1140,1,0,67088.1,14
+us-api.asm.skype.com,categories Instant Messengers,0,0.0,0.92,2026-10-16T08:51:52+00:00,1,1141,1,0,67760.8,14
+app.slack.com,categories Instant Messengers,0,0.0,0.89,2026-10-16T08:52:03+00:00,1,1142,1,0,66934.9,14
+cc.skype.com,categories Instant Messengers,0,0.0,0.86,2026-10-16T08:52:15+00:00,1,1143,1,0,67031.1,14
+spot.im,categories Instant Messengers,0,0.0,0.83,2026-10-16T08:52:26+00:00,1,1144,1,0,57023.2,14
+dingtalk.com,categories Instant Messengers,1,1.0,0.89,2026-10-16T08:52:48+00:00,1,1145,1,0,67041.3,14
+line.me,categories Instant Messengers,1,0.86,0.93,2026-10-16T08:53:10+00:00,1,1146,1,0,77393.7,14
+messenger.com,categories Instant Messengers,1,0.93,0.98,2026-10-16T08:53:32+00:00,1,1147,1,0,88526.2,14
+telegram.me,categories Instant Messengers,1,0.93,1.0,2026-10-16T08:53:54+00:00,1,1148,1,0,99137.9,14
+www.whatsapp.com,categories Instant Messengers,1,1.0,1.0,2026-10-16T08:54:16+00:00,1,1149,1,0,109308.5,14
+www.messenger.com,categories Instant Messengers,1,0.86,1.0,2026-10-16T08:54:37+00:00,1,1150,1,0,109475.6,14
+icq.com,categories Instant Messengers,1,0.86,1.0,2026-10-16T08:54:58+00:00,1,1151,1,0,107040.6,14
+m.me,categories Instant Messengers,0,0.0,1.0,2026-10-16T08:55:09+00:00,1,1152,1,0,97491.1,14
+spotim.market,categories Instant Messengers,0,0.0,1.0,2026-10-16T08:55:21+00:00,1,1153,1,0,86960.7,14
+groupme.com,categories Instant Messengers,1,0.86,1.0,2026-10-16T08:55:43+00:00,1,1154,1,0,86787.3,14
+whatsapp.com,categories Instant Messengers,1,0.93,1.0,2026-10-16T08:56:06+00:00,1,1155,1,0,89002.6,14
+edge.skype.com,categories Instant Messengers,0,0.0,1.0,2026-10-16T08:56:18+00:00,1,1156,1,0,80099.6,14
+linecorp.com,categories Instant Messengers,1,0.86,1.0,2026-10-16T08:57:09+00:00,1,1157,1,0,119509.9,14
+mattermost.com,categories Instant Messengers,0,0.0,1.0,2026-10-16T08:57:20+00:00,1,1158,1,0,119551.1,14
+zalo.me,categories Instant Messengers,0,0.0,1.0,2026-10-16T08:57:33+00:00,1,1159,1,0,109558.4,14
+mmx-ds.cdn.whatsapp.net,categories Instant Messengers,1,0.86,1.0,2026-10-16T08:57:55+00:00,1,1160,1,0,105666.3,14
+chat.cdn.whatsapp.net,categories Instant Messengers,1,0.93,1.0,2026-10-16T08:58:19+00:00,1,1161,1,0,118034.7,14
+chat.google.com,categories Instant Messengers,0,0.0,1.0,2026-10-16T08:58:31+00:00,1,1162,1,0,81883.5,14
+tawk.to,categories Instant Messengers,0,0.0,1.0,2026-10-16T08:58:42+00:00,1,1163,1,0,81869.0,14
+discord.com,categories Instant Messengers,1,0.93,1.0,2026-10-16T08:59:07+00:00,1,1164,1,0,94346.7,14
+skype.com,categories Instant Messengers,0,0.0,1.0,2026-10-16T08:59:19+00:00,1,1165,1,0,82285.4,14
+www.onet.pl,categories Video Streaming,1,0.93,0.74,2026-10-16T08:59:42+00:00,1,1166,0,0,23003.4,14
+ctvnews.ca,categories Video Streaming,0,0.0,0.71,2026-10-16T08:59:54+00:00,1,1167,1,0,34599.0,14
+digi24.ro,categories Video Streaming,0,0.0,0.69,2026-10-16T09:00:06+00:00,1,1168,1,0,46894.6,14
+ilfattoquotidiano.it,categories Video Streaming,0,0.0,0.67,2026-10-16T09:00:19+00:00,1,1169,1,0,59987.2,14
+gelderlander.nl,categories Video Streaming,1,1.0,0.71,2026-10-16T09:01:05+00:00,1,1170,0,0,105876.2,14
+espncricinfo.com,categories Video Streaming,0,0.0,0.69,2026-10-16T09:01:16+00:00,1,1171,1,0,93690.9,14
+atptour.com,categories Video Streaming,0,0.0,0.67,2026-10-16T09:01:28+00:00,1,1172,1,0,93965.6,14
+tedata.net,categories Personal Blogs,0,0.0,0.57,2026-10-16T09:01:39+00:00,1,1173,0,0,92553.3,14
+www.blogger.com,categories Personal Blogs,0,0.0,0.53,2026-10-16T09:01:50+00:00,1,1174,0,0,91094.7,14
+googlevideo.com,categories Video Streaming,1,0.93,0.7,2026-10-16T09:02:12+00:00,1,1175,0,0,66686.9,14
+wordpress.com,categories Personal Blogs,1,1.0,0.61,2026-10-16T09:02:34+00:00,1,1176,0,0,78275.2,14
+draft.blogger.com,categories Personal Blogs,0,0.0,0.57,2026-10-16T09:02:45+00:00,1,1177,0,0,77221.7,14
+netflix.com,categories Television,1,0.79,0.71,2026-10-16T09:03:07+00:00,1,1178,0,0,87907.8,14
+prod.ftl.netflix.com,categories Television,1,1.0,0.74,2026-10-16T09:03:28+00:00,1,1179,1,0,98232.0,14
+windstream.net,categories Video Streaming,0,0.0,0.68,2026-10-16T09:03:40+00:00,1,1180,0,0,88072.9,14
+animesuge.to,categories Video Streaming,1,1.0,0.72,2026-10-16T09:04:02+00:00,1,1181,0,0,87584.1,14
+www.washingtonpost.com,categories Video Streaming,1,0.93,0.75,2026-10-16T09:04:24+00:00,1,1182,0,0,98625.4,14
+tv2.dk,categories Video Streaming,1,0.93,0.78,2026-10-16T09:05:14+00:00,1,1183,1,0,127790.8,14
+nova.cz,categories Television,1,1.0,0.76,2026-10-16T09:06:04+00:00,1,1184,0,0,155873.7,14
+mydramalist.com,categories Television,0,0.0,0.74,2026-10-16T09:06:16+00:00,1,1185,0,0,155745.0,14
+nrdp.prod.cloud.netflix.com,categories Television,1,0.86,0.77,2026-10-16T09:06:38+00:00,1,1186,0,0,155820.6,14
+csfd.cz,categories Video Streaming,1,0.86,0.8,2026-10-16T09:06:59+00:00,1,1187,1,0,155803.5,14
+lavanguardia.com,categories Video Streaming,0,0.0,0.78,2026-10-16T09:07:11+00:00,1,1188,1,0,116639.3,14
+storm.mg,categories Video Streaming,1,0.79,0.8,2026-10-16T09:07:33+00:00,1,1189,1,0,88417.2,14
+www.imdb.com,categories Video Streaming,0,0.0,0.78,2026-10-16T09:07:44+00:00,1,1190,1,0,88299.9,14
+oneindia.com,categories Video Streaming,0,0.0,0.76,2026-10-16T09:07:56+00:00,1,1191,1,0,78135.6,14
+myanimelist.net,categories Video Streaming,1,1.0,0.79,2026-10-16T09:08:17+00:00,1,1192,0,0,78043.1,14
+csmonitor.com,categories Video Streaming,0,0.0,0.77,2026-10-16T09:08:29+00:00,1,1193,1,0,77849.5,14
+www.buzzfeed.com,categories Video Streaming,1,0.93,0.79,2026-10-16T09:08:51+00:00,1,1194,1,0,77791.1,14
+liputan6.com,categories Video Streaming,0,0.0,0.78,2026-10-16T09:09:02+00:00,1,1195,1,0,77830.9,14
+joyn.de,categories Television,0,0.0,0.74,2026-10-16T09:09:13+00:00,1,1196,0,0,77079.2,14
+entrepreneur.com,categories Video Streaming,0,0.0,0.76,2026-10-16T09:09:24+00:00,1,1197,1,0,67018.3,14
+jagran.com,categories Video Streaming,1,0.93,0.78,2026-10-16T09:09:46+00:00,1,1198,1,0,76518.8,14
+mlb.com,categories Video Streaming,0,0.0,0.77,2026-10-16T09:09:58+00:00,1,1199,1,0,67124.2,14
+letelegramme.fr,categories Video Streaming,0,0.0,0.75,2026-10-16T09:10:09+00:00,1,1200,1,0,67201.8,14
+eater.com,categories Video Streaming,0,0.0,0.74,2026-10-16T09:10:20+00:00,1,1201,1,0,67259.7,14
+edition.cnn.com,categories Video Streaming,1,0.93,0.76,2026-10-16T09:10:43+00:00,1,1202,1,0,77970.4,14
+rutube.ru,categories Video Streaming,1,1.0,0.78,2026-10-16T09:11:04+00:00,1,1203,1,0,78095.6,14
+voanews.com,categories Video Streaming,1,1.0,0.81,2026-10-16T09:11:26+00:00,1,1204,1,0,88185.7,14
+cbs.com,categories Television,1,0.86,0.77,2026-10-16T09:11:48+00:00,1,1205,0,0,98934.8,14
+iq.com,categories Television,1,1.0,0.79,2026-10-16T09:12:10+00:00,1,1206,0,0,109697.1,14
+ncaa.com,categories Video Streaming,0,0.0,0.79,2026-10-16T09:12:21+00:00,1,1207,1,0,98780.8,14
+skysports.com,categories Video Streaming,0,0.0,0.77,2026-10-16T09:12:33+00:00,1,1208,1,0,88588.8,14
+m.youtube.com,categories Video Streaming,1,0.93,0.79,2026-10-16T09:12:54+00:00,1,1209,0,0,88442.2,14
+warnerbros.com,categories Video Streaming,1,0.93,0.81,2026-10-16T09:13:45+00:00,1,1210,1,0,116461.2,14
+www.netflix.com,categories Television,1,0.86,0.81,2026-10-16T09:14:06+00:00,1,1211,0,0,116519.9,14
+cc.com,categories Television,0,0.0,0.79,2026-10-16T09:14:18+00:00,1,1212,1,0,116638.5,14
+push.prod.netflix.com,categories Television,1,0.93,0.82,2026-10-16T09:14:40+00:00,1,1213,0,0,126972.4,14
+samsungads.com,categories Television,0,0.0,0.79,2026-10-16T09:14:51+00:00,1,1214,1,0,116986.4,14
+handelsblatt.com,categories Video Streaming,0,0.0,0.8,2026-10-16T09:15:03+00:00,1,1215,1,0,77843.5,14
+sonypictures.com,categories Television,1,0.93,0.82,2026-10-16T09:15:24+00:00,1,1216,0,0,77076.9,14
+douyin.com,categories Video Streaming,1,0.79,0.81,2026-10-16T09:15:46+00:00,1,1217,0,0,88194.2,14
+nhk.jp,categories Television,0,0.0,0.8,2026-10-16T09:15:58+00:00,1,1218,1,0,77376.0,14
+huffingtonpost.com,categories Video Streaming,0,0.0,0.8,2026-10-16T09:16:09+00:00,1,1219,1,0,77401.5,14
+api.amazonvideo.com,categories Television,0,0.0,0.78,2026-10-16T09:16:21+00:00,1,1220,1,0,77882.7,14
+comcast.com,categories Television,0,0.0,0.76,2026-10-16T09:16:32+00:00,1,1221,0,0,67991.9,14
+leiniao.com,categories Television,0,0.0,0.74,2026-10-16T09:16:43+00:00,1,1222,0,0,56306.9,14
+raiplay.it,categories Television,0,0.0,0.72,2026-10-16T09:16:54+00:00,1,1223,0,0,56362.6,14
+nflxvideo.net,categories Television,0,0.0,0.7,2026-10-16T09:17:06+00:00,1,1224,0,0,56772.3,14
+post-gazette.com,categories Video Streaming,0,0.14,0.79,2026-10-16T09:17:56+00:00,1,1225,1,0,95666.0,14
+dailyrecord.co.uk,categories Video Streaming,0,0.0,0.77,2026-10-16T09:18:07+00:00,1,1226,1,0,94836.6,14
+www.aajtak.in,categories Video Streaming,0,0.0,0.76,2026-10-16T09:18:19+00:00,1,1227,1,0,95865.2,14
+elespanol.com,categories Video Streaming,0,0.0,0.75,2026-10-16T09:18:30+00:00,1,1228,1,0,95725.9,14
+ifilo.net,categories Video Streaming,0,0.0,0.73,2026-10-16T09:18:41+00:00,1,1229,1,0,95183.8,14
+bt.co,categories Video Streaming,0,0.0,0.72,2026-10-16T09:18:52+00:00,1,1230,1,0,56274.1,14
+www.reuters.com,categories Video Streaming,0,0.0,0.71,2026-10-16T09:19:04+00:00,1,1231,1,0,57071.8,14
+vine.co,categories Video Streaming,1,0.93,0.73,2026-10-16T09:19:26+00:00,1,1232,1,0,67371.1,14
+g1.globo.com,categories Video Streaming,1,1.0,0.75,2026-10-16T09:20:16+00:00,1,1233,1,0,105998.8,14
+vox.com,categories Video Streaming,1,0.93,0.77,2026-10-16T09:20:38+00:00,1,1234,1,0,116936.3,14
+afp.com,categories Video Streaming,0,0.0,0.75,2026-10-16T09:20:49+00:00,1,1235,1,0,116985.0,14
+more.tv,categories Television,1,0.93,0.73,2026-10-16T09:21:11+00:00,1,1236,0,0,127010.4,14
+goal.com,categories Video Streaming,0,0.0,0.74,2026-10-16T09:21:22+00:00,1,1237,1,0,116151.6,14
+bbc.com,categories Video Streaming,1,0.93,0.76,2026-10-16T09:21:44+00:00,1,1238,1,0,88114.6,14
+www.bbc.com,categories Video Streaming,1,1.0,0.78,2026-10-16T09:22:06+00:00,1,1239,1,0,88405.5,14
+bitchute.com,categories Video Streaming,1,0.86,0.79,2026-10-16T09:22:17+00:00,1,1240,1,0,87644.4,14
+today.com,categories Video Streaming,0,0.0,0.78,2026-10-16T09:22:29+00:00,1,1241,1,0,77313.3,14
+nflximg.com,categories Television,0,0.0,0.71,2026-10-16T09:22:40+00:00,1,1242,0,0,77736.3,14
+ft.com,categories Video Streaming,0,0.0,0.77,2026-10-16T09:22:52+00:00,1,1243,1,0,67299.0,14
+wired.com,categories Video Streaming,0,0.0,0.76,2026-10-16T09:23:03+00:00,1,1244,1,0,56094.8,14
+tmz.com,categories Video Streaming,1,0.93,0.77,2026-10-16T09:23:25+00:00,1,1245,1,0,67465.1,14
+theage.com.au,categories Video Streaming,0,0.0,0.76,2026-10-16T09:23:36+00:00,1,1246,1,0,67610.7,14
+dhnet.be,categories Video Streaming,0,0.0,0.75,2026-10-16T09:23:47+00:00,1,1247,1,0,67074.8,14
+timesnownews.com,categories Video Streaming,1,0.93,0.77,2026-10-16T09:24:09+00:00,1,1248,1,0,77720.2,14
+repubblica.it,categories Video Streaming,0,0.0,0.75,2026-10-16T09:24:21+00:00,1,1249,1,0,78374.9,14
+ilgiornale.it,categories Video Streaming,0,0.0,0.74,2026-10-16T09:24:32+00:00,1,1250,1,0,66901.3,14
+m.cafe.daum.net,categories Video Streaming,0,0.0,0.73,2026-10-16T09:24:43+00:00,1,1251,1,0,66662.8,14
+thehindu.com,categories Video Streaming,0,0.0,0.72,2026-10-16T09:24:55+00:00,1,1252,1,0,67547.6,14
+washingtonpost.com,categories Video Streaming,1,1.0,0.74,2026-10-16T09:25:17+00:00,1,1253,1,0,67830.9,14
+sports.ru,categories Video Streaming,0,0.0,0.73,2026-10-16T09:25:28+00:00,1,1254,1,0,67269.3,14
+fanpage.it,categories Video Streaming,0,0.0,0.72,2026-10-16T09:25:39+00:00,1,1255,1,0,67697.5,14
+sky.it,categories Television,0,0.0,0.69,2026-10-16T09:25:51+00:00,1,1256,0,0,67809.4,14
+wikia.com,categories Television,0,0.0,0.67,2026-10-16T09:26:05+00:00,1,1257,0,0,69979.7,14
+ensonhaber.com,categories Video Streaming,1,0.93,0.73,2026-10-16T09:26:53+00:00,1,1258,1,0,95365.0,14
+cctv.com,categories Video Streaming,0,0.0,0.72,2026-10-16T09:27:05+00:00,1,1259,1,0,73741.5,14
+coub.com,categories Video Streaming,1,0.86,0.74,2026-10-16T09:27:27+00:00,1,1260,1,0,95580.2,14
+preapp.prod.partner.netflix.net,categories Video Streaming,0,0.0,0.73,2026-10-16T09:27:38+00:00,1,1261,1,0,107134.0,14
+mako.co.il,categories Video Streaming,1,1.0,0.74,2026-10-16T09:28:29+00:00,1,1262,1,0,143300.1,14
+nine.com.au,categories Video Streaming,0,0.0,0.73,2026-10-16T09:28:40+00:00,1,1263,1,0,107671.2,14
+stuff.co.nz,categories Video Streaming,1,1.0,0.75,2026-10-16T09:29:31+00:00,1,1264,1,0,145813.3,14
+ilmessaggero.it,categories Video Streaming,1,1.0,0.77,2026-10-16T09:30:21+00:00,1,1265,1,0,174578.6,14
+ilsole24ore.com,categories Video Streaming,0,0.0,0.76,2026-10-16T09:30:32+00:00,1,1266,1,0,173855.4,14
+www.marca.com,categories Video Streaming,0,0.0,0.75,2026-10-16T09:30:44+00:00,1,1267,1,0,134694.4,14
+pomorska.pl,categories Video Streaming,0,0.0,0.74,2026-10-16T09:30:55+00:00,1,1268,1,0,134864.4,14
+c-span.org,categories Video Streaming,0,0.0,0.73,2026-10-16T09:33:40+00:00,1,1269,1,0,249712.7,14
+theglobeandmail.com,categories Video Streaming,0,0.0,0.72,2026-10-16T09:37:49+00:00,1,1270,1,0,447717.7,14
+techtudo.com.br,categories Video Streaming,0,0.0,0.71,2026-10-16T09:41:58+00:00,1,1271,1,0,686146.3,14
+sfgate.com,categories Video Streaming,0,0.0,0.7,2026-10-16T09:42:58+00:00,1,1272,1,0,733899.5,14
+delfi.ee,categories Video Streaming,1,1.0,0.72,2026-10-16T09:47:06+00:00,1,1273,1,0,971035.5,14
+aftonbladet.se,categories Video Streaming,0,0.0,0.71,2026-10-16T09:47:06+00:00,1,1274,1,0,805813.7,14
+delish.com,categories Video Streaming,0,0.0,0.7,2026-10-16T09:47:06+00:00,1,1275,1,0,557061.1,14
+livechat.com,categories Chat,0,0.14,0.58,2026-10-16T09:47:06+00:00,1,1276,0,0,307945.3,14
+mfms.ru,categories Chat,0,0.0,0.56,2026-10-16T09:47:06+00:00,1,1277,0,0,248633.8,14
+discord.media,categories Chat,1,0.86,0.69,2026-10-16T09:47:30+00:00,1,1278,0,0,24042.5,14
+crisp.chat,categories Chat,0,0.0,0.67,2026-10-16T09:47:44+00:00,1,1279,0,0,37552.7,14
+kik.com,categories Chat,0,0.14,0.67,2026-10-16T09:48:01+00:00,1,1280,0,0,55168.8,14
+sports.yahoo.com,categories Video Streaming,0,0.0,0.69,2026-10-16T09:48:30+00:00,1,1281,1,0,28994.3,14
+walla.co.il,categories Video Streaming,1,1.0,0.71,2026-10-16T09:49:03+00:00,1,1282,1,0,61498.4,14
+wn.com,categories Video Streaming,1,0.93,0.72,2026-10-16T09:49:25+00:00,1,1283,1,0,83285.0,14
+www.climatempo.com.br,categories Video Streaming,0,0.0,0.71,2026-10-16T09:49:36+00:00,1,1284,1,0,94829.8,14
+origo.hu,categories Video Streaming,0,0.0,0.7,2026-10-16T09:49:48+00:00,1,1285,1,0,106452.7,14
+refinery29.com,categories Video Streaming,0,0.14,0.7,2026-10-16T09:50:38+00:00,1,1286,1,0,128009.4,14
+www.mundodeportivo.com,categories Video Streaming,0,0.0,0.69,2026-10-16T09:50:49+00:00,1,1287,1,0,106385.1,14
+v.daum.net,categories Video Streaming,0,0.0,0.68,2026-10-16T09:51:01+00:00,1,1288,1,0,96360.9,14
+video.qq.com,categories Video Streaming,0,0.0,0.67,2026-10-16T09:51:12+00:00,1,1289,1,0,95738.9,14
+si.com,categories Video Streaming,1,0.86,0.69,2026-10-16T09:51:34+00:00,1,1290,1,0,106131.5,14
+s.youtube.com,categories Video Streaming,1,0.93,0.7,2026-10-16T09:51:56+00:00,1,1291,1,0,77301.6,14
+1.bp.blogspot.com,categories Personal Blogs,1,0.86,0.63,2026-10-16T09:52:18+00:00,1,1292,0,0,88539.5,14
+trilltrill.jp,categories Personal Blogs,1,0.93,0.68,2026-10-16T09:52:39+00:00,1,1293,0,0,98113.7,14
+python.ca,categories Personal Blogs,0,0.0,0.65,2026-10-16T09:52:51+00:00,1,1294,0,0,98936.6,14
+thepioneerwoman.com,categories Personal Blogs,0,0.0,0.61,2026-10-16T09:53:02+00:00,1,1295,0,0,88177.5,14
+afreecatv.com,categories Video Streaming,1,0.86,0.71,2026-10-16T09:53:24+00:00,1,1296,1,0,88103.5,14
+dota2.com,categories Personal Blogs,0,0.0,0.58,2026-10-16T09:53:36+00:00,1,1297,0,0,78389.5,14
+webdav.org,categories Personal Blogs,0,0.0,0.56,2026-10-16T09:53:48+00:00,1,1298,0,0,68640.7,14
+hatenablog.com,categories Personal Blogs,0,0.0,0.53,2026-10-16T09:54:00+00:00,1,1299,0,0,68247.9,14
+workspaceupdates.googleblog.com,categories Personal Blogs,0,0.0,0.51,2026-10-16T09:54:11+00:00,1,1300,0,0,68227.0,14
+blogger.com,categories Personal Blogs,0,0.0,0.49,2026-10-16T09:54:22+00:00,1,1301,0,0,58399.3,14
+wsj.net,categories Video Streaming,0,0.0,0.7,2026-10-16T09:54:33+00:00,1,1302,1,0,56945.5,14
+sport24.ru,categories Video Streaming,0,0.0,0.69,2026-10-16T09:54:45+00:00,1,1303,1,0,56886.5,14
+yy.com,categories Video Streaming,1,0.93,0.71,2026-10-16T09:55:07+00:00,1,1304,1,0,67213.1,14
+globalnews.ca,categories Video Streaming,0,0.0,0.7,2026-10-16T09:55:18+00:00,1,1305,1,0,67086.9,14
+sportingnews.com,categories Video Streaming,1,0.93,0.71,2026-10-16T09:55:40+00:00,1,1306,1,0,77270.7,14
+www.globo.com,categories Video Streaming,1,1.0,0.73,2026-10-16T09:56:30+00:00,1,1307,1,0,116406.5,14
+www.lemonde.fr,categories Video Streaming,1,0.86,0.74,2026-10-16T09:56:52+00:00,1,1308,1,0,127196.7,14
+gordonua.com,categories Video Streaming,0,0.0,0.73,2026-10-16T09:57:03+00:00,1,1309,1,0,116304.4,14
+nypost.com,categories Video Streaming,0,0.0,0.72,2026-10-16T09:57:14+00:00,1,1310,1,0,116491.0,14
+people.com,categories Video Streaming,1,0.79,0.73,2026-10-16T09:57:36+00:00,1,1311,1,0,116216.9,14
+ustream.tv,categories Video Streaming,1,0.93,0.74,2026-10-16T09:57:58+00:00,1,1312,1,0,88184.2,14
+skynet.be,categories Video Streaming,1,0.86,0.75,2026-10-16T09:58:21+00:00,1,1313,1,0,88241.8,14
+redditmedia.com,categories Video Streaming,0,0.0,0.75,2026-10-16T09:58:32+00:00,1,1314,1,0,88924.1,14
+statnews.com,categories Video Streaming,0,0.0,0.74,2026-10-16T09:58:44+00:00,1,1315,1,0,89433.5,14
+gobankingrates.com,categories Video Streaming,0,0.0,0.73,2026-10-16T09:58:56+00:00,1,1316,1,0,79396.6,14
+cnbc.com,categories Video Streaming,0,0.0,0.72,2026-10-16T09:59:06+00:00,1,1317,1,0,68320.9,14
+standard.co.uk,categories Video Streaming,0,0.0,0.71,2026-10-16T09:59:18+00:00,1,1318,1,0,57635.1,14
+www.20minutos.es,categories Video Streaming,1,0.86,0.72,2026-10-16T09:59:40+00:00,1,1319,1,0,67802.6,14
+globo.com,categories Video Streaming,1,1.0,0.74,2026-10-16T10:00:30+00:00,1,1320,1,0,105976.1,14
+www.twitch.tv,categories Video Streaming,1,0.93,0.75,2026-10-16T10:00:52+00:00,1,1321,1,0,115981.6,14
+www.disneyplus.com,categories Video Streaming,0,0.0,0.74,2026-10-16T10:01:03+00:00,1,1322,1,0,116825.1,14
+haberturk.com,categories Video Streaming,1,1.0,0.76,2026-10-16T10:01:25+00:00,1,1323,1,0,126591.7,14
+www.namasha.com,categories Video Streaming,0,0.0,0.75,2026-10-16T10:01:37+00:00,1,1324,1,0,116494.6,14
+ntv.com.tr,categories Video Streaming,0,0.0,0.74,2026-10-16T10:01:48+00:00,1,1325,1,0,77757.9,14
+www.lefigaro.fr,categories Video Streaming,1,0.86,0.75,2026-10-16T10:02:09+00:00,1,1326,1,0,77578.4,14
+newgrounds.com,categories Video Streaming,1,0.93,0.76,2026-10-16T10:02:59+00:00,1,1327,1,0,116040.9,14
+euronews.com,categories Video Streaming,1,1.0,0.77,2026-10-16T10:03:22+00:00,1,1328,1,0,116867.9,14
+sport1.de,categories Video Streaming,0,0.0,0.77,2026-10-16T10:03:33+00:00,1,1329,1,0,116124.9,14
+lemonde.fr,categories Video Streaming,1,0.93,0.78,2026-10-16T10:03:55+00:00,1,1330,1,0,127495.7,14
+jpost.com,categories Video Streaming,1,1.0,0.79,2026-10-16T10:04:17+00:00,1,1331,1,0,127449.2,14
+infourok.ru,categories Video Streaming,0,0.0,0.78,2026-10-16T10:04:28+00:00,1,1332,1,0,88144.8,14
+fivethirtyeight.com,categories Video Streaming,0,0.0,0.77,2026-10-16T10:04:40+00:00,1,1333,1,0,77863.4,14
+larepublica.pe,categories Video Streaming,1,0.93,0.78,2026-10-16T10:07:52+00:00,1,1334,1,0,258759.4,14
+go.com,categories Video Streaming,0,0.0,0.78,2026-10-16T10:08:04+00:00,1,1335,1,0,248685.8,14
+elmundo.es,categories Video Streaming,0,0.0,0.77,2026-10-16T10:08:32+00:00,1,1336,1,0,255728.0,14
+toasttab.com,categories Video Streaming,0,0.0,0.76,2026-10-16T10:08:45+00:00,1,1337,1,0,257052.0,14
+upmusics.com,categories Video Streaming,0,0.0,0.75,2026-10-16T10:08:57+00:00,1,1338,1,0,257680.8,14
+espn.com.br,categories Video Streaming,0,0.0,0.75,2026-10-16T10:09:23+00:00,1,1339,1,0,91851.0,14
+animeflv.net,categories Video Streaming,1,0.86,0.76,2026-10-16T10:09:48+00:00,1,1340,1,0,104310.4,14
+tycsports.com,categories Video Streaming,0,0.0,0.75,2026-10-16T10:10:00+00:00,1,1341,1,0,88096.4,14
+grist.org,categories Video Streaming,0,0.0,0.74,2026-10-16T10:10:13+00:00,1,1342,1,0,87950.6,14
+suggestqueries-clients6.youtube.com,categories Video Streaming,1,1.0,0.75,2026-10-16T10:10:35+00:00,1,1343,1,0,97241.1,14
+elconfidencial.com,categories Video Streaming,1,1.0,0.77,2026-10-16T10:10:56+00:00,1,1344,1,0,92984.6,14
+lifehacker.com,categories Video Streaming,0,0.0,0.76,2026-10-16T10:11:08+00:00,1,1345,1,0,80235.7,14
+bild.de,categories Video Streaming,1,0.93,0.77,2026-10-16T10:11:30+00:00,1,1346,1,0,89708.7,14
+bleacherreport.com,categories Video Streaming,0,0.0,0.76,2026-10-16T10:11:42+00:00,1,1347,1,0,89008.2,14
+complex.com,categories Video Streaming,1,1.0,0.77,2026-10-16T10:12:04+00:00,1,1348,1,0,89652.3,14
+mk.ru,categories Video Streaming,0,0.0,0.77,2026-10-16T10:12:16+00:00,1,1349,1,0,79330.3,14
+dazn.com,categories Video Streaming,0,0.0,0.76,2026-10-16T10:12:28+00:00,1,1350,1,0,79795.0,14
+usmagazine.com,categories Video Streaming,1,1.0,0.77,2026-10-16T10:12:50+00:00,1,1351,1,0,80273.8,14
+abcnews.go.com,categories Video Streaming,0,0.0,0.76,2026-10-16T10:13:02+00:00,1,1352,1,0,80382.4,14
+univision.com,categories Video Streaming,1,0.93,0.77,2026-10-16T10:13:29+00:00,1,1353,1,0,84522.9,14
+worldstarhiphop.com,categories Video Streaming,1,1.0,0.79,2026-10-16T10:13:57+00:00,1,1354,1,0,101436.3,14
+yle.fi,categories Video Streaming,0,0.0,0.78,2026-10-16T10:14:08+00:00,1,1355,1,0,99844.3,14
+videa.hu,categories Video Streaming,1,1.0,0.79,2026-10-16T10:14:30+00:00,1,1356,1,0,99274.4,14
+cntv.cn,categories Video Streaming,0,0.0,0.78,2026-10-16T10:14:41+00:00,1,1357,1,0,99175.6,14
+bbc.co.uk,categories Video Streaming,1,1.0,0.79,2026-10-16T10:15:03+00:00,1,1358,1,0,94181.4,14
+nbcnews.com,categories Video Streaming,0,0.0,0.79,2026-10-16T10:15:15+00:00,1,1359,1,0,77424.7,14
+nicovideo.jp,categories Video Streaming,1,0.86,0.8,2026-10-16T10:15:36+00:00,1,1360,1,0,88312.3,14
+filmweb.pl,categories Video Streaming,1,1.0,0.81,2026-10-16T10:16:00+00:00,1,1361,1,0,90556.7,14
+daum.net,categories Video Streaming,0,0.0,0.8,2026-10-16T10:16:12+00:00,1,1362,1,0,90488.6,14
+www.milliyet.com.tr,categories Video Streaming,1,1.0,0.81,2026-10-16T10:17:00+00:00,1,1363,1,0,116824.1,14
+ttvnw.net,categories Video Streaming,0,0.0,0.8,2026-10-16T10:17:11+00:00,1,1364,1,0,116247.4,14
+aparat.com,categories Video Streaming,0,0.0,0.8,2026-10-16T10:17:26+00:00,1,1365,1,0,109629.6,14
+vanityfair.com,categories Video Streaming,1,1.0,0.81,2026-10-16T10:18:17+00:00,1,1366,1,0,136396.2,14
+blic.rs,categories Video Streaming,1,0.86,0.81,2026-10-16T10:18:38+00:00,1,1367,1,0,146558.0,14
+player.vimeo.com,categories Video Streaming,1,1.0,0.83,2026-10-16T10:19:29+00:00,1,1368,1,0,148633.7,14
+ole.com.ar,categories Video Streaming,1,1.0,0.84,2026-10-16T10:19:51+00:00,1,1369,1,0,159845.3,14
+www.expressen.se,categories Video Streaming,1,1.0,0.85,2026-10-16T10:20:12+00:00,1,1370,1,0,166216.0,14
+cbsnews.com,categories Video Streaming,1,0.86,0.85,2026-10-16T10:20:35+00:00,1,1371,1,0,137905.8,14
+manoramaonline.com,categories Video Streaming,1,0.86,0.86,2026-10-16T10:20:57+00:00,1,1372,1,0,138046.3,14
+www.elmundo.es,categories Video Streaming,0,0.0,0.85,2026-10-16T10:21:08+00:00,1,1373,1,0,98899.5,14
+www.si.com,categories Video Streaming,1,0.86,0.86,2026-10-16T10:21:29+00:00,1,1374,1,0,98379.8,14
+espn.com,categories Video Streaming,0,0.0,0.85,2026-10-16T10:21:41+00:00,1,1375,1,0,88248.6,14
+newsday.com,categories Video Streaming,0,0.0,0.85,2026-10-16T10:21:52+00:00,1,1376,1,0,77556.6,14
+baltimoresun.com,categories Video Streaming,0,0.0,0.84,2026-10-16T10:22:03+00:00,1,1377,1,0,66544.9,14
+fakt.pl,categories Video Streaming,1,0.93,0.85,2026-10-16T10:22:25+00:00,1,1378,1,0,77198.7,14
+prod.partner.netflix.net,categories Video Streaming,0,0.0,0.84,2026-10-16T10:22:37+00:00,1,1379,1,0,67158.2,14
+www.sport.es,categories Video Streaming,0,0.0,0.84,2026-10-16T10:22:48+00:00,1,1380,1,0,67294.6,14
+theweathernetwork.com,categories Video Streaming,0,0.0,0.83,2026-10-16T10:22:59+00:00,1,1381,1,0,66703.3,14
+liberoquotidiano.it,categories Video Streaming,1,0.86,0.84,2026-10-16T10:23:21+00:00,1,1382,1,0,77772.4,14
+eurosport.com,categories Video Streaming,0,0.0,0.83,2026-10-16T10:23:33+00:00,1,1383,1,0,67644.8,14
+lapresse.ca,categories Video Streaming,1,0.86,0.84,2026-10-16T10:23:54+00:00,1,1384,1,0,77555.8,14
+www.repubblica.it,categories Video Streaming,0,0.0,0.83,2026-10-16T10:24:05+00:00,1,1385,1,0,77307.5,14
+disneyplus.com,categories Video Streaming,0,0.0,0.82,2026-10-16T10:24:17+00:00,1,1386,1,0,78015.5,14
+rumble.com,categories Video Streaming,1,1.0,0.83,2026-10-16T10:24:39+00:00,1,1387,1,0,77604.2,14
+www.cnbc.com,categories Video Streaming,0,0.0,0.83,2026-10-16T10:24:50+00:00,1,1388,1,0,77599.3,14
+wetter.com,categories Video Streaming,0,0.0,0.82,2026-10-16T10:25:01+00:00,1,1389,1,0,67036.7,14
+accounts.youtube.com,categories Video Streaming,1,0.86,0.83,2026-10-16T10:25:12+00:00,1,1390,1,0,66678.4,14
+onefootball.com,categories Video Streaming,0,0.0,0.82,2026-10-16T10:25:24+00:00,1,1391,1,0,66784.5,14
+kuaishou.com,categories Video Streaming,1,0.86,0.83,2026-10-16T10:25:45+00:00,1,1392,1,0,66968.3,14
+realsimple.com,categories Video Streaming,0,0.0,0.82,2026-10-16T10:25:57+00:00,1,1393,1,0,66953.1,14
+www.ad.nl,categories Video Streaming,0,0.0,0.81,2026-10-16T10:26:08+00:00,1,1394,1,0,66788.5,14
+studio.youtube.com,categories Video Streaming,1,0.93,0.82,2026-10-16T10:26:30+00:00,1,1395,1,0,77660.0,14
+corriere.it,categories Video Streaming,0,0.0,0.82,2026-10-16T10:26:41+00:00,1,1396,1,0,77588.9,14
+vimeo.com,categories Video Streaming,1,1.0,0.83,2026-10-16T10:27:32+00:00,1,1397,1,0,106266.7,14
+usatoday.com,categories Video Streaming,0,0.0,0.82,2026-10-16T10:27:43+00:00,1,1398,1,0,106303.2,14
+fifa.com,categories Video Streaming,0,0.0,0.81,2026-10-16T10:27:55+00:00,1,1399,1,0,106754.6,14
+netflix.net,categories Video Streaming,0,0.0,0.81,2026-10-16T10:28:06+00:00,1,1400,1,0,96218.9,14
+crunchyroll.com,categories Video Streaming,1,0.86,0.81,2026-10-16T10:28:28+00:00,1,1401,1,0,106436.4,14
+twitch.tv,categories Video Streaming,1,0.86,0.82,2026-10-16T10:28:50+00:00,1,1402,1,0,77673.3,14
+expressen.se,categories Video Streaming,1,0.93,0.83,2026-10-16T10:29:12+00:00,1,1403,1,0,88613.1,14
+news18.com,categories Video Streaming,0,0.0,0.82,2026-10-16T10:29:23+00:00,1,1404,1,0,88285.2,14
+www.bfmtv.com,categories Video Streaming,1,0.79,0.83,2026-10-16T10:29:45+00:00,1,1405,1,0,98970.4,14
+foodandwine.com,categories Video Streaming,1,0.93,0.84,2026-10-16T10:30:36+00:00,1,1406,1,0,128019.5,14
+lrytas.lt,categories Video Streaming,1,0.93,0.85,2026-10-16T10:30:57+00:00,1,1407,1,0,127624.1,14
+video.az,categories Video Streaming,1,0.93,0.85,2026-10-16T10:31:21+00:00,1,1408,1,0,128253.8,14
+aljazeera.com,categories Video Streaming,0,0.0,0.85,2026-10-16T10:31:31+00:00,1,1409,1,0,127936.9,14
+starwars.com,categories Video Streaming,0,0.0,0.84,2026-10-16T10:31:42+00:00,1,1410,1,0,117258.3,14
+huya.com,categories Video Streaming,1,0.93,0.85,2026-10-16T10:32:04+00:00,1,1411,1,0,88288.3,14
+huffpost.com,categories Video Streaming,1,1.0,0.86,2026-10-16T10:32:55+00:00,1,1412,1,0,117491.6,14
+marca.com,categories Video Streaming,0,0.0,0.85,2026-10-16T10:33:06+00:00,1,1413,1,0,105245.6,14
+stern.de,categories Video Streaming,0,0.14,0.85,2026-10-16T10:33:56+00:00,1,1414,1,0,145032.8,14
+toutiao.com,categories Video Streaming,1,0.93,0.86,2026-10-16T10:34:18+00:00,1,1415,1,0,155442.3,14
+blick.ch,categories Video Streaming,1,1.0,0.86,2026-10-16T10:35:09+00:00,1,1416,1,0,184435.8,14
+nieuwsblad.be,categories Video Streaming,0,0.14,0.86,2026-10-16T10:35:58+00:00,1,1417,1,0,183644.2,14
+spiegel.de,categories Video Streaming,0,0.0,0.85,2026-10-16T10:36:10+00:00,1,1418,1,0,184412.7,14
+youtu.be,categories Video Streaming,1,0.93,0.86,2026-10-16T10:37:50+00:00,1,1419,1,0,234008.5,14
+videonow.ru,categories Video Streaming,0,0.0,0.86,2026-10-16T10:38:01+00:00,1,1420,1,0,223454.8,14
+cbssports.com,categories Video Streaming,0,0.0,0.85,2026-10-16T10:38:14+00:00,1,1421,1,0,184954.6,14
+gamespot.com,categories Video Streaming,0,0.0,0.84,2026-10-16T10:38:24+00:00,1,1422,1,0,145826.7,14
+bbcgoodfood.com,categories Video Streaming,0,0.0,0.84,2026-10-16T10:38:36+00:00,1,1423,1,0,145960.3,14
+heraldo.es,categories Video Streaming,1,1.0,0.85,2026-10-16T10:38:59+00:00,1,1424,1,0,68495.5,14
+smule.com,categories Video Streaming,1,0.93,0.85,2026-10-16T10:39:21+00:00,1,1425,1,0,79945.9,14
+observer.com,categories Video Streaming,0,0.14,0.85,2026-10-16T10:39:53+00:00,1,1426,1,0,99603.3,14
+infoworld.com,categories Video Streaming,0,0.0,0.84,2026-10-16T10:40:05+00:00,1,1427,1,0,100457.6,14
+depor.com,categories Video Streaming,0,0.0,0.84,2026-10-16T10:40:15+00:00,1,1428,1,0,98856.5,14
+idnes.cz,categories Video Streaming,1,0.86,0.84,2026-10-16T10:40:38+00:00,1,1429,1,0,99129.0,14
+www.foxnews.com,categories Video Streaming,1,0.93,0.85,2026-10-16T10:40:59+00:00,1,1430,1,0,97868.4,14
+conviva.com,categories Video Streaming,0,0.0,0.84,2026-10-16T10:41:11+00:00,1,1431,1,0,77572.6,14
+nhl.com,categories Video Streaming,0,0.0,0.84,2026-10-16T10:41:22+00:00,1,1432,1,0,76888.1,14
+digg.com,categories Video Streaming,0,0.0,0.83,2026-10-16T10:41:33+00:00,1,1433,1,0,77649.0,14
+express.co.uk,categories Video Streaming,1,1.0,0.84,2026-10-16T10:41:55+00:00,1,1434,1,0,77090.0,14
+sacbee.com,categories Video Streaming,0,0.14,0.84,2026-10-16T10:42:45+00:00,1,1435,1,0,105720.3,14
+www.aparat.com,categories Video Streaming,0,0.07,0.83,2026-10-16T10:43:36+00:00,1,1436,1,0,144753.3,14
+xinhuanet.com,categories Video Streaming,0,0.0,0.83,2026-10-16T10:43:47+00:00,1,1437,1,0,145369.3,14
+rezka.ag,categories Video Streaming,1,1.0,0.83,2026-10-16T10:44:09+00:00,1,1438,1,0,156185.5,14
+nbcsports.com,categories Video Streaming,0,0.0,0.83,2026-10-16T10:44:20+00:00,1,1439,1,0,145351.3,14
+economictimes.com,categories Video Streaming,0,0.0,0.82,2026-10-16T10:44:32+00:00,1,1440,1,0,106673.7,14
+redbull.com,categories Video Streaming,0,0.0,0.82,2026-10-16T10:44:43+00:00,1,1441,1,0,67509.2,14
+rferl.org,categories Video Streaming,1,0.86,0.82,2026-10-16T10:45:05+00:00,1,1442,1,0,77520.4,14
+youku.com,categories Video Streaming,1,0.86,0.83,2026-10-16T10:45:27+00:00,1,1443,1,0,77601.0,14
+www.youtube.com,categories Video Streaming,1,0.93,0.84,2026-10-16T10:45:49+00:00,1,1444,1,0,88379.6,14
+dailymotion.com,categories Video Streaming,1,0.93,0.85,2026-10-16T10:46:11+00:00,1,1445,1,0,99277.2,14
+ilrestodelcarlino.it,categories Video Streaming,1,0.86,0.85,2026-10-16T10:46:32+00:00,1,1446,1,0,109303.7,14
+www.ilmessaggero.it,categories Video Streaming,1,1.0,0.86,2026-10-16T10:47:23+00:00,1,1447,1,0,138033.3,14
+chinatimes.com,categories Video Streaming,1,0.86,0.87,2026-10-16T10:47:45+00:00,1,1448,1,0,137928.9,14
+www.dailymotion.com,categories Video Streaming,1,0.93,0.87,2026-10-16T10:48:07+00:00,1,1449,1,0,138686.8,14
+bambuser.com,categories Video Streaming,0,0.0,0.87,2026-10-16T10:48:18+00:00,1,1450,1,0,127094.9,14
+tubemogul.com,categories Video Streaming,0,0.0,0.86,2026-10-16T10:48:30+00:00,1,1451,1,0,117380.8,14
+sina.cn,categories Video Streaming,1,0.93,0.87,2026-10-16T10:48:51+00:00,1,1452,1,0,88594.7,14
+climatempo.com.br,categories Video Streaming,0,0.0,0.86,2026-10-16T10:49:03+00:00,1,1453,1,0,77935.2,14
+pikabu.ru,categories Video Streaming,1,0.86,0.87,2026-10-16T10:49:24+00:00,1,1454,1,0,76978.0,14
+bfmtv.com,categories Video Streaming,1,0.86,0.88,2026-10-16T10:49:46+00:00,1,1455,1,0,88149.8,14
+gfycat.com,categories Video Streaming,1,0.93,0.88,2026-10-16T10:50:08+00:00,1,1456,1,0,98126.6,14
+kicker.de,categories Video Streaming,0,0.0,0.88,2026-10-16T10:50:19+00:00,1,1457,1,0,88063.2,14
+www.espncricinfo.com,categories Video Streaming,0,0.0,0.87,2026-10-16T10:50:31+00:00,1,1458,1,0,87565.0,14
+partner.netflix.net,categories Video Streaming,0,0.0,0.86,2026-10-16T10:50:44+00:00,1,1459,1,0,79509.7,14
+is.fi,categories Video Streaming,0,0.0,0.86,2026-10-16T10:50:53+00:00,1,1460,1,0,67082.8,14
+redirector.googlevideo.com,categories Video Streaming,1,1.0,0.87,2026-10-16T10:51:16+00:00,1,1461,1,0,67623.6,14
+walesonline.co.uk,categories Video Streaming,0,0.0,0.86,2026-10-16T10:51:27+00:00,1,1462,1,0,67124.2,14
+zeit.de,categories Video Streaming,0,0.0,0.85,2026-10-16T10:51:40+00:00,1,1463,1,0,69176.9,14
+rokna.net,categories Video Streaming,0,0.0,0.85,2026-10-16T10:51:53+00:00,1,1464,1,0,68654.3,14
+giallozafferano.it,categories Video Streaming,0,0.0,0.84,2026-10-16T10:52:05+00:00,1,1465,1,0,71363.5,14
+www.daum.net,categories Video Streaming,0,0.0,0.84,2026-10-16T10:52:16+00:00,1,1466,1,0,60623.7,14
+cnn.com,categories Video Streaming,0,0.0,0.83,2026-10-16T10:52:44+00:00,1,1467,1,0,77397.7,14
+svt.se,categories Video Streaming,0,0.0,0.82,2026-10-16T10:52:55+00:00,1,1468,1,0,75125.2,14
+24tv.ua,categories Video Streaming,0,0.0,0.82,2026-10-16T10:53:16+00:00,1,1469,1,0,83203.9,14
+eltiempo.es,categories Video Streaming,0,0.0,0.81,2026-10-16T10:53:28+00:00,1,1470,1,0,82971.0,14
+www.cnn.com,categories Video Streaming,0,0.0,0.81,2026-10-16T10:53:39+00:00,1,1471,1,0,83008.4,14
+washingtonexaminer.com,categories Video Streaming,0,0.0,0.8,2026-10-16T10:53:51+00:00,1,1472,1,0,66757.2,14
+247sports.com,categories Video Streaming,1,0.93,0.81,2026-10-16T10:54:13+00:00,1,1473,1,0,77893.0,14
+tv2.no,categories Video Streaming,0,0.14,0.8,2026-10-16T10:54:32+00:00,1,1474,1,0,76331.4,14
+as.com,categories Video Streaming,0,0.0,0.8,2026-10-16T10:54:44+00:00,1,1475,1,0,75772.5,14
+focus.de,categories Video Streaming,0,0.0,0.79,2026-10-16T10:54:55+00:00,1,1476,1,0,75802.6,14
+moneycontrol.com,categories Video Streaming,0,0.0,0.79,2026-10-16T10:55:07+00:00,1,1477,1,0,75831.8,14
+bbci.co.uk,categories Video Streaming,1,0.86,0.79,2026-10-16T10:55:28+00:00,1,1478,1,0,74922.5,14
+pagesix.com,categories Video Streaming,1,0.86,0.8,2026-10-16T10:55:50+00:00,1,1479,1,0,77911.7,14
+championat.com,categories Video Streaming,0,0.0,0.79,2026-10-16T10:56:01+00:00,1,1480,1,0,77701.0,14
+www.news.com.au,categories Video Streaming,1,1.0,0.8,2026-10-16T10:56:52+00:00,1,1481,1,0,116712.6,14
+www.welt.de,categories Video Streaming,0,0.0,0.8,2026-10-16T10:57:04+00:00,1,1482,1,0,116891.7,14
+imdb.com,categories Video Streaming,0,0.0,0.79,2026-10-16T10:57:14+00:00,1,1483,1,0,106085.1,14
+gadgetsnow.com,categories Video Streaming,0,0.0,0.79,2026-10-16T10:57:26+00:00,1,1484,1,0,96030.8,14
+thanhnien.vn,categories Video Streaming,1,0.86,0.79,2026-10-16T10:57:48+00:00,1,1485,1,0,106123.1,14
+ad.nl,categories Video Streaming,0,0.0,0.79,2026-10-16T10:57:59+00:00,1,1486,1,0,67444.4,14
+orlandosentinel.com,categories Video Streaming,0,0.0,0.78,2026-10-16T10:58:11+00:00,1,1487,1,0,67138.6,14
+mtv.com,categories Video Streaming,1,1.0,0.79,2026-10-16T10:58:33+00:00,1,1488,1,0,78255.5,14
+denverpost.com,categories Video Streaming,0,0.0,0.78,2026-10-16T10:58:43+00:00,1,1489,1,0,77432.8,14
+bilibili.com,categories Video Streaming,1,0.93,0.79,2026-10-16T10:59:06+00:00,1,1490,1,0,78214.4,14
+fortnitetracker.com,categories Video Streaming,0,0.0,0.79,2026-10-16T10:59:17+00:00,1,1491,1,0,78088.3,14
+allocine.fr,categories Video Streaming,1,0.93,0.79,2026-10-16T10:59:39+00:00,1,1492,1,0,88235.0,14
+news.cn,categories Video Streaming,0,0.0,0.79,2026-10-16T10:59:51+00:00,1,1493,1,0,77863.4,14
+manchestereveningnews.co.uk,categories Video Streaming,0,0.0,0.78,2026-10-16T11:00:02+00:00,1,1494,1,0,78020.7,14
+streamable.com,categories Video Streaming,1,0.93,0.79,2026-10-16T11:00:23+00:00,1,1495,1,0,77404.3,14
+unotv.com,categories Video Streaming,0,0.0,0.78,2026-10-16T11:00:35+00:00,1,1496,1,0,77431.6,14
+foxnews.com,categories Video Streaming,1,0.93,0.79,2026-10-16T11:00:56+00:00,1,1497,1,0,77470.2,14
+vogue.com,categories Video Streaming,1,0.79,0.8,2026-10-16T11:01:19+00:00,1,1498,1,0,88024.0,14
+jeuxvideo.com,categories Video Streaming,1,1.0,0.81,2026-10-16T11:02:09+00:00,1,1499,1,0,127473.8,14
+okezone.com,categories Video Streaming,0,0.0,0.8,2026-10-16T11:02:20+00:00,1,1500,1,0,116488.4,14
+startribune.com,categories Video Streaming,0,0.0,0.8,2026-10-16T11:02:32+00:00,1,1501,1,0,116513.0,14
+thrillist.com,categories Video Streaming,1,0.86,0.8,2026-10-16T11:02:53+00:00,1,1502,1,0,116564.0,14
+www.independent.co.uk,categories Video Streaming,1,0.93,0.81,2026-10-16T11:03:15+00:00,1,1503,1,0,116473.3,14
+indiatoday.in,categories Video Streaming,0,0.0,0.8,2026-10-16T11:03:27+00:00,1,1504,1,0,76691.1,14
+ge.globo.com,categories Video Streaming,1,1.0,0.81,2026-10-16T11:04:17+00:00,1,1505,1,0,116642.8,14
+dailymail.co.uk,categories Video Streaming,1,0.86,0.82,2026-10-16T11:04:39+00:00,1,1506,1,0,126971.5,14
+srf.ch,categories Video Streaming,0,0.0,0.81,2026-10-16T11:04:50+00:00,1,1507,1,0,117043.7,14
+nfl.com,categories Video Streaming,0,0.0,0.81,2026-10-16T11:05:01+00:00,1,1508,1,0,105611.4,14
+iqiyi.com,categories Video Streaming,1,0.86,0.81,2026-10-16T11:05:23+00:00,1,1509,1,0,116715.2,14
+rte.ie,categories Video Streaming,1,0.86,0.82,2026-10-16T11:05:45+00:00,1,1510,1,0,87441.9,14
+www.francetvinfo.fr,categories Video Streaming,0,0.0,0.81,2026-10-16T11:05:57+00:00,1,1511,1,0,77991.6,14
+varzesh3.com,categories Video Streaming,0,0.0,0.81,2026-10-16T11:06:08+00:00,1,1512,1,0,77819.9,14
+tiscali.it,categories Video Streaming,1,1.0,0.82,2026-10-16T11:06:58+00:00,1,1513,1,0,116968.1,14
+sport-express.ru,categories Video Streaming,0,0.0,0.81,2026-10-16T11:07:09+00:00,1,1514,1,0,105484.7,14
+okdiario.com,categories Video Streaming,0,0.0,0.81,2026-10-16T11:07:20+00:00,1,1515,1,0,95431.0,14
+myvidster.com,categories Video Streaming,1,1.0,0.81,2026-10-16T11:07:43+00:00,1,1516,1,0,106232.5,14
+www.espn.com,categories Video Streaming,0,0.0,0.81,2026-10-16T11:07:54+00:00,1,1517,1,0,104798.3,14
+fantasy.espn.com,categories Video Streaming,0,0.0,0.8,2026-10-16T11:08:05+00:00,1,1518,1,0,66659.7,14
+indianexpress.com,categories Video Streaming,0,0.0,0.8,2026-10-16T11:08:17+00:00,1,1519,1,0,67744.3,14
+m.bild.de,categories Video Streaming,1,0.93,0.8,2026-10-16T11:09:07+00:00,1,1520,1,0,106587.1,14
+hollywoodreporter.com,categories Video Streaming,1,0.86,0.81,2026-10-16T11:09:28+00:00,1,1521,1,0,105621.7,14
+music.youtube.com,categories Video Streaming,1,0.93,0.82,2026-10-16T11:09:51+00:00,1,1522,1,0,117553.1,14
+ynet.co.il,categories Video Streaming,1,0.86,0.82,2026-10-16T11:10:13+00:00,1,1523,1,0,128079.6,14
+dailystar.co.uk,categories Video Streaming,0,0.0,0.82,2026-10-16T11:10:24+00:00,1,1524,1,0,127398.1,14
+petco.com,categories Video Streaming,0,0.0,0.81,2026-10-16T11:10:35+00:00,1,1525,1,0,88096.5,14
+t-online.de,categories Video Streaming,0,0.0,0.81,2026-10-16T11:10:47+00:00,1,1526,1,0,78390.8,14
+milliyet.com.tr,categories Video Streaming,1,1.0,0.82,2026-10-16T11:11:37+00:00,1,1527,1,0,106033.6,14
+knowyourmeme.com,categories Video Streaming,1,0.93,0.82,2026-10-16T11:11:59+00:00,1,1528,1,0,105724.8,14
+khaleejtimes.com,categories Video Streaming,0,0.0,0.82,2026-10-16T11:12:10+00:00,1,1529,1,0,105815.1,14
+seattletimes.com,categories Video Streaming,1,1.0,0.83,2026-10-16T11:12:32+00:00,1,1530,1,0,117053.6,14
+toptal.com,categories Video Streaming,0,0.0,0.82,2026-10-16T11:12:45+00:00,1,1531,1,0,117554.3,14
+www.idnes.cz,categories Video Streaming,1,0.86,0.83,2026-10-16T11:13:06+00:00,1,1532,1,0,89205.5,14
+tw.news.yahoo.com,categories Video Streaming,1,0.86,0.83,2026-10-16T11:13:18+00:00,1,1533,1,0,78923.9,14
+theonion.com,categories Video Streaming,0,0.14,0.83,2026-10-16T11:14:08+00:00,1,1534,1,0,118184.4,14
+news.com.au,categories Video Streaming,1,1.0,0.84,2026-10-16T11:14:59+00:00,1,1535,1,0,146744.5,14
+www.cbssports.com,categories Video Streaming,0,0.0,0.83,2026-10-16T11:15:11+00:00,1,1536,1,0,146072.5,14
+miamiherald.com,categories Video Streaming,0,0.0,0.83,2026-10-16T11:15:22+00:00,1,1537,1,0,135695.6,14
+www.terra.com.br,categories Video Streaming,1,0.93,0.83,2026-10-16T11:16:12+00:00,1,1538,1,0,174469.1,14
+www.maxpreps.com,categories Video Streaming,0,0.0,0.83,2026-10-16T11:16:23+00:00,1,1539,1,0,135040.2,14
+24.hu,categories Video Streaming,0,0.0,0.82,2026-10-16T11:16:35+00:00,1,1540,1,0,95265.6,14
+lefigaro.fr,categories Video Streaming,1,0.93,0.83,2026-10-16T11:16:57+00:00,1,1541,1,0,106270.3,14
+fastcompany.com,categories Video Streaming,0,0.0,0.82,2026-10-16T11:17:08+00:00,1,1542,1,0,106219.4,14
+espncdn.com,categories Video Streaming,0,0.0,0.82,2026-10-16T11:17:20+00:00,1,1543,1,0,67080.9,14
+aajtak.in,categories Video Streaming,0,0.0,0.81,2026-10-16T11:17:31+00:00,1,1544,1,0,67345.4,14
+abola.pt,categories Video Streaming,1,0.93,0.82,2026-10-16T11:17:52+00:00,1,1545,1,0,77601.2,14
+abplive.com,categories Video Streaming,0,0.0,0.81,2026-10-16T11:18:04+00:00,1,1546,1,0,67111.7,14
+thesun.co.uk,categories Video Streaming,1,0.86,0.82,2026-10-16T11:18:26+00:00,1,1547,1,0,77704.8,14
+thehill.com,categories Video Streaming,0,0.0,0.81,2026-10-16T11:18:37+00:00,1,1548,1,0,77241.2,14
+nationalpost.com,categories Video Streaming,0,0.0,0.81,2026-10-16T11:18:49+00:00,1,1549,1,0,77992.6,14
+hs.fi,categories Video Streaming,0,0.0,0.8,2026-10-16T11:19:00+00:00,1,1550,1,0,67118.3,14
+sindonews.com,categories Video Streaming,0,0.0,0.8,2026-10-16T11:19:11+00:00,1,1551,1,0,67174.2,14
+rttv.ru,categories Video Streaming,0,0.0,0.79,2026-10-16T11:19:22+00:00,1,1552,1,0,55948.1,14
+the-sun.com,categories Video Streaming,0,0.0,0.79,2026-10-16T11:19:34+00:00,1,1553,1,0,56781.6,14
+buzzfeed.com,categories Video Streaming,1,0.93,0.79,2026-10-16T11:19:56+00:00,1,1554,1,0,66868.6,14
+welt.de,categories Video Streaming,0,0.0,0.79,2026-10-16T11:20:07+00:00,1,1555,1,0,66964.7,14
+foxsports.com,categories Video Streaming,0,0.0,0.78,2026-10-16T11:20:18+00:00,1,1556,1,0,66848.8,14
+youtube-nocookie.com,categories Video Streaming,1,0.93,0.79,2026-10-16T11:20:40+00:00,1,1557,1,0,77495.8,14
+vietnamnet.vn,categories Video Streaming,0,0.0,0.78,2026-10-16T11:20:51+00:00,1,1558,1,0,76600.4,14
+nymag.com,categories Video Streaming,1,0.79,0.79,2026-10-16T11:21:13+00:00,1,1559,1,0,77072.4,14
+hurriyet.com.tr,categories Video Streaming,0,0.0,0.78,2026-10-16T11:21:24+00:00,1,1560,1,0,77913.1,14
+francetvinfo.fr,categories Video Streaming,0,0.0,0.78,2026-10-16T11:21:35+00:00,1,1561,1,0,77317.7,14
+cricketworldcup.com,categories Video Streaming,0,0.0,0.77,2026-10-16T11:21:47+00:00,1,1562,1,0,67348.8,14
+cbc.ca,categories Video Streaming,0,0.0,0.77,2026-10-16T11:21:59+00:00,1,1563,1,0,67325.0,14
+guardian.co.uk,categories Video Streaming,0,0.0,0.76,2026-10-16T11:22:09+00:00,1,1564,1,0,56455.7,14
+firstpost.com,categories Video Streaming,0,0.0,0.76,2026-10-16T11:22:21+00:00,1,1565,1,0,56471.8,14
+straitstimes.com,categories Video Streaming,0,0.0,0.75,2026-10-16T11:22:32+00:00,1,1566,1,0,56458.4,14
+yaplakal.com,categories Video Streaming,1,1.0,0.76,2026-10-16T11:23:23+00:00,1,1567,1,0,95546.4,14
+www.cricketworldcup.com,categories Video Streaming,0,0.0,0.76,2026-10-16T11:23:34+00:00,1,1568,1,0,95053.0,14
+in.gr,categories Video Streaming,0,0.0,0.75,2026-10-16T11:23:46+00:00,1,1569,1,0,96197.4,14
+www.hurriyet.com.tr,categories Video Streaming,0,0.0,0.74,2026-10-16T11:23:57+00:00,1,1570,1,0,95662.9,14
+namasha.com,categories Video Streaming,0,0.0,0.74,2026-10-16T11:24:08+00:00,1,1571,1,0,95772.7,14
+www.nicovideo.jp,categories Video Streaming,1,0.86,0.75,2026-10-16T11:24:29+00:00,1,1572,1,0,66773.0,14
+imageshack.com,categories Video Streaming,1,0.93,0.75,2026-10-16T11:25:20+00:00,1,1573,1,0,106088.4,14
+independent.co.uk,categories Video Streaming,1,1.0,0.76,2026-10-16T11:25:42+00:00,1,1574,1,0,115389.9,14
+www.dailymail.co.uk,categories Video Streaming,1,0.93,0.77,2026-10-16T11:26:04+00:00,1,1575,1,0,126971.1,14
+screenrant.com,categories Video Streaming,1,1.0,0.78,2026-10-16T11:26:54+00:00,1,1576,1,0,166460.1,14
+maxpreps.com,categories Video Streaming,0,0.0,0.77,2026-10-16T11:27:06+00:00,1,1577,1,0,156187.1,14
+cifraclub.com.br,categories Video Streaming,0,0.0,0.77,2026-10-16T11:27:17+00:00,1,1578,1,0,115503.3,14
+terra.com.br,categories Video Streaming,1,1.0,0.78,2026-10-16T11:29:06+00:00,1,1579,1,0,203914.5,14
+faz.net,categories Video Streaming,0,0.0,0.77,2026-10-16T11:29:16+00:00,1,1580,1,0,192827.8,14
+ndtv.com,categories Video Streaming,1,0.93,0.78,2026-10-16T11:29:39+00:00,1,1581,1,0,164890.6,14
+onet.pl,categories Video Streaming,1,0.93,0.78,2026-10-16T11:30:02+00:00,1,1582,1,0,176359.4,14
+lavoz.com.ar,categories Video Streaming,1,1.0,0.79,2026-10-16T11:30:24+00:00,1,1583,1,0,187521.1,14
+femmeactuelle.fr,categories Video Streaming,1,0.86,0.8,2026-10-16T11:30:46+00:00,1,1584,1,0,100882.0,14
+mundodeportivo.com,categories Video Streaming,0,0.0,0.79,2026-10-16T11:30:58+00:00,1,1585,1,0,101209.0,14
+eska.pl,categories Video Streaming,1,0.93,0.8,2026-10-16T11:31:21+00:00,1,1586,1,0,101774.2,14
+justwatch.com,categories Video Streaming,0,0.0,0.8,2026-10-16T11:31:32+00:00,1,1587,1,0,89692.3,14
+foxbusiness.com,categories Video Streaming,0,0.0,0.79,2026-10-16T11:31:44+00:00,1,1588,1,0,79898.6,14
+thestreet.com,categories Video Streaming,0,0.0,0.78,2026-10-16T11:31:55+00:00,1,1589,1,0,68929.8,14
+gazzetta.it,categories Video Streaming,0,0.0,0.78,2026-10-16T11:32:07+00:00,1,1590,1,0,68382.3,14
+www.fanpage.it,categories Video Streaming,0,0.0,0.77,2026-10-16T11:32:18+00:00,1,1591,1,0,57547.6,14
+dailycaller.com,categories Video Streaming,1,0.79,0.78,2026-10-16T11:32:40+00:00,1,1592,1,0,67927.0,14
+rtbf.be,categories Video Streaming,0,0.0,0.77,2026-10-16T11:32:52+00:00,1,1593,1,0,67896.5,14
+eluniversal.com.mx,categories Video Streaming,1,0.93,0.78,2026-10-16T11:33:15+00:00,1,1594,1,0,79251.4,14
+cnnindonesia.com,categories Video Streaming,1,0.86,0.79,2026-10-16T11:33:37+00:00,1,1595,1,0,89293.3,14
+www.gazzetta.it,categories Video Streaming,0,0.0,0.78,2026-10-16T11:33:48+00:00,1,1596,1,0,90015.1,14
+adage.com,categories Video Streaming,0,0.0,0.78,2026-10-16T11:34:00+00:00,1,1597,1,0,79056.6,14
+www.cnnindonesia.com,categories Video Streaming,1,0.86,0.78,2026-10-16T11:34:22+00:00,1,1598,1,0,89936.6,14
+huffingtonpost.co.uk,categories Video Streaming,0,0.0,0.78,2026-10-16T11:34:34+00:00,1,1599,1,0,78697.9,14
+www.bilibili.com,categories Video Streaming,1,0.93,0.78,2026-10-16T11:34:56+00:00,1,1600,1,0,79099.6,14
+glavcom.ua,categories Video Streaming,0,0.0,0.78,2026-10-16T11:35:08+00:00,1,1601,1,0,78296.8,14
+yougov.com,categories Forums,0,0.0,0.49,2026-10-16T11:35:20+00:00,1,1602,0,0,12002.5,14
+wikiquote.org,categories Forums,0,0.0,0.46,2026-10-16T11:35:41+00:00,1,1603,0,0,32676.2,14
+business2community.com,categories Forums,0,0.0,0.43,2026-10-16T11:35:53+00:00,1,1604,0,0,44876.7,14
+habr.com,categories Forums,0,0.0,0.4,2026-10-16T11:36:05+00:00,1,1605,0,0,56387.0,14
+m.ppomppu.co.kr,categories Forums,0,0.0,0.37,2026-10-16T11:36:16+00:00,1,1606,0,0,67868.3,14
+qiita.com,categories Forums,0,0.0,0.35,2026-10-16T11:36:27+00:00,1,1607,0,0,67248.6,14
+prnewswire.com,categories News & Media,0,0.0,0.29,2026-10-16T11:36:39+00:00,1,1608,0,0,58393.8,14
+www.detik.com,categories News & Media,0,0.0,0.26,2026-10-16T11:37:08+00:00,1,1609,0,0,74731.1,14
+e1.ru,categories News & Media,0,0.0,0.24,2026-10-16T11:37:33+00:00,1,1610,0,0,87986.8,14
+cumhuriyet.com.tr,categories News & Media,0,0.0,0.22,2026-10-16T11:37:45+00:00,1,1611,0,0,88565.2,14
+ajc.com,categories News & Media,0,0.0,0.2,2026-10-16T11:37:56+00:00,1,1612,0,0,88722.0,14
+podtrac.com,categories Audio Streaming,0,0.0,0.41,2026-10-16T11:38:08+00:00,1,1613,0,0,88349.5,14
+anchor.fm,categories Audio Streaming,0,0.0,0.41,2026-10-16T11:38:19+00:00,1,1614,0,0,71446.1,14
+wbur.org,categories Audio Streaming,1,0.93,0.51,2026-10-16T11:38:41+00:00,1,1615,0,0,68743.2,14
+music.apple.com,categories Audio Streaming,0,0.0,0.5,2026-10-16T11:39:08+00:00,1,1616,0,0,83153.4,14
+accounts.spotify.com,categories Audio Streaming,0,0.0,0.49,2026-10-16T11:39:22+00:00,1,1617,0,0,86008.6,14
+phys.org,categories Magazines,0,0.0,0.34,2026-10-16T11:39:34+00:00,1,1618,0,0,86645.1,14
+tasteofhome.com,categories Magazines,0,0.0,0.32,2026-10-16T11:39:46+00:00,1,1619,0,0,86677.8,14
+buzzsprout.com,categories Audio Streaming,0,0.0,0.48,2026-10-16T11:39:57+00:00,1,1620,0,0,76072.6,14
+kugou.com,categories Audio Streaming,1,0.93,0.55,2026-10-16T11:40:22+00:00,1,1621,0,0,74087.2,14
+pandora.com,categories Audio Streaming,1,0.93,0.61,2026-10-16T11:40:44+00:00,1,1622,0,0,81850.1,14
+jiosaavn.com,categories Audio Streaming,0,0.0,0.59,2026-10-16T11:40:55+00:00,1,1623,0,0,80943.0,14
+libsyn.com,categories Audio Streaming,0,0.0,0.58,2026-10-16T11:41:08+00:00,1,1624,0,0,82210.8,14
+stitcher.com,categories Audio Streaming,0,0.0,0.56,2026-10-16T11:41:20+00:00,1,1625,0,0,82318.6,14
+sandiegouniontribune.com,categories Audio Streaming,0,0.0,0.55,2026-10-16T11:41:33+00:00,1,1626,0,0,71577.3,14
+podbean.com,categories Audio Streaming,0,0.0,0.54,2026-10-16T11:41:45+00:00,1,1627,0,0,60581.9,14
+musicdel.ir,categories Audio Streaming,0,0.0,0.52,2026-10-16T11:41:57+00:00,1,1628,0,0,61566.8,14
+dual-gslb.spotify.com,categories Audio Streaming,0,0.0,0.51,2026-10-16T11:42:08+00:00,1,1629,0,0,59422.6,14
+www.discogs.com,categories Audio Streaming,1,0.93,0.57,2026-10-16T11:42:30+00:00,1,1630,0,0,70723.3,14
+rfi.fr,categories Audio Streaming,1,0.93,0.63,2026-10-16T11:42:53+00:00,1,1631,0,0,79496.3,14
+wynk.in,categories Audio Streaming,0,0.0,0.62,2026-10-16T11:43:04+00:00,1,1632,0,0,79561.6,14
+soundcloud.com,categories Audio Streaming,1,0.93,0.68,2026-10-16T11:43:27+00:00,1,1633,0,0,89753.9,14
+last.fm,categories Audio Streaming,1,0.93,0.74,2026-10-16T11:43:49+00:00,1,1634,1,0,101318.4,14
+audacy.com,categories Audio Streaming,0,0.0,0.71,2026-10-16T11:44:01+00:00,1,1635,1,0,90194.4,14
+tidal.com,categories Audio Streaming,1,1.0,0.78,2026-10-16T11:44:23+00:00,1,1636,1,0,89750.0,14
+spreaker.com,categories Audio Streaming,1,0.93,0.84,2026-10-16T11:44:46+00:00,1,1637,1,0,101018.4,14
+xp.itunes-apple.com.akadns.net,categories Audio Streaming,0,0.0,0.81,2026-10-16T11:44:59+00:00,1,1638,1,0,91005.4,14
+blogtalkradio.com,categories Audio Streaming,1,0.86,0.86,2026-10-16T11:45:22+00:00,1,1639,1,0,93012.1,14
+www.letras.mus.br,categories Audio Streaming,0,0.14,0.84,2026-10-16T11:45:46+00:00,1,1640,1,0,105652.7,14
+spotify.com,categories Audio Streaming,0,0.0,0.81,2026-10-16T11:45:57+00:00,1,1641,1,0,94562.1,14
+radio-canada.ca,categories Audio Streaming,1,0.93,0.86,2026-10-16T11:46:19+00:00,1,1642,1,0,92755.9,14
+reverbnation.com,categories Audio Streaming,1,0.93,0.91,2026-10-16T11:46:41+00:00,1,1643,1,0,102263.6,14
+open.spotify.com,categories Audio Streaming,0,0.0,0.88,2026-10-16T11:46:53+00:00,1,1644,1,0,90281.7,14
+bandcamp.com,categories Audio Streaming,0,0.0,0.85,2026-10-16T11:47:03+00:00,1,1645,1,0,77039.7,14
+tunein.com,categories Audio Streaming,1,0.93,0.89,2026-10-16T11:47:26+00:00,1,1646,1,0,88392.1,14
+discogs.com,categories Audio Streaming,1,0.93,0.94,2026-10-16T11:47:48+00:00,1,1647,1,0,86206.2,14
+deezer.com,categories Audio Streaming,1,1.0,0.99,2026-10-16T11:48:09+00:00,1,1648,1,0,87448.8,14
+mixcloud.com,categories Audio Streaming,1,0.86,1.0,2026-10-16T11:48:31+00:00,1,1649,1,0,98779.7,14
+gaana.com,categories Audio Streaming,0,0.0,0.99,2026-10-16T11:48:42+00:00,1,1650,1,0,98853.9,14
+dealer.spotify.com,categories Audio Streaming,0,0.0,0.95,2026-10-16T12:17:29+00:00,1,1651,1,0,1802594.2,14
+omny.fm,categories Audio Streaming,0,0.0,0.91,2026-10-16T12:17:29+00:00,1,1652,1,0,1781493.0,14
+audiomack.com,categories Audio Streaming,1,1.0,0.96,2026-10-16T12:17:29+00:00,1,1653,1,0,1759977.3,14
+www.spotify.com,categories Audio Streaming,0,0.0,0.93,2026-10-16T12:17:29+00:00,1,1654,1,0,1736271.2,14
+iheart.com,categories Audio Streaming,0,0.0,0.89,2026-10-16T12:17:29+00:00,1,1655,1,0,1722244.7,14
+spclient.wg.spotify.com,categories Audio Streaming,0,0.0,0.86,2026-10-16T12:17:40+00:00,1,1656,1,0,10898.4,14
+login5.spotify.com,categories Audio Streaming,0,0.0,0.83,2026-10-16T12:17:52+00:00,1,1657,1,0,23334.7,14
+avid.com,categories Music,0,0.0,0.39,2026-10-16T12:18:05+00:00,1,1658,0,0,12381.2,14
+musescore.com,categories Music,0,0.0,0.39,2026-10-16T12:18:29+00:00,1,1659,0,0,36308.1,14
+chordtela.com,categories Music,0,0.0,0.39,2026-10-16T12:18:42+00:00,1,1660,0,0,49442.8,14
+allmusic.com,categories Music,1,1.0,0.52,2026-10-16T12:19:07+00:00,1,1661,0,0,74427.8,14
+su.itunes.apple.com,categories Music,0,0.0,0.5,2026-10-16T12:19:18+00:00,1,1662,0,0,85497.6,14
+castbox.fm,categories Music,0,0.0,0.49,2026-10-16T12:19:30+00:00,1,1663,0,0,84790.5,14
+akamaistream.net,categories Music,0,0.0,0.48,2026-10-16T12:19:56+00:00,1,1664,0,0,86951.2,14
+ximalaya.com,categories Music,1,0.86,0.58,2026-10-16T12:20:17+00:00,1,1665,0,0,95521.7,14
+www.chordtela.com,categories Music,0,0.0,0.56,2026-10-16T12:20:29+00:00,1,1666,0,0,81949.8,14
+onlineradiobox.com,categories Music,1,1.0,0.66,2026-10-16T12:20:51+00:00,1,1667,0,0,93014.7,14
+thomann.de,categories Music,0,0.0,0.64,2026-10-16T12:21:06+00:00,1,1668,0,0,96539.9,14
+lnk.to,categories Music,0,0.0,0.62,2026-10-16T12:21:18+00:00,1,1669,0,0,81252.7,14
+music-fa.com,categories Music,1,0.86,0.7,2026-10-16T12:21:41+00:00,1,1670,0,0,83292.7,14
+pitchfork.com,categories Music,1,0.93,0.79,2026-10-16T12:22:04+00:00,1,1671,1,0,95051.9,14
+billboard.com,categories Music,1,0.93,0.86,2026-10-16T12:22:27+00:00,1,1672,1,0,95926.0,14
+nme.com,categories Music,1,0.86,0.93,2026-10-16T12:22:53+00:00,1,1673,1,0,104848.8,14
+radiofrance.fr,categories Music,0,0.0,0.88,2026-10-16T12:23:04+00:00,1,1674,1,0,105771.0,14
+rateyourmusic.com,categories Music,1,0.93,0.95,2026-10-16T12:23:28+00:00,1,1675,1,0,106239.3,14
+cdbaby.com,categories Music,1,0.93,1.0,2026-10-16T12:23:49+00:00,1,1676,1,0,105438.4,14
+hostingradio.ru,categories Music,0,0.0,0.97,2026-10-16T12:24:01+00:00,1,1677,1,0,92194.5,14
+genius.com,categories Music,0,0.0,0.92,2026-10-16T12:24:12+00:00,1,1678,1,0,78303.8,14
+intensedebate.com,categories Personal Blogs,0,0.0,0.4,2026-10-16T12:24:39+00:00,1,1679,0,0,26485.3,14
+liteapks.com,categories Personal Blogs,1,0.93,0.45,2026-10-16T12:25:01+00:00,1,1680,0,0,48796.4,14
+w.org,categories Personal Blogs,0,0.0,0.43,2026-10-16T12:25:13+00:00,1,1681,0,0,60237.2,14
+illusionblack.com,categories Personal Blogs,0,0.0,0.41,2026-10-16T12:25:26+00:00,1,1682,0,0,73907.6,14
+androidauthority.com,categories Personal Blogs,0,0.0,0.39,2026-10-16T12:25:38+00:00,1,1683,0,0,85473.8,14
+tmt.de,categories Personal Blogs,0,0.0,0.37,2026-10-16T12:25:50+00:00,1,1684,0,0,70519.9,14
+androidpolice.com,categories Personal Blogs,0,0.0,0.36,2026-10-16T12:26:02+00:00,1,1685,0,0,60270.2,14
+wp.com,categories Personal Blogs,1,0.93,0.41,2026-10-16T12:26:24+00:00,1,1686,0,0,70961.5,14
+www.gimkit.com,categories Personal Blogs,0,0.0,0.39,2026-10-16T12:26:35+00:00,1,1687,0,0,68898.9,14
+cbr.com,categories Comic Books,0,0.0,0.36,2026-10-16T12:26:47+00:00,1,1688,0,0,68676.4,14
+readmanga.live,categories Comic Books,0,0.0,0.31,2026-10-16T12:26:58+00:00,1,1689,0,0,68590.4,14
+www.mangago.me,categories Comic Books,1,0.93,0.35,2026-10-16T12:27:24+00:00,1,1690,0,0,82722.3,14
+www.meesho.com,categories Personal Blogs,0,0.0,0.37,2026-10-16T12:27:36+00:00,1,1691,0,0,71888.2,14
+wto.to,categories Comic Books,0,0.0,0.31,2026-10-16T12:27:47+00:00,1,1692,0,0,71775.4,14
+jw.org,categories Religion,1,0.86,0.43,2026-10-16T12:28:09+00:00,1,1693,0,0,82373.1,14
+www.biblegateway.com,categories Religion,1,1.0,0.4,2026-10-16T12:28:33+00:00,1,1694,0,0,94354.1,14
+wol.jw.org,categories Religion,1,0.86,0.33,2026-10-16T12:28:57+00:00,1,1695,0,0,92336.0,14
+www.jw.org,categories Religion,1,0.86,0.23,2026-10-16T12:29:19+00:00,1,1696,0,0,101253.2,14
+vatican.va,categories Religion,0,0.0,0.12,2026-10-16T12:29:30+00:00,1,1697,0,0,101974.8,14
+semanticscholar.org,categories Education,0,0.0,0.29,2026-10-16T12:29:41+00:00,1,1698,0,0,92222.0,14
+brainly.in,categories Education,0,0.0,0.25,2026-10-16T12:29:59+00:00,1,1699,0,0,86099.7,14
+uranai.nosv.org,categories Education,0,0.0,0.22,2026-10-16T12:30:10+00:00,1,1700,0,0,73473.6,14
+uci.edu,categories Education,0,0.0,0.2,2026-10-16T12:30:22+00:00,1,1701,0,0,63300.0,14
+nla.gov.au,categories Education,0,0.0,0.18,2026-10-16T12:30:34+00:00,1,1702,0,0,64165.6,14
+popsci.com,categories Magazines,0,0.0,0.29,2026-10-16T12:30:58+00:00,1,1703,0,0,76547.1,14
+kotaku.com,categories Magazines,1,0.86,0.39,2026-10-16T12:31:21+00:00,1,1704,0,0,82528.6,14
+zoomit.ir,categories Magazines,0,0.0,0.37,2026-10-16T12:31:35+00:00,1,1705,0,0,84661.2,14
+popularmechanics.com,categories Magazines,0,0.0,0.35,2026-10-16T12:32:02+00:00,1,1706,0,0,99186.6,14
+livescience.com,categories Magazines,0,0.0,0.33,2026-10-16T12:32:13+00:00,1,1707,0,0,98465.4,14
+m.wplay.co,categories Gambling,1,0.86,0.42,2026-10-16T12:32:36+00:00,1,1708,0,0,98117.3,14
+womenshealthmag.com,categories Magazines,1,1.0,0.41,2026-10-16T12:32:58+00:00,1,1709,0,0,96612.9,14
+bhg.com,categories Magazines,0,0.0,0.39,2026-10-16T12:33:09+00:00,1,1710,0,0,94299.2,14
+nationalreview.com,categories Magazines,0,0.0,0.38,2026-10-16T12:33:21+00:00,1,1711,0,0,79250.3,14
+harrahs.org,categories Gambling,0,0.0,0.36,2026-10-16T12:33:33+00:00,1,1712,0,0,79915.0,14
+tjk.org,categories Gambling,0,0.0,0.32,2026-10-16T12:33:44+00:00,1,1713,0,0,67884.7,14
+vseosvita.ua,categories Magazines,0,0.0,0.36,2026-10-16T12:33:58+00:00,1,1714,0,0,59977.6,14
+oddspark.com,categories Gambling,0,0.0,0.28,2026-10-16T12:34:10+00:00,1,1715,0,0,60654.5,14
+ladbrokes.com,categories Gambling,1,1.0,0.34,2026-10-16T12:37:25+00:00,1,1716,0,0,243889.3,14
+aappublications.org,categories Magazines,0,0.0,0.35,2026-10-16T12:37:38+00:00,1,1717,0,0,245452.2,14
+boingboing.net,categories Magazines,0,0.0,0.34,2026-10-16T12:37:50+00:00,1,1718,0,0,245312.7,14
+rd.com,categories Magazines,0,0.0,0.32,2026-10-16T12:38:01+00:00,1,1719,0,0,243118.2,14
+yumpu.com,categories Magazines,1,1.0,0.39,2026-10-16T12:38:23+00:00,1,1720,0,0,252982.6,14
+futurism.com,categories Magazines,0,0.0,0.37,2026-10-16T12:38:35+00:00,1,1721,0,0,69591.8,14
+www.topmanhua.com,categories Personal Blogs,0,0.0,0.36,2026-10-16T12:38:48+00:00,1,1722,0,0,70029.1,14
+gingerall.com,categories Personal Blogs,0,0.0,0.34,2026-10-16T12:38:59+00:00,1,1723,0,0,69929.4,14
+boozt.com,categories Clothing,0,0.0,0.21,2026-10-16T12:39:12+00:00,1,1724,0,0,70685.3,14
+eatingwell.com,categories Magazines,0,0.0,0.35,2026-10-16T12:39:23+00:00,1,1725,0,0,60152.4,14
+hbr.org,categories Magazines,0,0.0,0.34,2026-10-16T12:39:35+00:00,1,1726,0,0,60091.1,14
+travelandleisure.com,categories Magazines,0,0.0,0.33,2026-10-16T12:39:46+00:00,1,1727,0,0,58120.3,14
+issuu.com,categories Magazines,1,0.93,0.38,2026-10-16T12:40:08+00:00,1,1728,0,0,68631.3,14
+architecturaldigest.com,categories Magazines,0,0.0,0.37,2026-10-16T12:40:27+00:00,1,1729,0,0,74986.9,14
+thegamer.com,categories Magazines,0,0.0,0.36,2026-10-16T12:40:40+00:00,1,1730,0,0,77120.5,14
+medicare.gov,categories Health & Fitness,0,0.0,0.28,2026-10-16T12:40:51+00:00,1,1731,0,0,76522.2,14
+www.ncbi.nlm.nih.gov,categories Health & Fitness,0,0.0,0.25,2026-10-16T12:41:03+00:00,1,1732,0,0,77062.2,14
+technologyreview.com,categories Magazines,0,0.0,0.35,2026-10-16T12:41:16+00:00,1,1733,0,0,67884.2,14
+smithsonianmag.com,categories Magazines,0,0.0,0.34,2026-10-16T12:41:28+00:00,1,1734,0,0,61283.7,14
+xataka.com,categories Magazines,1,1.0,0.39,2026-10-16T12:41:50+00:00,1,1735,0,0,70037.1,14
+pcgamer.com,categories Magazines,0,0.0,0.38,2026-10-16T12:42:02+00:00,1,1736,0,0,70635.4,14
+medium.com,categories Magazines,0,0.0,0.36,2026-10-16T12:42:13+00:00,1,1737,0,0,69987.0,14
+boredpanda.com,categories Magazines,1,0.93,0.41,2026-10-16T12:42:36+00:00,1,1738,0,0,79378.6,14
+theatlantic.com,categories Magazines,0,0.0,0.4,2026-10-16T12:42:47+00:00,1,1739,0,0,78866.4,14
+teenvogue.com,categories Magazines,1,1.0,0.45,2026-10-16T12:43:17+00:00,1,1740,0,0,86220.3,14
+nationalgeographic.com,categories Magazines,0,0.0,0.44,2026-10-16T12:43:27+00:00,1,1741,0,0,85593.8,14
+curbed.com,categories Magazines,0,0.0,0.42,2026-10-16T12:43:39+00:00,1,1742,0,0,85779.9,14
+allure.com,categories Magazines,0,0.14,0.42,2026-10-16T12:44:30+00:00,1,1743,0,0,113108.9,14
+flipboard.com,categories Magazines,0,0.07,0.41,2026-10-16T12:44:51+00:00,1,1744,0,0,124221.1,14
+howtogeek.com,categories Magazines,0,0.0,0.4,2026-10-16T12:45:03+00:00,1,1745,0,0,106195.9,14
+harpersbazaar.com,categories Magazines,1,0.79,0.44,2026-10-16T12:45:25+00:00,1,1746,0,0,117032.0,14
+giga.de,categories Magazines,0,0.0,0.42,2026-10-16T12:45:36+00:00,1,1747,0,0,116432.7,14
+ndr.de,categories Magazines,0,0.0,0.41,2026-10-16T12:45:47+00:00,1,1748,0,0,77449.6,14
+smashingmagazine.com,categories Magazines,0,0.0,0.4,2026-10-16T12:45:59+00:00,1,1749,0,0,67286.6,14
+techrepublic.com,categories Magazines,0,0.0,0.39,2026-10-16T12:46:10+00:00,1,1750,0,0,67396.3,14
+elle.com,categories Magazines,1,0.93,0.43,2026-10-16T12:46:32+00:00,1,1751,0,0,67366.2,14
+bonappetit.com,categories Magazines,0,0.0,0.42,2026-10-16T12:46:44+00:00,1,1752,0,0,67897.3,14
+president.jp,categories Magazines,0,0.0,0.41,2026-10-16T12:46:54+00:00,1,1753,0,0,67235.2,14
+glamour.com,categories Magazines,1,1.0,0.46,2026-10-16T12:47:16+00:00,1,1754,0,0,76630.9,14
+www.theverge.com,categories Magazines,0,0.0,0.44,2026-10-16T12:47:28+00:00,1,1755,0,0,76668.6,14
+theverge.com,categories Magazines,0,0.0,0.43,2026-10-16T12:47:39+00:00,1,1756,0,0,67188.9,14
+chefkoch.de,categories Magazines,0,0.0,0.42,2026-10-16T12:47:50+00:00,1,1757,0,0,66584.2,14
+slate.com,categories Magazines,0,0.0,0.41,2026-10-16T12:48:02+00:00,1,1758,0,0,67222.8,14
+wired.co.uk,categories Magazines,0,0.0,0.4,2026-10-16T12:48:13+00:00,1,1759,0,0,56922.0,14
+inc.com,categories Magazines,0,0.0,0.38,2026-10-16T12:48:25+00:00,1,1760,0,0,56817.8,14
+gamesradar.com,categories Magazines,0,0.0,0.37,2026-10-16T12:48:36+00:00,1,1761,0,0,56828.5,14
+forbes.com,categories Magazines,0,0.0,0.36,2026-10-16T12:48:48+00:00,1,1762,0,0,57486.4,14
+hola.com,categories Magazines,1,0.93,0.41,2026-10-16T12:49:38+00:00,1,1763,0,0,96201.0,14
+mindbodygreen.com,categories Magazines,1,0.86,0.44,2026-10-16T12:50:00+00:00,1,1764,0,0,106612.0,14
+cio.com,categories Magazines,0,0.0,0.43,2026-10-16T12:50:11+00:00,1,1765,0,0,106550.2,14
+theweek.com,categories Magazines,0,0.0,0.42,2026-10-16T12:50:22+00:00,1,1766,0,0,106123.9,14
+adweek.com,categories Magazines,0,0.0,0.41,2026-10-16T12:50:34+00:00,1,1767,0,0,105998.2,14
+musinsa.com,categories Magazines,0,0.0,0.4,2026-10-16T12:50:45+00:00,1,1768,0,0,67242.6,14
+motortrend.com,categories Magazines,0,0.0,0.39,2026-10-16T12:50:56+00:00,1,1769,0,0,56242.9,14
+southernliving.com,categories Magazines,0,0.0,0.38,2026-10-16T12:51:07+00:00,1,1770,0,0,56100.0,14
+teleprogramma.pro,categories Magazines,1,0.93,0.42,2026-10-16T12:51:30+00:00,1,1771,0,0,67393.5,14
+newscientist.com,categories Magazines,0,0.0,0.41,2026-10-16T12:51:41+00:00,1,1772,0,0,66414.3,14
+journaldesfemmes.fr,categories Magazines,0,0.0,0.4,2026-10-16T12:51:52+00:00,1,1773,0,0,66766.3,14
+calameo.com,categories Magazines,1,0.86,0.43,2026-10-16T12:54:51+00:00,1,1774,0,0,234797.1,14
+itmedia.co.jp,categories Magazines,0,0.0,0.42,2026-10-16T12:55:02+00:00,1,1775,0,0,235003.3,14
+computerworld.com,categories Magazines,0,0.0,0.41,2026-10-16T12:55:14+00:00,1,1776,0,0,224292.2,14
+pcmag.com,categories Magazines,0,0.0,0.4,2026-10-16T12:55:26+00:00,1,1777,0,0,225299.6,14
+caranddriver.com,categories Magazines,0,0.0,0.39,2026-10-16T12:55:38+00:00,1,1778,0,0,226056.3,14
+treehugger.com,categories Magazines,0,0.0,0.38,2026-10-16T12:55:49+00:00,1,1779,0,0,57327.6,14
+dezeen.com,categories Magazines,0,0.0,0.37,2026-10-16T12:56:03+00:00,1,1780,0,0,60167.4,14
+menshealth.com,categories Magazines,1,0.93,0.41,2026-10-16T12:56:25+00:00,1,1781,0,0,70874.1,14
+outsideonline.com,categories Magazines,0,0.0,0.4,2026-10-16T12:56:36+00:00,1,1782,0,0,69717.6,14
+self.com,categories Magazines,1,0.86,0.43,2026-10-16T12:57:01+00:00,1,1783,0,0,83144.3,14
+esquire.com,categories Magazines,1,1.0,0.47,2026-10-16T12:57:32+00:00,1,1784,0,0,102818.5,14
+gq.com,categories Magazines,1,1.0,0.51,2026-10-16T12:57:57+00:00,1,1785,0,0,114733.4,14
+fortune.com,categories Magazines,0,0.0,0.5,2026-10-16T12:58:08+00:00,1,1786,0,0,103590.4,14
+newsweek.com,categories Magazines,0,0.0,0.49,2026-10-16T12:58:25+00:00,1,1787,0,0,108755.1,14
+science.org,categories Magazines,0,0.0,0.48,2026-10-16T12:58:38+00:00,1,1788,0,0,95707.6,14
+abril.com.br,categories Magazines,0,0.14,0.47,2026-10-16T12:58:50+00:00,1,1789,0,0,77928.7,14
+gizmodo.com,categories Magazines,0,0.0,0.46,2026-10-16T12:59:02+00:00,1,1790,0,0,61393.0,14
+time.com,categories Magazines,0,0.0,0.45,2026-10-16T12:59:13+00:00,1,1791,0,0,64003.0,14
+countryliving.com,categories Magazines,0,0.0,0.44,2026-10-16T12:59:24+00:00,1,1792,0,0,58193.7,14
+goodhousekeeping.com,categories Magazines,0,0.0,0.43,2026-10-16T12:59:36+00:00,1,1793,0,0,51152.2,14
+metmuseum.org,categories Fine Art,0,0.0,0.0,2026-10-16T12:59:48+00:00,1,1794,0,0,11949.2,14
+evite.com,categories Digital Postcards,0,0.0,0.0,2026-10-16T13:00:02+00:00,1,1795,0,0,24745.0,14
+dmm.com,categories Home Video/DVD,1,1.0,0.5,2026-10-16T13:00:48+00:00,1,1796,0,0,70461.0,14
+nghttp2.org,categories APIs,0,0.0,0.0,2026-10-16T13:00:59+00:00,1,1797,0,0,80035.4,14
+mediafire.com,"categories Militancy, Hate & Extremism",0,0.0,0.0,2026-10-16T13:01:11+00:00,1,1798,0,0,90445.5,14
+s3.amazonaws.com,categories File Sharing,0,0.0,0.08,2026-10-16T13:01:39+00:00,1,1799,0,0,27882.8,14
+gateway.icloud.com,categories File Sharing,0,0.0,0.08,2026-10-16T13:01:51+00:00,1,1800,0,0,39716.4,14
+mega.nz,categories File Sharing,0,0.0,0.08,2026-10-16T13:02:02+00:00,1,1801,0,0,50564.2,14
+sfx.ms,categories File Sharing,0,0.0,0.08,2026-10-16T13:02:13+00:00,1,1802,0,0,61783.0,14
+platform.hicloud.com,categories File Sharing,0,0.0,0.08,2026-10-16T13:02:25+00:00,1,1803,0,0,73689.7,14
+meesho.com,categories Personal Blogs,0,0.0,0.33,2026-10-16T13:02:36+00:00,1,1804,0,0,56812.0,14
+indeed.tech,categories Personal Blogs,0,0.0,0.32,2026-10-16T13:02:47+00:00,1,1805,0,0,56174.8,14
+gawker.com,categories Personal Blogs,1,0.86,0.36,2026-10-16T13:03:09+00:00,1,1806,0,0,67458.5,14
+animanch.com,categories Personal Blogs,0,0.0,0.34,2026-10-16T13:03:20+00:00,1,1807,0,0,67347.6,14
+openssl.org,categories Personal Blogs,0,0.0,0.33,2026-10-16T13:03:32+00:00,1,1808,0,0,66747.3,14
+nesine.com,categories Gambling,0,0.0,0.31,2026-10-16T13:03:43+00:00,1,1809,0,0,67620.0,14
+custhelp.com,categories Gambling,0,0.0,0.29,2026-10-16T13:03:55+00:00,1,1810,0,0,67731.1,14
+mobiusltd.com,categories Personal Blogs,0,0.0,0.32,2026-10-16T13:04:06+00:00,1,1811,0,0,56703.6,14
+azioncdn.net,categories Personal Blogs,0,0.0,0.31,2026-10-16T13:04:18+00:00,1,1812,0,0,57279.3,14
+www.flashscore.fr,categories Gambling,0,0.0,0.26,2026-10-16T13:04:29+00:00,1,1813,0,0,57242.3,14
+4.bp.blogspot.com,categories Personal Blogs,1,0.93,0.35,2026-10-16T13:04:52+00:00,1,1814,0,0,68075.8,14
+jetpack.wordpress.com,categories Personal Blogs,1,0.93,0.39,2026-10-16T13:05:14+00:00,1,1815,0,0,79087.3,14
+www.quora.com,categories Forums,1,0.86,0.36,2026-10-16T13:05:36+00:00,1,1816,0,0,89639.8,14
+fanfiction.net,categories Forums,1,0.93,0.41,2026-10-16T13:05:58+00:00,1,1817,0,0,99880.0,14
+flightrising.com,categories Forums,0,0.0,0.39,2026-10-16T13:06:11+00:00,1,1818,0,0,101683.5,14
+themeansar.com,categories Personal Blogs,0,0.0,0.38,2026-10-16T13:06:35+00:00,1,1819,0,0,103333.0,14
+harry.lu,categories Personal Blogs,0,0.0,0.37,2026-10-16T13:06:48+00:00,1,1820,0,0,93853.8,14
+github.blog,categories Personal Blogs,0,0.0,0.36,2026-10-16T13:07:09+00:00,1,1821,0,0,93653.2,14
+pantip.com,categories Forums,1,0.79,0.42,2026-10-16T13:07:34+00:00,1,1822,0,0,96485.6,14
+girlschannel.net,categories Forums,1,1.0,0.47,2026-10-16T13:07:56+00:00,1,1823,0,0,105245.9,14
+skyscrapercity.com,categories Forums,0,0.0,0.45,2026-10-16T13:08:07+00:00,1,1824,0,0,92164.0,14
+quora.com,categories Forums,1,1.0,0.5,2026-10-16T13:08:30+00:00,1,1825,0,0,101367.7,14
+apachelounge.com,categories Forums,0,0.0,0.48,2026-10-16T13:08:41+00:00,1,1826,0,0,92169.9,14
+wien.gv.at,categories Forums,0,0.0,0.46,2026-10-16T13:09:07+00:00,1,1827,0,0,92466.0,14
+gutefrage.net,categories Forums,0,0.0,0.43,2026-10-16T13:09:18+00:00,1,1828,0,0,82561.5,14
+arca.live,categories Forums,1,0.93,0.48,2026-10-16T13:09:41+00:00,1,1829,0,0,93530.3,14
+bigthink.com,categories Forums,0,0.0,0.46,2026-10-16T13:09:55+00:00,1,1830,0,0,85285.6,14
+ppomppu.co.kr,categories Forums,0,0.0,0.44,2026-10-16T13:10:21+00:00,1,1831,0,0,99603.7,14
+gamer.com.tw,categories Forums,1,1.0,0.49,2026-10-16T13:10:43+00:00,1,1832,0,0,95374.7,14
+dailykos.com,categories Forums,0,0.0,0.47,2026-10-16T13:10:54+00:00,1,1833,0,0,96010.0,14
+mql5.com,categories Forums,0,0.0,0.45,2026-10-16T13:11:06+00:00,1,1834,0,0,85210.8,14
+ptt.cc,categories Forums,1,1.0,0.5,2026-10-16T13:11:29+00:00,1,1835,0,0,92641.6,14
+zhihu.com,categories Forums,1,0.86,0.54,2026-10-16T13:11:51+00:00,1,1836,0,0,89735.9,14
+brainly.lat,categories Forums,0,0.0,0.52,2026-10-16T13:12:03+00:00,1,1837,0,0,79813.6,14
+rutracker.org,categories Forums,0,0.0,0.5,2026-10-16T13:12:14+00:00,1,1838,0,0,79587.9,14
+redd.it,categories Forums,0,0.0,0.48,2026-10-16T13:12:31+00:00,1,1839,0,0,84600.2,14
+hoyolab.com,categories Forums,0,0.0,0.46,2026-10-16T13:12:43+00:00,1,1840,0,0,74212.5,14
+www.wowhead.com,categories Forums,0,0.0,0.44,2026-10-16T13:12:54+00:00,1,1841,0,0,63233.5,14
+pixiv.net,categories Forums,1,0.86,0.48,2026-10-16T13:13:16+00:00,1,1842,0,0,73589.1,14
+www.ptt.cc,categories Forums,1,1.0,0.53,2026-10-16T13:13:38+00:00,1,1843,0,0,83246.0,14
+reddit.com,categories Forums,1,0.86,0.57,2026-10-16T13:14:00+00:00,1,1844,0,0,88583.7,14
+5ch.net,categories Forums,0,0.0,0.55,2026-10-16T13:14:11+00:00,1,1845,0,0,88246.2,14
+phpbb.com,categories Forums,0,0.0,0.53,2026-10-16T13:14:37+00:00,1,1846,0,0,102908.4,14
+theqoo.net,categories Forums,0,0.0,0.51,2026-10-16T13:14:49+00:00,1,1847,0,0,92674.1,14
+nn.gx.cn,categories Forums,0,0.0,0.49,2026-10-16T13:15:01+00:00,1,1848,0,0,82412.5,14
+detail.chiebukuro.yahoo.co.jp,categories Forums,1,0.86,0.52,2026-10-16T13:15:23+00:00,1,1849,0,0,82828.2,14
+dnspod.com,categories Forums,0,0.0,0.51,2026-10-16T13:15:40+00:00,1,1850,0,0,88968.5,14
+www.reddit.com,categories Forums,1,0.86,0.54,2026-10-16T13:18:12+00:00,1,1851,0,0,214530.7,14
+elastic.co,categories Forums,0,0.0,0.52,2026-10-16T13:18:23+00:00,1,1852,0,0,213546.9,14
+ropro.io,categories Forums,0,0.0,0.5,2026-10-16T13:18:34+00:00,1,1853,0,0,212785.1,14
+nairaland.com,categories Forums,0,0.0,0.49,2026-10-16T13:18:47+00:00,1,1854,0,0,203727.8,14
+alb.reddit.com,categories Forums,1,0.93,0.53,2026-10-16T13:19:15+00:00,1,1855,0,0,214751.1,14
+bakusai.com,categories Forums,1,1.0,0.57,2026-10-16T13:19:38+00:00,1,1856,0,0,86164.4,14
+dev.to,categories Forums,0,0.0,0.55,2026-10-16T13:19:50+00:00,1,1857,0,0,86227.9,14
+4channel.org,categories Forums,1,1.0,0.6,2026-10-16T13:20:11+00:00,1,1858,0,0,96395.5,14
+steamcommunity.com,categories Forums,0,0.0,0.58,2026-10-16T13:20:23+00:00,1,1859,0,0,95975.7,14
+forexfactory.com,categories Forums,0,0.0,0.56,2026-10-16T13:20:34+00:00,1,1860,0,0,79605.2,14
+stackoverflow.com,categories Forums,0,0.0,0.54,2026-10-16T13:20:46+00:00,1,1861,0,0,62224.6,14
+ravelry.com,categories Forums,0,0.07,0.53,2026-10-16T13:23:56+00:00,1,1862,0,0,245403.9,14
+dogdrip.net,categories Forums,0,0.0,0.51,2026-10-16T13:24:07+00:00,1,1863,0,0,236263.0,14
+www.pixiv.net,categories Forums,1,0.93,0.55,2026-10-16T13:24:30+00:00,1,1864,0,0,244807.7,14
+2.bp.blogspot.com,categories Personal Blogs,1,0.93,0.42,2026-10-16T13:24:54+00:00,1,1865,0,0,23714.9,14
+snapinsta.app,categories Personal Blogs,0,0.0,0.41,2026-10-16T13:25:06+00:00,1,1866,0,0,36102.0,14
+blogspot.com.au,categories Personal Blogs,1,0.93,0.45,2026-10-16T13:25:28+00:00,1,1867,0,0,58426.5,14
+wp.me,categories Personal Blogs,1,0.86,0.48,2026-10-16T13:25:51+00:00,1,1868,0,0,80874.7,14
+bbs.animanch.com,categories Personal Blogs,0,0.0,0.47,2026-10-16T13:26:04+00:00,1,1869,0,0,93803.6,14
+blogs.com,categories Personal Blogs,0,0.0,0.46,2026-10-16T13:26:17+00:00,1,1870,0,0,83401.5,14
+bustle.com,categories Personal Blogs,1,0.86,0.49,2026-10-16T13:26:39+00:00,1,1871,0,0,93358.0,14
+www.extra.cz,categories Personal Blogs,1,0.93,0.52,2026-10-16T13:27:04+00:00,1,1872,0,0,95383.9,14
+clashofclans.com,categories Personal Blogs,0,0.0,0.51,2026-10-16T13:27:22+00:00,1,1873,0,0,90786.9,14
+people.cn,categories Personal Blogs,0,0.0,0.5,2026-10-16T13:27:33+00:00,1,1874,0,0,89252.8,14
+bp.blogspot.com,categories Personal Blogs,1,1.0,0.53,2026-10-16T13:27:55+00:00,1,1875,0,0,97962.2,14
+googleblog.com,categories Personal Blogs,0,0.0,0.52,2026-10-16T13:28:07+00:00,1,1876,0,0,87298.9,14
+edublogs.org,categories Personal Blogs,0,0.0,0.51,2026-10-16T13:28:18+00:00,1,1877,0,0,74305.7,14
+uquiz.com,categories Personal Blogs,0,0.0,0.49,2026-10-16T13:28:31+00:00,1,1878,0,0,69432.5,14
+i2.wp.com,categories Personal Blogs,1,0.79,0.52,2026-10-16T13:28:57+00:00,1,1879,0,0,83607.3,14
+bleepingcomputer.com,categories Personal Blogs,0,0.0,0.51,2026-10-16T13:29:10+00:00,1,1880,0,0,75110.9,14
+zinmanga.com,categories Personal Blogs,1,1.0,0.54,2026-10-16T13:29:37+00:00,1,1881,0,0,90753.6,14
+zlib.net,categories Personal Blogs,0,0.0,0.53,2026-10-16T13:29:50+00:00,1,1882,0,0,91601.1,14
+beacons.ai,categories Personal Blogs,0,0.0,0.52,2026-10-16T13:30:01+00:00,1,1883,0,0,90133.2,14
+johnnys-web.com,categories Personal Blogs,0,0.0,0.5,2026-10-16T13:30:13+00:00,1,1884,0,0,75937.3,14
+www.google.es,categories Personal Blogs,0,0.0,0.49,2026-10-16T13:30:25+00:00,1,1885,0,0,74306.5,14
+feednews.com,categories Personal Blogs,0,0.0,0.48,2026-10-16T13:30:40+00:00,1,1886,0,0,62840.1,14
+canalblog.com,categories Personal Blogs,1,1.0,0.52,2026-10-16T13:31:23+00:00,1,1887,0,0,93004.5,14
+schneier.com,categories Personal Blogs,0,0.0,0.5,2026-10-16T13:31:34+00:00,1,1888,0,0,92090.7,14
+perl.com,categories Personal Blogs,0,0.0,0.49,2026-10-16T13:31:45+00:00,1,1889,0,0,91877.5,14
+boutell.com,categories Personal Blogs,0,0.0,0.48,2026-10-16T13:31:57+00:00,1,1890,0,0,91299.3,14
+tistory.com,categories Personal Blogs,1,1.0,0.52,2026-10-16T13:32:47+00:00,1,1891,0,0,126250.5,14
+exblog.jp,categories Personal Blogs,1,1.0,0.55,2026-10-16T13:33:37+00:00,1,1892,0,0,134616.6,14
+blogspot.ca,categories Personal Blogs,1,1.0,0.58,2026-10-16T13:34:28+00:00,1,1893,0,0,173592.7,14
+sinajs.cn,categories Personal Blogs,0,0.0,0.57,2026-10-16T13:34:39+00:00,1,1894,0,0,173992.6,14
+home-assistant.io,categories Personal Blogs,0,0.0,0.56,2026-10-16T13:34:50+00:00,1,1895,0,0,172858.4,14
+nosv.org,categories Personal Blogs,0,0.0,0.54,2026-10-16T13:35:01+00:00,1,1896,0,0,134737.0,14
+over-blog.com,categories Personal Blogs,1,0.93,0.57,2026-10-16T13:35:52+00:00,1,1897,0,0,134654.6,14
+feeds.feedburner.com,categories Personal Blogs,1,0.86,0.6,2026-10-16T13:36:14+00:00,1,1898,0,0,105859.2,14
+venturebeat.com,categories Personal Blogs,0,0.0,0.59,2026-10-16T13:36:25+00:00,1,1899,0,0,106156.8,14
+pcpartpicker.com,categories Personal Blogs,0,0.0,0.57,2026-10-16T13:36:36+00:00,1,1900,0,0,105753.4,14
+blog.google,categories Personal Blogs,0,0.0,0.56,2026-10-16T13:36:48+00:00,1,1901,0,0,106114.7,14
+3.bp.blogspot.com,categories Personal Blogs,1,0.93,0.59,2026-10-16T13:37:10+00:00,1,1902,0,0,77597.3,14
+sheknows.com,categories Personal Blogs,1,0.93,0.62,2026-10-16T13:37:32+00:00,1,1903,0,0,78013.8,14
+igvita.com,categories Personal Blogs,0,0.0,0.6,2026-10-16T13:37:43+00:00,1,1904,0,0,77724.1,14
+topmanhua.com,categories Personal Blogs,0,0.0,0.59,2026-10-16T13:37:54+00:00,1,1905,0,0,77632.5,14
+iterable.com,categories Personal Blogs,0,0.0,0.58,2026-10-16T13:38:05+00:00,1,1906,0,0,77819.1,14
+mobile01.com,categories Personal Blogs,1,0.93,0.61,2026-10-16T13:38:28+00:00,1,1907,0,0,78097.7,14
+blog.livedoor.jp,categories Personal Blogs,1,0.93,0.63,2026-10-16T13:39:18+00:00,1,1908,0,0,105850.8,14
+azure.cn,categories Personal Blogs,0,0.0,0.62,2026-10-16T13:39:29+00:00,1,1909,0,0,105879.7,14
+kremlin.ru,categories Personal Blogs,0,0.0,0.61,2026-10-16T13:39:40+00:00,1,1910,0,0,105492.7,14
+wordpress.net,categories Personal Blogs,0,0.0,0.59,2026-10-16T13:39:52+00:00,1,1911,0,0,106160.9,14
+www.google.com.mx,categories Personal Blogs,1,1.0,0.62,2026-10-16T13:40:14+00:00,1,1912,0,0,106266.4,14
+auctollo.com,categories Personal Blogs,0,0.0,0.61,2026-10-16T13:40:25+00:00,1,1913,0,0,67153.2,14
+ssstik.io,categories Personal Blogs,0,0.0,0.6,2026-10-16T13:40:36+00:00,1,1914,0,0,66877.7,14
+extra.cz,categories Personal Blogs,1,0.93,0.62,2026-10-16T13:40:58+00:00,1,1915,0,0,78073.5,14
+gemius.pl,categories Personal Blogs,0,0.0,0.61,2026-10-16T13:41:10+00:00,1,1916,0,0,77919.6,14
+dev.mysql.com,categories Personal Blogs,0,0.0,0.6,2026-10-16T13:41:21+00:00,1,1917,0,0,66909.3,14
+lifehack.org,categories Personal Blogs,0,0.0,0.59,2026-10-16T13:41:32+00:00,1,1918,0,0,67650.5,14
+home.blog,categories Personal Blogs,0,0.0,0.58,2026-10-16T13:41:44+00:00,1,1919,0,0,66928.1,14
+typepad.com,categories Personal Blogs,0,0.0,0.57,2026-10-16T13:41:55+00:00,1,1920,0,0,56177.1,14
+blogspot.com,categories Personal Blogs,1,0.86,0.59,2026-10-16T13:42:17+00:00,1,1921,0,0,66440.2,14
+s.mogg.ameba.jp,categories Personal Blogs,0,0.0,0.58,2026-10-16T13:42:28+00:00,1,1922,0,0,67143.8,14
+about.me,categories Personal Blogs,1,1.0,0.6,2026-10-16T13:43:19+00:00,1,1923,0,0,106626.0,14
+colorlib.com,categories Personal Blogs,0,0.0,0.59,2026-10-16T13:43:30+00:00,1,1924,0,0,105617.5,14
+xkcd.com,categories Personal Blogs,0,0.0,0.58,2026-10-16T13:43:41+00:00,1,1925,0,0,105865.0,14
+opaque.net,categories Personal Blogs,0,0.0,0.57,2026-10-16T13:43:53+00:00,1,1926,0,0,95973.8,14
+i0.wp.com,categories Personal Blogs,1,0.86,0.59,2026-10-16T13:46:04+00:00,1,1927,0,0,214516.3,14
+slashdot.org,categories Personal Blogs,0,0.0,0.58,2026-10-16T13:46:16+00:00,1,1928,0,0,176308.5,14
+pages.dev,categories Personal Blogs,1,0.86,0.6,2026-10-16T13:46:38+00:00,1,1929,0,0,187621.1,14
+autoblog.com,categories Personal Blogs,0,0.0,0.59,2026-10-16T13:46:49+00:00,1,1930,0,0,188163.2,14
+kriesi.at,categories Personal Blogs,0,0.0,0.58,2026-10-16T13:47:00+00:00,1,1931,0,0,182337.4,14
+eia.gov,"categories Politics, Advocacy, and Government-Related",0,0.0,0.21,2026-10-16T13:47:12+00:00,1,1932,0,0,12157.2,14
+oclc.org,"categories Politics, Advocacy, and Government-Related",0,0.0,0.21,2026-10-16T13:47:25+00:00,1,1933,0,0,24541.1,14
+avaaz.org,"categories Politics, Advocacy, and Government-Related",0,0.0,0.2,2026-10-16T13:47:37+00:00,1,1934,0,0,36279.2,14
+wa.gov.au,"categories Politics, Advocacy, and Government-Related",0,0.0,0.2,2026-10-16T13:47:49+00:00,1,1935,0,0,48815.2,14
+return.gst.gov.in,"categories Politics, Advocacy, and Government-Related",0,0.0,0.2,2026-10-16T13:48:01+00:00,1,1936,0,0,61048.5,14
+b92.net,categories News & Media,1,0.93,0.29,2026-10-16T13:48:24+00:00,1,1937,0,0,71303.7,14
+latimes.com,categories News & Media,0,0.0,0.27,2026-10-16T13:48:36+00:00,1,1938,0,0,70966.2,14
+www.livehindustan.com,categories News & Media,0,0.0,0.26,2026-10-16T13:48:48+00:00,1,1939,0,0,71457.9,14
+tw.yahoo.com,categories News & Media,1,0.79,0.33,2026-10-16T13:49:11+00:00,1,1940,0,0,81704.3,14
+siol.net,categories News & Media,0,0.0,0.31,2026-10-16T13:49:24+00:00,1,1941,0,0,82406.8,14
+nate.com,categories News & Media,0,0.0,0.3,2026-10-16T13:49:36+00:00,1,1942,0,0,72209.4,14
+rg.ru,categories News & Media,0,0.0,0.28,2026-10-16T13:49:47+00:00,1,1943,0,0,71498.0,14
+www.cnbcindonesia.com,categories News & Media,0,0.0,0.27,2026-10-16T13:50:00+00:00,1,1944,0,0,71468.8,14
+dr.dk,categories News & Media,0,0.0,0.26,2026-10-16T13:50:12+00:00,1,1945,0,0,60572.9,14
+weather.gov,categories News & Media,0,0.0,0.25,2026-10-16T13:50:24+00:00,1,1946,0,0,59941.6,14
+everydayhealth.com,categories News & Media,0,0.0,0.24,2026-10-16T13:50:36+00:00,1,1947,0,0,59871.6,14
+excite.co.jp,categories News & Media,1,0.93,0.3,2026-10-16T13:50:59+00:00,1,1948,0,0,71406.0,14
+nhk.or.jp,categories News & Media,1,0.86,0.35,2026-10-16T13:51:22+00:00,1,1949,0,0,82190.5,14
+ria.ru,categories News & Media,0,0.0,0.34,2026-10-16T13:51:34+00:00,1,1950,0,0,82347.4,14
+isna.ir,categories News & Media,0,0.0,0.33,2026-10-16T13:51:46+00:00,1,1951,0,0,82476.3,14
+tribunnews.com,categories News & Media,0,0.0,0.32,2026-10-16T13:51:58+00:00,1,1952,0,0,82010.8,14
+kenh14.vn,categories News & Media,1,1.0,0.37,2026-10-16T13:52:21+00:00,1,1953,0,0,82359.8,14
+netease.com,categories News & Media,0,0.0,0.36,2026-10-16T13:52:33+00:00,1,1954,0,0,71029.3,14
+khabaronline.ir,categories News & Media,0,0.0,0.35,2026-10-16T13:52:45+00:00,1,1955,0,0,71155.5,14
+journaldemontreal.com,categories News & Media,0,0.0,0.34,2026-10-16T13:52:57+00:00,1,1956,0,0,71079.2,14
+theepochtimes.com,categories News & Media,1,0.86,0.38,2026-10-16T13:53:20+00:00,1,1957,0,0,82404.4,14
+foreignpolicy.com,categories News & Media,0,0.0,0.37,2026-10-16T13:53:32+00:00,1,1958,0,0,71211.8,14
+dawn.com,categories News & Media,0,0.0,0.36,2026-10-16T13:53:51+00:00,1,1959,0,0,78133.5,14
+sina.com.cn,categories News & Media,1,1.0,0.4,2026-10-16T13:57:23+00:00,1,1960,0,0,277691.2,14
+dantri.com.vn,categories News & Media,0,0.0,0.39,2026-10-16T13:57:34+00:00,1,1961,0,0,276899.3,14
+detroitnews.com,categories News & Media,0,0.0,0.38,2026-10-16T13:57:45+00:00,1,1962,0,0,264832.4,14
+pravda.com.ua,categories News & Media,0,0.0,0.37,2026-10-16T13:57:57+00:00,1,1963,0,0,264448.1,14
+sudouest.fr,categories News & Media,0,0.0,0.36,2026-10-16T13:58:08+00:00,1,1964,0,0,257398.7,14
+www.eltiempo.es,categories News & Media,0,0.0,0.35,2026-10-16T13:58:20+00:00,1,1965,0,0,57237.6,14
+zoznam.sk,categories News & Media,1,1.0,0.39,2026-10-16T13:58:42+00:00,1,1966,0,0,67196.0,14
+sueddeutsche.de,categories News & Media,0,0.0,0.38,2026-10-16T13:58:54+00:00,1,1967,0,0,68610.1,14
+www.nytimes.com,categories News & Media,0,0.0,0.37,2026-10-16T13:59:04+00:00,1,1968,0,0,67640.4,14
+digitaljournal.com,categories News & Media,0,0.0,0.37,2026-10-16T13:59:16+00:00,1,1969,0,0,67677.1,14
+www.pravda.com.ua,categories News & Media,0,0.0,0.36,2026-10-16T13:59:27+00:00,1,1970,0,0,67197.8,14
+www.wp.pl,categories News & Media,1,1.0,0.39,2026-10-16T14:00:01+00:00,1,1971,0,0,79041.0,14
+sports.yahoo.co.jp,categories News & Media,0,0.0,0.38,2026-10-16T14:00:12+00:00,1,1972,0,0,78201.8,14
+swr.de,categories News & Media,0,0.14,0.38,2026-10-16T14:01:02+00:00,1,1973,0,0,117632.4,14
+togetter.com,categories News & Media,0,0.0,0.38,2026-10-16T14:01:14+00:00,1,1974,0,0,117597.9,14
+irna.ir,categories News & Media,0,0.0,0.37,2026-10-16T14:01:25+00:00,1,1975,0,0,117898.6,14
+fontanka.ru,categories News & Media,0,0.0,0.36,2026-10-16T14:01:36+00:00,1,1976,0,0,95252.9,14
+m.fmkorea.com,categories News & Media,1,0.93,0.39,2026-10-16T14:01:58+00:00,1,1977,0,0,106124.0,14
+s.yimg.com,categories News & Media,0,0.0,0.38,2026-10-16T14:02:11+00:00,1,1978,0,0,68896.3,14
+ufanet.ru,categories News & Media,0,0.0,0.38,2026-10-16T14:02:22+00:00,1,1979,0,0,68051.9,14
+haber7.com,categories News & Media,0,0.0,0.37,2026-10-16T14:02:33+00:00,1,1980,0,0,68040.4,14
+japantimes.co.jp,categories News & Media,0,0.0,0.36,2026-10-16T14:02:45+00:00,1,1981,0,0,68634.9,14
+lastampa.it,categories News & Media,1,1.0,0.39,2026-10-16T14:03:35+00:00,1,1982,0,0,97167.6,14
+almasryalyoum.com,categories News & Media,0,0.0,0.38,2026-10-16T14:03:46+00:00,1,1983,0,0,95134.9,14
+www.dagbladet.no,categories News & Media,1,0.86,0.41,2026-10-16T14:04:08+00:00,1,1984,0,0,106620.5,14
+clicrbs.com.br,categories News & Media,1,1.0,0.43,2026-10-16T14:04:59+00:00,1,1985,0,0,145299.6,14
+meteofrance.com,categories News & Media,0,0.0,0.42,2026-10-16T14:05:10+00:00,1,1986,0,0,145574.0,14
+zerohedge.com,categories News & Media,0,0.0,0.42,2026-10-16T14:05:22+00:00,1,1987,0,0,106184.6,14
+elperiodico.com,categories News & Media,0,0.0,0.41,2026-10-16T14:05:33+00:00,1,1988,0,0,106932.8,14
+swissinfo.ch,categories News & Media,0,0.0,0.41,2026-10-16T14:05:45+00:00,1,1989,0,0,96033.0,14
+indiatimes.com,categories News & Media,1,0.86,0.42,2026-10-16T14:06:06+00:00,1,1990,0,0,67490.8,14
+sudinfo.be,categories News & Media,1,0.86,0.44,2026-10-16T14:06:28+00:00,1,1991,0,0,78189.7,14
+eurogamer.net,categories News & Media,0,0.0,0.44,2026-10-16T14:06:40+00:00,1,1992,0,0,78189.5,14
+www.fmkorea.com,categories News & Media,1,1.0,0.46,2026-10-16T14:07:01+00:00,1,1993,0,0,88107.1,14
+b.hatena.ne.jp,categories News & Media,1,1.0,0.48,2026-10-16T14:07:51+00:00,1,1994,0,0,126847.3,14
+www.protothema.gr,categories News & Media,1,0.86,0.5,2026-10-16T14:08:14+00:00,1,1995,0,0,127846.2,14
+www.cnnbrasil.com.br,categories News & Media,0,0.0,0.49,2026-10-16T14:08:25+00:00,1,1996,0,0,116256.3,14
+china.com,categories News & Media,0,0.0,0.49,2026-10-16T14:08:37+00:00,1,1997,0,0,117637.6,14
+kompas.com,categories News & Media,0,0.0,0.48,2026-10-16T14:08:49+00:00,1,1998,0,0,107646.9,14
+portfolio.hu,categories News & Media,0,0.0,0.47,2026-10-16T14:09:00+00:00,1,1999,0,0,68029.0,14
+inews.co.uk,categories News & Media,0,0.0,0.47,2026-10-16T14:09:11+00:00,1,2000,0,0,57230.9,14
