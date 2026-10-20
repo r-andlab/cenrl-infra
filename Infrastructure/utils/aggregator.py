@@ -1,7 +1,7 @@
 import logging
 import threading
 from collections import defaultdict
-from typing import Dict, List, Set, Tuple
+from typing import Callable, Dict, List, Optional, Set, Tuple
 
 from Infrastructure.utils.structures import MeasurementResponse, AggregationMethod
 
@@ -24,7 +24,11 @@ class MeasurementAggregator:
     result arrival.
     """
 
-    def __init__(self, aggregation_method: AggregationMethod = AggregationMethod.MAJORITY_VOTE):
+    def __init__(
+        self,
+        aggregation_method: AggregationMethod = AggregationMethod.MAJORITY_VOTE,
+        vote_group_key: Optional[Callable[[str], str]] = None,
+    ):
         self._lock = threading.Lock()
         # (country, target) -> {vp_ip: blocked}
         self._pending: Dict[Tuple, Dict[str, bool]] = defaultdict(dict)
@@ -50,6 +54,12 @@ class MeasurementAggregator:
         # Discretion). Set keys are (country, target) tuples; an entry is added
         # the first time we fall back to majority due to zero total weight.
         self._weighted_fallback_warned: Set[Tuple[str, str]] = set()
+        # Maps a VP IP to whatever key its votes should be grouped under
+        # (e.g. ASN) for asn_vote_fraction below. Default groups each VP
+        # under itself, which makes asn_vote_fraction identical to
+        # vote_fraction -- so this degrades safely when no grouping is
+        # available (see funneler.py's HyperQuackAPI.__init__).
+        self._vote_group_key: Callable[[str], str] = vote_group_key or (lambda v: v)
 
     def set_expected_vps(self, country: str, vps: Set[str]) -> None:
         """Update the set of VPs whose responses are required for *future*
@@ -113,13 +123,17 @@ class MeasurementAggregator:
             # Keep _expected_vps updated for drop_vp() compatibility
             self._expected_vps[country] = set(vps)
 
-    def record(self, country: str, vp: str, target: str, blocked: bool) -> None:
-        """Record one VP's result.  If all expected VPs have now reported
-        for this target, finalize via majority vote and enqueue."""
+    def record(self, country: str, vp: str, target: str, blocked: bool | None) -> None:
+        """Record one VP's result. ``blocked=None`` means the VP reported
+        (so the target stops waiting on it) but the result is ambiguous
+        (e.g. a controls_failed VP that looks broken rather than censored)
+        and should abstain from the vote entirely -- see _try_finalize's
+        vote-filtering below. If all expected VPs have now reported for this
+        target, finalize via majority vote and enqueue."""
         with self._lock:
             key = (country, target)
             if key not in self._target_expected:
-                logger.warning("record() for unregistered target %s/%s, dropping", country, target)
+                logger.info("record() for already-finalized target %s/%s, dropping late result", country, target)
                 return
             self._pending[key][vp] = blocked
             self._try_finalize(key)
@@ -168,6 +182,33 @@ class MeasurementAggregator:
                 self._target_expected[key] = self._target_expected[key] - {vp}
                 self._try_finalize(key)
 
+    def reassign_target_vp(self, country: str, target: str, old_vp: str, new_vp: str) -> None:
+        """Swap which VP a single target is waiting on, without touching any
+        other target old_vp is registered against (unlike drop_vp, which
+        removes a VP everywhere at once).
+
+        Needed because schedule_measurements() alone does not update
+        _target_expected -- confirmed directly: a target resent to a VP that
+        was never in its original expected set gets its vote recorded by
+        record() but never read by _try_finalize() (which only iterates
+        _target_expected), so the resend was silently a no-op and the target
+        stayed stuck on old_vp regardless of how many times it got
+        "resent" elsewhere. Call this alongside schedule_measurements() any
+        time the orchestrator redirects a stuck target to a different VP
+        (register_targets() cannot be reused here -- it rejects
+        re-registering an already-registered target by design, see its own
+        docstring).
+        """
+        with self._lock:
+            key = (country, target)
+            expected = self._target_expected.get(key)
+            if expected is None:
+                return  # already finalized/dropped; nothing to reassign
+            if key in self._pending:
+                self._pending[key].pop(old_vp, None)
+            self._target_expected[key] = (expected - {old_vp}) | {new_vp}
+            self._try_finalize(key)
+
     # ------------------------------------------------------------------
     # internals (caller must hold self._lock)
     # ------------------------------------------------------------------
@@ -188,6 +229,8 @@ class MeasurementAggregator:
                     blocked=False,
                     scheduled_at_monotonic=sched_mono,
                     vp_count=0,
+                    vote_fraction=0.0,
+                    asn_vote_fraction=0.0,
                 )
             )
             self._pending.pop(key, None)
@@ -203,7 +246,29 @@ class MeasurementAggregator:
         # Phase 4 D-01: dispatch on aggregation_method. votes_pairs carries the
         # vp_ip alongside its boolean vote so WEIGHTED_VOTE can look up each
         # VP's per-target weight without zipping against `expected` separately.
-        votes_pairs = [(v, vp_map[v]) for v in expected]
+        # Ex 6: VPs recorded with blocked=None abstained (reported, but their
+        # result was too ambiguous to count either way) -- filtered out here so
+        # neither the majority vote nor vote_fraction below ever sees a None.
+        votes_pairs = [(v, vp_map[v]) for v in expected if vp_map[v] is not None]
+
+        if not votes_pairs:
+            # Every expected VP abstained -- same no-vote shape as the
+            # expected-drained-to-empty case above.
+            sched_mono = self._schedule_times.pop(key, None)
+            self._ready[key[0]].append(
+                MeasurementResponse(
+                    target=key[1],
+                    blocked=False,
+                    scheduled_at_monotonic=sched_mono,
+                    vp_count=0,
+                    vote_fraction=0.0,
+                    asn_vote_fraction=0.0,
+                )
+            )
+            del self._pending[key]
+            del self._target_expected[key]
+            self._target_weights.pop(key, None)
+            return
 
         if self.aggregation_method is AggregationMethod.MAJORITY_VOTE:
             # Original behavior preserved exactly (D-04).
@@ -238,6 +303,21 @@ class MeasurementAggregator:
 
         # Preserve `votes` for the unchanged vp_count=len(votes) line below.
         votes = [b for _, b in votes_pairs]
+        # Ex 6: unweighted fraction of voting (non-abstained) VPs that voted
+        # blocked -- regardless of aggregation_method. WEIGHTED_VOTE's per-VP
+        # weights stay a majority-decision concept only; this is "percentage
+        # of VPs," not a weighted percentage.
+        vote_fraction = sum(votes) / len(votes)
+        # Same idea as vote_fraction, but averaged within each vote-group
+        # (e.g. ASN, via self._vote_group_key) first, then across groups --
+        # so a group with many VPs can't outvote a group with few. Default
+        # vote_group_key makes every VP its own group, so this is
+        # identical to vote_fraction unless a real grouping function was
+        # supplied (see funneler.py's HyperQuackAPI.__init__).
+        groups: Dict[str, List[bool]] = defaultdict(list)
+        for v, b in votes_pairs:
+            groups[self._vote_group_key(v)].append(b)
+        asn_vote_fraction = sum(sum(g) / len(g) for g in groups.values()) / len(groups)
         # Phase 3 D-04: pop the schedule timestamp so the response carries it
         # and the dict does not accumulate orphan entries.
         sched_mono = self._schedule_times.pop(key, None)
@@ -247,6 +327,8 @@ class MeasurementAggregator:
                 blocked=majority_blocked,
                 scheduled_at_monotonic=sched_mono,
                 vp_count=len(votes),
+                vote_fraction=vote_fraction,
+                asn_vote_fraction=asn_vote_fraction,
             )
         )
         del self._pending[key]
