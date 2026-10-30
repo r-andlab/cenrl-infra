@@ -113,6 +113,49 @@ def category_country_heatmap_data(df: pd.DataFrame,
     return pivot
 
 
+def load_fractional(output_dir: str) -> pd.DataFrame:
+    """Load every *_fractional.csv under output_dir (country, target,
+    category, n_votes, n_blocked, vote_fraction -- see
+    Infrastructure/main/compute_fractional_blocking.py and
+    Infrastructure/main/export_asn_votes.py). Returns an empty DataFrame if
+    none are found, so callers can skip the fractional plots gracefully for
+    runs that don't have this computed."""
+    paths = glob.glob(os.path.join(output_dir, "**", "*_fractional.csv"), recursive=True)
+    if not paths:
+        return pd.DataFrame()
+    frames = [pd.read_csv(p) for p in paths]
+    return pd.concat(frames, ignore_index=True)
+
+
+def fractional_blocking_rate(frac_df: pd.DataFrame) -> pd.Series:
+    return (
+        frac_df.groupby("country")["vote_fraction"]
+        .mean()
+        .sort_values(ascending=False)
+    )
+
+
+def fractional_category_country_heatmap_data(frac_df: pd.DataFrame,
+                                              top_n: int = 20) -> pd.DataFrame:
+    """Rows = categories, cols = countries, values = mean fractional
+    blocking score for that category x country pair. Top categories are
+    picked by total fractional-blocking mass (sum of vote_fraction), the
+    continuous analog of top_blocked_categories' blocked-count ranking."""
+    top_cats = (
+        frac_df.groupby("category")["vote_fraction"]
+        .sum()
+        .sort_values(ascending=False)
+        .head(top_n)
+        .index
+    )
+    subset = frac_df[frac_df["category"].isin(top_cats)]
+    pivot = subset.pivot_table(
+        index="category", columns="country",
+        values="vote_fraction", aggfunc="mean", fill_value=0
+    )
+    return pivot
+
+
 def load_measurements(output_dir: str) -> pd.DataFrame:
     """
     Load every *_measurements.csv in output_dir (recursively), tagging each
@@ -334,6 +377,34 @@ def plot_blocking_rate(rates: pd.Series, out_path: str):
     print(f"Saved: {out_path}")
 
 
+def plot_fractional_blocking_rate(rates: pd.Series, out_path: str):
+    """Same look as plot_blocking_rate, but rates is a mean 0-1 fractional
+    blocking score per country (vote_fraction averaged across domains)
+    rather than a % of domains that cleared the majority threshold."""
+    fig, ax = plt.subplots(figsize=(10, 6))
+    colors = [PALETTE[2] if r > 0.05 else PALETTE[0]
+              for r in rates.values]
+    bars = ax.barh(rates.index[::-1], rates.values[::-1] * 100,
+                   color=colors[::-1], edgecolor="white", height=0.6)
+    ax.xaxis.set_major_formatter(mtick.PercentFormatter())
+    ax.set_xlabel("Mean Fractional Blocking Score (%)", fontsize=12)
+    ax.set_title("Fractional Blocking Rate by Country", fontsize=14,
+                 fontweight="bold", pad=12)
+
+    for bar, val in zip(bars, rates.values[::-1]):
+        if val > 0:
+            ax.text(bar.get_width() + 0.3, bar.get_y() + bar.get_height() / 2,
+                    f"{val*100:.1f}%", va="center", fontsize=9)
+
+    ax.axvline(rates.mean() * 100, color="grey", linestyle="--",
+               linewidth=1, label=f"Mean: {rates.mean()*100:.1f}%")
+    ax.legend(fontsize=9)
+    plt.tight_layout()
+    plt.savefig(out_path, bbox_inches="tight")
+    plt.close()
+    print(f"Saved: {out_path}")
+
+
 def plot_top_categories(counts: pd.Series, out_path: str):
     fig, ax = plt.subplots(figsize=(10, 6))
     colors = sns.color_palette("flare", len(counts))[::-1]
@@ -365,6 +436,34 @@ def plot_heatmap(pivot: pd.DataFrame, out_path: str):
         vmin=0, vmax=1,
     )
     ax.set_title("Blocking Rate by Category × Country",
+                 fontsize=14, fontweight="bold", pad=12)
+    ax.set_xlabel("")
+    ax.set_ylabel("")
+    plt.xticks(rotation=30, ha="right", fontsize=9)
+    plt.yticks(rotation=0, fontsize=9)
+    plt.tight_layout()
+    plt.savefig(out_path, bbox_inches="tight")
+    plt.close()
+    print(f"Saved: {out_path}")
+
+
+def plot_fractional_heatmap(pivot: pd.DataFrame, out_path: str):
+    """Same look as plot_heatmap, but cells are mean vote_fraction (a
+    continuous 0-1 fractional blocking score) rather than a binary % of
+    measurements that cleared the majority threshold."""
+    if pivot.empty:
+        return
+    fig_h = max(6, len(pivot) * 0.4)
+    fig_w = max(8, len(pivot.columns) * 0.7)
+    fig, ax = plt.subplots(figsize=(fig_w, fig_h))
+    sns.heatmap(
+        pivot, ax=ax,
+        cmap="YlOrRd", linewidths=0.4, linecolor="white",
+        annot=True, fmt=".0%",
+        cbar_kws={"label": "Mean Fractional Blocking Score", "shrink": 0.6},
+        vmin=0, vmax=1,
+    )
+    ax.set_title("Fractional Blocking Score by Category × Country",
                  fontsize=14, fontweight="bold", pad=12)
     ax.set_xlabel("")
     ax.set_ylabel("")
@@ -566,6 +665,51 @@ def save_blocked_domains_table(confidence_df: pd.DataFrame, out_path: str):
     print(f"Saved: {out_path}")
 
 
+def plot_measurement_latency(measurements_df: pd.DataFrame, out_path: str):
+    """
+    Box-and-whisker of latency_ms (schedule-to-completion time, i.e. how
+    long it took to actually conduct a measurement at the VPs and get a
+    result back -- NOT the orchestrator's own scheduling-step overhead,
+    which is a separate, millisecond-scale number logged per-tick in
+    tick_timings.csv, not per-measurement here), one box per country,
+    ordered fastest-median to slowest.
+    """
+    if measurements_df.empty or "latency_ms" not in measurements_df.columns:
+        return
+    data = measurements_df[["country", "latency_ms"]].dropna().copy()
+    if data.empty:
+        return
+    data["latency_s"] = data["latency_ms"] / 1000.0
+
+    order = (
+        data.groupby("country")["latency_s"]
+        .median()
+        .sort_values()
+        .index
+        .tolist()
+    )
+
+    fig, ax = plt.subplots(figsize=(max(8, len(order) * 1.2), 6))
+    sns.boxplot(
+        data=data, x="country", y="latency_s", order=order,
+        ax=ax, fliersize=2, linewidth=1,
+        boxprops=dict(facecolor="lightgrey", edgecolor="black"),
+        whiskerprops=dict(color="black"),
+        capprops=dict(color="black"),
+        medianprops=dict(color="black"),
+        flierprops=dict(markerfacecolor="#4C72B0", markeredgecolor="none", alpha=0.4),
+    )
+    ax.set_xlabel("Country", fontsize=12)
+    ax.set_ylabel("Measurement Latency (seconds)", fontsize=12)
+    ax.set_title("Measurement Latency by Country: Schedule to Completion",
+                 fontsize=14, fontweight="bold", pad=12)
+    sns.despine(fig=fig)
+    plt.tight_layout()
+    plt.savefig(out_path, bbox_inches="tight")
+    plt.close()
+    print(f"Saved: {out_path}")
+
+
 def extract_run_label(output_dir: str) -> str:
     """
     Best-effort run number from the output directory name, e.g.
@@ -628,6 +772,21 @@ def main():
         plot_path("01_blocking_rate_by_country.png")
     )
 
+    # Fractional blocking plots -- only for runs that have *_fractional.csv
+    # files computed (see compute_fractional_blocking.py / export_asn_votes.py).
+    # Additive: skipped entirely, no error, for every run that doesn't.
+    frac_df = load_fractional(args.output_dir)
+    if not frac_df.empty:
+        print(f"Loaded {len(frac_df):,} fractional-blocking rows "
+              f"across {frac_df['country'].nunique()} countries")
+        frac_rates = fractional_blocking_rate(frac_df)
+        plot_fractional_blocking_rate(
+            frac_rates,
+            plot_path("01b_fractional_blocking_rate_by_country.png")
+        )
+    else:
+        print("No *_fractional.csv files found -- skipping fractional blocking plots")
+
     cats = top_blocked_categories(df, n=15)
     if not cats.empty:
         plot_top_categories(
@@ -641,6 +800,14 @@ def main():
             pivot,
             plot_path("03_category_country_heatmap.png")
         )
+
+    if not frac_df.empty:
+        frac_pivot = fractional_category_country_heatmap_data(frac_df, top_n=20)
+        if not frac_pivot.empty:
+            plot_fractional_heatmap(
+                frac_pivot,
+                plot_path("03b_fractional_category_country_heatmap.png")
+            )
 
     plot_censored_domains_found(
         df,
@@ -673,6 +840,11 @@ def main():
                 health_df, top_country,
                 plot_path("07_arm_health_checkpoints.png")
             )
+
+    plot_measurement_latency(
+        measurements_df,
+        plot_path("08_measurement_latency_by_country.png")
+    )
 
     print(f"\nAll plots saved to: {args.out}/")
 
