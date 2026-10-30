@@ -2,6 +2,7 @@ import csv
 import json
 import logging
 import os
+import random
 import signal
 import subprocess
 import sys
@@ -36,6 +37,76 @@ logger = logging.getLogger(__name__)
 # A VP is removed from service after this many controls_failed results.
 VP_FAILURE_THRESHOLD = 5
 
+# all_vps_mode: a VP that has NEVER returned a working result and then fails
+# its controls this many times in a row is quarantined (its results abstain).
+ALL_VPS_CONSECUTIVE_FAILURE_THRESHOLD = 10
+# all_vps_mode: a VP that worked before but then fails its controls SLOWLY
+# (>= SLOW_CF_SECONDS, i.e. timeouts) this many times in a row is quarantined.
+ALL_VPS_SLOW_CF_THRESHOLD = 5
+SLOW_CF_SECONDS = 45.0
+# Hyperquack's own lifetime bad-evaluations drop is effectively disabled in
+# all_vps_mode -- CenRL's quarantine system is the sole VP-health authority
+# there (see config_allvps.json's MaxBadEvaluations, which mirrors this).
+ALL_VPS_BAD_EVALUATIONS_THRESHOLD = 1_000_000
+# A measurement is resent (to the same VP) only after this many minutes, and
+# only if the VP is neither queued for it nor currently running anything.
+ALL_VPS_LOST_RESEND_MIN = 30
+# _check_and_resend_stuck() normally trusts Hyperquack's /debug response: if
+# a VP still reports the target in its unstarted_work queue, the measurement
+# is assumed to just be waiting its turn and is left alone. That trust has
+# no ceiling by default -- confirmed directly on a live run (Oct 15-16,
+# experiment_three/output1_cluster) where a China target sat behind a
+# backed-up-but-not-silent VP for 90+ minutes with zero resend activity,
+# while that same run's silent-VP drops accelerated (19 -> 58 -> 78 across
+# consecutive 30-min sweeps) and China's real progress nearly flatlined --
+# consistent with more VPs backing up as survivors absorb the orphaned
+# queue depth of each dropped VP. Once a target has been stuck for this
+# long, force a resend to a different VP regardless of what /debug reports,
+# rather than waiting on it indefinitely. Set well above
+# ALL_VPS_LOST_RESEND_MIN (30) and above the 35-minute mark a separate,
+# legitimately-slow batch of targets was observed to resolve on its own at,
+# so this only overrides genuinely-stuck cases, not ordinary slow ones.
+ALL_VPS_FORCE_RESEND_MIN = 60
+# Quarantine window: excluded from new dispatches, not dropped -- stays
+# registered with Hyperquack and is retried after the window. Doubles per
+# strike up to the max, then the VP is dropped for good after
+# ALL_VPS_QUARANTINE_MAX_STRIKES cycles. output5's evidence: re-probing that
+# run's 137 permanent drops after it finished found roughly half would have
+# recovered -- hence retry-with-backoff instead of a hard one-shot drop.
+ALL_VPS_QUARANTINE_MIN = 30
+ALL_VPS_QUARANTINE_MAX_MIN = 240
+ALL_VPS_QUARANTINE_MAX_STRIKES = 5
+
+
+_HANG_MARKERS = ("timeout", "waiting for connection", "request canceled")
+HANG_OUTAGE_STREAK = 50
+# A VP silent on this many distinct targets that have each waited this long is dropped.
+SILENT_WAIT_MIN = 15
+SILENT_STRIKE_LIMIT = 5
+
+
+def _infra_reason(r: TestPayload) -> Optional[str]:
+    """Why an anomaly looks like infrastructure rather than censorship, or None.
+
+    Only the first pass over the keyword attempts is classified; control
+    attempts are the reference. Resets, EOFs, 2xx/4xx mismatches and 3xx
+    redirects are not infrastructure and keep their vote.
+    """
+    kw = [x for x in r.response if x.control_url is None]
+    ctrl = [x for x in r.response if x.control_url is not None]
+    if not kw:
+        return None
+    if all(any(m in (x.error or "").lower() for m in _HANG_MARKERS) for x in kw):
+        return "hang"
+    final = kw[-1]
+    if not final.status_line and not final.error:
+        return "empty"
+    if final.status_line and final.status_line.startswith("5") and any(
+        c.status_line and not c.status_line.startswith("5") for c in ctrl
+    ):
+        return "backend_5xx"
+    return None
+
 
 class Orchestrator:
     def __init__(
@@ -53,7 +124,20 @@ class Orchestrator:
         target_selection: BatchSelectionMethod = BatchSelectionMethod.TOP_K_FROM_ARM,
         batch_size_method: BatchSizeMethod = BatchSizeMethod.CONSTANT_VAL,
         qval_propagation_method: PropagationMethod = PropagationMethod.ON_RECEIPT,
+        model_klass=BatchUCB,
+        action_space_klass=None,
+        all_vps_mode: bool = False,
+        reward_mode: str = "majority",
+        receiver_port: int = 9000,
     ):
+        if reward_mode not in ("majority", "percentage", "asn-percentage"):
+            raise ValueError(
+                f"reward_mode must be 'majority', 'percentage', or 'asn-percentage', got {reward_mode!r}"
+            )
+        self._reward_mode = reward_mode
+        self._model_klass = model_klass
+        self._action_space_klass = action_space_klass
+        self._all_vps_mode = all_vps_mode
         self.params = params
         self.output_folder = params.get("output_directory", None)
         self.previous_values_folder = previous_values_folder
@@ -97,6 +181,7 @@ class Orchestrator:
             vantage_points=vantage_points,
             debug=debug,
             aggregation_method=aggregation_method,
+            receiver_port=receiver_port,
         )
 
         # Nodes are created lazily once a VP passes evaluation.
@@ -289,9 +374,9 @@ class Orchestrator:
         evaluation with the Go server."""
         logger.info("Bootstrapping vantage points...")
         for country in self.target_countries:
-            drawn = self.vantage_points.get_n_vantages(
-                country, self.vps_per_country
-            )
+            n = (len(self.vantage_points.get_inactive(country))
+                 if getattr(self, "_all_vps_mode", False) else self.vps_per_country)
+            drawn = self.vantage_points.get_n_vantages(country, n)
             for vp in drawn:
                 self.eval_store.register_vp(vp, country)
             if drawn:
@@ -316,6 +401,10 @@ class Orchestrator:
         # Step 1: process VP evaluation results
         self._process_eval_results()
         t2 = time.perf_counter()
+
+        # all_vps_mode: release any VPs whose quarantine window has passed
+        # before this tick schedules anything.
+        self._release_expired_quarantine()
 
         # Per-country sub-step accumulators (Phase 3 D-07: summed across countries).
         agg_time = 0.0
@@ -372,6 +461,15 @@ class Orchestrator:
                 schedule_time += time.perf_counter() - _s5
                 continue
 
+            # all_vps_mode: quarantined VPs are excluded from new dispatches
+            # without being dropped. A no-op outside all_vps_mode. Empty here
+            # (everyone quarantined this instant) just skips scheduling this
+            # tick -- not a dead region, so no finished_nodes append.
+            active_vps = self._available_vps(country, active_vps)
+            if not active_vps:
+                schedule_time += time.perf_counter() - _s5
+                continue
+
             targets = node.maybe_request_more()
             if not targets:
                 schedule_time += time.perf_counter() - _s5
@@ -379,37 +477,26 @@ class Orchestrator:
             logger.info(
                 f"{country} requesting {len(targets)} measurements: {targets}"
                 )
-            # Snapshot the expected VPs at scheduling time so the aggregator
-            # knows exactly which VPs should report for each target (D-02).
-            # Phase 3 D-04: also pass per-target schedule monotonic time so the
-            # aggregator can attach scheduled_at_monotonic to the finalized response.
             now = time.monotonic()
-            schedule_times = {t: now for t in targets}
-
-            # Phase 4 D-02: push fresh per-VP weights so register_targets snapshots
-            # them per-target (matches WR-06 invariant: snapshot at scheduling time
-            # to prevent finalize-against-stale-weights races, RESEARCH Pitfall 9).
-            vp_weights = self._compute_vp_weights(country, set(active_vps))
-            self.api.aggregator.set_vp_weights(country, vp_weights)
-
-            self.api.aggregator.register_targets(
-                country, targets, set(active_vps),
-                schedule_times=schedule_times,
-            )
-
-            self.api.schedule_measurements(
-                vps=active_vps,
-                services=self.services,
-                targets=targets,
-                country=country,
-            )
-            for t in targets:
-                self._inflight_times[country][t] = now
+            self._dispatch(country, active_vps, targets, now)
             schedule_time += time.perf_counter() - _s5
 
         for country in finished_nodes:
             self.agents.pop(country, None)
             self.target_countries.discard(country)
+
+        # Every target country has either hit its num_episodes cap (DONE) or
+        # died (no VPs left) -- nothing left to schedule, ever. Without this,
+        # the main loop (run(), while not self._stop_event.is_set()) would
+        # keep calling tick() forever doing nothing once self.agents is
+        # empty, and the process would need a manual Ctrl+C even though the
+        # run is already, by definition, complete. target_countries only
+        # shrinks via the two discard() calls in this file (here and in
+        # _process_eval_results), both meaning "this country is finished,"
+        # so this can't fire prematurely during startup.
+        if not self.target_countries:
+            logger.info("All target countries finished, stopping run.")
+            self._stop_event.set()
 
         t_end = time.perf_counter()
         return {
@@ -420,6 +507,53 @@ class Orchestrator:
             "schedule":        round(schedule_time, 6),
             "total":           round(t_end - t0, 6),
         }
+
+    def _dispatch(
+        self, country: str, active_vps: List[str], targets: List[str], now: float
+    ) -> None:
+        """Register expected VPs with the aggregator and schedule measurements
+        for *targets* against *active_vps* (extracted from tick()'s Step 5 so
+        subclasses -- e.g. CDN-collision-aware scheduling -- can override just
+        this dispatch unit instead of duplicating the rest of tick()).
+
+        register_targets() and schedule_measurements() must always be called
+        with the same VP set: register_targets() tells the aggregator which
+        VPs it should wait for before finalizing a target, so any VP that is
+        registered but never actually sent the work (e.g. a subclass that
+        schedules to a filtered subset) will make that target hang forever.
+        """
+        # Snapshot the expected VPs at scheduling time so the aggregator
+        # knows exactly which VPs should report for each target (D-02).
+        # Phase 3 D-04: also pass per-target schedule monotonic time so the
+        # aggregator can attach scheduled_at_monotonic to the finalized response.
+        # Volume control for rate experiments: when CENRL_MAX_VPS_PER_TARGET is
+        # set, each dispatch uses a random subset of the active VPs. The subset
+        # is used for both register_targets() and schedule_measurements(), so
+        # the aggregator still waits only on VPs that were actually sent work.
+        max_vps = int(os.environ.get("CENRL_MAX_VPS_PER_TARGET", "0") or 0)
+        if max_vps and len(active_vps) > max_vps:
+            active_vps = random.sample(sorted(active_vps), max_vps)
+        schedule_times = {t: now for t in targets}
+
+        # Phase 4 D-02: push fresh per-VP weights so register_targets snapshots
+        # them per-target (matches WR-06 invariant: snapshot at scheduling time
+        # to prevent finalize-against-stale-weights races, RESEARCH Pitfall 9).
+        vp_weights = self._compute_vp_weights(country, set(active_vps))
+        self.api.aggregator.set_vp_weights(country, vp_weights)
+
+        self.api.aggregator.register_targets(
+            country, targets, set(active_vps),
+            schedule_times=schedule_times,
+        )
+
+        self.api.schedule_measurements(
+            vps=active_vps,
+            services=self.services,
+            targets=targets,
+            country=country,
+        )
+        for t in targets:
+            self._inflight_times[country][t] = now
 
     def run_forever(self) -> None:
         self._install_signal_handlers()
@@ -759,6 +893,7 @@ class Orchestrator:
         lost measurements (D-03)."""
         now = time.monotonic()
         threshold = 300  # 5 minutes
+        resend_threshold = ALL_VPS_LOST_RESEND_MIN * 60 if getattr(self, "_all_vps_mode", False) else threshold
         stuck_by_country: Dict[str, List[str]] = defaultdict(list)
 
         for country, targets in self._inflight_times.items():
@@ -775,10 +910,45 @@ class Orchestrator:
                     country, target, elapsed_min,
                 )
                 self._last_delay_warn[country][target] = now
-                stuck_by_country[country].append(target)
+                if elapsed >= resend_threshold:
+                    stuck_by_country[country].append(target)
 
         if stuck_by_country:
+            self._check_silent_vps(stuck_by_country, now)
             self._check_and_resend_stuck(stuck_by_country)
+
+    def _check_silent_vps(self, stuck_by_country: Dict[str, List[str]], now: float) -> None:
+        """all_vps_mode: a VP that stays silent on targets that have waited
+        SILENT_WAIT_MIN or more is treated as dead and dropped. Results-based
+        health rules never see a VP that sends nothing, so this counts silence
+        directly, once per target."""
+        if not getattr(self, "_all_vps_mode", False):
+            return
+        strikes = self.__dict__.setdefault("_silent_strikes", defaultdict(set))
+        for country, targets in stuck_by_country.items():
+            inflight = self._inflight_times.get(country, {})
+            long_waiting = [t for t in targets
+                            if now - inflight.get(t, now) >= SILENT_WAIT_MIN * 60]
+            if not long_waiting:
+                continue
+            snap = self.api.aggregator.snapshot_pending(country, long_waiting)
+            for target in long_waiting:
+                expected, received = snap.get(target, (frozenset(), frozenset()))
+                for vp in expected - received:
+                    strikes[(country, vp)].add(target)
+                    if len(strikes[(country, vp)]) >= SILENT_STRIKE_LIMIT:
+                        self._drop_vp_everywhere(
+                            country, vp,
+                            f"silent on {len(strikes[(country, vp)])} stuck targets")
+                        strikes.pop((country, vp), None)
+
+    def _drop_vp_everywhere(self, country: str, vp: str, reason: str) -> None:
+        logger.warning("%s: dropping VP %s (%s)", country, vp, reason)
+        self.vantage_points.reject_vp(country, vp)
+        self.api.aggregator.drop_vp(country, vp)
+        self.api.remove_vantage_points([vp], expect_unstarted=True)
+        self._quarantine_map().pop((country, vp), None)
+        self._startup_retest().discard((country, vp))
 
     def _check_and_resend_stuck(self, stuck_by_country: Dict[str, List[str]]) -> None:
         """One /debug call per check cycle; resend measurements lost by Hyperquack (D-03).
@@ -787,6 +957,12 @@ class Orchestrator:
         still has the target in its unstarted_work queue. If not, the measurement
         was lost -- resend to the same VP, or to an alternative if the VP is
         pending_removal (D-05).
+
+        Once a target has been stuck for ALL_VPS_FORCE_RESEND_MIN minutes,
+        resend to a different VP even if the original VP still claims to
+        have it queued -- trusting that claim indefinitely let a target sit
+        behind a backed-up-but-not-silent VP for 90+ minutes on a live run,
+        see that constant's comment for the full incident.
         """
         if self.api.debug:
             return
@@ -798,9 +974,11 @@ class Orchestrator:
 
         # Build lookup: ip -> VP debug info
         vp_status = {entry["ip"]: entry for entry in debug_response}
+        now = time.monotonic()
 
         for country, stuck_targets in stuck_by_country.items():
             active_vps = self.vantage_points.get_active(country)
+            inflight = self._inflight_times.get(country, {})
 
             # WR-03 fix: snapshot aggregator state via the public API instead
             # of reaching into private attributes. The aggregator owns its own
@@ -816,21 +994,39 @@ class Orchestrator:
                     target, (frozenset(), frozenset()),
                 )
                 missing_vps = expected - received
+                force_resend = (
+                    now - inflight.get(target, now) >= ALL_VPS_FORCE_RESEND_MIN * 60
+                )
 
                 for vp_ip in missing_vps:
                     info = vp_status.get(vp_ip)
                     if info is None:
-                        logger.warning("VP %s not in /debug response, assuming lost", vp_ip)
-                        resend_list.append((target, vp_ip, False))
-                        continue
+                        logger.warning("VP %s not in /debug response; Hyperquack no longer has it, dropping", vp_ip)
+                        self._drop_vp_everywhere(country, vp_ip, "missing from Hyperquack")
+                        break
 
                     # Check if VP still has this target in its unstarted_work
                     unstarted_keywords = {w["keyword"] for w in info.get("unstarted_work", [])}
-                    if target in unstarted_keywords:
-                        continue  # VP still has it queued, not lost yet
+                    still_queued = target in unstarted_keywords
+                    if still_queued and not force_resend:
+                        continue  # VP still has it queued, not lost yet -- and
+                                  # hasn't been stuck long enough to override that
 
                     is_pending_removal = info.get("pending_removal", False)
-                    resend_list.append((target, vp_ip, is_pending_removal))
+                    # Redirect to a different VP whenever we're overriding the
+                    # VP's own queue (force_resend on a still-queued target) or
+                    # Hyperquack flagged it pending removal -- sending back to
+                    # the same VP in either case would likely just repeat the
+                    # same stall.
+                    redirect = is_pending_removal or (still_queued and force_resend)
+                    resend_list.append((target, vp_ip, redirect))
+                    if still_queued and force_resend:
+                        logger.warning(
+                            "%s: forcing resend of %s off VP %s after %.0fmin stuck "
+                            "(still shows queued, not actually lost)",
+                            country, target, vp_ip,
+                            (now - inflight.get(target, now)) / 60.0,
+                        )
 
             # Now resend outside the lock
             for target, vp_ip, is_pending_removal in resend_list:
@@ -841,6 +1037,16 @@ class Orchestrator:
                         logger.warning("No alternative VP for lost %s/%s", country, target)
                         continue
                     send_to = alternatives[0]
+
+                if send_to != vp_ip:
+                    # Redirecting to a different VP: schedule_measurements()
+                    # alone does not update who the aggregator is waiting on
+                    # (register_targets() can't be reused -- it refuses to
+                    # re-register an already-registered target). Without
+                    # this, send_to's eventual result gets recorded but
+                    # never counted, and the target stays stuck on vp_ip
+                    # forever regardless of how many times it's "resent".
+                    self.api.aggregator.reassign_target_vp(country, target, vp_ip, send_to)
 
                 logger.warning("Resending lost measurement %s/%s to %s (original VP: %s)",
                                country, target, send_to, vp_ip)
@@ -868,6 +1074,7 @@ class Orchestrator:
             if payload.issue is None and payload.template is not None:
                 # VP is good — keep it active
                 self.vantage_points.confirm_active(country, vp)
+                self._startup_retest().discard((country, vp))
                 logger.info("VP %s confirmed OK for %s", vp, country)
 
                 # Create node lazily on first good VP
@@ -875,7 +1082,7 @@ class Orchestrator:
                     self.agents[country] = RegionalNode(
                         params=self.params,
                         country_name=country,
-                        model_klass=BatchUCB,
+                        model_klass=self._model_klass,
                         output_folder=self.output_folder,
                         action_space_folder=self.previous_values_folder,
                         batch_size=5,
@@ -887,11 +1094,18 @@ class Orchestrator:
                         batch_size_method=self._batch_size_method,
                         qval_propagation_method=self._qval_propagation_method,
                         aggregation_method=self._aggregation_method,
+                        reward_mode=self._reward_mode,
                     )
                 # NOTE: aggregator expected VPs are updated at scheduling
                 # time, not here, to avoid snapshot mismatches with
                 # in-flight targets.
             else:
+                if getattr(self, "_all_vps_mode", False):
+                    # Startup failures are often load, not a dead VP, so they
+                    # are quarantined and re-evaluated rather than dropped.
+                    self._startup_retest().add((country, vp))
+                    self._quarantine_vp(country, vp, "failed startup evaluation")
+                    continue
                 # VP failed — reject and try replacement
                 replacement = self.vantage_points.reject_vp(country, vp)
                 failed_vps.append(vp)
@@ -934,11 +1148,38 @@ class Orchestrator:
     ) -> None:
         """Parse raw TestPayloads and feed into the aggregator."""
         for r in raw_results:
-            blocked = False
-            if r.response:
-                blocked = not r.response[0].matches_template
-            blocked = r.stateful_block or blocked
+            # Bug #1 fix: use Hyperquack's own final, retry-aware verdict
+            # (anomaly -- already true for both a plain block and a stateful
+            # block, see trial.go) instead of response[0].matches_template
+            # (the first attempt only). The old formula misread a transient
+            # first-try failure that a later retry recovered from as
+            # "blocked"; r.anomaly already accounts for the full retry
+            # sequence. controls_failed results correctly fall out as
+            # blocked=False here (anomaly is always False when
+            # controls_failed is True), matching filter_false_positive_
+            # blocks.py's offline cleaning logic.
+            blocked = r.anomaly
+            # all_vps_mode: _check_vp_health (which runs first on this same
+            # batch) flags the controls_failed results that come from a VP that
+            # looks broken rather than censored; those abstain -- the target
+            # stops waiting on the VP but the vote ignores it. Other
+            # controls_failed results (a VP that has worked, failing fast the
+            # way residual censorship does) keep the original blocked vote.
+            # (Normal runs keep the original behavior bit-for-bit.)
+            if getattr(self, "_all_vps_mode", False) and id(r) in self._abstain_set():
+                blocked = None
+            if getattr(self, "_all_vps_mode", False):
+                reason = self._infra_abstain_reason(country, r)
+                if reason is not None:
+                    blocked = None
+                    counts = self.__dict__.setdefault("_infra_abstain_counts", defaultdict(int))
+                    counts[reason] += 1
             self.api.aggregator.record(country, r.vp, r.test_url, blocked)
+        infra_counts = self.__dict__.get("_infra_abstain_counts")
+        if infra_counts:
+            logger.info("%s: abstained on infrastructure errors this batch: %s",
+                        country, dict(infra_counts))
+            infra_counts.clear()
 
     def _check_vp_health(
         self, country: str, raw_results: List[TestPayload]
@@ -948,8 +1189,24 @@ class Orchestrator:
         Returns the set of VP IPs that were dropped during this call.
         """
         dropped_vps: Set[str] = set()
+        # ids of this batch's results to abstain on (consumed by _feed_aggregator
+        # right after; cleared each call so a recycled id can never leak).
+        self._abstain_set().clear()
         for r in raw_results:
             key = (country, r.vp)
+            if getattr(self, "_all_vps_mode", False):
+                if not self._all_vps_note_result(key, r):
+                    continue
+                if key not in self._ever_worked_set():
+                    reason = (f"never returned a working result after "
+                              f"{ALL_VPS_CONSECUTIVE_FAILURE_THRESHOLD} failures")
+                else:
+                    reason = f"unreachable after {ALL_VPS_SLOW_CF_THRESHOLD} slow failures"
+                dropped_vps.add(r.vp)
+                self._quarantine_vp(country, r.vp, reason)
+                self._vp_failure_counts.pop(key, None)
+                self._slow_cf_counts().pop(key, None)
+                continue
             if r.controls_failed:
                 self._vp_failure_counts[key] += 1
                 self._vp_outcomes[key][1] += 1   # D-02: cumulative fail count
@@ -978,6 +1235,170 @@ class Orchestrator:
                 self._vp_failure_counts.pop(key, None)
                 self._vp_outcomes[key][0] += 1   # D-02: cumulative success count
         return dropped_vps
+
+    # -- all_vps_mode: quarantine + VP-health bookkeeping ------------------
+    def _abstain_set(self) -> Set[int]:
+        """ids (via id()) of this tick's results that should abstain rather
+        than vote -- populated by _check_vp_health, consumed and cleared by
+        _feed_aggregator right after."""
+        return self.__dict__.setdefault("_abstain_ids", set())
+
+    def _ever_worked_set(self) -> Set[Tuple[str, str]]:
+        """(country, vp) pairs that have returned at least one working
+        (non-controls_failed) result at some point in this run."""
+        return self.__dict__.setdefault("_ever_worked", set())
+
+    def _slow_cf_counts(self) -> Dict[Tuple[str, str], int]:
+        """Consecutive SLOW controls_failed count per (country, vp), for VPs
+        that have worked before (see ALL_VPS_SLOW_CF_THRESHOLD)."""
+        return self.__dict__.setdefault("_slow_cf", defaultdict(int))
+
+    def _all_vps_note_result(self, key: Tuple[str, str], r: TestPayload) -> bool:
+        """all_vps_mode VP-health bookkeeping for one result. Returns True iff
+        this VP just crossed a quarantine threshold (a drop signal) -- the
+        caller (_check_vp_health) quarantines it.
+
+        Three-way classification of controls_failed results:
+          - VP has never returned a working result: consecutive failures count
+            toward ALL_VPS_CONSECUTIVE_FAILURE_THRESHOLD. Abstains.
+          - VP worked before, fails SLOWLY (>= SLOW_CF_SECONDS, a timeout):
+            consecutive slow failures count toward ALL_VPS_SLOW_CF_THRESHOLD.
+            Abstains.
+          - VP worked before, fails FAST (a quick reset): NOT quarantined,
+            NOT abstained -- kept as a real "blocked" vote (residual
+            censorship after a blocked domain, not a dead VP).
+        A non-controls_failed result marks the VP as having worked and
+        resets both counters.
+        """
+        if not r.controls_failed:
+            self._ever_worked_set().add(key)
+            self._vp_failure_counts.pop(key, None)
+            self._slow_cf_counts().pop(key, None)
+            return False
+
+        duration = 0.0
+        if r.response:
+            try:
+                start = datetime.fromisoformat(r.response[0].start_time[:26].rstrip("Z"))
+                end = datetime.fromisoformat(r.response[-1].end_time[:26].rstrip("Z"))
+                duration = (end - start).total_seconds()
+            except (ValueError, IndexError):
+                duration = 0.0
+
+        if key not in self._ever_worked_set():
+            self._abstain_set().add(id(r))
+            self._vp_failure_counts[key] += 1
+            return self._vp_failure_counts[key] >= ALL_VPS_CONSECUTIVE_FAILURE_THRESHOLD
+
+        if duration >= SLOW_CF_SECONDS:
+            self._abstain_set().add(id(r))
+            counts = self._slow_cf_counts()
+            counts[key] += 1
+            return counts[key] >= ALL_VPS_SLOW_CF_THRESHOLD
+
+        # Worked before, failed fast -- residual censorship signature, not a
+        # dead VP. Not quarantined, not abstained.
+        self._slow_cf_counts().pop(key, None)
+        return False
+
+    def _quarantine_map(self) -> Dict[Tuple[str, str], float]:
+        return self.__dict__.setdefault("_quarantined_until", {})
+
+    def _available_vps(self, country: str, vps: List[str]) -> List[str]:
+        """vps minus any of that country's VPs still in quarantine. A no-op
+        outside all_vps_mode. Checks the release time directly (not just
+        membership) so this stays correct even if _release_expired_quarantine
+        hasn't run yet this tick."""
+        if not getattr(self, "_all_vps_mode", False):
+            return vps
+        retest = self._startup_retest()
+        q = self._quarantine_map()
+        now = time.monotonic()
+        return [v for v in vps
+                if (country, v) not in retest and q.get((country, v), 0.0) <= now]
+
+    def _quarantine_strikes(self) -> Dict[Tuple[str, str], int]:
+        """Cumulative quarantine count per (country, vp), never reset (not
+        even on release/success) -- this is the "memory" behind
+        ALL_VPS_QUARANTINE_MIN's doubling backoff and the eventual
+        permanent drop after ALL_VPS_QUARANTINE_MAX_STRIKES cycles."""
+        return self.__dict__.setdefault("_quarantine_strike_counts", defaultdict(int))
+
+    def _quarantine_vp(self, country: str, vp: str, reason: str) -> None:
+        key = (country, vp)
+        strikes = self._quarantine_strikes()
+        strikes[key] += 1
+        n = strikes[key]
+        if n > ALL_VPS_QUARANTINE_MAX_STRIKES:
+            logger.info(
+                "%s: VP %s given up on for good after %d quarantine cycles "
+                "(%s); no longer worth retrying",
+                country, vp, n - 1, reason,
+            )
+            self.vantage_points.reject_vp(country, vp)
+            self.api.aggregator.drop_vp(country, vp)
+            self.api.remove_vantage_points([vp], expect_unstarted=True)
+            self._quarantine_map().pop(key, None)
+            strikes.pop(key, None)
+            return
+        minutes = min(ALL_VPS_QUARANTINE_MIN * (2 ** (n - 1)), ALL_VPS_QUARANTINE_MAX_MIN)
+        self._quarantine_map()[key] = time.monotonic() + minutes * 60
+        self.api.aggregator.drop_vp(country, vp)
+        logger.info(
+            "%s: quarantining VP %s for %d min (%s, strike %d/%d); will retest then",
+            country, vp, minutes, reason, n, ALL_VPS_QUARANTINE_MAX_STRIKES,
+        )
+
+    def _release_expired_quarantine(self) -> None:
+        """Called each tick in all_vps_mode: drop (country, vp) entries whose
+        quarantine window has passed, so _available_vps sees them as
+        available again. Resets the failure counters that led to the
+        quarantine (a fresh chance), but NOT the strike count (that memory
+        persists for the life of the run)."""
+        if not getattr(self, "_all_vps_mode", False):
+            return
+        q = self._quarantine_map()
+        if not q:
+            return
+        now = time.monotonic()
+        expired = [key for key, until in q.items() if until <= now]
+        for key in expired:
+            q.pop(key, None)
+            self._vp_failure_counts.pop(key, None)
+            self._slow_cf_counts().pop(key, None)
+            logger.info("%s: VP %s released from quarantine, will retest", key[0], key[1])
+
+    def _infra_abstain_reason(self, country: str, r: TestPayload) -> Optional[str]:
+        """Whether this result abstains as infrastructure (all-VPs mode).
+
+        Hangs abstain only while their VP is in a sustained outage: at least
+        HANG_OUTAGE_STREAK consecutive hung measurements across at least that
+        many distinct domains. Shorter hang runs, isolated hangs, and hangs
+        shared by several VPs on one domain keep their vote, since a censor
+        that blocks by dropping traffic looks the same as a hang. Empty and
+        backend 5xx results abstain when the anomaly is set, as before.
+        """
+        key = (country, r.vp)
+        streaks = self.__dict__.setdefault("_hang_streaks", {})
+        outage = self.__dict__.setdefault("_outage_vps", set())
+        reason = _infra_reason(r)
+        if reason == "hang":
+            streak = streaks.setdefault(key, [0, set()])
+            streak[0] += 1
+            streak[1].add(r.test_url)
+            if streak[0] >= HANG_OUTAGE_STREAK and len(streak[1]) >= HANG_OUTAGE_STREAK:
+                outage.add(key)
+            return "hang" if key in outage else None
+        streaks.pop(key, None)
+        outage.discard(key)
+        if r.anomaly and reason is not None:
+            return reason
+        return None
+
+    def _startup_retest(self) -> Set[Tuple[str, str]]:
+        """(country, vp) pairs that failed the startup evaluation and are
+        waiting in quarantine to be evaluated again."""
+        return self.__dict__.setdefault("_startup_retest_set", set())
 
     @staticmethod
     def _beta_smoothed_weight(success: int, fail: int) -> float:
@@ -1040,6 +1461,14 @@ class OrchestrationParser(UCBNaiveParserOptions):
     def add_arguments(self):
         super().add_arguments()
         self.parser.add_argument(
+            "--previous-values-folder",
+            default=None,
+            help="Optional prior run's per-country action_space CSVs, used to "
+                 "warm-start Q-values for matching arms (passed straight through "
+                 "to Orchestrator's previous_values_folder / RegionalNode's "
+                 "action_space_folder).",
+        )
+        self.parser.add_argument(
             "--aggregation",
             choices=["majority", "weighted"], default="majority",
             help="VP-vote aggregation method",
@@ -1059,17 +1488,27 @@ class OrchestrationParser(UCBNaiveParserOptions):
             choices=["on-receipt", "in-order"], default="on-receipt",
             help="Reward-propagation policy",
         )
+        self.parser.add_argument(
+            "--reward-mode",
+            choices=["majority", "percentage", "asn-percentage"], default="majority",
+            help="Reward signal: 'majority' (Ex 5, the aggregation verdict's 0.0/1.0), "
+                 "'percentage' (Ex 6, fraction of voting VPs that voted blocked), or "
+                 "'asn-percentage' (same fraction, but averaged within each VP's ASN "
+                 "first so one ASN with many VPs can't dominate)",
+        )
 
     def set_params(self, args):
         if args.outfile[-1] != "/":
             args.outfile += "/"
         super().set_params(args)
+        self.params["previous_values_folder"] = getattr(args, "previous_values_folder", None)
         # Raw strings preserved for run_config.json cli_params group;
         # resolution to enums happens in __main__ via STRATEGY_MAP.
         self.params["aggregation"]       = args.aggregation
         self.params["batch_size_method"] = getattr(args, "batch_size")
         self.params["target_selection"]  = getattr(args, "target_selection")
         self.params["propagation"]       = args.propagation
+        self.params["reward_mode"]       = getattr(args, "reward_mode")
 
 
 if __name__ == "__main__":
