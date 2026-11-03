@@ -1,0 +1,1641 @@
+import json
+import os
+import unittest
+from pathlib import Path
+from unittest.mock import MagicMock, patch
+import pandas as pd
+
+from Infrastructure.utils.structures import (
+    NodeState,
+    BatchSelectionMethod,
+    BatchSizeMethod,
+    PropagationMethod,
+    AggregationMethod,
+)
+
+
+class TestSoftReset(unittest.TestCase):
+    """Tests for RegionalNode.soft_reset() -- covers RUNT-03."""
+
+    def _make_node(self):
+        from Infrastructure.main.node import RegionalNode
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = "TestCountry"
+        node.model = MagicMock()
+        node.model.action_space = MagicMock()
+        node.model.action_space.wake_up_all_nodes = MagicMock()
+        node.model.current_epoch_num = 50
+        node.state = NodeState.AWAITING_MEASUREMENTS
+        node.batch_size = 5
+        # Phase 4 Plan 03: VARY_ON_SUCCESS tracker fields read by soft_reset.
+        node.base_batch_size = 5
+        node._current_batch_blocked = 0
+        node._current_batch_size = 0
+        node._last_batch_fraction = None
+        node._pending_batch_target = 0
+        # Phase 4 Plan 05: monotonic batch_id counter for IN_ORDER scheduling.
+        node._batch_id_counter = 0
+        node.in_flight = 3
+        node.episode_idx = 1
+        node.episode_stats = [{"episode": 1, "time": 1}]
+        return node
+
+    def test_soft_reset_preserves_qvalues(self):
+        """soft_reset() must NOT call model.reset() -- Q-values are preserved."""
+        node = self._make_node()
+        node.soft_reset()
+        node.model.action_space.wake_up_all_nodes.assert_called_once()
+        node.model.reset.assert_not_called()
+
+    def test_soft_reset_resets_epoch(self):
+        """soft_reset() resets current_epoch_num to 0."""
+        node = self._make_node()
+        node.model.current_epoch_num = 75
+        node.soft_reset()
+        self.assertEqual(node.model.current_epoch_num, 0)
+
+    def test_soft_reset_clears_inflight(self):
+        """soft_reset() sets in_flight to 0."""
+        node = self._make_node()
+        node.in_flight = 5
+        node.soft_reset()
+        self.assertEqual(node.in_flight, 0)
+
+    def test_soft_reset_sets_idle(self):
+        """soft_reset() sets state to IDLE."""
+        node = self._make_node()
+        node.soft_reset()
+        self.assertEqual(node.state, NodeState.IDLE)
+
+    def test_soft_reset_increments_episode_idx(self):
+        """soft_reset() bumps episode_idx by 1 (Phase 02.1 D-04 — per-country iteration counter)."""
+        node = self._make_node()
+        node.episode_idx = 5
+        node.soft_reset()
+        self.assertEqual(node.episode_idx, 6)
+
+
+class TestFinishEpisodeIdleNotDone(unittest.TestCase):
+    """Tests for _finish_episode_if_ready() -- covers Phase 02.1 D-02 / D-03 / D-04 / D-08.
+
+    Verifies the per-country reset flow: when quota reached AND in_flight == 0,
+    write_stats → save_iteration → soft_reset run in that order with per-country
+    fault isolation. Existing guards (in_flight > 0, sub-quota) remain intact.
+    """
+
+    def _make_node(self, tmp_path):
+        from Infrastructure.main.node import RegionalNode
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = "TestCountry"
+        node.country_name_standard = "TestCountry"
+        node.model = MagicMock()
+        node.model.measurements_per_episode = 100
+        node.model.current_epoch_num = 100  # quota reached
+        node.model.num_episodes = 1
+        node.model.output_directory = str(tmp_path)
+        node.model.outfile = str(tmp_path / "TestCountry.csv")
+        node.model.save = MagicMock()
+        node.model.action_space = MagicMock()
+        node.model.action_space.checkpoint_save = MagicMock()
+        node.model.action_space.wake_up_all_nodes = MagicMock()
+        # Sidecar fields _write_sidecar reads
+        node.model.exploration_epoch_num = 5
+        node.model.c = 1.0
+        node.model.step_size = 0.1
+        node.model.initial_value_estimate = 0.5
+        node.model.selection_method = BatchSelectionMethod.TOP_K_FROM_ARM
+        node.model.size_method = BatchSizeMethod.CONSTANT_VAL
+        node.model.prop_method = PropagationMethod.ON_RECEIPT
+        # Phase 4 Plan 01: aggregation_method cached on node for sidecar I/O.
+        node.aggregation_method = AggregationMethod.MAJORITY_VOTE
+        node.state = NodeState.READY
+        node.batch_size = 5
+        # Phase 4 Plan 03: VARY_ON_SUCCESS tracker fields read by soft_reset.
+        node.base_batch_size = 5
+        node._current_batch_blocked = 0
+        node._current_batch_size = 0
+        node._last_batch_fraction = None
+        node._pending_batch_target = 0
+        # Phase 4 Plan 05: monotonic batch_id counter for IN_ORDER scheduling.
+        node._batch_id_counter = 0
+        node.in_flight = 0
+        node.episode_stats = [{"episode": 1, "time": 1}]
+        node.episode_all_stats = []
+        node.episode_idx = 1
+        node.stat_df = None
+        node.save_stats = True
+        node._on_reset = None  # Phase 02.1 D-12 — default no callback
+        return node
+
+    def _wrap_with_call_tracker(self, node, calls):
+        """Wrap write_stats/save_iteration/soft_reset to record call order."""
+        orig_write = node.write_stats
+        orig_save = node.save_iteration
+        orig_soft = node.soft_reset
+
+        def tracked_write(*a, **kw):
+            calls.append("write_stats")
+            return orig_write(*a, **kw)
+
+        def tracked_save(*a, **kw):
+            calls.append("save_iteration")
+            return orig_save(*a, **kw)
+
+        def tracked_soft(*a, **kw):
+            calls.append("soft_reset")
+            return orig_soft(*a, **kw)
+
+        node.write_stats = MagicMock(side_effect=tracked_write)
+        node.save_iteration = MagicMock(side_effect=tracked_save)
+        node.soft_reset = MagicMock(side_effect=tracked_soft)
+
+    def test_finish_episode_sets_idle_not_done(self):
+        """When quota is reached and in_flight == 0, the per-country reset fires:
+        write_stats → save_iteration → soft_reset, ending in NodeState.IDLE."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            self.assertEqual(node.state, NodeState.IDLE)
+            self.assertNotEqual(node.state, NodeState.DONE)
+            # All three were called exactly once, in the correct order.
+            self.assertEqual(calls, ["write_stats", "save_iteration", "soft_reset"])
+
+    def test_finish_episode_does_not_call_reset(self):
+        """_finish_episode_if_ready must NOT call model.reset() (Q-values preserved per Phase 01 D-03)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._finish_episode_if_ready(save_stats=True)
+            node.model.reset.assert_not_called()
+
+    def test_finish_episode_noop_when_inflight(self):
+        """Does nothing when in_flight > 0 (drain semantics, D-03)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.in_flight = 3
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            result = node._finish_episode_if_ready(save_stats=True)
+
+            self.assertIsNone(result)
+            self.assertEqual(node.state, NodeState.READY)  # unchanged
+            self.assertEqual(calls, [])
+
+    def test_per_country_reset_triggers_on_quota(self):
+        """When quota hit and in_flight == 0, all three methods fire in order; episode_idx increments 1→2."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            self.assertEqual(calls, ["write_stats", "save_iteration", "soft_reset"])
+            self.assertEqual(node.episode_idx, 2)
+
+    def test_inflight_blocks_reset(self):
+        """current_epoch_num >= measurements_per_episode but in_flight > 0 → no reset."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.in_flight = 5
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            result = node._finish_episode_if_ready(save_stats=True)
+
+            self.assertIsNone(result)
+            self.assertEqual(calls, [])
+
+    def test_subquota_does_not_trigger_reset(self):
+        """current_epoch_num < measurements_per_episode → no reset."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.model.current_epoch_num = 50  # below quota
+            calls = []
+            self._wrap_with_call_tracker(node, calls)
+
+            result = node._finish_episode_if_ready(save_stats=True)
+
+            self.assertIsNone(result)
+            self.assertEqual(calls, [])
+
+    def test_save_failure_does_not_block_soft_reset(self):
+        """write_stats raising RuntimeError → save_iteration AND soft_reset still fire; no propagation."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.write_stats = MagicMock(side_effect=RuntimeError("disk full"))
+            node.save_iteration = MagicMock()
+            orig_soft = node.soft_reset
+            node.soft_reset = MagicMock(wraps=orig_soft)
+
+            try:
+                result = node._finish_episode_if_ready(save_stats=True)
+            except Exception as exc:
+                self.fail(f"_finish_episode_if_ready should swallow write_stats errors, raised: {exc}")
+
+            self.assertIsNone(result)
+            node.write_stats.assert_called_once()
+            node.save_iteration.assert_called_once()
+            node.soft_reset.assert_called_once()
+
+    def test_save_iteration_failure_does_not_block_soft_reset(self):
+        """save_iteration raising → soft_reset still fires; no propagation."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.save_iteration = MagicMock(side_effect=RuntimeError("graphml write failed"))
+            orig_soft = node.soft_reset
+            node.soft_reset = MagicMock(wraps=orig_soft)
+
+            try:
+                result = node._finish_episode_if_ready(save_stats=True)
+            except Exception as exc:
+                self.fail(f"_finish_episode_if_ready should swallow save_iteration errors, raised: {exc}")
+
+            self.assertIsNone(result)
+            node.save_iteration.assert_called_once()
+            node.soft_reset.assert_called_once()
+
+    def test_episode_stats_rotated_before_write_stats(self):
+        """Before write_stats is called, episode_stats must be moved into episode_all_stats."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
+            node.episode_all_stats = [{"episode": 0, "time": 1, "reward": 0.0}]
+            captured = {}
+
+            def fake_write_stats():
+                # Snapshot the buffer state at the moment write_stats is invoked.
+                captured["episode_all_stats"] = list(node.episode_all_stats)
+                captured["episode_stats"] = list(node.episode_stats)
+
+            node.write_stats = MagicMock(side_effect=fake_write_stats)
+            node.save_iteration = MagicMock()
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            # Both pre-existing rolled rows AND the just-completed iteration's rows are in episode_all_stats.
+            self.assertEqual(len(captured["episode_all_stats"]), 2)
+            self.assertEqual(captured["episode_stats"], [])
+
+    def test_state_dir_uses_output_directory_plus_state(self):
+        """save_iteration is called with state_dir == Path(output_directory) / 'state'."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.save_iteration = MagicMock()
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            args, _ = node.save_iteration.call_args
+            self.assertEqual(args[1], Path(tmp_path) / "state")
+
+    def test_save_iteration_receives_pre_increment_episode_idx(self):
+        """save_iteration gets idx=5 when going in at episode_idx=5; soft_reset bumps to 6 afterward."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_idx = 5
+            node.save_iteration = MagicMock()
+
+            node._finish_episode_if_ready(save_stats=True)
+
+            args, _ = node.save_iteration.call_args
+            self.assertEqual(args[0], 5, "save_iteration must receive pre-increment episode_idx")
+            self.assertEqual(node.episode_idx, 6, "soft_reset must bump episode_idx after save_iteration")
+
+    def test_on_reset_callback_fired_after_soft_reset(self):
+        """on_reset is invoked with country string after soft_reset, post-episode_idx-bump (D-04, D-12)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            captured = []
+
+            def cb(country):
+                # episode_idx already bumped by soft_reset
+                captured.append((country, node.episode_idx))
+
+            node._on_reset = cb
+            node.episode_idx = 3
+            node._finish_episode_if_ready(save_stats=True)
+            self.assertEqual(captured, [("TestCountry", 4)])
+
+    def test_on_reset_none_no_error(self):
+        """When _on_reset is None, _finish_episode_if_ready does not raise."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._on_reset = None
+            # Should not raise
+            result = node._finish_episode_if_ready(save_stats=True)
+            self.assertIsNone(result)
+
+    def test_on_reset_exception_swallowed(self):
+        """An exception in _on_reset is logged but does not propagate."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._on_reset = MagicMock(side_effect=RuntimeError("callback failed"))
+            # Must not raise
+            result = node._finish_episode_if_ready(save_stats=True)
+            self.assertIsNone(result)
+            node._on_reset.assert_called_once_with("TestCountry")
+
+
+class TestWriteStatsNullSafe(unittest.TestCase):
+    """Tests for write_stats() null-safety -- covers SIGTERM early shutdown."""
+
+    def _make_node(self):
+        from Infrastructure.main.node import RegionalNode
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = "TestCountry"
+        node.model = MagicMock()
+        node.model.outfile = "/tmp/test_stats.csv"
+        node.model.save = MagicMock()
+        node.stat_df = None
+        node.episode_stats = []
+        node.episode_all_stats = []
+        node.episode_idx = 1
+        return node
+
+    def test_write_stats_no_crash_when_stat_df_none(self):
+        """write_stats() must not raise when stat_df is None and no stats exist."""
+        node = self._make_node()
+        # Should not raise
+        node.write_stats()
+        node.model.save.assert_called_once()
+
+    def test_write_stats_flushes_partial_stats(self):
+        """write_stats() flushes episode_all_stats when stat_df is None.
+
+        Per Phase 02.1 D-05/D-07, write_stats now produces TWO files (per-iteration
+        snapshot + rolling-append CSV), so to_csv is called twice when there are rows.
+        """
+        node = self._make_node()
+        node.episode_all_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
+        with patch.object(pd.DataFrame, 'to_csv') as mock_csv:
+            node.write_stats()
+            # Two writes: per-iteration snapshot (overwrite) + rolling CSV (append)
+            self.assertEqual(mock_csv.call_count, 2)
+
+
+class TestSaveCheckpoint(unittest.TestCase):
+    """Tests for RegionalNode.save_checkpoint() / save_daily() / _write_sidecar()."""
+
+    def _make_node(self, tmp_path):
+        from Infrastructure.main.node import RegionalNode
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = "TestCountry"
+        node.country_name_standard = "TestCountry"
+        node.model = MagicMock()
+        node.model.action_space = MagicMock()
+        node.model.action_space.checkpoint_save = MagicMock(return_value=True)
+        node.model.exploration_epoch_num = 42
+        node.model.current_epoch_num = 17
+        node.model.c = 1.5
+        node.model.step_size = 0.1
+        node.model.initial_value_estimate = 1.0
+        node.model.selection_method = BatchSelectionMethod.TOP_K_FROM_ARM
+        node.model.size_method = BatchSizeMethod.CONSTANT_VAL
+        node.model.prop_method = PropagationMethod.ON_RECEIPT
+        node.model.output_directory = str(tmp_path)
+        node.aggregation_method = AggregationMethod.MAJORITY_VOTE
+        return node
+
+    def test_save_checkpoint_creates_graphml_and_json(self):
+        """save_checkpoint() creates checkpoint.graphml and checkpoint.json in state_dir."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+
+            node.save_checkpoint(state_dir)
+
+            # action_space.checkpoint_save should be called with the graphml path
+            node.model.action_space.checkpoint_save.assert_called_once()
+            called_path = node.model.action_space.checkpoint_save.call_args[0][0]
+            self.assertTrue(called_path.endswith("checkpoint.graphml"))
+            # JSON sidecar should be written
+            self.assertTrue((state_dir / "checkpoint.json").exists())
+
+    def test_save_checkpoint_overwrites_existing_files(self):
+        """save_checkpoint() overwrites existing checkpoint files (rolling, per D-02)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            state_dir.mkdir(parents=True)
+            # Pre-populate the checkpoint.json so we can confirm overwrite
+            (state_dir / "checkpoint.json").write_text('{"old": "content"}')
+
+            node.save_checkpoint(state_dir)
+
+            content = (state_dir / "checkpoint.json").read_text()
+            data = json.loads(content)
+            # Old content should be gone; new sidecar fields should be present
+            self.assertNotIn("old", data)
+            self.assertEqual(data["exploration_epoch_num"], 42)
+
+    def test_save_daily_uses_date_stamped_filenames(self):
+        """save_daily('2026-04-24') creates action_space_2026-04-24.graphml and state_2026-04-24.json."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+
+            node.save_daily("2026-04-24", state_dir)
+
+            called_path = node.model.action_space.checkpoint_save.call_args[0][0]
+            self.assertTrue(called_path.endswith("action_space_2026-04-24.graphml"))
+            self.assertTrue((state_dir / "state_2026-04-24.json").exists())
+
+    def test_write_sidecar_contains_all_required_keys(self):
+        """_write_sidecar() writes JSON with all REQUIRED_SIDECAR_KEYS plus metadata."""
+        import tempfile
+        from Infrastructure.utils.persistence import REQUIRED_SIDECAR_KEYS
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            json_path = tmp_path / "test.json"
+
+            node._write_sidecar(json_path)
+
+            self.assertTrue(json_path.exists())
+            data = json.loads(json_path.read_text())
+            for key in REQUIRED_SIDECAR_KEYS:
+                self.assertIn(key, data, f"Missing required key: {key}")
+            # Metadata fields per D-14
+            self.assertIn("save_timestamp", data)
+            self.assertIn("country_code", data)
+            self.assertIn("measurements_completed_today", data)
+            # Verify scalar values are correctly captured
+            self.assertEqual(data["exploration_epoch_num"], 42)
+            self.assertEqual(data["current_epoch_num"], 17)
+            self.assertEqual(data["c"], 1.5)
+            self.assertEqual(data["country_code"], "TestCountry")
+
+    def test_write_sidecar_serializes_enums_as_name_strings(self):
+        """_write_sidecar() serializes enums as .name strings (e.g., "TOP_K_FROM_ARM")."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            json_path = tmp_path / "test.json"
+
+            node._write_sidecar(json_path)
+
+            data = json.loads(json_path.read_text())
+            self.assertEqual(data["selection_method"], "TOP_K_FROM_ARM")
+            self.assertEqual(data["size_method"], "CONSTANT_VAL")
+            self.assertEqual(data["prop_method"], "ON_RECEIPT")
+
+    def test_write_sidecar_uses_atomic_write(self):
+        """_write_sidecar() uses atomic write (.tmp + os.replace)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            json_path = tmp_path / "test.json"
+
+            with patch("Infrastructure.main.node.os.replace", wraps=os.replace) as mock_replace:
+                node._write_sidecar(json_path)
+
+            mock_replace.assert_called_once()
+            args = mock_replace.call_args[0]
+            self.assertTrue(args[0].endswith(".tmp"))
+            self.assertEqual(args[1], str(json_path))
+            # No leftover .tmp file
+            self.assertFalse((tmp_path / "test.json.tmp").exists())
+
+    def test_save_checkpoint_logs_error_on_failure_no_crash(self):
+        """save_checkpoint() catches exceptions and logs error without crashing."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            # Make checkpoint_save raise
+            node.model.action_space.checkpoint_save = MagicMock(
+                side_effect=RuntimeError("disk full")
+            )
+            state_dir = tmp_path / "state"
+
+            # Should not raise
+            try:
+                node.save_checkpoint(state_dir)
+            except Exception as exc:
+                self.fail(f"save_checkpoint should swallow exceptions, raised: {exc}")
+
+
+class TestSaveIteration(unittest.TestCase):
+    """Tests for RegionalNode.save_iteration() — covers Phase 02.1 D-06, D-07, D-08."""
+
+    def _make_node(self, tmp_path: Path):
+        from Infrastructure.main.node import RegionalNode
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = "TestCountry"
+        node.country_name_standard = "TestCountry"
+        node.model = MagicMock()
+        node.model.action_space = MagicMock()
+        node.model.action_space.checkpoint_save = MagicMock(return_value=True)
+        # Sidecar fields _write_sidecar reads
+        node.model.exploration_epoch_num = 10
+        node.model.current_epoch_num = 50
+        node.model.c = 1.0
+        node.model.step_size = 0.1
+        node.model.initial_value_estimate = 0.5
+        node.model.selection_method = BatchSelectionMethod.TOP_K_FROM_ARM
+        node.model.size_method = BatchSizeMethod.CONSTANT_VAL
+        node.model.prop_method = PropagationMethod.ON_RECEIPT
+        node.model.output_directory = str(tmp_path)
+        node.aggregation_method = AggregationMethod.MAJORITY_VOTE
+        return node
+
+    def test_save_iteration_creates_iter_subdir(self):
+        """save_iteration creates <state_dir>/iterations/ if missing."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            # iterations subdir not created yet
+            self.assertFalse((state_dir / "iterations").exists())
+
+            node.save_iteration(1, state_dir)
+
+            self.assertTrue((state_dir / "iterations").is_dir())
+
+    def test_save_iteration_uses_zero_padded_filename(self):
+        """idx=7 → iter_007.{graphml,json}, not iter_7.{graphml,json}."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+
+            node.save_iteration(7, state_dir)
+
+            called_path = node.model.action_space.checkpoint_save.call_args[0][0]
+            self.assertTrue(
+                called_path.endswith("iter_007.graphml"),
+                f"Expected zero-padded iter_007.graphml, got {called_path}",
+            )
+            self.assertTrue((state_dir / "iterations" / "iter_007.json").exists())
+            # Confirm non-zero-padded variant does NOT exist
+            self.assertFalse((state_dir / "iterations" / "iter_7.json").exists())
+
+    def test_save_iteration_calls_checkpoint_save_not_action_space_save(self):
+        """save_iteration uses mutation-safe checkpoint_save, never action_space.save()."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            node.model.action_space.save = MagicMock()
+
+            node.save_iteration(3, state_dir)
+
+            node.model.action_space.checkpoint_save.assert_called_once()
+            node.model.action_space.save.assert_not_called()
+
+    def test_save_iteration_writes_json_sidecar(self):
+        """JSON sidecar at iterations/iter_NNN.json contains expected scalar keys."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+
+            node.save_iteration(2, state_dir)
+
+            json_path = state_dir / "iterations" / "iter_002.json"
+            self.assertTrue(json_path.exists())
+            data = json.loads(json_path.read_text())
+            self.assertEqual(data["exploration_epoch_num"], 10)
+            self.assertEqual(data["current_epoch_num"], 50)
+            self.assertEqual(data["c"], 1.0)
+            self.assertEqual(data["selection_method"], "TOP_K_FROM_ARM")
+            self.assertEqual(data["country_code"], "TestCountry")
+
+    def test_save_iteration_uses_atomic_json_write(self):
+        """JSON sidecar write goes through os.replace from a .tmp file (atomic)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+
+            with patch("Infrastructure.main.node.os.replace", wraps=os.replace) as mock_replace:
+                node.save_iteration(4, state_dir)
+
+            mock_replace.assert_called_once()
+            args = mock_replace.call_args[0]
+            self.assertTrue(args[0].endswith(".tmp"))
+            json_path = state_dir / "iterations" / "iter_004.json"
+            self.assertEqual(args[1], str(json_path))
+            # No leftover .tmp file
+            self.assertFalse((state_dir / "iterations" / "iter_004.json.tmp").exists())
+
+    def test_save_iteration_re_raises_on_checkpoint_failure(self):
+        """checkpoint_save raising → save_iteration logs and re-raises (caller handles)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.model.action_space.checkpoint_save = MagicMock(
+                side_effect=RuntimeError("disk full")
+            )
+            state_dir = tmp_path / "state"
+
+            with self.assertRaises(RuntimeError):
+                node.save_iteration(1, state_dir)
+
+    def test_save_iteration_overwrites_on_repeated_idx(self):
+        """Calling save_iteration twice with the same idx succeeds; second call overwrites."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+
+            node.save_iteration(3, state_dir)
+            # Mutate sidecar field so we can verify the second write overwrote
+            node.model.current_epoch_num = 999
+            node.save_iteration(3, state_dir)
+
+            json_path = state_dir / "iterations" / "iter_003.json"
+            data = json.loads(json_path.read_text())
+            self.assertEqual(data["current_epoch_num"], 999)
+            # No .tmp leftover from the second write either
+            self.assertFalse((state_dir / "iterations" / "iter_003.json.tmp").exists())
+
+
+class TestLoadCheckpoint(unittest.TestCase):
+    """Tests for RegionalNode.load_checkpoint() — covers D-09, D-10, D-11, D-12."""
+
+    def _make_node(self, tmp_path):
+        """Build a node with a mocked model whose action_space has a real graph."""
+        import networkx as nx
+        from models.base.action_space import (
+            create_default_node_attributes,
+            add_root,
+            ROOT_KEY,
+            Q_VALUE,
+            ACTION_ATTEMPTS,
+            SLEEPING,
+            EXPLORED,
+            IS_TARGET_NODE,
+            PARENTS,
+        )
+
+        from Infrastructure.main.node import RegionalNode
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = "TestCountry"
+        node.country_name_standard = "TestCountry"
+        node.model = MagicMock()
+        node.model.exploration_epoch_num = 0
+        node.model.current_epoch_num = 0
+        node.model.c = 1.0
+        node.model.step_size = None
+        node.model.initial_value_estimate = 1.0
+        node.model.selection_method = BatchSelectionMethod.TOP_K_FROM_ARM
+        node.model.size_method = BatchSizeMethod.CONSTANT_VAL
+        node.model.prop_method = PropagationMethod.ON_RECEIPT
+        node.model.output_directory = str(tmp_path)
+
+        # Build a minimal "fresh" current graph: root, two arms, three targets.
+        g = nx.DiGraph()
+        add_root(g)
+        g.add_node(
+            "arm_a",
+            **create_default_node_attributes("arm_a", "arm_a", "category"),
+        )
+        g.add_edge(ROOT_KEY, "arm_a")
+        for t in ("target_1", "target_2", "target_3"):
+            g.add_node(
+                t,
+                **create_default_node_attributes(t, t, "domain", is_target_node=True),
+            )
+            g.add_edge("arm_a", t)
+        node.model.action_space = MagicMock()
+        node.model.action_space._graph = g
+        return node
+
+    def _write_saved_state(self, state_dir: Path, node_data_overrides=None,
+                           sidecar_overrides=None):
+        """Helper: write a synthetic checkpoint.graphml + checkpoint.json pair."""
+        import networkx as nx
+        from models.base.action_space import (
+            create_default_node_attributes,
+            add_root,
+            ROOT_KEY,
+            Q_VALUE,
+            ACTION_ATTEMPTS,
+        )
+
+        state_dir.mkdir(parents=True, exist_ok=True)
+
+        saved = nx.DiGraph()
+        add_root(saved)
+        saved.add_node(
+            "arm_a",
+            **create_default_node_attributes("arm_a", "arm_a", "category"),
+        )
+        saved.add_edge(ROOT_KEY, "arm_a")
+        # target_1 has learned Q-value; target_2 also; target_REMOVED not in current CSV
+        for t, q in (("target_1", 0.75), ("target_2", 0.42), ("target_REMOVED", 0.99)):
+            attrs = create_default_node_attributes(t, t, "domain", is_target_node=True)
+            attrs[Q_VALUE] = q
+            attrs[ACTION_ATTEMPTS] = 5
+            saved.add_node(t, **attrs)
+            saved.add_edge("arm_a", t)
+        # GraphML cannot serialize lists; convert PARENTS to ""
+        for n, d in saved.nodes(data=True):
+            d["parents"] = ""
+
+        graphml_path = state_dir / "checkpoint.graphml"
+        nx.write_graphml(saved, str(graphml_path))
+
+        sidecar = {
+            "exploration_epoch_num": 100,
+            "current_epoch_num": 50,
+            "measurements_completed_today": 50,
+            "c": 1.0,
+            "step_size": None,
+            "initial_value_estimate": 1.0,
+            "selection_method": "TOP_K_FROM_ARM",
+            "size_method": "CONSTANT_VAL",
+            "prop_method": "ON_RECEIPT",
+            "save_timestamp": "2026-04-24T12:00:00+00:00",
+            "country_code": "TestCountry",
+        }
+        if sidecar_overrides:
+            sidecar.update(sidecar_overrides)
+        json_path = state_dir / "checkpoint.json"
+        json_path.write_text(json.dumps(sidecar))
+        return graphml_path, json_path
+
+    def test_load_checkpoint_returns_true_and_restores_scalars(self):
+        """load_checkpoint() returns True for valid state and restores scalars."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            self._write_saved_state(state_dir)
+
+            result = node.load_checkpoint(state_dir)
+
+            self.assertTrue(result)
+            self.assertEqual(node.model.exploration_epoch_num, 100)
+            self.assertEqual(node.model.current_epoch_num, 50)
+
+    def test_load_checkpoint_returns_false_when_no_state(self):
+        """load_checkpoint() returns False when no state files exist."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            state_dir.mkdir(parents=True)
+
+            result = node.load_checkpoint(state_dir)
+
+            self.assertFalse(result)
+            # Scalars unchanged
+            self.assertEqual(node.model.exploration_epoch_num, 0)
+
+    def test_load_checkpoint_returns_false_on_corrupt_files(self):
+        """load_checkpoint() returns False on corrupted state files (D-12)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            state_dir.mkdir(parents=True)
+            # Write garbage to checkpoint files
+            (state_dir / "checkpoint.graphml").write_text("not valid xml")
+            (state_dir / "checkpoint.json").write_text("not valid json")
+
+            result = node.load_checkpoint(state_dir)
+
+            self.assertFalse(result)
+
+    def test_load_checkpoint_graph_merge_preserves_qvalues(self):
+        """D-10: Graph merge copies Q-values from saved graph to current graph
+        for nodes present in both; new targets keep defaults; removed targets dropped."""
+        import tempfile
+        from models.base.action_space import Q_VALUE, ACTION_ATTEMPTS
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            state_dir = tmp_path / "state"
+            self._write_saved_state(state_dir)
+
+            result = node.load_checkpoint(state_dir)
+
+            self.assertTrue(result)
+            # target_1 and target_2 should have Q-values from saved state
+            self.assertEqual(node.model.action_space._graph.nodes["target_1"][Q_VALUE], 0.75)
+            self.assertEqual(node.model.action_space._graph.nodes["target_2"][Q_VALUE], 0.42)
+            self.assertEqual(node.model.action_space._graph.nodes["target_1"][ACTION_ATTEMPTS], 5)
+            # target_3 is in CSV but was not in saved state — keeps default 0
+            self.assertEqual(node.model.action_space._graph.nodes["target_3"][Q_VALUE], 0)
+            # target_REMOVED was in saved state but not in current CSV — must NOT appear
+            self.assertFalse(node.model.action_space._graph.has_node("target_REMOVED"))
+
+    def test_load_checkpoint_warns_on_hyperparameter_mismatch(self):
+        """Hyperparameter mismatch logs a warning but still loads."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            # Saved state has c=1.0, current model has c=2.5
+            node.model.c = 2.5
+            state_dir = tmp_path / "state"
+            self._write_saved_state(state_dir)
+
+            with self.assertLogs("Infrastructure.main.node", level="WARNING") as cm:
+                result = node.load_checkpoint(state_dir)
+
+            self.assertTrue(result)
+            # At least one warning mentioning hyperparameter mismatch
+            self.assertTrue(
+                any("mismatch" in msg.lower() or "c=" in msg for msg in cm.output),
+                f"Expected hyperparameter-mismatch warning, got: {cm.output}",
+            )
+
+    def test_load_checkpoint_restores_enum_fields(self):
+        """Enum fields (selection_method etc.) are restored from sidecar names."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            # Pre-set to different enum values to confirm restoration
+            node.model.selection_method = BatchSelectionMethod.UNIFORM_SPREAD
+            node.model.size_method = BatchSizeMethod.VARY_ON_SUCCESS
+            node.model.prop_method = PropagationMethod.IN_ORDER
+            state_dir = tmp_path / "state"
+            self._write_saved_state(state_dir)
+
+            result = node.load_checkpoint(state_dir)
+
+            self.assertTrue(result)
+            self.assertEqual(node.model.selection_method, BatchSelectionMethod.TOP_K_FROM_ARM)
+            self.assertEqual(node.model.size_method, BatchSizeMethod.CONSTANT_VAL)
+            self.assertEqual(node.model.prop_method, PropagationMethod.ON_RECEIPT)
+
+
+class TestWriteStatsRollingAndSnapshot(unittest.TestCase):
+    """Tests for write_stats() rolling-append + per-iteration snapshot (D-05, D-07)."""
+
+    def _make_node(self, tmp_path: Path):
+        from Infrastructure.main.node import RegionalNode
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = "TestCountry"
+        node.model = MagicMock()
+        node.model.save = MagicMock()
+        node.model.outfile = str(tmp_path / "TestCountry.csv")
+        node.episode_idx = 1
+        node.episode_stats = []
+        node.episode_all_stats = []
+        node.stat_df = None
+        return node
+
+    def test_first_call_writes_snapshot_and_creates_rolling_with_header(self):
+        """First write_stats call: snapshot file created AND rolling CSV created with header."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            # Caller has rotated rows into episode_all_stats (Task 3 invariant).
+            node.episode_all_stats = [
+                {"episode": 1, "time": 1, "reward": 0.5},
+                {"episode": 1, "time": 2, "reward": 0.7},
+            ]
+
+            node.write_stats()
+
+            rolling_path = tmp_path / "TestCountry.csv"
+            snapshot_path = tmp_path / "TestCountry_iter_001.csv"
+            self.assertTrue(rolling_path.exists(), "rolling CSV not created")
+            self.assertTrue(snapshot_path.exists(), "snapshot CSV not created")
+
+            rolling_df = pd.read_csv(rolling_path)
+            snapshot_df = pd.read_csv(snapshot_path)
+            self.assertEqual(len(rolling_df), 2)
+            self.assertEqual(len(snapshot_df), 2)
+            # Header present in rolling on first write
+            with open(rolling_path) as f:
+                first_line = f.readline()
+            self.assertIn("episode", first_line)
+
+    def test_second_call_appends_to_rolling_without_header(self):
+        """Second iteration: rolling CSV appended (no header rewritten); snapshot for iter_002 separate."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+
+            # First iteration write
+            node.episode_idx = 1
+            node.episode_all_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
+            node.write_stats()
+
+            # Second iteration write (caller bumped episode_idx and re-rotated rows)
+            node.episode_idx = 2
+            node.episode_all_stats = [
+                {"episode": 2, "time": 1, "reward": 0.6},
+                {"episode": 2, "time": 2, "reward": 0.8},
+            ]
+            node.write_stats()
+
+            rolling_path = tmp_path / "TestCountry.csv"
+            with open(rolling_path) as f:
+                lines = f.readlines()
+
+            # 1 header + 1 row from iter_001 + 2 rows from iter_002 = 4 lines
+            self.assertEqual(len(lines), 4)
+            # Header appears exactly once (first line). Subsequent lines must NOT contain "episode,time"
+            header_count = sum(
+                1 for line in lines if line.startswith("episode,")
+            )
+            self.assertEqual(header_count, 1, f"Expected 1 header line, got {header_count}")
+
+            # iter_002 snapshot exists and has only iter_002 rows
+            snapshot2 = tmp_path / "TestCountry_iter_002.csv"
+            self.assertTrue(snapshot2.exists())
+            snap_df = pd.read_csv(snapshot2)
+            self.assertEqual(len(snap_df), 2)
+
+    def test_per_iteration_snapshot_is_overwritten_not_appended(self):
+        """Calling write_stats twice with the same episode_idx overwrites the snapshot (no append)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_idx = 3
+
+            node.episode_all_stats = [{"episode": 3, "time": 1, "reward": 0.1}]
+            node.write_stats()
+
+            # Re-set rows (write_stats clears episode_all_stats post-write)
+            node.episode_all_stats = [{"episode": 3, "time": 1, "reward": 0.1}]
+            node.write_stats()
+
+            snapshot_path = tmp_path / "TestCountry_iter_003.csv"
+            snap_df = pd.read_csv(snapshot_path)
+            # Snapshot has only one row (overwrite, not append)
+            self.assertEqual(len(snap_df), 1)
+
+    def test_writes_use_episode_idx_in_snapshot_filename(self):
+        """episode_idx=7 → snapshot path ends with _iter_007.csv (zero-padded)."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_idx = 7
+            node.episode_all_stats = [{"episode": 7, "time": 1, "reward": 0.0}]
+
+            node.write_stats()
+
+            snapshot_path = tmp_path / "TestCountry_iter_007.csv"
+            self.assertTrue(snapshot_path.exists(), f"Expected zero-padded snapshot at {snapshot_path}")
+
+    def test_model_save_called_once_per_invocation(self):
+        """write_stats must call self.model.save() exactly once per call."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_all_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
+
+            node.write_stats()
+
+            node.model.save.assert_called_once()
+
+    def test_no_rows_no_files_written(self):
+        """Empty episode_stats AND episode_all_stats: neither snapshot nor rolling CSV created."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            # Both buffers empty
+            node.episode_stats = []
+            node.episode_all_stats = []
+
+            node.write_stats()
+
+            rolling_path = tmp_path / "TestCountry.csv"
+            snapshot_path = tmp_path / "TestCountry_iter_001.csv"
+            self.assertFalse(rolling_path.exists(), "rolling CSV should not be created when no rows")
+            self.assertFalse(snapshot_path.exists(), "snapshot CSV should not be created when no rows")
+            # model.save still ran (writes action_space.csv side-table)
+            node.model.save.assert_called_once()
+
+    def test_clears_episode_all_stats_after_write(self):
+        """Post-condition: episode_all_stats == [] after write_stats returns."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node.episode_all_stats = [{"episode": 1, "time": 1, "reward": 0.5}]
+
+            node.write_stats()
+
+            self.assertEqual(node.episode_all_stats, [])
+
+
+class TestMeasurementsCsv(unittest.TestCase):
+    """Phase 3 D-01..D-06: per-measurement CSV writer on RegionalNode."""
+
+    def _make_node(self, tmp_path, country="US"):
+        """Construct a RegionalNode with the model and absorb path stubbed
+        so we can drive _append_measurements directly without a real BatchUCB.
+        """
+        from Infrastructure.main.node import RegionalNode
+
+        # Bypass __init__ to avoid the heavy model setup; manually set the
+        # state _append_measurements and _write_measurements_row depend on.
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = country
+        node.country_name_standard = country.replace(" ", "_")
+        node.output_folder = str(tmp_path)
+        country_dir = tmp_path / country.replace(" ", "_")
+        country_dir.mkdir(parents=True, exist_ok=True)
+        node._measurements_path = country_dir / f"{country.replace(' ', '_')}_measurements.csv"
+        node._measurements_file = None
+        node._measurements_writer = None
+        node._measurements_header_written = False
+
+        node.episode_idx = 1
+        node.episode_stats = []
+        node.episode_all_stats = []
+
+        node.model = MagicMock()
+        node.model.current_epoch_num = 0
+
+        def fake_absorb(m_dict):
+            return {
+                "action":     "arm-A",
+                "targets":    m_dict["target"],
+                "rewards":    1.0 if m_dict["blocked"] else 0.0,
+                "q_value":    0.42,
+                "is_blocked": 1 if m_dict["blocked"] else 0,
+                "is_optimal": 1,
+                "coverage":   0.5,
+            }
+        node.model.absorb_measurement.side_effect = fake_absorb
+        # Phase 4 Plan 03: VARY_ON_SUCCESS per-batch counters and snap-to-base
+        # fields. _append_measurements increments these on each absorbed result;
+        # soft_reset (exercised by test_measurements_writer_survives_soft_reset)
+        # snaps batch_size back to base_batch_size.
+        node.batch_size = 5
+        node.base_batch_size = 5
+        node._current_batch_blocked = 0
+        node._current_batch_size = 0
+        node._last_batch_fraction = None
+        node._pending_batch_target = 0
+        # Phase 4 Plan 05: monotonic batch_id counter for IN_ORDER scheduling.
+        node._batch_id_counter = 0
+        node.state = NodeState.IDLE
+        node.in_flight = 0
+        node.model.action_space = MagicMock()
+        node.model.action_space.wake_up_all_nodes = MagicMock()
+        return node
+
+    def _read_csv(self, path):
+        import csv as _csv_module
+        with open(path) as f:
+            return list(_csv_module.DictReader(f))
+
+    def test_measurements_csv_header_written_once(self):
+        """Header row written exactly once on first row, never duplicated on second row append."""
+        import tempfile
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._append_measurements([MeasurementResponse(target="a.com", blocked=True)])
+            node._append_measurements([MeasurementResponse(target="b.com", blocked=False)])
+            node.close_measurements()
+            with open(node._measurements_path) as f:
+                lines = f.readlines()
+            # 1 header + 2 data rows = 3 lines
+            self.assertEqual(len(lines), 3)
+            # The header literal must match the 12-column order exactly
+            self.assertEqual(
+                lines[0].strip(),
+                "target,arm,blocked,reward,q_value,utc_timestamp,episode_idx,step_idx,is_optimal,coverage,latency_ms,vp_count",
+            )
+
+    def test_measurements_csv_twelve_columns_in_order(self):
+        """The row is serialized with exactly 12 columns in the documented order."""
+        import tempfile
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._append_measurements([
+                MeasurementResponse(
+                    target="a.com",
+                    blocked=True,
+                    scheduled_at_monotonic=None,  # latency_ms must serialize as ""
+                    vp_count=3,
+                )
+            ])
+            node.close_measurements()
+            rows = self._read_csv(node._measurements_path)
+            self.assertEqual(len(rows), 1)
+            row = rows[0]
+            self.assertEqual(list(row.keys()), [
+                "target", "arm", "blocked", "reward", "q_value",
+                "utc_timestamp", "episode_idx", "step_idx",
+                "is_optimal", "coverage", "latency_ms", "vp_count",
+            ])
+            self.assertEqual(row["target"], "a.com")
+            self.assertEqual(row["arm"], "arm-A")
+            self.assertEqual(row["blocked"], "1")
+            self.assertEqual(row["reward"], "1.0")
+            self.assertEqual(row["episode_idx"], "1")
+            self.assertEqual(row["step_idx"], "1")
+            self.assertEqual(row["is_optimal"], "1")
+            self.assertEqual(row["vp_count"], "3")
+
+    def test_measurements_csv_latency_ms_when_scheduled_at_provided(self):
+        """latency_ms is computed in milliseconds when scheduled_at_monotonic is provided."""
+        import tempfile
+        import time as _time
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            sched = _time.monotonic() - 0.250  # 250ms ago
+            node._append_measurements([
+                MeasurementResponse(
+                    target="a.com",
+                    blocked=True,
+                    scheduled_at_monotonic=sched,
+                    vp_count=2,
+                )
+            ])
+            node.close_measurements()
+            rows = self._read_csv(node._measurements_path)
+            latency = float(rows[0]["latency_ms"])
+            # Allow generous tolerance for CI scheduling jitter
+            self.assertGreaterEqual(latency, 200.0)
+            self.assertLessEqual(latency, 1000.0)
+
+    def test_measurements_csv_latency_ms_none_when_unscheduled(self):
+        """latency_ms serializes as empty string when scheduled_at_monotonic is None."""
+        import tempfile
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._append_measurements([
+                MeasurementResponse(target="a.com", blocked=True)
+            ])
+            node.close_measurements()
+            rows = self._read_csv(node._measurements_path)
+            self.assertEqual(rows[0]["latency_ms"], "")  # csv.DictWriter writes None as ""
+
+    def test_measurements_csv_flush_per_row(self):
+        """Partial-run readability: the file must contain row 1 BEFORE row 2 is written."""
+        import tempfile
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._append_measurements([MeasurementResponse(target="a.com", blocked=True)])
+            # Read the file WITHOUT closing the writer — flush-per-row guarantees row 1 is on disk
+            with open(node._measurements_path) as f:
+                content = f.read()
+            self.assertIn("a.com", content)
+            self.assertGreaterEqual(content.count("\n"), 2)  # header + 1 data row
+            node.close_measurements()
+
+    def test_measurements_writer_survives_soft_reset(self):
+        """Phase 3 D-01: writer is NOT closed at iteration boundary."""
+        import tempfile
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._append_measurements([MeasurementResponse(target="a.com", blocked=True)])
+            file_before = node._measurements_file
+            self.assertIsNotNone(file_before)
+            # Simulate iteration boundary: bump episode_idx without invoking close_measurements
+            node.episode_idx += 1
+            self.assertIs(node._measurements_file, file_before)  # same handle, NOT closed
+            node._append_measurements([MeasurementResponse(target="b.com", blocked=False)])
+            node.close_measurements()
+            rows = self._read_csv(node._measurements_path)
+            self.assertEqual({r["target"] for r in rows}, {"a.com", "b.com"})
+
+    def test_measurements_write_failure_is_isolated(self):
+        """Phase 02.1 D-04 invariant carried forward: write errors do not propagate."""
+        import logging as _logging
+        import tempfile
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            # Force the writer to raise on writerow
+            broken_writer = MagicMock()
+            broken_writer.writerow.side_effect = OSError("simulated disk error")
+            node._measurements_writer = broken_writer
+            node._measurements_file = MagicMock()  # so lazy-open is skipped
+            with self.assertLogs("Infrastructure.main.node", level=_logging.ERROR) as cm:
+                # Must NOT raise
+                absorbed = node._append_measurements([
+                    MeasurementResponse(target="a.com", blocked=True)
+                ])
+            self.assertEqual(absorbed, 1)  # absorb count unaffected by write failure
+            self.assertTrue(
+                any("measurements row write failed" in msg for msg in cm.output),
+                f"Expected 'measurements row write failed' in logs; got {cm.output}",
+            )
+
+    def test_close_measurements_idempotent(self):
+        """close_measurements is safe to call repeatedly."""
+        import tempfile
+        from Infrastructure.utils.structures import MeasurementResponse
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            node._append_measurements([MeasurementResponse(target="a.com", blocked=True)])
+            node.close_measurements()
+            self.assertIsNone(node._measurements_file)
+            # Second call must not raise
+            node.close_measurements()
+            self.assertIsNone(node._measurements_file)
+
+    def test_close_measurements_when_never_opened(self):
+        """close_measurements() before any row was written must not raise."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            node = self._make_node(tmp_path)
+            self.assertIsNone(node._measurements_file)
+            node.close_measurements()  # must not raise
+            self.assertIsNone(node._measurements_file)
+
+
+class TestVaryOnSuccess(unittest.TestCase):
+    """Tests for RegionalNode VARY_ON_SUCCESS batch sizing (Phase 4 Plan 03 / STRT-02 SC2).
+
+    Covers D-05..D-09:
+    - D-05 per-batch hit-ratio trigger
+    - D-06 grow on success (>0.5) / shrink on failure (<0.5) / hold on tie
+    - D-07 multiplicative x2 / //2 step with floor 1
+    - D-08 threshold 0.5, bounds [1, 4*base]
+    - D-09 dispatch at RegionalNode (not BatchUCB), BEFORE _remaining_capacity
+    - Claude's discretion: soft_reset snaps batch_size back to base
+    - D-04 invariant: CONSTANT_VAL runs are bit-for-bit unchanged
+    """
+
+    def _make_node(self, base_batch_size=5, size_method=BatchSizeMethod.VARY_ON_SUCCESS):
+        """Build a RegionalNode bypassing __init__, then prime VARY tracker fields."""
+        from Infrastructure.main.node import RegionalNode
+        with patch.object(RegionalNode, '__init__', lambda self, *a, **kw: None):
+            node = RegionalNode.__new__(RegionalNode)
+        node.country = "TestCountry"
+        node.country_name_standard = "TestCountry"
+        node.model = MagicMock()
+        node.model.measurements_per_episode = 1000
+        node.model.current_epoch_num = 0
+        node.model.can_step = MagicMock(return_value=True)
+        node.model.size_method = size_method
+        node.model.action_space = MagicMock()
+        node.model.action_space.wake_up_all_nodes = MagicMock()
+        node.state = NodeState.IDLE
+        node.batch_size = base_batch_size
+        node.base_batch_size = base_batch_size
+        node.in_flight = 0
+        node._current_batch_blocked = 0
+        node._current_batch_size = 0
+        node._last_batch_fraction = None
+        node._pending_batch_target = 0
+        # Phase 4 Plan 05: monotonic batch_id counter for IN_ORDER scheduling.
+        node._batch_id_counter = 0
+        node.episode_idx = 1
+        node.episode_stats = []
+        node.episode_all_stats = []
+        # Bypass measurements-csv writer
+        node._measurements_path = None
+        node._measurements_file = None
+        node._measurements_writer = None
+        node._measurements_header_written = False
+        return node
+
+    # --- Pure step-function tests (D-05..D-08) ---
+
+    def test_adjuster_noop_under_constant_val(self):
+        """D-04: CONSTANT_VAL must not mutate batch_size even with a >0.5 signal."""
+        node = self._make_node(size_method=BatchSizeMethod.CONSTANT_VAL)
+        node._last_batch_fraction = 1.0  # would force grow under VARY
+        node._adjust_batch_size_if_needed()
+        self.assertEqual(node.batch_size, 5, "CONSTANT_VAL must be no-op")
+
+    def test_adjuster_grows_x2_above_threshold(self):
+        """D-06/D-07: fraction > 0.5 doubles batch_size."""
+        node = self._make_node()
+        node._last_batch_fraction = 0.7
+        node._adjust_batch_size_if_needed()
+        self.assertEqual(node.batch_size, 10)
+
+    def test_adjuster_shrinks_half_below_threshold(self):
+        """D-06/D-07: fraction < 0.5 halves batch_size (integer floor)."""
+        node = self._make_node()
+        node.batch_size = 10
+        node._last_batch_fraction = 0.3
+        node._adjust_batch_size_if_needed()
+        self.assertEqual(node.batch_size, 5)
+
+    def test_adjuster_holds_at_exact_threshold(self):
+        """D-08: fraction == 0.5 holds (strict-greater grow, strict-less shrink)."""
+        node = self._make_node()
+        node.batch_size = 8
+        node._last_batch_fraction = 0.5
+        node._adjust_batch_size_if_needed()
+        self.assertEqual(node.batch_size, 8)
+
+    def test_adjuster_caps_at_4x_base(self):
+        """D-08 upper bound: 4 * base_batch_size (5 -> 20)."""
+        node = self._make_node()
+        node.batch_size = 16  # would grow to 32 without cap
+        node._last_batch_fraction = 1.0
+        node._adjust_batch_size_if_needed()
+        self.assertEqual(node.batch_size, 20)
+
+    def test_adjuster_floors_at_one(self):
+        """D-08 lower bound: 1 (integer floor of 1//2 = 0, clamped to 1)."""
+        node = self._make_node()
+        node.batch_size = 1
+        node._last_batch_fraction = 0.0
+        node._adjust_batch_size_if_needed()
+        self.assertEqual(node.batch_size, 1)
+
+    def test_adjuster_consumes_signal(self):
+        """D-05: one decision per fully-absorbed batch -- fraction is reset to None after use."""
+        node = self._make_node()
+        node._last_batch_fraction = 0.7
+        node._adjust_batch_size_if_needed()
+        self.assertIsNone(node._last_batch_fraction)
+
+    def test_adjuster_holds_on_none_signal(self):
+        """First batch under VARY (no prior signal): hold at current size."""
+        node = self._make_node()
+        node._last_batch_fraction = None
+        node._adjust_batch_size_if_needed()
+        self.assertEqual(node.batch_size, 5)
+
+    # --- Dispatch order & integration tests (D-09) ---
+
+    def test_maybe_request_more_calls_adjuster_before_capacity(self):
+        """D-09: _adjust_batch_size_if_needed must run BEFORE _remaining_capacity so the
+        new batch_size is honored this scheduling round."""
+        node = self._make_node()
+        node.state = NodeState.READY
+        # Prime: prior batch was all blocked -> should grow
+        node._last_batch_fraction = 1.0
+        node.model.queue_measurement = MagicMock(return_value=["t1", "t2"])
+
+        observed_capacity_calls = []
+        original_cap = node._remaining_capacity
+
+        def capture_cap():
+            observed_capacity_calls.append(node.batch_size)
+            return original_cap()
+
+        with patch.object(node, '_remaining_capacity', side_effect=capture_cap):
+            node.maybe_request_more()
+
+        # When _remaining_capacity was invoked, batch_size had already been adjusted to 10.
+        self.assertEqual(observed_capacity_calls, [10],
+            f"capacity observed batch_size at moment of call: {observed_capacity_calls}")
+
+    def test_maybe_request_more_records_pending_batch_target(self):
+        """D-05: scheduling a new batch initializes _pending_batch_target to the count
+        actually returned by queue_measurement (which may be less than requestable)."""
+        node = self._make_node()
+        node.state = NodeState.READY
+        node.model.queue_measurement = MagicMock(return_value=["t1", "t2", "t3"])
+        node.maybe_request_more()
+        self.assertEqual(node._pending_batch_target, 3)
+        self.assertEqual(node._current_batch_blocked, 0)
+        self.assertEqual(node._current_batch_size, 0)
+        self.assertEqual(node.in_flight, 3)
+
+    def test_maybe_request_more_append_to_batch_extends_target(self):
+        """D-05 short-batch path: if action space is partially exhausted and a second
+        maybe_request_more lands while the first batch is still in flight, the pending
+        count extends rather than starting a new fence."""
+        node = self._make_node()
+        node.state = NodeState.READY
+        # First scheduling round: queue_measurement returns 3
+        node.model.queue_measurement = MagicMock(return_value=["t1", "t2", "t3"])
+        node.maybe_request_more()
+        self.assertEqual(node._pending_batch_target, 3)
+        # Second scheduling round while the first batch hasn't fully drained:
+        # _pending_batch_target should extend, not reset.
+        node.model.queue_measurement = MagicMock(return_value=["t4", "t5"])
+        node.maybe_request_more()
+        self.assertEqual(node._pending_batch_target, 5,
+            "append-to-batch path must extend pending target, not start a new fence")
+
+    # --- Per-result counter hook in _append_measurements (D-05) ---
+
+    def _abs_result(self, blocked: int) -> dict:
+        """Stub BatchUCB.absorb_measurement return shape."""
+        return {
+            "action": "armA",
+            "targets": "example.com",
+            "rewards": float(blocked),
+            "q_value": 0.5,
+            "is_blocked": blocked,
+            "is_optimal": 0,
+            "coverage": 0.0,
+        }
+
+    def _mk_measurement(self):
+        """Real MeasurementResponse dataclass instance -- _append_measurements
+        calls asdict() on it, which requires an actual dataclass."""
+        from Infrastructure.utils.structures import MeasurementResponse
+        return MeasurementResponse(
+            target="example.com",
+            blocked=True,
+            scheduled_at_monotonic=None,
+            vp_count=1,
+        )
+
+    def test_append_measurements_increments_per_batch_counters(self):
+        """D-05: per-result loop increments _current_batch_blocked and _current_batch_size."""
+        node = self._make_node()
+        node._pending_batch_target = 3  # simulate a 3-target pending batch
+        # Two blocked, one unblocked
+        node.model.absorb_measurement = MagicMock(side_effect=[
+            self._abs_result(1),
+            self._abs_result(0),
+            self._abs_result(1),
+        ])
+        measurements = [self._mk_measurement() for _ in range(3)]
+        node._append_measurements(measurements)
+        # All 3 contributed; fence completed -> counters reset and fraction set.
+        self.assertEqual(node._last_batch_fraction, 2 / 3)
+        self.assertEqual(node._current_batch_blocked, 0)
+        self.assertEqual(node._current_batch_size, 0)
+        self.assertEqual(node._pending_batch_target, 0)
+
+    def test_append_measurements_partial_batch_does_not_set_fraction(self):
+        """D-05: a partial batch (results < pending target) leaves the fence open."""
+        node = self._make_node()
+        node._pending_batch_target = 5
+        node.model.absorb_measurement = MagicMock(side_effect=[
+            self._abs_result(1),
+            self._abs_result(0),
+        ])
+        node._append_measurements([self._mk_measurement() for _ in range(2)])
+        # Fence still open: 2 of 5 absorbed.
+        self.assertIsNone(node._last_batch_fraction)
+        self.assertEqual(node._current_batch_blocked, 1)
+        self.assertEqual(node._current_batch_size, 2)
+        self.assertEqual(node._pending_batch_target, 5)
+
+    def test_append_measurements_duplicate_skip_does_not_poison_counter(self):
+        """D-05 + WR-02: duplicate/stale results raise KeyError in absorb_measurement
+        and are caught; they must NOT increment the per-batch counters (which would
+        skew the fraction with absent is_blocked data)."""
+        node = self._make_node()
+        node._pending_batch_target = 2
+        # First absorb succeeds blocked=1, second raises KeyError (duplicate)
+        node.model.absorb_measurement = MagicMock(side_effect=[
+            self._abs_result(1),
+            KeyError("dup"),
+        ])
+        node._append_measurements([self._mk_measurement(), self._mk_measurement()])
+        # Only one result contributed to the counters; fence still open at 1/2.
+        self.assertIsNone(node._last_batch_fraction)
+        self.assertEqual(node._current_batch_size, 1)
+        self.assertEqual(node._current_batch_blocked, 1)
+        self.assertEqual(node._pending_batch_target, 2)
+
+    def test_append_measurements_zero_blocked_yields_zero_fraction(self):
+        """D-05 edge: a fully unblocked batch produces fraction=0.0 (not None)."""
+        node = self._make_node()
+        node._pending_batch_target = 2
+        node.model.absorb_measurement = MagicMock(side_effect=[
+            self._abs_result(0),
+            self._abs_result(0),
+        ])
+        node._append_measurements([self._mk_measurement(), self._mk_measurement()])
+        self.assertEqual(node._last_batch_fraction, 0.0)
+
+    # --- soft_reset snap-to-base (Claude's discretion) ---
+
+    def test_soft_reset_snaps_batch_size_to_base(self):
+        """soft_reset() snaps batch_size back to base_batch_size on iteration boundary."""
+        node = self._make_node()
+        node.batch_size = 20  # had drifted up under VARY
+        node.base_batch_size = 5
+        node.soft_reset()
+        self.assertEqual(node.batch_size, 5)
+
+    def test_soft_reset_clears_per_batch_tracker_state(self):
+        """soft_reset() clears the per-batch counters and pending target so the next
+        iteration's first batch runs at base before adaptation resumes."""
+        node = self._make_node()
+        node._current_batch_blocked = 7
+        node._current_batch_size = 12
+        node._pending_batch_target = 20
+        node._last_batch_fraction = 0.8
+        node.soft_reset()
+        self.assertEqual(node._current_batch_blocked, 0)
+        self.assertEqual(node._current_batch_size, 0)
+        self.assertEqual(node._pending_batch_target, 0)
+        self.assertIsNone(node._last_batch_fraction)
+
+    def test_soft_reset_under_constant_is_noop_on_batch_size(self):
+        """D-04: under CONSTANT_VAL, batch_size never drifts, so soft_reset's
+        snap-to-base is observationally a no-op."""
+        node = self._make_node(size_method=BatchSizeMethod.CONSTANT_VAL)
+        # Constant runs never mutate batch_size, so it equals base going in.
+        self.assertEqual(node.batch_size, node.base_batch_size)
+        node.soft_reset()
+        self.assertEqual(node.batch_size, node.base_batch_size)
+
+    # --- End-to-end trajectory (per-batch decision granularity, D-05) ---
+
+    def test_two_batch_trajectory_grow_then_shrink(self):
+        """End-to-end: a high-hit batch grows the next batch; a low-hit batch shrinks it."""
+        node = self._make_node()
+        node.state = NodeState.READY
+
+        # Batch 1: schedule 5, all blocked -> fraction=1.0
+        node.model.queue_measurement = MagicMock(return_value=["t1", "t2", "t3", "t4", "t5"])
+        node.maybe_request_more()
+        self.assertEqual(node._pending_batch_target, 5)
+        node.model.absorb_measurement = MagicMock(
+            side_effect=[self._abs_result(1)] * 5
+        )
+        node._append_measurements([self._mk_measurement() for _ in range(5)])
+        node.in_flight = 0  # simulate orchestrator's in_flight bookkeeping
+        self.assertEqual(node._last_batch_fraction, 1.0)
+
+        # Batch 2: next maybe_request_more grows batch_size 5 -> 10
+        node.model.queue_measurement = MagicMock(return_value=["t6"] * 10)
+        node.maybe_request_more()
+        self.assertEqual(node.batch_size, 10)
+        # Now drain batch 2 with all unblocked -> fraction=0.0
+        node.model.absorb_measurement = MagicMock(
+            side_effect=[self._abs_result(0)] * 10
+        )
+        node._append_measurements([self._mk_measurement() for _ in range(10)])
+        node.in_flight = 0
+        self.assertEqual(node._last_batch_fraction, 0.0)
+
+        # Batch 3: maybe_request_more shrinks 10 -> 5
+        node.model.queue_measurement = MagicMock(return_value=["t16"] * 5)
+        node.maybe_request_more()
+        self.assertEqual(node.batch_size, 5)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,4 +1,5 @@
 import collections
+import copy
 import os
 import random
 import time
@@ -282,6 +283,33 @@ class ActionSpaceBase:
         for n, n_data in self._graph.nodes(data=True):
             n_data[PARENTS] = []
 
+        return True
+
+    def checkpoint_save(self, path: str) -> bool:
+        """Write GraphML snapshot to path without mutating the live graph.
+
+        Unlike save(), this method deep-copies the graph before reconnecting
+        orphaned sleeping nodes and clearing PARENTS lists, so the in-memory
+        graph used by the running UCB algorithm is never modified. Writes
+        atomically via .tmp + os.replace to prevent corrupted state files
+        on crash mid-write (POSIX rename semantics).
+        """
+        g_copy = copy.deepcopy(self._graph)
+
+        # Reconnect sleeping/orphaned nodes on the COPY only, then convert
+        # PARENTS list to "" because GraphML cannot serialize list values.
+        for n, n_data in g_copy.nodes(data=True):
+            parents = n_data.get(PARENTS, [])
+            if parents:
+                for p in parents:
+                    if not g_copy.has_edge(p, n):
+                        g_copy.add_edge(p, n)
+            n_data[PARENTS] = ""
+
+        # Atomic write: .tmp then os.replace (atomic on POSIX rename syscall)
+        tmp_path = path + ".tmp"
+        nx.write_graphml(g_copy, tmp_path)
+        os.replace(tmp_path, path)
         return True
 
     def contains(self, node: str) -> bool:

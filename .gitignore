@@ -416,3 +416,16 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Egg-info
+*.egg-info
+
+# Claude
+CLAUDE.md
+**/.planning/**
+
+# outputs
+**/outputs/**
+
+# local
+**/local/**
