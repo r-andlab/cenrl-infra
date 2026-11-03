@@ -1,0 +1,2001 @@
+time,country,target,category,n_votes,n_blocked,rewards
+1,Germany,google.com,Search Engines,9653,18,0.0019
+2,Germany,amazonaws.com,Technology,9653,1,0.0001
+3,Germany,facebook.com,Social Networks,9653,27,0.0028
+4,Germany,microsoft.com,Business,9653,19,0.002
+5,Germany,apple.com,Information Technology,9653,21,0.0022
+6,Germany,googleapis.com,Content Servers,9653,1,0.0001
+7,Germany,youtube.com,Video Streaming,9653,171,0.0177
+8,Germany,akamaiedge.net,Content Servers,9653,0,0.0
+9,Germany,www.google.com,Search Engines,9653,165,0.0171
+10,Germany,akamai.net,Content Servers,9653,0,0.0
+11,Germany,a-msedge.net,Content Servers,9653,0,0.0
+12,Germany,twitter.com,Social Networks,9653,156,0.0162
+13,Germany,azure.com,Technology,9653,1,0.0001
+14,Germany,googlevideo.com,Search Engines,9653,27,0.0028
+15,Germany,data.microsoft.com,Technology,9653,2,0.0002
+16,Germany,instagram.com,Social Networks,9653,186,0.0193
+17,Germany,gstatic.com,Content Servers,9653,1,0.0001
+18,Germany,cloudflare.com,Technology,9653,0,0.0
+19,Germany,events.data.microsoft.com,Business,9653,1,0.0001
+20,Germany,doubleclick.net,Advertisements,9653,14,0.0015
+21,Germany,linkedin.com,Professional Networking,9653,156,0.0162
+22,Germany,live.com,Technology,9653,0,0.0
+23,Germany,tiktokcdn.com,Social Networks,9653,2,0.0002
+24,Germany,gtld-servers.net,Content Servers,9653,0,0.0
+25,Germany,office.com,Technology,9653,6,0.0006
+26,Germany,googletagmanager.com,Content Servers,9653,19,0.002
+27,Germany,akadns.net,Content Servers,9653,0,0.0
+28,Germany,netflix.com,Movies,9653,315,0.0326
+29,Germany,windowsupdate.com,Business,9653,0,0.0
+30,Germany,apple-dns.net,Content Servers,9653,1,0.0001
+31,Germany,amazon.com,Ecommerce,9653,0,0.0
+32,Germany,trafficmanager.net,Content Servers,9652,0,0.0
+33,Germany,googleusercontent.com,Content Servers,9652,1,0.0001
+34,Germany,wikipedia.org,Education,9652,24,0.0025
+35,Germany,fbcdn.net,Social Networks,9652,28,0.0029
+36,Germany,domaincontrol.com,Content Servers,9652,1,0.0001
+37,Germany,bing.com,Search Engines,9652,0,0.0
+38,Germany,icloud.com,File Sharing,9652,9,0.0009
+39,Germany,ctldl.windowsupdate.com,Business,9652,1,0.0001
+40,Germany,microsoftonline.com,Technology,9651,169,0.0175
+41,Germany,play.google.com,Technology,9651,149,0.0154
+42,Germany,fastly.net,Technology,9651,1,0.0001
+43,Germany,wordpress.org,Information Technology,9651,1,0.0001
+44,Germany,root-servers.net,Content Servers,9651,0,0.0
+45,Germany,mail.ru,Webmail,9651,21,0.0022
+46,Germany,youtu.be,Video Streaming,9651,2,0.0002
+47,Germany,yahoo.com,News & Media,9650,19,0.002
+48,Germany,safebrowsing.googleapis.com,Content Servers,9650,148,0.0153
+49,Germany,en.wikipedia.org,Education,9650,24,0.0025
+50,Germany,pinterest.com,Photography,9650,169,0.0175
+51,Germany,ui.com,Technology,9650,1,0.0001
+52,Germany,aaplimg.com,Information Technology,9650,1,0.0001
+53,Germany,digicert.com,Information Security,9650,2,0.0002
+54,Germany,login.microsoftonline.com,Business,9650,147,0.0152
+55,Germany,github.com,Technology,9650,164,0.017
+56,Germany,windows.net,Technology,9650,1,0.0001
+57,Germany,googlesyndication.com,Advertisements,9650,14,0.0015
+58,Germany,l-msedge.net,Content Servers,9650,2,0.0002
+59,Germany,tiktokv.com,Social Networks,9650,25,0.0026
+60,Germany,adobe.com,Technology,9650,2,0.0002
+61,Germany,google-analytics.com,Business,9650,12,0.0012
+62,Germany,goo.gl,Redirect,9650,1,0.0001
+63,Germany,docs.google.com,Technology,9650,168,0.0174
+64,Germany,nflxso.net,Content Servers,9650,14,0.0015
+65,Germany,t-msedge.net,Content Servers,9650,1,0.0001
+66,Germany,vimeo.com,Video Streaming,9650,169,0.0175
+67,Germany,gandi.net,Information Technology,9650,1,0.0001
+68,Germany,cloudfront.net,Content Servers,9650,0,0.0
+69,Germany,spotify.com,Audio Streaming,9650,4,0.0004
+70,Germany,clientservices.googleapis.com,Content Servers,9650,147,0.0152
+71,Germany,sharepoint.com,New Domains,9650,2,0.0002
+72,Germany,g.doubleclick.net,Advertisements,9650,154,0.016
+73,Germany,maps.google.com,Education,9650,147,0.0152
+74,Germany,itunes.apple.com,Information Technology,9650,132,0.0137
+75,Germany,zoom.us,Technology,9648,144,0.0149
+76,Germany,wordpress.com,Information Technology,9648,1,0.0001
+77,Germany,yandex.net,News & Media,9648,2,0.0002
+78,Germany,edgekey.net,Content Servers,9648,1,0.0001
+79,Germany,office.net,Content Servers,9648,0,0.0
+80,Germany,gvt2.com,Content Servers,9648,0,0.0
+81,Germany,bit.ly,Redirect,9648,4,0.0004
+82,Germany,yandex.ru,News & Media,9648,19,0.002
+83,Germany,msn.com,News & Media,9648,2,0.0002
+84,Germany,ftl.netflix.com,Movies,9648,144,0.0149
+85,Germany,whatsapp.net,Instant Messengers,9648,24,0.0025
+86,Germany,plus.google.com,Social Networks,9648,167,0.0173
+87,Germany,qq.com,News & Media,9648,1,0.0001
+88,Germany,mozilla.org,Technology,9648,1,0.0001
+89,Germany,accounts.google.com,Information Security,9648,312,0.0323
+90,Germany,office365.com,Technology,9648,1,0.0001
+91,Germany,update.googleapis.com,Content Servers,9648,143,0.0148
+92,Germany,googledomains.com,Search Engines,9648,0,0.0
+93,Germany,skype.com,Instant Messengers,9648,2,0.0002
+94,Germany,whatsapp.com,Instant Messengers,9648,170,0.0176
+95,Germany,cloudflare.net,Information Technology,9648,0,0.0
+96,Germany,bytefcdn-oversea.com,Newly Seen Domains,9648,0,0.0
+97,Germany,blogspot.com,Personal Blogs,9648,167,0.0173
+98,Germany,logs.netflix.com,Movies,9648,144,0.0149
+99,Germany,apps.apple.com,Information Technology,9648,1,0.0001
+100,Germany,player.vimeo.com,Video Streaming,9648,168,0.0174
+101,Germany,drive.google.com,File Sharing,9647,164,0.017
+102,Germany,cloudflare-dns.com,Newly Seen Domains,9647,134,0.0139
+103,Germany,app-measurement.com,Content Servers,9647,1,0.0001
+104,Germany,prod.ftl.netflix.com,Movies,9647,145,0.015
+105,Germany,ntp.org,Technology,9647,0,0.0
+106,Germany,outlook.com,Webmail,9647,1,0.0001
+107,Germany,settings-win.data.microsoft.com,Business,9647,0,0.0
+108,Germany,trbcdn.net,Content Servers,9647,0,0.0
+109,Germany,ytimg.com,Content Servers,9647,2,0.0002
+110,Germany,www.googleapis.com,Content Servers,9647,311,0.0322
+111,Germany,roblox.com,Chat,9647,10,0.001
+112,Germany,self.events.data.microsoft.com,Business,9647,0,0.0
+113,Germany,gvt1.com,Content Servers,9647,6,0.0006
+114,Germany,s-msedge.net,Content Servers,9647,1,0.0001
+115,Germany,tds.net,News & Media,9647,0,0.0
+116,Germany,facebook-hardware.com,Content Servers,9647,1,0.0001
+117,Germany,tiktokcdn-us.com,Content Servers,9647,0,0.0
+118,Germany,reddit.com,Forums,9647,24,0.0025
+119,Germany,nic.ru,Information Technology,9647,0,0.0
+120,Germany,tiktok.com,Video Streaming,9647,23,0.0024
+121,Germany,wac-msedge.net,Newly Seen Domains,9647,0,0.0
+122,Germany,edge.microsoft.com,Business,9647,1,0.0001
+123,Germany,opera.com,Technology,9647,0,0.0
+124,Germany,officeapps.live.com,Technology,9647,0,0.0
+125,Germany,snapchat.com,Photography,9647,0,0.0
+126,Germany,ocsp.digicert.com,Information Security,9647,12,0.0012
+127,Germany,pki.goog,Information Security,9642,1,0.0001
+128,Germany,mp.microsoft.com,Content Servers,9642,0,0.0
+129,Germany,macromedia.com,Business,9642,0,0.0
+130,Germany,europa.eu,"Politics, Advocacy, and Government-Related",9642,0,0.0
+131,Germany,amazon-adsystem.com,Advertisements,9642,0,0.0
+132,Germany,dropbox.com,File Sharing,9642,23,0.0024
+133,Germany,adnxs.com,Content Servers,9642,1,0.0001
+134,Germany,nih.gov,Health & Fitness,9642,1,0.0001
+135,Germany,tumblr.com,Social Networks,9642,36,0.0037
+136,Germany,epicgames.com,Ecommerce,9641,4,0.0004
+137,Germany,ruidongcloud.com,Newly Seen Domains,9641,0,0.0
+138,Germany,criteo.com,Business,9641,0,0.0
+139,Germany,api.whatsapp.com,Instant Messengers,9641,183,0.019
+140,Germany,cdn77.org,Content Servers,9641,2,0.0002
+141,Germany,baidu.com,Search Engines,9641,0,0.0
+142,Germany,www.google-analytics.com,Business,9641,143,0.0148
+143,Germany,com.akadns.net,Content Servers,9641,0,0.0
+144,Germany,intuit.com,Business,9641,0,0.0
+145,Germany,policies.google.com,Search Engines,9641,143,0.0148
+146,Germany,gravatar.com,Technology,9641,22,0.0023
+147,Germany,support.google.com,Education,9641,143,0.0148
+148,Germany,comcast.net,Information Technology,9641,1,0.0001
+149,Germany,nr-data.net,Content Servers,9641,0,0.0
+150,Germany,netflix.net,Video Streaming,9641,132,0.0137
+151,Germany,nrdp-ipv6.prod.ftl.netflix.com,Movies,9641,145,0.015
+152,Germany,ls.apple.com,Information Technology,9641,0,0.0
+153,Germany,flickr.com,Photography,9641,34,0.0035
+154,Germany,nytimes.com,News & Media,9641,38,0.0039
+155,Germany,cloudapp.net,Content Servers,9641,1,0.0001
+156,Germany,googleads.g.doubleclick.net,Advertisements,9641,158,0.0164
+157,Germany,github.io,Technology,9641,14,0.0015
+158,Germany,fonts.googleapis.com,Content Servers,9641,146,0.0151
+159,Germany,lencr.org,Information Technology,9641,0,0.0
+160,Germany,windows.com,Information Technology,9641,0,0.0
+161,Germany,one.one,Information Technology,9641,1,0.0001
+162,Germany,msftncsi.com,Content Servers,9641,1,0.0001
+163,Germany,registrar-servers.com,Information Technology,9641,1,0.0001
+164,Germany,akamaized.net,Content Servers,9641,1,0.0001
+165,Germany,worldfcdn2.com,Content Servers,9641,1,0.0001
+166,Germany,ttlivecdn.com,Content Servers,9641,1,0.0001
+167,Germany,rubiconproject.com,Advertisements,9641,4,0.0004
+168,Germany,t.co,Redirect,9641,28,0.0029
+169,Germany,azureedge.net,Content Servers,9641,0,0.0
+170,Germany,googleadservices.com,Advertisements,9641,16,0.0017
+171,Germany,sites.google.com,Information Technology,9641,167,0.0173
+172,Germany,ggpht.com,Content Servers,9641,7,0.0007
+173,Germany,t.me,Instant Messengers,9641,210,0.0218
+174,Germany,sberdevices.ru,Technology,9641,5,0.0005
+175,Germany,msedge.net,Content Servers,9641,6,0.0006
+176,Germany,mozilla.com,Search Engines,9641,2,0.0002
+177,Germany,sentry.io,Business,9641,2,0.0002
+178,Germany,a2z.com,Content Servers,9641,12,0.0012
+179,Germany,teams.microsoft.com,Technology,9641,147,0.0152
+180,Germany,samsung.com,Home & Garden,9641,21,0.0022
+181,Germany,bytefcdn-ttpeu.com,Newly Seen Domains,9641,0,0.0
+182,Germany,2mdn.net,Content Servers,9641,7,0.0007
+183,Germany,cdninstagram.com,Content Servers,9641,69,0.0072
+184,Germany,outlook.office365.com,Webmail,9641,132,0.0137
+185,Germany,edgesuite.net,Content Servers,9641,2,0.0002
+186,Germany,webex.com,Technology,9641,132,0.0137
+187,Germany,unity3d.com,Gaming,9641,0,0.0
+188,Germany,wa.me,Content Servers,9641,0,0.0
+189,Germany,att.net,News & Media,9641,1,0.0001
+190,Germany,forms.gle,Content Servers,9641,169,0.0175
+191,Germany,apache.org,Technology,9641,0,0.0
+192,Germany,partner.netflix.net,Video Streaming,9641,132,0.0137
+193,Germany,prod.netflix.com,Movies,9641,143,0.0148
+194,Germany,casalemedia.com,Advertisements,9641,0,0.0
+195,Germany,mangosip.ru,Newly Seen Domains,9641,0,0.0
+196,Germany,paypal.com,Economy & Finance,9640,2,0.0002
+197,Germany,www.googletagmanager.com,Content Servers,9640,19,0.002
+198,Germany,archive.org,Education,9640,23,0.0024
+199,Germany,prod.partner.netflix.net,Video Streaming,9640,131,0.0136
+200,Germany,rambler.ru,News & Media,9640,4,0.0004
+201,Germany,push.prod.netflix.com,Movies,9640,145,0.015
+202,Germany,www.bing.com,Search Engines,9640,169,0.0175
+203,Germany,frontapp.com,Information Technology,9640,145,0.015
+204,Germany,fe.apple-dns.net,Content Servers,9640,1,0.0001
+205,Germany,b-msedge.net,Content Servers,9640,0,0.0
+206,Germany,cnn.com,Video Streaming,9640,3,0.0003
+207,Germany,o365filtering.com,Content Servers,9640,0,0.0
+208,Germany,soundcloud.com,Audio Streaming,9639,176,0.0183
+209,Germany,omtrdc.net,Content Servers,9639,1,0.0001
+210,Germany,preapp.prod.partner.netflix.net,Video Streaming,9639,136,0.0141
+211,Germany,miit.gov.cn,"Politics, Advocacy, and Government-Related",9639,2,0.0002
+212,Germany,spo-msedge.net,Content Servers,9639,4,0.0004
+213,Germany,salesforceliveagent.com,Content Servers,9639,3,0.0003
+214,Germany,doubleverify.com,Business,9639,2,0.0002
+215,Germany,medium.com,Magazines,9639,207,0.0215
+216,Germany,pubmatic.com,Business,9639,7,0.0007
+217,Germany,salesforce.com,Business,9639,3,0.0003
+218,Germany,vk.com,Social Networks,9639,32,0.0033
+219,Germany,v10.events.data.microsoft.com,Business,9638,3,0.0003
+220,Germany,mtalk.google.com,Search Engines,9637,145,0.015
+221,Germany,www.ncbi.nlm.nih.gov,Health & Fitness,9637,2,0.0002
+222,Germany,ec.europa.eu,"Politics, Advocacy, and Government-Related",9636,2,0.0002
+223,Germany,theguardian.com,News & Media,9634,23,0.0024
+224,Germany,azurewebsites.net,Education,9634,3,0.0003
+225,Germany,abusix.zone,Newly Seen Domains,9634,4,0.0004
+226,Germany,gmail.com,Webmail,9634,17,0.0018
+227,Germany,beian.miit.gov.cn,"Politics, Advocacy, and Government-Related",9634,5,0.0005
+228,Germany,outlook.office.com,Technology,9633,134,0.0139
+229,Germany,datadoghq.com,Technology,9633,2,0.0002
+230,Germany,gateway.icloud.com,File Sharing,9633,148,0.0154
+231,Germany,w3.org,"Politics, Advocacy, and Government-Related",9633,4,0.0004
+232,Germany,open.spotify.com,Audio Streaming,9633,173,0.018
+233,Germany,ebay.com,Auctions & Marketplaces,9632,2,0.0002
+234,Germany,g.aaplimg.com,Information Technology,9631,7,0.0007
+235,Germany,wsdvs.com,Content Servers,9631,4,0.0004
+236,Germany,forbes.com,Economy & Finance,9631,26,0.0027
+237,Germany,zemanta.com,Business,9630,1,0.0001
+238,Germany,health.mil,Health & Fitness,9629,4,0.0004
+239,Germany,lh3.googleusercontent.com,Content Servers,9627,17,0.0018
+240,Germany,appsflyersdk.com,Content Servers,9627,4,0.0004
+241,Germany,gateway.fe.apple-dns.net,Content Servers,9627,1,0.0001
+242,Germany,adsrvr.org,Advertisements,9626,2,0.0002
+243,Germany,clients4.google.com,Search Engines,9626,144,0.015
+244,Germany,bbc.co.uk,News & Media,9626,35,0.0036
+245,Germany,demdex.net,Content Servers,9626,2,0.0002
+246,Germany,taboola.com,Business,9626,3,0.0003
+247,Germany,adobe.io,Business,9625,3,0.0003
+248,Germany,optimizationguide-pa.googleapis.com,Content Servers,9625,143,0.0149
+249,Germany,www.youtube.com,Video Streaming,9625,338,0.0351
+250,Germany,meraki.com,Technology,9625,1,0.0001
+251,Germany,comfortel.pro,Information Technology,9625,0,0.0
+252,Germany,staples.com,Ecommerce,9625,0,0.0
+253,Germany,applovin.com,Gaming,9625,1,0.0001
+254,Germany,dns.cn,Content Servers,9625,0,0.0
+255,Germany,edge.skype.com,Instant Messengers,9625,1,0.0001
+256,Germany,dns.google,Newly Seen Domains,9625,135,0.014
+257,Germany,config.teams.microsoft.com,Business,9625,143,0.0149
+258,Germany,googleblog.com,Personal Blogs,9625,1,0.0001
+259,Germany,rbxcdn.com,Content Servers,9625,0,0.0
+260,Germany,miui.com,Technology,9625,1,0.0001
+261,Germany,sciencedirect.com,Education,9625,0,0.0
+262,Germany,config.edge.skype.com,Content Servers,9625,1,0.0001
+263,Germany,openx.net,Advertisements,9625,3,0.0003
+264,Germany,dsp.mp.microsoft.com,Business,9625,1,0.0001
+265,Germany,login.live.com,Technology,9625,0,0.0
+266,Germany,xiaomi.com,Technology,9625,1,0.0001
+267,Germany,bbc.com,News & Media,9625,42,0.0044
+268,Germany,creativecommons.org,"Politics, Advocacy, and Government-Related",9625,0,0.0
+269,Germany,edgecdn.ru,Newly Seen Domains,9625,1,0.0001
+270,Germany,mail.google.com,Webmail,9625,144,0.015
+271,Germany,appsflyer.com,Business,9625,0,0.0
+272,Germany,adsafeprotected.com,Advertisements,9625,1,0.0001
+273,Germany,shifen.com,Content Servers,9625,0,0.0
+274,Germany,kaspersky.com,Technology,9625,170,0.0177
+275,Germany,cisco.com,Technology,9624,0,0.0
+276,Germany,smartadserver.com,Advertisements,9624,1,0.0001
+277,Germany,googletagservices.com,Content Servers,9624,11,0.0011
+278,Germany,sourceforge.net,Business,9624,142,0.0148
+279,Germany,userapi.com,Social Networks,9624,12,0.0012
+280,Germany,do.dsp.mp.microsoft.com,Business,9624,1,0.0001
+281,Germany,aiv-cdn.net,Content Servers,9624,1,0.0001
+282,Germany,graph.microsoft.com,Business,9624,1,0.0001
+283,Germany,imdb.com,Movies,9624,1,0.0001
+284,Germany,prod.do.dsp.mp.microsoft.com,Business,9624,0,0.0
+285,Germany,slack.com,Instant Messengers,9624,16,0.0017
+286,Germany,push.apple.com,Information Technology,9624,0,0.0
+287,Germany,discord.com,Instant Messengers,9624,168,0.0175
+288,Germany,akamaihd.net,Content Servers,9624,1,0.0001
+289,Germany,facebook.net,Social Networks,9624,12,0.0012
+290,Germany,reg.ru,Information Technology,9624,0,0.0
+291,Germany,dnsowl.com,Content Servers,9624,1,0.0001
+292,Germany,mit.edu,Education,9624,0,0.0
+293,Germany,hp.com,Technology,9624,1,0.0001
+294,Germany,twitch.tv,Gaming,9624,172,0.0179
+295,Germany,business.bing.com,Search Engines,9624,0,0.0
+296,Germany,nginx.org,Entertainment,9624,1,0.0001
+297,Germany,who.int,Health & Fitness,9624,0,0.0
+298,Germany,play.googleapis.com,Content Servers,9624,143,0.0149
+299,Germany,scorecardresearch.com,Business,9624,1,0.0001
+300,Germany,ubuntu.com,Technology,9624,1,0.0001
+301,Germany,content-autofill.googleapis.com,Content Servers,9624,143,0.0149
+302,Germany,time.apple.com,Information Technology,9624,0,0.0
+303,Germany,rocket-cdn.com,Newly Seen Domains,9624,0,0.0
+304,Germany,workspaceupdates.googleblog.com,Personal Blogs,9624,1,0.0001
+305,Germany,www.facebook.com,Social Networks,9624,324,0.0337
+306,Germany,download.macromedia.com,Technology,9623,2,0.0002
+307,Germany,washingtonpost.com,News & Media,9623,23,0.0024
+308,Germany,wixsite.com,Information Technology,9623,22,0.0023
+309,Germany,substrate.office.com,Technology,9623,0,0.0
+310,Germany,myfritz.net,Information Technology,9623,0,0.0
+311,Germany,go.microsoft.com,Information Technology,9623,0,0.0
+312,Germany,amazonvideo.com,Television,9623,1,0.0001
+313,Germany,cdn-apple.com,Content Servers,9623,1,0.0001
+314,Germany,web.archive.org,Technology,9623,191,0.0198
+315,Germany,msftconnecttest.com,Content Servers,9623,1,0.0001
+316,Germany,mzstatic.com,Information Technology,9623,1,0.0001
+317,Germany,amazon.co.uk,Ecommerce,9622,2,0.0002
+318,Germany,issuu.com,Magazines,9622,45,0.0047
+319,Germany,nginx.com,Technology,9622,2,0.0002
+320,Germany,dell.com,Ecommerce,9622,2,0.0002
+321,Germany,shopify.com,Ecommerce,9622,1,0.0001
+322,Germany,researchgate.net,Education,9622,1,0.0001
+323,Germany,jomodns.com,No Content,9622,1,0.0001
+324,Germany,youtube-nocookie.com,Video Streaming,9622,26,0.0027
+325,Germany,hubspot.com,Business,9622,143,0.0149
+326,Germany,launchdarkly.com,Business,9622,3,0.0003
+327,Germany,teams.events.data.microsoft.com,Business,9621,12,0.0012
+328,Germany,cdngslb.com,Content Servers,9621,2,0.0002
+329,Germany,go.com,Safe for Kids,9621,0,0.0
+330,Germany,ampproject.org,Information Technology,9621,3,0.0003
+331,Germany,wikimedia.org,Education,9621,0,0.0
+332,Germany,playstation.net,Gaming,9620,151,0.0157
+333,Germany,dailymail.co.uk,News & Media,9618,22,0.0023
+334,Germany,cdc.gov,Government,9618,0,0.0
+335,Germany,wp.com,Information Technology,9618,2,0.0002
+336,Germany,badoo.com,Social Networks,9617,12,0.0012
+337,Germany,dual-s-msedge.net,Newly Seen Domains,9617,1,0.0001
+338,Germany,bag.itunes.apple.com,Information Technology,9617,133,0.0138
+339,Germany,tinyurl.com,Redirect,9617,0,0.0
+340,Germany,android.com,Technology,9617,168,0.0175
+341,Germany,cedexis.net,Content Servers,9617,0,0.0
+342,Germany,ibm.com,Technology,9617,2,0.0002
+343,Germany,smartscreen.microsoft.com,Business,9617,2,0.0002
+344,Germany,cdn.office.net,Content Servers,9617,0,0.0
+345,Germany,sc-gw.com,Content Servers,9617,1,0.0001
+346,Germany,grammarly.com,Information Technology,9617,137,0.0142
+347,Germany,safebrowsing.apple,Content Servers,9617,1,0.0001
+348,Germany,reuters.com,News & Media,9617,23,0.0024
+349,Germany,name-services.com,Phishing,9617,1,0.0001
+350,Germany,httpd.apache.org,Technology,9616,2,0.0002
+351,Germany,weebly.com,Information Technology,9616,1,0.0001
+352,Germany,azurefd.net,Business,9616,0,0.0
+353,Germany,stbid.ru,Newly Seen Domains,9616,2,0.0002
+354,Germany,atomile.com,Technology,9616,1,0.0001
+355,Germany,aliyuncs.com,Content Servers,9616,168,0.0175
+356,Germany,slideshare.net,Education,9616,36,0.0037
+357,Germany,adriver.ru,Advertisements,9616,1,0.0001
+358,Germany,rlcdn.com,Content Servers,9616,0,0.0
+359,Germany,mcafee.com,Technology,9616,0,0.0
+360,Germany,google.de,Search Engines,9616,3,0.0003
+361,Germany,media-amazon.com,Content Servers,9616,0,0.0
+362,Germany,360yield.com,Login Screens,9616,0,0.0
+363,Germany,harvard.edu,Educational Institutions,9616,2,0.0002
+364,Germany,c.lencr.org,Information Technology,9616,0,0.0
+365,Germany,cnbc.com,Economy & Finance,9616,0,0.0
+366,Germany,doi.org,Technology,9616,1,0.0001
+367,Germany,3lift.com,Business,9616,0,0.0
+368,Germany,canva.com,Arts,9616,128,0.0133
+369,Germany,b-cdn.net,Content Servers,9616,2,0.0002
+370,Germany,sharethrough.com,Business,9616,0,0.0
+371,Germany,ecs.office.com,Technology,9616,2,0.0002
+372,Germany,bidswitch.net,Technology,9616,1,0.0001
+373,Germany,force.com,Business,9616,1,0.0001
+374,Germany,booking.com,Travel,9616,0,0.0
+375,Germany,avast.com,Technology,9616,2,0.0002
+376,Germany,oracle.com,Technology,9616,1,0.0001
+377,Germany,moatads.com,Business,9616,0,0.0
+378,Germany,x1.c.lencr.org,Information Technology,9616,8,0.0008
+379,Germany,www.gov.uk,"Politics, Advocacy, and Government-Related",9616,0,0.0
+380,Germany,i.ytimg.com,Content Servers,9616,146,0.0152
+381,Germany,hotjar.com,Business,9616,0,0.0
+382,Germany,dsce9.akamaiedge.net,Content Servers,9615,5,0.0005
+383,Germany,wildberries.ru,Ecommerce,9615,20,0.0021
+384,Germany,wellsfargo.com,Economy & Finance,9615,0,0.0
+385,Germany,teamviewer.com,Information Technology,9615,147,0.0153
+386,Germany,google.co.uk,Search Engines,9615,0,0.0
+387,Germany,web.facebook.com,Social Networks,9615,155,0.0161
+388,Germany,telecid.ru,Newly Seen Domains,9615,1,0.0001
+389,Germany,bloomberg.com,Economy & Finance,9615,24,0.0025
+390,Germany,nist.gov,Government,9615,4,0.0004
+391,Germany,aol.com,News & Media,9615,12,0.0012
+392,Germany,appcenter.ms,Technology,9615,2,0.0002
+393,Germany,etsy.com,Ecommerce,9615,26,0.0027
+394,Germany,espn.com,Video Streaming,9615,1,0.0001
+395,Germany,media.net,Business,9615,0,0.0
+396,Germany,example.com,Content Servers,9615,170,0.0177
+397,Germany,deviantart.com,Adult Themes,9614,1,0.0001
+398,Germany,vungle.com,Business,9614,1,0.0001
+399,Germany,stats.g.doubleclick.net,Advertisements,9614,155,0.0161
+400,Germany,wsj.com,Economy & Finance,9614,23,0.0024
+401,Germany,weibo.com,Social Networks,9614,12,0.0012
+402,Germany,crashlytics.com,Information Technology,9614,4,0.0004
+403,Germany,wiley.com,Ecommerce,9614,0,0.0
+404,Germany,time.g.aaplimg.com,Information Technology,9613,3,0.0003
+405,Germany,supersonicads.com,Gaming,9613,2,0.0002
+406,Germany,steampowered.com,Gaming,9613,3,0.0003
+407,Germany,opendns.com,Information Technology,9613,0,0.0
+408,Germany,dnsmadeeasy.com,Information Technology,9613,0,0.0
+409,Germany,samsungqbe.com,Content Servers,9613,0,0.0
+410,Germany,jsdelivr.net,Content Servers,9612,1,0.0001
+411,Germany,samsungcloudsolution.com,Content Servers,9612,1,0.0001
+412,Germany,ksyuncdn.com,Content Servers,9612,0,0.0
+413,Germany,criteo.net,Business,9612,0,0.0
+414,Germany,nature.com,Education,9612,2,0.0002
+415,Germany,quantserve.com,Content Servers,9612,0,0.0
+416,Germany,sohu.com,News & Media,9612,1,0.0001
+417,Germany,php.net,Information Technology,9612,1,0.0001
+418,Germany,amazon.dev,Content Servers,9612,1,0.0001
+419,Germany,msidentity.com,Content Servers,9612,0,0.0
+420,Germany,indeed.com,Job Search & Careers,9612,0,0.0
+421,Germany,stripe.com,Economy & Finance,9612,1,0.0001
+422,Germany,twimg.com,Content Servers,9612,28,0.0029
+423,Germany,branch.io,Business,9612,0,0.0
+424,Germany,alicdn.com,Content Servers,9612,0,0.0
+425,Germany,alibabadns.com,Content Servers,9612,2,0.0002
+426,Germany,delivery.mp.microsoft.com,Business,9612,2,0.0002
+427,Germany,un.org,"Politics, Advocacy, and Government-Related",9612,1,0.0001
+428,Germany,dotomi.com,Business,9612,0,0.0
+429,Germany,hichina.com,Technology,9612,1,0.0001
+430,Germany,dailymotion.com,Video Streaming,9612,41,0.0043
+431,Germany,lijit.com,Business,9612,3,0.0003
+432,Germany,nease.net,News & Media,9611,0,0.0
+433,Germany,1c.ru,Technology,9611,18,0.0019
+434,Germany,foxnews.com,News & Media,9611,0,0.0
+435,Germany,yahoo.co.jp,News & Media,9610,0,0.0
+436,Germany,netangels.ru,Information Technology,9610,0,0.0
+437,Germany,businessinsider.com,Economy & Finance,9610,24,0.0025
+438,Germany,springer.com,Education,9610,1,0.0001
+439,Germany,ocsp.pki.goog,Information Security,9610,2,0.0002
+440,Germany,weather.com,Weather,9610,1,0.0001
+441,Germany,godaddy.com,Information Technology,9610,12,0.0012
+442,Germany,list-manage.com,Business,9610,1,0.0001
+443,Germany,adform.net,Content Servers,9610,0,0.0
+444,Germany,nasa.gov,Government,9610,1,0.0001
+445,Germany,adobedtm.com,Business,9610,1,0.0001
+446,Germany,id5-sync.com,Content Servers,9610,1,0.0001
+447,Germany,outbrain.com,Business,9610,2,0.0002
+448,Germany,cmediahub.ru,Newly Seen Domains,9610,0,0.0
+449,Germany,sc-cdn.net,Content Servers,9610,0,0.0
+450,Germany,ups.com,Business,9610,3,0.0003
+451,Germany,quora.com,Forums,9610,37,0.0039
+452,Germany,eset.com,Technology,9610,0,0.0
+453,Germany,imrworldwide.com,Content Servers,9610,2,0.0002
+454,Germany,aws.dev,Content Servers,9610,1,0.0001
+455,Germany,drom.ru,News & Media,9610,4,0.0004
+456,Germany,pagead2.googlesyndication.com,Advertisements,9610,157,0.0163
+457,Germany,stanford.edu,Educational Institutions,9610,6,0.0006
+458,Germany,hostgator.com,Information Technology,9610,14,0.0015
+459,Germany,liadm.com,Content Servers,9610,1,0.0001
+460,Germany,graph.facebook.com,Social Networks,9610,158,0.0164
+461,Germany,gnu.org,Information Technology,9610,0,0.0
+462,Germany,npr.org,News & Media,9609,2,0.0002
+463,Germany,unsplash.com,"News, Portal & Search",9609,15,0.0016
+464,Germany,mynetname.net,Newly Seen Domains,9608,0,0.0
+465,Germany,ocsp2.apple.com,Information Technology,9608,4,0.0004
+466,Germany,mi.com,Technology,9608,1,0.0001
+467,Germany,mobile.events.data.microsoft.com,Business,9608,4,0.0004
+468,Germany,roaming.officeapps.live.com,Technology,9608,1,0.0001
+469,Germany,google.com.br,Search Engines,9608,1,0.0001
+470,Germany,creativecdn.com,Content Servers,9608,4,0.0004
+471,Germany,adservice.google.com,Advertisements,9607,160,0.0167
+472,Germany,arubanetworks.com,Technology,9607,0,0.0
+473,Germany,stackoverflow.com,Forums,9606,143,0.0149
+474,Germany,measure.office.net,Content Servers,9606,2,0.0002
+475,Germany,e673.dsce9.akamaiedge.net,Content Servers,9606,0,0.0
+476,Germany,dzeninfra.ru,Newly Seen Domains,9606,0,0.0
+477,Germany,bitrix24.ru,Business,9606,3,0.0003
+478,Germany,eventbrite.com,Entertainment,9605,2,0.0002
+479,Germany,discord.gg,Internet Phone & VOIP,9604,193,0.0201
+480,Germany,teads.tv,Advertisements,9604,3,0.0003
+481,Germany,nel.measure.office.net,Content Servers,9604,0,0.0
+482,Germany,presence.teams.microsoft.com,Business,9603,145,0.0151
+483,Germany,cpanel.net,Information Technology,9602,1,0.0001
+484,Germany,go-mpulse.net,Content Servers,9602,1,0.0001
+485,Germany,ea.com,Gaming,9602,7,0.0007
+486,Germany,trustpilot.com,Shopping,9602,1,0.0001
+487,Germany,bamgrid.com,Content Servers,9601,2,0.0002
+488,Germany,elasticbeanstalk.com,Technology,9601,3,0.0003
+489,Germany,clarity.ms,Content Servers,9600,1,0.0001
+490,Germany,3gppnetwork.org,Content Servers,9600,0,0.0
+491,Germany,xboxlive.com,Gaming,9600,4,0.0004
+492,Germany,ess.apple.com,Information Technology,9599,2,0.0002
+493,Germany,clients6.google.com,Search Engines,9599,145,0.0151
+494,Germany,roku.com,Ecommerce,9598,2,0.0002
+495,Germany,wix.com,Information Technology,9598,3,0.0003
+496,Germany,hicloud.com,File Sharing,9596,2,0.0002
+497,Germany,wpa.qq.com,News & Media,9596,132,0.0138
+498,Germany,ngenix.net,Information Technology,9596,0,0.0
+499,Germany,rackspace.net,Technology,9596,3,0.0003
+500,Germany,usatoday.com,News & Media,9596,1,0.0001
+501,Germany,gsp-ssl.ls.apple.com,Information Technology,9596,131,0.0137
+502,Germany,giphy.com,Technology,9596,143,0.0149
+503,Germany,comcast.com,Television,9595,1,0.0001
+504,Germany,telegraph.co.uk,News & Media,9595,0,0.0
+505,Germany,walmart.com,Ecommerce,9595,1,0.0001
+506,Germany,sophos.com,Information Technology,9595,0,0.0
+507,Germany,amazon.de,Ecommerce,9594,0,0.0
+508,Germany,mozilla.net,Technology,9594,0,0.0
+509,Germany,taobao.com,Ecommerce,9594,1,0.0001
+510,Germany,goodreads.com,Education,9594,22,0.0023
+511,Germany,avcdn.net,Content Servers,9594,0,0.0
+512,Germany,tripadvisor.com,Shopping,9594,0,0.0
+513,Germany,amazonalexa.com,Content Servers,9594,0,0.0
+514,Germany,globo.com,News & Media,9594,0,0.0
+515,Germany,tradingview.com,Economy & Finance,9594,19,0.002
+516,Germany,time.com,Magazines,9594,28,0.0029
+517,Germany,att.com,Information Technology,9594,0,0.0
+518,Germany,linktr.ee,Business,9594,8,0.0008
+519,Germany,officeclient.microsoft.com,Content Servers,9594,0,0.0
+520,Germany,openai.com,Technology,9594,146,0.0152
+521,Germany,cdek.ru,Business,9594,0,0.0
+522,Germany,duckduckgo.com,Search Engines,9594,23,0.0024
+523,Germany,rzone.de,Content Servers,9594,1,0.0001
+524,Germany,core.windows.net,Technology,9594,0,0.0
+525,Germany,g.page,Business,9594,0,0.0
+526,Germany,azure-dns.com,Newly Seen Domains,9594,1,0.0001
+527,Germany,samsungcloud.com,Content Servers,9594,0,0.0
+528,Germany,blogger.com,Personal Blogs,9594,164,0.0171
+529,Germany,gosuslugi.ru,"Politics, Advocacy, and Government-Related",9594,0,0.0
+530,Germany,consultant.ru,"Politics, Advocacy, and Government-Related",9594,0,0.0
+531,Germany,ozon.ru,Ecommerce,9594,0,0.0
+532,Germany,byteoversea.net,Content Servers,9594,0,0.0
+533,Germany,checkpoint.com,Information Security,9594,0,0.0
+534,Germany,viator.com,Travel,9594,0,0.0
+535,Germany,apis.google.com,Technology,9594,144,0.015
+536,Germany,apple.com.akadns.net,Content Servers,9594,0,0.0
+537,Germany,wired.com,News & Media,9594,0,0.0
+538,Germany,storage.live.com,Content Servers,9594,144,0.015
+539,Germany,statista.com,Education,9594,1,0.0001
+540,Germany,addtoany.com,Technology,9594,0,0.0
+541,Germany,pixabay.com,Photography,9594,9,0.0009
+542,Germany,scribd.com,Education,9594,0,0.0
+543,Germany,m.facebook.com,Social Networks,9594,155,0.0162
+544,Germany,pangle.io,Content Servers,9594,2,0.0002
+545,Germany,chinamobile.com,News & Media,9594,0,0.0
+546,Germany,measure.office.com,Technology,9593,0,0.0
+547,Germany,sfx.ms,File Sharing,9593,1,0.0001
+548,Germany,adtelligent.com,Business,9593,0,0.0
+549,Germany,mtgglobals.com,Newly Seen Domains,9593,1,0.0001
+550,Germany,blob.core.windows.net,Technology,9593,0,0.0
+551,Germany,myshopify.com,Ecommerce,9593,1,0.0001
+552,Germany,verkada.com,Business,9593,1,0.0001
+553,Germany,healthline.com,Health & Fitness,9593,0,0.0
+554,Germany,bilibili.com,Video Streaming,9593,3,0.0003
+555,Germany,support.apple.com,Ecommerce,9593,3,0.0003
+556,Germany,independent.co.uk,News & Media,9593,25,0.0026
+557,Germany,fp.measure.office.com,Technology,9593,4,0.0004
+558,Germany,wal-mart.com,Ecommerce,9593,3,0.0003
+559,Germany,t-mobile.com,Technology,9593,1,0.0001
+560,Germany,gamepass.com,Gaming,9593,5,0.0005
+561,Germany,kwai.net,File Sharing,9593,3,0.0003
+562,Germany,clients2.google.com,Content Servers,9593,144,0.015
+563,Germany,spcsdns.net,Content Servers,9593,1,0.0001
+564,Germany,configuration.ls.apple.com,Information Technology,9593,134,0.014
+565,Germany,outlook.live.com,Technology,9593,143,0.0149
+566,Germany,uber.com,Travel,9593,1,0.0001
+567,Germany,crwdcntrl.net,Technology,9593,1,0.0001
+568,Germany,weather-data.apple.com,Information Technology,9593,1,0.0001
+569,Germany,cnet.com,News & Media,9593,1,0.0001
+570,Germany,verisign.com,Information Technology,9593,1,0.0001
+571,Germany,assets.msn.com,News & Media,9593,0,0.0
+572,Germany,speedtest.net,Information Technology,9593,146,0.0152
+573,Germany,ft.com,Video Streaming,9593,0,0.0
+574,Germany,surveymonkey.com,Shopping,9593,1,0.0001
+575,Germany,imgsmail.ru,Content Servers,9593,0,0.0
+576,Germany,scdn.co,Content Servers,9593,3,0.0003
+577,Germany,amzn.to,Ecommerce,9592,0,0.0
+578,Germany,churchcenter.com,Religion,9592,1,0.0001
+579,Germany,nflximg.com,Movies,9592,13,0.0014
+580,Germany,nvidia.com,Technology,9592,0,0.0
+581,Germany,debian.org,Education,9592,0,0.0
+582,Germany,dzen.ru,Newly Seen Domains,9592,0,0.0
+583,Germany,alibaba.com,Auctions & Marketplaces,9592,0,0.0
+584,Germany,ok.ru,Social Networks,9592,35,0.0036
+585,Germany,itunes-apple.com.akadns.net,Content Servers,9592,1,0.0001
+586,Germany,naver.com,News & Media,9592,1,0.0001
+587,Germany,trendmicro.com,Information Security,9592,0,0.0
+588,Germany,flashtalking.com,Business,9592,1,0.0001
+589,Germany,aliexpress.com,Ecommerce,9592,6,0.0006
+590,Germany,behance.net,Social Networks,9592,1,0.0001
+591,Germany,ted.com,Entertainment,9592,1,0.0001
+592,Germany,mayoclinic.org,Health & Fitness,9592,2,0.0002
+593,Germany,britannica.com,Education,9592,169,0.0176
+594,Germany,iphone-ld.apple.com,Information Technology,9592,0,0.0
+595,Germany,ring.com,Business,9592,12,0.0013
+596,Germany,imgur.com,Photography,9592,168,0.0175
+597,Germany,mikrotik.com,Technology,9592,3,0.0003
+598,Germany,forter.com,Information Security,9592,2,0.0002
+599,Germany,beian.gov.cn,"Politics, Advocacy, and Government-Related",9592,0,0.0
+600,Germany,amazontrust.com,Technology,9592,1,0.0001
+601,Germany,zendesk.com,Business,9592,140,0.0146
+602,Germany,ad.doubleclick.net,Advertisements,9592,156,0.0163
+603,Germany,manage.microsoft.com,Business,9592,144,0.015
+604,Germany,www.googleadservices.com,Advertisements,9592,13,0.0014
+605,Germany,dnspod.net,Information Technology,9592,0,0.0
+606,Germany,xhamster.com,Pornography,9592,51,0.0053
+607,Germany,timeweb.ru,Information Technology,9592,0,0.0
+608,Germany,livejournal.com,Social Networks,9592,6,0.0006
+609,Germany,academia.edu,Education,9592,0,0.0
+610,Germany,yahoodns.net,Content Servers,9592,0,0.0
+611,Germany,cloudflareclient.com,Content Servers,9592,0,0.0
+612,Germany,warnerbros.com,Movies,9592,0,0.0
+613,Germany,squarespace.com,Information Technology,9592,1,0.0001
+614,Germany,webmd.com,Health & Fitness,9592,14,0.0015
+615,Germany,translate.google.com,Education,9592,145,0.0151
+616,Germany,mysql.com,Technology,9592,1,0.0001
+617,Germany,buzzfeed.com,Video Streaming,9592,4,0.0004
+618,Germany,dns.com,Technology,9592,2,0.0002
+619,Germany,disqus.com,Technology,9591,155,0.0162
+620,Germany,playstation.com,Gaming,9591,7,0.0007
+621,Germany,kaspersky-labs.com,Technology,9591,2,0.0002
+622,Germany,google.ca,Search Engines,9591,0,0.0
+623,Germany,isnssdk.com,Content Servers,9590,1,0.0001
+624,Germany,gravitational.io,Newly Seen Domains,9590,3,0.0003
+625,Germany,aria.microsoft.com,Information Technology,9590,2,0.0002
+626,Germany,beeline.ru,Information Technology,9590,3,0.0003
+627,Germany,activity.windows.com,Information Technology,9590,4,0.0004
+628,Germany,online-metrix.net,Content Servers,9590,6,0.0006
+629,Germany,berkeley.edu,Educational Institutions,9590,5,0.0005
+630,Germany,web.whatsapp.com,Instant Messengers,9590,185,0.0193
+631,Germany,ivi.ru,Movies,9590,11,0.0011
+632,Germany,pipe.aria.microsoft.com,Business,9590,6,0.0006
+633,Germany,xcal.tv,Content Servers,9590,7,0.0007
+634,Germany,163.com,News & Media,9590,16,0.0017
+635,Germany,google.fr,Search Engines,9590,24,0.0025
+636,Germany,firetvcaptiveportal.com,Content Servers,9590,15,0.0016
+637,Germany,tpc.googlesyndication.com,Search Engines,9590,174,0.0181
+638,Germany,rakuten.co.jp,Ecommerce,9590,43,0.0045
+639,Germany,cambridge.org,Education,9590,19,0.002
+640,Germany,icloud-content.com,File Sharing,9590,24,0.0025
+641,Germany,upload.fp.measure.office.com,Technology,9590,20,0.0021
+642,Germany,i0.wp.com,Information Technology,9590,16,0.0017
+643,Germany,mediatek.com,Technology,9589,19,0.002
+644,Germany,developers.google.com,Technology,9589,158,0.0165
+645,Germany,braze.com,Business,9589,14,0.0015
+646,Germany,line.me,Instant Messengers,9589,46,0.0048
+647,Germany,chrome.google.com,Information Technology,9588,156,0.0163
+648,Germany,herokuapp.com,Technology,9588,32,0.0033
+649,Germany,loc.gov,Education,9586,6,0.0006
+650,Germany,c10r.facebook.com,Social Networks,9586,164,0.0171
+651,Germany,google.es,Search Engines,9585,2,0.0002
+652,Germany,telegram.me,Instant Messengers,9585,167,0.0174
+653,Germany,smaato.net,Business,9585,7,0.0007
+654,Germany,www.apple.com,Information Technology,9585,23,0.0024
+655,Germany,ttvnw.net,Video Streaming,9585,7,0.0007
+656,Germany,wbx2.com,Technology,9585,3,0.0003
+657,Germany,google.co.jp,Search Engines,9585,0,0.0
+658,Germany,worldnic.com,Information Technology,9585,2,0.0002
+659,Germany,cbsnews.com,News & Media,9585,1,0.0001
+660,Germany,gc.ca,"Politics, Advocacy, and Government-Related",9585,0,0.0
+661,Germany,shalltry.com,Content Servers,9585,1,0.0001
+662,Germany,ca.gov,Government,9585,2,0.0002
+663,Germany,duolingo.com,Education,9585,0,0.0
+664,Germany,mncdn.com,Content Servers,9585,1,0.0001
+665,Germany,herokudns.com,Content Servers,9585,0,0.0
+666,Germany,amazon.co.jp,Ecommerce,9585,1,0.0001
+667,Germany,pandora.com,Audio Streaming,9585,143,0.0149
+668,Germany,sina.com.cn,News & Media,9583,1,0.0001
+669,Germany,entrust.net,Information Security,9583,1,0.0001
+670,Germany,nike.com,Ecommerce,9582,0,0.0
+671,Germany,mailchimp.com,Business,9582,12,0.0013
+672,Germany,yelp.com,Search Engines,9582,143,0.0149
+673,Germany,ls-apple.com.akadns.net,Content Servers,9582,1,0.0001
+674,Germany,myspace.com,Social Networks,9582,12,0.0013
+675,Germany,duckdns.org,Information Technology,9581,1,0.0001
+676,Germany,dns-parking.com,Newly Seen Domains,9581,1,0.0001
+677,Germany,hipages.com.au,Search Engines,9581,0,0.0
+678,Germany,google.it,Search Engines,9581,0,0.0
+679,Germany,validator.w3.org,Technology,9581,0,0.0
+680,Germany,browser.events.data.microsoft.com,Business,9581,1,0.0001
+681,Germany,config.office.net,Content Servers,9581,2,0.0002
+682,Germany,huawei.com,Technology,9581,1,0.0001
+683,Germany,digitalocean.com,Technology,9581,14,0.0015
+684,Germany,ecdns.net,Information Technology,9581,1,0.0001
+685,Germany,clients.config.office.net,Content Servers,9581,1,0.0001
+686,Germany,latimes.com,News & Media,9581,1,0.0001
+687,Germany,hugedomains.com,Parked & For Sale Domains,9581,4,0.0004
+688,Germany,rt.ru,Information Technology,9581,1,0.0001
+689,Germany,free.fr,Information Technology,9581,0,0.0
+690,Germany,aboutads.info,Business,9581,1,0.0001
+691,Germany,jquery.com,Technology,9581,3,0.0003
+692,Germany,theverge.com,Technology,9581,1,0.0001
+693,Germany,cloudns.net,Information Technology,9581,1,0.0001
+694,Germany,api.msn.com,News & Media,9581,5,0.0005
+695,Germany,nstld.com,Content Servers,9581,1,0.0001
+696,Germany,fb.com,Social Networks,9580,156,0.0163
+697,Germany,grammarly.io,Content Servers,9578,126,0.0132
+698,Germany,onetrust.com,Business,9575,1,0.0001
+699,Germany,techcrunch.com,Technology,9574,9,0.0009
+700,Germany,nelreports.net,Technology,9574,1,0.0001
+701,Germany,edge-mqtt.facebook.com,Social Networks,9572,156,0.0163
+702,Germany,atlassian.com,Technology,9569,8,0.0008
+703,Germany,oup.com,Educational Institutions,9565,3,0.0003
+704,Germany,steamcommunity.com,Forums,9564,181,0.0189
+705,Germany,sorbs.net,Information Security,9564,8,0.0008
+706,Germany,scholar.google.com,Search Engines,9561,149,0.0156
+707,Germany,www.microsoft.com,Business,9560,23,0.0024
+708,Germany,newrelic.com,Business,9558,5,0.0005
+709,Germany,mts.ru,Information Technology,9553,2,0.0002
+710,Germany,tandfonline.com,Education,9551,9,0.0009
+711,Germany,smoot.apple.com,Information Technology,9545,7,0.0007
+712,Germany,patreon.com,Business,9542,31,0.0032
+713,Germany,launchpad.net,Technology,9541,8,0.0008
+714,Germany,bp.blogspot.com,Personal Blogs,9533,171,0.0179
+715,Germany,gcp.gvt2.com,Content Servers,9528,14,0.0015
+716,Germany,hostgator.com.br,Webmail,9523,5,0.0005
+717,Germany,netease.com,News & Media,9522,12,0.0013
+718,Germany,ezvizlife.com,Business,9518,8,0.0008
+719,Germany,gdmf.apple.com,Information Technology,9513,4,0.0004
+720,Germany,akam.net,Content Servers,9509,4,0.0004
+721,Germany,ietf.org,Technology,9508,7,0.0007
+722,Germany,cornell.edu,Educational Institutions,9506,3,0.0003
+723,Germany,mesu.apple.com,Information Technology,9497,3,0.0003
+724,Germany,dbankcloud.cn,Content Servers,9492,5,0.0005
+725,Germany,marriott.com,Travel,9490,1,0.0001
+726,Germany,mob.com,Technology,9487,3,0.0003
+727,Germany,visualstudio.com,Information Technology,9485,4,0.0004
+728,Germany,noaa.gov,Government,9480,6,0.0006
+729,Germany,autodesk.com,Business,9478,2,0.0002
+730,Germany,analytics.google.com,Business,9478,146,0.0154
+731,Germany,beacons.gcp.gvt2.com,Content Servers,9475,2,0.0002
+732,Germany,accuweather.com,News & Media,9475,5,0.0005
+733,Germany,ovscdns.com,Content Servers,9472,7,0.0007
+734,Germany,freepik.com,"News, Portal & Search",9472,3,0.0003
+735,Germany,ikea.com,Business,9470,3,0.0003
+736,Germany,merriam-webster.com,Education,9468,4,0.0004
+737,Germany,yandex.com,Search Engines,9465,2,0.0002
+738,Germany,google.co.in,Search Engines,9464,5,0.0005
+739,Germany,gs-loc.apple.com,Information Technology,9461,135,0.0143
+740,Germany,spaceweb.pro,Information Technology,9460,4,0.0004
+741,Germany,hulu.com,Movies,9455,13,0.0014
+742,Germany,getpocket.com,Technology,9455,6,0.0006
+743,Germany,intel.com,Technology,9453,0,0.0
+744,Germany,byteglb.com,Newly Seen Domains,9451,0,0.0
+745,Germany,licdn.com,Content Servers,9445,143,0.0151
+746,Germany,exelator.com,Business,9443,3,0.0003
+747,Germany,nintendo.net,Content Servers,9442,0,0.0
+748,Germany,pinimg.com,Photography,9438,2,0.0002
+749,Germany,nbcnews.com,News & Media,9438,26,0.0028
+750,Germany,edgecastdns.net,Content Servers,9437,0,0.0
+751,Germany,sentinelone.net,Content Servers,9435,0,0.0
+752,Germany,amplitude.com,Business,9431,2,0.0002
+753,Germany,apple.news,Newly Seen Domains,9429,9,0.001
+754,Germany,yieldmo.com,Business,9426,2,0.0002
+755,Germany,cookielaw.org,Information Security,9425,0,0.0
+756,Germany,agkn.com,Information Security,9425,3,0.0003
+757,Germany,homedepot.com,Ecommerce,9425,0,0.0
+758,Germany,rbc.ru,News & Media,9425,1,0.0001
+759,Germany,rackspace.com,Technology,9424,0,0.0
+760,Germany,ocsp2-lb.apple.com.akadns.net,Content Servers,9424,1,0.0001
+761,Germany,calendly.com,Technology,9424,143,0.0152
+762,Germany,qualtrics.com,Business,9423,0,0.0
+763,Germany,huffingtonpost.com,News & Media,9423,1,0.0001
+764,Germany,news.google.com,News & Media,9423,146,0.0155
+765,Germany,adobe.net,Business,9423,0,0.0
+766,Germany,wattpad.com,Education,9423,33,0.0035
+767,Germany,fontawesome.com,Hobbies & Interests,9422,0,0.0
+768,Germany,sb.scorecardresearch.com,Business,9422,0,0.0
+769,Germany,init.push.apple.com,Information Technology,9422,1,0.0001
+770,Germany,optimizely.com,Business,9421,0,0.0
+771,Germany,rspamd.com,Technology,9421,0,0.0
+772,Germany,conviva.com,Technology,9421,0,0.0
+773,Germany,update.microsoft.com,Business,9421,131,0.0139
+774,Germany,theatlantic.com,Magazines,9421,23,0.0024
+775,Germany,lenovo.com,Technology,9421,1,0.0001
+776,Germany,inner-active.mobi,Content Servers,9421,1,0.0001
+777,Germany,rncdn7.com,Content Servers,9421,0,0.0
+778,Germany,us-v20.events.data.microsoft.com,Business,9420,1,0.0001
+779,Germany,xx.fbcdn.net,Content Servers,9420,155,0.0165
+780,Germany,mozgcp.net,Content Servers,9420,0,0.0
+781,Germany,mega.nz,File Sharing,9420,169,0.0179
+782,Germany,connect.facebook.net,Social Networks,9420,144,0.0153
+783,Germany,bluehost.com,Information Technology,9420,10,0.0011
+784,Germany,mega.co.nz,File Sharing,9420,146,0.0155
+785,Germany,prnewswire.com,Business,9420,1,0.0001
+786,Germany,omnitagjs.com,Content Servers,9420,1,0.0001
+787,Germany,tapad.com,Business,9420,1,0.0001
+788,Germany,target.com,Ecommerce,9420,0,0.0
+789,Germany,riotgames.com,Gaming,9420,142,0.0151
+790,Germany,qlivecdn.com,Newly Seen Domains,9420,0,0.0
+791,Germany,v20.events.data.microsoft.com,Business,9420,0,0.0
+792,Germany,virtualearth.net,Education,9420,2,0.0002
+793,Germany,bidr.io,Content Servers,9420,1,0.0001
+794,Germany,mp.weixin.qq.com,News & Media,9420,1,0.0001
+795,Germany,uol.com.br,News & Media,9420,0,0.0
+796,Germany,res.office365.com,Technology,9420,131,0.0139
+797,Germany,addthis.com,Business,9420,1,0.0001
+798,Germany,temu.com,Newly Seen Domains,9420,1,0.0001
+799,Germany,washington.edu,Educational Institutions,9420,1,0.0001
+800,Germany,elpais.com,News & Media,9420,34,0.0036
+801,Germany,livechatinc.com,Business,9420,0,0.0
+802,Germany,exo.nel.measure.office.net,Content Servers,9420,1,0.0001
+803,Germany,google.com.hk,Search Engines,9420,1,0.0001
+804,Germany,pornhub.com,Pornography,9420,227,0.0241
+805,Germany,bugsnag.com,Information Technology,9420,0,0.0
+806,Germany,gateway.facebook.com,Social Networks,9420,156,0.0166
+807,Germany,typekit.net,Content Servers,9420,0,0.0
+808,Germany,name.com,Information Technology,9420,0,0.0
+809,Germany,allawnos.com,Newly Seen Domains,9420,0,0.0
+810,Germany,ai-lawandorder.com,Newly Seen Domains,9420,0,0.0
+811,Germany,dl.delivery.mp.microsoft.com,Business,9420,2,0.0002
+812,Germany,appspot.com,Technology,9419,21,0.0022
+813,Germany,indiatimes.com,News & Media,9419,23,0.0024
+814,Germany,signaler-pa.clients6.google.com,Search Engines,9419,144,0.0153
+815,Germany,init.itunes.apple.com,Information Technology,9418,131,0.0139
+816,Germany,aliyun.com,Technology,9418,0,0.0
+817,Germany,fandom.com,Video Streaming,9418,2,0.0002
+818,Germany,namebrightdns.com,Parked & For Sale Domains,9418,0,0.0
+819,Germany,dns-shop.ru,Ecommerce,9418,0,0.0
+820,Germany,google.pl,Search Engines,9418,0,0.0
+821,Germany,browser.pipe.aria.microsoft.com,Business,9418,0,0.0
+822,Germany,intercom.io,Business,9418,1,0.0001
+823,Germany,fda.gov,Health & Fitness,9418,1,0.0001
+824,Germany,calendar.google.com,Technology,9418,144,0.0153
+825,Germany,contextweb.com,Business,9418,3,0.0003
+826,Germany,oath.cloud,Content Servers,9418,0,0.0
+827,Germany,live.net,Content Servers,9418,0,0.0
+828,Germany,life360.com,Information Technology,9418,0,0.0
+829,Germany,w3schools.com,Education,9417,0,0.0
+830,Germany,stackadapt.com,Business,9417,1,0.0001
+831,Germany,takeaway.com,Food & Drink,9417,0,0.0
+832,Germany,viber.com,Instant Messengers,9417,39,0.0041
+833,Germany,delve.office.com,Technology,9417,0,0.0
+834,Germany,hbr.org,Magazines,9417,0,0.0
+835,Germany,bluekai.com,Technology,9417,0,0.0
+836,Germany,inmobi.com,Business,9417,1,0.0001
+837,Germany,tlu.dl.delivery.mp.microsoft.com,Business,9417,0,0.0
+838,Germany,ovscdns.net,Content Servers,9417,3,0.0003
+839,Germany,yimg.com,Content Servers,9417,1,0.0001
+840,Germany,everesttech.net,Content Servers,9417,0,0.0
+841,Germany,xserver.jp,Information Technology,9417,0,0.0
+842,Germany,loki.delve.office.com,Technology,9417,0,0.0
+843,Germany,amazon.fr,Ecommerce,9417,3,0.0003
+844,Germany,abovedomains.com,Newly Seen Domains,9417,0,0.0
+845,Germany,igamecj.com,Content Servers,9417,3,0.0003
+846,Germany,udemy.com,Education,9417,131,0.0139
+847,Germany,bitdefender.com,Information Security,9417,1,0.0001
+848,Germany,incapdns.net,Business,9417,0,0.0
+849,Germany,nest.com,Ecommerce,9417,1,0.0001
+850,Germany,markmonitor.com,Business,9417,1,0.0001
+851,Germany,adjust.com,Business,9417,1,0.0001
+852,Germany,deepl.com,Translator,9417,128,0.0136
+853,Germany,mediafire.com,"Militancy, Hate & Extremism",9417,13,0.0014
+854,Germany,fe3cr.delivery.mp.microsoft.com,Business,9417,0,0.0
+855,Germany,res.cdn.office.net,Content Servers,9417,2,0.0002
+856,Germany,nationalgeographic.com,Business,9417,0,0.0
+857,Germany,gspe79-ssl.ls.apple.com,Information Technology,9417,134,0.0142
+858,Germany,coinmarketcap.com,Economy & Finance,9417,24,0.0025
+859,Germany,amazon.ca,Ecommerce,9417,1,0.0001
+860,Germany,samsungapps.com,Technology,9417,1,0.0001
+861,Germany,lh5.googleusercontent.com,Content Servers,9417,14,0.0015
+862,Germany,cdnvideo.ru,Content Servers,9417,0,0.0
+863,Germany,box.com,File Sharing,9417,0,0.0
+864,Germany,sagepub.com,Education,9417,2,0.0002
+865,Germany,themeforest.net,Ecommerce,9417,0,0.0
+866,Germany,contentsquare.net,Content Servers,9417,0,0.0
+867,Germany,ogs.google.com,Content Servers,9417,143,0.0152
+868,Germany,investopedia.com,Economy & Finance,9417,0,0.0
+869,Germany,google.com.mx,Search Engines,9417,0,0.0
+870,Germany,mediahils.ru,Newly Seen Domains,9417,1,0.0001
+871,Germany,xp.apple.com,Information Technology,9417,6,0.0006
+872,Germany,webrootcloudav.com,Information Technology,9417,0,0.0
+873,Germany,kohls.com,Ecommerce,9417,1,0.0001
+874,Germany,google.com.tr,Search Engines,9417,0,0.0
+875,Germany,arc.msn.com,News & Media,9417,0,0.0
+876,Germany,yahoo.net,News & Media,9417,1,0.0001
+877,Germany,mirtesen.ru,Social Networks,9417,0,0.0
+878,Germany,bandcamp.com,Audio Streaming,9417,27,0.0029
+879,Germany,xvideos.com,Pornography,9417,69,0.0073
+880,Germany,pubmed.ncbi.nlm.nih.gov,Health & Fitness,9417,0,0.0
+881,Germany,shein.com,Ecommerce,9417,0,0.0
+882,Germany,rocket-cdnbp.com,Newly Seen Domains,9417,0,0.0
+883,Germany,33across.com,Business,9417,1,0.0001
+884,Germany,service.gov.uk,"Politics, Advocacy, and Government-Related",9417,0,0.0
+885,Germany,douyincdn.com,Newly Seen Domains,9417,1,0.0001
+886,Germany,usda.gov,Business,9417,1,0.0001
+887,Germany,bestbuy.com,Ecommerce,9417,0,0.0
+888,Germany,r4.res.office365.com,Content Servers,9417,131,0.0139
+889,Germany,attn.tv,Business,9417,2,0.0002
+890,Germany,klaviyo.com,Business,9417,0,0.0
+891,Germany,unesco.org,"Politics, Advocacy, and Government-Related",9417,0,0.0
+892,Germany,allaboutcookies.org,Education,9417,0,0.0
+893,Germany,w55c.net,Business,9417,0,0.0
+894,Germany,airbnb.com,Travel,9417,0,0.0
+895,Germany,pv-cdn.net,Newly Seen Domains,9417,1,0.0001
+896,Germany,zillow.com,Real Estate,9417,168,0.0178
+897,Germany,docker.com,Technology,9417,6,0.0006
+898,Germany,kickstarter.com,Hobbies & Interests,9417,3,0.0003
+899,Germany,youku.com,Video Streaming,9417,0,0.0
+900,Germany,enterprise.activity.windows.com,Information Technology,9417,1,0.0001
+901,Germany,ohthree.com,Newly Seen Domains,9417,2,0.0002
+902,Germany,tremorhub.com,Content Servers,9417,0,0.0
+903,Germany,bytetcdn.com,Content Servers,9417,0,0.0
+904,Germany,telegram.org,Instant Messengers,9417,146,0.0155
+905,Germany,gumgum.com,Business,9417,1,0.0001
+906,Germany,norton.com,Information Security,9417,0,0.0
+907,Germany,gandi-ns.fr,Newly Seen Domains,9417,1,0.0001
+908,Germany,xiaomi.net,Technology,9417,0,0.0
+909,Germany,pccc.com,Technology,9417,0,0.0
+910,Germany,fiverr.com,Search Engines,9417,1,0.0001
+911,Germany,nflxvideo.net,Movies,9417,14,0.0015
+912,Germany,huffpost.com,News & Media,9417,23,0.0024
+913,Germany,pbs.org,Television,9417,1,0.0001
+914,Germany,lemonde.fr,News & Media,9417,35,0.0037
+915,Germany,yximgs.com,Information Technology,9417,0,0.0
+916,Germany,1rx.io,Advertisements,9417,2,0.0002
+917,Germany,e-msedge.net,Content Servers,9417,0,0.0
+918,Germany,ttoverseaus.net,Newly Seen Domains,9417,2,0.0002
+919,Germany,clients3.google.com,Content Servers,9417,143,0.0152
+920,Germany,securepubads.g.doubleclick.net,Advertisements,9417,153,0.0162
+921,Germany,mailchi.mp,Business,9417,11,0.0012
+922,Germany,fedex.com,Business,9417,0,0.0
+923,Germany,m.youtube.com,Video Streaming,9417,168,0.0178
+924,Germany,people.com,Video Streaming,9417,0,0.0
+925,Germany,shopee.co.id,Ecommerce,9417,0,0.0
+926,Germany,business.site,Business,9417,1,0.0001
+927,Germany,kennasecurity.com,Business,9417,0,0.0
+928,Germany,l.facebook.com,Social Networks,9417,155,0.0165
+929,Germany,quantummetric.com,Business,9417,0,0.0
+930,Germany,yt3.ggpht.com,Content Servers,9417,153,0.0162
+931,Germany,elisa.fi,Information Technology,9417,3,0.0003
+932,Germany,princeton.edu,Educational Institutions,9417,0,0.0
+933,Germany,mixpanel.com,Business,9417,1,0.0001
+934,Germany,networkadvertising.org,Business,9417,0,0.0
+935,Germany,safebrowsing.google.com,Information Security,9417,144,0.0153
+936,Germany,footprintdns.com,Technology,9417,0,0.0
+937,Germany,macys.com,Ecommerce,9417,0,0.0
+938,Germany,chaturbate.com,Pornography,9417,46,0.0049
+939,Germany,www.msftconnecttest.com,Content Servers,9417,0,0.0
+940,Germany,fast.com,Information Technology,9417,1,0.0001
+941,Germany,gihc.net,Content Servers,9417,0,0.0
+942,Germany,jotform.com,Information Technology,9417,6,0.0006
+943,Germany,stickyadstv.com,Business,9417,2,0.0002
+944,Germany,kargo.com,Business,9417,0,0.0
+945,Germany,me.com,File Sharing,9417,1,0.0001
+946,Germany,ssl-images-amazon.com,Content Servers,9417,1,0.0001
+947,Germany,statuspage.io,Technology,9417,0,0.0
+948,Germany,sitescout.com,Business,9417,0,0.0
+949,Germany,upwork.com,Job Search & Careers,9417,2,0.0002
+950,Germany,allegro.pl,Ecommerce,9417,0,0.0
+951,Germany,dbankcloud.com,Content Servers,9417,1,0.0001
+952,Germany,t-online.de,News & Media,9417,9,0.001
+953,Germany,google.cn,Search Engines,9417,0,0.0
+954,Germany,a-mo.net,Advertisements,9417,2,0.0002
+955,Germany,addons-pa.clients6.google.com,Search Engines,9417,144,0.0153
+956,Germany,adrta.com,Business,9417,0,0.0
+957,Germany,amazon.es,Ecommerce,9417,0,0.0
+958,Germany,mask.icloud.com,File Sharing,9417,173,0.0184
+959,Germany,origin-apple.com.akadns.net,Content Servers,9417,1,0.0001
+960,Germany,erome.com,Pornography,9417,37,0.0039
+961,Germany,es.wikipedia.org,Education,9417,22,0.0023
+962,Germany,change.org,"Politics, Advocacy, and Government-Related",9417,25,0.0027
+963,Germany,news.com.au,News & Media,9417,22,0.0023
+964,Germany,ks-cdn.com,Technology,9417,0,0.0
+965,Germany,bankofamerica.com,Economy & Finance,9417,0,0.0
+966,Germany,ebay.co.uk,Auctions & Marketplaces,9417,1,0.0001
+967,Germany,guzzoni.apple.com,Information Technology,9417,144,0.0153
+968,Germany,quickconnect.to,Technology,9417,0,0.0
+969,Germany,fb.me,Social Networks,9417,325,0.0345
+970,Germany,steamstatic.com,Content Servers,9417,5,0.0005
+971,Germany,xnxx.com,Pornography,9417,68,0.0072
+972,Germany,ieee.org,"Politics, Advocacy, and Government-Related",9417,0,0.0
+973,Germany,turn.com,Business,9417,1,0.0001
+974,Germany,redhat.com,Technology,9417,0,0.0
+975,Germany,ipify.org,Technology,9417,0,0.0
+976,Germany,ads-twitter.com,Advertisements,9417,0,0.0
+977,Germany,rfihub.com,Content Servers,9417,3,0.0003
+978,Germany,s3.amazonaws.com,File Sharing,9417,4,0.0004
+979,Germany,ovh.net,Information Technology,9417,3,0.0003
+980,Germany,krxd.net,Content Servers,9417,0,0.0
+981,Germany,hm.com,Ecommerce,9417,1,0.0001
+982,Germany,www.amazon.com,Ecommerce,9417,18,0.0019
+983,Germany,lefigaro.fr,Video Streaming,9417,1,0.0001
+984,Germany,ipredictive.com,Content Servers,9417,1,0.0001
+985,Germany,nexusrules.officeapps.live.com,Technology,9417,0,0.0
+986,Germany,tencent-cloud.net,Technology,9417,0,0.0
+987,Germany,odc.officeapps.live.com,Business,9417,1,0.0001
+988,Germany,heytapdl.com,Newly Seen Domains,9417,1,0.0001
+989,Germany,www.googletagservices.com,Content Servers,9417,12,0.0013
+990,Germany,milanuncios.com,Auctions & Marketplaces,9417,0,0.0
+991,Germany,intentiq.com,Business,9417,1,0.0001
+992,Germany,cdn20.com,Content Servers,9417,0,0.0
+993,Germany,indexww.com,Content Servers,9417,0,0.0
+994,Germany,ibyteimg.com,Content Servers,9417,0,0.0
+995,Germany,whitehouse.gov,"Politics, Advocacy, and Government-Related",9417,3,0.0003
+996,Germany,iris.microsoft.com,Business,9417,0,0.0
+997,Germany,cloudapp.azure.com,Technology,9417,0,0.0
+998,Germany,amazon.in,Ecommerce,9417,0,0.0
+999,Germany,iso.org,"Politics, Advocacy, and Government-Related",9417,0,0.0
+1000,Germany,bootstrapcdn.com,Content Servers,9417,0,0.0
+1001,Germany,api.iris.microsoft.com,Business,9417,0,0.0
+1002,Germany,simpli.fi,Business,9417,0,0.0
+1003,Germany,boostmobile.com,Information Technology,9417,1,0.0001
+1004,Germany,nic.do,Parked & For Sale Domains,9417,0,0.0
+1005,Germany,aniview.com,Business,9417,0,0.0
+1006,Germany,bbtec.net,Newly Seen Domains,9416,0,0.0
+1007,Germany,amazon.it,Ecommerce,9416,0,0.0
+1008,Germany,statcounter.com,Business,9416,1,0.0001
+1009,Germany,lowes.com,Ecommerce,9416,0,0.0
+1010,Germany,ssacdn.com,Content Servers,9416,0,0.0
+1011,Germany,istockphoto.com,"News, Portal & Search",9416,191,0.0203
+1012,Germany,www.msn.com,News & Media,9416,0,0.0
+1013,Germany,ertelecom.ru,Information Technology,9416,1,0.0001
+1014,Germany,shutterstock.com,Photography,9416,26,0.0028
+1015,Germany,netgear.com,Business,9416,0,0.0
+1016,Germany,phicdn.net,Content Servers,9416,0,0.0
+1017,Germany,githubusercontent.com,Technology,9416,0,0.0
+1018,Germany,cdnhwc1.com,Content Servers,9416,1,0.0001
+1019,Germany,epa.gov,"Politics, Advocacy, and Government-Related",9416,0,0.0
+1020,Germany,swrve.com,Business,9416,0,0.0
+1021,Germany,appier.net,Technology,9416,0,0.0
+1022,Germany,unrulymedia.com,Business,9416,0,0.0
+1023,Germany,www.linkedin.com,Professional Networking,9416,168,0.0178
+1024,Germany,samsungacr.com,Content Servers,9416,0,0.0
+1025,Germany,shopee.com.br,Newly Seen Domains,9416,0,0.0
+1026,Germany,samsungosp.com,Content Servers,9416,2,0.0002
+1027,Germany,ameblo.jp,Personal Blogs,9416,2,0.0002
+1028,Germany,impervadns.net,Content Servers,9416,0,0.0
+1029,Germany,eporner.com,Pornography,9416,40,0.0042
+1030,Germany,imcmdb.net,Content Servers,9416,2,0.0002
+1031,Germany,clever.com,Technology,9416,0,0.0
+1032,Germany,state.gov,Government,9416,0,0.0
+1033,Germany,miwifi.com,Technology,9416,1,0.0001
+1034,Germany,pool.ntp.org,Technology,9416,3,0.0003
+1035,Germany,bdydns.com,Content Servers,9416,0,0.0
+1036,Germany,oneclient.sfx.ms,File Sharing,9416,0,0.0
+1037,Germany,google.com.tw,Search Engines,9416,1,0.0001
+1038,Germany,onlyfans.com,Social Networks,9416,36,0.0038
+1039,Germany,seznam.cz,News & Media,9416,0,0.0
+1040,Germany,wayfair.com,Business,9416,0,0.0
+1041,Germany,onetag-sys.com,Advertisements,9416,1,0.0001
+1042,Germany,discordapp.com,Information Technology,9416,156,0.0166
+1043,Germany,360.cn,Technology,9416,0,0.0
+1044,Germany,star.c10r.facebook.com,Social Networks,9416,154,0.0164
+1045,Germany,brave.com,Information Technology,9416,0,0.0
+1046,Germany,jnn-pa.googleapis.com,Content Servers,9416,144,0.0153
+1047,Germany,dreamhost.com,Information Technology,9416,12,0.0013
+1048,Germany,worldbank.org,"Politics, Advocacy, and Government-Related",9416,1,0.0001
+1049,Germany,history.google.com,Search Engines,9416,143,0.0152
+1050,Germany,mgid.com,Business,9416,11,0.0012
+1051,Germany,fbsbx.com,Content Servers,9416,27,0.0029
+1052,Germany,gitlab.com,Information Technology,9416,143,0.0152
+1053,Germany,economist.com,News & Media,9416,23,0.0024
+1054,Germany,umich.edu,Educational Institutions,9416,1,0.0001
+1055,Germany,tp-link.com,Technology,9416,0,0.0
+1056,Germany,mgts.ru,Information Technology,9416,1,0.0001
+1057,Germany,onedrive.live.com,File Sharing,9416,167,0.0177
+1058,Germany,mathtag.com,Information Security,9416,0,0.0
+1059,Germany,usgovcloudapi.net,Content Servers,9416,1,0.0001
+1060,Germany,1drv.com,File Sharing,9416,0,0.0
+1061,Germany,typeform.com,Webmail,9416,1,0.0001
+1062,Germany,paloaltonetworks.com,Information Security,9416,1,0.0001
+1063,Germany,columbia.edu,Educational Institutions,9416,1,0.0001
+1064,Germany,v.aaplimg.com,Information Technology,9416,0,0.0
+1065,Germany,teams.cdn.office.net,Content Servers,9416,2,0.0002
+1066,Germany,goskope.com,Content Servers,9416,1,0.0001
+1067,Germany,tribalfusion.com,Business,9416,0,0.0
+1068,Germany,costco.com,Ecommerce,9416,0,0.0
+1069,Germany,heytapmobile.com,Content Servers,9416,0,0.0
+1070,Germany,usnews.com,News & Media,9416,2,0.0002
+1071,Germany,cdnbuild.net,Newly Seen Domains,9416,0,0.0
+1072,Germany,firefox.com,Information Technology,9416,1,0.0001
+1073,Germany,gouv.fr,Newly Seen Domains,9416,0,0.0
+1074,Germany,statics.teams.cdn.office.net,Content Servers,9416,0,0.0
+1075,Germany,okta.com,Business,9416,0,0.0
+1076,Germany,dan.com,Information Technology,9416,0,0.0
+1077,Germany,cloudinary.com,File Sharing,9416,12,0.0013
+1078,Germany,chartbeat.net,Business,9416,0,0.0
+1079,Germany,vkontakte.ru,Social Networks,9416,12,0.0013
+1080,Germany,globalsign.com,Information Security,9416,0,0.0
+1081,Germany,bild.de,News & Media,9416,22,0.0023
+1082,Germany,genius.com,Music,9416,22,0.0023
+1083,Germany,apigee.net,Content Servers,9416,1,0.0001
+1084,Germany,disneyplus.com,Movies,9416,146,0.0155
+1085,Germany,connatix.com,Business,9416,2,0.0002
+1086,Germany,dpm.demdex.net,Business,9416,0,0.0
+1087,Germany,jimdo.com,New Domains,9416,1,0.0001
+1088,Germany,daum.net,News & Media,9416,191,0.0203
+1089,Germany,wd.microsoft.com,Business,9416,1,0.0001
+1090,Germany,vmware.com,Technology,9416,0,0.0
+1091,Germany,e2ro.com,Content Servers,9416,2,0.0002
+1092,Germany,sectigo.com,Information Security,9416,3,0.0003
+1093,Germany,fd.api.iris.microsoft.com,Business,9416,4,0.0004
+1094,Germany,browser-intake-datadoghq.com,Content Servers,9416,13,0.0014
+1095,Germany,unpkg.com,Content Servers,9416,3,0.0003
+1096,Germany,kaspi.kz,Economy & Finance,9416,2,0.0002
+1097,Germany,cloudflareinsights.com,Content Servers,9416,0,0.0
+1098,Germany,firebaseio.com,Technology,9416,0,0.0
+1099,Germany,repubblica.it,News & Media,9416,7,0.0007
+1100,Germany,cp.wd.microsoft.com,Business,9416,3,0.0003
+1101,Germany,chartboost.com,Business,9416,1,0.0001
+1102,Germany,bttrack.com,Content Servers,9416,1,0.0001
+1103,Germany,arcgis.com,Technology,9416,1,0.0001
+1104,Germany,nypost.com,Video Streaming,9416,22,0.0023
+1105,Germany,primevideo.com,Movies,9416,144,0.0153
+1106,Germany,wikihow.com,Education,9416,2,0.0002
+1107,Germany,binance.com,Economy & Finance,9416,22,0.0023
+1108,Germany,azure-devices.net,Content Servers,9416,3,0.0003
+1109,Germany,avito.ru,Auctions & Marketplaces,9416,0,0.0
+1110,Germany,beacons.gvt2.com,Content Servers,9416,0,0.0
+1111,Germany,businesswire.com,Business,9416,0,0.0
+1112,Germany,myqcloud.com,Content Servers,9415,1,0.0001
+1113,Germany,segment.io,Business,9415,1,0.0001
+1114,Germany,spot.im,Business,9415,1,0.0001
+1115,Germany,ya.ru,Search Engines,9415,0,0.0
+1116,Germany,theconversation.com,News & Media,9415,22,0.0023
+1117,Germany,cdnjs.cloudflare.com,Technology,9415,1,0.0001
+1118,Germany,ys7.com,Business,9415,1,0.0001
+1119,Germany,hotmail.com,Webmail,9415,143,0.0152
+1120,Germany,ctdns.cn,Newly Seen Domains,9415,1,0.0001
+1121,Germany,ad.gt,Advertisements,9415,0,0.0
+1122,Germany,dns.ne.jp,Technology,9415,2,0.0002
+1123,Germany,llnwi.net,Content Servers,9415,1,0.0001
+1124,Germany,deloitte.com,Economy & Finance,9415,1,0.0001
+1125,Germany,biblegateway.com,Religion,9415,0,0.0
+1126,Germany,btloader.com,Content Servers,9415,1,0.0001
+1127,Germany,yellowblue.io,Content Servers,9415,1,0.0001
+1128,Germany,classroom.google.com,Education,9415,145,0.0154
+1129,Germany,rapid7.com,Information Security,9415,0,0.0
+1130,Germany,mediavine.com,Business,9415,1,0.0001
+1131,Germany,immunet.com,Information Security,9415,0,0.0
+1132,Germany,discogs.com,Audio Streaming,9415,0,0.0
+1133,Germany,vip-svr.com,Newly Seen Domains,9415,36,0.0038
+1134,Germany,hilton.com,Travel,9415,0,0.0
+1135,Germany,asyncgw.teams.microsoft.com,Business,9415,143,0.0152
+1136,Germany,ebay.de,Auctions & Marketplaces,9415,0,0.0
+1137,Germany,tbcache.com,Ecommerce,9415,1,0.0001
+1138,Germany,pendo.io,Technology,9415,1,0.0001
+1139,Germany,g.live.com,Technology,9415,0,0.0
+1140,Germany,vivoglobal.com,Technology,9415,0,0.0
+1141,Germany,savvis.net,Information Security,9415,0,0.0
+1142,Germany,xerox.com,Technology,9415,2,0.0002
+1143,Germany,init.ess.apple.com,Information Technology,9415,1,0.0001
+1144,Germany,fr.wikipedia.org,Education,9415,24,0.0025
+1145,Germany,rings.solutions,Content Servers,9415,1,0.0001
+1146,Germany,heylink.me,Technology,9415,0,0.0
+1147,Germany,cbc.ca,News & Media,9415,23,0.0024
+1148,Germany,superhosting.bg,Ecommerce,9415,0,0.0
+1149,Germany,canonical.com,Technology,9415,1,0.0001
+1150,Germany,spotifycdn.com,Content Servers,9415,3,0.0003
+1151,Germany,recaptcha.net,Technology,9415,1,0.0001
+1152,Germany,akismet.com,Information Security,9415,1,0.0001
+1153,Germany,ioam.de,Business,9415,2,0.0002
+1154,Germany,redd.it,Forums,9415,22,0.0023
+1155,Germany,sharethis.com,Business,9415,1,0.0001
+1156,Germany,rackspaceclouddb.com,Content Servers,9415,0,0.0
+1157,Germany,eyeota.net,Login Screens,9414,2,0.0002
+1158,Germany,glance.net,Business,9414,0,0.0
+1159,Germany,adgrx.com,Technology,9414,0,0.0
+1160,Germany,onet.pl,News & Media,9414,3,0.0003
+1161,Germany,samsungcloudsolution.net,Content Servers,9414,1,0.0001
+1162,Germany,synology.com,Technology,9414,0,0.0
+1163,Germany,mckinsey.com,Webmail,9414,1,0.0001
+1164,Germany,quizlet.com,Education,9414,0,0.0
+1165,Germany,dscw154.akamai.net,Content Servers,9414,1,0.0001
+1166,Germany,websitewelcome.com,Content Servers,9414,2,0.0002
+1167,Germany,ancestry.com,Hobbies & Interests,9414,0,0.0
+1168,Germany,awsglobalaccelerator.com,Content Servers,9414,1,0.0001
+1169,Germany,amazon.com.br,Ecommerce,9414,1,0.0001
+1170,Germany,onesignal.com,Business,9414,0,0.0
+1171,Germany,adroll.com,Advertisements,9414,0,0.0
+1172,Germany,skroutz.gr,Shopping,9414,1,0.0001
+1173,Germany,xfinity.com,Television,9414,0,0.0
+1174,Germany,api.amazon.com,Ecommerce,9414,3,0.0003
+1175,Germany,2gis.com,Search Engines,9414,0,0.0
+1176,Germany,clients.google.com,Search Engines,9414,144,0.0153
+1177,Germany,postrelease.com,Content Servers,9414,1,0.0001
+1178,Germany,instructure.com,Education,9414,0,0.0
+1179,Germany,firebaselogging-pa.googleapis.com,Content Servers,9414,143,0.0152
+1180,Germany,cm.g.doubleclick.net,Advertisements,9414,157,0.0167
+1181,Germany,android.clients.google.com,Content Servers,9414,144,0.0153
+1182,Germany,flurry.com,Business,9414,0,0.0
+1183,Germany,serving-sys.com,Content Servers,9414,3,0.0003
+1184,Germany,tiqcdn.com,Content Servers,9414,1,0.0001
+1185,Germany,elb.amazonaws.com,Technology,9414,3,0.0003
+1186,Germany,innovid.com,Business,9414,3,0.0003
+1187,Germany,notamedia.ru,Business,9414,2,0.0002
+1188,Germany,c.bing.com,Content Servers,9414,2,0.0002
+1189,Germany,corriere.it,News & Media,9414,0,0.0
+1190,Germany,cookiedatabase.org,Technology,9414,2,0.0002
+1191,Germany,shipt.com,Business,9414,1,0.0001
+1192,Germany,cachenow.net,Newly Seen Domains,9414,0,0.0
+1193,Germany,elmundo.es,News & Media,9414,14,0.0015
+1194,Germany,apnews.com,News & Media,9414,3,0.0003
+1195,Germany,mmcdn.com,Parked & For Sale Domains,9414,0,0.0
+1196,Germany,weforum.org,"Politics, Advocacy, and Government-Related",9414,7,0.0007
+1197,Germany,4dex.io,Content Servers,9414,2,0.0002
+1198,Germany,mail.yahoo.com,Webmail,9414,146,0.0155
+1199,Germany,qwest.net,Business,9414,5,0.0005
+1200,Germany,spectrum.com,Information Technology,9414,1,0.0001
+1201,Germany,aiv-delivery.net,Content Servers,9414,2,0.0002
+1202,Germany,redditstatic.com,Content Servers,9414,5,0.0005
+1203,Germany,wp.pl,News & Media,9414,2,0.0002
+1204,Germany,si.com,Sports,9414,2,0.0002
+1205,Germany,asos.com,Clothing,9414,2,0.0002
+1206,Germany,pikabu.ru,Personal Blogs,9414,2,0.0002
+1207,Germany,bol.com,Ecommerce,9414,192,0.0204
+1208,Germany,tynt.com,Business,9414,8,0.0008
+1209,Germany,bumble.com,Dating & Relationships,9414,0,0.0
+1210,Germany,aa-rt.sharepoint.com,New Domains,9414,144,0.0153
+1211,Germany,arxiv.org,Education,9414,1,0.0001
+1212,Germany,eepurl.com,Redirect,9414,1,0.0001
+1213,Germany,withgoogle.com,Search Engines,9414,0,0.0
+1214,Germany,pusher.com,Technology,9414,0,0.0
+1215,Germany,ib.adnxs.com,Business,9414,6,0.0006
+1216,Germany,doh.opendns.com,Information Technology,9414,134,0.0142
+1217,Germany,marketwatch.com,Economy & Finance,9414,1,0.0001
+1218,Germany,utorrent.com,P2P,9414,4,0.0004
+1219,Germany,psychologytoday.com,Health & Fitness,9414,0,0.0
+1220,Germany,twitchcdn.net,Content Servers,9414,129,0.0137
+1221,Germany,doubleclick.com,Business,9414,1,0.0001
+1222,Germany,epicgames.dev,Gaming,9414,3,0.0003
+1223,Germany,newyorker.com,Video Streaming,9414,23,0.0024
+1224,Germany,pik.ru,Real Estate,9414,0,0.0
+1225,Germany,dbankcloud.ru,Unreachable,9414,1,0.0001
+1226,Germany,www.spotify.com,Audio Streaming,9414,3,0.0003
+1227,Germany,pixiv.net,Arts,9414,20,0.0021
+1228,Germany,vice.com,News & Media,9414,2,0.0002
+1229,Germany,francetvinfo.fr,News & Media,9414,0,0.0
+1230,Germany,ubnt.com,Technology,9414,0,0.0
+1231,Germany,interia.pl,News & Media,9414,1,0.0001
+1232,Germany,pexels.com,Photography,9414,0,0.0
+1233,Germany,avira.com,Technology,9414,16,0.0017
+1234,Germany,fortune.com,Magazines,9414,1,0.0001
+1235,Germany,classlink.com,Education,9414,0,0.0
+1236,Germany,socdm.com,Content Servers,9414,0,0.0
+1237,Germany,th.bing.com,Search Engines,9414,0,0.0
+1238,Germany,plos.org,Education,9414,1,0.0001
+1239,Germany,kahoot.it,Gaming,9414,0,0.0
+1240,Germany,support.mozilla.org,Technology,9414,0,0.0
+1241,Germany,chartbeat.com,Business,9414,0,0.0
+1242,Germany,amazon.com.au,Ecommerce,9414,0,0.0
+1243,Germany,flipkart.com,Ecommerce,9414,1,0.0001
+1244,Germany,vkuser.net,Content Servers,9414,0,0.0
+1245,Germany,truste.com,Information Security,9414,0,0.0
+1246,Germany,plex.tv,Movies,9414,144,0.0153
+1247,Germany,configuration.apple.com,Content Servers,9414,0,0.0
+1248,Germany,vidazoo.com,Business,9414,2,0.0002
+1249,Germany,atlassian.net,Business,9414,0,0.0
+1250,Germany,creditkarma.com,Economy & Finance,9414,0,0.0
+1251,Germany,chegg.com,Education,9414,3,0.0003
+1252,Germany,split.io,Business,9414,0,0.0
+1253,Germany,gsp85-ssl.ls.apple.com,Information Technology,9414,131,0.0139
+1254,Germany,byteoversea.com,Content Servers,9414,2,0.0002
+1255,Germany,trustarc.com,Information Security,9414,0,0.0
+1256,Germany,allianz.com,Economy & Finance,9414,0,0.0
+1257,Germany,dribbble.com,Photography,9414,1,0.0001
+1258,Germany,finance.yahoo.com,Economy & Finance,9414,1,0.0001
+1259,Germany,mosmedzdrav.ru,Newly Seen Domains,9414,0,0.0
+1260,Germany,agoda.com,Coupons,9414,0,0.0
+1261,Germany,mashable.com,News & Media,9414,1,0.0001
+1262,Germany,trendyol.com,Fashion,9414,0,0.0
+1263,Germany,openstreetmap.org,Education,9414,23,0.0024
+1264,Germany,geo.prod.do.dsp.mp.microsoft.com,Business,9414,0,0.0
+1265,Germany,olx.ua,Auctions & Marketplaces,9414,13,0.0014
+1266,Germany,yale.edu,Educational Institutions,9414,6,0.0006
+1267,Germany,spankbang.com,Pornography,9414,42,0.0045
+1268,Germany,mdpi.com,Education,9414,0,0.0
+1269,Germany,psu.edu,Educational Institutions,9414,0,0.0
+1270,Germany,highwebmedia.com,Pornography,9414,32,0.0034
+1271,Germany,grserver.gr,Information Technology,9414,0,0.0
+1272,Germany,online.net,Information Technology,9414,0,0.0
+1273,Germany,nicovideo.jp,Video Streaming,9414,25,0.0027
+1274,Germany,ripn.net,Technology,9414,0,0.0
+1275,Germany,youronlinechoices.com,Business,9414,0,0.0
+1276,Germany,osi.office.net,Content Servers,9414,0,0.0
+1277,Germany,www.gov.br,"Politics, Advocacy, and Government-Related",9414,1,0.0001
+1278,Germany,1.bp.blogspot.com,Personal Blogs,9414,174,0.0185
+1279,Germany,chess.com,Hobbies & Interests,9414,0,0.0
+1280,Germany,alidns.com,Information Technology,9414,0,0.0
+1281,Germany,joinhoney.com,Coupons,9414,1,0.0001
+1282,Germany,youtubei.googleapis.com,Content Servers,9414,145,0.0154
+1283,Germany,360safe.com,Information Security,9414,1,0.0001
+1284,Germany,redditmedia.com,Video Streaming,9414,23,0.0024
+1285,Germany,ecosia.org,"Politics, Advocacy, and Government-Related",9414,143,0.0152
+1286,Germany,bam.nr-data.net,Content Servers,9414,144,0.0153
+1287,Germany,springserve.com,Business,9414,0,0.0
+1288,Germany,idnes.cz,News & Media,9414,0,0.0
+1289,Germany,webhostbox.net,Information Technology,9414,0,0.0
+1290,Germany,constantcontact.com,Business,9414,15,0.0016
+1291,Germany,marca.com,Video Streaming,9414,0,0.0
+1292,Germany,dnsv1.com,Content Servers,9414,0,0.0
+1293,Germany,166.com,News & Media,9414,3,0.0003
+1294,Germany,mozaws.net,Content Servers,9414,0,0.0
+1295,Germany,olx.com.br,Auctions & Marketplaces,9414,0,0.0
+1296,Germany,share-dns.com,Newly Seen Domains,9414,0,0.0
+1297,Germany,surfshark.com,P2P,9414,61,0.0065
+1298,Germany,service-now.com,Technology,9414,0,0.0
+1299,Germany,moneycontrol.com,Economy & Finance,9414,168,0.0178
+1300,Germany,character.ai,Newly Seen Domains,9414,153,0.0163
+1301,Germany,adcolony.com,Business,9414,1,0.0001
+1302,Germany,beget.com,File Sharing,9414,0,0.0
+1303,Germany,g.whatsapp.net,Instant Messengers,9414,167,0.0177
+1304,Germany,cdnhwc2.com,Content Servers,9414,0,0.0
+1305,Germany,dropboxapi.com,Content Servers,9414,0,0.0
+1306,Germany,kwai-pro.com,Newly Seen Domains,9414,0,0.0
+1307,Germany,ilovepdf.com,Business,9414,1,0.0001
+1308,Germany,no-ip.com,Information Technology,9414,1,0.0001
+1309,Germany,welt.de,News & Media,9414,31,0.0033
+1310,Germany,vivo.com.cn,Technology,9414,1,0.0001
+1311,Germany,lgtvsdp.com,Content Servers,9414,0,0.0
+1312,Germany,rackcdn.com,Content Servers,9414,0,0.0
+1313,Germany,rayjump.com,Business,9414,3,0.0003
+1314,Germany,samsungelectronics.com,Home & Garden,9414,0,0.0
+1315,Germany,perfectdomain.com,Information Technology,9414,3,0.0003
+1316,Germany,google.ru,Search Engines,9414,0,0.0
+1317,Germany,asm.skype.com,Instant Messengers,9414,0,0.0
+1318,Germany,churnzero.net,Business,9414,1,0.0001
+1319,Germany,colossusssp.com,Content Servers,9414,6,0.0006
+1320,Germany,s-onetag.com,Content Servers,9414,0,0.0
+1321,Germany,ox.ac.uk,Educational Institutions,9414,0,0.0
+1322,Germany,abc.net.au,News & Media,9414,23,0.0024
+1323,Germany,samsungcloud.tv,Content Servers,9414,0,0.0
+1324,Germany,about.com,Education,9414,2,0.0002
+1325,Germany,tayninh.gov.vn,"Politics, Advocacy, and Government-Related",9414,1,0.0001
+1326,Germany,ucla.edu,Educational Institutions,9414,0,0.0
+1327,Germany,dynamicyield.com,Business,9414,0,0.0
+1328,Germany,mercadolibre.com.ar,Auctions & Marketplaces,9414,1,0.0001
+1329,Germany,beget.ru,Information Technology,9414,1,0.0001
+1330,Germany,onedrive.com,File Sharing,9414,0,0.0
+1331,Germany,bitdefender.net,Technology,9414,1,0.0001
+1332,Germany,otto.de,Ecommerce,9414,0,0.0
+1333,Germany,zoho.com,Business,9414,0,0.0
+1334,Germany,static.doubleclick.net,Advertisements,9414,154,0.0164
+1335,Germany,vtb.ru,Economy & Finance,9414,0,0.0
+1336,Germany,livedoor.jp,News & Media,9414,1,0.0001
+1337,Germany,as.com,Sports,9414,2,0.0002
+1338,Germany,n-tv.de,News & Media,9414,33,0.0035
+1339,Germany,tokopedia.com,Ecommerce,9414,0,0.0
+1340,Germany,permutive.com,Business,9414,0,0.0
+1341,Germany,newsweek.com,Magazines,9414,22,0.0023
+1342,Germany,gsmarena.com,Shopping,9414,0,0.0
+1343,Germany,nexusmods.com,Gaming,9414,3,0.0003
+1344,Germany,screenrant.com,Video Streaming,9414,0,0.0
+1345,Germany,nba.com,News & Media,9414,0,0.0
+1346,Germany,gofundme.com,"Politics, Advocacy, and Government-Related",9414,30,0.0032
+1347,Germany,id.google.com,Content Servers,9414,143,0.0152
+1348,Germany,adnxs-simple.com,Content Servers,9414,0,0.0
+1349,Germany,plesk.com,Technology,9414,0,0.0
+1350,Germany,ameba.jp,Personal Blogs,9414,24,0.0025
+1351,Germany,www.yahoo.com,News & Media,9414,1,0.0001
+1352,Germany,topdns.me,Content Servers,9414,0,0.0
+1353,Germany,upenn.edu,Educational Institutions,9414,0,0.0
+1354,Germany,uchi.ru,Educational Institutions,9414,0,0.0
+1355,Germany,infobae.com,News & Media,9414,1,0.0001
+1356,Germany,polyfill.io,Technology,9414,37,0.0039
+1357,Germany,messenger.com,Instant Messengers,9414,154,0.0164
+1358,Germany,goal.com,Video Streaming,9414,1,0.0001
+1359,Germany,quizizz.com,Education,9414,0,0.0
+1360,Germany,graph.instagram.com,Social Networks,9414,182,0.0193
+1361,Germany,ouest-france.fr,News & Media,9414,168,0.0178
+1362,Germany,linode.com,Technology,9414,0,0.0
+1363,Germany,l.google.com,Search Engines,9414,143,0.0152
+1364,Germany,protection.outlook.com,Webmail,9414,131,0.0139
+1365,Germany,sportskeeda.com,News & Media,9414,1,0.0001
+1366,Germany,oculus.com,Ecommerce,9414,1,0.0001
+1367,Germany,store.steampowered.com,Ecommerce,9414,152,0.0161
+1368,Germany,xing.com,Professional Networking,9414,12,0.0013
+1369,Germany,amazon.com.mx,Ecommerce,9414,1,0.0001
+1370,Germany,reverso.net,Translator,9414,0,0.0
+1371,Germany,mercadolivre.com.br,Ecommerce,9414,1,0.0001
+1372,Germany,ui-dns.com,Newly Seen Domains,9414,1,0.0001
+1373,Germany,sciencedaily.com,News & Media,9414,0,0.0
+1374,Germany,biomedcentral.com,Education,9414,0,0.0
+1375,Germany,bfmtv.com,News & Media,9414,0,0.0
+1376,Germany,sc-static.net,Content Servers,9414,1,0.0001
+1377,Germany,ingest.sentry.io,Business,9413,7,0.0007
+1378,Germany,mwbsys.com,Content Servers,9413,1,0.0001
+1379,Germany,mobile.de,Vehicles,9413,2,0.0002
+1380,Germany,bytefcdn.com,Content Servers,9413,0,0.0
+1381,Germany,me.gvt1.com,Content Servers,9413,0,0.0
+1382,Germany,docomo.ne.jp,News & Media,9413,0,0.0
+1383,Germany,dnevnik.ru,Education,9413,0,0.0
+1384,Germany,airslate.com,Business,9413,0,0.0
+1385,Germany,clarin.com,News & Media,9413,168,0.0178
+1386,Germany,mparticle.com,Business,9413,0,0.0
+1387,Germany,splashtop.com,Information Technology,9413,0,0.0
+1388,Germany,nu.nl,News & Media,9413,0,0.0
+1389,Germany,meethue.com,Business,9413,0,0.0
+1390,Germany,edgedl.me.gvt1.com,Content Servers,9413,0,0.0
+1391,Germany,lwsdns.com,Information Technology,9413,1,0.0001
+1392,Germany,tencent.com,Information Technology,9413,1,0.0001
+1393,Germany,cloud.netflix.com,Movies,9413,145,0.0154
+1394,Germany,ja.wikipedia.org,Education,9413,21,0.0022
+1395,Germany,hotstar.com,Movies,9413,2,0.0002
+1396,Germany,poki.com,Gaming,9413,3,0.0003
+1397,Germany,pvp.net,Gaming,9413,141,0.015
+1398,Germany,prod.cloud.netflix.com,Movies,9413,143,0.0152
+1399,Germany,android.googleapis.com,Content Servers,9413,145,0.0154
+1400,Germany,wordreference.com,Education,9413,0,0.0
+1401,Germany,b.tlu.dl.delivery.mp.microsoft.com,Business,9413,1,0.0001
+1402,Germany,curseforge.com,Gaming,9413,3,0.0003
+1403,Germany,lanacion.com.ar,News & Media,9413,1,0.0001
+1404,Germany,uci.edu,Education,9413,0,0.0
+1405,Germany,fastcompany.com,Video Streaming,9413,1,0.0001
+1406,Germany,msedge.b.tlu.dl.delivery.mp.microsoft.com,Business,9413,1,0.0001
+1407,Germany,fetlife.com,Pornography,9413,36,0.0038
+1408,Germany,www.instagram.com,Photography,9413,182,0.0193
+1409,Germany,gismeteo.ru,News & Media,9413,0,0.0
+1410,Germany,vivo.com,Technology,9413,0,0.0
+1411,Germany,typepad.com,Information Technology,9413,0,0.0
+1412,Germany,olx.pl,Auctions & Marketplaces,9413,0,0.0
+1413,Germany,watchguard.com,Information Technology,9413,1,0.0001
+1414,Germany,frontiersin.org,Education,9413,0,0.0
+1415,Germany,apkpure.com,Gaming,9413,26,0.0028
+1416,Germany,gcdn.co,Information Technology,9413,1,0.0001
+1417,Germany,analytics.yahoo.com,News & Media,9413,0,0.0
+1418,Germany,aparat.com,Video Streaming,9413,0,0.0
+1419,Germany,en.m.wikipedia.org,Education,9413,26,0.0028
+1420,Germany,caixa.gov.br,Economy & Finance,9413,1,0.0001
+1421,Germany,quillbot.com,Questionable Activities,9413,4,0.0004
+1422,Germany,kleinanzeigen.de,Auctions & Marketplaces,9413,1,0.0001
+1423,Germany,ad.nl,Video Streaming,9413,12,0.0013
+1424,Germany,bmj.com,Education,9413,1,0.0001
+1425,Germany,launchpad.classlink.com,Education,9413,1,0.0001
+1426,Germany,ade.googlesyndication.com,Advertisements,9413,155,0.0165
+1427,Germany,beelinegprs.ru,Newly Seen Domains,9413,0,0.0
+1428,Germany,fb.watch,Audio Streaming,9413,1,0.0001
+1429,Germany,tealiumiq.com,Technology,9413,0,0.0
+1430,Germany,google.com.au,Search Engines,9413,169,0.018
+1431,Germany,20minutos.es,Video Streaming,9413,1,0.0001
+1432,Germany,terra.com.br,News & Media,9413,1,0.0001
+1433,Germany,dbankcdn.com,Content Servers,9413,0,0.0
+1434,Germany,bet365.com,Gambling,9413,77,0.0082
+1435,Germany,i18n-pglstatp.com,Newly Seen Domains,9413,1,0.0001
+1436,Germany,nakheelteam.cc,Technology,9413,0,0.0
+1437,Germany,arin.net,Technology,9413,0,0.0
+1438,Germany,dafont.com,Hobbies & Interests,9413,0,0.0
+1439,Germany,myapps.classlink.com,Education,9413,1,0.0001
+1440,Germany,india.com,News & Media,9413,0,0.0
+1441,Germany,telegraaf.nl,News & Media,9413,0,0.0
+1442,Germany,www.adobe.com,Technology,9413,1,0.0001
+1443,Germany,apa.org,"Politics, Advocacy, and Government-Related",9413,0,0.0
+1444,Germany,leboncoin.fr,Auctions & Marketplaces,9413,168,0.0178
+1445,Germany,code.org,Education,9413,0,0.0
+1446,Germany,google.nl,Search Engines,9413,1,0.0001
+1447,Germany,dscx.akamaiedge.net,Content Servers,9413,0,0.0
+1448,Germany,n-able.com,Business,9413,1,0.0001
+1449,Germany,archiveofourown.org,Education,9413,29,0.0031
+1450,Germany,dmm.co.jp,Pornography,9413,36,0.0038
+1451,Germany,cspserver.net,Content Servers,9413,0,0.0
+1452,Germany,coupang.com,Ecommerce,9412,0,0.0
+1453,Germany,trello.com,Technology,9412,144,0.0153
+1454,Germany,msftauth.net,Content Servers,9412,0,0.0
+1455,Germany,www.netflix.com,Movies,9412,143,0.0152
+1456,Germany,vox.com,News & Media,9412,23,0.0024
+1457,Germany,umn.edu,Educational Institutions,9412,1,0.0001
+1458,Germany,udn.com,News & Media,9412,22,0.0023
+1459,Germany,ixl.com,Education,9412,0,0.0
+1460,Germany,cxense.com,Technology,9412,0,0.0
+1461,Germany,meet.google.com,Technology,9412,156,0.0166
+1462,Germany,tsyndicate.com,Advertisements,9412,1,0.0001
+1463,Germany,twilio.com,Internet Phone & VOIP,9412,12,0.0013
+1464,Germany,orderbox-dns.com,Content Servers,9412,4,0.0004
+1465,Germany,myhostadmin.net,Technology,9412,2,0.0002
+1466,Germany,realtor.com,Real Estate,9412,168,0.0178
+1467,Germany,flashscore.com,Gambling,9412,11,0.0012
+1468,Germany,svc.ms,Content Servers,9412,2,0.0002
+1469,Germany,readthedocs.io,Education,9412,0,0.0
+1470,Germany,zdnet.com,News & Media,9412,2,0.0002
+1471,Germany,agora.io,Internet Phone & VOIP,9412,0,0.0
+1472,Germany,usps.com,Business,9412,0,0.0
+1473,Germany,mmechocaptiveportal.com,Newly Seen Domains,9412,0,0.0
+1474,Germany,tnaflix.com,Pornography,9412,44,0.0047
+1475,Germany,tiktokv.us,Newly Seen Domains,9412,0,0.0
+1476,Germany,tinkoff.ru,Economy & Finance,9412,0,0.0
+1477,Germany,ynet.co.il,News & Media,9412,0,0.0
+1478,Germany,global.aa-rt.sharepoint.com,New Domains,9412,143,0.0152
+1479,Germany,hurriyet.com.tr,Video Streaming,9412,0,0.0
+1480,Germany,livescore.com,Sports,9412,0,0.0
+1481,Germany,www.paypal.com,Economy & Finance,9412,1,0.0001
+1482,Germany,tabelog.com,Shopping,9412,0,0.0
+1483,Germany,alipaydns.com,Ecommerce,9412,0,0.0
+1484,Germany,garmin.com,Fashion,9412,0,0.0
+1485,Germany,vg.no,News & Media,9412,0,0.0
+1486,Germany,footprint.net,Content Servers,9412,0,0.0
+1487,Germany,gr.global.aa-rt.sharepoint.com,New Domains,9412,143,0.0152
+1488,Germany,gazzetta.it,Video Streaming,9412,0,0.0
+1489,Germany,detik.com,News & Media,9412,1,0.0001
+1490,Germany,coursehero.com,Education,9412,19,0.002
+1491,Germany,sahibinden.com,Auctions & Marketplaces,9412,0,0.0
+1492,Germany,in.pinterest.com,Photography,9412,166,0.0176
+1493,Germany,youporn.com,Pornography,9412,41,0.0044
+1494,Germany,us-prod.asyncgw.teams.microsoft.com,Business,9412,144,0.0153
+1495,Germany,finn.no,Auctions & Marketplaces,9412,0,0.0
+1496,Germany,jstor.org,Education,9412,0,0.0
+1497,Germany,us-v10c.events.data.microsoft.com,Business,9412,0,0.0
+1498,Germany,sky.com,Television,9412,0,0.0
+1499,Germany,argos.co.uk,Ecommerce,9412,0,0.0
+1500,Germany,expedia.com,Travel,9412,0,0.0
+1501,Germany,blog.livedoor.jp,Personal Blogs,9412,1,0.0001
+1502,Germany,datadome.co,Technology,9412,0,0.0
+1503,Germany,espncricinfo.com,Video Streaming,9412,0,0.0
+1504,Germany,jw.org,Religion,9412,31,0.0033
+1505,Germany,wyzecam.com,Technology,9412,0,0.0
+1506,Germany,vnexpress.net,News & Media,9412,0,0.0
+1507,Germany,data-edge.smartscreen.microsoft.com,Business,9412,0,0.0
+1508,Germany,americanexpress.com,Economy & Finance,9412,0,0.0
+1509,Germany,pornpics.com,Pornography,9412,38,0.004
+1510,Germany,infoseek.co.jp,News & Media,9412,0,0.0
+1511,Germany,boyfriendtv.com,Pornography,9412,42,0.0045
+1512,Germany,rightmove.co.uk,Real Estate,9412,0,0.0
+1513,Germany,hinet.net,News & Media,9412,22,0.0023
+1514,Germany,ttdns2.com,Newly Seen Domains,9412,1,0.0001
+1515,Germany,acesso.gov.br,"Politics, Advocacy, and Government-Related",9412,2,0.0002
+1516,Germany,nhentai.net,Pornography,9412,45,0.0048
+1517,Germany,xhcdn.com,Content Servers,9412,37,0.0039
+1518,Germany,redtube.com,Pornography,9412,65,0.0069
+1519,Germany,livedoor.com,News & Media,9412,1,0.0001
+1520,Germany,dropbox-dns.com,Content Servers,9412,1,0.0001
+1521,Germany,cookpad.com,Social Networks,9412,0,0.0
+1522,Germany,vinted.fr,Auctions & Marketplaces,9412,0,0.0
+1523,Germany,rule34.xxx,Pornography,9412,43,0.0046
+1524,Germany,or.kr,Newly Seen Domains,9412,0,0.0
+1525,Germany,faphouse.com,Pornography,9412,43,0.0046
+1526,Germany,magazineluiza.com.br,Ecommerce,9412,0,0.0
+1527,Germany,dyndns.org,Technology,9412,1,0.0001
+1528,Germany,varzesh3.com,News & Media,9412,0,0.0
+1529,Germany,gsp-ssl.ls-apple.com.akadns.net,Content Servers,9412,0,0.0
+1530,Germany,hln.be,News & Media,9412,1,0.0001
+1531,Germany,wpengine.com,Information Technology,9412,11,0.0012
+1532,Germany,www.baidu.com,Search Engines,9412,0,0.0
+1533,Germany,www.dropbox.com,File Sharing,9412,349,0.0371
+1534,Germany,classdojo.com,Education,9412,145,0.0154
+1535,Germany,remove.bg,Technology,9412,0,0.0
+1536,Germany,xhamster.desi,Pornography,9412,47,0.005
+1537,Germany,furaffinity.net,Forums,9412,38,0.004
+1538,Germany,verizon.com,Information Technology,9412,0,0.0
+1539,Germany,hitomi.la,Pornography,9412,44,0.0047
+1540,Germany,lichess.org,Gaming,9412,4,0.0004
+1541,Germany,datto.com,Business,9412,0,0.0
+1542,Germany,rule34video.com,Pornography,9412,43,0.0046
+1543,Germany,kontur.ru,Technology,9412,1,0.0001
+1544,Germany,mercadolibre.com.mx,Auctions & Marketplaces,9412,1,0.0001
+1545,Germany,elcorteingles.es,Ecommerce,9412,0,0.0
+1546,Germany,jtvnw.net,Content Servers,9412,3,0.0003
+1547,Germany,login.yahoo.com,Advertisements,9412,0,0.0
+1548,Germany,e10499.dsce9.akamaiedge.net,Content Servers,9412,0,0.0
+1549,Germany,indiamart.com,Auctions & Marketplaces,9412,0,0.0
+1550,Germany,serasa.com.br,Business,9412,0,0.0
+1551,Germany,missav.com,Pornography,9412,42,0.0045
+1552,Germany,symantec.com,Information Security,9412,0,0.0
+1553,Germany,marktplaats.nl,Auctions & Marketplaces,9412,0,0.0
+1554,Germany,irs.gov,Economy & Finance,9412,2,0.0002
+1555,Germany,tribunnews.com,News & Media,9412,0,0.0
+1556,Germany,amazon.com.tr,Ecommerce,9412,1,0.0001
+1557,Germany,betano.com,Content Servers,9412,36,0.0038
+1558,Germany,www.canva.com,Arts,9412,135,0.0143
+1559,Germany,timesofindia.com,News & Media,9412,0,0.0
+1560,Germany,fanfiction.net,Education,9412,30,0.0032
+1561,Germany,blooket.com,Education,9412,0,0.0
+1562,Germany,adobedc.net,Content Servers,9412,0,0.0
+1563,Germany,nintendo.com,Gaming,9412,3,0.0003
+1564,Germany,meetup.com,Social Networks,9412,13,0.0014
+1565,Germany,www.google.co.uk,Search Engines,9412,12,0.0013
+1566,Germany,txxx.com,Pornography,9412,44,0.0047
+1567,Germany,xinhuanet.com,Video Streaming,9412,1,0.0001
+1568,Germany,search.yahoo.com,Search Engines,9412,25,0.0027
+1569,Germany,ebay.it,Auctions & Marketplaces,9412,0,0.0
+1570,Germany,sciencemag.org,Science,9412,0,0.0
+1571,Germany,avsxappcaptiveportal.com,Newly Seen Domains,9412,0,0.0
+1572,Germany,nleditor.osi.office.net,Content Servers,9412,0,0.0
+1573,Germany,oauthaccountmanager.googleapis.com,Content Servers,9412,144,0.0153
+1574,Germany,ubi.com,Gaming,9412,3,0.0003
+1575,Germany,squarespacedns.com,Newly Seen Domains,9412,0,0.0
+1576,Germany,ria.com,Auctions & Marketplaces,9412,0,0.0
+1577,Germany,kt-prod.ess.apple.com,Information Technology,9412,2,0.0002
+1578,Germany,ixbt.com,News & Media,9412,0,0.0
+1579,Germany,hotpepper.jp,Food & Drink,9412,0,0.0
+1580,Germany,play-fe.googleapis.com,Content Servers,9412,144,0.0153
+1581,Germany,www.reddit.com,Forums,9412,167,0.0177
+1582,Germany,studocu.com,Education,9412,1,0.0001
+1583,Germany,cricbuzz.com,News & Media,9412,0,0.0
+1584,Germany,mundodeportivo.com,News & Media,9412,0,0.0
+1585,Germany,www.pinterest.com,Photography,9412,167,0.0177
+1586,Germany,dashlane.com,Technology,9412,0,0.0
+1587,Germany,wisc.edu,Educational Institutions,9412,0,0.0
+1588,Germany,msg.teams.microsoft.com,Business,9412,145,0.0154
+1589,Germany,cdiscount.com,Ecommerce,9412,0,0.0
+1590,Germany,zhihu.com,Education,9412,1,0.0001
+1591,Germany,myntra.com,Ecommerce,9412,0,0.0
+1592,Germany,hepsiburada.com,Ecommerce,9412,22,0.0023
+1593,Germany,my.com,Gaming,9412,0,0.0
+1594,Germany,phncdn.com,Pornography,9412,36,0.0038
+1595,Germany,algolia.net,Information Technology,9412,1,0.0001
+1596,Germany,credit-agricole.fr,Economy & Finance,9412,0,0.0
+1597,Germany,milliyet.com.tr,News & Media,9412,0,0.0
+1598,Germany,spamhaus.org,"Politics, Advocacy, and Government-Related",9412,1,0.0001
+1599,Germany,donga.com,News & Media,9412,0,0.0
+1600,Germany,sex.com,Pornography,9412,206,0.0219
+1601,Germany,ng.msg.teams.microsoft.com,Business,9412,143,0.0152
+1602,Germany,auone.jp,News & Media,9412,0,0.0
+1603,Germany,ddns.net,Information Technology,9412,1,0.0001
+1604,Germany,chat.openai.com,Technology,9412,170,0.0181
+1605,Germany,go.id,Newly Seen Domains,9412,1,0.0001
+1606,Germany,tplinkcloud.com,Photography,9412,0,0.0
+1607,Germany,namu.wiki,Education,9412,0,0.0
+1608,Germany,latamairlines.com,Travel,9412,0,0.0
+1609,Germany,www.samsung.com,Home & Garden,9412,18,0.0019
+1610,Germany,ocsp.entrust.net,Information Security,9412,1,0.0001
+1611,Germany,makemytrip.com,Travel,9412,163,0.0173
+1612,Germany,dgw.c10r.facebook.com,Social Networks,9412,155,0.0165
+1613,Germany,tabor.ru,Dating & Relationships,9412,0,0.0
+1614,Germany,idealista.com,Real Estate,9412,0,0.0
+1615,Germany,dondominio.com,Information Technology,9412,1,0.0001
+1616,Germany,byjus.com,Education,9412,1,0.0001
+1617,Germany,www.temu.com,Newly Seen Domains,9412,0,0.0
+1618,Germany,www.tiktok.com,Video Streaming,9412,165,0.0175
+1619,Germany,s0.2mdn.net,Content Servers,9412,0,0.0
+1620,Germany,digikala.com,Ecommerce,9412,1,0.0001
+1621,Germany,s.amazon-adsystem.com,Advertisements,9412,0,0.0
+1622,Germany,strpst.com,Newly Seen Domains,9412,7,0.0007
+1623,Germany,ntppool.org,Technology,9412,0,0.0
+1624,Germany,tvn24.pl,News & Media,9412,0,0.0
+1625,Germany,kundelik.kz,Education,9412,0,0.0
+1626,Germany,g1.globo.com,News & Media,9412,1,0.0001
+1627,Germany,dlsite.com,Pornography,9412,44,0.0047
+1628,Germany,www.nytimes.com,News & Media,9411,22,0.0023
+1629,Germany,cdp.microsoft.com,Business,9411,1,0.0001
+1630,Germany,xbox.com,Gaming,9411,4,0.0004
+1631,Germany,coolmathgames.com,Gaming,9411,4,0.0004
+1632,Germany,pantip.com,Forums,9411,1,0.0001
+1633,Germany,dagbladet.no,News & Media,9411,2,0.0002
+1634,Germany,mynet.com,News & Media,9410,2,0.0002
+1635,Germany,acronis.com,Education,9406,2,0.0002
+1636,Germany,mbga.jp,Gaming,9406,4,0.0004
+1637,Germany,pewresearch.org,News & Media,9406,3,0.0003
+1638,Germany,kemono.su,Newly Seen Domains,9406,46,0.0049
+1639,Germany,hltv.org,Gaming,9406,4,0.0004
+1640,Germany,www.imdb.com,Movies,9406,4,0.0004
+1641,Germany,company-target.com,Content Servers,9405,1,0.0001
+1642,Germany,allianz.de,Economy & Finance,9404,0,0.0
+1643,Germany,imagefap.com,Pornography,9404,44,0.0047
+1644,Germany,noodlemagazine.com,Search Engines,9404,38,0.004
+1645,Germany,api.cdp.microsoft.com,Business,9404,1,0.0001
+1646,Germany,subito.it,Auctions & Marketplaces,9404,0,0.0
+1647,Germany,inven.co.kr,Gaming,9404,4,0.0004
+1648,Germany,coursera.org,Education,9404,1,0.0001
+1649,Germany,oreilly.com,Education,9404,1,0.0001
+1650,Germany,fc2.com,Information Technology,9404,3,0.0003
+1651,Germany,funpay.com,Economy & Finance,9404,2,0.0002
+1652,Germany,cloud.com,Technology,9403,1,0.0001
+1653,Germany,va.gov,Government,9403,1,0.0001
+1654,Germany,roskazna.ru,"Politics, Advocacy, and Government-Related",9403,2,0.0002
+1655,Germany,i.instagram.com,Social Networks,9403,181,0.0192
+1656,Germany,dcinside.com,News & Media,9402,143,0.0152
+1657,Germany,bilibili.tv,Gaming,9402,1,0.0001
+1658,Germany,futbin.com,Gaming,9402,5,0.0005
+1659,Germany,samsungknox.com,Technology,9402,1,0.0001
+1660,Germany,tsn.ua,News & Media,9402,11,0.0012
+1661,Germany,donmai.us,Pornography,9402,42,0.0045
+1662,Germany,msedge.api.cdp.microsoft.com,Business,9402,4,0.0004
+1663,Germany,gelbooru.com,Forums,9402,65,0.0069
+1664,Germany,unifi-ai.com,Content Servers,9401,1,0.0001
+1665,Germany,www.homedepot.com,Ecommerce,9401,1,0.0001
+1666,Germany,fmkorea.com,Sports,9401,0,0.0
+1667,Germany,ilmessaggero.it,Video Streaming,9401,0,0.0
+1668,Germany,dantri.com.vn,News & Media,9401,0,0.0
+1669,Germany,amocrm.ru,Business,9401,2,0.0002
+1670,Germany,www.walmart.com,Ecommerce,9401,0,0.0
+1671,Germany,ilmeteo.it,News & Media,9401,0,0.0
+1672,Germany,youjizz.com,Pornography,9401,42,0.0045
+1673,Germany,oecd.org,"Politics, Advocacy, and Government-Related",9401,3,0.0003
+1674,Germany,sedo.com,Information Technology,9401,0,0.0
+1675,Germany,xnxx-cdn.com,Pornography,9401,36,0.0038
+1676,Germany,init-p01md.apple.com,Information Technology,9401,4,0.0004
+1677,Germany,actu.fr,News & Media,9401,1,0.0001
+1678,Germany,xgroovy.com,Pornography,9401,43,0.0046
+1679,Germany,starfall.com,Education,9401,0,0.0
+1680,Germany,emag.ro,Ecommerce,9401,0,0.0
+1681,Germany,litnet.com,Education,9401,0,0.0
+1682,Germany,tagesschau.de,Economy & Finance,9401,25,0.0027
+1683,Germany,www.espn.com,Video Streaming,9401,1,0.0001
+1684,Germany,haberler.com,News & Media,9401,0,0.0
+1685,Germany,aljazeera.com,News & Media,9401,23,0.0024
+1686,Germany,jusbrasil.com.br,"Politics, Advocacy, and Government-Related",9401,0,0.0
+1687,Germany,notion.so,Business,9401,144,0.0153
+1688,Germany,ds2play.com,Newly Seen Domains,9401,37,0.0039
+1689,Germany,yts.mx,Newly Seen Domains,9401,23,0.0024
+1690,Germany,sinoptik.ua,News & Media,9401,9,0.001
+1691,Germany,dw.com,News & Media,9401,40,0.0043
+1692,Germany,aternos.org,Gaming,9401,3,0.0003
+1693,Germany,www.google.de,Search Engines,9401,144,0.0153
+1694,Germany,redfin.com,Real Estate,9401,1,0.0001
+1695,Germany,thisvid.com,Pornography,9401,42,0.0045
+1696,Germany,smartthings.com,Technology,9401,0,0.0
+1697,Germany,1024tera.com,Newly Seen Domains,9401,0,0.0
+1698,Germany,ficbook.net,Education,9401,9,0.001
+1699,Germany,sun.com,Business,9401,0,0.0
+1700,Germany,jut.su,Cartoons & Anime,9401,5,0.0005
+1701,Germany,zozo.jp,Ecommerce,9401,0,0.0
+1702,Germany,nesine.com,Gambling,9401,37,0.0039
+1703,Germany,russianfood.com,Food & Drink,9401,0,0.0
+1704,Germany,imhentai.xxx,Pornography,9401,43,0.0046
+1705,Germany,www.cnn.com,Video Streaming,9401,0,0.0
+1706,Germany,www.etsy.com,Ecommerce,9401,25,0.0027
+1707,Germany,aznude.com,Pornography,9401,45,0.0048
+1708,Germany,sozcu.com.tr,News & Media,9401,0,0.0
+1709,Germany,24h.com.vn,News & Media,9401,0,0.0
+1710,Germany,mat6tube.com,Pornography,9401,36,0.0038
+1711,Germany,xhamster2.com,Pornography,9401,41,0.0044
+1712,Germany,betweendigital.com,Advertisements,9401,0,0.0
+1713,Germany,aniwave.to,Newly Seen Domains,9401,7,0.0007
+1714,Germany,e621.net,"News, Portal & Search",9401,45,0.0048
+1715,Germany,doods.pro,Newly Seen Domains,9401,6,0.0006
+1716,Germany,nairaland.com,Forums,9401,1,0.0001
+1717,Germany,e-hentai.org,Pornography,9401,63,0.0067
+1718,Germany,vedcdnlb.com,Newly Seen Domains,9401,0,0.0
+1719,Germany,fallback.c10r.facebook.com,Social Networks,9401,155,0.0165
+1720,Germany,windows.microsoft.com,Information Technology,9401,1,0.0001
+1721,Germany,neopets.com,Gaming,9401,3,0.0003
+1722,Germany,iporntv.net,Pornography,9401,43,0.0046
+1723,Germany,asuratoon.com,Newly Seen Domains,9401,0,0.0
+1724,Germany,kompoz2.com,Pornography,9401,42,0.0045
+1725,Germany,3bmeteo.com,News & Media,9401,0,0.0
+1726,Germany,funnyjunk.com,Humor,9401,18,0.0019
+1727,Germany,safeframe.googlesyndication.com,Advertisements,9401,154,0.0164
+1728,Germany,aniwatch.to,Parked & For Sale Domains,9401,3,0.0003
+1729,Germany,vjav.com,Pornography,9401,43,0.0046
+1730,Germany,cedexis-test.com,Content Servers,9401,0,0.0
+1731,Germany,jalan.net,Travel,9401,0,0.0
+1732,Germany,craigslist.org,Auctions & Marketplaces,9401,0,0.0
+1733,Germany,4kporn.xxx,Pornography,9401,43,0.0046
+1734,Germany,ixxx.com,Pornography,9401,43,0.0046
+1735,Germany,jable.tv,Pornography,9401,38,0.004
+1736,Germany,pornhat.com,Pornography,9401,36,0.0038
+1737,Germany,ekstrabladet.dk,News & Media,9401,1,0.0001
+1738,Germany,co.com,Information Technology,9401,0,0.0
+1739,Germany,c.amazon-adsystem.com,Advertisements,9401,0,0.0
+1740,Germany,vidoomy.com,Technology,9401,0,0.0
+1741,Germany,app.hubspot.com,Business,9401,143,0.0152
+1742,Germany,hqporner.com,Pornography,9401,44,0.0047
+1743,Germany,cnnindonesia.com,News & Media,9401,1,0.0001
+1744,Germany,sxyprn.com,Pornography,9401,43,0.0046
+1745,Germany,nikkansports.com,News & Media,9401,0,0.0
+1746,Germany,ok.xxx,Pornography,9401,37,0.0039
+1747,Germany,netshoes.com.br,Ecommerce,9401,0,0.0
+1748,Germany,index.hr,News & Media,9401,1,0.0001
+1749,Germany,sexvid.xxx,Pornography,9401,39,0.0041
+1750,Germany,medicalnewstoday.com,Health & Fitness,9401,0,0.0
+1751,Germany,love4porn.com,Pornography,9401,45,0.0048
+1752,Germany,xvideos2.com,Pornography,9401,47,0.005
+1753,Germany,aadrm.com,Content Servers,9401,0,0.0
+1754,Germany,hdtube.porn,Pornography,9401,44,0.0047
+1755,Germany,xnxx.tv,Pornography,9401,36,0.0038
+1756,Germany,cardgames.io,Gaming,9401,3,0.0003
+1757,Germany,xnxx2.com,Pornography,9401,37,0.0039
+1758,Germany,exhentai.org,Pornography,9401,60,0.0064
+1759,Germany,xnxx.health,Pornography,9401,42,0.0045
+1760,Germany,jd.com,Ecommerce,9401,1,0.0001
+1761,Germany,tenki.jp,News & Media,9401,0,0.0
+1762,Germany,secure.livechatinc.com,Content Servers,9401,1,0.0001
+1763,Germany,myaccount.google.com,Information Security,9401,143,0.0152
+1764,Germany,www.ixl.com,Education,9401,1,0.0001
+1765,Germany,mgslb.com,Information Technology,9401,0,0.0
+1766,Germany,oricon.co.jp,News & Media,9401,22,0.0023
+1767,Germany,geocities.com,Information Technology,9401,0,0.0
+1768,Germany,motherless.com,Pornography,9401,45,0.0048
+1769,Germany,www.macys.com,Ecommerce,9401,0,0.0
+1770,Germany,syosetu.com,Education,9401,23,0.0024
+1771,Germany,porno365.pics,Parked & For Sale Domains,9401,42,0.0045
+1772,Germany,c7vkn.com,Newly Seen Domains,9401,36,0.0038
+1773,Germany,star.fallback.c10r.facebook.com,Social Networks,9401,156,0.0166
+1774,Germany,teleport.sh,Newly Seen Domains,9401,0,0.0
+1775,Germany,iltalehti.fi,News & Media,9401,10,0.0011
+1776,Germany,gamewith.jp,Gaming,9401,4,0.0004
+1777,Germany,wordwall.net,Education,9401,0,0.0
+1778,Germany,www.amazon.co.uk,Ecommerce,9401,0,0.0
+1779,Germany,ocws.officeapps.live.com,Technology,9401,0,0.0
+1780,Germany,www.ebay.com,Auctions & Marketplaces,9401,0,0.0
+1781,Germany,www.bbc.com,News & Media,9401,35,0.0037
+1782,Germany,gst.gov.in,"Politics, Advocacy, and Government-Related",9401,0,0.0
+1783,Germany,cronista.com,News & Media,9401,0,0.0
+1784,Germany,play.blooket.com,Education,9401,144,0.0153
+1785,Germany,xvideos-cdn.com,Pornography,9401,39,0.0041
+1786,Germany,fanpage.it,Video Streaming,9401,0,0.0
+1787,Germany,cnbcindonesia.com,Economy & Finance,9401,0,0.0
+1788,Germany,mqtt.c10r.facebook.com,Social Networks,9401,154,0.0164
+1789,Germany,elsevier.com,Health & Fitness,9401,0,0.0
+1790,Germany,www.zillow.com,Real Estate,9401,163,0.0173
+1791,Germany,leroymerlin.fr,Business,9401,1,0.0001
+1792,Germany,akamaitechnologies.com,Content Servers,9401,0,0.0
+1793,Germany,turkiye.gov.tr,"Politics, Advocacy, and Government-Related",9401,0,0.0
+1794,Germany,adswizz.com,Business,9401,0,0.0
+1795,Germany,img-s-msn-com.akamaized.net,Content Servers,9401,1,0.0001
+1796,Germany,granbluefantasy.jp,Gaming,9401,4,0.0004
+1797,Germany,justdial.com,Search Engines,9401,164,0.0174
+1798,Germany,www.amazon.de,Ecommerce,9401,0,0.0
+1799,Germany,suumo.jp,Real Estate,9401,0,0.0
+1800,Germany,www.google.com.mx,Personal Blogs,9401,143,0.0152
+1801,Germany,accounts.spotify.com,Audio Streaming,9401,147,0.0156
+1802,Germany,bookmyshow.com,Entertainment,9401,0,0.0
+1803,Germany,haber7.com,News & Media,9401,0,0.0
+1804,Germany,www.roblox.com,Chat,9401,153,0.0163
+1805,Germany,mediaexpert.pl,Ecommerce,9401,0,0.0
+1806,Germany,vivint.ai,Newly Seen Domains,9401,0,0.0
+1807,Germany,protothema.gr,News & Media,9401,10,0.0011
+1808,Germany,khabaronline.ir,News & Media,9401,0,0.0
+1809,Germany,ptt.cc,Forums,9401,22,0.0023
+1810,Germany,jutarnji.hr,News & Media,9401,0,0.0
+1811,Germany,scientificamerican.com,Video Streaming,9401,1,0.0001
+1812,Germany,programme-tv.net,Television,9401,0,0.0
+1813,Germany,sinsay.com,Clothing,9401,0,0.0
+1814,Germany,y2mate.com,Information Technology,9401,33,0.0035
+1815,Germany,betnacional.com,Gambling,9401,36,0.0038
+1816,Germany,carsensor.net,Vehicles,9401,0,0.0
+1817,Germany,support.microsoft.com,Information Technology,9401,0,0.0
+1818,Germany,mathplayground.com,Education,9401,0,0.0
+1819,Germany,playrix.com,Content Servers,9401,3,0.0003
+1820,Germany,www.foxnews.com,Video Streaming,9401,0,0.0
+1821,Germany,www.google.ca,Search Engines,9401,143,0.0152
+1822,Germany,www.target.com,Ecommerce,9401,1,0.0001
+1823,Germany,www.theguardian.com,News & Media,9401,24,0.0026
+1824,Germany,blic.rs,News & Media,9401,1,0.0001
+1825,Germany,mangabuddy.com,Comic Books,9401,32,0.0034
+1826,Germany,buydomains.com,Information Technology,9401,0,0.0
+1827,Germany,ajio.com,Fashion,9401,0,0.0
+1828,Germany,cbsivideo.com,Content Servers,9401,1,0.0001
+1829,Germany,kooora.com,News & Media,9401,0,0.0
+1830,Germany,utexas.edu,Educational Institutions,9401,0,0.0
+1831,Germany,brainly.com.br,Education,9401,1,0.0001
+1832,Germany,www.bestbuy.com,Ecommerce,9401,0,0.0
+1833,Germany,snaptik.app,Technology,9401,4,0.0004
+1834,Germany,lausd.net,Education,9401,0,0.0
+1835,Germany,toppr.com,Education,9401,0,0.0
+1836,Germany,robinhood.com,Economy & Finance,9401,0,0.0
+1837,Germany,notifications-pa.googleapis.com,Content Servers,9401,143,0.0152
+1838,Germany,librus.pl,Education,9401,0,0.0
+1839,Germany,tokyomotion.net,Pornography,9401,41,0.0044
+1840,Germany,www.ups.com,Business,9401,0,0.0
+1841,Germany,fantia.jp,Technology,9401,1,0.0001
+1842,Germany,weborama.fr,Content Servers,9401,3,0.0003
+1843,Germany,ruliweb.com,Gaming,9401,3,0.0003
+1844,Germany,69shuba.com,Education,9401,1,0.0001
+1845,Germany,www.coolmathgames.com,Education,9401,3,0.0003
+1846,Germany,myreadingmanga.info,Pornography,9401,44,0.0047
+1847,Germany,rezka.ag,Questionable Activities,9401,11,0.0012
+1848,Germany,ppomppu.co.kr,Forums,9401,1,0.0001
+1849,Germany,eenadu.net,News & Media,9401,0,0.0
+1850,Germany,ssstik.io,Personal Blogs,9401,0,0.0
+1851,Germany,pubmnet.com,Newly Seen Domains,9401,3,0.0003
+1852,Germany,ucweb.com,Information Technology,9401,0,0.0
+1853,Germany,luxuretv.com,Pornography,9401,42,0.0045
+1854,Germany,sendgrid.net,Business,9401,163,0.0173
+1855,Germany,namasha.com,Video Streaming,9401,1,0.0001
+1856,Germany,science.org,Magazines,9401,0,0.0
+1857,Germany,bt.dk,News & Media,9401,0,0.0
+1858,Germany,mangago.me,Comic Books,9401,36,0.0038
+1859,Germany,python.org,Technology,9401,0,0.0
+1860,Germany,www.quora.com,Forums,9401,175,0.0186
+1861,Germany,hollywoodbets.net,Sports,9401,38,0.004
+1862,Germany,dynatrace.com,Technology,9401,0,0.0
+1863,Germany,game8.jp,Gaming,9401,3,0.0003
+1864,Germany,rakuten-sec.co.jp,Economy & Finance,9401,0,0.0
+1865,Germany,fuq.com,Pornography,9401,37,0.0039
+1866,Germany,peachavocado.com,Newly Seen Domains,9401,31,0.0033
+1867,Germany,www.google.com.tr,Search Engines,9401,143,0.0152
+1868,Germany,www.booking.com,Travel,9401,0,0.0
+1869,Germany,zearn.org,Educational Institutions,9401,1,0.0001
+1870,Germany,brainly.co.id,Education,9401,0,0.0
+1871,Germany,9animetv.to,Newly Seen Domains,9401,3,0.0003
+1872,Germany,caliente.mx,Gambling,9401,39,0.0041
+1873,Germany,evernote.com,Technology,9401,143,0.0152
+1874,Germany,www.bbc.co.uk,Video Streaming,9401,34,0.0036
+1875,Germany,www.disneyplus.com,Movies,9401,143,0.0152
+1876,Germany,fapello.com,Personal Blogs,9401,43,0.0046
+1877,Germany,marmiton.org,Food & Drink,9401,0,0.0
+1878,Germany,mangakakalot.com,Comic Books,9400,30,0.0032
+1879,Germany,sportybet.com,Gambling,9400,38,0.004
+1880,Germany,pussyspace.com,Pornography,9400,42,0.0045
+1881,Germany,xhamster1.desi,Pornography,9400,44,0.0047
+1882,Germany,www.whatsapp.com,Instant Messengers,9400,179,0.019
+1883,Germany,manganato.com,Comic Books,9400,30,0.0032
+1884,Germany,bato.to,Comic Books,9400,45,0.0048
+1885,Germany,znanija.com,Education,9400,8,0.0009
+1886,Germany,joyclub.de,Pornography,9400,36,0.0038
+1887,Germany,zorox.to,Newly Seen Domains,9400,30,0.0032
+1888,Germany,www.twitch.tv,Gaming,9400,181,0.0193
+1889,Germany,porn300.com,Pornography,9400,36,0.0038
+1890,Germany,livehindustan.com,News & Media,9400,0,0.0
+1891,Germany,cmoa.jp,Cartoons & Anime,9400,0,0.0
+1892,Germany,cityheaven.net,Adult Themes,9400,37,0.0039
+1893,Germany,kurir.rs,News & Media,9400,0,0.0
+1894,Germany,kidsa-z.com,Login Screens,9400,1,0.0001
+1895,Germany,www.indeed.com,Job Search & Careers,9399,1,0.0001
+1896,Germany,netkeiba.com,Sports,9399,36,0.0038
+1897,Germany,www.google.com.hk,Search Engines,9399,306,0.0326
+1898,Germany,www.pornhub.com,Pornography,9394,59,0.0063
+1899,Germany,serviporno.com,Pornography,9394,44,0.0047
+1900,Germany,snapinsta.app,Information Technology,9394,0,0.0
+1901,Germany,mangatoto.com,Comic Books,9394,31,0.0033
+1902,Germany,nettruyenus.com,Newly Seen Domains,9394,0,0.0
+1903,Germany,fararu.com,News & Media,9394,1,0.0001
+1904,Germany,aajtak.in,News & Media,9394,0,0.0
+1905,Germany,saveinsta.app,Information Technology,9394,0,0.0
+1906,Germany,servicewebly.com,Pornography,9394,0,0.0
+1907,Germany,upwitheaway.info,Parked & For Sale Domains,9394,27,0.0029
+1908,Germany,www.dailymotion.com,Video Streaming,9394,174,0.0185
+1909,Germany,betway.co.za,Sports,9394,36,0.0038
+1910,Germany,proxy.safebrowsing.apple,Content Servers,9394,0,0.0
+1911,Germany,mechacomic.jp,Newly Seen Domains,9394,30,0.0032
+1912,Germany,www.nike.com,Ecommerce,9394,0,0.0
+1913,Germany,theqoo.net,Forums,9394,23,0.0024
+1914,Germany,spankbang.party,Pornography,9394,41,0.0044
+1915,Germany,gdz.ru,Education,9394,0,0.0
+1916,Germany,3.bp.blogspot.com,Personal Blogs,9394,174,0.0185
+1917,Germany,tukif.com,Pornography,9394,43,0.0046
+1918,Germany,xvideos3.com,Pornography,9394,41,0.0044
+1919,Germany,fabswingers.com,Adult Themes,9394,36,0.0038
+1920,Germany,colamanga.com,Newly Seen Domains,9394,30,0.0032
+1921,Germany,arca.live,Forums,9394,0,0.0
+1922,Germany,xvideos.es,Pornography,9394,45,0.0048
+1923,Germany,www.dailymail.co.uk,News & Media,9394,22,0.0023
+1924,Germany,photos.google.com,Photography,9394,144,0.0153
+1925,Germany,fwmrm.net,Business,9394,1,0.0001
+1926,Germany,www.speedtest.net,Information Technology,9394,153,0.0163
+1927,Germany,visortmo.com,Newly Seen Domains,9394,33,0.0035
+1928,Germany,banvenez.com,Economy & Finance,9394,1,0.0001
+1929,Germany,sex-studentki.pics,Newly Seen Domains,9394,36,0.0038
+1930,Germany,music-fa.com,Music,9394,0,0.0
+1931,Germany,ifilo.net,Video Streaming,9394,4,0.0004
+1932,Germany,supjav.com,Pornography,9394,37,0.0039
+1933,Germany,xhtab3.com,Pornography,9394,36,0.0038
+1934,Germany,ijavhd.com,Personal Blogs,9394,39,0.0042
+1935,Germany,azet.sk,News & Media,9394,0,0.0
+1936,Germany,xxx18.uno,Pornography,9394,43,0.0046
+1937,Germany,ninisite.com,Parenting,9394,2,0.0002
+1938,Germany,doujindesu.tv,Newly Seen Domains,9394,34,0.0036
+1939,Germany,hot-sex-tube.com,Pornography,9394,43,0.0046
+1940,Germany,www.xnxx.com,Pornography,9394,66,0.007
+1941,Germany,scratch.mit.edu,Educational Institutions,9394,24,0.0026
+1942,Germany,brainly.in,Education,9394,0,0.0
+1943,Germany,emaktab.uz,Newly Seen Domains,9394,0,0.0
+1944,Germany,www.xvideos.com,Pornography,9394,70,0.0075
+1945,Germany,www.google.co.in,Search Engines,9394,12,0.0013
+1946,Germany,tktube.com,Pornography,9394,43,0.0046
+1947,Germany,mangalib.me,Cartoons & Anime,9394,1,0.0001
+1948,Germany,sexvid.pro,Pornography,9394,43,0.0046
+1949,Germany,rajwap.cc,Newly Seen Domains,9394,37,0.0039
+1950,Germany,nitrotype.com,Gaming,9394,0,0.0
+1951,Germany,imgsrc.ru,Photography,9394,9,0.001
+1952,Germany,br.pinterest.com,Photography,9394,168,0.0179
+1953,Germany,gspe35-ssl.ls.apple.com,Technology,9394,134,0.0143
+1954,Germany,shahvani.com,Adult Themes,9394,36,0.0038
+1955,Germany,pixbet.com,Spam,9394,33,0.0035
+1956,Germany,beboo.ru,Dating & Relationships,9394,0,0.0
+1957,Germany,secure.bankofamerica.com,Economy & Finance,9394,0,0.0
+1958,Germany,freeip.me,P2P,9394,27,0.0029
+1959,Germany,pornocarioca.com,Pornography,9394,36,0.0038
+1960,Germany,spaggiari.eu,Education,9394,0,0.0
+1961,Germany,revcontent.com,Business,9394,0,0.0
+1962,Germany,www.goodreads.com,Education,9394,29,0.0031
+1963,Germany,www.google.pl,Search Engines,9394,143,0.0152
+1964,Germany,www.deepl.com,Translator,9394,128,0.0136
+1965,Germany,fatalmodel.com,Adult Themes,9394,37,0.0039
+1966,Germany,epfindia.gov.in,"Politics, Advocacy, and Government-Related",9394,1,0.0001
+1967,Germany,lermanga.org,Newly Seen Domains,9394,30,0.0032
+1968,Germany,eroterest.net,Pornography,9394,36,0.0038
+1969,Germany,www.lowes.com,Ecommerce,9394,0,0.0
+1970,Germany,mask.apple-dns.net,Content Servers,9394,30,0.0032
+1971,Germany,prokerala.com,News & Media,9394,1,0.0001
+1972,Germany,1mg.com,Health & Fitness,9394,0,0.0
+1973,Germany,xosodaiphat.com,Content Servers,9394,36,0.0038
+1974,Germany,www.wattpad.com,Education,9394,35,0.0037
+1975,Germany,studio.youtube.com,Video Streaming,9394,168,0.0179
+1976,Germany,shinigami.sh,Newly Seen Domains,9394,31,0.0033
+1977,Germany,www.google.fr,Search Engines,9394,143,0.0152
+1978,Germany,goojara.to,Movies,9394,12,0.0013
+1979,Germany,listcrawler.eu,Adult Themes,9394,36,0.0038
+1980,Germany,www.chess.com,Hobbies & Interests,9394,6,0.0006
+1981,Germany,www.kohls.com,Ecommerce,9394,1,0.0001
+1982,Germany,business.facebook.com,Social Networks,9394,155,0.0165
+1983,Germany,www.accuweather.com,News & Media,9394,0,0.0
+1984,Germany,patria.org.ve,Content Servers,9394,0,0.0
+1985,Germany,bartarinha.ir,News & Media,9394,0,0.0
+1986,Germany,www.google.com.br,Search Engines,9394,143,0.0152
+1987,Germany,redislabs.com,Business,9394,0,0.0
+1988,Germany,www.costco.com,Ecommerce,9394,0,0.0
+1989,Germany,spiegel.de,News & Media,9394,12,0.0013
+1990,Germany,faq.whatsapp.com,Instant Messengers,9394,178,0.0189
+1991,Germany,coinpayu.com,Business,9394,0,0.0
+1992,Germany,toyhou.se,Hobbies & Interests,9394,1,0.0001
+1993,Germany,www.wayfair.com,Business,9394,0,0.0
+1994,Germany,www.google.com.tw,Search Engines,9394,143,0.0152
+1995,Germany,onlinesbi.sbi,Economy & Finance,9393,1,0.0001
+1996,Germany,www.researchgate.net,Education,9392,2,0.0002
+1997,Germany,webempresa.eu,Information Technology,9392,0,0.0
+1998,Germany,www.zearn.org,Educational Institutions,9392,0,0.0
+1999,Germany,www.bilibili.com,Video Streaming,9392,0,0.0
+2000,Germany,www.amazon.ca,Ecommerce,9392,2,0.0002

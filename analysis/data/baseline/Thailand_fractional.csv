@@ -1,0 +1,2001 @@
+time,country,target,category,n_votes,n_blocked,rewards
+1,Thailand,google.com,Search Engines,298,0,0.0
+2,Thailand,amazonaws.com,Technology,298,0,0.0
+3,Thailand,facebook.com,Social Networks,298,0,0.0
+4,Thailand,microsoft.com,Business,298,0,0.0
+5,Thailand,apple.com,Information Technology,298,0,0.0
+6,Thailand,googleapis.com,Content Servers,298,0,0.0
+7,Thailand,youtube.com,Video Streaming,298,9,0.0302
+8,Thailand,akamaiedge.net,Content Servers,298,0,0.0
+9,Thailand,www.google.com,Search Engines,298,9,0.0302
+10,Thailand,akamai.net,Content Servers,298,0,0.0
+11,Thailand,a-msedge.net,Content Servers,298,0,0.0
+12,Thailand,twitter.com,Social Networks,298,9,0.0302
+13,Thailand,azure.com,Technology,298,0,0.0
+14,Thailand,googlevideo.com,Search Engines,298,0,0.0
+15,Thailand,data.microsoft.com,Technology,298,0,0.0
+16,Thailand,instagram.com,Social Networks,298,9,0.0302
+17,Thailand,gstatic.com,Content Servers,298,0,0.0
+18,Thailand,cloudflare.com,Technology,298,0,0.0
+19,Thailand,events.data.microsoft.com,Business,298,0,0.0
+20,Thailand,doubleclick.net,Advertisements,298,0,0.0
+21,Thailand,linkedin.com,Professional Networking,298,9,0.0302
+22,Thailand,live.com,Technology,298,0,0.0
+23,Thailand,tiktokcdn.com,Social Networks,298,0,0.0
+24,Thailand,gtld-servers.net,Content Servers,298,0,0.0
+25,Thailand,office.com,Technology,298,0,0.0
+26,Thailand,googletagmanager.com,Content Servers,298,0,0.0
+27,Thailand,akadns.net,Content Servers,298,0,0.0
+28,Thailand,netflix.com,Movies,298,39,0.1309
+29,Thailand,windowsupdate.com,Business,298,0,0.0
+30,Thailand,apple-dns.net,Content Servers,298,0,0.0
+31,Thailand,amazon.com,Ecommerce,298,0,0.0
+32,Thailand,trafficmanager.net,Content Servers,298,0,0.0
+33,Thailand,googleusercontent.com,Content Servers,298,0,0.0
+34,Thailand,wikipedia.org,Education,298,0,0.0
+35,Thailand,fbcdn.net,Social Networks,298,0,0.0
+36,Thailand,domaincontrol.com,Content Servers,298,0,0.0
+37,Thailand,bing.com,Search Engines,298,0,0.0
+38,Thailand,icloud.com,File Sharing,298,0,0.0
+39,Thailand,ctldl.windowsupdate.com,Business,298,0,0.0
+40,Thailand,microsoftonline.com,Technology,298,30,0.1007
+41,Thailand,play.google.com,Technology,298,9,0.0302
+42,Thailand,fastly.net,Technology,298,0,0.0
+43,Thailand,wordpress.org,Information Technology,298,0,0.0
+44,Thailand,root-servers.net,Content Servers,298,0,0.0
+45,Thailand,mail.ru,Webmail,298,0,0.0
+46,Thailand,youtu.be,Video Streaming,298,0,0.0
+47,Thailand,yahoo.com,News & Media,298,0,0.0
+48,Thailand,safebrowsing.googleapis.com,Content Servers,298,9,0.0302
+49,Thailand,en.wikipedia.org,Education,298,0,0.0
+50,Thailand,pinterest.com,Photography,298,9,0.0302
+51,Thailand,ui.com,Technology,298,0,0.0
+52,Thailand,aaplimg.com,Information Technology,298,0,0.0
+53,Thailand,digicert.com,Information Security,298,0,0.0
+54,Thailand,login.microsoftonline.com,Business,298,9,0.0302
+55,Thailand,github.com,Technology,298,9,0.0302
+56,Thailand,windows.net,Technology,298,0,0.0
+57,Thailand,googlesyndication.com,Advertisements,298,0,0.0
+58,Thailand,l-msedge.net,Content Servers,298,0,0.0
+59,Thailand,tiktokv.com,Social Networks,298,0,0.0
+60,Thailand,adobe.com,Technology,298,0,0.0
+61,Thailand,google-analytics.com,Business,298,0,0.0
+62,Thailand,goo.gl,Redirect,298,0,0.0
+63,Thailand,docs.google.com,Technology,298,9,0.0302
+64,Thailand,nflxso.net,Content Servers,298,0,0.0
+65,Thailand,t-msedge.net,Content Servers,298,0,0.0
+66,Thailand,vimeo.com,Video Streaming,298,9,0.0302
+67,Thailand,gandi.net,Information Technology,298,0,0.0
+68,Thailand,cloudfront.net,Content Servers,298,0,0.0
+69,Thailand,spotify.com,Audio Streaming,298,0,0.0
+70,Thailand,clientservices.googleapis.com,Content Servers,298,9,0.0302
+71,Thailand,sharepoint.com,New Domains,298,0,0.0
+72,Thailand,g.doubleclick.net,Advertisements,298,9,0.0302
+73,Thailand,maps.google.com,Education,298,9,0.0302
+74,Thailand,itunes.apple.com,Information Technology,298,9,0.0302
+75,Thailand,zoom.us,Technology,298,9,0.0302
+76,Thailand,wordpress.com,Information Technology,298,0,0.0
+77,Thailand,yandex.net,News & Media,298,0,0.0
+78,Thailand,edgekey.net,Content Servers,298,0,0.0
+79,Thailand,office.net,Content Servers,298,0,0.0
+80,Thailand,gvt2.com,Content Servers,298,0,0.0
+81,Thailand,bit.ly,Redirect,298,0,0.0
+82,Thailand,yandex.ru,News & Media,298,0,0.0
+83,Thailand,msn.com,News & Media,298,0,0.0
+84,Thailand,ftl.netflix.com,Movies,298,9,0.0302
+85,Thailand,whatsapp.net,Instant Messengers,298,0,0.0
+86,Thailand,plus.google.com,Social Networks,298,9,0.0302
+87,Thailand,qq.com,News & Media,298,0,0.0
+88,Thailand,mozilla.org,Technology,298,0,0.0
+89,Thailand,accounts.google.com,Information Security,298,39,0.1309
+90,Thailand,office365.com,Technology,298,0,0.0
+91,Thailand,update.googleapis.com,Content Servers,298,9,0.0302
+92,Thailand,googledomains.com,Search Engines,298,0,0.0
+93,Thailand,skype.com,Instant Messengers,298,0,0.0
+94,Thailand,whatsapp.com,Instant Messengers,298,9,0.0302
+95,Thailand,cloudflare.net,Information Technology,298,0,0.0
+96,Thailand,bytefcdn-oversea.com,Newly Seen Domains,298,0,0.0
+97,Thailand,blogspot.com,Personal Blogs,298,9,0.0302
+98,Thailand,logs.netflix.com,Movies,298,9,0.0302
+99,Thailand,apps.apple.com,Information Technology,298,0,0.0
+100,Thailand,player.vimeo.com,Video Streaming,298,9,0.0302
+101,Thailand,drive.google.com,File Sharing,298,9,0.0302
+102,Thailand,cloudflare-dns.com,Newly Seen Domains,298,9,0.0302
+103,Thailand,app-measurement.com,Content Servers,298,0,0.0
+104,Thailand,prod.ftl.netflix.com,Movies,298,9,0.0302
+105,Thailand,ntp.org,Technology,298,0,0.0
+106,Thailand,outlook.com,Webmail,298,0,0.0
+107,Thailand,settings-win.data.microsoft.com,Business,298,0,0.0
+108,Thailand,trbcdn.net,Content Servers,298,0,0.0
+109,Thailand,ytimg.com,Content Servers,298,0,0.0
+110,Thailand,www.googleapis.com,Content Servers,298,39,0.1309
+111,Thailand,roblox.com,Chat,298,0,0.0
+112,Thailand,self.events.data.microsoft.com,Business,298,0,0.0
+113,Thailand,gvt1.com,Content Servers,298,0,0.0
+114,Thailand,s-msedge.net,Content Servers,298,0,0.0
+115,Thailand,tds.net,News & Media,298,0,0.0
+116,Thailand,facebook-hardware.com,Content Servers,298,0,0.0
+117,Thailand,tiktokcdn-us.com,Content Servers,298,0,0.0
+118,Thailand,reddit.com,Forums,298,0,0.0
+119,Thailand,nic.ru,Information Technology,298,0,0.0
+120,Thailand,tiktok.com,Video Streaming,298,0,0.0
+121,Thailand,wac-msedge.net,Newly Seen Domains,298,0,0.0
+122,Thailand,edge.microsoft.com,Business,298,0,0.0
+123,Thailand,opera.com,Technology,298,0,0.0
+124,Thailand,officeapps.live.com,Technology,298,0,0.0
+125,Thailand,snapchat.com,Photography,298,0,0.0
+126,Thailand,ocsp.digicert.com,Information Security,298,0,0.0
+127,Thailand,pki.goog,Information Security,298,0,0.0
+128,Thailand,mp.microsoft.com,Content Servers,298,0,0.0
+129,Thailand,macromedia.com,Business,298,0,0.0
+130,Thailand,europa.eu,"Politics, Advocacy, and Government-Related",298,0,0.0
+131,Thailand,amazon-adsystem.com,Advertisements,298,0,0.0
+132,Thailand,dropbox.com,File Sharing,298,0,0.0
+133,Thailand,adnxs.com,Content Servers,298,0,0.0
+134,Thailand,nih.gov,Health & Fitness,298,0,0.0
+135,Thailand,tumblr.com,Social Networks,298,0,0.0
+136,Thailand,epicgames.com,Ecommerce,298,0,0.0
+137,Thailand,ruidongcloud.com,Newly Seen Domains,298,0,0.0
+138,Thailand,criteo.com,Business,298,0,0.0
+139,Thailand,api.whatsapp.com,Instant Messengers,298,9,0.0302
+140,Thailand,cdn77.org,Content Servers,298,0,0.0
+141,Thailand,baidu.com,Search Engines,298,0,0.0
+142,Thailand,www.google-analytics.com,Business,298,9,0.0302
+143,Thailand,com.akadns.net,Content Servers,298,0,0.0
+144,Thailand,intuit.com,Business,298,0,0.0
+145,Thailand,policies.google.com,Search Engines,298,9,0.0302
+146,Thailand,gravatar.com,Technology,298,0,0.0
+147,Thailand,support.google.com,Education,298,9,0.0302
+148,Thailand,comcast.net,Information Technology,298,0,0.0
+149,Thailand,nr-data.net,Content Servers,298,0,0.0
+150,Thailand,netflix.net,Video Streaming,298,9,0.0302
+151,Thailand,nrdp-ipv6.prod.ftl.netflix.com,Movies,298,9,0.0302
+152,Thailand,ls.apple.com,Information Technology,298,0,0.0
+153,Thailand,flickr.com,Photography,298,0,0.0
+154,Thailand,nytimes.com,News & Media,298,0,0.0
+155,Thailand,cloudapp.net,Content Servers,298,0,0.0
+156,Thailand,googleads.g.doubleclick.net,Advertisements,298,9,0.0302
+157,Thailand,github.io,Technology,298,0,0.0
+158,Thailand,fonts.googleapis.com,Content Servers,298,9,0.0302
+159,Thailand,lencr.org,Information Technology,298,0,0.0
+160,Thailand,windows.com,Information Technology,298,0,0.0
+161,Thailand,one.one,Information Technology,298,0,0.0
+162,Thailand,msftncsi.com,Content Servers,298,0,0.0
+163,Thailand,registrar-servers.com,Information Technology,298,0,0.0
+164,Thailand,akamaized.net,Content Servers,298,0,0.0
+165,Thailand,worldfcdn2.com,Content Servers,298,0,0.0
+166,Thailand,ttlivecdn.com,Content Servers,298,0,0.0
+167,Thailand,rubiconproject.com,Advertisements,298,0,0.0
+168,Thailand,t.co,Redirect,298,0,0.0
+169,Thailand,azureedge.net,Content Servers,298,0,0.0
+170,Thailand,googleadservices.com,Advertisements,298,0,0.0
+171,Thailand,sites.google.com,Information Technology,298,9,0.0302
+172,Thailand,ggpht.com,Content Servers,298,0,0.0
+173,Thailand,t.me,Instant Messengers,298,30,0.1007
+174,Thailand,sberdevices.ru,Technology,298,0,0.0
+175,Thailand,msedge.net,Content Servers,298,0,0.0
+176,Thailand,mozilla.com,Search Engines,298,0,0.0
+177,Thailand,sentry.io,Business,298,0,0.0
+178,Thailand,a2z.com,Content Servers,298,0,0.0
+179,Thailand,teams.microsoft.com,Technology,298,9,0.0302
+180,Thailand,samsung.com,Home & Garden,298,0,0.0
+181,Thailand,bytefcdn-ttpeu.com,Newly Seen Domains,298,0,0.0
+182,Thailand,2mdn.net,Content Servers,298,0,0.0
+183,Thailand,cdninstagram.com,Content Servers,298,9,0.0302
+184,Thailand,outlook.office365.com,Webmail,298,9,0.0302
+185,Thailand,edgesuite.net,Content Servers,298,0,0.0
+186,Thailand,webex.com,Technology,298,9,0.0302
+187,Thailand,unity3d.com,Gaming,298,0,0.0
+188,Thailand,wa.me,Content Servers,298,0,0.0
+189,Thailand,att.net,News & Media,298,0,0.0
+190,Thailand,forms.gle,Content Servers,298,30,0.1007
+191,Thailand,apache.org,Technology,298,0,0.0
+192,Thailand,partner.netflix.net,Video Streaming,298,9,0.0302
+193,Thailand,prod.netflix.com,Movies,298,9,0.0302
+194,Thailand,casalemedia.com,Advertisements,298,0,0.0
+195,Thailand,mangosip.ru,Newly Seen Domains,298,0,0.0
+196,Thailand,paypal.com,Economy & Finance,298,0,0.0
+197,Thailand,www.googletagmanager.com,Content Servers,298,0,0.0
+198,Thailand,archive.org,Education,298,0,0.0
+199,Thailand,prod.partner.netflix.net,Video Streaming,298,9,0.0302
+200,Thailand,rambler.ru,News & Media,298,0,0.0
+201,Thailand,push.prod.netflix.com,Movies,298,9,0.0302
+202,Thailand,www.bing.com,Search Engines,298,30,0.1007
+203,Thailand,frontapp.com,Information Technology,298,9,0.0302
+204,Thailand,fe.apple-dns.net,Content Servers,298,0,0.0
+205,Thailand,b-msedge.net,Content Servers,298,0,0.0
+206,Thailand,cnn.com,Video Streaming,298,0,0.0
+207,Thailand,o365filtering.com,Content Servers,298,0,0.0
+208,Thailand,soundcloud.com,Audio Streaming,298,9,0.0302
+209,Thailand,omtrdc.net,Content Servers,298,0,0.0
+210,Thailand,preapp.prod.partner.netflix.net,Video Streaming,298,9,0.0302
+211,Thailand,miit.gov.cn,"Politics, Advocacy, and Government-Related",298,0,0.0
+212,Thailand,spo-msedge.net,Content Servers,298,0,0.0
+213,Thailand,salesforceliveagent.com,Content Servers,298,0,0.0
+214,Thailand,doubleverify.com,Business,298,0,0.0
+215,Thailand,medium.com,Magazines,298,30,0.1007
+216,Thailand,pubmatic.com,Business,298,0,0.0
+217,Thailand,salesforce.com,Business,298,0,0.0
+218,Thailand,vk.com,Social Networks,298,0,0.0
+219,Thailand,v10.events.data.microsoft.com,Business,298,0,0.0
+220,Thailand,mtalk.google.com,Search Engines,298,9,0.0302
+221,Thailand,www.ncbi.nlm.nih.gov,Health & Fitness,298,0,0.0
+222,Thailand,ec.europa.eu,"Politics, Advocacy, and Government-Related",298,0,0.0
+223,Thailand,theguardian.com,News & Media,298,0,0.0
+224,Thailand,azurewebsites.net,Education,298,0,0.0
+225,Thailand,abusix.zone,Newly Seen Domains,298,0,0.0
+226,Thailand,gmail.com,Webmail,298,0,0.0
+227,Thailand,beian.miit.gov.cn,"Politics, Advocacy, and Government-Related",298,0,0.0
+228,Thailand,outlook.office.com,Technology,298,9,0.0302
+229,Thailand,datadoghq.com,Technology,298,0,0.0
+230,Thailand,gateway.icloud.com,File Sharing,298,9,0.0302
+231,Thailand,w3.org,"Politics, Advocacy, and Government-Related",298,0,0.0
+232,Thailand,open.spotify.com,Audio Streaming,298,9,0.0302
+233,Thailand,ebay.com,Auctions & Marketplaces,298,0,0.0
+234,Thailand,g.aaplimg.com,Information Technology,298,0,0.0
+235,Thailand,wsdvs.com,Content Servers,298,0,0.0
+236,Thailand,forbes.com,Economy & Finance,298,0,0.0
+237,Thailand,zemanta.com,Business,298,0,0.0
+238,Thailand,health.mil,Health & Fitness,298,0,0.0
+239,Thailand,lh3.googleusercontent.com,Content Servers,298,0,0.0
+240,Thailand,appsflyersdk.com,Content Servers,298,0,0.0
+241,Thailand,gateway.fe.apple-dns.net,Content Servers,298,0,0.0
+242,Thailand,adsrvr.org,Advertisements,298,0,0.0
+243,Thailand,clients4.google.com,Search Engines,298,9,0.0302
+244,Thailand,bbc.co.uk,News & Media,298,0,0.0
+245,Thailand,demdex.net,Content Servers,298,0,0.0
+246,Thailand,taboola.com,Business,298,0,0.0
+247,Thailand,adobe.io,Business,298,0,0.0
+248,Thailand,optimizationguide-pa.googleapis.com,Content Servers,298,9,0.0302
+249,Thailand,www.youtube.com,Video Streaming,298,39,0.1309
+250,Thailand,meraki.com,Technology,298,0,0.0
+251,Thailand,comfortel.pro,Information Technology,298,0,0.0
+252,Thailand,staples.com,Ecommerce,298,0,0.0
+253,Thailand,applovin.com,Gaming,298,0,0.0
+254,Thailand,dns.cn,Content Servers,298,0,0.0
+255,Thailand,edge.skype.com,Instant Messengers,298,0,0.0
+256,Thailand,dns.google,Newly Seen Domains,298,9,0.0302
+257,Thailand,config.teams.microsoft.com,Business,298,9,0.0302
+258,Thailand,googleblog.com,Personal Blogs,298,0,0.0
+259,Thailand,rbxcdn.com,Content Servers,298,0,0.0
+260,Thailand,miui.com,Technology,298,0,0.0
+261,Thailand,sciencedirect.com,Education,298,0,0.0
+262,Thailand,config.edge.skype.com,Content Servers,298,0,0.0
+263,Thailand,openx.net,Advertisements,298,0,0.0
+264,Thailand,dsp.mp.microsoft.com,Business,298,0,0.0
+265,Thailand,login.live.com,Technology,298,0,0.0
+266,Thailand,xiaomi.com,Technology,298,0,0.0
+267,Thailand,bbc.com,News & Media,298,0,0.0
+268,Thailand,creativecommons.org,"Politics, Advocacy, and Government-Related",298,0,0.0
+269,Thailand,edgecdn.ru,Newly Seen Domains,298,0,0.0
+270,Thailand,mail.google.com,Webmail,298,9,0.0302
+271,Thailand,appsflyer.com,Business,298,0,0.0
+272,Thailand,adsafeprotected.com,Advertisements,298,0,0.0
+273,Thailand,shifen.com,Content Servers,298,0,0.0
+274,Thailand,kaspersky.com,Technology,298,30,0.1007
+275,Thailand,cisco.com,Technology,298,0,0.0
+276,Thailand,smartadserver.com,Advertisements,298,0,0.0
+277,Thailand,googletagservices.com,Content Servers,298,0,0.0
+278,Thailand,sourceforge.net,Business,298,9,0.0302
+279,Thailand,userapi.com,Social Networks,298,0,0.0
+280,Thailand,do.dsp.mp.microsoft.com,Business,298,0,0.0
+281,Thailand,aiv-cdn.net,Content Servers,298,1,0.0034
+282,Thailand,graph.microsoft.com,Business,298,0,0.0
+283,Thailand,imdb.com,Movies,298,0,0.0
+284,Thailand,prod.do.dsp.mp.microsoft.com,Business,298,0,0.0
+285,Thailand,slack.com,Instant Messengers,298,0,0.0
+286,Thailand,push.apple.com,Information Technology,298,0,0.0
+287,Thailand,discord.com,Instant Messengers,298,9,0.0302
+288,Thailand,akamaihd.net,Content Servers,298,0,0.0
+289,Thailand,facebook.net,Social Networks,298,0,0.0
+290,Thailand,reg.ru,Information Technology,298,0,0.0
+291,Thailand,dnsowl.com,Content Servers,298,0,0.0
+292,Thailand,mit.edu,Education,298,0,0.0
+293,Thailand,hp.com,Technology,298,0,0.0
+294,Thailand,twitch.tv,Gaming,298,9,0.0302
+295,Thailand,business.bing.com,Search Engines,298,0,0.0
+296,Thailand,nginx.org,Entertainment,298,0,0.0
+297,Thailand,who.int,Health & Fitness,298,0,0.0
+298,Thailand,play.googleapis.com,Content Servers,298,9,0.0302
+299,Thailand,scorecardresearch.com,Business,298,0,0.0
+300,Thailand,ubuntu.com,Technology,298,0,0.0
+301,Thailand,content-autofill.googleapis.com,Content Servers,298,9,0.0302
+302,Thailand,time.apple.com,Information Technology,298,0,0.0
+303,Thailand,rocket-cdn.com,Newly Seen Domains,298,0,0.0
+304,Thailand,workspaceupdates.googleblog.com,Personal Blogs,298,0,0.0
+305,Thailand,www.facebook.com,Social Networks,298,39,0.1309
+306,Thailand,download.macromedia.com,Technology,298,0,0.0
+307,Thailand,washingtonpost.com,News & Media,298,0,0.0
+308,Thailand,wixsite.com,Information Technology,298,0,0.0
+309,Thailand,substrate.office.com,Technology,298,0,0.0
+310,Thailand,myfritz.net,Information Technology,298,0,0.0
+311,Thailand,go.microsoft.com,Information Technology,298,0,0.0
+312,Thailand,amazonvideo.com,Television,298,0,0.0
+313,Thailand,cdn-apple.com,Content Servers,298,0,0.0
+314,Thailand,web.archive.org,Technology,298,30,0.1007
+315,Thailand,msftconnecttest.com,Content Servers,298,0,0.0
+316,Thailand,mzstatic.com,Information Technology,298,0,0.0
+317,Thailand,amazon.co.uk,Ecommerce,298,0,0.0
+318,Thailand,issuu.com,Magazines,298,0,0.0
+319,Thailand,nginx.com,Technology,298,0,0.0
+320,Thailand,dell.com,Ecommerce,298,0,0.0
+321,Thailand,shopify.com,Ecommerce,298,0,0.0
+322,Thailand,researchgate.net,Education,298,0,0.0
+323,Thailand,jomodns.com,No Content,298,0,0.0
+324,Thailand,youtube-nocookie.com,Video Streaming,298,0,0.0
+325,Thailand,hubspot.com,Business,298,9,0.0302
+326,Thailand,launchdarkly.com,Business,298,0,0.0
+327,Thailand,teams.events.data.microsoft.com,Business,298,0,0.0
+328,Thailand,cdngslb.com,Content Servers,298,0,0.0
+329,Thailand,go.com,Safe for Kids,298,0,0.0
+330,Thailand,ampproject.org,Information Technology,298,0,0.0
+331,Thailand,wikimedia.org,Education,298,0,0.0
+332,Thailand,playstation.net,Gaming,298,9,0.0302
+333,Thailand,dailymail.co.uk,News & Media,298,0,0.0
+334,Thailand,cdc.gov,Government,298,0,0.0
+335,Thailand,wp.com,Information Technology,298,0,0.0
+336,Thailand,badoo.com,Social Networks,298,0,0.0
+337,Thailand,dual-s-msedge.net,Newly Seen Domains,298,0,0.0
+338,Thailand,bag.itunes.apple.com,Information Technology,298,9,0.0302
+339,Thailand,tinyurl.com,Redirect,298,0,0.0
+340,Thailand,android.com,Technology,298,30,0.1007
+341,Thailand,cedexis.net,Content Servers,298,0,0.0
+342,Thailand,ibm.com,Technology,298,0,0.0
+343,Thailand,smartscreen.microsoft.com,Business,298,0,0.0
+344,Thailand,cdn.office.net,Content Servers,298,0,0.0
+345,Thailand,sc-gw.com,Content Servers,298,0,0.0
+346,Thailand,grammarly.com,Information Technology,298,9,0.0302
+347,Thailand,safebrowsing.apple,Content Servers,298,0,0.0
+348,Thailand,reuters.com,News & Media,298,0,0.0
+349,Thailand,name-services.com,Phishing,298,0,0.0
+350,Thailand,httpd.apache.org,Technology,298,0,0.0
+351,Thailand,weebly.com,Information Technology,298,0,0.0
+352,Thailand,azurefd.net,Business,298,0,0.0
+353,Thailand,stbid.ru,Newly Seen Domains,298,0,0.0
+354,Thailand,atomile.com,Technology,298,0,0.0
+355,Thailand,aliyuncs.com,Content Servers,298,30,0.1007
+356,Thailand,slideshare.net,Education,298,0,0.0
+357,Thailand,adriver.ru,Advertisements,298,0,0.0
+358,Thailand,rlcdn.com,Content Servers,298,0,0.0
+359,Thailand,mcafee.com,Technology,298,0,0.0
+360,Thailand,google.de,Search Engines,298,0,0.0
+361,Thailand,media-amazon.com,Content Servers,298,0,0.0
+362,Thailand,360yield.com,Login Screens,298,0,0.0
+363,Thailand,harvard.edu,Educational Institutions,298,0,0.0
+364,Thailand,c.lencr.org,Information Technology,298,0,0.0
+365,Thailand,cnbc.com,Economy & Finance,298,0,0.0
+366,Thailand,doi.org,Technology,298,0,0.0
+367,Thailand,3lift.com,Business,298,0,0.0
+368,Thailand,canva.com,Arts,298,9,0.0302
+369,Thailand,b-cdn.net,Content Servers,298,0,0.0
+370,Thailand,sharethrough.com,Business,298,0,0.0
+371,Thailand,ecs.office.com,Technology,298,0,0.0
+372,Thailand,bidswitch.net,Technology,298,0,0.0
+373,Thailand,force.com,Business,298,0,0.0
+374,Thailand,booking.com,Travel,298,0,0.0
+375,Thailand,avast.com,Technology,298,0,0.0
+376,Thailand,oracle.com,Technology,298,0,0.0
+377,Thailand,moatads.com,Business,298,0,0.0
+378,Thailand,x1.c.lencr.org,Information Technology,298,6,0.0201
+379,Thailand,www.gov.uk,"Politics, Advocacy, and Government-Related",298,0,0.0
+380,Thailand,i.ytimg.com,Content Servers,298,9,0.0302
+381,Thailand,hotjar.com,Business,298,0,0.0
+382,Thailand,dsce9.akamaiedge.net,Content Servers,298,0,0.0
+383,Thailand,wildberries.ru,Ecommerce,298,0,0.0
+384,Thailand,wellsfargo.com,Economy & Finance,298,0,0.0
+385,Thailand,teamviewer.com,Information Technology,298,12,0.0403
+386,Thailand,google.co.uk,Search Engines,298,0,0.0
+387,Thailand,web.facebook.com,Social Networks,298,9,0.0302
+388,Thailand,telecid.ru,Newly Seen Domains,298,0,0.0
+389,Thailand,bloomberg.com,Economy & Finance,298,0,0.0
+390,Thailand,nist.gov,Government,298,0,0.0
+391,Thailand,aol.com,News & Media,298,0,0.0
+392,Thailand,appcenter.ms,Technology,298,0,0.0
+393,Thailand,etsy.com,Ecommerce,298,0,0.0
+394,Thailand,espn.com,Video Streaming,298,0,0.0
+395,Thailand,media.net,Business,298,0,0.0
+396,Thailand,example.com,Content Servers,298,30,0.1007
+397,Thailand,deviantart.com,Adult Themes,298,0,0.0
+398,Thailand,vungle.com,Business,298,0,0.0
+399,Thailand,stats.g.doubleclick.net,Advertisements,298,9,0.0302
+400,Thailand,wsj.com,Economy & Finance,298,0,0.0
+401,Thailand,weibo.com,Social Networks,298,0,0.0
+402,Thailand,crashlytics.com,Information Technology,298,0,0.0
+403,Thailand,wiley.com,Ecommerce,298,0,0.0
+404,Thailand,time.g.aaplimg.com,Information Technology,298,0,0.0
+405,Thailand,supersonicads.com,Gaming,298,0,0.0
+406,Thailand,steampowered.com,Gaming,298,0,0.0
+407,Thailand,opendns.com,Information Technology,298,0,0.0
+408,Thailand,dnsmadeeasy.com,Information Technology,298,0,0.0
+409,Thailand,samsungqbe.com,Content Servers,298,0,0.0
+410,Thailand,jsdelivr.net,Content Servers,298,0,0.0
+411,Thailand,samsungcloudsolution.com,Content Servers,298,0,0.0
+412,Thailand,ksyuncdn.com,Content Servers,298,0,0.0
+413,Thailand,criteo.net,Business,298,0,0.0
+414,Thailand,nature.com,Education,298,0,0.0
+415,Thailand,quantserve.com,Content Servers,298,0,0.0
+416,Thailand,sohu.com,News & Media,298,0,0.0
+417,Thailand,php.net,Information Technology,298,0,0.0
+418,Thailand,amazon.dev,Content Servers,298,0,0.0
+419,Thailand,msidentity.com,Content Servers,298,0,0.0
+420,Thailand,indeed.com,Job Search & Careers,298,0,0.0
+421,Thailand,stripe.com,Economy & Finance,298,0,0.0
+422,Thailand,twimg.com,Content Servers,298,0,0.0
+423,Thailand,branch.io,Business,298,0,0.0
+424,Thailand,alicdn.com,Content Servers,298,0,0.0
+425,Thailand,alibabadns.com,Content Servers,298,0,0.0
+426,Thailand,delivery.mp.microsoft.com,Business,298,0,0.0
+427,Thailand,un.org,"Politics, Advocacy, and Government-Related",298,0,0.0
+428,Thailand,dotomi.com,Business,298,0,0.0
+429,Thailand,hichina.com,Technology,298,0,0.0
+430,Thailand,dailymotion.com,Video Streaming,298,0,0.0
+431,Thailand,lijit.com,Business,298,0,0.0
+432,Thailand,nease.net,News & Media,298,0,0.0
+433,Thailand,1c.ru,Technology,298,0,0.0
+434,Thailand,foxnews.com,News & Media,298,0,0.0
+435,Thailand,yahoo.co.jp,News & Media,298,0,0.0
+436,Thailand,netangels.ru,Information Technology,298,0,0.0
+437,Thailand,businessinsider.com,Economy & Finance,298,0,0.0
+438,Thailand,springer.com,Education,298,0,0.0
+439,Thailand,ocsp.pki.goog,Information Security,298,0,0.0
+440,Thailand,weather.com,Weather,298,0,0.0
+441,Thailand,godaddy.com,Information Technology,298,0,0.0
+442,Thailand,list-manage.com,Business,298,0,0.0
+443,Thailand,adform.net,Content Servers,298,0,0.0
+444,Thailand,nasa.gov,Government,298,0,0.0
+445,Thailand,adobedtm.com,Business,298,0,0.0
+446,Thailand,id5-sync.com,Content Servers,298,0,0.0
+447,Thailand,outbrain.com,Business,298,0,0.0
+448,Thailand,cmediahub.ru,Newly Seen Domains,298,0,0.0
+449,Thailand,sc-cdn.net,Content Servers,298,0,0.0
+450,Thailand,ups.com,Business,298,0,0.0
+451,Thailand,quora.com,Forums,298,0,0.0
+452,Thailand,eset.com,Technology,298,0,0.0
+453,Thailand,imrworldwide.com,Content Servers,298,0,0.0
+454,Thailand,aws.dev,Content Servers,298,0,0.0
+455,Thailand,drom.ru,News & Media,298,0,0.0
+456,Thailand,pagead2.googlesyndication.com,Advertisements,298,9,0.0302
+457,Thailand,stanford.edu,Educational Institutions,298,0,0.0
+458,Thailand,hostgator.com,Information Technology,298,0,0.0
+459,Thailand,liadm.com,Content Servers,298,0,0.0
+460,Thailand,graph.facebook.com,Social Networks,298,9,0.0302
+461,Thailand,gnu.org,Information Technology,298,0,0.0
+462,Thailand,npr.org,News & Media,298,0,0.0
+463,Thailand,unsplash.com,"News, Portal & Search",298,0,0.0
+464,Thailand,mynetname.net,Newly Seen Domains,298,0,0.0
+465,Thailand,ocsp2.apple.com,Information Technology,298,0,0.0
+466,Thailand,mi.com,Technology,298,0,0.0
+467,Thailand,mobile.events.data.microsoft.com,Business,298,0,0.0
+468,Thailand,roaming.officeapps.live.com,Technology,298,0,0.0
+469,Thailand,google.com.br,Search Engines,298,0,0.0
+470,Thailand,creativecdn.com,Content Servers,298,0,0.0
+471,Thailand,adservice.google.com,Advertisements,298,9,0.0302
+472,Thailand,arubanetworks.com,Technology,298,0,0.0
+473,Thailand,stackoverflow.com,Forums,298,9,0.0302
+474,Thailand,measure.office.net,Content Servers,298,0,0.0
+475,Thailand,e673.dsce9.akamaiedge.net,Content Servers,298,0,0.0
+476,Thailand,dzeninfra.ru,Newly Seen Domains,298,0,0.0
+477,Thailand,bitrix24.ru,Business,298,0,0.0
+478,Thailand,eventbrite.com,Entertainment,298,0,0.0
+479,Thailand,discord.gg,Internet Phone & VOIP,298,30,0.1007
+480,Thailand,teads.tv,Advertisements,298,0,0.0
+481,Thailand,nel.measure.office.net,Content Servers,298,0,0.0
+482,Thailand,presence.teams.microsoft.com,Business,298,9,0.0302
+483,Thailand,cpanel.net,Information Technology,298,0,0.0
+484,Thailand,go-mpulse.net,Content Servers,298,0,0.0
+485,Thailand,ea.com,Gaming,298,0,0.0
+486,Thailand,trustpilot.com,Shopping,298,0,0.0
+487,Thailand,bamgrid.com,Content Servers,298,0,0.0
+488,Thailand,elasticbeanstalk.com,Technology,298,0,0.0
+489,Thailand,clarity.ms,Content Servers,298,0,0.0
+490,Thailand,3gppnetwork.org,Content Servers,298,0,0.0
+491,Thailand,xboxlive.com,Gaming,298,0,0.0
+492,Thailand,ess.apple.com,Information Technology,298,0,0.0
+493,Thailand,clients6.google.com,Search Engines,298,9,0.0302
+494,Thailand,roku.com,Ecommerce,298,0,0.0
+495,Thailand,wix.com,Information Technology,298,0,0.0
+496,Thailand,hicloud.com,File Sharing,298,0,0.0
+497,Thailand,wpa.qq.com,News & Media,298,9,0.0302
+498,Thailand,ngenix.net,Information Technology,298,0,0.0
+499,Thailand,rackspace.net,Technology,298,0,0.0
+500,Thailand,usatoday.com,News & Media,298,0,0.0
+501,Thailand,gsp-ssl.ls.apple.com,Information Technology,298,9,0.0302
+502,Thailand,giphy.com,Technology,298,9,0.0302
+503,Thailand,comcast.com,Television,298,0,0.0
+504,Thailand,telegraph.co.uk,News & Media,298,0,0.0
+505,Thailand,walmart.com,Ecommerce,298,0,0.0
+506,Thailand,sophos.com,Information Technology,298,0,0.0
+507,Thailand,amazon.de,Ecommerce,298,0,0.0
+508,Thailand,mozilla.net,Technology,298,0,0.0
+509,Thailand,taobao.com,Ecommerce,298,0,0.0
+510,Thailand,goodreads.com,Education,298,0,0.0
+511,Thailand,avcdn.net,Content Servers,298,0,0.0
+512,Thailand,tripadvisor.com,Shopping,298,0,0.0
+513,Thailand,amazonalexa.com,Content Servers,298,0,0.0
+514,Thailand,globo.com,News & Media,298,0,0.0
+515,Thailand,tradingview.com,Economy & Finance,298,0,0.0
+516,Thailand,time.com,Magazines,298,0,0.0
+517,Thailand,att.com,Information Technology,298,0,0.0
+518,Thailand,linktr.ee,Business,298,0,0.0
+519,Thailand,officeclient.microsoft.com,Content Servers,298,0,0.0
+520,Thailand,openai.com,Technology,298,9,0.0302
+521,Thailand,cdek.ru,Business,298,0,0.0
+522,Thailand,duckduckgo.com,Search Engines,298,0,0.0
+523,Thailand,rzone.de,Content Servers,298,0,0.0
+524,Thailand,core.windows.net,Technology,298,0,0.0
+525,Thailand,g.page,Business,298,0,0.0
+526,Thailand,azure-dns.com,Newly Seen Domains,298,0,0.0
+527,Thailand,samsungcloud.com,Content Servers,298,0,0.0
+528,Thailand,blogger.com,Personal Blogs,298,9,0.0302
+529,Thailand,gosuslugi.ru,"Politics, Advocacy, and Government-Related",298,0,0.0
+530,Thailand,consultant.ru,"Politics, Advocacy, and Government-Related",298,0,0.0
+531,Thailand,ozon.ru,Ecommerce,298,0,0.0
+532,Thailand,byteoversea.net,Content Servers,298,0,0.0
+533,Thailand,checkpoint.com,Information Security,298,0,0.0
+534,Thailand,viator.com,Travel,298,0,0.0
+535,Thailand,apis.google.com,Technology,298,9,0.0302
+536,Thailand,apple.com.akadns.net,Content Servers,298,0,0.0
+537,Thailand,wired.com,News & Media,298,0,0.0
+538,Thailand,storage.live.com,Content Servers,298,9,0.0302
+539,Thailand,statista.com,Education,298,0,0.0
+540,Thailand,addtoany.com,Technology,298,0,0.0
+541,Thailand,pixabay.com,Photography,298,0,0.0
+542,Thailand,scribd.com,Education,298,0,0.0
+543,Thailand,m.facebook.com,Social Networks,298,9,0.0302
+544,Thailand,pangle.io,Content Servers,298,0,0.0
+545,Thailand,chinamobile.com,News & Media,298,0,0.0
+546,Thailand,measure.office.com,Technology,298,0,0.0
+547,Thailand,sfx.ms,File Sharing,298,0,0.0
+548,Thailand,adtelligent.com,Business,298,0,0.0
+549,Thailand,mtgglobals.com,Newly Seen Domains,298,0,0.0
+550,Thailand,blob.core.windows.net,Technology,298,0,0.0
+551,Thailand,myshopify.com,Ecommerce,298,0,0.0
+552,Thailand,verkada.com,Business,298,0,0.0
+553,Thailand,healthline.com,Health & Fitness,298,0,0.0
+554,Thailand,bilibili.com,Video Streaming,298,0,0.0
+555,Thailand,support.apple.com,Ecommerce,298,0,0.0
+556,Thailand,independent.co.uk,News & Media,298,0,0.0
+557,Thailand,fp.measure.office.com,Technology,298,0,0.0
+558,Thailand,wal-mart.com,Ecommerce,298,0,0.0
+559,Thailand,t-mobile.com,Technology,298,0,0.0
+560,Thailand,gamepass.com,Gaming,298,0,0.0
+561,Thailand,kwai.net,File Sharing,298,0,0.0
+562,Thailand,clients2.google.com,Content Servers,298,9,0.0302
+563,Thailand,spcsdns.net,Content Servers,298,0,0.0
+564,Thailand,configuration.ls.apple.com,Information Technology,298,9,0.0302
+565,Thailand,outlook.live.com,Technology,298,9,0.0302
+566,Thailand,uber.com,Travel,298,0,0.0
+567,Thailand,crwdcntrl.net,Technology,298,0,0.0
+568,Thailand,weather-data.apple.com,Information Technology,298,0,0.0
+569,Thailand,cnet.com,News & Media,298,0,0.0
+570,Thailand,verisign.com,Information Technology,298,0,0.0
+571,Thailand,assets.msn.com,News & Media,298,0,0.0
+572,Thailand,speedtest.net,Information Technology,298,9,0.0302
+573,Thailand,ft.com,Video Streaming,298,0,0.0
+574,Thailand,surveymonkey.com,Shopping,298,0,0.0
+575,Thailand,imgsmail.ru,Content Servers,298,0,0.0
+576,Thailand,scdn.co,Content Servers,298,0,0.0
+577,Thailand,amzn.to,Ecommerce,298,0,0.0
+578,Thailand,churchcenter.com,Religion,298,0,0.0
+579,Thailand,nflximg.com,Movies,298,0,0.0
+580,Thailand,nvidia.com,Technology,298,0,0.0
+581,Thailand,debian.org,Education,298,0,0.0
+582,Thailand,dzen.ru,Newly Seen Domains,298,0,0.0
+583,Thailand,alibaba.com,Auctions & Marketplaces,298,0,0.0
+584,Thailand,ok.ru,Social Networks,298,0,0.0
+585,Thailand,itunes-apple.com.akadns.net,Content Servers,298,0,0.0
+586,Thailand,naver.com,News & Media,298,0,0.0
+587,Thailand,trendmicro.com,Information Security,298,0,0.0
+588,Thailand,flashtalking.com,Business,298,0,0.0
+589,Thailand,aliexpress.com,Ecommerce,298,0,0.0
+590,Thailand,behance.net,Social Networks,298,0,0.0
+591,Thailand,ted.com,Entertainment,298,0,0.0
+592,Thailand,mayoclinic.org,Health & Fitness,298,0,0.0
+593,Thailand,britannica.com,Education,298,30,0.1007
+594,Thailand,iphone-ld.apple.com,Information Technology,298,0,0.0
+595,Thailand,ring.com,Business,298,0,0.0
+596,Thailand,imgur.com,Photography,298,9,0.0302
+597,Thailand,mikrotik.com,Technology,298,0,0.0
+598,Thailand,forter.com,Information Security,298,0,0.0
+599,Thailand,beian.gov.cn,"Politics, Advocacy, and Government-Related",298,0,0.0
+600,Thailand,amazontrust.com,Technology,298,0,0.0
+601,Thailand,zendesk.com,Business,298,9,0.0302
+602,Thailand,ad.doubleclick.net,Advertisements,298,9,0.0302
+603,Thailand,manage.microsoft.com,Business,298,9,0.0302
+604,Thailand,www.googleadservices.com,Advertisements,298,0,0.0
+605,Thailand,dnspod.net,Information Technology,298,0,0.0
+606,Thailand,xhamster.com,Pornography,298,1,0.0034
+607,Thailand,timeweb.ru,Information Technology,298,0,0.0
+608,Thailand,livejournal.com,Social Networks,298,0,0.0
+609,Thailand,academia.edu,Education,298,0,0.0
+610,Thailand,yahoodns.net,Content Servers,298,0,0.0
+611,Thailand,cloudflareclient.com,Content Servers,298,0,0.0
+612,Thailand,warnerbros.com,Movies,298,0,0.0
+613,Thailand,squarespace.com,Information Technology,298,0,0.0
+614,Thailand,webmd.com,Health & Fitness,298,0,0.0
+615,Thailand,translate.google.com,Education,298,9,0.0302
+616,Thailand,mysql.com,Technology,298,0,0.0
+617,Thailand,buzzfeed.com,Video Streaming,298,0,0.0
+618,Thailand,dns.com,Technology,298,0,0.0
+619,Thailand,disqus.com,Technology,298,9,0.0302
+620,Thailand,playstation.com,Gaming,298,0,0.0
+621,Thailand,kaspersky-labs.com,Technology,298,0,0.0
+622,Thailand,google.ca,Search Engines,298,0,0.0
+623,Thailand,isnssdk.com,Content Servers,298,0,0.0
+624,Thailand,gravitational.io,Newly Seen Domains,298,0,0.0
+625,Thailand,aria.microsoft.com,Information Technology,298,0,0.0
+626,Thailand,beeline.ru,Information Technology,298,0,0.0
+627,Thailand,activity.windows.com,Information Technology,298,0,0.0
+628,Thailand,online-metrix.net,Content Servers,298,0,0.0
+629,Thailand,berkeley.edu,Educational Institutions,298,0,0.0
+630,Thailand,web.whatsapp.com,Instant Messengers,298,9,0.0302
+631,Thailand,ivi.ru,Movies,298,0,0.0
+632,Thailand,pipe.aria.microsoft.com,Business,298,0,0.0
+633,Thailand,xcal.tv,Content Servers,298,0,0.0
+634,Thailand,163.com,News & Media,298,0,0.0
+635,Thailand,google.fr,Search Engines,298,0,0.0
+636,Thailand,firetvcaptiveportal.com,Content Servers,298,0,0.0
+637,Thailand,tpc.googlesyndication.com,Search Engines,298,9,0.0302
+638,Thailand,rakuten.co.jp,Ecommerce,298,0,0.0
+639,Thailand,cambridge.org,Education,298,0,0.0
+640,Thailand,icloud-content.com,File Sharing,298,0,0.0
+641,Thailand,upload.fp.measure.office.com,Technology,298,0,0.0
+642,Thailand,i0.wp.com,Information Technology,298,0,0.0
+643,Thailand,mediatek.com,Technology,298,0,0.0
+644,Thailand,developers.google.com,Technology,298,9,0.0302
+645,Thailand,braze.com,Business,298,0,0.0
+646,Thailand,line.me,Instant Messengers,298,0,0.0
+647,Thailand,chrome.google.com,Information Technology,298,9,0.0302
+648,Thailand,herokuapp.com,Technology,298,0,0.0
+649,Thailand,loc.gov,Education,298,0,0.0
+650,Thailand,c10r.facebook.com,Social Networks,298,9,0.0302
+651,Thailand,google.es,Search Engines,298,0,0.0
+652,Thailand,telegram.me,Instant Messengers,298,9,0.0302
+653,Thailand,smaato.net,Business,298,0,0.0
+654,Thailand,www.apple.com,Information Technology,298,0,0.0
+655,Thailand,ttvnw.net,Video Streaming,298,0,0.0
+656,Thailand,wbx2.com,Technology,298,0,0.0
+657,Thailand,google.co.jp,Search Engines,298,0,0.0
+658,Thailand,worldnic.com,Information Technology,298,0,0.0
+659,Thailand,cbsnews.com,News & Media,298,0,0.0
+660,Thailand,gc.ca,"Politics, Advocacy, and Government-Related",297,0,0.0
+661,Thailand,shalltry.com,Content Servers,297,0,0.0
+662,Thailand,ca.gov,Government,297,0,0.0
+663,Thailand,duolingo.com,Education,297,0,0.0
+664,Thailand,mncdn.com,Content Servers,297,0,0.0
+665,Thailand,herokudns.com,Content Servers,297,0,0.0
+666,Thailand,amazon.co.jp,Ecommerce,297,0,0.0
+667,Thailand,pandora.com,Audio Streaming,297,9,0.0303
+668,Thailand,sina.com.cn,News & Media,297,0,0.0
+669,Thailand,entrust.net,Information Security,297,0,0.0
+670,Thailand,nike.com,Ecommerce,297,0,0.0
+671,Thailand,mailchimp.com,Business,297,0,0.0
+672,Thailand,yelp.com,Search Engines,297,9,0.0303
+673,Thailand,ls-apple.com.akadns.net,Content Servers,297,0,0.0
+674,Thailand,myspace.com,Social Networks,297,0,0.0
+675,Thailand,duckdns.org,Information Technology,297,0,0.0
+676,Thailand,dns-parking.com,Newly Seen Domains,297,0,0.0
+677,Thailand,hipages.com.au,Search Engines,297,0,0.0
+678,Thailand,google.it,Search Engines,297,0,0.0
+679,Thailand,validator.w3.org,Technology,297,0,0.0
+680,Thailand,browser.events.data.microsoft.com,Business,297,0,0.0
+681,Thailand,config.office.net,Content Servers,297,0,0.0
+682,Thailand,huawei.com,Technology,297,0,0.0
+683,Thailand,digitalocean.com,Technology,297,0,0.0
+684,Thailand,ecdns.net,Information Technology,297,0,0.0
+685,Thailand,clients.config.office.net,Content Servers,297,0,0.0
+686,Thailand,latimes.com,News & Media,297,0,0.0
+687,Thailand,hugedomains.com,Parked & For Sale Domains,297,0,0.0
+688,Thailand,rt.ru,Information Technology,297,0,0.0
+689,Thailand,free.fr,Information Technology,297,0,0.0
+690,Thailand,aboutads.info,Business,297,0,0.0
+691,Thailand,jquery.com,Technology,297,0,0.0
+692,Thailand,theverge.com,Technology,297,0,0.0
+693,Thailand,cloudns.net,Information Technology,297,0,0.0
+694,Thailand,api.msn.com,News & Media,297,0,0.0
+695,Thailand,nstld.com,Content Servers,297,0,0.0
+696,Thailand,fb.com,Social Networks,297,9,0.0303
+697,Thailand,grammarly.io,Content Servers,297,9,0.0303
+698,Thailand,onetrust.com,Business,297,0,0.0
+699,Thailand,techcrunch.com,Technology,297,0,0.0
+700,Thailand,nelreports.net,Technology,297,0,0.0
+701,Thailand,edge-mqtt.facebook.com,Social Networks,297,9,0.0303
+702,Thailand,atlassian.com,Technology,297,0,0.0
+703,Thailand,oup.com,Educational Institutions,297,0,0.0
+704,Thailand,steamcommunity.com,Forums,297,9,0.0303
+705,Thailand,sorbs.net,Information Security,297,0,0.0
+706,Thailand,scholar.google.com,Search Engines,297,9,0.0303
+707,Thailand,www.microsoft.com,Business,297,0,0.0
+708,Thailand,newrelic.com,Business,297,0,0.0
+709,Thailand,mts.ru,Information Technology,297,0,0.0
+710,Thailand,tandfonline.com,Education,297,0,0.0
+711,Thailand,smoot.apple.com,Information Technology,297,0,0.0
+712,Thailand,patreon.com,Business,297,0,0.0
+713,Thailand,launchpad.net,Technology,297,0,0.0
+714,Thailand,bp.blogspot.com,Personal Blogs,297,9,0.0303
+715,Thailand,gcp.gvt2.com,Content Servers,297,0,0.0
+716,Thailand,hostgator.com.br,Webmail,297,0,0.0
+717,Thailand,netease.com,News & Media,297,0,0.0
+718,Thailand,ezvizlife.com,Business,297,0,0.0
+719,Thailand,gdmf.apple.com,Information Technology,297,0,0.0
+720,Thailand,akam.net,Content Servers,297,0,0.0
+721,Thailand,ietf.org,Technology,297,0,0.0
+722,Thailand,cornell.edu,Educational Institutions,297,0,0.0
+723,Thailand,mesu.apple.com,Information Technology,297,0,0.0
+724,Thailand,dbankcloud.cn,Content Servers,297,0,0.0
+725,Thailand,marriott.com,Travel,297,0,0.0
+726,Thailand,mob.com,Technology,297,0,0.0
+727,Thailand,visualstudio.com,Information Technology,297,0,0.0
+728,Thailand,noaa.gov,Government,297,0,0.0
+729,Thailand,autodesk.com,Business,297,0,0.0
+730,Thailand,analytics.google.com,Business,297,9,0.0303
+731,Thailand,beacons.gcp.gvt2.com,Content Servers,297,0,0.0
+732,Thailand,accuweather.com,News & Media,297,0,0.0
+733,Thailand,ovscdns.com,Content Servers,297,0,0.0
+734,Thailand,freepik.com,"News, Portal & Search",297,0,0.0
+735,Thailand,ikea.com,Business,297,0,0.0
+736,Thailand,merriam-webster.com,Education,297,0,0.0
+737,Thailand,yandex.com,Search Engines,297,0,0.0
+738,Thailand,google.co.in,Search Engines,297,0,0.0
+739,Thailand,gs-loc.apple.com,Information Technology,297,9,0.0303
+740,Thailand,spaceweb.pro,Information Technology,297,0,0.0
+741,Thailand,hulu.com,Movies,297,0,0.0
+742,Thailand,getpocket.com,Technology,297,0,0.0
+743,Thailand,intel.com,Technology,297,0,0.0
+744,Thailand,byteglb.com,Newly Seen Domains,297,0,0.0
+745,Thailand,licdn.com,Content Servers,297,9,0.0303
+746,Thailand,exelator.com,Business,297,0,0.0
+747,Thailand,nintendo.net,Content Servers,297,0,0.0
+748,Thailand,pinimg.com,Photography,297,0,0.0
+749,Thailand,nbcnews.com,News & Media,297,0,0.0
+750,Thailand,edgecastdns.net,Content Servers,297,0,0.0
+751,Thailand,sentinelone.net,Content Servers,297,0,0.0
+752,Thailand,amplitude.com,Business,297,0,0.0
+753,Thailand,apple.news,Newly Seen Domains,297,0,0.0
+754,Thailand,yieldmo.com,Business,297,0,0.0
+755,Thailand,cookielaw.org,Information Security,297,0,0.0
+756,Thailand,agkn.com,Information Security,297,0,0.0
+757,Thailand,homedepot.com,Ecommerce,297,0,0.0
+758,Thailand,rbc.ru,News & Media,297,0,0.0
+759,Thailand,rackspace.com,Technology,297,0,0.0
+760,Thailand,ocsp2-lb.apple.com.akadns.net,Content Servers,297,0,0.0
+761,Thailand,calendly.com,Technology,297,9,0.0303
+762,Thailand,qualtrics.com,Business,297,0,0.0
+763,Thailand,huffingtonpost.com,News & Media,297,0,0.0
+764,Thailand,news.google.com,News & Media,297,9,0.0303
+765,Thailand,adobe.net,Business,297,0,0.0
+766,Thailand,wattpad.com,Education,297,0,0.0
+767,Thailand,fontawesome.com,Hobbies & Interests,297,0,0.0
+768,Thailand,sb.scorecardresearch.com,Business,297,0,0.0
+769,Thailand,init.push.apple.com,Information Technology,297,0,0.0
+770,Thailand,optimizely.com,Business,297,0,0.0
+771,Thailand,rspamd.com,Technology,297,0,0.0
+772,Thailand,conviva.com,Technology,297,0,0.0
+773,Thailand,update.microsoft.com,Business,297,9,0.0303
+774,Thailand,theatlantic.com,Magazines,297,0,0.0
+775,Thailand,lenovo.com,Technology,297,0,0.0
+776,Thailand,inner-active.mobi,Content Servers,297,0,0.0
+777,Thailand,rncdn7.com,Content Servers,297,0,0.0
+778,Thailand,us-v20.events.data.microsoft.com,Business,297,0,0.0
+779,Thailand,xx.fbcdn.net,Content Servers,297,9,0.0303
+780,Thailand,mozgcp.net,Content Servers,297,0,0.0
+781,Thailand,mega.nz,File Sharing,297,9,0.0303
+782,Thailand,connect.facebook.net,Social Networks,297,9,0.0303
+783,Thailand,bluehost.com,Information Technology,297,0,0.0
+784,Thailand,mega.co.nz,File Sharing,297,9,0.0303
+785,Thailand,prnewswire.com,Business,297,0,0.0
+786,Thailand,omnitagjs.com,Content Servers,297,0,0.0
+787,Thailand,tapad.com,Business,297,0,0.0
+788,Thailand,target.com,Ecommerce,297,0,0.0
+789,Thailand,riotgames.com,Gaming,297,9,0.0303
+790,Thailand,qlivecdn.com,Newly Seen Domains,297,0,0.0
+791,Thailand,v20.events.data.microsoft.com,Business,297,0,0.0
+792,Thailand,virtualearth.net,Education,297,0,0.0
+793,Thailand,bidr.io,Content Servers,297,0,0.0
+794,Thailand,mp.weixin.qq.com,News & Media,297,0,0.0
+795,Thailand,uol.com.br,News & Media,297,0,0.0
+796,Thailand,res.office365.com,Technology,297,9,0.0303
+797,Thailand,addthis.com,Business,297,0,0.0
+798,Thailand,temu.com,Newly Seen Domains,297,0,0.0
+799,Thailand,washington.edu,Educational Institutions,297,0,0.0
+800,Thailand,elpais.com,News & Media,297,0,0.0
+801,Thailand,livechatinc.com,Business,297,0,0.0
+802,Thailand,exo.nel.measure.office.net,Content Servers,297,0,0.0
+803,Thailand,google.com.hk,Search Engines,297,0,0.0
+804,Thailand,pornhub.com,Pornography,297,31,0.1044
+805,Thailand,bugsnag.com,Information Technology,297,0,0.0
+806,Thailand,gateway.facebook.com,Social Networks,297,9,0.0303
+807,Thailand,typekit.net,Content Servers,297,0,0.0
+808,Thailand,name.com,Information Technology,297,0,0.0
+809,Thailand,allawnos.com,Newly Seen Domains,297,0,0.0
+810,Thailand,ai-lawandorder.com,Newly Seen Domains,297,0,0.0
+811,Thailand,dl.delivery.mp.microsoft.com,Business,297,0,0.0
+812,Thailand,appspot.com,Technology,297,0,0.0
+813,Thailand,indiatimes.com,News & Media,297,0,0.0
+814,Thailand,signaler-pa.clients6.google.com,Search Engines,297,9,0.0303
+815,Thailand,init.itunes.apple.com,Information Technology,297,9,0.0303
+816,Thailand,aliyun.com,Technology,297,0,0.0
+817,Thailand,fandom.com,Video Streaming,297,0,0.0
+818,Thailand,namebrightdns.com,Parked & For Sale Domains,297,0,0.0
+819,Thailand,dns-shop.ru,Ecommerce,297,0,0.0
+820,Thailand,google.pl,Search Engines,297,0,0.0
+821,Thailand,browser.pipe.aria.microsoft.com,Business,297,0,0.0
+822,Thailand,intercom.io,Business,297,0,0.0
+823,Thailand,fda.gov,Health & Fitness,297,0,0.0
+824,Thailand,calendar.google.com,Technology,297,9,0.0303
+825,Thailand,contextweb.com,Business,297,0,0.0
+826,Thailand,oath.cloud,Content Servers,297,0,0.0
+827,Thailand,live.net,Content Servers,297,0,0.0
+828,Thailand,life360.com,Information Technology,297,0,0.0
+829,Thailand,w3schools.com,Education,297,0,0.0
+830,Thailand,stackadapt.com,Business,297,0,0.0
+831,Thailand,takeaway.com,Food & Drink,297,0,0.0
+832,Thailand,viber.com,Instant Messengers,297,0,0.0
+833,Thailand,delve.office.com,Technology,297,0,0.0
+834,Thailand,hbr.org,Magazines,297,0,0.0
+835,Thailand,bluekai.com,Technology,297,0,0.0
+836,Thailand,inmobi.com,Business,297,0,0.0
+837,Thailand,tlu.dl.delivery.mp.microsoft.com,Business,297,0,0.0
+838,Thailand,ovscdns.net,Content Servers,297,0,0.0
+839,Thailand,yimg.com,Content Servers,297,0,0.0
+840,Thailand,everesttech.net,Content Servers,297,0,0.0
+841,Thailand,xserver.jp,Information Technology,297,0,0.0
+842,Thailand,loki.delve.office.com,Technology,297,0,0.0
+843,Thailand,amazon.fr,Ecommerce,297,0,0.0
+844,Thailand,abovedomains.com,Newly Seen Domains,297,0,0.0
+845,Thailand,igamecj.com,Content Servers,297,0,0.0
+846,Thailand,udemy.com,Education,297,9,0.0303
+847,Thailand,bitdefender.com,Information Security,297,0,0.0
+848,Thailand,incapdns.net,Business,297,0,0.0
+849,Thailand,nest.com,Ecommerce,297,1,0.0034
+850,Thailand,markmonitor.com,Business,297,0,0.0
+851,Thailand,adjust.com,Business,297,0,0.0
+852,Thailand,deepl.com,Translator,297,9,0.0303
+853,Thailand,mediafire.com,"Militancy, Hate & Extremism",297,0,0.0
+854,Thailand,fe3cr.delivery.mp.microsoft.com,Business,297,0,0.0
+855,Thailand,res.cdn.office.net,Content Servers,297,0,0.0
+856,Thailand,nationalgeographic.com,Business,297,0,0.0
+857,Thailand,gspe79-ssl.ls.apple.com,Information Technology,297,9,0.0303
+858,Thailand,coinmarketcap.com,Economy & Finance,297,0,0.0
+859,Thailand,amazon.ca,Ecommerce,297,0,0.0
+860,Thailand,samsungapps.com,Technology,297,0,0.0
+861,Thailand,lh5.googleusercontent.com,Content Servers,297,0,0.0
+862,Thailand,cdnvideo.ru,Content Servers,297,0,0.0
+863,Thailand,box.com,File Sharing,297,0,0.0
+864,Thailand,sagepub.com,Education,297,0,0.0
+865,Thailand,themeforest.net,Ecommerce,297,0,0.0
+866,Thailand,contentsquare.net,Content Servers,297,0,0.0
+867,Thailand,ogs.google.com,Content Servers,297,9,0.0303
+868,Thailand,investopedia.com,Economy & Finance,297,0,0.0
+869,Thailand,google.com.mx,Search Engines,297,0,0.0
+870,Thailand,mediahils.ru,Newly Seen Domains,297,0,0.0
+871,Thailand,xp.apple.com,Information Technology,297,0,0.0
+872,Thailand,webrootcloudav.com,Information Technology,297,0,0.0
+873,Thailand,kohls.com,Ecommerce,297,0,0.0
+874,Thailand,google.com.tr,Search Engines,297,0,0.0
+875,Thailand,arc.msn.com,News & Media,297,1,0.0034
+876,Thailand,yahoo.net,News & Media,297,0,0.0
+877,Thailand,mirtesen.ru,Social Networks,297,0,0.0
+878,Thailand,bandcamp.com,Audio Streaming,297,0,0.0
+879,Thailand,xvideos.com,Pornography,297,2,0.0067
+880,Thailand,pubmed.ncbi.nlm.nih.gov,Health & Fitness,297,0,0.0
+881,Thailand,shein.com,Ecommerce,297,0,0.0
+882,Thailand,rocket-cdnbp.com,Newly Seen Domains,297,0,0.0
+883,Thailand,33across.com,Business,297,0,0.0
+884,Thailand,service.gov.uk,"Politics, Advocacy, and Government-Related",297,0,0.0
+885,Thailand,douyincdn.com,Newly Seen Domains,297,0,0.0
+886,Thailand,usda.gov,Business,297,0,0.0
+887,Thailand,bestbuy.com,Ecommerce,297,0,0.0
+888,Thailand,r4.res.office365.com,Content Servers,297,9,0.0303
+889,Thailand,attn.tv,Business,297,0,0.0
+890,Thailand,klaviyo.com,Business,297,0,0.0
+891,Thailand,unesco.org,"Politics, Advocacy, and Government-Related",297,0,0.0
+892,Thailand,allaboutcookies.org,Education,297,0,0.0
+893,Thailand,w55c.net,Business,297,0,0.0
+894,Thailand,airbnb.com,Travel,297,0,0.0
+895,Thailand,pv-cdn.net,Newly Seen Domains,297,0,0.0
+896,Thailand,zillow.com,Real Estate,297,30,0.101
+897,Thailand,docker.com,Technology,297,0,0.0
+898,Thailand,kickstarter.com,Hobbies & Interests,297,0,0.0
+899,Thailand,youku.com,Video Streaming,297,0,0.0
+900,Thailand,enterprise.activity.windows.com,Information Technology,297,0,0.0
+901,Thailand,ohthree.com,Newly Seen Domains,297,0,0.0
+902,Thailand,tremorhub.com,Content Servers,297,0,0.0
+903,Thailand,bytetcdn.com,Content Servers,297,0,0.0
+904,Thailand,telegram.org,Instant Messengers,297,9,0.0303
+905,Thailand,gumgum.com,Business,297,0,0.0
+906,Thailand,norton.com,Information Security,297,0,0.0
+907,Thailand,gandi-ns.fr,Newly Seen Domains,297,0,0.0
+908,Thailand,xiaomi.net,Technology,297,0,0.0
+909,Thailand,pccc.com,Technology,297,0,0.0
+910,Thailand,fiverr.com,Search Engines,297,0,0.0
+911,Thailand,nflxvideo.net,Movies,297,0,0.0
+912,Thailand,huffpost.com,News & Media,297,0,0.0
+913,Thailand,pbs.org,Television,297,0,0.0
+914,Thailand,lemonde.fr,News & Media,297,0,0.0
+915,Thailand,yximgs.com,Information Technology,297,0,0.0
+916,Thailand,1rx.io,Advertisements,297,0,0.0
+917,Thailand,e-msedge.net,Content Servers,297,0,0.0
+918,Thailand,ttoverseaus.net,Newly Seen Domains,297,0,0.0
+919,Thailand,clients3.google.com,Content Servers,297,9,0.0303
+920,Thailand,securepubads.g.doubleclick.net,Advertisements,297,9,0.0303
+921,Thailand,mailchi.mp,Business,297,0,0.0
+922,Thailand,fedex.com,Business,297,0,0.0
+923,Thailand,m.youtube.com,Video Streaming,297,9,0.0303
+924,Thailand,people.com,Video Streaming,297,0,0.0
+925,Thailand,shopee.co.id,Ecommerce,297,0,0.0
+926,Thailand,business.site,Business,297,0,0.0
+927,Thailand,kennasecurity.com,Business,297,0,0.0
+928,Thailand,l.facebook.com,Social Networks,297,9,0.0303
+929,Thailand,quantummetric.com,Business,297,0,0.0
+930,Thailand,yt3.ggpht.com,Content Servers,297,9,0.0303
+931,Thailand,elisa.fi,Information Technology,297,0,0.0
+932,Thailand,princeton.edu,Educational Institutions,297,0,0.0
+933,Thailand,mixpanel.com,Business,297,0,0.0
+934,Thailand,networkadvertising.org,Business,297,0,0.0
+935,Thailand,safebrowsing.google.com,Information Security,297,9,0.0303
+936,Thailand,footprintdns.com,Technology,297,0,0.0
+937,Thailand,macys.com,Ecommerce,297,0,0.0
+938,Thailand,chaturbate.com,Pornography,297,2,0.0067
+939,Thailand,www.msftconnecttest.com,Content Servers,297,0,0.0
+940,Thailand,fast.com,Information Technology,297,0,0.0
+941,Thailand,gihc.net,Content Servers,297,0,0.0
+942,Thailand,jotform.com,Information Technology,297,0,0.0
+943,Thailand,stickyadstv.com,Business,297,0,0.0
+944,Thailand,kargo.com,Business,297,0,0.0
+945,Thailand,me.com,File Sharing,297,0,0.0
+946,Thailand,ssl-images-amazon.com,Content Servers,297,0,0.0
+947,Thailand,statuspage.io,Technology,297,0,0.0
+948,Thailand,sitescout.com,Business,297,0,0.0
+949,Thailand,upwork.com,Job Search & Careers,297,0,0.0
+950,Thailand,allegro.pl,Ecommerce,297,0,0.0
+951,Thailand,dbankcloud.com,Content Servers,297,0,0.0
+952,Thailand,t-online.de,News & Media,297,0,0.0
+953,Thailand,google.cn,Search Engines,297,0,0.0
+954,Thailand,a-mo.net,Advertisements,297,0,0.0
+955,Thailand,addons-pa.clients6.google.com,Search Engines,297,9,0.0303
+956,Thailand,adrta.com,Business,297,0,0.0
+957,Thailand,amazon.es,Ecommerce,297,0,0.0
+958,Thailand,mask.icloud.com,File Sharing,297,9,0.0303
+959,Thailand,origin-apple.com.akadns.net,Content Servers,297,0,0.0
+960,Thailand,erome.com,Pornography,297,0,0.0
+961,Thailand,es.wikipedia.org,Education,297,0,0.0
+962,Thailand,change.org,"Politics, Advocacy, and Government-Related",297,0,0.0
+963,Thailand,news.com.au,News & Media,297,0,0.0
+964,Thailand,ks-cdn.com,Technology,297,0,0.0
+965,Thailand,bankofamerica.com,Economy & Finance,297,0,0.0
+966,Thailand,ebay.co.uk,Auctions & Marketplaces,297,0,0.0
+967,Thailand,guzzoni.apple.com,Information Technology,297,9,0.0303
+968,Thailand,quickconnect.to,Technology,297,0,0.0
+969,Thailand,fb.me,Social Networks,297,39,0.1313
+970,Thailand,steamstatic.com,Content Servers,297,0,0.0
+971,Thailand,xnxx.com,Pornography,297,1,0.0034
+972,Thailand,ieee.org,"Politics, Advocacy, and Government-Related",297,0,0.0
+973,Thailand,turn.com,Business,297,0,0.0
+974,Thailand,redhat.com,Technology,297,0,0.0
+975,Thailand,ipify.org,Technology,297,0,0.0
+976,Thailand,ads-twitter.com,Advertisements,297,0,0.0
+977,Thailand,rfihub.com,Content Servers,297,0,0.0
+978,Thailand,s3.amazonaws.com,File Sharing,297,0,0.0
+979,Thailand,ovh.net,Information Technology,297,0,0.0
+980,Thailand,krxd.net,Content Servers,297,0,0.0
+981,Thailand,hm.com,Ecommerce,297,0,0.0
+982,Thailand,www.amazon.com,Ecommerce,297,0,0.0
+983,Thailand,lefigaro.fr,Video Streaming,297,0,0.0
+984,Thailand,ipredictive.com,Content Servers,297,0,0.0
+985,Thailand,nexusrules.officeapps.live.com,Technology,297,0,0.0
+986,Thailand,tencent-cloud.net,Technology,297,0,0.0
+987,Thailand,odc.officeapps.live.com,Business,297,0,0.0
+988,Thailand,heytapdl.com,Newly Seen Domains,297,0,0.0
+989,Thailand,www.googletagservices.com,Content Servers,297,0,0.0
+990,Thailand,milanuncios.com,Auctions & Marketplaces,297,0,0.0
+991,Thailand,intentiq.com,Business,297,0,0.0
+992,Thailand,cdn20.com,Content Servers,297,0,0.0
+993,Thailand,indexww.com,Content Servers,297,0,0.0
+994,Thailand,ibyteimg.com,Content Servers,297,0,0.0
+995,Thailand,whitehouse.gov,"Politics, Advocacy, and Government-Related",297,0,0.0
+996,Thailand,iris.microsoft.com,Business,297,0,0.0
+997,Thailand,cloudapp.azure.com,Technology,297,0,0.0
+998,Thailand,amazon.in,Ecommerce,297,0,0.0
+999,Thailand,iso.org,"Politics, Advocacy, and Government-Related",297,0,0.0
+1000,Thailand,bootstrapcdn.com,Content Servers,297,0,0.0
+1001,Thailand,api.iris.microsoft.com,Business,297,0,0.0
+1002,Thailand,simpli.fi,Business,297,0,0.0
+1003,Thailand,boostmobile.com,Information Technology,297,0,0.0
+1004,Thailand,nic.do,Parked & For Sale Domains,297,0,0.0
+1005,Thailand,aniview.com,Business,297,0,0.0
+1006,Thailand,bbtec.net,Newly Seen Domains,297,0,0.0
+1007,Thailand,amazon.it,Ecommerce,297,0,0.0
+1008,Thailand,statcounter.com,Business,297,0,0.0
+1009,Thailand,lowes.com,Ecommerce,297,0,0.0
+1010,Thailand,ssacdn.com,Content Servers,297,0,0.0
+1011,Thailand,istockphoto.com,"News, Portal & Search",297,30,0.101
+1012,Thailand,www.msn.com,News & Media,297,0,0.0
+1013,Thailand,ertelecom.ru,Information Technology,297,0,0.0
+1014,Thailand,shutterstock.com,Photography,297,0,0.0
+1015,Thailand,netgear.com,Business,297,0,0.0
+1016,Thailand,phicdn.net,Content Servers,297,0,0.0
+1017,Thailand,githubusercontent.com,Technology,297,0,0.0
+1018,Thailand,cdnhwc1.com,Content Servers,297,0,0.0
+1019,Thailand,epa.gov,"Politics, Advocacy, and Government-Related",297,0,0.0
+1020,Thailand,swrve.com,Business,297,0,0.0
+1021,Thailand,appier.net,Technology,297,0,0.0
+1022,Thailand,unrulymedia.com,Business,297,0,0.0
+1023,Thailand,www.linkedin.com,Professional Networking,297,9,0.0303
+1024,Thailand,samsungacr.com,Content Servers,297,0,0.0
+1025,Thailand,shopee.com.br,Newly Seen Domains,297,0,0.0
+1026,Thailand,samsungosp.com,Content Servers,297,0,0.0
+1027,Thailand,ameblo.jp,Personal Blogs,297,0,0.0
+1028,Thailand,impervadns.net,Content Servers,297,0,0.0
+1029,Thailand,eporner.com,Pornography,297,1,0.0034
+1030,Thailand,imcmdb.net,Content Servers,297,0,0.0
+1031,Thailand,clever.com,Technology,297,0,0.0
+1032,Thailand,state.gov,Government,297,0,0.0
+1033,Thailand,miwifi.com,Technology,297,0,0.0
+1034,Thailand,pool.ntp.org,Technology,297,0,0.0
+1035,Thailand,bdydns.com,Content Servers,297,0,0.0
+1036,Thailand,oneclient.sfx.ms,File Sharing,297,0,0.0
+1037,Thailand,google.com.tw,Search Engines,297,0,0.0
+1038,Thailand,onlyfans.com,Social Networks,297,1,0.0034
+1039,Thailand,seznam.cz,News & Media,297,0,0.0
+1040,Thailand,wayfair.com,Business,297,0,0.0
+1041,Thailand,onetag-sys.com,Advertisements,297,0,0.0
+1042,Thailand,discordapp.com,Information Technology,297,9,0.0303
+1043,Thailand,360.cn,Technology,297,0,0.0
+1044,Thailand,star.c10r.facebook.com,Social Networks,297,9,0.0303
+1045,Thailand,brave.com,Information Technology,297,0,0.0
+1046,Thailand,jnn-pa.googleapis.com,Content Servers,297,9,0.0303
+1047,Thailand,dreamhost.com,Information Technology,297,0,0.0
+1048,Thailand,worldbank.org,"Politics, Advocacy, and Government-Related",297,0,0.0
+1049,Thailand,history.google.com,Search Engines,297,9,0.0303
+1050,Thailand,mgid.com,Business,297,0,0.0
+1051,Thailand,fbsbx.com,Content Servers,297,0,0.0
+1052,Thailand,gitlab.com,Information Technology,297,9,0.0303
+1053,Thailand,economist.com,News & Media,297,0,0.0
+1054,Thailand,umich.edu,Educational Institutions,297,0,0.0
+1055,Thailand,tp-link.com,Technology,297,0,0.0
+1056,Thailand,mgts.ru,Information Technology,297,0,0.0
+1057,Thailand,onedrive.live.com,File Sharing,297,9,0.0303
+1058,Thailand,mathtag.com,Information Security,297,0,0.0
+1059,Thailand,usgovcloudapi.net,Content Servers,297,0,0.0
+1060,Thailand,1drv.com,File Sharing,297,0,0.0
+1061,Thailand,typeform.com,Webmail,297,0,0.0
+1062,Thailand,paloaltonetworks.com,Information Security,297,0,0.0
+1063,Thailand,columbia.edu,Educational Institutions,297,0,0.0
+1064,Thailand,v.aaplimg.com,Information Technology,297,0,0.0
+1065,Thailand,teams.cdn.office.net,Content Servers,297,0,0.0
+1066,Thailand,goskope.com,Content Servers,297,0,0.0
+1067,Thailand,tribalfusion.com,Business,297,0,0.0
+1068,Thailand,costco.com,Ecommerce,297,0,0.0
+1069,Thailand,heytapmobile.com,Content Servers,297,0,0.0
+1070,Thailand,usnews.com,News & Media,297,0,0.0
+1071,Thailand,cdnbuild.net,Newly Seen Domains,297,0,0.0
+1072,Thailand,firefox.com,Information Technology,297,0,0.0
+1073,Thailand,gouv.fr,Newly Seen Domains,297,0,0.0
+1074,Thailand,statics.teams.cdn.office.net,Content Servers,297,0,0.0
+1075,Thailand,okta.com,Business,297,0,0.0
+1076,Thailand,dan.com,Information Technology,297,0,0.0
+1077,Thailand,cloudinary.com,File Sharing,297,0,0.0
+1078,Thailand,chartbeat.net,Business,297,0,0.0
+1079,Thailand,vkontakte.ru,Social Networks,297,0,0.0
+1080,Thailand,globalsign.com,Information Security,297,0,0.0
+1081,Thailand,bild.de,News & Media,297,0,0.0
+1082,Thailand,genius.com,Music,297,0,0.0
+1083,Thailand,apigee.net,Content Servers,297,0,0.0
+1084,Thailand,disneyplus.com,Movies,297,9,0.0303
+1085,Thailand,connatix.com,Business,297,0,0.0
+1086,Thailand,dpm.demdex.net,Business,297,0,0.0
+1087,Thailand,jimdo.com,New Domains,297,0,0.0
+1088,Thailand,daum.net,News & Media,297,30,0.101
+1089,Thailand,wd.microsoft.com,Business,297,0,0.0
+1090,Thailand,vmware.com,Technology,297,0,0.0
+1091,Thailand,e2ro.com,Content Servers,297,0,0.0
+1092,Thailand,sectigo.com,Information Security,297,0,0.0
+1093,Thailand,fd.api.iris.microsoft.com,Business,297,0,0.0
+1094,Thailand,browser-intake-datadoghq.com,Content Servers,297,0,0.0
+1095,Thailand,unpkg.com,Content Servers,297,0,0.0
+1096,Thailand,kaspi.kz,Economy & Finance,297,0,0.0
+1097,Thailand,cloudflareinsights.com,Content Servers,297,0,0.0
+1098,Thailand,firebaseio.com,Technology,297,0,0.0
+1099,Thailand,repubblica.it,News & Media,297,0,0.0
+1100,Thailand,cp.wd.microsoft.com,Business,297,0,0.0
+1101,Thailand,chartboost.com,Business,297,0,0.0
+1102,Thailand,bttrack.com,Content Servers,297,0,0.0
+1103,Thailand,arcgis.com,Technology,297,0,0.0
+1104,Thailand,nypost.com,Video Streaming,297,0,0.0
+1105,Thailand,primevideo.com,Movies,297,9,0.0303
+1106,Thailand,wikihow.com,Education,297,0,0.0
+1107,Thailand,binance.com,Economy & Finance,297,0,0.0
+1108,Thailand,azure-devices.net,Content Servers,297,0,0.0
+1109,Thailand,avito.ru,Auctions & Marketplaces,297,0,0.0
+1110,Thailand,beacons.gvt2.com,Content Servers,297,0,0.0
+1111,Thailand,businesswire.com,Business,297,0,0.0
+1112,Thailand,myqcloud.com,Content Servers,297,0,0.0
+1113,Thailand,segment.io,Business,297,0,0.0
+1114,Thailand,spot.im,Business,297,0,0.0
+1115,Thailand,ya.ru,Search Engines,297,0,0.0
+1116,Thailand,theconversation.com,News & Media,297,0,0.0
+1117,Thailand,cdnjs.cloudflare.com,Technology,297,0,0.0
+1118,Thailand,ys7.com,Business,297,0,0.0
+1119,Thailand,hotmail.com,Webmail,297,9,0.0303
+1120,Thailand,ctdns.cn,Newly Seen Domains,297,0,0.0
+1121,Thailand,ad.gt,Advertisements,297,0,0.0
+1122,Thailand,dns.ne.jp,Technology,297,0,0.0
+1123,Thailand,llnwi.net,Content Servers,297,0,0.0
+1124,Thailand,deloitte.com,Economy & Finance,297,0,0.0
+1125,Thailand,biblegateway.com,Religion,297,0,0.0
+1126,Thailand,btloader.com,Content Servers,297,0,0.0
+1127,Thailand,yellowblue.io,Content Servers,297,0,0.0
+1128,Thailand,classroom.google.com,Education,297,9,0.0303
+1129,Thailand,rapid7.com,Information Security,297,0,0.0
+1130,Thailand,mediavine.com,Business,297,0,0.0
+1131,Thailand,immunet.com,Information Security,297,0,0.0
+1132,Thailand,discogs.com,Audio Streaming,297,0,0.0
+1133,Thailand,vip-svr.com,Newly Seen Domains,297,0,0.0
+1134,Thailand,hilton.com,Travel,297,0,0.0
+1135,Thailand,asyncgw.teams.microsoft.com,Business,297,9,0.0303
+1136,Thailand,ebay.de,Auctions & Marketplaces,297,0,0.0
+1137,Thailand,tbcache.com,Ecommerce,297,0,0.0
+1138,Thailand,pendo.io,Technology,297,0,0.0
+1139,Thailand,g.live.com,Technology,297,0,0.0
+1140,Thailand,vivoglobal.com,Technology,297,0,0.0
+1141,Thailand,savvis.net,Information Security,297,0,0.0
+1142,Thailand,xerox.com,Technology,297,0,0.0
+1143,Thailand,init.ess.apple.com,Information Technology,297,0,0.0
+1144,Thailand,fr.wikipedia.org,Education,297,0,0.0
+1145,Thailand,rings.solutions,Content Servers,297,0,0.0
+1146,Thailand,heylink.me,Technology,297,0,0.0
+1147,Thailand,cbc.ca,News & Media,297,0,0.0
+1148,Thailand,superhosting.bg,Ecommerce,297,0,0.0
+1149,Thailand,canonical.com,Technology,297,0,0.0
+1150,Thailand,spotifycdn.com,Content Servers,297,0,0.0
+1151,Thailand,recaptcha.net,Technology,297,0,0.0
+1152,Thailand,akismet.com,Information Security,297,0,0.0
+1153,Thailand,ioam.de,Business,297,0,0.0
+1154,Thailand,redd.it,Forums,297,0,0.0
+1155,Thailand,sharethis.com,Business,297,0,0.0
+1156,Thailand,rackspaceclouddb.com,Content Servers,297,0,0.0
+1157,Thailand,eyeota.net,Login Screens,297,0,0.0
+1158,Thailand,glance.net,Business,297,0,0.0
+1159,Thailand,adgrx.com,Technology,297,0,0.0
+1160,Thailand,onet.pl,News & Media,297,0,0.0
+1161,Thailand,samsungcloudsolution.net,Content Servers,297,0,0.0
+1162,Thailand,synology.com,Technology,297,0,0.0
+1163,Thailand,mckinsey.com,Webmail,297,0,0.0
+1164,Thailand,quizlet.com,Education,297,0,0.0
+1165,Thailand,dscw154.akamai.net,Content Servers,297,0,0.0
+1166,Thailand,websitewelcome.com,Content Servers,297,1,0.0034
+1167,Thailand,ancestry.com,Hobbies & Interests,297,0,0.0
+1168,Thailand,awsglobalaccelerator.com,Content Servers,297,0,0.0
+1169,Thailand,amazon.com.br,Ecommerce,297,0,0.0
+1170,Thailand,onesignal.com,Business,297,0,0.0
+1171,Thailand,adroll.com,Advertisements,297,0,0.0
+1172,Thailand,skroutz.gr,Shopping,297,0,0.0
+1173,Thailand,xfinity.com,Television,297,0,0.0
+1174,Thailand,api.amazon.com,Ecommerce,297,0,0.0
+1175,Thailand,2gis.com,Search Engines,297,0,0.0
+1176,Thailand,clients.google.com,Search Engines,297,9,0.0303
+1177,Thailand,postrelease.com,Content Servers,297,0,0.0
+1178,Thailand,instructure.com,Education,297,0,0.0
+1179,Thailand,firebaselogging-pa.googleapis.com,Content Servers,297,9,0.0303
+1180,Thailand,cm.g.doubleclick.net,Advertisements,297,9,0.0303
+1181,Thailand,android.clients.google.com,Content Servers,297,9,0.0303
+1182,Thailand,flurry.com,Business,297,0,0.0
+1183,Thailand,serving-sys.com,Content Servers,297,0,0.0
+1184,Thailand,tiqcdn.com,Content Servers,297,0,0.0
+1185,Thailand,elb.amazonaws.com,Technology,297,0,0.0
+1186,Thailand,innovid.com,Business,297,0,0.0
+1187,Thailand,notamedia.ru,Business,297,0,0.0
+1188,Thailand,c.bing.com,Content Servers,297,0,0.0
+1189,Thailand,corriere.it,News & Media,297,0,0.0
+1190,Thailand,cookiedatabase.org,Technology,297,0,0.0
+1191,Thailand,shipt.com,Business,297,0,0.0
+1192,Thailand,cachenow.net,Newly Seen Domains,297,0,0.0
+1193,Thailand,elmundo.es,News & Media,297,0,0.0
+1194,Thailand,apnews.com,News & Media,297,0,0.0
+1195,Thailand,mmcdn.com,Parked & For Sale Domains,297,0,0.0
+1196,Thailand,weforum.org,"Politics, Advocacy, and Government-Related",297,0,0.0
+1197,Thailand,4dex.io,Content Servers,297,0,0.0
+1198,Thailand,mail.yahoo.com,Webmail,297,9,0.0303
+1199,Thailand,qwest.net,Business,297,0,0.0
+1200,Thailand,spectrum.com,Information Technology,297,0,0.0
+1201,Thailand,aiv-delivery.net,Content Servers,297,0,0.0
+1202,Thailand,redditstatic.com,Content Servers,297,0,0.0
+1203,Thailand,wp.pl,News & Media,297,0,0.0
+1204,Thailand,si.com,Sports,297,0,0.0
+1205,Thailand,asos.com,Clothing,297,1,0.0034
+1206,Thailand,pikabu.ru,Personal Blogs,297,0,0.0
+1207,Thailand,bol.com,Ecommerce,297,30,0.101
+1208,Thailand,tynt.com,Business,297,0,0.0
+1209,Thailand,bumble.com,Dating & Relationships,297,0,0.0
+1210,Thailand,aa-rt.sharepoint.com,New Domains,297,9,0.0303
+1211,Thailand,arxiv.org,Education,297,0,0.0
+1212,Thailand,eepurl.com,Redirect,297,0,0.0
+1213,Thailand,withgoogle.com,Search Engines,297,1,0.0034
+1214,Thailand,pusher.com,Technology,297,0,0.0
+1215,Thailand,ib.adnxs.com,Business,297,0,0.0
+1216,Thailand,doh.opendns.com,Information Technology,297,9,0.0303
+1217,Thailand,marketwatch.com,Economy & Finance,297,0,0.0
+1218,Thailand,utorrent.com,P2P,297,1,0.0034
+1219,Thailand,psychologytoday.com,Health & Fitness,297,0,0.0
+1220,Thailand,twitchcdn.net,Content Servers,297,9,0.0303
+1221,Thailand,doubleclick.com,Business,297,0,0.0
+1222,Thailand,epicgames.dev,Gaming,297,0,0.0
+1223,Thailand,newyorker.com,Video Streaming,297,0,0.0
+1224,Thailand,pik.ru,Real Estate,297,1,0.0034
+1225,Thailand,dbankcloud.ru,Unreachable,297,0,0.0
+1226,Thailand,www.spotify.com,Audio Streaming,297,0,0.0
+1227,Thailand,pixiv.net,Arts,297,0,0.0
+1228,Thailand,vice.com,News & Media,297,1,0.0034
+1229,Thailand,francetvinfo.fr,News & Media,297,1,0.0034
+1230,Thailand,ubnt.com,Technology,297,0,0.0
+1231,Thailand,interia.pl,News & Media,297,3,0.0101
+1232,Thailand,pexels.com,Photography,297,2,0.0067
+1233,Thailand,avira.com,Technology,297,1,0.0034
+1234,Thailand,fortune.com,Magazines,297,2,0.0067
+1235,Thailand,classlink.com,Education,297,0,0.0
+1236,Thailand,socdm.com,Content Servers,297,0,0.0
+1237,Thailand,th.bing.com,Search Engines,297,0,0.0
+1238,Thailand,plos.org,Education,297,0,0.0
+1239,Thailand,kahoot.it,Gaming,297,0,0.0
+1240,Thailand,support.mozilla.org,Technology,297,0,0.0
+1241,Thailand,chartbeat.com,Business,297,0,0.0
+1242,Thailand,amazon.com.au,Ecommerce,297,0,0.0
+1243,Thailand,flipkart.com,Ecommerce,297,0,0.0
+1244,Thailand,vkuser.net,Content Servers,297,0,0.0
+1245,Thailand,truste.com,Information Security,297,0,0.0
+1246,Thailand,plex.tv,Movies,297,9,0.0303
+1247,Thailand,configuration.apple.com,Content Servers,297,0,0.0
+1248,Thailand,vidazoo.com,Business,297,0,0.0
+1249,Thailand,atlassian.net,Business,297,0,0.0
+1250,Thailand,creditkarma.com,Economy & Finance,297,0,0.0
+1251,Thailand,chegg.com,Education,297,0,0.0
+1252,Thailand,split.io,Business,297,0,0.0
+1253,Thailand,gsp85-ssl.ls.apple.com,Information Technology,297,9,0.0303
+1254,Thailand,byteoversea.com,Content Servers,297,0,0.0
+1255,Thailand,trustarc.com,Information Security,297,0,0.0
+1256,Thailand,allianz.com,Economy & Finance,297,0,0.0
+1257,Thailand,dribbble.com,Photography,297,0,0.0
+1258,Thailand,finance.yahoo.com,Economy & Finance,297,0,0.0
+1259,Thailand,mosmedzdrav.ru,Newly Seen Domains,297,0,0.0
+1260,Thailand,agoda.com,Coupons,297,0,0.0
+1261,Thailand,mashable.com,News & Media,297,0,0.0
+1262,Thailand,trendyol.com,Fashion,297,0,0.0
+1263,Thailand,openstreetmap.org,Education,297,0,0.0
+1264,Thailand,geo.prod.do.dsp.mp.microsoft.com,Business,297,0,0.0
+1265,Thailand,olx.ua,Auctions & Marketplaces,297,0,0.0
+1266,Thailand,yale.edu,Educational Institutions,297,0,0.0
+1267,Thailand,spankbang.com,Pornography,297,1,0.0034
+1268,Thailand,mdpi.com,Education,296,0,0.0
+1269,Thailand,psu.edu,Educational Institutions,296,0,0.0
+1270,Thailand,highwebmedia.com,Pornography,296,1,0.0034
+1271,Thailand,grserver.gr,Information Technology,296,0,0.0
+1272,Thailand,online.net,Information Technology,296,0,0.0
+1273,Thailand,nicovideo.jp,Video Streaming,296,0,0.0
+1274,Thailand,ripn.net,Technology,296,0,0.0
+1275,Thailand,youronlinechoices.com,Business,296,0,0.0
+1276,Thailand,osi.office.net,Content Servers,296,0,0.0
+1277,Thailand,www.gov.br,"Politics, Advocacy, and Government-Related",296,0,0.0
+1278,Thailand,1.bp.blogspot.com,Personal Blogs,296,9,0.0304
+1279,Thailand,chess.com,Hobbies & Interests,296,0,0.0
+1280,Thailand,alidns.com,Information Technology,296,0,0.0
+1281,Thailand,joinhoney.com,Coupons,296,0,0.0
+1282,Thailand,youtubei.googleapis.com,Content Servers,296,9,0.0304
+1283,Thailand,360safe.com,Information Security,296,0,0.0
+1284,Thailand,redditmedia.com,Video Streaming,296,0,0.0
+1285,Thailand,ecosia.org,"Politics, Advocacy, and Government-Related",296,9,0.0304
+1286,Thailand,bam.nr-data.net,Content Servers,296,9,0.0304
+1287,Thailand,springserve.com,Business,296,0,0.0
+1288,Thailand,idnes.cz,News & Media,296,0,0.0
+1289,Thailand,webhostbox.net,Information Technology,296,0,0.0
+1290,Thailand,constantcontact.com,Business,296,0,0.0
+1291,Thailand,marca.com,Video Streaming,296,0,0.0
+1292,Thailand,dnsv1.com,Content Servers,296,0,0.0
+1293,Thailand,166.com,News & Media,296,0,0.0
+1294,Thailand,mozaws.net,Content Servers,296,0,0.0
+1295,Thailand,olx.com.br,Auctions & Marketplaces,296,0,0.0
+1296,Thailand,share-dns.com,Newly Seen Domains,296,0,0.0
+1297,Thailand,surfshark.com,P2P,296,0,0.0
+1298,Thailand,service-now.com,Technology,296,0,0.0
+1299,Thailand,moneycontrol.com,Economy & Finance,296,30,0.1014
+1300,Thailand,character.ai,Newly Seen Domains,296,9,0.0304
+1301,Thailand,adcolony.com,Business,296,0,0.0
+1302,Thailand,beget.com,File Sharing,296,0,0.0
+1303,Thailand,g.whatsapp.net,Instant Messengers,296,9,0.0304
+1304,Thailand,cdnhwc2.com,Content Servers,296,0,0.0
+1305,Thailand,dropboxapi.com,Content Servers,296,0,0.0
+1306,Thailand,kwai-pro.com,Newly Seen Domains,296,0,0.0
+1307,Thailand,ilovepdf.com,Business,296,0,0.0
+1308,Thailand,no-ip.com,Information Technology,296,0,0.0
+1309,Thailand,welt.de,News & Media,296,0,0.0
+1310,Thailand,vivo.com.cn,Technology,296,0,0.0
+1311,Thailand,lgtvsdp.com,Content Servers,296,0,0.0
+1312,Thailand,rackcdn.com,Content Servers,296,0,0.0
+1313,Thailand,rayjump.com,Business,296,0,0.0
+1314,Thailand,samsungelectronics.com,Home & Garden,296,0,0.0
+1315,Thailand,perfectdomain.com,Information Technology,296,0,0.0
+1316,Thailand,google.ru,Search Engines,296,0,0.0
+1317,Thailand,asm.skype.com,Instant Messengers,296,0,0.0
+1318,Thailand,churnzero.net,Business,296,0,0.0
+1319,Thailand,colossusssp.com,Content Servers,296,0,0.0
+1320,Thailand,s-onetag.com,Content Servers,296,0,0.0
+1321,Thailand,ox.ac.uk,Educational Institutions,296,0,0.0
+1322,Thailand,abc.net.au,News & Media,296,0,0.0
+1323,Thailand,samsungcloud.tv,Content Servers,296,0,0.0
+1324,Thailand,about.com,Education,296,0,0.0
+1325,Thailand,tayninh.gov.vn,"Politics, Advocacy, and Government-Related",296,0,0.0
+1326,Thailand,ucla.edu,Educational Institutions,296,0,0.0
+1327,Thailand,dynamicyield.com,Business,296,0,0.0
+1328,Thailand,mercadolibre.com.ar,Auctions & Marketplaces,296,0,0.0
+1329,Thailand,beget.ru,Information Technology,296,0,0.0
+1330,Thailand,onedrive.com,File Sharing,296,0,0.0
+1331,Thailand,bitdefender.net,Technology,296,0,0.0
+1332,Thailand,otto.de,Ecommerce,296,0,0.0
+1333,Thailand,zoho.com,Business,296,0,0.0
+1334,Thailand,static.doubleclick.net,Advertisements,296,9,0.0304
+1335,Thailand,vtb.ru,Economy & Finance,296,0,0.0
+1336,Thailand,livedoor.jp,News & Media,296,0,0.0
+1337,Thailand,as.com,Sports,296,0,0.0
+1338,Thailand,n-tv.de,News & Media,296,0,0.0
+1339,Thailand,tokopedia.com,Ecommerce,296,0,0.0
+1340,Thailand,permutive.com,Business,296,0,0.0
+1341,Thailand,newsweek.com,Magazines,296,0,0.0
+1342,Thailand,gsmarena.com,Shopping,296,0,0.0
+1343,Thailand,nexusmods.com,Gaming,296,0,0.0
+1344,Thailand,screenrant.com,Video Streaming,296,0,0.0
+1345,Thailand,nba.com,News & Media,296,0,0.0
+1346,Thailand,gofundme.com,"Politics, Advocacy, and Government-Related",296,0,0.0
+1347,Thailand,id.google.com,Content Servers,296,9,0.0304
+1348,Thailand,adnxs-simple.com,Content Servers,296,0,0.0
+1349,Thailand,plesk.com,Technology,296,0,0.0
+1350,Thailand,ameba.jp,Personal Blogs,296,0,0.0
+1351,Thailand,www.yahoo.com,News & Media,296,0,0.0
+1352,Thailand,topdns.me,Content Servers,296,0,0.0
+1353,Thailand,upenn.edu,Educational Institutions,296,0,0.0
+1354,Thailand,uchi.ru,Educational Institutions,296,0,0.0
+1355,Thailand,infobae.com,News & Media,296,0,0.0
+1356,Thailand,polyfill.io,Technology,296,0,0.0
+1357,Thailand,messenger.com,Instant Messengers,296,9,0.0304
+1358,Thailand,goal.com,Video Streaming,296,0,0.0
+1359,Thailand,quizizz.com,Education,296,0,0.0
+1360,Thailand,graph.instagram.com,Social Networks,296,9,0.0304
+1361,Thailand,ouest-france.fr,News & Media,296,30,0.1014
+1362,Thailand,linode.com,Technology,296,0,0.0
+1363,Thailand,l.google.com,Search Engines,296,9,0.0304
+1364,Thailand,protection.outlook.com,Webmail,296,9,0.0304
+1365,Thailand,sportskeeda.com,News & Media,296,0,0.0
+1366,Thailand,oculus.com,Ecommerce,296,0,0.0
+1367,Thailand,store.steampowered.com,Ecommerce,296,9,0.0304
+1368,Thailand,xing.com,Professional Networking,296,0,0.0
+1369,Thailand,amazon.com.mx,Ecommerce,296,0,0.0
+1370,Thailand,reverso.net,Translator,296,0,0.0
+1371,Thailand,mercadolivre.com.br,Ecommerce,296,0,0.0
+1372,Thailand,ui-dns.com,Newly Seen Domains,296,0,0.0
+1373,Thailand,sciencedaily.com,News & Media,296,0,0.0
+1374,Thailand,biomedcentral.com,Education,296,0,0.0
+1375,Thailand,bfmtv.com,News & Media,296,0,0.0
+1376,Thailand,sc-static.net,Content Servers,296,0,0.0
+1377,Thailand,ingest.sentry.io,Business,296,0,0.0
+1378,Thailand,mwbsys.com,Content Servers,296,0,0.0
+1379,Thailand,mobile.de,Vehicles,296,0,0.0
+1380,Thailand,bytefcdn.com,Content Servers,296,0,0.0
+1381,Thailand,me.gvt1.com,Content Servers,296,0,0.0
+1382,Thailand,docomo.ne.jp,News & Media,296,0,0.0
+1383,Thailand,dnevnik.ru,Education,296,0,0.0
+1384,Thailand,airslate.com,Business,296,0,0.0
+1385,Thailand,clarin.com,News & Media,296,30,0.1014
+1386,Thailand,mparticle.com,Business,296,0,0.0
+1387,Thailand,splashtop.com,Information Technology,296,0,0.0
+1388,Thailand,nu.nl,News & Media,296,0,0.0
+1389,Thailand,meethue.com,Business,296,0,0.0
+1390,Thailand,edgedl.me.gvt1.com,Content Servers,296,0,0.0
+1391,Thailand,lwsdns.com,Information Technology,296,0,0.0
+1392,Thailand,tencent.com,Information Technology,296,0,0.0
+1393,Thailand,cloud.netflix.com,Movies,296,9,0.0304
+1394,Thailand,ja.wikipedia.org,Education,296,0,0.0
+1395,Thailand,hotstar.com,Movies,296,0,0.0
+1396,Thailand,poki.com,Gaming,296,0,0.0
+1397,Thailand,pvp.net,Gaming,296,9,0.0304
+1398,Thailand,prod.cloud.netflix.com,Movies,296,9,0.0304
+1399,Thailand,android.googleapis.com,Content Servers,296,9,0.0304
+1400,Thailand,wordreference.com,Education,296,0,0.0
+1401,Thailand,b.tlu.dl.delivery.mp.microsoft.com,Business,296,0,0.0
+1402,Thailand,curseforge.com,Gaming,296,0,0.0
+1403,Thailand,lanacion.com.ar,News & Media,296,0,0.0
+1404,Thailand,uci.edu,Education,296,0,0.0
+1405,Thailand,fastcompany.com,Video Streaming,296,0,0.0
+1406,Thailand,msedge.b.tlu.dl.delivery.mp.microsoft.com,Business,296,0,0.0
+1407,Thailand,fetlife.com,Pornography,296,1,0.0034
+1408,Thailand,www.instagram.com,Photography,296,9,0.0304
+1409,Thailand,gismeteo.ru,News & Media,296,0,0.0
+1410,Thailand,vivo.com,Technology,296,0,0.0
+1411,Thailand,typepad.com,Information Technology,296,0,0.0
+1412,Thailand,olx.pl,Auctions & Marketplaces,296,0,0.0
+1413,Thailand,watchguard.com,Information Technology,296,0,0.0
+1414,Thailand,frontiersin.org,Education,296,0,0.0
+1415,Thailand,apkpure.com,Gaming,296,0,0.0
+1416,Thailand,gcdn.co,Information Technology,296,0,0.0
+1417,Thailand,analytics.yahoo.com,News & Media,296,0,0.0
+1418,Thailand,aparat.com,Video Streaming,296,0,0.0
+1419,Thailand,en.m.wikipedia.org,Education,296,0,0.0
+1420,Thailand,caixa.gov.br,Economy & Finance,296,0,0.0
+1421,Thailand,quillbot.com,Questionable Activities,296,0,0.0
+1422,Thailand,kleinanzeigen.de,Auctions & Marketplaces,296,0,0.0
+1423,Thailand,ad.nl,Video Streaming,296,0,0.0
+1424,Thailand,bmj.com,Education,296,0,0.0
+1425,Thailand,launchpad.classlink.com,Education,296,0,0.0
+1426,Thailand,ade.googlesyndication.com,Advertisements,296,9,0.0304
+1427,Thailand,beelinegprs.ru,Newly Seen Domains,296,0,0.0
+1428,Thailand,fb.watch,Audio Streaming,296,0,0.0
+1429,Thailand,tealiumiq.com,Technology,296,0,0.0
+1430,Thailand,google.com.au,Search Engines,296,30,0.1014
+1431,Thailand,20minutos.es,Video Streaming,296,0,0.0
+1432,Thailand,terra.com.br,News & Media,296,0,0.0
+1433,Thailand,dbankcdn.com,Content Servers,296,0,0.0
+1434,Thailand,bet365.com,Gambling,296,1,0.0034
+1435,Thailand,i18n-pglstatp.com,Newly Seen Domains,296,0,0.0
+1436,Thailand,nakheelteam.cc,Technology,296,0,0.0
+1437,Thailand,arin.net,Technology,296,0,0.0
+1438,Thailand,dafont.com,Hobbies & Interests,296,0,0.0
+1439,Thailand,myapps.classlink.com,Education,296,0,0.0
+1440,Thailand,india.com,News & Media,296,0,0.0
+1441,Thailand,telegraaf.nl,News & Media,296,0,0.0
+1442,Thailand,www.adobe.com,Technology,296,0,0.0
+1443,Thailand,apa.org,"Politics, Advocacy, and Government-Related",296,0,0.0
+1444,Thailand,leboncoin.fr,Auctions & Marketplaces,296,30,0.1014
+1445,Thailand,code.org,Education,296,0,0.0
+1446,Thailand,google.nl,Search Engines,296,0,0.0
+1447,Thailand,dscx.akamaiedge.net,Content Servers,296,0,0.0
+1448,Thailand,n-able.com,Business,296,0,0.0
+1449,Thailand,archiveofourown.org,Education,296,0,0.0
+1450,Thailand,dmm.co.jp,Pornography,296,1,0.0034
+1451,Thailand,cspserver.net,Content Servers,296,0,0.0
+1452,Thailand,coupang.com,Ecommerce,296,0,0.0
+1453,Thailand,trello.com,Technology,296,9,0.0304
+1454,Thailand,msftauth.net,Content Servers,296,0,0.0
+1455,Thailand,www.netflix.com,Movies,296,9,0.0304
+1456,Thailand,vox.com,News & Media,296,0,0.0
+1457,Thailand,umn.edu,Educational Institutions,296,0,0.0
+1458,Thailand,udn.com,News & Media,296,0,0.0
+1459,Thailand,ixl.com,Education,296,0,0.0
+1460,Thailand,cxense.com,Technology,296,0,0.0
+1461,Thailand,meet.google.com,Technology,296,9,0.0304
+1462,Thailand,tsyndicate.com,Advertisements,296,0,0.0
+1463,Thailand,twilio.com,Internet Phone & VOIP,296,0,0.0
+1464,Thailand,orderbox-dns.com,Content Servers,296,0,0.0
+1465,Thailand,myhostadmin.net,Technology,296,0,0.0
+1466,Thailand,realtor.com,Real Estate,296,30,0.1014
+1467,Thailand,flashscore.com,Gambling,296,0,0.0
+1468,Thailand,svc.ms,Content Servers,296,0,0.0
+1469,Thailand,readthedocs.io,Education,296,0,0.0
+1470,Thailand,zdnet.com,News & Media,296,0,0.0
+1471,Thailand,agora.io,Internet Phone & VOIP,296,0,0.0
+1472,Thailand,usps.com,Business,296,0,0.0
+1473,Thailand,mmechocaptiveportal.com,Newly Seen Domains,296,0,0.0
+1474,Thailand,tnaflix.com,Pornography,296,0,0.0
+1475,Thailand,tiktokv.us,Newly Seen Domains,295,0,0.0
+1476,Thailand,tinkoff.ru,Economy & Finance,295,0,0.0
+1477,Thailand,ynet.co.il,News & Media,295,0,0.0
+1478,Thailand,global.aa-rt.sharepoint.com,New Domains,295,9,0.0305
+1479,Thailand,hurriyet.com.tr,Video Streaming,295,0,0.0
+1480,Thailand,livescore.com,Sports,295,0,0.0
+1481,Thailand,www.paypal.com,Economy & Finance,295,0,0.0
+1482,Thailand,tabelog.com,Shopping,295,0,0.0
+1483,Thailand,alipaydns.com,Ecommerce,295,0,0.0
+1484,Thailand,garmin.com,Fashion,295,0,0.0
+1485,Thailand,vg.no,News & Media,295,0,0.0
+1486,Thailand,footprint.net,Content Servers,295,0,0.0
+1487,Thailand,gr.global.aa-rt.sharepoint.com,New Domains,295,9,0.0305
+1488,Thailand,gazzetta.it,Video Streaming,295,0,0.0
+1489,Thailand,detik.com,News & Media,295,0,0.0
+1490,Thailand,coursehero.com,Education,295,0,0.0
+1491,Thailand,sahibinden.com,Auctions & Marketplaces,295,0,0.0
+1492,Thailand,in.pinterest.com,Photography,295,9,0.0305
+1493,Thailand,youporn.com,Pornography,295,0,0.0
+1494,Thailand,us-prod.asyncgw.teams.microsoft.com,Business,295,9,0.0305
+1495,Thailand,finn.no,Auctions & Marketplaces,295,0,0.0
+1496,Thailand,jstor.org,Education,295,0,0.0
+1497,Thailand,us-v10c.events.data.microsoft.com,Business,295,0,0.0
+1498,Thailand,sky.com,Television,295,0,0.0
+1499,Thailand,argos.co.uk,Ecommerce,295,0,0.0
+1500,Thailand,expedia.com,Travel,295,0,0.0
+1501,Thailand,blog.livedoor.jp,Personal Blogs,295,0,0.0
+1502,Thailand,datadome.co,Technology,295,0,0.0
+1503,Thailand,espncricinfo.com,Video Streaming,295,0,0.0
+1504,Thailand,jw.org,Religion,295,0,0.0
+1505,Thailand,wyzecam.com,Technology,295,0,0.0
+1506,Thailand,vnexpress.net,News & Media,295,0,0.0
+1507,Thailand,data-edge.smartscreen.microsoft.com,Business,295,0,0.0
+1508,Thailand,americanexpress.com,Economy & Finance,295,0,0.0
+1509,Thailand,pornpics.com,Pornography,295,0,0.0
+1510,Thailand,infoseek.co.jp,News & Media,295,0,0.0
+1511,Thailand,boyfriendtv.com,Pornography,295,0,0.0
+1512,Thailand,rightmove.co.uk,Real Estate,295,0,0.0
+1513,Thailand,hinet.net,News & Media,295,0,0.0
+1514,Thailand,ttdns2.com,Newly Seen Domains,295,0,0.0
+1515,Thailand,acesso.gov.br,"Politics, Advocacy, and Government-Related",295,0,0.0
+1516,Thailand,nhentai.net,Pornography,295,0,0.0
+1517,Thailand,xhcdn.com,Content Servers,295,0,0.0
+1518,Thailand,redtube.com,Pornography,295,0,0.0
+1519,Thailand,livedoor.com,News & Media,295,0,0.0
+1520,Thailand,dropbox-dns.com,Content Servers,295,0,0.0
+1521,Thailand,cookpad.com,Social Networks,295,0,0.0
+1522,Thailand,vinted.fr,Auctions & Marketplaces,295,0,0.0
+1523,Thailand,rule34.xxx,Pornography,295,1,0.0034
+1524,Thailand,or.kr,Newly Seen Domains,295,0,0.0
+1525,Thailand,faphouse.com,Pornography,295,0,0.0
+1526,Thailand,magazineluiza.com.br,Ecommerce,295,0,0.0
+1527,Thailand,dyndns.org,Technology,295,0,0.0
+1528,Thailand,varzesh3.com,News & Media,295,0,0.0
+1529,Thailand,gsp-ssl.ls-apple.com.akadns.net,Content Servers,295,0,0.0
+1530,Thailand,hln.be,News & Media,295,0,0.0
+1531,Thailand,wpengine.com,Information Technology,295,0,0.0
+1532,Thailand,www.baidu.com,Search Engines,295,0,0.0
+1533,Thailand,www.dropbox.com,File Sharing,295,39,0.1322
+1534,Thailand,classdojo.com,Education,295,9,0.0305
+1535,Thailand,remove.bg,Technology,295,0,0.0
+1536,Thailand,xhamster.desi,Pornography,295,0,0.0
+1537,Thailand,furaffinity.net,Forums,295,0,0.0
+1538,Thailand,verizon.com,Information Technology,295,0,0.0
+1539,Thailand,hitomi.la,Pornography,295,0,0.0
+1540,Thailand,lichess.org,Gaming,295,0,0.0
+1541,Thailand,datto.com,Business,295,0,0.0
+1542,Thailand,rule34video.com,Pornography,295,0,0.0
+1543,Thailand,kontur.ru,Technology,295,0,0.0
+1544,Thailand,mercadolibre.com.mx,Auctions & Marketplaces,295,0,0.0
+1545,Thailand,elcorteingles.es,Ecommerce,295,0,0.0
+1546,Thailand,jtvnw.net,Content Servers,295,0,0.0
+1547,Thailand,login.yahoo.com,Advertisements,295,0,0.0
+1548,Thailand,e10499.dsce9.akamaiedge.net,Content Servers,295,0,0.0
+1549,Thailand,indiamart.com,Auctions & Marketplaces,295,0,0.0
+1550,Thailand,serasa.com.br,Business,295,0,0.0
+1551,Thailand,missav.com,Pornography,295,0,0.0
+1552,Thailand,symantec.com,Information Security,295,0,0.0
+1553,Thailand,marktplaats.nl,Auctions & Marketplaces,295,0,0.0
+1554,Thailand,irs.gov,Economy & Finance,295,0,0.0
+1555,Thailand,tribunnews.com,News & Media,295,0,0.0
+1556,Thailand,amazon.com.tr,Ecommerce,295,0,0.0
+1557,Thailand,betano.com,Content Servers,295,0,0.0
+1558,Thailand,www.canva.com,Arts,295,9,0.0305
+1559,Thailand,timesofindia.com,News & Media,295,0,0.0
+1560,Thailand,fanfiction.net,Education,295,0,0.0
+1561,Thailand,blooket.com,Education,295,0,0.0
+1562,Thailand,adobedc.net,Content Servers,295,0,0.0
+1563,Thailand,nintendo.com,Gaming,295,0,0.0
+1564,Thailand,meetup.com,Social Networks,295,0,0.0
+1565,Thailand,www.google.co.uk,Search Engines,295,0,0.0
+1566,Thailand,txxx.com,Pornography,295,0,0.0
+1567,Thailand,xinhuanet.com,Video Streaming,295,0,0.0
+1568,Thailand,search.yahoo.com,Search Engines,295,0,0.0
+1569,Thailand,ebay.it,Auctions & Marketplaces,295,0,0.0
+1570,Thailand,sciencemag.org,Science,295,0,0.0
+1571,Thailand,avsxappcaptiveportal.com,Newly Seen Domains,295,0,0.0
+1572,Thailand,nleditor.osi.office.net,Content Servers,295,0,0.0
+1573,Thailand,oauthaccountmanager.googleapis.com,Content Servers,295,9,0.0305
+1574,Thailand,ubi.com,Gaming,295,0,0.0
+1575,Thailand,squarespacedns.com,Newly Seen Domains,295,0,0.0
+1576,Thailand,ria.com,Auctions & Marketplaces,295,0,0.0
+1577,Thailand,kt-prod.ess.apple.com,Information Technology,295,1,0.0034
+1578,Thailand,ixbt.com,News & Media,295,0,0.0
+1579,Thailand,hotpepper.jp,Food & Drink,295,0,0.0
+1580,Thailand,play-fe.googleapis.com,Content Servers,295,9,0.0305
+1581,Thailand,www.reddit.com,Forums,295,9,0.0305
+1582,Thailand,studocu.com,Education,295,0,0.0
+1583,Thailand,cricbuzz.com,News & Media,295,0,0.0
+1584,Thailand,mundodeportivo.com,News & Media,295,0,0.0
+1585,Thailand,www.pinterest.com,Photography,295,9,0.0305
+1586,Thailand,dashlane.com,Technology,295,0,0.0
+1587,Thailand,wisc.edu,Educational Institutions,295,0,0.0
+1588,Thailand,msg.teams.microsoft.com,Business,295,9,0.0305
+1589,Thailand,cdiscount.com,Ecommerce,295,0,0.0
+1590,Thailand,zhihu.com,Education,295,0,0.0
+1591,Thailand,myntra.com,Ecommerce,295,0,0.0
+1592,Thailand,hepsiburada.com,Ecommerce,295,1,0.0034
+1593,Thailand,my.com,Gaming,295,0,0.0
+1594,Thailand,phncdn.com,Pornography,295,0,0.0
+1595,Thailand,algolia.net,Information Technology,295,0,0.0
+1596,Thailand,credit-agricole.fr,Economy & Finance,295,0,0.0
+1597,Thailand,milliyet.com.tr,News & Media,295,0,0.0
+1598,Thailand,spamhaus.org,"Politics, Advocacy, and Government-Related",295,0,0.0
+1599,Thailand,donga.com,News & Media,295,0,0.0
+1600,Thailand,sex.com,Pornography,295,29,0.0983
+1601,Thailand,ng.msg.teams.microsoft.com,Business,295,9,0.0305
+1602,Thailand,auone.jp,News & Media,295,0,0.0
+1603,Thailand,ddns.net,Information Technology,295,0,0.0
+1604,Thailand,chat.openai.com,Technology,295,9,0.0305
+1605,Thailand,go.id,Newly Seen Domains,295,0,0.0
+1606,Thailand,tplinkcloud.com,Photography,295,0,0.0
+1607,Thailand,namu.wiki,Education,295,0,0.0
+1608,Thailand,latamairlines.com,Travel,295,0,0.0
+1609,Thailand,www.samsung.com,Home & Garden,295,0,0.0
+1610,Thailand,ocsp.entrust.net,Information Security,295,0,0.0
+1611,Thailand,makemytrip.com,Travel,295,29,0.0983
+1612,Thailand,dgw.c10r.facebook.com,Social Networks,295,9,0.0305
+1613,Thailand,tabor.ru,Dating & Relationships,295,0,0.0
+1614,Thailand,idealista.com,Real Estate,295,0,0.0
+1615,Thailand,dondominio.com,Information Technology,295,0,0.0
+1616,Thailand,byjus.com,Education,295,0,0.0
+1617,Thailand,www.temu.com,Newly Seen Domains,295,0,0.0
+1618,Thailand,www.tiktok.com,Video Streaming,295,9,0.0305
+1619,Thailand,s0.2mdn.net,Content Servers,295,0,0.0
+1620,Thailand,digikala.com,Ecommerce,295,0,0.0
+1621,Thailand,s.amazon-adsystem.com,Advertisements,295,0,0.0
+1622,Thailand,strpst.com,Newly Seen Domains,295,0,0.0
+1623,Thailand,ntppool.org,Technology,295,0,0.0
+1624,Thailand,tvn24.pl,News & Media,295,0,0.0
+1625,Thailand,kundelik.kz,Education,295,0,0.0
+1626,Thailand,g1.globo.com,News & Media,295,0,0.0
+1627,Thailand,dlsite.com,Pornography,295,0,0.0
+1628,Thailand,www.nytimes.com,News & Media,295,0,0.0
+1629,Thailand,cdp.microsoft.com,Business,295,0,0.0
+1630,Thailand,xbox.com,Gaming,295,0,0.0
+1631,Thailand,coolmathgames.com,Gaming,295,0,0.0
+1632,Thailand,pantip.com,Forums,295,0,0.0
+1633,Thailand,dagbladet.no,News & Media,295,0,0.0
+1634,Thailand,mynet.com,News & Media,295,0,0.0
+1635,Thailand,acronis.com,Education,295,0,0.0
+1636,Thailand,mbga.jp,Gaming,295,0,0.0
+1637,Thailand,pewresearch.org,News & Media,295,0,0.0
+1638,Thailand,kemono.su,Newly Seen Domains,295,0,0.0
+1639,Thailand,hltv.org,Gaming,295,0,0.0
+1640,Thailand,www.imdb.com,Movies,295,0,0.0
+1641,Thailand,company-target.com,Content Servers,295,0,0.0
+1642,Thailand,allianz.de,Economy & Finance,295,0,0.0
+1643,Thailand,imagefap.com,Pornography,295,0,0.0
+1644,Thailand,noodlemagazine.com,Search Engines,295,0,0.0
+1645,Thailand,api.cdp.microsoft.com,Business,295,0,0.0
+1646,Thailand,subito.it,Auctions & Marketplaces,295,0,0.0
+1647,Thailand,inven.co.kr,Gaming,295,0,0.0
+1648,Thailand,coursera.org,Education,295,0,0.0
+1649,Thailand,oreilly.com,Education,295,0,0.0
+1650,Thailand,fc2.com,Information Technology,295,0,0.0
+1651,Thailand,funpay.com,Economy & Finance,295,0,0.0
+1652,Thailand,cloud.com,Technology,295,0,0.0
+1653,Thailand,va.gov,Government,295,0,0.0
+1654,Thailand,roskazna.ru,"Politics, Advocacy, and Government-Related",295,0,0.0
+1655,Thailand,i.instagram.com,Social Networks,295,9,0.0305
+1656,Thailand,dcinside.com,News & Media,295,9,0.0305
+1657,Thailand,bilibili.tv,Gaming,295,0,0.0
+1658,Thailand,futbin.com,Gaming,295,0,0.0
+1659,Thailand,samsungknox.com,Technology,295,0,0.0
+1660,Thailand,tsn.ua,News & Media,295,0,0.0
+1661,Thailand,donmai.us,Pornography,295,0,0.0
+1662,Thailand,msedge.api.cdp.microsoft.com,Business,295,0,0.0
+1663,Thailand,gelbooru.com,Forums,295,0,0.0
+1664,Thailand,unifi-ai.com,Content Servers,295,0,0.0
+1665,Thailand,www.homedepot.com,Ecommerce,295,1,0.0034
+1666,Thailand,fmkorea.com,Sports,295,0,0.0
+1667,Thailand,ilmessaggero.it,Video Streaming,295,0,0.0
+1668,Thailand,dantri.com.vn,News & Media,295,1,0.0034
+1669,Thailand,amocrm.ru,Business,295,0,0.0
+1670,Thailand,www.walmart.com,Ecommerce,295,1,0.0034
+1671,Thailand,ilmeteo.it,News & Media,295,0,0.0
+1672,Thailand,youjizz.com,Pornography,295,0,0.0
+1673,Thailand,oecd.org,"Politics, Advocacy, and Government-Related",295,0,0.0
+1674,Thailand,sedo.com,Information Technology,295,0,0.0
+1675,Thailand,xnxx-cdn.com,Pornography,295,1,0.0034
+1676,Thailand,init-p01md.apple.com,Information Technology,295,0,0.0
+1677,Thailand,actu.fr,News & Media,295,0,0.0
+1678,Thailand,xgroovy.com,Pornography,295,2,0.0068
+1679,Thailand,starfall.com,Education,295,0,0.0
+1680,Thailand,emag.ro,Ecommerce,295,0,0.0
+1681,Thailand,litnet.com,Education,295,0,0.0
+1682,Thailand,tagesschau.de,Economy & Finance,295,0,0.0
+1683,Thailand,www.espn.com,Video Streaming,295,0,0.0
+1684,Thailand,haberler.com,News & Media,295,0,0.0
+1685,Thailand,aljazeera.com,News & Media,295,0,0.0
+1686,Thailand,jusbrasil.com.br,"Politics, Advocacy, and Government-Related",295,0,0.0
+1687,Thailand,notion.so,Business,295,9,0.0305
+1688,Thailand,ds2play.com,Newly Seen Domains,295,1,0.0034
+1689,Thailand,yts.mx,Newly Seen Domains,295,0,0.0
+1690,Thailand,sinoptik.ua,News & Media,295,0,0.0
+1691,Thailand,dw.com,News & Media,295,0,0.0
+1692,Thailand,aternos.org,Gaming,295,0,0.0
+1693,Thailand,www.google.de,Search Engines,295,9,0.0305
+1694,Thailand,redfin.com,Real Estate,295,0,0.0
+1695,Thailand,thisvid.com,Pornography,295,0,0.0
+1696,Thailand,smartthings.com,Technology,295,0,0.0
+1697,Thailand,1024tera.com,Newly Seen Domains,295,0,0.0
+1698,Thailand,ficbook.net,Education,295,0,0.0
+1699,Thailand,sun.com,Business,295,0,0.0
+1700,Thailand,jut.su,Cartoons & Anime,295,0,0.0
+1701,Thailand,zozo.jp,Ecommerce,295,0,0.0
+1702,Thailand,nesine.com,Gambling,295,0,0.0
+1703,Thailand,russianfood.com,Food & Drink,295,0,0.0
+1704,Thailand,imhentai.xxx,Pornography,295,0,0.0
+1705,Thailand,www.cnn.com,Video Streaming,295,0,0.0
+1706,Thailand,www.etsy.com,Ecommerce,295,0,0.0
+1707,Thailand,aznude.com,Pornography,295,0,0.0
+1708,Thailand,sozcu.com.tr,News & Media,295,0,0.0
+1709,Thailand,24h.com.vn,News & Media,295,0,0.0
+1710,Thailand,mat6tube.com,Pornography,295,0,0.0
+1711,Thailand,xhamster2.com,Pornography,295,0,0.0
+1712,Thailand,betweendigital.com,Advertisements,295,0,0.0
+1713,Thailand,aniwave.to,Newly Seen Domains,295,0,0.0
+1714,Thailand,e621.net,"News, Portal & Search",295,0,0.0
+1715,Thailand,doods.pro,Newly Seen Domains,295,0,0.0
+1716,Thailand,nairaland.com,Forums,295,0,0.0
+1717,Thailand,e-hentai.org,Pornography,295,0,0.0
+1718,Thailand,vedcdnlb.com,Newly Seen Domains,295,0,0.0
+1719,Thailand,fallback.c10r.facebook.com,Social Networks,295,9,0.0305
+1720,Thailand,windows.microsoft.com,Information Technology,295,0,0.0
+1721,Thailand,neopets.com,Gaming,295,0,0.0
+1722,Thailand,iporntv.net,Pornography,295,0,0.0
+1723,Thailand,asuratoon.com,Newly Seen Domains,295,0,0.0
+1724,Thailand,kompoz2.com,Pornography,295,0,0.0
+1725,Thailand,3bmeteo.com,News & Media,295,0,0.0
+1726,Thailand,funnyjunk.com,Humor,295,0,0.0
+1727,Thailand,safeframe.googlesyndication.com,Advertisements,295,9,0.0305
+1728,Thailand,aniwatch.to,Parked & For Sale Domains,295,0,0.0
+1729,Thailand,vjav.com,Pornography,295,0,0.0
+1730,Thailand,cedexis-test.com,Content Servers,295,0,0.0
+1731,Thailand,jalan.net,Travel,295,0,0.0
+1732,Thailand,craigslist.org,Auctions & Marketplaces,295,0,0.0
+1733,Thailand,4kporn.xxx,Pornography,295,0,0.0
+1734,Thailand,ixxx.com,Pornography,295,0,0.0
+1735,Thailand,jable.tv,Pornography,295,0,0.0
+1736,Thailand,pornhat.com,Pornography,295,0,0.0
+1737,Thailand,ekstrabladet.dk,News & Media,295,0,0.0
+1738,Thailand,co.com,Information Technology,295,0,0.0
+1739,Thailand,c.amazon-adsystem.com,Advertisements,295,0,0.0
+1740,Thailand,vidoomy.com,Technology,295,0,0.0
+1741,Thailand,app.hubspot.com,Business,295,9,0.0305
+1742,Thailand,hqporner.com,Pornography,295,0,0.0
+1743,Thailand,cnnindonesia.com,News & Media,295,0,0.0
+1744,Thailand,sxyprn.com,Pornography,295,0,0.0
+1745,Thailand,nikkansports.com,News & Media,295,0,0.0
+1746,Thailand,ok.xxx,Pornography,295,0,0.0
+1747,Thailand,netshoes.com.br,Ecommerce,295,0,0.0
+1748,Thailand,index.hr,News & Media,295,0,0.0
+1749,Thailand,sexvid.xxx,Pornography,295,0,0.0
+1750,Thailand,medicalnewstoday.com,Health & Fitness,295,0,0.0
+1751,Thailand,love4porn.com,Pornography,295,0,0.0
+1752,Thailand,xvideos2.com,Pornography,295,0,0.0
+1753,Thailand,aadrm.com,Content Servers,295,0,0.0
+1754,Thailand,hdtube.porn,Pornography,295,0,0.0
+1755,Thailand,xnxx.tv,Pornography,295,0,0.0
+1756,Thailand,cardgames.io,Gaming,295,0,0.0
+1757,Thailand,xnxx2.com,Pornography,295,0,0.0
+1758,Thailand,exhentai.org,Pornography,295,0,0.0
+1759,Thailand,xnxx.health,Pornography,295,0,0.0
+1760,Thailand,jd.com,Ecommerce,295,0,0.0
+1761,Thailand,tenki.jp,News & Media,295,0,0.0
+1762,Thailand,secure.livechatinc.com,Content Servers,295,0,0.0
+1763,Thailand,myaccount.google.com,Information Security,295,9,0.0305
+1764,Thailand,www.ixl.com,Education,295,0,0.0
+1765,Thailand,mgslb.com,Information Technology,295,0,0.0
+1766,Thailand,oricon.co.jp,News & Media,295,0,0.0
+1767,Thailand,geocities.com,Information Technology,295,0,0.0
+1768,Thailand,motherless.com,Pornography,295,0,0.0
+1769,Thailand,www.macys.com,Ecommerce,295,1,0.0034
+1770,Thailand,syosetu.com,Education,295,0,0.0
+1771,Thailand,porno365.pics,Parked & For Sale Domains,295,0,0.0
+1772,Thailand,c7vkn.com,Newly Seen Domains,295,0,0.0
+1773,Thailand,star.fallback.c10r.facebook.com,Social Networks,295,9,0.0305
+1774,Thailand,teleport.sh,Newly Seen Domains,295,0,0.0
+1775,Thailand,iltalehti.fi,News & Media,295,0,0.0
+1776,Thailand,gamewith.jp,Gaming,295,0,0.0
+1777,Thailand,wordwall.net,Education,295,0,0.0
+1778,Thailand,www.amazon.co.uk,Ecommerce,295,0,0.0
+1779,Thailand,ocws.officeapps.live.com,Technology,295,0,0.0
+1780,Thailand,www.ebay.com,Auctions & Marketplaces,295,0,0.0
+1781,Thailand,www.bbc.com,News & Media,295,1,0.0034
+1782,Thailand,gst.gov.in,"Politics, Advocacy, and Government-Related",295,0,0.0
+1783,Thailand,cronista.com,News & Media,295,1,0.0034
+1784,Thailand,play.blooket.com,Education,295,9,0.0305
+1785,Thailand,xvideos-cdn.com,Pornography,295,0,0.0
+1786,Thailand,fanpage.it,Video Streaming,295,0,0.0
+1787,Thailand,cnbcindonesia.com,Economy & Finance,295,0,0.0
+1788,Thailand,mqtt.c10r.facebook.com,Social Networks,295,9,0.0305
+1789,Thailand,elsevier.com,Health & Fitness,295,0,0.0
+1790,Thailand,www.zillow.com,Real Estate,295,29,0.0983
+1791,Thailand,leroymerlin.fr,Business,295,0,0.0
+1792,Thailand,akamaitechnologies.com,Content Servers,295,0,0.0
+1793,Thailand,turkiye.gov.tr,"Politics, Advocacy, and Government-Related",295,0,0.0
+1794,Thailand,adswizz.com,Business,295,0,0.0
+1795,Thailand,img-s-msn-com.akamaized.net,Content Servers,295,0,0.0
+1796,Thailand,granbluefantasy.jp,Gaming,295,0,0.0
+1797,Thailand,justdial.com,Search Engines,295,29,0.0983
+1798,Thailand,www.amazon.de,Ecommerce,295,1,0.0034
+1799,Thailand,suumo.jp,Real Estate,295,0,0.0
+1800,Thailand,www.google.com.mx,Personal Blogs,295,9,0.0305
+1801,Thailand,accounts.spotify.com,Audio Streaming,295,9,0.0305
+1802,Thailand,bookmyshow.com,Entertainment,295,0,0.0
+1803,Thailand,haber7.com,News & Media,295,0,0.0
+1804,Thailand,www.roblox.com,Chat,295,9,0.0305
+1805,Thailand,mediaexpert.pl,Ecommerce,295,0,0.0
+1806,Thailand,vivint.ai,Newly Seen Domains,295,0,0.0
+1807,Thailand,protothema.gr,News & Media,295,0,0.0
+1808,Thailand,khabaronline.ir,News & Media,295,0,0.0
+1809,Thailand,ptt.cc,Forums,295,0,0.0
+1810,Thailand,jutarnji.hr,News & Media,295,0,0.0
+1811,Thailand,scientificamerican.com,Video Streaming,295,0,0.0
+1812,Thailand,programme-tv.net,Television,295,0,0.0
+1813,Thailand,sinsay.com,Clothing,295,0,0.0
+1814,Thailand,y2mate.com,Information Technology,295,0,0.0
+1815,Thailand,betnacional.com,Gambling,295,0,0.0
+1816,Thailand,carsensor.net,Vehicles,295,0,0.0
+1817,Thailand,support.microsoft.com,Information Technology,295,0,0.0
+1818,Thailand,mathplayground.com,Education,295,1,0.0034
+1819,Thailand,playrix.com,Content Servers,295,0,0.0
+1820,Thailand,www.foxnews.com,Video Streaming,295,0,0.0
+1821,Thailand,www.google.ca,Search Engines,295,9,0.0305
+1822,Thailand,www.target.com,Ecommerce,295,0,0.0
+1823,Thailand,www.theguardian.com,News & Media,295,0,0.0
+1824,Thailand,blic.rs,News & Media,295,0,0.0
+1825,Thailand,mangabuddy.com,Comic Books,295,0,0.0
+1826,Thailand,buydomains.com,Information Technology,295,0,0.0
+1827,Thailand,ajio.com,Fashion,295,0,0.0
+1828,Thailand,cbsivideo.com,Content Servers,295,0,0.0
+1829,Thailand,kooora.com,News & Media,295,0,0.0
+1830,Thailand,utexas.edu,Educational Institutions,295,0,0.0
+1831,Thailand,brainly.com.br,Education,295,0,0.0
+1832,Thailand,www.bestbuy.com,Ecommerce,295,0,0.0
+1833,Thailand,snaptik.app,Technology,295,0,0.0
+1834,Thailand,lausd.net,Education,295,0,0.0
+1835,Thailand,toppr.com,Education,295,0,0.0
+1836,Thailand,robinhood.com,Economy & Finance,295,0,0.0
+1837,Thailand,notifications-pa.googleapis.com,Content Servers,295,9,0.0305
+1838,Thailand,librus.pl,Education,295,0,0.0
+1839,Thailand,tokyomotion.net,Pornography,295,0,0.0
+1840,Thailand,www.ups.com,Business,295,0,0.0
+1841,Thailand,fantia.jp,Technology,295,0,0.0
+1842,Thailand,weborama.fr,Content Servers,295,0,0.0
+1843,Thailand,ruliweb.com,Gaming,295,0,0.0
+1844,Thailand,69shuba.com,Education,295,0,0.0
+1845,Thailand,www.coolmathgames.com,Education,295,0,0.0
+1846,Thailand,myreadingmanga.info,Pornography,295,1,0.0034
+1847,Thailand,rezka.ag,Questionable Activities,295,0,0.0
+1848,Thailand,ppomppu.co.kr,Forums,295,0,0.0
+1849,Thailand,eenadu.net,News & Media,295,0,0.0
+1850,Thailand,ssstik.io,Personal Blogs,295,0,0.0
+1851,Thailand,pubmnet.com,Newly Seen Domains,295,0,0.0
+1852,Thailand,ucweb.com,Information Technology,295,0,0.0
+1853,Thailand,luxuretv.com,Pornography,295,0,0.0
+1854,Thailand,sendgrid.net,Business,295,29,0.0983
+1855,Thailand,namasha.com,Video Streaming,295,0,0.0
+1856,Thailand,science.org,Magazines,295,0,0.0
+1857,Thailand,bt.dk,News & Media,295,0,0.0
+1858,Thailand,mangago.me,Comic Books,295,0,0.0
+1859,Thailand,python.org,Technology,295,0,0.0
+1860,Thailand,www.quora.com,Forums,295,9,0.0305
+1861,Thailand,hollywoodbets.net,Sports,295,0,0.0
+1862,Thailand,dynatrace.com,Technology,295,0,0.0
+1863,Thailand,game8.jp,Gaming,295,0,0.0
+1864,Thailand,rakuten-sec.co.jp,Economy & Finance,295,0,0.0
+1865,Thailand,fuq.com,Pornography,295,0,0.0
+1866,Thailand,peachavocado.com,Newly Seen Domains,295,0,0.0
+1867,Thailand,www.google.com.tr,Search Engines,295,9,0.0305
+1868,Thailand,www.booking.com,Travel,295,0,0.0
+1869,Thailand,zearn.org,Educational Institutions,295,0,0.0
+1870,Thailand,brainly.co.id,Education,295,0,0.0
+1871,Thailand,9animetv.to,Newly Seen Domains,295,0,0.0
+1872,Thailand,caliente.mx,Gambling,295,0,0.0
+1873,Thailand,evernote.com,Technology,295,9,0.0305
+1874,Thailand,www.bbc.co.uk,Video Streaming,295,0,0.0
+1875,Thailand,www.disneyplus.com,Movies,295,9,0.0305
+1876,Thailand,fapello.com,Personal Blogs,295,0,0.0
+1877,Thailand,marmiton.org,Food & Drink,295,0,0.0
+1878,Thailand,mangakakalot.com,Comic Books,295,0,0.0
+1879,Thailand,sportybet.com,Gambling,295,0,0.0
+1880,Thailand,pussyspace.com,Pornography,295,0,0.0
+1881,Thailand,xhamster1.desi,Pornography,295,0,0.0
+1882,Thailand,www.whatsapp.com,Instant Messengers,295,9,0.0305
+1883,Thailand,manganato.com,Comic Books,295,0,0.0
+1884,Thailand,bato.to,Comic Books,295,0,0.0
+1885,Thailand,znanija.com,Education,295,0,0.0
+1886,Thailand,joyclub.de,Pornography,295,0,0.0
+1887,Thailand,zorox.to,Newly Seen Domains,295,0,0.0
+1888,Thailand,www.twitch.tv,Gaming,295,9,0.0305
+1889,Thailand,porn300.com,Pornography,295,0,0.0
+1890,Thailand,livehindustan.com,News & Media,295,0,0.0
+1891,Thailand,cmoa.jp,Cartoons & Anime,295,0,0.0
+1892,Thailand,cityheaven.net,Adult Themes,295,0,0.0
+1893,Thailand,kurir.rs,News & Media,295,0,0.0
+1894,Thailand,kidsa-z.com,Login Screens,295,0,0.0
+1895,Thailand,www.indeed.com,Job Search & Careers,295,0,0.0
+1896,Thailand,netkeiba.com,Sports,295,0,0.0
+1897,Thailand,www.google.com.hk,Search Engines,295,38,0.1288
+1898,Thailand,www.pornhub.com,Pornography,294,0,0.0
+1899,Thailand,serviporno.com,Pornography,294,0,0.0
+1900,Thailand,snapinsta.app,Information Technology,294,0,0.0
+1901,Thailand,mangatoto.com,Comic Books,294,0,0.0
+1902,Thailand,nettruyenus.com,Newly Seen Domains,294,0,0.0
+1903,Thailand,fararu.com,News & Media,294,0,0.0
+1904,Thailand,aajtak.in,News & Media,294,0,0.0
+1905,Thailand,saveinsta.app,Information Technology,294,0,0.0
+1906,Thailand,servicewebly.com,Pornography,294,0,0.0
+1907,Thailand,upwitheaway.info,Parked & For Sale Domains,294,0,0.0
+1908,Thailand,www.dailymotion.com,Video Streaming,294,9,0.0306
+1909,Thailand,betway.co.za,Sports,294,0,0.0
+1910,Thailand,proxy.safebrowsing.apple,Content Servers,294,0,0.0
+1911,Thailand,mechacomic.jp,Newly Seen Domains,294,0,0.0
+1912,Thailand,www.nike.com,Ecommerce,294,0,0.0
+1913,Thailand,theqoo.net,Forums,294,0,0.0
+1914,Thailand,spankbang.party,Pornography,294,0,0.0
+1915,Thailand,gdz.ru,Education,294,0,0.0
+1916,Thailand,3.bp.blogspot.com,Personal Blogs,294,9,0.0306
+1917,Thailand,tukif.com,Pornography,294,0,0.0
+1918,Thailand,xvideos3.com,Pornography,294,0,0.0
+1919,Thailand,fabswingers.com,Adult Themes,294,0,0.0
+1920,Thailand,colamanga.com,Newly Seen Domains,294,0,0.0
+1921,Thailand,arca.live,Forums,294,0,0.0
+1922,Thailand,xvideos.es,Pornography,294,0,0.0
+1923,Thailand,www.dailymail.co.uk,News & Media,294,0,0.0
+1924,Thailand,photos.google.com,Photography,294,9,0.0306
+1925,Thailand,fwmrm.net,Business,294,0,0.0
+1926,Thailand,www.speedtest.net,Information Technology,294,9,0.0306
+1927,Thailand,visortmo.com,Newly Seen Domains,294,0,0.0
+1928,Thailand,banvenez.com,Economy & Finance,294,0,0.0
+1929,Thailand,sex-studentki.pics,Newly Seen Domains,294,0,0.0
+1930,Thailand,music-fa.com,Music,294,0,0.0
+1931,Thailand,ifilo.net,Video Streaming,294,0,0.0
+1932,Thailand,supjav.com,Pornography,294,0,0.0
+1933,Thailand,xhtab3.com,Pornography,294,0,0.0
+1934,Thailand,ijavhd.com,Personal Blogs,294,0,0.0
+1935,Thailand,azet.sk,News & Media,294,0,0.0
+1936,Thailand,xxx18.uno,Pornography,294,0,0.0
+1937,Thailand,ninisite.com,Parenting,294,0,0.0
+1938,Thailand,doujindesu.tv,Newly Seen Domains,294,0,0.0
+1939,Thailand,hot-sex-tube.com,Pornography,294,0,0.0
+1940,Thailand,www.xnxx.com,Pornography,294,0,0.0
+1941,Thailand,scratch.mit.edu,Educational Institutions,294,0,0.0
+1942,Thailand,brainly.in,Education,294,0,0.0
+1943,Thailand,emaktab.uz,Newly Seen Domains,294,0,0.0
+1944,Thailand,www.xvideos.com,Pornography,294,0,0.0
+1945,Thailand,www.google.co.in,Search Engines,294,0,0.0
+1946,Thailand,tktube.com,Pornography,294,0,0.0
+1947,Thailand,mangalib.me,Cartoons & Anime,294,0,0.0
+1948,Thailand,sexvid.pro,Pornography,294,0,0.0
+1949,Thailand,rajwap.cc,Newly Seen Domains,294,0,0.0
+1950,Thailand,nitrotype.com,Gaming,294,0,0.0
+1951,Thailand,imgsrc.ru,Photography,294,0,0.0
+1952,Thailand,br.pinterest.com,Photography,294,9,0.0306
+1953,Thailand,gspe35-ssl.ls.apple.com,Technology,294,9,0.0306
+1954,Thailand,shahvani.com,Adult Themes,294,0,0.0
+1955,Thailand,pixbet.com,Spam,294,0,0.0
+1956,Thailand,beboo.ru,Dating & Relationships,294,0,0.0
+1957,Thailand,secure.bankofamerica.com,Economy & Finance,294,0,0.0
+1958,Thailand,freeip.me,P2P,294,0,0.0
+1959,Thailand,pornocarioca.com,Pornography,294,0,0.0
+1960,Thailand,spaggiari.eu,Education,294,0,0.0
+1961,Thailand,revcontent.com,Business,294,0,0.0
+1962,Thailand,www.goodreads.com,Education,294,0,0.0
+1963,Thailand,www.google.pl,Search Engines,294,9,0.0306
+1964,Thailand,www.deepl.com,Translator,294,9,0.0306
+1965,Thailand,fatalmodel.com,Adult Themes,294,0,0.0
+1966,Thailand,epfindia.gov.in,"Politics, Advocacy, and Government-Related",294,0,0.0
+1967,Thailand,lermanga.org,Newly Seen Domains,294,0,0.0
+1968,Thailand,eroterest.net,Pornography,294,0,0.0
+1969,Thailand,www.lowes.com,Ecommerce,294,0,0.0
+1970,Thailand,mask.apple-dns.net,Content Servers,294,0,0.0
+1971,Thailand,prokerala.com,News & Media,294,0,0.0
+1972,Thailand,1mg.com,Health & Fitness,294,0,0.0
+1973,Thailand,xosodaiphat.com,Content Servers,294,0,0.0
+1974,Thailand,www.wattpad.com,Education,294,1,0.0034
+1975,Thailand,studio.youtube.com,Video Streaming,294,9,0.0306
+1976,Thailand,shinigami.sh,Newly Seen Domains,294,0,0.0
+1977,Thailand,www.google.fr,Search Engines,294,9,0.0306
+1978,Thailand,goojara.to,Movies,294,0,0.0
+1979,Thailand,listcrawler.eu,Adult Themes,294,0,0.0
+1980,Thailand,www.chess.com,Hobbies & Interests,294,0,0.0
+1981,Thailand,www.kohls.com,Ecommerce,294,0,0.0
+1982,Thailand,business.facebook.com,Social Networks,294,9,0.0306
+1983,Thailand,www.accuweather.com,News & Media,294,0,0.0
+1984,Thailand,patria.org.ve,Content Servers,294,0,0.0
+1985,Thailand,bartarinha.ir,News & Media,294,0,0.0
+1986,Thailand,www.google.com.br,Search Engines,294,9,0.0306
+1987,Thailand,redislabs.com,Business,294,0,0.0
+1988,Thailand,www.costco.com,Ecommerce,294,0,0.0
+1989,Thailand,spiegel.de,News & Media,294,0,0.0
+1990,Thailand,faq.whatsapp.com,Instant Messengers,294,9,0.0306
+1991,Thailand,coinpayu.com,Business,294,0,0.0
+1992,Thailand,toyhou.se,Hobbies & Interests,294,0,0.0
+1993,Thailand,www.wayfair.com,Business,294,0,0.0
+1994,Thailand,www.google.com.tw,Search Engines,294,9,0.0306
+1995,Thailand,onlinesbi.sbi,Economy & Finance,294,0,0.0
+1996,Thailand,www.researchgate.net,Education,294,0,0.0
+1997,Thailand,webempresa.eu,Information Technology,294,0,0.0
+1998,Thailand,www.zearn.org,Educational Institutions,294,0,0.0
+1999,Thailand,www.bilibili.com,Video Streaming,294,0,0.0
+2000,Thailand,www.amazon.ca,Ecommerce,294,0,0.0

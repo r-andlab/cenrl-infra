@@ -1,0 +1,2001 @@
+time,country,target,category,n_votes,n_blocked,rewards
+1,United Arab Emirates,google.com,Search Engines,640,0,0.0
+2,United Arab Emirates,amazonaws.com,Technology,640,0,0.0
+3,United Arab Emirates,facebook.com,Social Networks,640,0,0.0
+4,United Arab Emirates,microsoft.com,Business,640,0,0.0
+5,United Arab Emirates,apple.com,Information Technology,640,0,0.0
+6,United Arab Emirates,googleapis.com,Content Servers,640,0,0.0
+7,United Arab Emirates,youtube.com,Video Streaming,640,21,0.0328
+8,United Arab Emirates,akamaiedge.net,Content Servers,640,0,0.0
+9,United Arab Emirates,www.google.com,Search Engines,640,21,0.0328
+10,United Arab Emirates,akamai.net,Content Servers,640,0,0.0
+11,United Arab Emirates,a-msedge.net,Content Servers,640,0,0.0
+12,United Arab Emirates,twitter.com,Social Networks,640,21,0.0328
+13,United Arab Emirates,azure.com,Technology,640,0,0.0
+14,United Arab Emirates,googlevideo.com,Search Engines,640,0,0.0
+15,United Arab Emirates,data.microsoft.com,Technology,640,0,0.0
+16,United Arab Emirates,instagram.com,Social Networks,640,21,0.0328
+17,United Arab Emirates,gstatic.com,Content Servers,640,0,0.0
+18,United Arab Emirates,cloudflare.com,Technology,640,0,0.0
+19,United Arab Emirates,events.data.microsoft.com,Business,640,0,0.0
+20,United Arab Emirates,doubleclick.net,Advertisements,640,0,0.0
+21,United Arab Emirates,linkedin.com,Professional Networking,640,21,0.0328
+22,United Arab Emirates,live.com,Technology,640,0,0.0
+23,United Arab Emirates,tiktokcdn.com,Social Networks,640,0,0.0
+24,United Arab Emirates,gtld-servers.net,Content Servers,640,0,0.0
+25,United Arab Emirates,office.com,Technology,640,0,0.0
+26,United Arab Emirates,googletagmanager.com,Content Servers,640,0,0.0
+27,United Arab Emirates,akadns.net,Content Servers,640,0,0.0
+28,United Arab Emirates,netflix.com,Movies,640,84,0.1313
+29,United Arab Emirates,windowsupdate.com,Business,640,0,0.0
+30,United Arab Emirates,apple-dns.net,Content Servers,640,0,0.0
+31,United Arab Emirates,amazon.com,Ecommerce,640,0,0.0
+32,United Arab Emirates,trafficmanager.net,Content Servers,640,0,0.0
+33,United Arab Emirates,googleusercontent.com,Content Servers,640,0,0.0
+34,United Arab Emirates,wikipedia.org,Education,640,0,0.0
+35,United Arab Emirates,fbcdn.net,Social Networks,640,0,0.0
+36,United Arab Emirates,domaincontrol.com,Content Servers,640,0,0.0
+37,United Arab Emirates,bing.com,Search Engines,640,0,0.0
+38,United Arab Emirates,icloud.com,File Sharing,640,0,0.0
+39,United Arab Emirates,ctldl.windowsupdate.com,Business,640,0,0.0
+40,United Arab Emirates,microsoftonline.com,Technology,640,63,0.0984
+41,United Arab Emirates,play.google.com,Technology,640,21,0.0328
+42,United Arab Emirates,fastly.net,Technology,640,1,0.0016
+43,United Arab Emirates,wordpress.org,Information Technology,640,0,0.0
+44,United Arab Emirates,root-servers.net,Content Servers,640,0,0.0
+45,United Arab Emirates,mail.ru,Webmail,640,0,0.0
+46,United Arab Emirates,youtu.be,Video Streaming,640,0,0.0
+47,United Arab Emirates,yahoo.com,News & Media,640,0,0.0
+48,United Arab Emirates,safebrowsing.googleapis.com,Content Servers,640,21,0.0328
+49,United Arab Emirates,en.wikipedia.org,Education,640,0,0.0
+50,United Arab Emirates,pinterest.com,Photography,640,21,0.0328
+51,United Arab Emirates,ui.com,Technology,640,0,0.0
+52,United Arab Emirates,aaplimg.com,Information Technology,640,0,0.0
+53,United Arab Emirates,digicert.com,Information Security,640,0,0.0
+54,United Arab Emirates,login.microsoftonline.com,Business,640,19,0.0297
+55,United Arab Emirates,github.com,Technology,640,21,0.0328
+56,United Arab Emirates,windows.net,Technology,640,0,0.0
+57,United Arab Emirates,googlesyndication.com,Advertisements,640,0,0.0
+58,United Arab Emirates,l-msedge.net,Content Servers,640,0,0.0
+59,United Arab Emirates,tiktokv.com,Social Networks,640,0,0.0
+60,United Arab Emirates,adobe.com,Technology,640,0,0.0
+61,United Arab Emirates,google-analytics.com,Business,640,0,0.0
+62,United Arab Emirates,goo.gl,Redirect,640,0,0.0
+63,United Arab Emirates,docs.google.com,Technology,640,21,0.0328
+64,United Arab Emirates,nflxso.net,Content Servers,640,0,0.0
+65,United Arab Emirates,t-msedge.net,Content Servers,640,0,0.0
+66,United Arab Emirates,vimeo.com,Video Streaming,640,20,0.0312
+67,United Arab Emirates,gandi.net,Information Technology,640,0,0.0
+68,United Arab Emirates,cloudfront.net,Content Servers,640,0,0.0
+69,United Arab Emirates,spotify.com,Audio Streaming,640,0,0.0
+70,United Arab Emirates,clientservices.googleapis.com,Content Servers,640,21,0.0328
+71,United Arab Emirates,sharepoint.com,New Domains,640,0,0.0
+72,United Arab Emirates,g.doubleclick.net,Advertisements,640,21,0.0328
+73,United Arab Emirates,maps.google.com,Education,640,21,0.0328
+74,United Arab Emirates,itunes.apple.com,Information Technology,640,21,0.0328
+75,United Arab Emirates,zoom.us,Technology,640,19,0.0297
+76,United Arab Emirates,wordpress.com,Information Technology,640,0,0.0
+77,United Arab Emirates,yandex.net,News & Media,640,0,0.0
+78,United Arab Emirates,edgekey.net,Content Servers,640,0,0.0
+79,United Arab Emirates,office.net,Content Servers,640,0,0.0
+80,United Arab Emirates,gvt2.com,Content Servers,640,0,0.0
+81,United Arab Emirates,bit.ly,Redirect,640,0,0.0
+82,United Arab Emirates,yandex.ru,News & Media,640,0,0.0
+83,United Arab Emirates,msn.com,News & Media,640,0,0.0
+84,United Arab Emirates,ftl.netflix.com,Movies,640,21,0.0328
+85,United Arab Emirates,whatsapp.net,Instant Messengers,640,0,0.0
+86,United Arab Emirates,plus.google.com,Social Networks,640,21,0.0328
+87,United Arab Emirates,qq.com,News & Media,640,0,0.0
+88,United Arab Emirates,mozilla.org,Technology,640,0,0.0
+89,United Arab Emirates,accounts.google.com,Information Security,640,84,0.1313
+90,United Arab Emirates,office365.com,Technology,640,0,0.0
+91,United Arab Emirates,update.googleapis.com,Content Servers,640,21,0.0328
+92,United Arab Emirates,googledomains.com,Search Engines,640,0,0.0
+93,United Arab Emirates,skype.com,Instant Messengers,640,0,0.0
+94,United Arab Emirates,whatsapp.com,Instant Messengers,640,21,0.0328
+95,United Arab Emirates,cloudflare.net,Information Technology,640,0,0.0
+96,United Arab Emirates,bytefcdn-oversea.com,Newly Seen Domains,640,70,0.1094
+97,United Arab Emirates,blogspot.com,Personal Blogs,640,15,0.0234
+98,United Arab Emirates,logs.netflix.com,Movies,640,21,0.0328
+99,United Arab Emirates,apps.apple.com,Information Technology,640,0,0.0
+100,United Arab Emirates,player.vimeo.com,Video Streaming,640,21,0.0328
+101,United Arab Emirates,drive.google.com,File Sharing,640,21,0.0328
+102,United Arab Emirates,cloudflare-dns.com,Newly Seen Domains,640,21,0.0328
+103,United Arab Emirates,app-measurement.com,Content Servers,640,0,0.0
+104,United Arab Emirates,prod.ftl.netflix.com,Movies,640,20,0.0312
+105,United Arab Emirates,ntp.org,Technology,640,0,0.0
+106,United Arab Emirates,outlook.com,Webmail,640,0,0.0
+107,United Arab Emirates,settings-win.data.microsoft.com,Business,640,0,0.0
+108,United Arab Emirates,trbcdn.net,Content Servers,640,0,0.0
+109,United Arab Emirates,ytimg.com,Content Servers,640,0,0.0
+110,United Arab Emirates,www.googleapis.com,Content Servers,640,84,0.1313
+111,United Arab Emirates,roblox.com,Chat,640,0,0.0
+112,United Arab Emirates,self.events.data.microsoft.com,Business,640,0,0.0
+113,United Arab Emirates,gvt1.com,Content Servers,640,0,0.0
+114,United Arab Emirates,s-msedge.net,Content Servers,640,0,0.0
+115,United Arab Emirates,tds.net,News & Media,640,0,0.0
+116,United Arab Emirates,facebook-hardware.com,Content Servers,640,0,0.0
+117,United Arab Emirates,tiktokcdn-us.com,Content Servers,640,0,0.0
+118,United Arab Emirates,reddit.com,Forums,640,2,0.0031
+119,United Arab Emirates,nic.ru,Information Technology,640,0,0.0
+120,United Arab Emirates,tiktok.com,Video Streaming,640,0,0.0
+121,United Arab Emirates,wac-msedge.net,Newly Seen Domains,640,0,0.0
+122,United Arab Emirates,edge.microsoft.com,Business,640,0,0.0
+123,United Arab Emirates,opera.com,Technology,640,0,0.0
+124,United Arab Emirates,officeapps.live.com,Technology,640,0,0.0
+125,United Arab Emirates,snapchat.com,Photography,640,0,0.0
+126,United Arab Emirates,ocsp.digicert.com,Information Security,640,1,0.0016
+127,United Arab Emirates,pki.goog,Information Security,640,0,0.0
+128,United Arab Emirates,mp.microsoft.com,Content Servers,640,0,0.0
+129,United Arab Emirates,macromedia.com,Business,640,0,0.0
+130,United Arab Emirates,europa.eu,"Politics, Advocacy, and Government-Related",640,0,0.0
+131,United Arab Emirates,amazon-adsystem.com,Advertisements,640,0,0.0
+132,United Arab Emirates,dropbox.com,File Sharing,640,0,0.0
+133,United Arab Emirates,adnxs.com,Content Servers,640,0,0.0
+134,United Arab Emirates,nih.gov,Health & Fitness,640,0,0.0
+135,United Arab Emirates,tumblr.com,Social Networks,640,0,0.0
+136,United Arab Emirates,epicgames.com,Ecommerce,640,0,0.0
+137,United Arab Emirates,ruidongcloud.com,Newly Seen Domains,640,0,0.0
+138,United Arab Emirates,criteo.com,Business,640,0,0.0
+139,United Arab Emirates,api.whatsapp.com,Instant Messengers,640,21,0.0328
+140,United Arab Emirates,cdn77.org,Content Servers,640,0,0.0
+141,United Arab Emirates,baidu.com,Search Engines,640,0,0.0
+142,United Arab Emirates,www.google-analytics.com,Business,640,21,0.0328
+143,United Arab Emirates,com.akadns.net,Content Servers,640,0,0.0
+144,United Arab Emirates,intuit.com,Business,640,0,0.0
+145,United Arab Emirates,policies.google.com,Search Engines,640,20,0.0312
+146,United Arab Emirates,gravatar.com,Technology,640,126,0.1969
+147,United Arab Emirates,support.google.com,Education,640,21,0.0328
+148,United Arab Emirates,comcast.net,Information Technology,640,0,0.0
+149,United Arab Emirates,nr-data.net,Content Servers,640,0,0.0
+150,United Arab Emirates,netflix.net,Video Streaming,640,21,0.0328
+151,United Arab Emirates,nrdp-ipv6.prod.ftl.netflix.com,Movies,640,21,0.0328
+152,United Arab Emirates,ls.apple.com,Information Technology,640,0,0.0
+153,United Arab Emirates,flickr.com,Photography,640,0,0.0
+154,United Arab Emirates,nytimes.com,News & Media,640,1,0.0016
+155,United Arab Emirates,cloudapp.net,Content Servers,640,0,0.0
+156,United Arab Emirates,googleads.g.doubleclick.net,Advertisements,640,22,0.0344
+157,United Arab Emirates,github.io,Technology,640,0,0.0
+158,United Arab Emirates,fonts.googleapis.com,Content Servers,640,21,0.0328
+159,United Arab Emirates,lencr.org,Information Technology,640,0,0.0
+160,United Arab Emirates,windows.com,Information Technology,640,0,0.0
+161,United Arab Emirates,one.one,Information Technology,640,0,0.0
+162,United Arab Emirates,msftncsi.com,Content Servers,640,0,0.0
+163,United Arab Emirates,registrar-servers.com,Information Technology,640,0,0.0
+164,United Arab Emirates,akamaized.net,Content Servers,640,0,0.0
+165,United Arab Emirates,worldfcdn2.com,Content Servers,640,0,0.0
+166,United Arab Emirates,ttlivecdn.com,Content Servers,640,0,0.0
+167,United Arab Emirates,rubiconproject.com,Advertisements,640,0,0.0
+168,United Arab Emirates,t.co,Redirect,640,0,0.0
+169,United Arab Emirates,azureedge.net,Content Servers,640,0,0.0
+170,United Arab Emirates,googleadservices.com,Advertisements,640,0,0.0
+171,United Arab Emirates,sites.google.com,Information Technology,640,22,0.0344
+172,United Arab Emirates,ggpht.com,Content Servers,640,0,0.0
+173,United Arab Emirates,t.me,Instant Messengers,640,62,0.0969
+174,United Arab Emirates,sberdevices.ru,Technology,640,0,0.0
+175,United Arab Emirates,msedge.net,Content Servers,640,0,0.0
+176,United Arab Emirates,mozilla.com,Search Engines,640,0,0.0
+177,United Arab Emirates,sentry.io,Business,640,0,0.0
+178,United Arab Emirates,a2z.com,Content Servers,640,0,0.0
+179,United Arab Emirates,teams.microsoft.com,Technology,640,21,0.0328
+180,United Arab Emirates,samsung.com,Home & Garden,640,0,0.0
+181,United Arab Emirates,bytefcdn-ttpeu.com,Newly Seen Domains,640,0,0.0
+182,United Arab Emirates,2mdn.net,Content Servers,640,0,0.0
+183,United Arab Emirates,cdninstagram.com,Content Servers,640,3,0.0047
+184,United Arab Emirates,outlook.office365.com,Webmail,640,21,0.0328
+185,United Arab Emirates,edgesuite.net,Content Servers,640,0,0.0
+186,United Arab Emirates,webex.com,Technology,640,20,0.0312
+187,United Arab Emirates,unity3d.com,Gaming,640,0,0.0
+188,United Arab Emirates,wa.me,Content Servers,640,0,0.0
+189,United Arab Emirates,att.net,News & Media,640,0,0.0
+190,United Arab Emirates,forms.gle,Content Servers,640,63,0.0984
+191,United Arab Emirates,apache.org,Technology,640,0,0.0
+192,United Arab Emirates,partner.netflix.net,Video Streaming,640,21,0.0328
+193,United Arab Emirates,prod.netflix.com,Movies,640,21,0.0328
+194,United Arab Emirates,casalemedia.com,Advertisements,640,0,0.0
+195,United Arab Emirates,mangosip.ru,Newly Seen Domains,640,0,0.0
+196,United Arab Emirates,paypal.com,Economy & Finance,640,0,0.0
+197,United Arab Emirates,www.googletagmanager.com,Content Servers,640,1,0.0016
+198,United Arab Emirates,archive.org,Education,640,0,0.0
+199,United Arab Emirates,prod.partner.netflix.net,Video Streaming,640,21,0.0328
+200,United Arab Emirates,rambler.ru,News & Media,640,0,0.0
+201,United Arab Emirates,push.prod.netflix.com,Movies,640,21,0.0328
+202,United Arab Emirates,www.bing.com,Search Engines,640,63,0.0984
+203,United Arab Emirates,frontapp.com,Information Technology,640,21,0.0328
+204,United Arab Emirates,fe.apple-dns.net,Content Servers,640,0,0.0
+205,United Arab Emirates,b-msedge.net,Content Servers,640,0,0.0
+206,United Arab Emirates,cnn.com,Video Streaming,640,0,0.0
+207,United Arab Emirates,o365filtering.com,Content Servers,640,0,0.0
+208,United Arab Emirates,soundcloud.com,Audio Streaming,640,21,0.0328
+209,United Arab Emirates,omtrdc.net,Content Servers,640,0,0.0
+210,United Arab Emirates,preapp.prod.partner.netflix.net,Video Streaming,640,21,0.0328
+211,United Arab Emirates,miit.gov.cn,"Politics, Advocacy, and Government-Related",640,0,0.0
+212,United Arab Emirates,spo-msedge.net,Content Servers,640,0,0.0
+213,United Arab Emirates,salesforceliveagent.com,Content Servers,640,0,0.0
+214,United Arab Emirates,doubleverify.com,Business,640,0,0.0
+215,United Arab Emirates,medium.com,Magazines,640,63,0.0984
+216,United Arab Emirates,pubmatic.com,Business,640,0,0.0
+217,United Arab Emirates,salesforce.com,Business,640,0,0.0
+218,United Arab Emirates,vk.com,Social Networks,640,0,0.0
+219,United Arab Emirates,v10.events.data.microsoft.com,Business,640,0,0.0
+220,United Arab Emirates,mtalk.google.com,Search Engines,640,21,0.0328
+221,United Arab Emirates,www.ncbi.nlm.nih.gov,Health & Fitness,640,0,0.0
+222,United Arab Emirates,ec.europa.eu,"Politics, Advocacy, and Government-Related",640,0,0.0
+223,United Arab Emirates,theguardian.com,News & Media,640,0,0.0
+224,United Arab Emirates,azurewebsites.net,Education,640,0,0.0
+225,United Arab Emirates,abusix.zone,Newly Seen Domains,640,0,0.0
+226,United Arab Emirates,gmail.com,Webmail,640,0,0.0
+227,United Arab Emirates,beian.miit.gov.cn,"Politics, Advocacy, and Government-Related",640,0,0.0
+228,United Arab Emirates,outlook.office.com,Technology,640,21,0.0328
+229,United Arab Emirates,datadoghq.com,Technology,640,0,0.0
+230,United Arab Emirates,gateway.icloud.com,File Sharing,640,20,0.0312
+231,United Arab Emirates,w3.org,"Politics, Advocacy, and Government-Related",640,0,0.0
+232,United Arab Emirates,open.spotify.com,Audio Streaming,640,21,0.0328
+233,United Arab Emirates,ebay.com,Auctions & Marketplaces,640,0,0.0
+234,United Arab Emirates,g.aaplimg.com,Information Technology,640,0,0.0
+235,United Arab Emirates,wsdvs.com,Content Servers,640,0,0.0
+236,United Arab Emirates,forbes.com,Economy & Finance,640,0,0.0
+237,United Arab Emirates,zemanta.com,Business,640,0,0.0
+238,United Arab Emirates,health.mil,Health & Fitness,640,0,0.0
+239,United Arab Emirates,lh3.googleusercontent.com,Content Servers,640,0,0.0
+240,United Arab Emirates,appsflyersdk.com,Content Servers,640,0,0.0
+241,United Arab Emirates,gateway.fe.apple-dns.net,Content Servers,640,0,0.0
+242,United Arab Emirates,adsrvr.org,Advertisements,640,1,0.0016
+243,United Arab Emirates,clients4.google.com,Search Engines,640,21,0.0328
+244,United Arab Emirates,bbc.co.uk,News & Media,640,0,0.0
+245,United Arab Emirates,demdex.net,Content Servers,640,0,0.0
+246,United Arab Emirates,taboola.com,Business,640,0,0.0
+247,United Arab Emirates,adobe.io,Business,640,1,0.0016
+248,United Arab Emirates,optimizationguide-pa.googleapis.com,Content Servers,640,21,0.0328
+249,United Arab Emirates,www.youtube.com,Video Streaming,640,82,0.1281
+250,United Arab Emirates,meraki.com,Technology,640,0,0.0
+251,United Arab Emirates,comfortel.pro,Information Technology,640,0,0.0
+252,United Arab Emirates,staples.com,Ecommerce,640,0,0.0
+253,United Arab Emirates,applovin.com,Gaming,640,0,0.0
+254,United Arab Emirates,dns.cn,Content Servers,640,0,0.0
+255,United Arab Emirates,edge.skype.com,Instant Messengers,640,0,0.0
+256,United Arab Emirates,dns.google,Newly Seen Domains,640,21,0.0328
+257,United Arab Emirates,config.teams.microsoft.com,Business,640,21,0.0328
+258,United Arab Emirates,googleblog.com,Personal Blogs,640,0,0.0
+259,United Arab Emirates,rbxcdn.com,Content Servers,640,0,0.0
+260,United Arab Emirates,miui.com,Technology,640,0,0.0
+261,United Arab Emirates,sciencedirect.com,Education,640,0,0.0
+262,United Arab Emirates,config.edge.skype.com,Content Servers,640,0,0.0
+263,United Arab Emirates,openx.net,Advertisements,640,0,0.0
+264,United Arab Emirates,dsp.mp.microsoft.com,Business,640,0,0.0
+265,United Arab Emirates,login.live.com,Technology,640,0,0.0
+266,United Arab Emirates,xiaomi.com,Technology,640,0,0.0
+267,United Arab Emirates,bbc.com,News & Media,640,0,0.0
+268,United Arab Emirates,creativecommons.org,"Politics, Advocacy, and Government-Related",640,0,0.0
+269,United Arab Emirates,edgecdn.ru,Newly Seen Domains,640,0,0.0
+270,United Arab Emirates,mail.google.com,Webmail,640,21,0.0328
+271,United Arab Emirates,appsflyer.com,Business,640,0,0.0
+272,United Arab Emirates,adsafeprotected.com,Advertisements,640,0,0.0
+273,United Arab Emirates,shifen.com,Content Servers,640,0,0.0
+274,United Arab Emirates,kaspersky.com,Technology,640,61,0.0953
+275,United Arab Emirates,cisco.com,Technology,640,1,0.0016
+276,United Arab Emirates,smartadserver.com,Advertisements,640,0,0.0
+277,United Arab Emirates,googletagservices.com,Content Servers,640,0,0.0
+278,United Arab Emirates,sourceforge.net,Business,640,21,0.0328
+279,United Arab Emirates,userapi.com,Social Networks,640,0,0.0
+280,United Arab Emirates,do.dsp.mp.microsoft.com,Business,640,0,0.0
+281,United Arab Emirates,aiv-cdn.net,Content Servers,640,0,0.0
+282,United Arab Emirates,graph.microsoft.com,Business,640,0,0.0
+283,United Arab Emirates,imdb.com,Movies,640,0,0.0
+284,United Arab Emirates,prod.do.dsp.mp.microsoft.com,Business,640,0,0.0
+285,United Arab Emirates,slack.com,Instant Messengers,640,6,0.0094
+286,United Arab Emirates,push.apple.com,Information Technology,640,0,0.0
+287,United Arab Emirates,discord.com,Instant Messengers,640,23,0.0359
+288,United Arab Emirates,akamaihd.net,Content Servers,640,0,0.0
+289,United Arab Emirates,facebook.net,Social Networks,640,0,0.0
+290,United Arab Emirates,reg.ru,Information Technology,640,0,0.0
+291,United Arab Emirates,dnsowl.com,Content Servers,640,0,0.0
+292,United Arab Emirates,mit.edu,Education,640,0,0.0
+293,United Arab Emirates,hp.com,Technology,640,0,0.0
+294,United Arab Emirates,twitch.tv,Gaming,640,20,0.0312
+295,United Arab Emirates,business.bing.com,Search Engines,640,0,0.0
+296,United Arab Emirates,nginx.org,Entertainment,640,0,0.0
+297,United Arab Emirates,who.int,Health & Fitness,640,0,0.0
+298,United Arab Emirates,play.googleapis.com,Content Servers,640,21,0.0328
+299,United Arab Emirates,scorecardresearch.com,Business,640,0,0.0
+300,United Arab Emirates,ubuntu.com,Technology,640,0,0.0
+301,United Arab Emirates,content-autofill.googleapis.com,Content Servers,640,21,0.0328
+302,United Arab Emirates,time.apple.com,Information Technology,640,0,0.0
+303,United Arab Emirates,rocket-cdn.com,Newly Seen Domains,640,0,0.0
+304,United Arab Emirates,workspaceupdates.googleblog.com,Personal Blogs,640,0,0.0
+305,United Arab Emirates,www.facebook.com,Social Networks,640,84,0.1313
+306,United Arab Emirates,download.macromedia.com,Technology,640,0,0.0
+307,United Arab Emirates,washingtonpost.com,News & Media,640,0,0.0
+308,United Arab Emirates,wixsite.com,Information Technology,640,0,0.0
+309,United Arab Emirates,substrate.office.com,Technology,640,0,0.0
+310,United Arab Emirates,myfritz.net,Information Technology,640,0,0.0
+311,United Arab Emirates,go.microsoft.com,Information Technology,640,0,0.0
+312,United Arab Emirates,amazonvideo.com,Television,640,0,0.0
+313,United Arab Emirates,cdn-apple.com,Content Servers,640,0,0.0
+314,United Arab Emirates,web.archive.org,Technology,640,63,0.0984
+315,United Arab Emirates,msftconnecttest.com,Content Servers,640,0,0.0
+316,United Arab Emirates,mzstatic.com,Information Technology,640,0,0.0
+317,United Arab Emirates,amazon.co.uk,Ecommerce,640,0,0.0
+318,United Arab Emirates,issuu.com,Magazines,640,0,0.0
+319,United Arab Emirates,nginx.com,Technology,640,0,0.0
+320,United Arab Emirates,dell.com,Ecommerce,640,0,0.0
+321,United Arab Emirates,shopify.com,Ecommerce,640,0,0.0
+322,United Arab Emirates,researchgate.net,Education,640,0,0.0
+323,United Arab Emirates,jomodns.com,No Content,640,0,0.0
+324,United Arab Emirates,youtube-nocookie.com,Video Streaming,640,0,0.0
+325,United Arab Emirates,hubspot.com,Business,640,21,0.0328
+326,United Arab Emirates,launchdarkly.com,Business,640,0,0.0
+327,United Arab Emirates,teams.events.data.microsoft.com,Business,640,0,0.0
+328,United Arab Emirates,cdngslb.com,Content Servers,640,0,0.0
+329,United Arab Emirates,go.com,Safe for Kids,640,126,0.1969
+330,United Arab Emirates,ampproject.org,Information Technology,640,0,0.0
+331,United Arab Emirates,wikimedia.org,Education,640,0,0.0
+332,United Arab Emirates,playstation.net,Gaming,640,21,0.0328
+333,United Arab Emirates,dailymail.co.uk,News & Media,640,0,0.0
+334,United Arab Emirates,cdc.gov,Government,640,0,0.0
+335,United Arab Emirates,wp.com,Information Technology,640,0,0.0
+336,United Arab Emirates,badoo.com,Social Networks,640,194,0.3031
+337,United Arab Emirates,dual-s-msedge.net,Newly Seen Domains,640,0,0.0
+338,United Arab Emirates,bag.itunes.apple.com,Information Technology,640,21,0.0328
+339,United Arab Emirates,tinyurl.com,Redirect,640,0,0.0
+340,United Arab Emirates,android.com,Technology,640,63,0.0984
+341,United Arab Emirates,cedexis.net,Content Servers,640,0,0.0
+342,United Arab Emirates,ibm.com,Technology,640,0,0.0
+343,United Arab Emirates,smartscreen.microsoft.com,Business,640,0,0.0
+344,United Arab Emirates,cdn.office.net,Content Servers,640,0,0.0
+345,United Arab Emirates,sc-gw.com,Content Servers,640,0,0.0
+346,United Arab Emirates,grammarly.com,Information Technology,640,21,0.0328
+347,United Arab Emirates,safebrowsing.apple,Content Servers,640,0,0.0
+348,United Arab Emirates,reuters.com,News & Media,640,0,0.0
+349,United Arab Emirates,name-services.com,Phishing,640,0,0.0
+350,United Arab Emirates,httpd.apache.org,Technology,640,2,0.0031
+351,United Arab Emirates,weebly.com,Information Technology,640,0,0.0
+352,United Arab Emirates,azurefd.net,Business,640,0,0.0
+353,United Arab Emirates,stbid.ru,Newly Seen Domains,640,0,0.0
+354,United Arab Emirates,atomile.com,Technology,640,0,0.0
+355,United Arab Emirates,aliyuncs.com,Content Servers,640,62,0.0969
+356,United Arab Emirates,slideshare.net,Education,640,0,0.0
+357,United Arab Emirates,adriver.ru,Advertisements,640,0,0.0
+358,United Arab Emirates,rlcdn.com,Content Servers,640,0,0.0
+359,United Arab Emirates,mcafee.com,Technology,640,0,0.0
+360,United Arab Emirates,google.de,Search Engines,640,0,0.0
+361,United Arab Emirates,media-amazon.com,Content Servers,640,0,0.0
+362,United Arab Emirates,360yield.com,Login Screens,640,0,0.0
+363,United Arab Emirates,harvard.edu,Educational Institutions,640,0,0.0
+364,United Arab Emirates,c.lencr.org,Information Technology,640,0,0.0
+365,United Arab Emirates,cnbc.com,Economy & Finance,640,0,0.0
+366,United Arab Emirates,doi.org,Technology,640,0,0.0
+367,United Arab Emirates,3lift.com,Business,640,0,0.0
+368,United Arab Emirates,canva.com,Arts,640,20,0.0312
+369,United Arab Emirates,b-cdn.net,Content Servers,640,6,0.0094
+370,United Arab Emirates,sharethrough.com,Business,640,0,0.0
+371,United Arab Emirates,ecs.office.com,Technology,640,0,0.0
+372,United Arab Emirates,bidswitch.net,Technology,640,0,0.0
+373,United Arab Emirates,force.com,Business,640,0,0.0
+374,United Arab Emirates,booking.com,Travel,640,0,0.0
+375,United Arab Emirates,avast.com,Technology,640,0,0.0
+376,United Arab Emirates,oracle.com,Technology,640,0,0.0
+377,United Arab Emirates,moatads.com,Business,640,0,0.0
+378,United Arab Emirates,x1.c.lencr.org,Information Technology,640,0,0.0
+379,United Arab Emirates,www.gov.uk,"Politics, Advocacy, and Government-Related",640,0,0.0
+380,United Arab Emirates,i.ytimg.com,Content Servers,640,25,0.0391
+381,United Arab Emirates,hotjar.com,Business,640,0,0.0
+382,United Arab Emirates,dsce9.akamaiedge.net,Content Servers,640,0,0.0
+383,United Arab Emirates,wildberries.ru,Ecommerce,640,0,0.0
+384,United Arab Emirates,wellsfargo.com,Economy & Finance,640,0,0.0
+385,United Arab Emirates,teamviewer.com,Information Technology,640,21,0.0328
+386,United Arab Emirates,google.co.uk,Search Engines,640,0,0.0
+387,United Arab Emirates,web.facebook.com,Social Networks,640,21,0.0328
+388,United Arab Emirates,telecid.ru,Newly Seen Domains,640,0,0.0
+389,United Arab Emirates,bloomberg.com,Economy & Finance,640,0,0.0
+390,United Arab Emirates,nist.gov,Government,640,0,0.0
+391,United Arab Emirates,aol.com,News & Media,640,0,0.0
+392,United Arab Emirates,appcenter.ms,Technology,640,0,0.0
+393,United Arab Emirates,etsy.com,Ecommerce,640,0,0.0
+394,United Arab Emirates,espn.com,Video Streaming,640,0,0.0
+395,United Arab Emirates,media.net,Business,640,0,0.0
+396,United Arab Emirates,example.com,Content Servers,640,63,0.0984
+397,United Arab Emirates,deviantart.com,Adult Themes,640,126,0.1969
+398,United Arab Emirates,vungle.com,Business,640,0,0.0
+399,United Arab Emirates,stats.g.doubleclick.net,Advertisements,640,22,0.0344
+400,United Arab Emirates,wsj.com,Economy & Finance,640,0,0.0
+401,United Arab Emirates,weibo.com,Social Networks,640,0,0.0
+402,United Arab Emirates,crashlytics.com,Information Technology,640,0,0.0
+403,United Arab Emirates,wiley.com,Ecommerce,640,0,0.0
+404,United Arab Emirates,time.g.aaplimg.com,Information Technology,640,0,0.0
+405,United Arab Emirates,supersonicads.com,Gaming,640,0,0.0
+406,United Arab Emirates,steampowered.com,Gaming,640,0,0.0
+407,United Arab Emirates,opendns.com,Information Technology,640,0,0.0
+408,United Arab Emirates,dnsmadeeasy.com,Information Technology,640,0,0.0
+409,United Arab Emirates,samsungqbe.com,Content Servers,640,0,0.0
+410,United Arab Emirates,jsdelivr.net,Content Servers,640,0,0.0
+411,United Arab Emirates,samsungcloudsolution.com,Content Servers,640,0,0.0
+412,United Arab Emirates,ksyuncdn.com,Content Servers,640,0,0.0
+413,United Arab Emirates,criteo.net,Business,640,0,0.0
+414,United Arab Emirates,nature.com,Education,640,0,0.0
+415,United Arab Emirates,quantserve.com,Content Servers,640,0,0.0
+416,United Arab Emirates,sohu.com,News & Media,640,0,0.0
+417,United Arab Emirates,php.net,Information Technology,640,0,0.0
+418,United Arab Emirates,amazon.dev,Content Servers,640,0,0.0
+419,United Arab Emirates,msidentity.com,Content Servers,640,0,0.0
+420,United Arab Emirates,indeed.com,Job Search & Careers,640,0,0.0
+421,United Arab Emirates,stripe.com,Economy & Finance,640,0,0.0
+422,United Arab Emirates,twimg.com,Content Servers,640,0,0.0
+423,United Arab Emirates,branch.io,Business,640,1,0.0016
+424,United Arab Emirates,alicdn.com,Content Servers,640,0,0.0
+425,United Arab Emirates,alibabadns.com,Content Servers,640,0,0.0
+426,United Arab Emirates,delivery.mp.microsoft.com,Business,640,0,0.0
+427,United Arab Emirates,un.org,"Politics, Advocacy, and Government-Related",640,0,0.0
+428,United Arab Emirates,dotomi.com,Business,640,0,0.0
+429,United Arab Emirates,hichina.com,Technology,640,0,0.0
+430,United Arab Emirates,dailymotion.com,Video Streaming,640,0,0.0
+431,United Arab Emirates,lijit.com,Business,640,0,0.0
+432,United Arab Emirates,nease.net,News & Media,640,0,0.0
+433,United Arab Emirates,1c.ru,Technology,640,0,0.0
+434,United Arab Emirates,foxnews.com,News & Media,640,0,0.0
+435,United Arab Emirates,yahoo.co.jp,News & Media,640,0,0.0
+436,United Arab Emirates,netangels.ru,Information Technology,640,0,0.0
+437,United Arab Emirates,businessinsider.com,Economy & Finance,640,0,0.0
+438,United Arab Emirates,springer.com,Education,640,0,0.0
+439,United Arab Emirates,ocsp.pki.goog,Information Security,640,0,0.0
+440,United Arab Emirates,weather.com,Weather,640,0,0.0
+441,United Arab Emirates,godaddy.com,Information Technology,640,0,0.0
+442,United Arab Emirates,list-manage.com,Business,640,0,0.0
+443,United Arab Emirates,adform.net,Content Servers,640,0,0.0
+444,United Arab Emirates,nasa.gov,Government,640,0,0.0
+445,United Arab Emirates,adobedtm.com,Business,640,0,0.0
+446,United Arab Emirates,id5-sync.com,Content Servers,640,0,0.0
+447,United Arab Emirates,outbrain.com,Business,640,0,0.0
+448,United Arab Emirates,cmediahub.ru,Newly Seen Domains,640,0,0.0
+449,United Arab Emirates,sc-cdn.net,Content Servers,640,0,0.0
+450,United Arab Emirates,ups.com,Business,640,0,0.0
+451,United Arab Emirates,quora.com,Forums,640,0,0.0
+452,United Arab Emirates,eset.com,Technology,640,0,0.0
+453,United Arab Emirates,imrworldwide.com,Content Servers,640,0,0.0
+454,United Arab Emirates,aws.dev,Content Servers,640,0,0.0
+455,United Arab Emirates,drom.ru,News & Media,640,0,0.0
+456,United Arab Emirates,pagead2.googlesyndication.com,Advertisements,640,21,0.0328
+457,United Arab Emirates,stanford.edu,Educational Institutions,640,1,0.0016
+458,United Arab Emirates,hostgator.com,Information Technology,640,0,0.0
+459,United Arab Emirates,liadm.com,Content Servers,640,0,0.0
+460,United Arab Emirates,graph.facebook.com,Social Networks,640,21,0.0328
+461,United Arab Emirates,gnu.org,Information Technology,640,0,0.0
+462,United Arab Emirates,npr.org,News & Media,640,0,0.0
+463,United Arab Emirates,unsplash.com,"News, Portal & Search",640,1,0.0016
+464,United Arab Emirates,mynetname.net,Newly Seen Domains,640,0,0.0
+465,United Arab Emirates,ocsp2.apple.com,Information Technology,640,0,0.0
+466,United Arab Emirates,mi.com,Technology,640,0,0.0
+467,United Arab Emirates,mobile.events.data.microsoft.com,Business,640,0,0.0
+468,United Arab Emirates,roaming.officeapps.live.com,Technology,640,0,0.0
+469,United Arab Emirates,google.com.br,Search Engines,640,0,0.0
+470,United Arab Emirates,creativecdn.com,Content Servers,640,0,0.0
+471,United Arab Emirates,adservice.google.com,Advertisements,640,21,0.0328
+472,United Arab Emirates,arubanetworks.com,Technology,640,0,0.0
+473,United Arab Emirates,stackoverflow.com,Forums,640,21,0.0328
+474,United Arab Emirates,measure.office.net,Content Servers,640,0,0.0
+475,United Arab Emirates,e673.dsce9.akamaiedge.net,Content Servers,640,0,0.0
+476,United Arab Emirates,dzeninfra.ru,Newly Seen Domains,640,0,0.0
+477,United Arab Emirates,bitrix24.ru,Business,640,0,0.0
+478,United Arab Emirates,eventbrite.com,Entertainment,640,0,0.0
+479,United Arab Emirates,discord.gg,Internet Phone & VOIP,640,63,0.0984
+480,United Arab Emirates,teads.tv,Advertisements,640,0,0.0
+481,United Arab Emirates,nel.measure.office.net,Content Servers,640,0,0.0
+482,United Arab Emirates,presence.teams.microsoft.com,Business,640,21,0.0328
+483,United Arab Emirates,cpanel.net,Information Technology,640,0,0.0
+484,United Arab Emirates,go-mpulse.net,Content Servers,640,0,0.0
+485,United Arab Emirates,ea.com,Gaming,640,0,0.0
+486,United Arab Emirates,trustpilot.com,Shopping,640,0,0.0
+487,United Arab Emirates,bamgrid.com,Content Servers,640,0,0.0
+488,United Arab Emirates,elasticbeanstalk.com,Technology,640,0,0.0
+489,United Arab Emirates,clarity.ms,Content Servers,640,0,0.0
+490,United Arab Emirates,3gppnetwork.org,Content Servers,640,0,0.0
+491,United Arab Emirates,xboxlive.com,Gaming,640,0,0.0
+492,United Arab Emirates,ess.apple.com,Information Technology,640,0,0.0
+493,United Arab Emirates,clients6.google.com,Search Engines,640,21,0.0328
+494,United Arab Emirates,roku.com,Ecommerce,640,0,0.0
+495,United Arab Emirates,wix.com,Information Technology,640,0,0.0
+496,United Arab Emirates,hicloud.com,File Sharing,640,0,0.0
+497,United Arab Emirates,wpa.qq.com,News & Media,640,21,0.0328
+498,United Arab Emirates,ngenix.net,Information Technology,640,0,0.0
+499,United Arab Emirates,rackspace.net,Technology,640,0,0.0
+500,United Arab Emirates,usatoday.com,News & Media,640,1,0.0016
+501,United Arab Emirates,gsp-ssl.ls.apple.com,Information Technology,640,21,0.0328
+502,United Arab Emirates,giphy.com,Technology,640,21,0.0328
+503,United Arab Emirates,comcast.com,Television,640,0,0.0
+504,United Arab Emirates,telegraph.co.uk,News & Media,640,0,0.0
+505,United Arab Emirates,walmart.com,Ecommerce,640,0,0.0
+506,United Arab Emirates,sophos.com,Information Technology,640,0,0.0
+507,United Arab Emirates,amazon.de,Ecommerce,640,0,0.0
+508,United Arab Emirates,mozilla.net,Technology,640,0,0.0
+509,United Arab Emirates,taobao.com,Ecommerce,640,0,0.0
+510,United Arab Emirates,goodreads.com,Education,640,0,0.0
+511,United Arab Emirates,avcdn.net,Content Servers,640,0,0.0
+512,United Arab Emirates,tripadvisor.com,Shopping,640,0,0.0
+513,United Arab Emirates,amazonalexa.com,Content Servers,640,0,0.0
+514,United Arab Emirates,globo.com,News & Media,640,0,0.0
+515,United Arab Emirates,tradingview.com,Economy & Finance,640,0,0.0
+516,United Arab Emirates,time.com,Magazines,640,1,0.0016
+517,United Arab Emirates,att.com,Information Technology,640,0,0.0
+518,United Arab Emirates,linktr.ee,Business,640,1,0.0016
+519,United Arab Emirates,officeclient.microsoft.com,Content Servers,640,0,0.0
+520,United Arab Emirates,openai.com,Technology,640,27,0.0422
+521,United Arab Emirates,cdek.ru,Business,640,0,0.0
+522,United Arab Emirates,duckduckgo.com,Search Engines,640,0,0.0
+523,United Arab Emirates,rzone.de,Content Servers,640,0,0.0
+524,United Arab Emirates,core.windows.net,Technology,640,0,0.0
+525,United Arab Emirates,g.page,Business,640,0,0.0
+526,United Arab Emirates,azure-dns.com,Newly Seen Domains,640,0,0.0
+527,United Arab Emirates,samsungcloud.com,Content Servers,640,0,0.0
+528,United Arab Emirates,blogger.com,Personal Blogs,640,15,0.0234
+529,United Arab Emirates,gosuslugi.ru,"Politics, Advocacy, and Government-Related",640,0,0.0
+530,United Arab Emirates,consultant.ru,"Politics, Advocacy, and Government-Related",640,0,0.0
+531,United Arab Emirates,ozon.ru,Ecommerce,640,0,0.0
+532,United Arab Emirates,byteoversea.net,Content Servers,640,0,0.0
+533,United Arab Emirates,checkpoint.com,Information Security,640,0,0.0
+534,United Arab Emirates,viator.com,Travel,640,0,0.0
+535,United Arab Emirates,apis.google.com,Technology,640,21,0.0328
+536,United Arab Emirates,apple.com.akadns.net,Content Servers,640,0,0.0
+537,United Arab Emirates,wired.com,News & Media,640,0,0.0
+538,United Arab Emirates,storage.live.com,Content Servers,640,21,0.0328
+539,United Arab Emirates,statista.com,Education,640,0,0.0
+540,United Arab Emirates,addtoany.com,Technology,640,0,0.0
+541,United Arab Emirates,pixabay.com,Photography,640,0,0.0
+542,United Arab Emirates,scribd.com,Education,640,0,0.0
+543,United Arab Emirates,m.facebook.com,Social Networks,640,21,0.0328
+544,United Arab Emirates,pangle.io,Content Servers,640,0,0.0
+545,United Arab Emirates,chinamobile.com,News & Media,640,0,0.0
+546,United Arab Emirates,measure.office.com,Technology,640,0,0.0
+547,United Arab Emirates,sfx.ms,File Sharing,640,0,0.0
+548,United Arab Emirates,adtelligent.com,Business,640,0,0.0
+549,United Arab Emirates,mtgglobals.com,Newly Seen Domains,640,0,0.0
+550,United Arab Emirates,blob.core.windows.net,Technology,640,0,0.0
+551,United Arab Emirates,myshopify.com,Ecommerce,640,0,0.0
+552,United Arab Emirates,verkada.com,Business,640,0,0.0
+553,United Arab Emirates,healthline.com,Health & Fitness,640,0,0.0
+554,United Arab Emirates,bilibili.com,Video Streaming,640,0,0.0
+555,United Arab Emirates,support.apple.com,Ecommerce,640,0,0.0
+556,United Arab Emirates,independent.co.uk,News & Media,640,1,0.0016
+557,United Arab Emirates,fp.measure.office.com,Technology,640,0,0.0
+558,United Arab Emirates,wal-mart.com,Ecommerce,640,0,0.0
+559,United Arab Emirates,t-mobile.com,Technology,640,0,0.0
+560,United Arab Emirates,gamepass.com,Gaming,640,0,0.0
+561,United Arab Emirates,kwai.net,File Sharing,640,0,0.0
+562,United Arab Emirates,clients2.google.com,Content Servers,640,21,0.0328
+563,United Arab Emirates,spcsdns.net,Content Servers,640,0,0.0
+564,United Arab Emirates,configuration.ls.apple.com,Information Technology,640,20,0.0312
+565,United Arab Emirates,outlook.live.com,Technology,639,20,0.0313
+566,United Arab Emirates,uber.com,Travel,639,0,0.0
+567,United Arab Emirates,crwdcntrl.net,Technology,639,0,0.0
+568,United Arab Emirates,weather-data.apple.com,Information Technology,639,0,0.0
+569,United Arab Emirates,cnet.com,News & Media,639,0,0.0
+570,United Arab Emirates,verisign.com,Information Technology,639,0,0.0
+571,United Arab Emirates,assets.msn.com,News & Media,639,0,0.0
+572,United Arab Emirates,speedtest.net,Information Technology,639,21,0.0329
+573,United Arab Emirates,ft.com,Video Streaming,639,0,0.0
+574,United Arab Emirates,surveymonkey.com,Shopping,639,0,0.0
+575,United Arab Emirates,imgsmail.ru,Content Servers,639,0,0.0
+576,United Arab Emirates,scdn.co,Content Servers,639,0,0.0
+577,United Arab Emirates,amzn.to,Ecommerce,639,0,0.0
+578,United Arab Emirates,churchcenter.com,Religion,639,0,0.0
+579,United Arab Emirates,nflximg.com,Movies,639,0,0.0
+580,United Arab Emirates,nvidia.com,Technology,639,0,0.0
+581,United Arab Emirates,debian.org,Education,639,0,0.0
+582,United Arab Emirates,dzen.ru,Newly Seen Domains,639,0,0.0
+583,United Arab Emirates,alibaba.com,Auctions & Marketplaces,639,0,0.0
+584,United Arab Emirates,ok.ru,Social Networks,639,0,0.0
+585,United Arab Emirates,itunes-apple.com.akadns.net,Content Servers,639,0,0.0
+586,United Arab Emirates,naver.com,News & Media,639,0,0.0
+587,United Arab Emirates,trendmicro.com,Information Security,639,0,0.0
+588,United Arab Emirates,flashtalking.com,Business,639,0,0.0
+589,United Arab Emirates,aliexpress.com,Ecommerce,639,0,0.0
+590,United Arab Emirates,behance.net,Social Networks,639,0,0.0
+591,United Arab Emirates,ted.com,Entertainment,639,0,0.0
+592,United Arab Emirates,mayoclinic.org,Health & Fitness,639,0,0.0
+593,United Arab Emirates,britannica.com,Education,639,62,0.097
+594,United Arab Emirates,iphone-ld.apple.com,Information Technology,639,0,0.0
+595,United Arab Emirates,ring.com,Business,639,0,0.0
+596,United Arab Emirates,imgur.com,Photography,639,21,0.0329
+597,United Arab Emirates,mikrotik.com,Technology,639,0,0.0
+598,United Arab Emirates,forter.com,Information Security,639,0,0.0
+599,United Arab Emirates,beian.gov.cn,"Politics, Advocacy, and Government-Related",639,0,0.0
+600,United Arab Emirates,amazontrust.com,Technology,639,0,0.0
+601,United Arab Emirates,zendesk.com,Business,639,20,0.0313
+602,United Arab Emirates,ad.doubleclick.net,Advertisements,639,20,0.0313
+603,United Arab Emirates,manage.microsoft.com,Business,639,20,0.0313
+604,United Arab Emirates,www.googleadservices.com,Advertisements,639,0,0.0
+605,United Arab Emirates,dnspod.net,Information Technology,639,0,0.0
+606,United Arab Emirates,xhamster.com,Pornography,639,423,0.662
+607,United Arab Emirates,timeweb.ru,Information Technology,639,0,0.0
+608,United Arab Emirates,livejournal.com,Social Networks,639,3,0.0047
+609,United Arab Emirates,academia.edu,Education,639,0,0.0
+610,United Arab Emirates,yahoodns.net,Content Servers,639,0,0.0
+611,United Arab Emirates,cloudflareclient.com,Content Servers,639,0,0.0
+612,United Arab Emirates,warnerbros.com,Movies,639,0,0.0
+613,United Arab Emirates,squarespace.com,Information Technology,639,0,0.0
+614,United Arab Emirates,webmd.com,Health & Fitness,639,0,0.0
+615,United Arab Emirates,translate.google.com,Education,639,26,0.0407
+616,United Arab Emirates,mysql.com,Technology,639,0,0.0
+617,United Arab Emirates,buzzfeed.com,Video Streaming,639,0,0.0
+618,United Arab Emirates,dns.com,Technology,639,0,0.0
+619,United Arab Emirates,disqus.com,Technology,639,20,0.0313
+620,United Arab Emirates,playstation.com,Gaming,639,0,0.0
+621,United Arab Emirates,kaspersky-labs.com,Technology,639,0,0.0
+622,United Arab Emirates,google.ca,Search Engines,639,0,0.0
+623,United Arab Emirates,isnssdk.com,Content Servers,639,0,0.0
+624,United Arab Emirates,gravitational.io,Newly Seen Domains,639,0,0.0
+625,United Arab Emirates,aria.microsoft.com,Information Technology,639,0,0.0
+626,United Arab Emirates,beeline.ru,Information Technology,639,0,0.0
+627,United Arab Emirates,activity.windows.com,Information Technology,639,0,0.0
+628,United Arab Emirates,online-metrix.net,Content Servers,639,120,0.1878
+629,United Arab Emirates,berkeley.edu,Educational Institutions,639,0,0.0
+630,United Arab Emirates,web.whatsapp.com,Instant Messengers,639,20,0.0313
+631,United Arab Emirates,ivi.ru,Movies,639,0,0.0
+632,United Arab Emirates,pipe.aria.microsoft.com,Business,639,0,0.0
+633,United Arab Emirates,xcal.tv,Content Servers,639,0,0.0
+634,United Arab Emirates,163.com,News & Media,639,0,0.0
+635,United Arab Emirates,google.fr,Search Engines,639,0,0.0
+636,United Arab Emirates,firetvcaptiveportal.com,Content Servers,639,0,0.0
+637,United Arab Emirates,tpc.googlesyndication.com,Search Engines,639,22,0.0344
+638,United Arab Emirates,rakuten.co.jp,Ecommerce,639,0,0.0
+639,United Arab Emirates,cambridge.org,Education,639,0,0.0
+640,United Arab Emirates,icloud-content.com,File Sharing,639,0,0.0
+641,United Arab Emirates,upload.fp.measure.office.com,Technology,639,0,0.0
+642,United Arab Emirates,i0.wp.com,Information Technology,639,0,0.0
+643,United Arab Emirates,mediatek.com,Technology,639,0,0.0
+644,United Arab Emirates,developers.google.com,Technology,639,20,0.0313
+645,United Arab Emirates,braze.com,Business,639,0,0.0
+646,United Arab Emirates,line.me,Instant Messengers,639,0,0.0
+647,United Arab Emirates,chrome.google.com,Information Technology,639,20,0.0313
+648,United Arab Emirates,herokuapp.com,Technology,639,0,0.0
+649,United Arab Emirates,loc.gov,Education,639,0,0.0
+650,United Arab Emirates,c10r.facebook.com,Social Networks,639,20,0.0313
+651,United Arab Emirates,google.es,Search Engines,639,0,0.0
+652,United Arab Emirates,telegram.me,Instant Messengers,639,20,0.0313
+653,United Arab Emirates,smaato.net,Business,639,0,0.0
+654,United Arab Emirates,www.apple.com,Information Technology,639,0,0.0
+655,United Arab Emirates,ttvnw.net,Video Streaming,639,0,0.0
+656,United Arab Emirates,wbx2.com,Technology,639,0,0.0
+657,United Arab Emirates,google.co.jp,Search Engines,639,0,0.0
+658,United Arab Emirates,worldnic.com,Information Technology,639,0,0.0
+659,United Arab Emirates,cbsnews.com,News & Media,639,0,0.0
+660,United Arab Emirates,gc.ca,"Politics, Advocacy, and Government-Related",639,0,0.0
+661,United Arab Emirates,shalltry.com,Content Servers,639,121,0.1894
+662,United Arab Emirates,ca.gov,Government,639,0,0.0
+663,United Arab Emirates,duolingo.com,Education,639,0,0.0
+664,United Arab Emirates,mncdn.com,Content Servers,639,0,0.0
+665,United Arab Emirates,herokudns.com,Content Servers,639,0,0.0
+666,United Arab Emirates,amazon.co.jp,Ecommerce,639,0,0.0
+667,United Arab Emirates,pandora.com,Audio Streaming,639,20,0.0313
+668,United Arab Emirates,sina.com.cn,News & Media,639,0,0.0
+669,United Arab Emirates,entrust.net,Information Security,639,0,0.0
+670,United Arab Emirates,nike.com,Ecommerce,639,0,0.0
+671,United Arab Emirates,mailchimp.com,Business,639,0,0.0
+672,United Arab Emirates,yelp.com,Search Engines,639,20,0.0313
+673,United Arab Emirates,ls-apple.com.akadns.net,Content Servers,639,0,0.0
+674,United Arab Emirates,myspace.com,Social Networks,639,0,0.0
+675,United Arab Emirates,duckdns.org,Information Technology,639,0,0.0
+676,United Arab Emirates,dns-parking.com,Newly Seen Domains,639,0,0.0
+677,United Arab Emirates,hipages.com.au,Search Engines,639,0,0.0
+678,United Arab Emirates,google.it,Search Engines,639,0,0.0
+679,United Arab Emirates,validator.w3.org,Technology,639,0,0.0
+680,United Arab Emirates,browser.events.data.microsoft.com,Business,639,0,0.0
+681,United Arab Emirates,config.office.net,Content Servers,639,0,0.0
+682,United Arab Emirates,huawei.com,Technology,639,0,0.0
+683,United Arab Emirates,digitalocean.com,Technology,639,0,0.0
+684,United Arab Emirates,ecdns.net,Information Technology,639,0,0.0
+685,United Arab Emirates,clients.config.office.net,Content Servers,639,0,0.0
+686,United Arab Emirates,latimes.com,News & Media,639,0,0.0
+687,United Arab Emirates,hugedomains.com,Parked & For Sale Domains,639,0,0.0
+688,United Arab Emirates,rt.ru,Information Technology,639,0,0.0
+689,United Arab Emirates,free.fr,Information Technology,639,0,0.0
+690,United Arab Emirates,aboutads.info,Business,639,0,0.0
+691,United Arab Emirates,jquery.com,Technology,639,0,0.0
+692,United Arab Emirates,theverge.com,Technology,639,0,0.0
+693,United Arab Emirates,cloudns.net,Information Technology,639,0,0.0
+694,United Arab Emirates,api.msn.com,News & Media,639,0,0.0
+695,United Arab Emirates,nstld.com,Content Servers,639,0,0.0
+696,United Arab Emirates,fb.com,Social Networks,639,14,0.0219
+697,United Arab Emirates,grammarly.io,Content Servers,639,20,0.0313
+698,United Arab Emirates,onetrust.com,Business,639,0,0.0
+699,United Arab Emirates,techcrunch.com,Technology,639,0,0.0
+700,United Arab Emirates,nelreports.net,Technology,639,0,0.0
+701,United Arab Emirates,edge-mqtt.facebook.com,Social Networks,639,20,0.0313
+702,United Arab Emirates,atlassian.com,Technology,639,0,0.0
+703,United Arab Emirates,oup.com,Educational Institutions,639,0,0.0
+704,United Arab Emirates,steamcommunity.com,Forums,639,25,0.0391
+705,United Arab Emirates,sorbs.net,Information Security,638,0,0.0
+706,United Arab Emirates,scholar.google.com,Search Engines,638,20,0.0313
+707,United Arab Emirates,www.microsoft.com,Business,638,0,0.0
+708,United Arab Emirates,newrelic.com,Business,638,0,0.0
+709,United Arab Emirates,mts.ru,Information Technology,638,0,0.0
+710,United Arab Emirates,tandfonline.com,Education,638,0,0.0
+711,United Arab Emirates,smoot.apple.com,Information Technology,638,0,0.0
+712,United Arab Emirates,patreon.com,Business,638,0,0.0
+713,United Arab Emirates,launchpad.net,Technology,638,0,0.0
+714,United Arab Emirates,bp.blogspot.com,Personal Blogs,638,14,0.0219
+715,United Arab Emirates,gcp.gvt2.com,Content Servers,638,0,0.0
+716,United Arab Emirates,hostgator.com.br,Webmail,638,0,0.0
+717,United Arab Emirates,netease.com,News & Media,638,0,0.0
+718,United Arab Emirates,ezvizlife.com,Business,638,0,0.0
+719,United Arab Emirates,gdmf.apple.com,Information Technology,638,0,0.0
+720,United Arab Emirates,akam.net,Content Servers,638,0,0.0
+721,United Arab Emirates,ietf.org,Technology,638,0,0.0
+722,United Arab Emirates,cornell.edu,Educational Institutions,638,0,0.0
+723,United Arab Emirates,mesu.apple.com,Information Technology,638,0,0.0
+724,United Arab Emirates,dbankcloud.cn,Content Servers,638,0,0.0
+725,United Arab Emirates,marriott.com,Travel,638,0,0.0
+726,United Arab Emirates,mob.com,Technology,638,0,0.0
+727,United Arab Emirates,visualstudio.com,Information Technology,638,0,0.0
+728,United Arab Emirates,noaa.gov,Government,638,0,0.0
+729,United Arab Emirates,autodesk.com,Business,638,0,0.0
+730,United Arab Emirates,analytics.google.com,Business,638,20,0.0313
+731,United Arab Emirates,beacons.gcp.gvt2.com,Content Servers,638,0,0.0
+732,United Arab Emirates,accuweather.com,News & Media,638,0,0.0
+733,United Arab Emirates,ovscdns.com,Content Servers,638,0,0.0
+734,United Arab Emirates,freepik.com,"News, Portal & Search",638,0,0.0
+735,United Arab Emirates,ikea.com,Business,638,0,0.0
+736,United Arab Emirates,merriam-webster.com,Education,638,0,0.0
+737,United Arab Emirates,yandex.com,Search Engines,638,0,0.0
+738,United Arab Emirates,google.co.in,Search Engines,638,0,0.0
+739,United Arab Emirates,gs-loc.apple.com,Information Technology,638,20,0.0313
+740,United Arab Emirates,spaceweb.pro,Information Technology,638,0,0.0
+741,United Arab Emirates,hulu.com,Movies,638,0,0.0
+742,United Arab Emirates,getpocket.com,Technology,638,0,0.0
+743,United Arab Emirates,intel.com,Technology,638,0,0.0
+744,United Arab Emirates,byteglb.com,Newly Seen Domains,638,0,0.0
+745,United Arab Emirates,licdn.com,Content Servers,638,20,0.0313
+746,United Arab Emirates,exelator.com,Business,638,0,0.0
+747,United Arab Emirates,nintendo.net,Content Servers,638,0,0.0
+748,United Arab Emirates,pinimg.com,Photography,638,0,0.0
+749,United Arab Emirates,nbcnews.com,News & Media,638,0,0.0
+750,United Arab Emirates,edgecastdns.net,Content Servers,638,0,0.0
+751,United Arab Emirates,sentinelone.net,Content Servers,638,0,0.0
+752,United Arab Emirates,amplitude.com,Business,638,0,0.0
+753,United Arab Emirates,apple.news,Newly Seen Domains,638,0,0.0
+754,United Arab Emirates,yieldmo.com,Business,638,0,0.0
+755,United Arab Emirates,cookielaw.org,Information Security,638,0,0.0
+756,United Arab Emirates,agkn.com,Information Security,638,0,0.0
+757,United Arab Emirates,homedepot.com,Ecommerce,638,0,0.0
+758,United Arab Emirates,rbc.ru,News & Media,638,0,0.0
+759,United Arab Emirates,rackspace.com,Technology,638,0,0.0
+760,United Arab Emirates,ocsp2-lb.apple.com.akadns.net,Content Servers,638,0,0.0
+761,United Arab Emirates,calendly.com,Technology,638,20,0.0313
+762,United Arab Emirates,qualtrics.com,Business,638,0,0.0
+763,United Arab Emirates,huffingtonpost.com,News & Media,638,0,0.0
+764,United Arab Emirates,news.google.com,News & Media,638,20,0.0313
+765,United Arab Emirates,adobe.net,Business,638,0,0.0
+766,United Arab Emirates,wattpad.com,Education,638,0,0.0
+767,United Arab Emirates,fontawesome.com,Hobbies & Interests,638,0,0.0
+768,United Arab Emirates,sb.scorecardresearch.com,Business,638,0,0.0
+769,United Arab Emirates,init.push.apple.com,Information Technology,638,0,0.0
+770,United Arab Emirates,optimizely.com,Business,638,0,0.0
+771,United Arab Emirates,rspamd.com,Technology,638,0,0.0
+772,United Arab Emirates,conviva.com,Technology,638,0,0.0
+773,United Arab Emirates,update.microsoft.com,Business,638,19,0.0298
+774,United Arab Emirates,theatlantic.com,Magazines,638,0,0.0
+775,United Arab Emirates,lenovo.com,Technology,638,0,0.0
+776,United Arab Emirates,inner-active.mobi,Content Servers,638,0,0.0
+777,United Arab Emirates,rncdn7.com,Content Servers,638,0,0.0
+778,United Arab Emirates,us-v20.events.data.microsoft.com,Business,638,0,0.0
+779,United Arab Emirates,xx.fbcdn.net,Content Servers,638,20,0.0313
+780,United Arab Emirates,mozgcp.net,Content Servers,638,0,0.0
+781,United Arab Emirates,mega.nz,File Sharing,638,20,0.0313
+782,United Arab Emirates,connect.facebook.net,Social Networks,638,20,0.0313
+783,United Arab Emirates,bluehost.com,Information Technology,638,0,0.0
+784,United Arab Emirates,mega.co.nz,File Sharing,638,20,0.0313
+785,United Arab Emirates,prnewswire.com,Business,638,122,0.1912
+786,United Arab Emirates,omnitagjs.com,Content Servers,638,0,0.0
+787,United Arab Emirates,tapad.com,Business,638,0,0.0
+788,United Arab Emirates,target.com,Ecommerce,638,0,0.0
+789,United Arab Emirates,riotgames.com,Gaming,638,19,0.0298
+790,United Arab Emirates,qlivecdn.com,Newly Seen Domains,637,0,0.0
+791,United Arab Emirates,v20.events.data.microsoft.com,Business,637,0,0.0
+792,United Arab Emirates,virtualearth.net,Education,637,0,0.0
+793,United Arab Emirates,bidr.io,Content Servers,637,0,0.0
+794,United Arab Emirates,mp.weixin.qq.com,News & Media,637,0,0.0
+795,United Arab Emirates,uol.com.br,News & Media,637,0,0.0
+796,United Arab Emirates,res.office365.com,Technology,637,19,0.0298
+797,United Arab Emirates,addthis.com,Business,637,0,0.0
+798,United Arab Emirates,temu.com,Newly Seen Domains,637,0,0.0
+799,United Arab Emirates,washington.edu,Educational Institutions,637,0,0.0
+800,United Arab Emirates,elpais.com,News & Media,637,0,0.0
+801,United Arab Emirates,livechatinc.com,Business,637,0,0.0
+802,United Arab Emirates,exo.nel.measure.office.net,Content Servers,637,0,0.0
+803,United Arab Emirates,google.com.hk,Search Engines,637,0,0.0
+804,United Arab Emirates,pornhub.com,Pornography,637,217,0.3407
+805,United Arab Emirates,bugsnag.com,Information Technology,637,0,0.0
+806,United Arab Emirates,gateway.facebook.com,Social Networks,637,19,0.0298
+807,United Arab Emirates,typekit.net,Content Servers,637,0,0.0
+808,United Arab Emirates,name.com,Information Technology,637,0,0.0
+809,United Arab Emirates,allawnos.com,Newly Seen Domains,637,0,0.0
+810,United Arab Emirates,ai-lawandorder.com,Newly Seen Domains,637,0,0.0
+811,United Arab Emirates,dl.delivery.mp.microsoft.com,Business,637,0,0.0
+812,United Arab Emirates,appspot.com,Technology,637,0,0.0
+813,United Arab Emirates,indiatimes.com,News & Media,637,0,0.0
+814,United Arab Emirates,signaler-pa.clients6.google.com,Search Engines,637,18,0.0283
+815,United Arab Emirates,init.itunes.apple.com,Information Technology,636,18,0.0283
+816,United Arab Emirates,aliyun.com,Technology,636,0,0.0
+817,United Arab Emirates,fandom.com,Video Streaming,636,0,0.0
+818,United Arab Emirates,namebrightdns.com,Parked & For Sale Domains,636,0,0.0
+819,United Arab Emirates,dns-shop.ru,Ecommerce,636,0,0.0
+820,United Arab Emirates,google.pl,Search Engines,636,0,0.0
+821,United Arab Emirates,browser.pipe.aria.microsoft.com,Business,636,0,0.0
+822,United Arab Emirates,intercom.io,Business,636,0,0.0
+823,United Arab Emirates,fda.gov,Health & Fitness,636,0,0.0
+824,United Arab Emirates,calendar.google.com,Technology,636,24,0.0377
+825,United Arab Emirates,contextweb.com,Business,636,0,0.0
+826,United Arab Emirates,oath.cloud,Content Servers,636,0,0.0
+827,United Arab Emirates,live.net,Content Servers,636,0,0.0
+828,United Arab Emirates,life360.com,Information Technology,636,0,0.0
+829,United Arab Emirates,w3schools.com,Education,636,0,0.0
+830,United Arab Emirates,stackadapt.com,Business,636,0,0.0
+831,United Arab Emirates,takeaway.com,Food & Drink,636,0,0.0
+832,United Arab Emirates,viber.com,Instant Messengers,636,0,0.0
+833,United Arab Emirates,delve.office.com,Technology,636,0,0.0
+834,United Arab Emirates,hbr.org,Magazines,636,0,0.0
+835,United Arab Emirates,bluekai.com,Technology,636,0,0.0
+836,United Arab Emirates,inmobi.com,Business,636,0,0.0
+837,United Arab Emirates,tlu.dl.delivery.mp.microsoft.com,Business,636,1,0.0016
+838,United Arab Emirates,ovscdns.net,Content Servers,636,0,0.0
+839,United Arab Emirates,yimg.com,Content Servers,636,0,0.0
+840,United Arab Emirates,everesttech.net,Content Servers,636,0,0.0
+841,United Arab Emirates,xserver.jp,Information Technology,636,0,0.0
+842,United Arab Emirates,loki.delve.office.com,Technology,636,0,0.0
+843,United Arab Emirates,amazon.fr,Ecommerce,636,0,0.0
+844,United Arab Emirates,abovedomains.com,Newly Seen Domains,636,0,0.0
+845,United Arab Emirates,igamecj.com,Content Servers,636,0,0.0
+846,United Arab Emirates,udemy.com,Education,636,18,0.0283
+847,United Arab Emirates,bitdefender.com,Information Security,636,0,0.0
+848,United Arab Emirates,incapdns.net,Business,636,0,0.0
+849,United Arab Emirates,nest.com,Ecommerce,636,0,0.0
+850,United Arab Emirates,markmonitor.com,Business,636,0,0.0
+851,United Arab Emirates,adjust.com,Business,636,0,0.0
+852,United Arab Emirates,deepl.com,Translator,636,18,0.0283
+853,United Arab Emirates,mediafire.com,"Militancy, Hate & Extremism",636,0,0.0
+854,United Arab Emirates,fe3cr.delivery.mp.microsoft.com,Business,636,0,0.0
+855,United Arab Emirates,res.cdn.office.net,Content Servers,636,0,0.0
+856,United Arab Emirates,nationalgeographic.com,Business,636,0,0.0
+857,United Arab Emirates,gspe79-ssl.ls.apple.com,Information Technology,636,18,0.0283
+858,United Arab Emirates,coinmarketcap.com,Economy & Finance,636,0,0.0
+859,United Arab Emirates,amazon.ca,Ecommerce,636,0,0.0
+860,United Arab Emirates,samsungapps.com,Technology,636,0,0.0
+861,United Arab Emirates,lh5.googleusercontent.com,Content Servers,636,0,0.0
+862,United Arab Emirates,cdnvideo.ru,Content Servers,636,0,0.0
+863,United Arab Emirates,box.com,File Sharing,636,0,0.0
+864,United Arab Emirates,sagepub.com,Education,636,0,0.0
+865,United Arab Emirates,themeforest.net,Ecommerce,636,0,0.0
+866,United Arab Emirates,contentsquare.net,Content Servers,636,1,0.0016
+867,United Arab Emirates,ogs.google.com,Content Servers,636,18,0.0283
+868,United Arab Emirates,investopedia.com,Economy & Finance,636,3,0.0047
+869,United Arab Emirates,google.com.mx,Search Engines,636,0,0.0
+870,United Arab Emirates,mediahils.ru,Newly Seen Domains,636,0,0.0
+871,United Arab Emirates,xp.apple.com,Information Technology,636,0,0.0
+872,United Arab Emirates,webrootcloudav.com,Information Technology,636,0,0.0
+873,United Arab Emirates,kohls.com,Ecommerce,636,0,0.0
+874,United Arab Emirates,google.com.tr,Search Engines,636,0,0.0
+875,United Arab Emirates,arc.msn.com,News & Media,636,0,0.0
+876,United Arab Emirates,yahoo.net,News & Media,636,0,0.0
+877,United Arab Emirates,mirtesen.ru,Social Networks,636,0,0.0
+878,United Arab Emirates,bandcamp.com,Audio Streaming,636,1,0.0016
+879,United Arab Emirates,xvideos.com,Pornography,636,159,0.25
+880,United Arab Emirates,pubmed.ncbi.nlm.nih.gov,Health & Fitness,636,0,0.0
+881,United Arab Emirates,shein.com,Ecommerce,636,0,0.0
+882,United Arab Emirates,rocket-cdnbp.com,Newly Seen Domains,636,0,0.0
+883,United Arab Emirates,33across.com,Business,636,0,0.0
+884,United Arab Emirates,service.gov.uk,"Politics, Advocacy, and Government-Related",636,0,0.0
+885,United Arab Emirates,douyincdn.com,Newly Seen Domains,636,0,0.0
+886,United Arab Emirates,usda.gov,Business,636,0,0.0
+887,United Arab Emirates,bestbuy.com,Ecommerce,636,0,0.0
+888,United Arab Emirates,r4.res.office365.com,Content Servers,636,18,0.0283
+889,United Arab Emirates,attn.tv,Business,636,0,0.0
+890,United Arab Emirates,klaviyo.com,Business,636,0,0.0
+891,United Arab Emirates,unesco.org,"Politics, Advocacy, and Government-Related",636,0,0.0
+892,United Arab Emirates,allaboutcookies.org,Education,636,0,0.0
+893,United Arab Emirates,w55c.net,Business,636,0,0.0
+894,United Arab Emirates,airbnb.com,Travel,636,0,0.0
+895,United Arab Emirates,pv-cdn.net,Newly Seen Domains,636,0,0.0
+896,United Arab Emirates,zillow.com,Real Estate,636,62,0.0975
+897,United Arab Emirates,docker.com,Technology,636,0,0.0
+898,United Arab Emirates,kickstarter.com,Hobbies & Interests,636,1,0.0016
+899,United Arab Emirates,youku.com,Video Streaming,636,0,0.0
+900,United Arab Emirates,enterprise.activity.windows.com,Information Technology,636,0,0.0
+901,United Arab Emirates,ohthree.com,Newly Seen Domains,636,0,0.0
+902,United Arab Emirates,tremorhub.com,Content Servers,636,0,0.0
+903,United Arab Emirates,bytetcdn.com,Content Servers,636,0,0.0
+904,United Arab Emirates,telegram.org,Instant Messengers,636,18,0.0283
+905,United Arab Emirates,gumgum.com,Business,636,0,0.0
+906,United Arab Emirates,norton.com,Information Security,636,0,0.0
+907,United Arab Emirates,gandi-ns.fr,Newly Seen Domains,636,0,0.0
+908,United Arab Emirates,xiaomi.net,Technology,636,0,0.0
+909,United Arab Emirates,pccc.com,Technology,636,0,0.0
+910,United Arab Emirates,fiverr.com,Search Engines,636,0,0.0
+911,United Arab Emirates,nflxvideo.net,Movies,636,0,0.0
+912,United Arab Emirates,huffpost.com,News & Media,636,0,0.0
+913,United Arab Emirates,pbs.org,Television,636,0,0.0
+914,United Arab Emirates,lemonde.fr,News & Media,636,1,0.0016
+915,United Arab Emirates,yximgs.com,Information Technology,636,0,0.0
+916,United Arab Emirates,1rx.io,Advertisements,636,0,0.0
+917,United Arab Emirates,e-msedge.net,Content Servers,636,0,0.0
+918,United Arab Emirates,ttoverseaus.net,Newly Seen Domains,636,0,0.0
+919,United Arab Emirates,clients3.google.com,Content Servers,636,18,0.0283
+920,United Arab Emirates,securepubads.g.doubleclick.net,Advertisements,636,18,0.0283
+921,United Arab Emirates,mailchi.mp,Business,636,0,0.0
+922,United Arab Emirates,fedex.com,Business,636,0,0.0
+923,United Arab Emirates,m.youtube.com,Video Streaming,636,18,0.0283
+924,United Arab Emirates,people.com,Video Streaming,636,2,0.0031
+925,United Arab Emirates,shopee.co.id,Ecommerce,636,0,0.0
+926,United Arab Emirates,business.site,Business,636,0,0.0
+927,United Arab Emirates,kennasecurity.com,Business,636,0,0.0
+928,United Arab Emirates,l.facebook.com,Social Networks,636,18,0.0283
+929,United Arab Emirates,quantummetric.com,Business,636,0,0.0
+930,United Arab Emirates,yt3.ggpht.com,Content Servers,636,18,0.0283
+931,United Arab Emirates,elisa.fi,Information Technology,636,0,0.0
+932,United Arab Emirates,princeton.edu,Educational Institutions,636,0,0.0
+933,United Arab Emirates,mixpanel.com,Business,636,0,0.0
+934,United Arab Emirates,networkadvertising.org,Business,636,0,0.0
+935,United Arab Emirates,safebrowsing.google.com,Information Security,636,18,0.0283
+936,United Arab Emirates,footprintdns.com,Technology,636,0,0.0
+937,United Arab Emirates,macys.com,Ecommerce,636,0,0.0
+938,United Arab Emirates,chaturbate.com,Pornography,636,158,0.2484
+939,United Arab Emirates,www.msftconnecttest.com,Content Servers,636,0,0.0
+940,United Arab Emirates,fast.com,Information Technology,636,0,0.0
+941,United Arab Emirates,gihc.net,Content Servers,636,0,0.0
+942,United Arab Emirates,jotform.com,Information Technology,636,0,0.0
+943,United Arab Emirates,stickyadstv.com,Business,636,0,0.0
+944,United Arab Emirates,kargo.com,Business,636,0,0.0
+945,United Arab Emirates,me.com,File Sharing,636,0,0.0
+946,United Arab Emirates,ssl-images-amazon.com,Content Servers,636,0,0.0
+947,United Arab Emirates,statuspage.io,Technology,636,0,0.0
+948,United Arab Emirates,sitescout.com,Business,636,0,0.0
+949,United Arab Emirates,upwork.com,Job Search & Careers,636,0,0.0
+950,United Arab Emirates,allegro.pl,Ecommerce,636,0,0.0
+951,United Arab Emirates,dbankcloud.com,Content Servers,636,0,0.0
+952,United Arab Emirates,t-online.de,News & Media,636,0,0.0
+953,United Arab Emirates,google.cn,Search Engines,636,0,0.0
+954,United Arab Emirates,a-mo.net,Advertisements,636,0,0.0
+955,United Arab Emirates,addons-pa.clients6.google.com,Search Engines,636,18,0.0283
+956,United Arab Emirates,adrta.com,Business,636,0,0.0
+957,United Arab Emirates,amazon.es,Ecommerce,636,0,0.0
+958,United Arab Emirates,mask.icloud.com,File Sharing,636,18,0.0283
+959,United Arab Emirates,origin-apple.com.akadns.net,Content Servers,636,1,0.0016
+960,United Arab Emirates,erome.com,Pornography,636,159,0.25
+961,United Arab Emirates,es.wikipedia.org,Education,636,0,0.0
+962,United Arab Emirates,change.org,"Politics, Advocacy, and Government-Related",636,417,0.6557
+963,United Arab Emirates,news.com.au,News & Media,636,1,0.0016
+964,United Arab Emirates,ks-cdn.com,Technology,636,0,0.0
+965,United Arab Emirates,bankofamerica.com,Economy & Finance,636,0,0.0
+966,United Arab Emirates,ebay.co.uk,Auctions & Marketplaces,636,0,0.0
+967,United Arab Emirates,guzzoni.apple.com,Information Technology,636,18,0.0283
+968,United Arab Emirates,quickconnect.to,Technology,636,0,0.0
+969,United Arab Emirates,fb.me,Social Networks,636,74,0.1164
+970,United Arab Emirates,steamstatic.com,Content Servers,636,0,0.0
+971,United Arab Emirates,xnxx.com,Pornography,636,160,0.2516
+972,United Arab Emirates,ieee.org,"Politics, Advocacy, and Government-Related",636,1,0.0016
+973,United Arab Emirates,turn.com,Business,636,0,0.0
+974,United Arab Emirates,redhat.com,Technology,636,0,0.0
+975,United Arab Emirates,ipify.org,Technology,636,0,0.0
+976,United Arab Emirates,ads-twitter.com,Advertisements,636,0,0.0
+977,United Arab Emirates,rfihub.com,Content Servers,636,0,0.0
+978,United Arab Emirates,s3.amazonaws.com,File Sharing,636,0,0.0
+979,United Arab Emirates,ovh.net,Information Technology,636,0,0.0
+980,United Arab Emirates,krxd.net,Content Servers,636,0,0.0
+981,United Arab Emirates,hm.com,Ecommerce,636,0,0.0
+982,United Arab Emirates,www.amazon.com,Ecommerce,636,0,0.0
+983,United Arab Emirates,lefigaro.fr,Video Streaming,636,0,0.0
+984,United Arab Emirates,ipredictive.com,Content Servers,636,0,0.0
+985,United Arab Emirates,nexusrules.officeapps.live.com,Technology,636,0,0.0
+986,United Arab Emirates,tencent-cloud.net,Technology,636,0,0.0
+987,United Arab Emirates,odc.officeapps.live.com,Business,636,0,0.0
+988,United Arab Emirates,heytapdl.com,Newly Seen Domains,636,0,0.0
+989,United Arab Emirates,www.googletagservices.com,Content Servers,636,2,0.0031
+990,United Arab Emirates,milanuncios.com,Auctions & Marketplaces,636,0,0.0
+991,United Arab Emirates,intentiq.com,Business,636,0,0.0
+992,United Arab Emirates,cdn20.com,Content Servers,636,0,0.0
+993,United Arab Emirates,indexww.com,Content Servers,636,0,0.0
+994,United Arab Emirates,ibyteimg.com,Content Servers,636,0,0.0
+995,United Arab Emirates,whitehouse.gov,"Politics, Advocacy, and Government-Related",636,0,0.0
+996,United Arab Emirates,iris.microsoft.com,Business,636,0,0.0
+997,United Arab Emirates,cloudapp.azure.com,Technology,636,0,0.0
+998,United Arab Emirates,amazon.in,Ecommerce,636,0,0.0
+999,United Arab Emirates,iso.org,"Politics, Advocacy, and Government-Related",636,1,0.0016
+1000,United Arab Emirates,bootstrapcdn.com,Content Servers,636,0,0.0
+1001,United Arab Emirates,api.iris.microsoft.com,Business,636,0,0.0
+1002,United Arab Emirates,simpli.fi,Business,636,0,0.0
+1003,United Arab Emirates,boostmobile.com,Information Technology,636,1,0.0016
+1004,United Arab Emirates,nic.do,Parked & For Sale Domains,636,0,0.0
+1005,United Arab Emirates,aniview.com,Business,636,0,0.0
+1006,United Arab Emirates,bbtec.net,Newly Seen Domains,636,0,0.0
+1007,United Arab Emirates,amazon.it,Ecommerce,636,0,0.0
+1008,United Arab Emirates,statcounter.com,Business,636,0,0.0
+1009,United Arab Emirates,lowes.com,Ecommerce,636,0,0.0
+1010,United Arab Emirates,ssacdn.com,Content Servers,636,0,0.0
+1011,United Arab Emirates,istockphoto.com,"News, Portal & Search",636,62,0.0975
+1012,United Arab Emirates,www.msn.com,News & Media,636,0,0.0
+1013,United Arab Emirates,ertelecom.ru,Information Technology,636,0,0.0
+1014,United Arab Emirates,shutterstock.com,Photography,636,0,0.0
+1015,United Arab Emirates,netgear.com,Business,636,0,0.0
+1016,United Arab Emirates,phicdn.net,Content Servers,636,0,0.0
+1017,United Arab Emirates,githubusercontent.com,Technology,636,0,0.0
+1018,United Arab Emirates,cdnhwc1.com,Content Servers,636,0,0.0
+1019,United Arab Emirates,epa.gov,"Politics, Advocacy, and Government-Related",636,0,0.0
+1020,United Arab Emirates,swrve.com,Business,636,0,0.0
+1021,United Arab Emirates,appier.net,Technology,636,0,0.0
+1022,United Arab Emirates,unrulymedia.com,Business,636,0,0.0
+1023,United Arab Emirates,www.linkedin.com,Professional Networking,636,18,0.0283
+1024,United Arab Emirates,samsungacr.com,Content Servers,636,0,0.0
+1025,United Arab Emirates,shopee.com.br,Newly Seen Domains,636,0,0.0
+1026,United Arab Emirates,samsungosp.com,Content Servers,636,0,0.0
+1027,United Arab Emirates,ameblo.jp,Personal Blogs,636,1,0.0016
+1028,United Arab Emirates,impervadns.net,Content Servers,636,0,0.0
+1029,United Arab Emirates,eporner.com,Pornography,636,158,0.2484
+1030,United Arab Emirates,imcmdb.net,Content Servers,636,0,0.0
+1031,United Arab Emirates,clever.com,Technology,636,0,0.0
+1032,United Arab Emirates,state.gov,Government,636,0,0.0
+1033,United Arab Emirates,miwifi.com,Technology,636,0,0.0
+1034,United Arab Emirates,pool.ntp.org,Technology,636,0,0.0
+1035,United Arab Emirates,bdydns.com,Content Servers,636,0,0.0
+1036,United Arab Emirates,oneclient.sfx.ms,File Sharing,636,1,0.0016
+1037,United Arab Emirates,google.com.tw,Search Engines,636,0,0.0
+1038,United Arab Emirates,onlyfans.com,Social Networks,636,159,0.25
+1039,United Arab Emirates,seznam.cz,News & Media,636,0,0.0
+1040,United Arab Emirates,wayfair.com,Business,636,0,0.0
+1041,United Arab Emirates,onetag-sys.com,Advertisements,636,0,0.0
+1042,United Arab Emirates,discordapp.com,Information Technology,636,18,0.0283
+1043,United Arab Emirates,360.cn,Technology,636,0,0.0
+1044,United Arab Emirates,star.c10r.facebook.com,Social Networks,636,18,0.0283
+1045,United Arab Emirates,brave.com,Information Technology,636,0,0.0
+1046,United Arab Emirates,jnn-pa.googleapis.com,Content Servers,636,18,0.0283
+1047,United Arab Emirates,dreamhost.com,Information Technology,636,0,0.0
+1048,United Arab Emirates,worldbank.org,"Politics, Advocacy, and Government-Related",636,0,0.0
+1049,United Arab Emirates,history.google.com,Search Engines,636,18,0.0283
+1050,United Arab Emirates,mgid.com,Business,636,0,0.0
+1051,United Arab Emirates,fbsbx.com,Content Servers,636,0,0.0
+1052,United Arab Emirates,gitlab.com,Information Technology,636,18,0.0283
+1053,United Arab Emirates,economist.com,News & Media,636,0,0.0
+1054,United Arab Emirates,umich.edu,Educational Institutions,636,0,0.0
+1055,United Arab Emirates,tp-link.com,Technology,636,0,0.0
+1056,United Arab Emirates,mgts.ru,Information Technology,636,0,0.0
+1057,United Arab Emirates,onedrive.live.com,File Sharing,636,18,0.0283
+1058,United Arab Emirates,mathtag.com,Information Security,636,0,0.0
+1059,United Arab Emirates,usgovcloudapi.net,Content Servers,636,0,0.0
+1060,United Arab Emirates,1drv.com,File Sharing,636,0,0.0
+1061,United Arab Emirates,typeform.com,Webmail,636,0,0.0
+1062,United Arab Emirates,paloaltonetworks.com,Information Security,636,0,0.0
+1063,United Arab Emirates,columbia.edu,Educational Institutions,636,0,0.0
+1064,United Arab Emirates,v.aaplimg.com,Information Technology,636,0,0.0
+1065,United Arab Emirates,teams.cdn.office.net,Content Servers,636,0,0.0
+1066,United Arab Emirates,goskope.com,Content Servers,636,0,0.0
+1067,United Arab Emirates,tribalfusion.com,Business,636,0,0.0
+1068,United Arab Emirates,costco.com,Ecommerce,636,0,0.0
+1069,United Arab Emirates,heytapmobile.com,Content Servers,636,0,0.0
+1070,United Arab Emirates,usnews.com,News & Media,636,0,0.0
+1071,United Arab Emirates,cdnbuild.net,Newly Seen Domains,636,0,0.0
+1072,United Arab Emirates,firefox.com,Information Technology,636,0,0.0
+1073,United Arab Emirates,gouv.fr,Newly Seen Domains,636,0,0.0
+1074,United Arab Emirates,statics.teams.cdn.office.net,Content Servers,636,0,0.0
+1075,United Arab Emirates,okta.com,Business,636,0,0.0
+1076,United Arab Emirates,dan.com,Information Technology,636,0,0.0
+1077,United Arab Emirates,cloudinary.com,File Sharing,636,0,0.0
+1078,United Arab Emirates,chartbeat.net,Business,636,0,0.0
+1079,United Arab Emirates,vkontakte.ru,Social Networks,636,0,0.0
+1080,United Arab Emirates,globalsign.com,Information Security,636,0,0.0
+1081,United Arab Emirates,bild.de,News & Media,636,0,0.0
+1082,United Arab Emirates,genius.com,Music,636,0,0.0
+1083,United Arab Emirates,apigee.net,Content Servers,636,0,0.0
+1084,United Arab Emirates,disneyplus.com,Movies,636,18,0.0283
+1085,United Arab Emirates,connatix.com,Business,636,0,0.0
+1086,United Arab Emirates,dpm.demdex.net,Business,636,1,0.0016
+1087,United Arab Emirates,jimdo.com,New Domains,636,0,0.0
+1088,United Arab Emirates,daum.net,News & Media,636,62,0.0975
+1089,United Arab Emirates,wd.microsoft.com,Business,636,0,0.0
+1090,United Arab Emirates,vmware.com,Technology,636,0,0.0
+1091,United Arab Emirates,e2ro.com,Content Servers,636,0,0.0
+1092,United Arab Emirates,sectigo.com,Information Security,636,0,0.0
+1093,United Arab Emirates,fd.api.iris.microsoft.com,Business,636,0,0.0
+1094,United Arab Emirates,browser-intake-datadoghq.com,Content Servers,636,0,0.0
+1095,United Arab Emirates,unpkg.com,Content Servers,636,0,0.0
+1096,United Arab Emirates,kaspi.kz,Economy & Finance,636,0,0.0
+1097,United Arab Emirates,cloudflareinsights.com,Content Servers,636,0,0.0
+1098,United Arab Emirates,firebaseio.com,Technology,636,0,0.0
+1099,United Arab Emirates,repubblica.it,News & Media,636,0,0.0
+1100,United Arab Emirates,cp.wd.microsoft.com,Business,636,0,0.0
+1101,United Arab Emirates,chartboost.com,Business,636,0,0.0
+1102,United Arab Emirates,bttrack.com,Content Servers,636,0,0.0
+1103,United Arab Emirates,arcgis.com,Technology,636,0,0.0
+1104,United Arab Emirates,nypost.com,Video Streaming,636,0,0.0
+1105,United Arab Emirates,primevideo.com,Movies,636,18,0.0283
+1106,United Arab Emirates,wikihow.com,Education,636,0,0.0
+1107,United Arab Emirates,binance.com,Economy & Finance,636,0,0.0
+1108,United Arab Emirates,azure-devices.net,Content Servers,636,0,0.0
+1109,United Arab Emirates,avito.ru,Auctions & Marketplaces,636,0,0.0
+1110,United Arab Emirates,beacons.gvt2.com,Content Servers,636,0,0.0
+1111,United Arab Emirates,businesswire.com,Business,636,0,0.0
+1112,United Arab Emirates,myqcloud.com,Content Servers,636,0,0.0
+1113,United Arab Emirates,segment.io,Business,636,0,0.0
+1114,United Arab Emirates,spot.im,Business,636,0,0.0
+1115,United Arab Emirates,ya.ru,Search Engines,636,0,0.0
+1116,United Arab Emirates,theconversation.com,News & Media,636,1,0.0016
+1117,United Arab Emirates,cdnjs.cloudflare.com,Technology,636,0,0.0
+1118,United Arab Emirates,ys7.com,Business,636,0,0.0
+1119,United Arab Emirates,hotmail.com,Webmail,636,18,0.0283
+1120,United Arab Emirates,ctdns.cn,Newly Seen Domains,636,0,0.0
+1121,United Arab Emirates,ad.gt,Advertisements,636,0,0.0
+1122,United Arab Emirates,dns.ne.jp,Technology,636,0,0.0
+1123,United Arab Emirates,llnwi.net,Content Servers,636,0,0.0
+1124,United Arab Emirates,deloitte.com,Economy & Finance,636,0,0.0
+1125,United Arab Emirates,biblegateway.com,Religion,636,0,0.0
+1126,United Arab Emirates,btloader.com,Content Servers,636,0,0.0
+1127,United Arab Emirates,yellowblue.io,Content Servers,636,0,0.0
+1128,United Arab Emirates,classroom.google.com,Education,636,24,0.0377
+1129,United Arab Emirates,rapid7.com,Information Security,636,0,0.0
+1130,United Arab Emirates,mediavine.com,Business,636,0,0.0
+1131,United Arab Emirates,immunet.com,Information Security,636,0,0.0
+1132,United Arab Emirates,discogs.com,Audio Streaming,636,0,0.0
+1133,United Arab Emirates,vip-svr.com,Newly Seen Domains,636,60,0.0943
+1134,United Arab Emirates,hilton.com,Travel,636,0,0.0
+1135,United Arab Emirates,asyncgw.teams.microsoft.com,Business,636,18,0.0283
+1136,United Arab Emirates,ebay.de,Auctions & Marketplaces,636,0,0.0
+1137,United Arab Emirates,tbcache.com,Ecommerce,636,0,0.0
+1138,United Arab Emirates,pendo.io,Technology,636,0,0.0
+1139,United Arab Emirates,g.live.com,Technology,636,0,0.0
+1140,United Arab Emirates,vivoglobal.com,Technology,636,0,0.0
+1141,United Arab Emirates,savvis.net,Information Security,636,0,0.0
+1142,United Arab Emirates,xerox.com,Technology,636,0,0.0
+1143,United Arab Emirates,init.ess.apple.com,Information Technology,636,0,0.0
+1144,United Arab Emirates,fr.wikipedia.org,Education,636,0,0.0
+1145,United Arab Emirates,rings.solutions,Content Servers,636,0,0.0
+1146,United Arab Emirates,heylink.me,Technology,636,0,0.0
+1147,United Arab Emirates,cbc.ca,News & Media,636,0,0.0
+1148,United Arab Emirates,superhosting.bg,Ecommerce,636,0,0.0
+1149,United Arab Emirates,canonical.com,Technology,636,0,0.0
+1150,United Arab Emirates,spotifycdn.com,Content Servers,636,0,0.0
+1151,United Arab Emirates,recaptcha.net,Technology,636,0,0.0
+1152,United Arab Emirates,akismet.com,Information Security,636,0,0.0
+1153,United Arab Emirates,ioam.de,Business,636,0,0.0
+1154,United Arab Emirates,redd.it,Forums,636,0,0.0
+1155,United Arab Emirates,sharethis.com,Business,636,0,0.0
+1156,United Arab Emirates,rackspaceclouddb.com,Content Servers,636,0,0.0
+1157,United Arab Emirates,eyeota.net,Login Screens,636,0,0.0
+1158,United Arab Emirates,glance.net,Business,636,0,0.0
+1159,United Arab Emirates,adgrx.com,Technology,636,0,0.0
+1160,United Arab Emirates,onet.pl,News & Media,636,0,0.0
+1161,United Arab Emirates,samsungcloudsolution.net,Content Servers,636,0,0.0
+1162,United Arab Emirates,synology.com,Technology,636,0,0.0
+1163,United Arab Emirates,mckinsey.com,Webmail,636,0,0.0
+1164,United Arab Emirates,quizlet.com,Education,636,0,0.0
+1165,United Arab Emirates,dscw154.akamai.net,Content Servers,636,0,0.0
+1166,United Arab Emirates,websitewelcome.com,Content Servers,636,0,0.0
+1167,United Arab Emirates,ancestry.com,Hobbies & Interests,636,1,0.0016
+1168,United Arab Emirates,awsglobalaccelerator.com,Content Servers,636,0,0.0
+1169,United Arab Emirates,amazon.com.br,Ecommerce,636,0,0.0
+1170,United Arab Emirates,onesignal.com,Business,636,0,0.0
+1171,United Arab Emirates,adroll.com,Advertisements,636,0,0.0
+1172,United Arab Emirates,skroutz.gr,Shopping,636,0,0.0
+1173,United Arab Emirates,xfinity.com,Television,636,0,0.0
+1174,United Arab Emirates,api.amazon.com,Ecommerce,636,0,0.0
+1175,United Arab Emirates,2gis.com,Search Engines,636,0,0.0
+1176,United Arab Emirates,clients.google.com,Search Engines,636,18,0.0283
+1177,United Arab Emirates,postrelease.com,Content Servers,636,0,0.0
+1178,United Arab Emirates,instructure.com,Education,636,2,0.0031
+1179,United Arab Emirates,firebaselogging-pa.googleapis.com,Content Servers,636,18,0.0283
+1180,United Arab Emirates,cm.g.doubleclick.net,Advertisements,636,18,0.0283
+1181,United Arab Emirates,android.clients.google.com,Content Servers,636,18,0.0283
+1182,United Arab Emirates,flurry.com,Business,636,0,0.0
+1183,United Arab Emirates,serving-sys.com,Content Servers,636,0,0.0
+1184,United Arab Emirates,tiqcdn.com,Content Servers,636,0,0.0
+1185,United Arab Emirates,elb.amazonaws.com,Technology,636,0,0.0
+1186,United Arab Emirates,innovid.com,Business,636,0,0.0
+1187,United Arab Emirates,notamedia.ru,Business,636,0,0.0
+1188,United Arab Emirates,c.bing.com,Content Servers,636,0,0.0
+1189,United Arab Emirates,corriere.it,News & Media,636,0,0.0
+1190,United Arab Emirates,cookiedatabase.org,Technology,636,0,0.0
+1191,United Arab Emirates,shipt.com,Business,636,0,0.0
+1192,United Arab Emirates,cachenow.net,Newly Seen Domains,636,0,0.0
+1193,United Arab Emirates,elmundo.es,News & Media,636,0,0.0
+1194,United Arab Emirates,apnews.com,News & Media,636,0,0.0
+1195,United Arab Emirates,mmcdn.com,Parked & For Sale Domains,636,0,0.0
+1196,United Arab Emirates,weforum.org,"Politics, Advocacy, and Government-Related",636,0,0.0
+1197,United Arab Emirates,4dex.io,Content Servers,636,0,0.0
+1198,United Arab Emirates,mail.yahoo.com,Webmail,636,18,0.0283
+1199,United Arab Emirates,qwest.net,Business,636,0,0.0
+1200,United Arab Emirates,spectrum.com,Information Technology,636,0,0.0
+1201,United Arab Emirates,aiv-delivery.net,Content Servers,636,0,0.0
+1202,United Arab Emirates,redditstatic.com,Content Servers,636,0,0.0
+1203,United Arab Emirates,wp.pl,News & Media,636,0,0.0
+1204,United Arab Emirates,si.com,Sports,636,3,0.0047
+1205,United Arab Emirates,asos.com,Clothing,636,0,0.0
+1206,United Arab Emirates,pikabu.ru,Personal Blogs,636,0,0.0
+1207,United Arab Emirates,bol.com,Ecommerce,636,62,0.0975
+1208,United Arab Emirates,tynt.com,Business,636,0,0.0
+1209,United Arab Emirates,bumble.com,Dating & Relationships,636,411,0.6462
+1210,United Arab Emirates,aa-rt.sharepoint.com,New Domains,636,18,0.0283
+1211,United Arab Emirates,arxiv.org,Education,636,4,0.0063
+1212,United Arab Emirates,eepurl.com,Redirect,636,0,0.0
+1213,United Arab Emirates,withgoogle.com,Search Engines,636,0,0.0
+1214,United Arab Emirates,pusher.com,Technology,636,0,0.0
+1215,United Arab Emirates,ib.adnxs.com,Business,636,0,0.0
+1216,United Arab Emirates,doh.opendns.com,Information Technology,636,18,0.0283
+1217,United Arab Emirates,marketwatch.com,Economy & Finance,636,0,0.0
+1218,United Arab Emirates,utorrent.com,P2P,636,14,0.022
+1219,United Arab Emirates,psychologytoday.com,Health & Fitness,636,0,0.0
+1220,United Arab Emirates,twitchcdn.net,Content Servers,636,18,0.0283
+1221,United Arab Emirates,doubleclick.com,Business,636,0,0.0
+1222,United Arab Emirates,epicgames.dev,Gaming,636,0,0.0
+1223,United Arab Emirates,newyorker.com,Video Streaming,636,0,0.0
+1224,United Arab Emirates,pik.ru,Real Estate,636,0,0.0
+1225,United Arab Emirates,dbankcloud.ru,Unreachable,636,0,0.0
+1226,United Arab Emirates,www.spotify.com,Audio Streaming,636,0,0.0
+1227,United Arab Emirates,pixiv.net,Arts,636,0,0.0
+1228,United Arab Emirates,vice.com,News & Media,636,0,0.0
+1229,United Arab Emirates,francetvinfo.fr,News & Media,636,0,0.0
+1230,United Arab Emirates,ubnt.com,Technology,636,0,0.0
+1231,United Arab Emirates,interia.pl,News & Media,636,0,0.0
+1232,United Arab Emirates,pexels.com,Photography,636,0,0.0
+1233,United Arab Emirates,avira.com,Technology,636,0,0.0
+1234,United Arab Emirates,fortune.com,Magazines,636,0,0.0
+1235,United Arab Emirates,classlink.com,Education,636,0,0.0
+1236,United Arab Emirates,socdm.com,Content Servers,636,0,0.0
+1237,United Arab Emirates,th.bing.com,Search Engines,636,0,0.0
+1238,United Arab Emirates,plos.org,Education,636,0,0.0
+1239,United Arab Emirates,kahoot.it,Gaming,636,0,0.0
+1240,United Arab Emirates,support.mozilla.org,Technology,636,0,0.0
+1241,United Arab Emirates,chartbeat.com,Business,636,0,0.0
+1242,United Arab Emirates,amazon.com.au,Ecommerce,636,0,0.0
+1243,United Arab Emirates,flipkart.com,Ecommerce,636,0,0.0
+1244,United Arab Emirates,vkuser.net,Content Servers,636,0,0.0
+1245,United Arab Emirates,truste.com,Information Security,636,0,0.0
+1246,United Arab Emirates,plex.tv,Movies,636,18,0.0283
+1247,United Arab Emirates,configuration.apple.com,Content Servers,636,0,0.0
+1248,United Arab Emirates,vidazoo.com,Business,636,0,0.0
+1249,United Arab Emirates,atlassian.net,Business,636,0,0.0
+1250,United Arab Emirates,creditkarma.com,Economy & Finance,636,0,0.0
+1251,United Arab Emirates,chegg.com,Education,636,0,0.0
+1252,United Arab Emirates,split.io,Business,636,0,0.0
+1253,United Arab Emirates,gsp85-ssl.ls.apple.com,Information Technology,636,18,0.0283
+1254,United Arab Emirates,byteoversea.com,Content Servers,636,0,0.0
+1255,United Arab Emirates,trustarc.com,Information Security,636,0,0.0
+1256,United Arab Emirates,allianz.com,Economy & Finance,636,0,0.0
+1257,United Arab Emirates,dribbble.com,Photography,636,0,0.0
+1258,United Arab Emirates,finance.yahoo.com,Economy & Finance,636,0,0.0
+1259,United Arab Emirates,mosmedzdrav.ru,Newly Seen Domains,636,0,0.0
+1260,United Arab Emirates,agoda.com,Coupons,636,0,0.0
+1261,United Arab Emirates,mashable.com,News & Media,636,0,0.0
+1262,United Arab Emirates,trendyol.com,Fashion,636,0,0.0
+1263,United Arab Emirates,openstreetmap.org,Education,636,0,0.0
+1264,United Arab Emirates,geo.prod.do.dsp.mp.microsoft.com,Business,636,0,0.0
+1265,United Arab Emirates,olx.ua,Auctions & Marketplaces,636,0,0.0
+1266,United Arab Emirates,yale.edu,Educational Institutions,636,1,0.0016
+1267,United Arab Emirates,spankbang.com,Pornography,636,159,0.25
+1268,United Arab Emirates,mdpi.com,Education,636,0,0.0
+1269,United Arab Emirates,psu.edu,Educational Institutions,636,1,0.0016
+1270,United Arab Emirates,highwebmedia.com,Pornography,636,60,0.0943
+1271,United Arab Emirates,grserver.gr,Information Technology,636,0,0.0
+1272,United Arab Emirates,online.net,Information Technology,636,0,0.0
+1273,United Arab Emirates,nicovideo.jp,Video Streaming,636,0,0.0
+1274,United Arab Emirates,ripn.net,Technology,636,0,0.0
+1275,United Arab Emirates,youronlinechoices.com,Business,636,0,0.0
+1276,United Arab Emirates,osi.office.net,Content Servers,636,0,0.0
+1277,United Arab Emirates,www.gov.br,"Politics, Advocacy, and Government-Related",636,0,0.0
+1278,United Arab Emirates,1.bp.blogspot.com,Personal Blogs,636,12,0.0189
+1279,United Arab Emirates,chess.com,Hobbies & Interests,636,0,0.0
+1280,United Arab Emirates,alidns.com,Information Technology,636,0,0.0
+1281,United Arab Emirates,joinhoney.com,Coupons,636,0,0.0
+1282,United Arab Emirates,youtubei.googleapis.com,Content Servers,636,18,0.0283
+1283,United Arab Emirates,360safe.com,Information Security,636,0,0.0
+1284,United Arab Emirates,redditmedia.com,Video Streaming,636,1,0.0016
+1285,United Arab Emirates,ecosia.org,"Politics, Advocacy, and Government-Related",636,15,0.0236
+1286,United Arab Emirates,bam.nr-data.net,Content Servers,636,19,0.0299
+1287,United Arab Emirates,springserve.com,Business,636,0,0.0
+1288,United Arab Emirates,idnes.cz,News & Media,636,0,0.0
+1289,United Arab Emirates,webhostbox.net,Information Technology,636,0,0.0
+1290,United Arab Emirates,constantcontact.com,Business,636,0,0.0
+1291,United Arab Emirates,marca.com,Video Streaming,636,0,0.0
+1292,United Arab Emirates,dnsv1.com,Content Servers,636,0,0.0
+1293,United Arab Emirates,166.com,News & Media,636,0,0.0
+1294,United Arab Emirates,mozaws.net,Content Servers,636,0,0.0
+1295,United Arab Emirates,olx.com.br,Auctions & Marketplaces,636,0,0.0
+1296,United Arab Emirates,share-dns.com,Newly Seen Domains,636,0,0.0
+1297,United Arab Emirates,surfshark.com,P2P,636,124,0.195
+1298,United Arab Emirates,service-now.com,Technology,636,0,0.0
+1299,United Arab Emirates,moneycontrol.com,Economy & Finance,636,63,0.0991
+1300,United Arab Emirates,character.ai,Newly Seen Domains,636,19,0.0299
+1301,United Arab Emirates,adcolony.com,Business,636,0,0.0
+1302,United Arab Emirates,beget.com,File Sharing,636,0,0.0
+1303,United Arab Emirates,g.whatsapp.net,Instant Messengers,636,18,0.0283
+1304,United Arab Emirates,cdnhwc2.com,Content Servers,636,0,0.0
+1305,United Arab Emirates,dropboxapi.com,Content Servers,636,0,0.0
+1306,United Arab Emirates,kwai-pro.com,Newly Seen Domains,636,0,0.0
+1307,United Arab Emirates,ilovepdf.com,Business,636,0,0.0
+1308,United Arab Emirates,no-ip.com,Information Technology,636,0,0.0
+1309,United Arab Emirates,welt.de,News & Media,636,0,0.0
+1310,United Arab Emirates,vivo.com.cn,Technology,636,0,0.0
+1311,United Arab Emirates,lgtvsdp.com,Content Servers,636,0,0.0
+1312,United Arab Emirates,rackcdn.com,Content Servers,636,0,0.0
+1313,United Arab Emirates,rayjump.com,Business,636,0,0.0
+1314,United Arab Emirates,samsungelectronics.com,Home & Garden,636,0,0.0
+1315,United Arab Emirates,perfectdomain.com,Information Technology,636,0,0.0
+1316,United Arab Emirates,google.ru,Search Engines,636,0,0.0
+1317,United Arab Emirates,asm.skype.com,Instant Messengers,636,0,0.0
+1318,United Arab Emirates,churnzero.net,Business,636,0,0.0
+1319,United Arab Emirates,colossusssp.com,Content Servers,636,0,0.0
+1320,United Arab Emirates,s-onetag.com,Content Servers,636,0,0.0
+1321,United Arab Emirates,ox.ac.uk,Educational Institutions,636,0,0.0
+1322,United Arab Emirates,abc.net.au,News & Media,636,0,0.0
+1323,United Arab Emirates,samsungcloud.tv,Content Servers,636,0,0.0
+1324,United Arab Emirates,about.com,Education,636,1,0.0016
+1325,United Arab Emirates,tayninh.gov.vn,"Politics, Advocacy, and Government-Related",636,0,0.0
+1326,United Arab Emirates,ucla.edu,Educational Institutions,636,0,0.0
+1327,United Arab Emirates,dynamicyield.com,Business,636,0,0.0
+1328,United Arab Emirates,mercadolibre.com.ar,Auctions & Marketplaces,636,0,0.0
+1329,United Arab Emirates,beget.ru,Information Technology,636,0,0.0
+1330,United Arab Emirates,onedrive.com,File Sharing,636,0,0.0
+1331,United Arab Emirates,bitdefender.net,Technology,636,0,0.0
+1332,United Arab Emirates,otto.de,Ecommerce,636,0,0.0
+1333,United Arab Emirates,zoho.com,Business,636,0,0.0
+1334,United Arab Emirates,static.doubleclick.net,Advertisements,636,18,0.0283
+1335,United Arab Emirates,vtb.ru,Economy & Finance,636,0,0.0
+1336,United Arab Emirates,livedoor.jp,News & Media,636,0,0.0
+1337,United Arab Emirates,as.com,Sports,636,0,0.0
+1338,United Arab Emirates,n-tv.de,News & Media,636,0,0.0
+1339,United Arab Emirates,tokopedia.com,Ecommerce,636,0,0.0
+1340,United Arab Emirates,permutive.com,Business,636,0,0.0
+1341,United Arab Emirates,newsweek.com,Magazines,636,0,0.0
+1342,United Arab Emirates,gsmarena.com,Shopping,636,0,0.0
+1343,United Arab Emirates,nexusmods.com,Gaming,636,0,0.0
+1344,United Arab Emirates,screenrant.com,Video Streaming,636,0,0.0
+1345,United Arab Emirates,nba.com,News & Media,636,0,0.0
+1346,United Arab Emirates,gofundme.com,"Politics, Advocacy, and Government-Related",636,0,0.0
+1347,United Arab Emirates,id.google.com,Content Servers,636,18,0.0283
+1348,United Arab Emirates,adnxs-simple.com,Content Servers,636,0,0.0
+1349,United Arab Emirates,plesk.com,Technology,636,0,0.0
+1350,United Arab Emirates,ameba.jp,Personal Blogs,636,0,0.0
+1351,United Arab Emirates,www.yahoo.com,News & Media,636,0,0.0
+1352,United Arab Emirates,topdns.me,Content Servers,636,0,0.0
+1353,United Arab Emirates,upenn.edu,Educational Institutions,636,0,0.0
+1354,United Arab Emirates,uchi.ru,Educational Institutions,636,0,0.0
+1355,United Arab Emirates,infobae.com,News & Media,636,0,0.0
+1356,United Arab Emirates,polyfill.io,Technology,636,66,0.1038
+1357,United Arab Emirates,messenger.com,Instant Messengers,636,18,0.0283
+1358,United Arab Emirates,goal.com,Video Streaming,636,0,0.0
+1359,United Arab Emirates,quizizz.com,Education,636,0,0.0
+1360,United Arab Emirates,graph.instagram.com,Social Networks,636,18,0.0283
+1361,United Arab Emirates,ouest-france.fr,News & Media,636,63,0.0991
+1362,United Arab Emirates,linode.com,Technology,636,0,0.0
+1363,United Arab Emirates,l.google.com,Search Engines,636,18,0.0283
+1364,United Arab Emirates,protection.outlook.com,Webmail,636,18,0.0283
+1365,United Arab Emirates,sportskeeda.com,News & Media,636,0,0.0
+1366,United Arab Emirates,oculus.com,Ecommerce,636,0,0.0
+1367,United Arab Emirates,store.steampowered.com,Ecommerce,636,23,0.0362
+1368,United Arab Emirates,xing.com,Professional Networking,636,0,0.0
+1369,United Arab Emirates,amazon.com.mx,Ecommerce,636,0,0.0
+1370,United Arab Emirates,reverso.net,Translator,636,0,0.0
+1371,United Arab Emirates,mercadolivre.com.br,Ecommerce,636,0,0.0
+1372,United Arab Emirates,ui-dns.com,Newly Seen Domains,636,0,0.0
+1373,United Arab Emirates,sciencedaily.com,News & Media,636,0,0.0
+1374,United Arab Emirates,biomedcentral.com,Education,636,0,0.0
+1375,United Arab Emirates,bfmtv.com,News & Media,636,0,0.0
+1376,United Arab Emirates,sc-static.net,Content Servers,636,0,0.0
+1377,United Arab Emirates,ingest.sentry.io,Business,636,0,0.0
+1378,United Arab Emirates,mwbsys.com,Content Servers,636,0,0.0
+1379,United Arab Emirates,mobile.de,Vehicles,636,0,0.0
+1380,United Arab Emirates,bytefcdn.com,Content Servers,636,0,0.0
+1381,United Arab Emirates,me.gvt1.com,Content Servers,636,0,0.0
+1382,United Arab Emirates,docomo.ne.jp,News & Media,636,0,0.0
+1383,United Arab Emirates,dnevnik.ru,Education,636,0,0.0
+1384,United Arab Emirates,airslate.com,Business,636,0,0.0
+1385,United Arab Emirates,clarin.com,News & Media,636,61,0.0959
+1386,United Arab Emirates,mparticle.com,Business,636,0,0.0
+1387,United Arab Emirates,splashtop.com,Information Technology,636,0,0.0
+1388,United Arab Emirates,nu.nl,News & Media,636,0,0.0
+1389,United Arab Emirates,meethue.com,Business,636,0,0.0
+1390,United Arab Emirates,edgedl.me.gvt1.com,Content Servers,636,0,0.0
+1391,United Arab Emirates,lwsdns.com,Information Technology,636,0,0.0
+1392,United Arab Emirates,tencent.com,Information Technology,636,0,0.0
+1393,United Arab Emirates,cloud.netflix.com,Movies,636,18,0.0283
+1394,United Arab Emirates,ja.wikipedia.org,Education,636,0,0.0
+1395,United Arab Emirates,hotstar.com,Movies,636,0,0.0
+1396,United Arab Emirates,poki.com,Gaming,636,0,0.0
+1397,United Arab Emirates,pvp.net,Gaming,636,18,0.0283
+1398,United Arab Emirates,prod.cloud.netflix.com,Movies,636,18,0.0283
+1399,United Arab Emirates,android.googleapis.com,Content Servers,636,18,0.0283
+1400,United Arab Emirates,wordreference.com,Education,636,0,0.0
+1401,United Arab Emirates,b.tlu.dl.delivery.mp.microsoft.com,Business,636,0,0.0
+1402,United Arab Emirates,curseforge.com,Gaming,636,0,0.0
+1403,United Arab Emirates,lanacion.com.ar,News & Media,636,0,0.0
+1404,United Arab Emirates,uci.edu,Education,636,0,0.0
+1405,United Arab Emirates,fastcompany.com,Video Streaming,636,0,0.0
+1406,United Arab Emirates,msedge.b.tlu.dl.delivery.mp.microsoft.com,Business,636,1,0.0016
+1407,United Arab Emirates,fetlife.com,Pornography,636,419,0.6588
+1408,United Arab Emirates,www.instagram.com,Photography,636,18,0.0283
+1409,United Arab Emirates,gismeteo.ru,News & Media,636,2,0.0031
+1410,United Arab Emirates,vivo.com,Technology,635,0,0.0
+1411,United Arab Emirates,typepad.com,Information Technology,635,0,0.0
+1412,United Arab Emirates,olx.pl,Auctions & Marketplaces,635,0,0.0
+1413,United Arab Emirates,watchguard.com,Information Technology,635,0,0.0
+1414,United Arab Emirates,frontiersin.org,Education,635,0,0.0
+1415,United Arab Emirates,apkpure.com,Gaming,635,0,0.0
+1416,United Arab Emirates,gcdn.co,Information Technology,635,0,0.0
+1417,United Arab Emirates,analytics.yahoo.com,News & Media,635,0,0.0
+1418,United Arab Emirates,aparat.com,Video Streaming,635,0,0.0
+1419,United Arab Emirates,en.m.wikipedia.org,Education,635,0,0.0
+1420,United Arab Emirates,caixa.gov.br,Economy & Finance,635,0,0.0
+1421,United Arab Emirates,quillbot.com,Questionable Activities,635,0,0.0
+1422,United Arab Emirates,kleinanzeigen.de,Auctions & Marketplaces,635,0,0.0
+1423,United Arab Emirates,ad.nl,Video Streaming,635,0,0.0
+1424,United Arab Emirates,bmj.com,Education,635,0,0.0
+1425,United Arab Emirates,launchpad.classlink.com,Education,635,0,0.0
+1426,United Arab Emirates,ade.googlesyndication.com,Advertisements,635,18,0.0283
+1427,United Arab Emirates,beelinegprs.ru,Newly Seen Domains,635,0,0.0
+1428,United Arab Emirates,fb.watch,Audio Streaming,635,0,0.0
+1429,United Arab Emirates,tealiumiq.com,Technology,635,0,0.0
+1430,United Arab Emirates,google.com.au,Search Engines,635,63,0.0992
+1431,United Arab Emirates,20minutos.es,Video Streaming,635,0,0.0
+1432,United Arab Emirates,terra.com.br,News & Media,635,0,0.0
+1433,United Arab Emirates,dbankcdn.com,Content Servers,635,0,0.0
+1434,United Arab Emirates,bet365.com,Gambling,635,156,0.2457
+1435,United Arab Emirates,i18n-pglstatp.com,Newly Seen Domains,635,0,0.0
+1436,United Arab Emirates,nakheelteam.cc,Technology,635,0,0.0
+1437,United Arab Emirates,arin.net,Technology,635,0,0.0
+1438,United Arab Emirates,dafont.com,Hobbies & Interests,635,0,0.0
+1439,United Arab Emirates,myapps.classlink.com,Education,635,0,0.0
+1440,United Arab Emirates,india.com,News & Media,635,0,0.0
+1441,United Arab Emirates,telegraaf.nl,News & Media,635,0,0.0
+1442,United Arab Emirates,www.adobe.com,Technology,635,0,0.0
+1443,United Arab Emirates,apa.org,"Politics, Advocacy, and Government-Related",635,0,0.0
+1444,United Arab Emirates,leboncoin.fr,Auctions & Marketplaces,635,63,0.0992
+1445,United Arab Emirates,code.org,Education,635,0,0.0
+1446,United Arab Emirates,google.nl,Search Engines,635,0,0.0
+1447,United Arab Emirates,dscx.akamaiedge.net,Content Servers,635,0,0.0
+1448,United Arab Emirates,n-able.com,Business,635,0,0.0
+1449,United Arab Emirates,archiveofourown.org,Education,635,0,0.0
+1450,United Arab Emirates,dmm.co.jp,Pornography,635,159,0.2504
+1451,United Arab Emirates,cspserver.net,Content Servers,635,0,0.0
+1452,United Arab Emirates,coupang.com,Ecommerce,635,0,0.0
+1453,United Arab Emirates,trello.com,Technology,635,18,0.0283
+1454,United Arab Emirates,msftauth.net,Content Servers,635,0,0.0
+1455,United Arab Emirates,www.netflix.com,Movies,635,18,0.0283
+1456,United Arab Emirates,vox.com,News & Media,635,0,0.0
+1457,United Arab Emirates,umn.edu,Educational Institutions,635,0,0.0
+1458,United Arab Emirates,udn.com,News & Media,635,0,0.0
+1459,United Arab Emirates,ixl.com,Education,635,0,0.0
+1460,United Arab Emirates,cxense.com,Technology,635,0,0.0
+1461,United Arab Emirates,meet.google.com,Technology,635,18,0.0283
+1462,United Arab Emirates,tsyndicate.com,Advertisements,635,0,0.0
+1463,United Arab Emirates,twilio.com,Internet Phone & VOIP,635,0,0.0
+1464,United Arab Emirates,orderbox-dns.com,Content Servers,635,0,0.0
+1465,United Arab Emirates,myhostadmin.net,Technology,635,0,0.0
+1466,United Arab Emirates,realtor.com,Real Estate,635,63,0.0992
+1467,United Arab Emirates,flashscore.com,Gambling,635,125,0.1969
+1468,United Arab Emirates,svc.ms,Content Servers,635,0,0.0
+1469,United Arab Emirates,readthedocs.io,Education,635,0,0.0
+1470,United Arab Emirates,zdnet.com,News & Media,635,0,0.0
+1471,United Arab Emirates,agora.io,Internet Phone & VOIP,635,0,0.0
+1472,United Arab Emirates,usps.com,Business,635,0,0.0
+1473,United Arab Emirates,mmechocaptiveportal.com,Newly Seen Domains,635,0,0.0
+1474,United Arab Emirates,tnaflix.com,Pornography,635,159,0.2504
+1475,United Arab Emirates,tiktokv.us,Newly Seen Domains,635,0,0.0
+1476,United Arab Emirates,tinkoff.ru,Economy & Finance,635,0,0.0
+1477,United Arab Emirates,ynet.co.il,News & Media,635,0,0.0
+1478,United Arab Emirates,global.aa-rt.sharepoint.com,New Domains,635,18,0.0283
+1479,United Arab Emirates,hurriyet.com.tr,Video Streaming,635,0,0.0
+1480,United Arab Emirates,livescore.com,Sports,635,0,0.0
+1481,United Arab Emirates,www.paypal.com,Economy & Finance,635,1,0.0016
+1482,United Arab Emirates,tabelog.com,Shopping,635,0,0.0
+1483,United Arab Emirates,alipaydns.com,Ecommerce,635,0,0.0
+1484,United Arab Emirates,garmin.com,Fashion,635,0,0.0
+1485,United Arab Emirates,vg.no,News & Media,635,0,0.0
+1486,United Arab Emirates,footprint.net,Content Servers,635,0,0.0
+1487,United Arab Emirates,gr.global.aa-rt.sharepoint.com,New Domains,635,18,0.0283
+1488,United Arab Emirates,gazzetta.it,Video Streaming,635,0,0.0
+1489,United Arab Emirates,detik.com,News & Media,635,0,0.0
+1490,United Arab Emirates,coursehero.com,Education,635,0,0.0
+1491,United Arab Emirates,sahibinden.com,Auctions & Marketplaces,635,0,0.0
+1492,United Arab Emirates,in.pinterest.com,Photography,635,18,0.0283
+1493,United Arab Emirates,youporn.com,Pornography,635,159,0.2504
+1494,United Arab Emirates,us-prod.asyncgw.teams.microsoft.com,Business,635,18,0.0283
+1495,United Arab Emirates,finn.no,Auctions & Marketplaces,635,0,0.0
+1496,United Arab Emirates,jstor.org,Education,635,4,0.0063
+1497,United Arab Emirates,us-v10c.events.data.microsoft.com,Business,635,0,0.0
+1498,United Arab Emirates,sky.com,Television,635,0,0.0
+1499,United Arab Emirates,argos.co.uk,Ecommerce,635,0,0.0
+1500,United Arab Emirates,expedia.com,Travel,635,0,0.0
+1501,United Arab Emirates,blog.livedoor.jp,Personal Blogs,635,0,0.0
+1502,United Arab Emirates,datadome.co,Technology,635,0,0.0
+1503,United Arab Emirates,espncricinfo.com,Video Streaming,635,0,0.0
+1504,United Arab Emirates,jw.org,Religion,635,0,0.0
+1505,United Arab Emirates,wyzecam.com,Technology,635,0,0.0
+1506,United Arab Emirates,vnexpress.net,News & Media,635,0,0.0
+1507,United Arab Emirates,data-edge.smartscreen.microsoft.com,Business,635,0,0.0
+1508,United Arab Emirates,americanexpress.com,Economy & Finance,635,0,0.0
+1509,United Arab Emirates,pornpics.com,Pornography,635,159,0.2504
+1510,United Arab Emirates,infoseek.co.jp,News & Media,635,0,0.0
+1511,United Arab Emirates,boyfriendtv.com,Pornography,635,416,0.6551
+1512,United Arab Emirates,rightmove.co.uk,Real Estate,635,0,0.0
+1513,United Arab Emirates,hinet.net,News & Media,634,0,0.0
+1514,United Arab Emirates,ttdns2.com,Newly Seen Domains,634,0,0.0
+1515,United Arab Emirates,acesso.gov.br,"Politics, Advocacy, and Government-Related",634,0,0.0
+1516,United Arab Emirates,nhentai.net,Pornography,634,158,0.2492
+1517,United Arab Emirates,xhcdn.com,Content Servers,634,159,0.2508
+1518,United Arab Emirates,redtube.com,Pornography,634,159,0.2508
+1519,United Arab Emirates,livedoor.com,News & Media,634,0,0.0
+1520,United Arab Emirates,dropbox-dns.com,Content Servers,634,0,0.0
+1521,United Arab Emirates,cookpad.com,Social Networks,634,0,0.0
+1522,United Arab Emirates,vinted.fr,Auctions & Marketplaces,634,0,0.0
+1523,United Arab Emirates,rule34.xxx,Pornography,634,159,0.2508
+1524,United Arab Emirates,or.kr,Newly Seen Domains,634,0,0.0
+1525,United Arab Emirates,faphouse.com,Pornography,634,159,0.2508
+1526,United Arab Emirates,magazineluiza.com.br,Ecommerce,634,0,0.0
+1527,United Arab Emirates,dyndns.org,Technology,634,0,0.0
+1528,United Arab Emirates,varzesh3.com,News & Media,634,0,0.0
+1529,United Arab Emirates,gsp-ssl.ls-apple.com.akadns.net,Content Servers,634,0,0.0
+1530,United Arab Emirates,hln.be,News & Media,634,0,0.0
+1531,United Arab Emirates,wpengine.com,Information Technology,634,0,0.0
+1532,United Arab Emirates,www.baidu.com,Search Engines,634,0,0.0
+1533,United Arab Emirates,www.dropbox.com,File Sharing,634,79,0.1246
+1534,United Arab Emirates,classdojo.com,Education,634,18,0.0284
+1535,United Arab Emirates,remove.bg,Technology,634,0,0.0
+1536,United Arab Emirates,xhamster.desi,Pornography,634,416,0.6562
+1537,United Arab Emirates,furaffinity.net,Forums,634,60,0.0946
+1538,United Arab Emirates,verizon.com,Information Technology,634,1,0.0016
+1539,United Arab Emirates,hitomi.la,Pornography,634,157,0.2476
+1540,United Arab Emirates,lichess.org,Gaming,634,0,0.0
+1541,United Arab Emirates,datto.com,Business,634,0,0.0
+1542,United Arab Emirates,rule34video.com,Pornography,634,155,0.2445
+1543,United Arab Emirates,kontur.ru,Technology,634,0,0.0
+1544,United Arab Emirates,mercadolibre.com.mx,Auctions & Marketplaces,634,0,0.0
+1545,United Arab Emirates,elcorteingles.es,Ecommerce,634,0,0.0
+1546,United Arab Emirates,jtvnw.net,Content Servers,634,0,0.0
+1547,United Arab Emirates,login.yahoo.com,Advertisements,634,0,0.0
+1548,United Arab Emirates,e10499.dsce9.akamaiedge.net,Content Servers,634,0,0.0
+1549,United Arab Emirates,indiamart.com,Auctions & Marketplaces,634,122,0.1924
+1550,United Arab Emirates,serasa.com.br,Business,634,0,0.0
+1551,United Arab Emirates,missav.com,Pornography,634,155,0.2445
+1552,United Arab Emirates,symantec.com,Information Security,634,0,0.0
+1553,United Arab Emirates,marktplaats.nl,Auctions & Marketplaces,634,0,0.0
+1554,United Arab Emirates,irs.gov,Economy & Finance,634,0,0.0
+1555,United Arab Emirates,tribunnews.com,News & Media,634,0,0.0
+1556,United Arab Emirates,amazon.com.tr,Ecommerce,634,0,0.0
+1557,United Arab Emirates,betano.com,Content Servers,634,415,0.6546
+1558,United Arab Emirates,www.canva.com,Arts,634,18,0.0284
+1559,United Arab Emirates,timesofindia.com,News & Media,634,1,0.0016
+1560,United Arab Emirates,fanfiction.net,Education,634,60,0.0946
+1561,United Arab Emirates,blooket.com,Education,634,0,0.0
+1562,United Arab Emirates,adobedc.net,Content Servers,634,0,0.0
+1563,United Arab Emirates,nintendo.com,Gaming,634,0,0.0
+1564,United Arab Emirates,meetup.com,Social Networks,634,0,0.0
+1565,United Arab Emirates,www.google.co.uk,Search Engines,634,0,0.0
+1566,United Arab Emirates,txxx.com,Pornography,634,159,0.2508
+1567,United Arab Emirates,xinhuanet.com,Video Streaming,634,0,0.0
+1568,United Arab Emirates,search.yahoo.com,Search Engines,634,0,0.0
+1569,United Arab Emirates,ebay.it,Auctions & Marketplaces,634,0,0.0
+1570,United Arab Emirates,sciencemag.org,Science,634,0,0.0
+1571,United Arab Emirates,avsxappcaptiveportal.com,Newly Seen Domains,634,0,0.0
+1572,United Arab Emirates,nleditor.osi.office.net,Content Servers,634,0,0.0
+1573,United Arab Emirates,oauthaccountmanager.googleapis.com,Content Servers,634,18,0.0284
+1574,United Arab Emirates,ubi.com,Gaming,634,0,0.0
+1575,United Arab Emirates,squarespacedns.com,Newly Seen Domains,634,0,0.0
+1576,United Arab Emirates,ria.com,Auctions & Marketplaces,634,0,0.0
+1577,United Arab Emirates,kt-prod.ess.apple.com,Information Technology,634,0,0.0
+1578,United Arab Emirates,ixbt.com,News & Media,634,0,0.0
+1579,United Arab Emirates,hotpepper.jp,Food & Drink,634,0,0.0
+1580,United Arab Emirates,play-fe.googleapis.com,Content Servers,634,18,0.0284
+1581,United Arab Emirates,www.reddit.com,Forums,634,19,0.03
+1582,United Arab Emirates,studocu.com,Education,634,0,0.0
+1583,United Arab Emirates,cricbuzz.com,News & Media,634,0,0.0
+1584,United Arab Emirates,mundodeportivo.com,News & Media,634,0,0.0
+1585,United Arab Emirates,www.pinterest.com,Photography,634,18,0.0284
+1586,United Arab Emirates,dashlane.com,Technology,634,0,0.0
+1587,United Arab Emirates,wisc.edu,Educational Institutions,634,0,0.0
+1588,United Arab Emirates,msg.teams.microsoft.com,Business,634,18,0.0284
+1589,United Arab Emirates,cdiscount.com,Ecommerce,634,0,0.0
+1590,United Arab Emirates,zhihu.com,Education,634,0,0.0
+1591,United Arab Emirates,myntra.com,Ecommerce,634,0,0.0
+1592,United Arab Emirates,hepsiburada.com,Ecommerce,634,0,0.0
+1593,United Arab Emirates,my.com,Gaming,634,0,0.0
+1594,United Arab Emirates,phncdn.com,Pornography,634,158,0.2492
+1595,United Arab Emirates,algolia.net,Information Technology,634,0,0.0
+1596,United Arab Emirates,credit-agricole.fr,Economy & Finance,634,0,0.0
+1597,United Arab Emirates,milliyet.com.tr,News & Media,634,0,0.0
+1598,United Arab Emirates,spamhaus.org,"Politics, Advocacy, and Government-Related",634,0,0.0
+1599,United Arab Emirates,donga.com,News & Media,634,0,0.0
+1600,United Arab Emirates,sex.com,Pornography,634,219,0.3454
+1601,United Arab Emirates,ng.msg.teams.microsoft.com,Business,634,18,0.0284
+1602,United Arab Emirates,auone.jp,News & Media,634,0,0.0
+1603,United Arab Emirates,ddns.net,Information Technology,634,0,0.0
+1604,United Arab Emirates,chat.openai.com,Technology,634,24,0.0379
+1605,United Arab Emirates,go.id,Newly Seen Domains,634,0,0.0
+1606,United Arab Emirates,tplinkcloud.com,Photography,634,0,0.0
+1607,United Arab Emirates,namu.wiki,Education,634,0,0.0
+1608,United Arab Emirates,latamairlines.com,Travel,634,0,0.0
+1609,United Arab Emirates,www.samsung.com,Home & Garden,634,0,0.0
+1610,United Arab Emirates,ocsp.entrust.net,Information Security,634,0,0.0
+1611,United Arab Emirates,makemytrip.com,Travel,634,60,0.0946
+1612,United Arab Emirates,dgw.c10r.facebook.com,Social Networks,633,18,0.0284
+1613,United Arab Emirates,tabor.ru,Dating & Relationships,633,0,0.0
+1614,United Arab Emirates,idealista.com,Real Estate,633,125,0.1975
+1615,United Arab Emirates,dondominio.com,Information Technology,633,0,0.0
+1616,United Arab Emirates,byjus.com,Education,633,0,0.0
+1617,United Arab Emirates,www.temu.com,Newly Seen Domains,633,0,0.0
+1618,United Arab Emirates,www.tiktok.com,Video Streaming,633,18,0.0284
+1619,United Arab Emirates,s0.2mdn.net,Content Servers,633,0,0.0
+1620,United Arab Emirates,digikala.com,Ecommerce,633,0,0.0
+1621,United Arab Emirates,s.amazon-adsystem.com,Advertisements,633,0,0.0
+1622,United Arab Emirates,strpst.com,Newly Seen Domains,633,0,0.0
+1623,United Arab Emirates,ntppool.org,Technology,633,2,0.0032
+1624,United Arab Emirates,tvn24.pl,News & Media,633,0,0.0
+1625,United Arab Emirates,kundelik.kz,Education,633,0,0.0
+1626,United Arab Emirates,g1.globo.com,News & Media,633,0,0.0
+1627,United Arab Emirates,dlsite.com,Pornography,633,60,0.0948
+1628,United Arab Emirates,www.nytimes.com,News & Media,633,0,0.0
+1629,United Arab Emirates,cdp.microsoft.com,Business,633,0,0.0
+1630,United Arab Emirates,xbox.com,Gaming,633,0,0.0
+1631,United Arab Emirates,coolmathgames.com,Gaming,633,0,0.0
+1632,United Arab Emirates,pantip.com,Forums,633,0,0.0
+1633,United Arab Emirates,dagbladet.no,News & Media,633,0,0.0
+1634,United Arab Emirates,mynet.com,News & Media,633,0,0.0
+1635,United Arab Emirates,acronis.com,Education,633,0,0.0
+1636,United Arab Emirates,mbga.jp,Gaming,633,0,0.0
+1637,United Arab Emirates,pewresearch.org,News & Media,633,0,0.0
+1638,United Arab Emirates,kemono.su,Newly Seen Domains,633,155,0.2449
+1639,United Arab Emirates,hltv.org,Gaming,633,0,0.0
+1640,United Arab Emirates,www.imdb.com,Movies,633,0,0.0
+1641,United Arab Emirates,company-target.com,Content Servers,633,0,0.0
+1642,United Arab Emirates,allianz.de,Economy & Finance,633,0,0.0
+1643,United Arab Emirates,imagefap.com,Pornography,633,155,0.2449
+1644,United Arab Emirates,noodlemagazine.com,Search Engines,633,153,0.2417
+1645,United Arab Emirates,api.cdp.microsoft.com,Business,633,0,0.0
+1646,United Arab Emirates,subito.it,Auctions & Marketplaces,633,0,0.0
+1647,United Arab Emirates,inven.co.kr,Gaming,633,0,0.0
+1648,United Arab Emirates,coursera.org,Education,633,0,0.0
+1649,United Arab Emirates,oreilly.com,Education,633,0,0.0
+1650,United Arab Emirates,fc2.com,Information Technology,633,0,0.0
+1651,United Arab Emirates,funpay.com,Economy & Finance,633,0,0.0
+1652,United Arab Emirates,cloud.com,Technology,633,0,0.0
+1653,United Arab Emirates,va.gov,Government,633,0,0.0
+1654,United Arab Emirates,roskazna.ru,"Politics, Advocacy, and Government-Related",633,0,0.0
+1655,United Arab Emirates,i.instagram.com,Social Networks,633,18,0.0284
+1656,United Arab Emirates,dcinside.com,News & Media,633,18,0.0284
+1657,United Arab Emirates,bilibili.tv,Gaming,633,121,0.1912
+1658,United Arab Emirates,futbin.com,Gaming,633,0,0.0
+1659,United Arab Emirates,samsungknox.com,Technology,633,0,0.0
+1660,United Arab Emirates,tsn.ua,News & Media,633,0,0.0
+1661,United Arab Emirates,donmai.us,Pornography,633,158,0.2496
+1662,United Arab Emirates,msedge.api.cdp.microsoft.com,Business,633,0,0.0
+1663,United Arab Emirates,gelbooru.com,Forums,633,154,0.2433
+1664,United Arab Emirates,unifi-ai.com,Content Servers,633,0,0.0
+1665,United Arab Emirates,www.homedepot.com,Ecommerce,633,0,0.0
+1666,United Arab Emirates,fmkorea.com,Sports,633,0,0.0
+1667,United Arab Emirates,ilmessaggero.it,Video Streaming,633,0,0.0
+1668,United Arab Emirates,dantri.com.vn,News & Media,633,0,0.0
+1669,United Arab Emirates,amocrm.ru,Business,633,0,0.0
+1670,United Arab Emirates,www.walmart.com,Ecommerce,633,0,0.0
+1671,United Arab Emirates,ilmeteo.it,News & Media,633,0,0.0
+1672,United Arab Emirates,youjizz.com,Pornography,633,157,0.248
+1673,United Arab Emirates,oecd.org,"Politics, Advocacy, and Government-Related",633,0,0.0
+1674,United Arab Emirates,sedo.com,Information Technology,633,0,0.0
+1675,United Arab Emirates,xnxx-cdn.com,Pornography,633,154,0.2433
+1676,United Arab Emirates,init-p01md.apple.com,Information Technology,633,0,0.0
+1677,United Arab Emirates,actu.fr,News & Media,633,0,0.0
+1678,United Arab Emirates,xgroovy.com,Pornography,633,417,0.6588
+1679,United Arab Emirates,starfall.com,Education,633,0,0.0
+1680,United Arab Emirates,emag.ro,Ecommerce,633,1,0.0016
+1681,United Arab Emirates,litnet.com,Education,633,0,0.0
+1682,United Arab Emirates,tagesschau.de,Economy & Finance,633,0,0.0
+1683,United Arab Emirates,www.espn.com,Video Streaming,633,0,0.0
+1684,United Arab Emirates,haberler.com,News & Media,633,0,0.0
+1685,United Arab Emirates,aljazeera.com,News & Media,633,0,0.0
+1686,United Arab Emirates,jusbrasil.com.br,"Politics, Advocacy, and Government-Related",633,0,0.0
+1687,United Arab Emirates,notion.so,Business,633,18,0.0284
+1688,United Arab Emirates,ds2play.com,Newly Seen Domains,633,96,0.1517
+1689,United Arab Emirates,yts.mx,Newly Seen Domains,633,124,0.1959
+1690,United Arab Emirates,sinoptik.ua,News & Media,633,0,0.0
+1691,United Arab Emirates,dw.com,News & Media,633,0,0.0
+1692,United Arab Emirates,aternos.org,Gaming,633,0,0.0
+1693,United Arab Emirates,www.google.de,Search Engines,633,18,0.0284
+1694,United Arab Emirates,redfin.com,Real Estate,633,0,0.0
+1695,United Arab Emirates,thisvid.com,Pornography,633,157,0.248
+1696,United Arab Emirates,smartthings.com,Technology,633,0,0.0
+1697,United Arab Emirates,1024tera.com,Newly Seen Domains,633,0,0.0
+1698,United Arab Emirates,ficbook.net,Education,633,0,0.0
+1699,United Arab Emirates,sun.com,Business,633,0,0.0
+1700,United Arab Emirates,jut.su,Cartoons & Anime,633,0,0.0
+1701,United Arab Emirates,zozo.jp,Ecommerce,633,0,0.0
+1702,United Arab Emirates,nesine.com,Gambling,633,57,0.09
+1703,United Arab Emirates,russianfood.com,Food & Drink,633,0,0.0
+1704,United Arab Emirates,imhentai.xxx,Pornography,633,158,0.2496
+1705,United Arab Emirates,www.cnn.com,Video Streaming,633,12,0.019
+1706,United Arab Emirates,www.etsy.com,Ecommerce,633,0,0.0
+1707,United Arab Emirates,aznude.com,Pornography,633,415,0.6556
+1708,United Arab Emirates,sozcu.com.tr,News & Media,633,0,0.0
+1709,United Arab Emirates,24h.com.vn,News & Media,632,0,0.0
+1710,United Arab Emirates,mat6tube.com,Pornography,632,157,0.2484
+1711,United Arab Emirates,xhamster2.com,Pornography,632,157,0.2484
+1712,United Arab Emirates,betweendigital.com,Advertisements,632,0,0.0
+1713,United Arab Emirates,aniwave.to,Newly Seen Domains,632,0,0.0
+1714,United Arab Emirates,e621.net,"News, Portal & Search",632,416,0.6582
+1715,United Arab Emirates,doods.pro,Newly Seen Domains,632,0,0.0
+1716,United Arab Emirates,nairaland.com,Forums,632,123,0.1946
+1717,United Arab Emirates,e-hentai.org,Pornography,632,158,0.25
+1718,United Arab Emirates,vedcdnlb.com,Newly Seen Domains,632,0,0.0
+1719,United Arab Emirates,fallback.c10r.facebook.com,Social Networks,632,18,0.0285
+1720,United Arab Emirates,windows.microsoft.com,Information Technology,632,0,0.0
+1721,United Arab Emirates,neopets.com,Gaming,632,0,0.0
+1722,United Arab Emirates,iporntv.net,Pornography,632,156,0.2468
+1723,United Arab Emirates,asuratoon.com,Newly Seen Domains,632,0,0.0
+1724,United Arab Emirates,kompoz2.com,Pornography,632,417,0.6598
+1725,United Arab Emirates,3bmeteo.com,News & Media,632,0,0.0
+1726,United Arab Emirates,funnyjunk.com,Humor,632,57,0.0902
+1727,United Arab Emirates,safeframe.googlesyndication.com,Advertisements,632,18,0.0285
+1728,United Arab Emirates,aniwatch.to,Parked & For Sale Domains,632,0,0.0
+1729,United Arab Emirates,vjav.com,Pornography,632,157,0.2484
+1730,United Arab Emirates,cedexis-test.com,Content Servers,632,0,0.0
+1731,United Arab Emirates,jalan.net,Travel,632,0,0.0
+1732,United Arab Emirates,craigslist.org,Auctions & Marketplaces,632,0,0.0
+1733,United Arab Emirates,4kporn.xxx,Pornography,632,154,0.2437
+1734,United Arab Emirates,ixxx.com,Pornography,632,155,0.2453
+1735,United Arab Emirates,jable.tv,Pornography,632,155,0.2453
+1736,United Arab Emirates,pornhat.com,Pornography,632,155,0.2453
+1737,United Arab Emirates,ekstrabladet.dk,News & Media,632,0,0.0
+1738,United Arab Emirates,co.com,Information Technology,632,0,0.0
+1739,United Arab Emirates,c.amazon-adsystem.com,Advertisements,632,0,0.0
+1740,United Arab Emirates,vidoomy.com,Technology,632,0,0.0
+1741,United Arab Emirates,app.hubspot.com,Business,632,18,0.0285
+1742,United Arab Emirates,hqporner.com,Pornography,632,414,0.6551
+1743,United Arab Emirates,cnnindonesia.com,News & Media,632,0,0.0
+1744,United Arab Emirates,sxyprn.com,Pornography,632,412,0.6519
+1745,United Arab Emirates,nikkansports.com,News & Media,632,1,0.0016
+1746,United Arab Emirates,ok.xxx,Pornography,632,155,0.2453
+1747,United Arab Emirates,netshoes.com.br,Ecommerce,632,0,0.0
+1748,United Arab Emirates,index.hr,News & Media,632,0,0.0
+1749,United Arab Emirates,sexvid.xxx,Pornography,632,154,0.2437
+1750,United Arab Emirates,medicalnewstoday.com,Health & Fitness,632,0,0.0
+1751,United Arab Emirates,love4porn.com,Pornography,632,155,0.2453
+1752,United Arab Emirates,xvideos2.com,Pornography,632,155,0.2453
+1753,United Arab Emirates,aadrm.com,Content Servers,632,0,0.0
+1754,United Arab Emirates,hdtube.porn,Pornography,632,154,0.2437
+1755,United Arab Emirates,xnxx.tv,Pornography,632,155,0.2453
+1756,United Arab Emirates,cardgames.io,Gaming,632,0,0.0
+1757,United Arab Emirates,xnxx2.com,Pornography,632,154,0.2437
+1758,United Arab Emirates,exhentai.org,Pornography,632,412,0.6519
+1759,United Arab Emirates,xnxx.health,Pornography,632,414,0.6551
+1760,United Arab Emirates,jd.com,Ecommerce,632,0,0.0
+1761,United Arab Emirates,tenki.jp,News & Media,632,0,0.0
+1762,United Arab Emirates,secure.livechatinc.com,Content Servers,632,0,0.0
+1763,United Arab Emirates,myaccount.google.com,Information Security,632,18,0.0285
+1764,United Arab Emirates,www.ixl.com,Education,632,0,0.0
+1765,United Arab Emirates,mgslb.com,Information Technology,632,0,0.0
+1766,United Arab Emirates,oricon.co.jp,News & Media,632,1,0.0016
+1767,United Arab Emirates,geocities.com,Information Technology,632,0,0.0
+1768,United Arab Emirates,motherless.com,Pornography,632,155,0.2453
+1769,United Arab Emirates,www.macys.com,Ecommerce,632,0,0.0
+1770,United Arab Emirates,syosetu.com,Education,632,0,0.0
+1771,United Arab Emirates,porno365.pics,Parked & For Sale Domains,632,60,0.0949
+1772,United Arab Emirates,c7vkn.com,Newly Seen Domains,632,60,0.0949
+1773,United Arab Emirates,star.fallback.c10r.facebook.com,Social Networks,632,18,0.0285
+1774,United Arab Emirates,teleport.sh,Newly Seen Domains,632,0,0.0
+1775,United Arab Emirates,iltalehti.fi,News & Media,632,0,0.0
+1776,United Arab Emirates,gamewith.jp,Gaming,632,0,0.0
+1777,United Arab Emirates,wordwall.net,Education,632,0,0.0
+1778,United Arab Emirates,www.amazon.co.uk,Ecommerce,632,0,0.0
+1779,United Arab Emirates,ocws.officeapps.live.com,Technology,632,0,0.0
+1780,United Arab Emirates,www.ebay.com,Auctions & Marketplaces,632,0,0.0
+1781,United Arab Emirates,www.bbc.com,News & Media,632,0,0.0
+1782,United Arab Emirates,gst.gov.in,"Politics, Advocacy, and Government-Related",632,0,0.0
+1783,United Arab Emirates,cronista.com,News & Media,632,0,0.0
+1784,United Arab Emirates,play.blooket.com,Education,632,18,0.0285
+1785,United Arab Emirates,xvideos-cdn.com,Pornography,632,154,0.2437
+1786,United Arab Emirates,fanpage.it,Video Streaming,632,0,0.0
+1787,United Arab Emirates,cnbcindonesia.com,Economy & Finance,632,0,0.0
+1788,United Arab Emirates,mqtt.c10r.facebook.com,Social Networks,632,18,0.0285
+1789,United Arab Emirates,elsevier.com,Health & Fitness,632,0,0.0
+1790,United Arab Emirates,www.zillow.com,Real Estate,632,61,0.0965
+1791,United Arab Emirates,leroymerlin.fr,Business,632,1,0.0016
+1792,United Arab Emirates,akamaitechnologies.com,Content Servers,632,0,0.0
+1793,United Arab Emirates,turkiye.gov.tr,"Politics, Advocacy, and Government-Related",632,0,0.0
+1794,United Arab Emirates,adswizz.com,Business,632,0,0.0
+1795,United Arab Emirates,img-s-msn-com.akamaized.net,Content Servers,632,0,0.0
+1796,United Arab Emirates,granbluefantasy.jp,Gaming,632,0,0.0
+1797,United Arab Emirates,justdial.com,Search Engines,632,61,0.0965
+1798,United Arab Emirates,www.amazon.de,Ecommerce,632,0,0.0
+1799,United Arab Emirates,suumo.jp,Real Estate,632,0,0.0
+1800,United Arab Emirates,www.google.com.mx,Personal Blogs,632,18,0.0285
+1801,United Arab Emirates,accounts.spotify.com,Audio Streaming,632,18,0.0285
+1802,United Arab Emirates,bookmyshow.com,Entertainment,632,0,0.0
+1803,United Arab Emirates,haber7.com,News & Media,631,0,0.0
+1804,United Arab Emirates,www.roblox.com,Chat,631,23,0.0365
+1805,United Arab Emirates,mediaexpert.pl,Ecommerce,631,0,0.0
+1806,United Arab Emirates,vivint.ai,Newly Seen Domains,631,0,0.0
+1807,United Arab Emirates,protothema.gr,News & Media,631,0,0.0
+1808,United Arab Emirates,khabaronline.ir,News & Media,631,0,0.0
+1809,United Arab Emirates,ptt.cc,Forums,631,0,0.0
+1810,United Arab Emirates,jutarnji.hr,News & Media,631,0,0.0
+1811,United Arab Emirates,scientificamerican.com,Video Streaming,631,0,0.0
+1812,United Arab Emirates,programme-tv.net,Television,631,0,0.0
+1813,United Arab Emirates,sinsay.com,Clothing,631,0,0.0
+1814,United Arab Emirates,y2mate.com,Information Technology,631,155,0.2456
+1815,United Arab Emirates,betnacional.com,Gambling,631,155,0.2456
+1816,United Arab Emirates,carsensor.net,Vehicles,631,0,0.0
+1817,United Arab Emirates,support.microsoft.com,Information Technology,631,0,0.0
+1818,United Arab Emirates,mathplayground.com,Education,631,0,0.0
+1819,United Arab Emirates,playrix.com,Content Servers,631,0,0.0
+1820,United Arab Emirates,www.foxnews.com,Video Streaming,631,0,0.0
+1821,United Arab Emirates,www.google.ca,Search Engines,631,18,0.0285
+1822,United Arab Emirates,www.target.com,Ecommerce,631,0,0.0
+1823,United Arab Emirates,www.theguardian.com,News & Media,631,0,0.0
+1824,United Arab Emirates,blic.rs,News & Media,631,0,0.0
+1825,United Arab Emirates,mangabuddy.com,Comic Books,631,60,0.0951
+1826,United Arab Emirates,buydomains.com,Information Technology,631,0,0.0
+1827,United Arab Emirates,ajio.com,Fashion,631,0,0.0
+1828,United Arab Emirates,cbsivideo.com,Content Servers,631,0,0.0
+1829,United Arab Emirates,kooora.com,News & Media,631,0,0.0
+1830,United Arab Emirates,utexas.edu,Educational Institutions,631,0,0.0
+1831,United Arab Emirates,brainly.com.br,Education,631,0,0.0
+1832,United Arab Emirates,www.bestbuy.com,Ecommerce,631,0,0.0
+1833,United Arab Emirates,snaptik.app,Technology,631,57,0.0903
+1834,United Arab Emirates,lausd.net,Education,631,0,0.0
+1835,United Arab Emirates,toppr.com,Education,631,0,0.0
+1836,United Arab Emirates,robinhood.com,Economy & Finance,631,0,0.0
+1837,United Arab Emirates,notifications-pa.googleapis.com,Content Servers,631,18,0.0285
+1838,United Arab Emirates,librus.pl,Education,631,0,0.0
+1839,United Arab Emirates,tokyomotion.net,Pornography,631,158,0.2504
+1840,United Arab Emirates,www.ups.com,Business,631,0,0.0
+1841,United Arab Emirates,fantia.jp,Technology,631,0,0.0
+1842,United Arab Emirates,weborama.fr,Content Servers,631,0,0.0
+1843,United Arab Emirates,ruliweb.com,Gaming,631,0,0.0
+1844,United Arab Emirates,69shuba.com,Education,631,1,0.0016
+1845,United Arab Emirates,www.coolmathgames.com,Education,631,0,0.0
+1846,United Arab Emirates,myreadingmanga.info,Pornography,631,317,0.5024
+1847,United Arab Emirates,rezka.ag,Questionable Activities,631,125,0.1981
+1848,United Arab Emirates,ppomppu.co.kr,Forums,631,0,0.0
+1849,United Arab Emirates,eenadu.net,News & Media,631,0,0.0
+1850,United Arab Emirates,ssstik.io,Personal Blogs,631,0,0.0
+1851,United Arab Emirates,pubmnet.com,Newly Seen Domains,631,0,0.0
+1852,United Arab Emirates,ucweb.com,Information Technology,631,0,0.0
+1853,United Arab Emirates,luxuretv.com,Pornography,631,158,0.2504
+1854,United Arab Emirates,sendgrid.net,Business,631,61,0.0967
+1855,United Arab Emirates,namasha.com,Video Streaming,630,0,0.0
+1856,United Arab Emirates,science.org,Magazines,630,0,0.0
+1857,United Arab Emirates,bt.dk,News & Media,630,0,0.0
+1858,United Arab Emirates,mangago.me,Comic Books,630,158,0.2508
+1859,United Arab Emirates,python.org,Technology,630,1,0.0016
+1860,United Arab Emirates,www.quora.com,Forums,630,18,0.0286
+1861,United Arab Emirates,hollywoodbets.net,Sports,630,155,0.246
+1862,United Arab Emirates,dynatrace.com,Technology,630,0,0.0
+1863,United Arab Emirates,game8.jp,Gaming,630,0,0.0
+1864,United Arab Emirates,rakuten-sec.co.jp,Economy & Finance,630,0,0.0
+1865,United Arab Emirates,fuq.com,Pornography,630,159,0.2524
+1866,United Arab Emirates,peachavocado.com,Newly Seen Domains,630,57,0.0905
+1867,United Arab Emirates,www.google.com.tr,Search Engines,630,17,0.027
+1868,United Arab Emirates,www.booking.com,Travel,630,0,0.0
+1869,United Arab Emirates,zearn.org,Educational Institutions,630,0,0.0
+1870,United Arab Emirates,brainly.co.id,Education,630,0,0.0
+1871,United Arab Emirates,9animetv.to,Newly Seen Domains,630,412,0.654
+1872,United Arab Emirates,caliente.mx,Gambling,630,156,0.2476
+1873,United Arab Emirates,evernote.com,Technology,630,17,0.027
+1874,United Arab Emirates,www.bbc.co.uk,Video Streaming,630,0,0.0
+1875,United Arab Emirates,www.disneyplus.com,Movies,630,18,0.0286
+1876,United Arab Emirates,fapello.com,Personal Blogs,630,158,0.2508
+1877,United Arab Emirates,marmiton.org,Food & Drink,630,0,0.0
+1878,United Arab Emirates,mangakakalot.com,Comic Books,630,60,0.0952
+1879,United Arab Emirates,sportybet.com,Gambling,630,156,0.2476
+1880,United Arab Emirates,pussyspace.com,Pornography,630,158,0.2508
+1881,United Arab Emirates,xhamster1.desi,Pornography,630,416,0.6603
+1882,United Arab Emirates,www.whatsapp.com,Instant Messengers,630,18,0.0286
+1883,United Arab Emirates,manganato.com,Comic Books,630,417,0.6619
+1884,United Arab Emirates,bato.to,Comic Books,630,158,0.2508
+1885,United Arab Emirates,znanija.com,Education,630,0,0.0
+1886,United Arab Emirates,joyclub.de,Pornography,630,159,0.2524
+1887,United Arab Emirates,zorox.to,Newly Seen Domains,630,60,0.0952
+1888,United Arab Emirates,www.twitch.tv,Gaming,630,18,0.0286
+1889,United Arab Emirates,porn300.com,Pornography,630,416,0.6603
+1890,United Arab Emirates,livehindustan.com,News & Media,630,0,0.0
+1891,United Arab Emirates,cmoa.jp,Cartoons & Anime,630,0,0.0
+1892,United Arab Emirates,cityheaven.net,Adult Themes,630,157,0.2492
+1893,United Arab Emirates,kurir.rs,News & Media,630,0,0.0
+1894,United Arab Emirates,kidsa-z.com,Login Screens,630,0,0.0
+1895,United Arab Emirates,www.indeed.com,Job Search & Careers,630,0,0.0
+1896,United Arab Emirates,netkeiba.com,Sports,630,57,0.0905
+1897,United Arab Emirates,www.google.com.hk,Search Engines,630,79,0.1254
+1898,United Arab Emirates,www.pornhub.com,Pornography,630,158,0.2508
+1899,United Arab Emirates,serviporno.com,Pornography,630,159,0.2524
+1900,United Arab Emirates,snapinsta.app,Information Technology,630,0,0.0
+1901,United Arab Emirates,mangatoto.com,Comic Books,630,60,0.0952
+1902,United Arab Emirates,nettruyenus.com,Newly Seen Domains,630,0,0.0
+1903,United Arab Emirates,fararu.com,News & Media,630,0,0.0
+1904,United Arab Emirates,aajtak.in,News & Media,630,0,0.0
+1905,United Arab Emirates,saveinsta.app,Information Technology,630,0,0.0
+1906,United Arab Emirates,servicewebly.com,Pornography,630,0,0.0
+1907,United Arab Emirates,upwitheaway.info,Parked & For Sale Domains,630,0,0.0
+1908,United Arab Emirates,www.dailymotion.com,Video Streaming,630,18,0.0286
+1909,United Arab Emirates,betway.co.za,Sports,630,57,0.0905
+1910,United Arab Emirates,proxy.safebrowsing.apple,Content Servers,630,0,0.0
+1911,United Arab Emirates,mechacomic.jp,Newly Seen Domains,630,60,0.0952
+1912,United Arab Emirates,www.nike.com,Ecommerce,630,0,0.0
+1913,United Arab Emirates,theqoo.net,Forums,630,0,0.0
+1914,United Arab Emirates,spankbang.party,Pornography,630,159,0.2524
+1915,United Arab Emirates,gdz.ru,Education,630,0,0.0
+1916,United Arab Emirates,3.bp.blogspot.com,Personal Blogs,630,12,0.019
+1917,United Arab Emirates,tukif.com,Pornography,630,159,0.2524
+1918,United Arab Emirates,xvideos3.com,Pornography,630,158,0.2508
+1919,United Arab Emirates,fabswingers.com,Adult Themes,630,60,0.0952
+1920,United Arab Emirates,colamanga.com,Newly Seen Domains,630,60,0.0952
+1921,United Arab Emirates,arca.live,Forums,630,0,0.0
+1922,United Arab Emirates,xvideos.es,Pornography,630,158,0.2508
+1923,United Arab Emirates,www.dailymail.co.uk,News & Media,630,0,0.0
+1924,United Arab Emirates,photos.google.com,Photography,630,18,0.0286
+1925,United Arab Emirates,fwmrm.net,Business,630,0,0.0
+1926,United Arab Emirates,www.speedtest.net,Information Technology,630,18,0.0286
+1927,United Arab Emirates,visortmo.com,Newly Seen Domains,630,60,0.0952
+1928,United Arab Emirates,banvenez.com,Economy & Finance,630,0,0.0
+1929,United Arab Emirates,sex-studentki.pics,Newly Seen Domains,630,60,0.0952
+1930,United Arab Emirates,music-fa.com,Music,630,0,0.0
+1931,United Arab Emirates,ifilo.net,Video Streaming,630,124,0.1968
+1932,United Arab Emirates,supjav.com,Pornography,630,60,0.0952
+1933,United Arab Emirates,xhtab3.com,Pornography,630,60,0.0952
+1934,United Arab Emirates,ijavhd.com,Personal Blogs,630,159,0.2524
+1935,United Arab Emirates,azet.sk,News & Media,630,0,0.0
+1936,United Arab Emirates,xxx18.uno,Pornography,630,60,0.0952
+1937,United Arab Emirates,ninisite.com,Parenting,630,0,0.0
+1938,United Arab Emirates,doujindesu.tv,Newly Seen Domains,630,60,0.0952
+1939,United Arab Emirates,hot-sex-tube.com,Pornography,630,157,0.2492
+1940,United Arab Emirates,www.xnxx.com,Pornography,630,155,0.246
+1941,United Arab Emirates,scratch.mit.edu,Educational Institutions,630,0,0.0
+1942,United Arab Emirates,brainly.in,Education,630,0,0.0
+1943,United Arab Emirates,emaktab.uz,Newly Seen Domains,630,0,0.0
+1944,United Arab Emirates,www.xvideos.com,Pornography,630,155,0.246
+1945,United Arab Emirates,www.google.co.in,Search Engines,630,0,0.0
+1946,United Arab Emirates,tktube.com,Pornography,630,154,0.2444
+1947,United Arab Emirates,mangalib.me,Cartoons & Anime,630,0,0.0
+1948,United Arab Emirates,sexvid.pro,Pornography,630,155,0.246
+1949,United Arab Emirates,rajwap.cc,Newly Seen Domains,630,413,0.6556
+1950,United Arab Emirates,nitrotype.com,Gaming,630,0,0.0
+1951,United Arab Emirates,imgsrc.ru,Photography,630,148,0.2349
+1952,United Arab Emirates,br.pinterest.com,Photography,630,18,0.0286
+1953,United Arab Emirates,gspe35-ssl.ls.apple.com,Technology,630,18,0.0286
+1954,United Arab Emirates,shahvani.com,Adult Themes,630,154,0.2444
+1955,United Arab Emirates,pixbet.com,Spam,630,153,0.2429
+1956,United Arab Emirates,beboo.ru,Dating & Relationships,630,0,0.0
+1957,United Arab Emirates,secure.bankofamerica.com,Economy & Finance,630,0,0.0
+1958,United Arab Emirates,freeip.me,P2P,630,0,0.0
+1959,United Arab Emirates,pornocarioca.com,Pornography,630,154,0.2444
+1960,United Arab Emirates,spaggiari.eu,Education,630,0,0.0
+1961,United Arab Emirates,revcontent.com,Business,630,0,0.0
+1962,United Arab Emirates,www.goodreads.com,Education,630,0,0.0
+1963,United Arab Emirates,www.google.pl,Search Engines,630,18,0.0286
+1964,United Arab Emirates,www.deepl.com,Translator,630,18,0.0286
+1965,United Arab Emirates,fatalmodel.com,Adult Themes,630,155,0.246
+1966,United Arab Emirates,epfindia.gov.in,"Politics, Advocacy, and Government-Related",630,0,0.0
+1967,United Arab Emirates,lermanga.org,Newly Seen Domains,630,57,0.0905
+1968,United Arab Emirates,eroterest.net,Pornography,630,157,0.2492
+1969,United Arab Emirates,www.lowes.com,Ecommerce,630,0,0.0
+1970,United Arab Emirates,mask.apple-dns.net,Content Servers,630,0,0.0
+1971,United Arab Emirates,prokerala.com,News & Media,630,0,0.0
+1972,United Arab Emirates,1mg.com,Health & Fitness,630,124,0.1968
+1973,United Arab Emirates,xosodaiphat.com,Content Servers,630,57,0.0905
+1974,United Arab Emirates,www.wattpad.com,Education,630,1,0.0016
+1975,United Arab Emirates,studio.youtube.com,Video Streaming,630,18,0.0286
+1976,United Arab Emirates,shinigami.sh,Newly Seen Domains,630,60,0.0952
+1977,United Arab Emirates,www.google.fr,Search Engines,630,18,0.0286
+1978,United Arab Emirates,goojara.to,Movies,630,411,0.6524
+1979,United Arab Emirates,listcrawler.eu,Adult Themes,630,60,0.0952
+1980,United Arab Emirates,www.chess.com,Hobbies & Interests,630,0,0.0
+1981,United Arab Emirates,www.kohls.com,Ecommerce,630,0,0.0
+1982,United Arab Emirates,business.facebook.com,Social Networks,630,18,0.0286
+1983,United Arab Emirates,www.accuweather.com,News & Media,630,0,0.0
+1984,United Arab Emirates,patria.org.ve,Content Servers,630,0,0.0
+1985,United Arab Emirates,bartarinha.ir,News & Media,630,0,0.0
+1986,United Arab Emirates,www.google.com.br,Search Engines,630,18,0.0286
+1987,United Arab Emirates,redislabs.com,Business,630,0,0.0
+1988,United Arab Emirates,www.costco.com,Ecommerce,630,0,0.0
+1989,United Arab Emirates,spiegel.de,News & Media,630,0,0.0
+1990,United Arab Emirates,faq.whatsapp.com,Instant Messengers,630,18,0.0286
+1991,United Arab Emirates,coinpayu.com,Business,630,0,0.0
+1992,United Arab Emirates,toyhou.se,Hobbies & Interests,630,0,0.0
+1993,United Arab Emirates,www.wayfair.com,Business,630,1,0.0016
+1994,United Arab Emirates,www.google.com.tw,Search Engines,630,18,0.0286
+1995,United Arab Emirates,onlinesbi.sbi,Economy & Finance,630,0,0.0
+1996,United Arab Emirates,www.researchgate.net,Education,630,0,0.0
+1997,United Arab Emirates,webempresa.eu,Information Technology,630,0,0.0
+1998,United Arab Emirates,www.zearn.org,Educational Institutions,630,0,0.0
+1999,United Arab Emirates,www.bilibili.com,Video Streaming,630,0,0.0
+2000,United Arab Emirates,www.amazon.ca,Ecommerce,630,0,0.0

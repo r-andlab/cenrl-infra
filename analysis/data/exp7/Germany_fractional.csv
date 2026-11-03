@@ -1,0 +1,2001 @@
+time,country,target,category,n_votes,n_blocked,rewards
+1,Germany,funda.nl,Real Estate,1822,0,0.0
+2,Germany,antigena.com,Real Estate,1822,0,0.0
+3,Germany,azurewebsites.net,Real Estate,1822,0,0.0
+4,Germany,dezeen.com,Real Estate,1822,1,0.0005
+5,Germany,realestate.com.au,Real Estate,1822,1,0.0005
+6,Germany,gda.pl,Sex Education,1822,0,0.0
+7,Germany,wynk.in,Audio Streaming,1822,0,0.0
+8,Germany,www.npr.org,Audio Streaming,1822,0,0.0
+9,Germany,wg.spotify.com,Audio Streaming,1822,0,0.0
+10,Germany,animeflv.net,Cartoons & Anime,1822,1,0.0005
+11,Germany,dmm.com,Home Video/DVD,1822,0,0.0
+12,Germany,daserste.de,Television,1822,0,0.0
+13,Germany,furaffinity.net,Photography,1822,7,0.0038
+14,Germany,www.gov.pl,Travel,1822,0,0.0
+15,Germany,www.etsy.com,Ecommerce,1822,7,0.0038
+16,Germany,www.agoda.com,Coupons,1822,0,0.0
+17,Germany,hostmonster.com,Miscellaneous,1822,0,0.0
+18,Germany,mystrikingly.com,Phishing,1822,0,0.0
+19,Germany,hotmart.com,Business,1822,0,0.0
+20,Germany,chewy.com,Pets,1822,0,0.0
+21,Germany,bizport.cn,Messaging,1822,0,0.0
+22,Germany,evite.com,Digital Postcards,1822,0,0.0
+23,Germany,archive.is,Education,1822,10,0.0055
+24,Germany,com.se,Malware,1822,1,0.0005
+25,Germany,skype.com,Internet Phone & VOIP,1822,0,0.0
+26,Germany,nasa.gov,Space & Astronomy,1822,0,0.0
+27,Germany,api.endpoint.ingress.rapid7.com,Information Security,1822,0,0.0
+28,Germany,espncdn.com,News & Media,1822,1,0.0005
+29,Germany,autoblog.com,Personal Blogs,1822,0,0.0
+30,Germany,lectortmo.com,Comic Books,1822,0,0.0
+31,Germany,vogue.com,Magazines,1822,0,0.0
+32,Germany,vivox.com,Chat,1822,0,0.0
+33,Germany,mediafire.com,"Militancy, Hate & Extremism",1822,1,0.0005
+34,Germany,alibaba.com,Auctions & Marketplaces,1822,0,0.0
+35,Germany,twitter.com,Social Networks,1822,38,0.0209
+36,Germany,signaler-pa.clients6.google.com,Search Engines,1822,37,0.0203
+37,Germany,ssc.nic.in,Job Search & Careers,1822,0,0.0
+38,Germany,kwai.com,Technology,1822,0,0.0
+39,Germany,lgthinq.com,Home & Garden,1822,1,0.0005
+40,Germany,ftc.gov,Government,1822,0,0.0
+41,Germany,nghttp2.org,APIs,1822,0,0.0
+42,Germany,istockphoto.com,"News, Portal & Search",1822,31,0.017
+43,Germany,icons8.com,File Sharing,1822,0,0.0
+44,Germany,m.beboo.ru,Dating & Relationships,1822,0,0.0
+45,Germany,jimdo.com,Nudity,1822,0,0.0
+46,Germany,play.blooket.com,Safe for Kids,1822,36,0.0198
+47,Germany,trendyol.com,Fashion,1822,0,0.0
+48,Germany,freeip.me,Anonymizer,1822,3,0.0016
+49,Germany,translate.goog,Translator,1822,0,0.0
+50,Germany,spacebattles.com,Hobbies & Interests,1822,1,0.0005
+51,Germany,googleads.g.doubleclick.net,Advertisements,1822,38,0.0209
+52,Germany,urban-vpn.com,P2P,1822,5,0.0027
+53,Germany,churchcenter.com,Religion,1822,0,0.0
+54,Germany,jimdosite.com,Body Art,1822,1,0.0005
+55,Germany,pro-market.net,Login Screens,1822,0,0.0
+56,Germany,grindr.com,Lifestyle,1822,1,0.0005
+57,Germany,mandmdirect.com,Clothing,1822,0,0.0
+58,Germany,metmuseum.org,Fine Art,1822,0,0.0
+59,Germany,msg.teams.microsoft.com,Information Technology,1822,38,0.0209
+60,Germany,www.joyclub.de,Pornography,1822,6,0.0033
+61,Germany,science.org,Science,1822,0,0.0
+62,Germany,gunbroker.com,Weapons,1822,6,0.0033
+63,Germany,ropro.io,Forums,1822,1,0.0005
+64,Germany,gree-apps.net,Gaming,1822,0,0.0
+65,Germany,cc.com,Humor,1822,0,0.0
+66,Germany,ninisite.com,Parenting,1822,0,0.0
+67,Germany,chat.cdn.whatsapp.net,Instant Messengers,1822,46,0.0252
+68,Germany,ccc.de,Hacking,1822,1,0.0005
+69,Germany,tradplusad.com,Spam,1822,1,0.0005
+70,Germany,linecorp.com,Instant Messengers,1822,0,0.0
+71,Germany,horoscope.com,Astrology,1822,1,0.0005
+72,Germany,www.ilmeteo.it,Weather,1822,1,0.0005
+73,Germany,transfermarkt.com,Sports,1822,0,0.0
+74,Germany,fantasy.espn.com,Video Streaming,1822,0,0.0
+75,Germany,dbankcloud.ru,Unreachable,1822,0,0.0
+76,Germany,gpcloudservice.com,No Content,1822,34,0.0187
+77,Germany,flashscore.com,Gambling,1822,3,0.0016
+78,Germany,zomato.com,Food & Drink,1822,0,0.0
+79,Germany,www.marmiton.org,Food & Drink,1822,0,0.0
+80,Germany,indiana.edu,Educational Institutions,1822,0,0.0
+81,Germany,lnkd.in,Professional Networking,1822,0,0.0
+82,Germany,www.anses.gob.ar,"Politics, Advocacy, and Government-Related",1822,0,0.0
+83,Germany,cointelegraph.com,Economy & Finance,1822,1,0.0005
+84,Germany,wto.org,"Politics, Advocacy, and Government-Related",1822,0,0.0
+85,Germany,joann.com,Arts & Crafts,1822,0,0.0
+86,Germany,tiktokcdn.com.c.live.rocket-cdnbp.com,Newly Seen Domains,1822,0,0.0
+87,Germany,rezka.ag,Questionable Activities,1822,2,0.0011
+88,Germany,outlook.office365.com,Webmail,1822,37,0.0203
+89,Germany,victoriassecret.com,Lingerie & Bikini,1822,1,0.0005
+90,Germany,radiofrance.fr,Music,1822,2,0.0011
+91,Germany,military.com,Violence,1822,0,0.0
+92,Germany,ximalaya.com,Music,1822,0,0.0
+93,Germany,lilly.com,Health & Fitness,1822,1,0.0005
+94,Germany,ow.ly,Redirect,1822,2,0.0011
+95,Germany,aa-rt.sharepoint.com,New Domains,1822,36,0.0198
+96,Germany,mercedes-benz.com,Vehicles,1822,0,0.0
+97,Germany,tubitv.com,Movies,1822,36,0.0198
+98,Germany,dpreview.com,Shopping,1822,0,0.0
+99,Germany,namebrightdns.com,Parked & For Sale Domains,1822,0,0.0
+100,Germany,www.destacamos.com,Adult Themes,1822,6,0.0033
+101,Germany,afterpay.com,Shopping,1822,0,0.0
+102,Germany,www.cityheaven.net,Adult Themes,1822,6,0.0033
+103,Germany,ksyuncdn.com,Content Servers,1822,0,0.0
+104,Germany,skokka.com,Adult Themes,1822,6,0.0033
+105,Germany,surriel.com,Radio,1822,0,0.0
+106,Germany,moma.org,Arts,1822,0,0.0
+107,Germany,natalie.mu,Entertainment,1822,1,0.0005
+108,Germany,rottentomatoes.com,Entertainment,1822,0,0.0
+109,Germany,audacy.com,Entertainment,1822,0,0.0
+110,Germany,danbooru.donmai.us,Arts,1822,9,0.0049
+111,Germany,takedwn.ws,DGA Domains,1822,0,0.0
+112,Germany,knt9.xyz,DGA Domains,1822,0,0.0
+113,Germany,volcfcdndvs.com,DGA Domains,1822,0,0.0
+114,Germany,knowyourmeme.com,Humor,1821,10,0.0055
+115,Germany,m.humoruniv.com,Humor,1821,0,0.0
+116,Germany,coub.com,Humor,1821,0,0.0
+117,Germany,funnyjunk.com,Humor,1821,5,0.0027
+118,Germany,movie.eroterest.net,Humor,1821,6,0.0033
+119,Germany,value-domain.com,Miscellaneous,1821,0,0.0
+120,Germany,usen.ad.jp,Business,1821,0,0.0
+121,Germany,palmettostatearmory.com,Weapons,1821,6,0.0033
+122,Germany,bathandbodyworks.com,Fashion,1821,0,0.0
+123,Germany,keenetic.link,No Content,1821,0,0.0
+124,Germany,www.clarity.ms,Spam,1821,0,0.0
+125,Germany,bytelb.com,Newly Seen Domains,1821,1,0.0005
+126,Germany,eater.com,Food & Drink,1821,0,0.0
+127,Germany,sync.smartadserver.com,Advertisements,1821,0,0.0
+128,Germany,kik.com,Chat,1821,8,0.0044
+129,Germany,petsmart.com,Pets,1821,0,0.0
+130,Germany,intimissimi.com,Lingerie & Bikini,1821,1,0.0005
+131,Germany,forebet.com,Gambling,1821,7,0.0038
+132,Germany,space.com,Space & Astronomy,1821,0,0.0
+133,Germany,topwar.ru,Violence,1821,0,0.0
+134,Germany,mine.nu,Miscellaneous,1821,0,0.0
+135,Germany,itunes.apple.com,Music,1821,35,0.0192
+136,Germany,www.quora.com,Forums,1821,44,0.0242
+137,Germany,siteintercept.qualtrics.com,Login Screens,1821,0,0.0
+138,Germany,imgflip.com,Humor,1821,6,0.0033
+139,Germany,pewinternet.org,Educational Institutions,1821,0,0.0
+140,Germany,www.omegle.com,Chat,1821,35,0.0192
+141,Germany,fontawesome.com,Hobbies & Interests,1821,0,0.0
+142,Germany,google.hu,Search Engines,1821,0,0.0
+143,Germany,stanford.edu,Educational Institutions,1821,2,0.0011
+144,Germany,hotstar.com,Television,1821,0,0.0
+145,Germany,counterpane.com,Information Security,1821,0,0.0
+146,Germany,www.freepik.com,"News, Portal & Search",1821,0,0.0
+147,Germany,gr.global.aa-rt.sharepoint.com,New Domains,1821,36,0.0198
+148,Germany,google.com.py,Search Engines,1821,0,0.0
+149,Germany,petco.com,Pets,1821,0,0.0
+150,Germany,blogspot.co.uk,Arts & Crafts,1821,8,0.0044
+151,Germany,dailyinnovation.biz,Astrology,1821,1,0.0005
+152,Germany,scientificamerican.com,Science,1821,1,0.0005
+153,Germany,pixbet.com,Spam,1821,5,0.0027
+154,Germany,pornhub.org,Pornography,1821,6,0.0033
+155,Germany,algolia.net,Information Technology,1821,0,0.0
+156,Germany,www.flashscore.fr,Gambling,1821,1,0.0005
+157,Germany,babycenter.com,Parenting,1821,0,0.0
+158,Germany,chip.de,Magazines,1821,0,0.0
+159,Germany,newsweek.com,Magazines,1821,8,0.0044
+160,Germany,panasonic.com,Home & Garden,1821,0,0.0
+161,Germany,adlightning.com,Advertisements,1821,0,0.0
+162,Germany,petfinder.com,Pets,1821,0,0.0
+163,Germany,fanfiction.net,Forums,1821,5,0.0027
+164,Germany,www.biblegateway.com,Religion,1821,0,0.0
+165,Germany,oupeng.com,File Sharing,1821,0,0.0
+166,Germany,kr-weathernews.com,Weather,1821,1,0.0005
+167,Germany,global.aa-rt.sharepoint.com,New Domains,1821,36,0.0198
+168,Germany,colab.research.google.com,Search Engines,1821,36,0.0198
+169,Germany,999.md,Auctions & Marketplaces,1821,0,0.0
+170,Germany,fotor.com,Photography,1821,0,0.0
+171,Germany,kugou.com,Audio Streaming,1821,1,0.0005
+172,Germany,globalnews.ca,Video Streaming,1821,3,0.0016
+173,Germany,jio.com,Technology,1821,0,0.0
+174,Germany,image4.pubmatic.com,Business,1821,0,0.0
+175,Germany,tiny.cc,Redirect,1821,7,0.0038
+176,Germany,womenshealthmag.com,Magazines,1822,0,0.0
+177,Germany,dialoguecorp.com,Health & Fitness,1822,0,0.0
+178,Germany,azure-dns.net,Content Servers,1822,0,0.0
+179,Germany,dell.com,Ecommerce,1822,0,0.0
+180,Germany,astro.com,Astrology,1822,1,0.0005
+181,Germany,ojrq.net,Redirect,1822,1,0.0005
+182,Germany,asuscomm.com,Radio,1822,0,0.0
+183,Germany,aax-us-east.amazon-adsystem.com,Advertisements,1822,0,0.0
+184,Germany,joyreactor.cc,Humor,1822,5,0.0027
+185,Germany,www3.animeflv.net,Cartoons & Anime,1822,0,0.0
+186,Germany,dcloudstc.com,No Content,1822,0,0.0
+187,Germany,zoomgov.com,Technology,1822,36,0.0198
+188,Germany,prodigygame.com,Science,1822,0,0.0
+189,Germany,google.ee,Search Engines,1822,0,0.0
+190,Germany,eepurl.com,Redirect,1822,0,0.0
+191,Germany,sciencedirect.com,Science,1822,1,0.0005
+192,Germany,target.com,Ecommerce,1822,0,0.0
+193,Germany,carfax.com,Vehicles,1822,0,0.0
+194,Germany,www.meesho.com,Fashion,1822,2,0.0011
+195,Germany,tinyurl.com,Redirect,1822,1,0.0005
+196,Germany,harimanga.com,Comic Books,1822,1,0.0005
+197,Germany,myportfolio.com,Hobbies & Interests,1822,0,0.0
+198,Germany,raiplay.it,Video Streaming,1822,0,0.0
+199,Germany,eurogamer.net,Gaming,1822,0,0.0
+200,Germany,techrepublic.com,Magazines,1822,0,0.0
+201,Germany,aaa.com,Travel,1822,0,0.0
+202,Germany,auth0.com,Information Security,1822,0,0.0
+203,Germany,xhamster42.desi,Newly Seen Domains,1822,6,0.0033
+204,Germany,jw.org,Religion,1822,11,0.006
+205,Germany,whatsapp.net,Internet Phone & VOIP,1822,8,0.0044
+206,Germany,www.discogs.com,Audio Streaming,1822,0,0.0
+207,Germany,kwai.net,File Sharing,1822,0,0.0
+208,Germany,billboard.com,Magazines,1822,0,0.0
+209,Germany,a-mo.net,Advertisements,1822,1,0.0005
+210,Germany,lookmovie2.to,Phishing,1822,2,0.0011
+211,Germany,sync.com,File Sharing,1822,1,0.0005
+212,Germany,lg.com,Home & Garden,1822,0,0.0
+213,Germany,gandi-ns.fr,Newly Seen Domains,1822,1,0.0005
+214,Germany,splunkdev.net,Newly Seen Domains,1822,0,0.0
+215,Germany,uptodate.com,Health & Fitness,1822,0,0.0
+216,Germany,a.nel.cloudflare.com,Technology,1822,0,0.0
+217,Germany,oneclient.sfx.ms,File Sharing,1822,0,0.0
+218,Germany,nipr.mil,Violence,1822,0,0.0
+219,Germany,relap.io,No Content,1822,0,0.0
+220,Germany,pitchfork.com,Music,1822,0,0.0
+221,Germany,yandexadexchange.net,No Content,1822,0,0.0
+222,Germany,expressvpn.com,P2P,1822,43,0.0236
+223,Germany,p16-sign-sg.tiktokcdn.com,Social Networks,1822,36,0.0198
+224,Germany,officeclient.microsoft.com,Content Servers,1822,0,0.0
+225,Germany,xing.com,Professional Networking,1822,1,0.0005
+226,Germany,csfd.cz,Movies,1822,2,0.0011
+227,Germany,www.avto.net,Vehicles,1822,2,0.0011
+228,Germany,pscp.tv,Video Streaming,1822,8,0.0044
+229,Germany,eas.outlook.com,Webmail,1822,35,0.0192
+230,Germany,checkpoint.com,Information Security,1822,0,0.0
+231,Germany,www.pinterest.com,Photography,1822,44,0.0241
+232,Germany,www.ajio.com,Fashion,1822,0,0.0
+233,Germany,deepl.com,Translator,1822,31,0.017
+234,Germany,select.mamastar.jp,Parenting,1822,0,0.0
+235,Germany,shorturl.at,Redirect,1822,0,0.0
+236,Germany,helpguide.org,Health & Fitness,1822,1,0.0005
+237,Germany,netlify.com,Humor,1822,1,0.0005
+238,Germany,attentivemobile.com,Messaging,1822,1,0.0005
+239,Germany,gnavi.co.jp,Food & Drink,1822,1,0.0005
+240,Germany,hgtv.com,Home & Garden,1822,1,0.0005
+241,Germany,netshoes.com.br,Clothing,1820,0,0.0
+242,Germany,ugg.com,Clothing,1820,0,0.0
+243,Germany,hm.com,Clothing,1820,0,0.0
+244,Germany,musinsa.com,Clothing,1820,0,0.0
+245,Germany,adidas.com,Clothing,1820,0,0.0
+246,Germany,contentabc.com,Advertisements,1820,1,0.0005
+247,Germany,linksynergy.com,Content Servers,1820,0,0.0
+248,Germany,mobile01.com,Personal Blogs,1820,8,0.0044
+249,Germany,pull-f5-gcp01.tiktokcdn.com,Social Networks,1820,36,0.0198
+250,Germany,freepik.es,"News, Portal & Search",1820,1,0.0005
+251,Germany,linklist.bio,Malware,1820,0,0.0
+252,Germany,marthastewart.com,Home & Garden,1820,0,0.0
+253,Germany,spreaker.com,Music,1820,8,0.0044
+254,Germany,samplicio.us,Shopping,1820,0,0.0
+255,Germany,sinsay.com,Clothing,1820,0,0.0
+256,Germany,www.samsung.com,Home & Garden,1820,5,0.0027
+257,Germany,fabguys.com,Lifestyle,1820,1,0.0005
+258,Germany,www.jw.org,Religion,1820,11,0.006
+259,Germany,cdn.whatsapp.net,Instant Messengers,1820,45,0.0247
+260,Germany,webempresa.eu,Information Technology,1820,1,0.0005
+261,Germany,homedepot.com,Home & Garden,1820,2,0.0011
+262,Germany,juicyads.com,Lingerie & Bikini,1820,6,0.0033
+263,Germany,revcontent.com,Business,1820,0,0.0
+264,Germany,producthunt.com,Shopping,1820,0,0.0
+265,Germany,carnival.com,Travel,1820,0,0.0
+266,Germany,blackfriday.com,Coupons,1820,0,0.0
+267,Germany,artnet.com,Arts,1820,0,0.0
+268,Germany,studentaid.gov,Job Search & Careers,1820,0,0.0
+269,Germany,livescience.com,Science,1820,0,0.0
+270,Germany,pbs.org,Television,1820,0,0.0
+271,Germany,bible.com,Religion,1820,1,0.0005
+272,Germany,poe.com,Malware,1820,9,0.0049
+273,Germany,reverso.net,Translator,1820,0,0.0
+274,Germany,rootsoc.com,Login Screens,1820,0,0.0
+275,Germany,login.gov,Government,1820,0,0.0
+276,Germany,indeed.tech,Personal Blogs,1820,0,0.0
+277,Germany,zillow.com,Real Estate,1820,23,0.0126
+278,Germany,sharepoint.com,New Domains,1820,0,0.0
+279,Germany,deviantart.com,Arts,1820,0,0.0
+280,Germany,detail.chiebukuro.yahoo.co.jp,Forums,1820,0,0.0
+281,Germany,seek.com.au,Job Search & Careers,1820,0,0.0
+282,Germany,education.gouv.fr,Educational Institutions,1820,0,0.0
+283,Germany,volvocars.com,Vehicles,1820,0,0.0
+284,Germany,airbnb.co.uk,Travel,1820,0,0.0
+285,Germany,e-planning.net,Business,1820,0,0.0
+286,Germany,aol.com,News & Media,1820,2,0.0011
+287,Germany,m.fabguys.com,Lifestyle,1820,1,0.0005
+288,Germany,purdue.edu,Educational Institutions,1820,0,0.0
+289,Germany,schools.madrasati.sa,Education,1820,1,0.0005
+290,Germany,coe.int,"Politics, Advocacy, and Government-Related",1820,0,0.0
+291,Germany,insurads.com,Advertisements,1820,0,0.0
+292,Germany,wol.jw.org,Religion,1820,9,0.0049
+293,Germany,homeadvisor.com,Home & Garden,1820,0,0.0
+294,Germany,nami.org,Health & Fitness,1820,0,0.0
+295,Germany,animekimi.com,Cartoons & Anime,1820,1,0.0005
+296,Germany,allmusic.com,Music,1820,1,0.0005
+297,Germany,nc0.co,No Content,1820,0,0.0
+298,Germany,bzsn.ru,Newly Seen Domains,1820,0,0.0
+299,Germany,hotmail.com,Webmail,1820,37,0.0203
+300,Germany,r.msftstatic.com,Content Servers,1821,1,0.0005
+301,Germany,acronis.com,Education,1821,0,0.0
+302,Germany,agora.io,Internet Phone & VOIP,1821,0,0.0
+303,Germany,dns.net.vn,Technology,1821,3,0.0016
+304,Germany,www.dafont.com,Hobbies & Interests,1822,4,0.0022
+305,Germany,poshmark.com,Information Technology,1822,1,0.0005
+306,Germany,kia.com,Vehicles,1822,0,0.0
+307,Germany,prudential.com.sg,Economy & Finance,1822,2,0.0011
+308,Germany,pull-f5-sg01.tiktokcdn-us.com,Content Servers,1822,36,0.0198
+309,Germany,spotify.net,Login Screens,1822,2,0.0011
+310,Germany,mangatoto.com,Comic Books,1822,6,0.0033
+311,Germany,mantraonline.com,Miscellaneous,1822,4,0.0022
+312,Germany,farfetch.com,Clothing,1822,2,0.0011
+313,Germany,biblegateway.com,Religion,1822,1,0.0005
+314,Germany,nokta.com,Newly Seen Domains,1822,1,0.0005
+315,Germany,omnatuor.com,Malware,1821,23,0.0126
+316,Germany,ru.com,Malware,1821,4,0.0022
+317,Germany,sniffies.com,Lifestyle,1821,8,0.0044
+318,Germany,shodan.io,Search Engines,1821,2,0.0011
+319,Germany,sportsdirect.com,Ecommerce,1821,1,0.0005
+320,Germany,snapcraft.io,Information Technology,1821,1,0.0005
+321,Germany,unh.edu,Educational Institutions,1821,0,0.0
+322,Germany,lfstrm.tv,Entertainment,1821,0,0.0
+323,Germany,82xnxx.com,Pornography,1821,10,0.0055
+324,Germany,porsche.com,Vehicles,1821,3,0.0016
+325,Germany,pavietnam.net,Hacking,1821,3,0.0016
+326,Germany,tenki.jp,Weather,1821,1,0.0005
+327,Germany,telefonica.de,Messaging,1821,1,0.0005
+328,Germany,bbs.animanch.com,Personal Blogs,1821,3,0.0016
+329,Germany,weather.com,Weather,1821,2,0.0011
+330,Germany,fabswingers.com,Adult Themes,1821,7,0.0038
+331,Germany,www.canva.com,Arts,1821,32,0.0176
+332,Germany,blogspot.it,Unreachable,1822,11,0.006
+333,Germany,m.kooora.com,Sports,1822,3,0.0016
+334,Germany,pinduoduo.com,Shopping,1822,0,0.0
+335,Germany,openbittorrent.com,Questionable Activities,1822,11,0.006
+336,Germany,nordvpn.com,P2P,1822,44,0.0241
+337,Germany,hkjc.com,Gambling,1822,8,0.0044
+338,Germany,16personalities.com,Entertainment,1822,2,0.0011
+339,Germany,google.co.vi,"News, Portal & Search",1822,1,0.0005
+340,Germany,tmz.com,Entertainment,1822,3,0.0016
+341,Germany,mpsuadv.ru,Spam,1822,0,0.0
+342,Germany,apkcombo.com,Gaming,1821,9,0.0049
+343,Germany,www.sozcu.com.tr,News & Media,1821,0,0.0
+344,Germany,rightmove.co.uk,Real Estate,1821,0,0.0
+345,Germany,viber.com,Instant Messengers,1821,11,0.006
+346,Germany,nkiri.com,Spam,1821,1,0.0005
+347,Germany,www.istockphoto.com,"News, Portal & Search",1821,9,0.0049
+348,Germany,pcworld.com,Technology,1821,1,0.0005
+349,Germany,akc.org,Pets,1821,3,0.0016
+350,Germany,1gb.ru,Unreachable,1820,2,0.0011
+351,Germany,schemaapp.com,Business,1820,1,0.0005
+352,Germany,discogs.com,Music,1820,4,0.0022
+353,Germany,mil.ru,Violence,1820,0,0.0
+354,Germany,sweb.ru,Information Technology,1820,6,0.0033
+355,Germany,www.croxyproxy.com,Anonymizer,1820,5,0.0027
+356,Germany,akamaistream.net,Miscellaneous,1820,1,0.0005
+357,Germany,aws-proxy-gcp.api.snapchat.com,Photography,1820,40,0.022
+358,Germany,cosmopolitan.com,Adult Themes,1819,3,0.0016
+359,Germany,wechat.com,Internet Phone & VOIP,1819,35,0.0192
+360,Germany,ad.turn.com,Login Screens,1819,0,0.0
+361,Germany,therealreal.com,Fashion,1818,0,0.0
+362,Germany,blooket.com,Safe for Kids,1819,1,0.0005
+363,Germany,xp.itunes-apple.com.akadns.net,Audio Streaming,1819,3,0.0016
+364,Germany,newyorker.com,Magazines,1819,8,0.0044
+365,Germany,joinhoney.com,Coupons,1819,1,0.0005
+366,Germany,buienradar.nl,Weather,1819,2,0.0011
+367,Germany,dropboxusercontent.com,File Sharing,1819,1,0.0005
+368,Germany,futbin.com,Gaming,1821,1,0.0005
+369,Germany,api.snapchat.com,Social Networks,1821,38,0.0209
+370,Germany,zara.com,Clothing,1821,0,0.0
+371,Germany,reddit.com,Forums,1821,10,0.0055
+372,Germany,canonet.ne.jp,Miscellaneous,1822,0,0.0
+373,Germany,symbolab.com,Science,1822,0,0.0
+374,Germany,yatv.net,Gambling,1822,1,0.0005
+375,Germany,calculator.apps.chrome,No Content,1822,1,0.0005
+376,Germany,financialexpress.com,Economy & Finance,1822,0,0.0
+377,Germany,sharethru.com,Content Servers,1822,0,0.0
+378,Germany,pixiv.net,Arts,1822,9,0.0049
+379,Germany,lc.chat,Redirect,1822,0,0.0
+380,Germany,ozbargain.com.au,Coupons,1822,3,0.0016
+381,Germany,eufylife.com,Home & Garden,1821,2,0.0011
+382,Germany,elo7.com.br,Arts & Crafts,1821,1,0.0005
+383,Germany,hubpages.com,Professional Networking,1821,2,0.0011
+384,Germany,jivosite.com,Chat,1821,2,0.0011
+385,Germany,sport24.ru,Sports,1821,0,0.0
+386,Germany,happymh.com,Comic Books,1821,1,0.0005
+387,Germany,www.jalan.net,Travel,1821,0,0.0
+388,Germany,1rx.io,Advertisements,1821,1,0.0005
+389,Germany,sciencemag.org,Science,1821,1,0.0005
+390,Germany,mfms.ru,Chat,1821,0,0.0
+391,Germany,si.com,Magazines,1821,0,0.0
+392,Germany,ziprecruiter.com,Job Search & Careers,1821,1,0.0005
+393,Germany,pull-hls-l77-va01.tiktokcdn.com,Social Networks,1821,39,0.0214
+394,Germany,pantip.com,Forums,1821,2,0.0011
+395,Germany,cutt.ly,Redirect,1821,0,0.0
+396,Germany,etoote.com,Adult Themes,1821,1,0.0005
+397,Germany,tradingview.com,Professional Networking,1821,9,0.0049
+398,Germany,mobilefuse.com,Advertisements,1820,1,0.0005
+399,Germany,oajs.openx.net,Advertisements,1820,1,0.0005
+400,Germany,assets.a-mo.net,Advertisements,1820,1,0.0005
+401,Germany,prebid.a-mo.net,Advertisements,1820,0,0.0
+402,Germany,livesport.cz,Sports,1820,0,0.0
+403,Germany,associates-amazon.com,Content Servers,1820,0,0.0
+404,Germany,facebook.net,Social Networks,1820,7,0.0038
+405,Germany,m.apkpure.com,Gaming,1820,7,0.0038
+406,Germany,www.makemytrip.com,Travel,1820,1,0.0005
+407,Germany,google.ru,Search Engines,1820,1,0.0005
+408,Germany,stake.com,Gambling,1819,7,0.0038
+409,Germany,sdk.iad-01.braze.com,Business,1819,0,0.0
+410,Germany,gob.pe,"Politics, Advocacy, and Government-Related",1819,0,0.0
+411,Germany,aetna.com,Health & Fitness,1819,0,0.0
+412,Germany,ads.linkedin.com,Professional Networking,1819,41,0.0225
+413,Germany,proxysite.com,Anonymizer,1819,11,0.006
+414,Germany,dler.org,Gaming,1819,3,0.0016
+415,Germany,bluestacks.com,Gaming,1819,0,0.0
+416,Germany,happymod.com,Gaming,1819,0,0.0
+417,Germany,myq-cloud.com,Login Screens,1819,2,0.0011
+418,Germany,lmu.de,Educational Institutions,1820,0,0.0
+419,Germany,surfshark.com,P2P,1820,14,0.0077
+420,Germany,dealer.com,Vehicles,1820,1,0.0005
+421,Germany,humoruniv.com,Humor,1820,0,0.0
+422,Germany,mimecast.net,Miscellaneous,1819,0,0.0
+423,Germany,mamastar.jp,Parenting,1819,1,0.0005
+424,Germany,idealmedia.io,No Content,1818,2,0.0011
+425,Germany,www.pixiv.net,Arts,1818,31,0.0171
+426,Germany,tomsguide.com,Shopping,1818,2,0.0011
+427,Germany,williams-sonoma.com,Food & Drink,1818,1,0.0006
+428,Germany,listdl.com,Newly Seen Domains,1818,0,0.0
+429,Germany,qq.com.cn,Search Engines,1818,0,0.0
+430,Germany,sinoptik.ua,Weather,1818,3,0.0017
+431,Germany,atptour.com,Sports,1818,0,0.0
+432,Germany,bmwgroup.com,Vehicles,1818,1,0.0006
+433,Germany,linkedin.com,Professional Networking,1817,38,0.0209
+434,Germany,in.linkedin.com,Professional Networking,1817,38,0.0209
+435,Germany,usmagazine.com,Magazines,1817,1,0.0006
+436,Germany,api.mixpanel.com,Business,1818,1,0.0006
+437,Germany,statnews.com,Video Streaming,1817,1,0.0006
+438,Germany,abc.com,Television,1817,0,0.0
+439,Germany,alamy.com,"News, Portal & Search",1817,1,0.0006
+440,Germany,fastclick.net,Business,1816,2,0.0011
+441,Germany,pepepush.net,Newly Seen Domains,1816,1,0.0006
+442,Germany,www.ninisite.com,Parenting,1817,0,0.0
+443,Germany,agoda.com,Coupons,1817,1,0.0006
+444,Germany,bandcamp.com,Audio Streaming,1817,9,0.005
+445,Germany,infojobs.net,Job Search & Careers,1819,1,0.0005
+446,Germany,in.indeed.com,Job Search & Careers,1819,0,0.0
+447,Germany,caf.fr,Job Search & Careers,1819,23,0.0126
+448,Germany,uidapi.com,Job Search & Careers,1819,0,0.0
+449,Germany,mynavi.jp,Job Search & Careers,1819,1,0.0005
+450,Germany,fitbit.com,Health & Fitness,1819,1,0.0005
+451,Germany,croxyproxy.com,Anonymizer,1818,6,0.0033
+452,Germany,inverse.com,News & Media,1818,0,0.0
+453,Germany,pikweb.net,No Content,1816,0,0.0
+454,Germany,vseosvita.ua,Entertainment,1816,3,0.0017
+455,Germany,lenreg.ru,Entertainment,1816,0,0.0
+456,Germany,likee.com,Parked & For Sale Domains,1816,1,0.0006
+457,Germany,rakuten.com,Coupons,1816,1,0.0006
+458,Germany,illinois.gov,Government,1816,0,0.0
+459,Germany,onlineradiobox.com,Music,1816,2,0.0011
+460,Germany,onepeloton.com,Ecommerce,1816,1,0.0006
+461,Germany,google.mg,Search Engines,1816,2,0.0011
+462,Germany,www.finn.no,Auctions & Marketplaces,1816,0,0.0
+463,Germany,menshealth.com,Magazines,1817,1,0.0006
+464,Germany,game8.jp,Hobbies & Interests,1817,0,0.0
+465,Germany,consumerreports.org,Shopping,1816,1,0.0006
+466,Germany,fr.wikipedia.org,Education,1816,8,0.0044
+467,Germany,inps.it,Education,1816,1,0.0006
+468,Germany,unm.edu,Education,1816,1,0.0006
+469,Germany,or.th,Newly Seen Domains,1816,0,0.0
+470,Germany,webtoons.com,Comic Books,1815,0,0.0
+471,Germany,humblebundle.com,Gaming,1815,2,0.0011
+472,Germany,crazygames.com,Gaming,1815,0,0.0
+473,Germany,apkpure.com,Gaming,1815,7,0.0039
+474,Germany,clashofclans.com,Gaming,1815,0,0.0
+475,Germany,lululemon.com,Clothing,1816,0,0.0
+476,Germany,torproject.org,Anonymizer,1816,45,0.0248
+477,Germany,express.de,Adult Themes,1816,0,0.0
+478,Germany,long.tv,Religion,1816,0,0.0
+479,Germany,dual-gslb.spotify.com,Audio Streaming,1816,0,0.0
+480,Germany,ktkjmp.com,Spam,1814,1,0.0006
+481,Germany,imtwjwoasak.com,Spam,1814,1,0.0006
+482,Germany,action.com,Login Screens,1814,1,0.0006
+483,Germany,stats.g.doubleclick.net,Advertisements,1814,39,0.0215
+484,Germany,cloudfilter.net,Information Security,1814,0,0.0
+485,Germany,dataservice.protection.outlook.com,Webmail,1814,35,0.0193
+486,Germany,www.accuweather.com,Weather,1814,0,0.0
+487,Germany,us-v20.events.data.microsoft.com,Information Technology,1814,2,0.0011
+488,Germany,az24.vn,Entertainment,1813,0,0.0
+489,Germany,poder360.com.br,"Politics, Advocacy, and Government-Related",1813,0,0.0
+490,Germany,boardgamearena.com,Hobbies & Interests,1813,0,0.0
+491,Germany,wisc.edu,Educational Institutions,1814,0,0.0
+492,Germany,e621.net,"News, Portal & Search",1814,8,0.0044
+493,Germany,ipcdn.apple.com,Information Technology,1814,2,0.0011
+494,Germany,jivo.ru,Chat,1815,1,0.0006
+495,Germany,livechat.com,Chat,1815,0,0.0
+496,Germany,love.ru,Chat,1815,0,0.0
+497,Germany,discord.media,Chat,1815,5,0.0028
+498,Germany,castbox.fm,Music,1814,7,0.0039
+499,Germany,www.gazzetta.it,Sports,1813,0,0.0
+500,Germany,www.cricbuzz.com,Sports,1813,0,0.0
+501,Germany,www.diretta.it,Sports,1813,1,0.0006
+502,Germany,www.cbssports.com,Sports,1813,1,0.0006
+503,Germany,www.flashscore.com.br,Sports,1813,5,0.0028
+504,Germany,pet.gree-apps.net,Gaming,1813,0,0.0
+505,Germany,unity3d.com,Gaming,1813,0,0.0
+506,Germany,mojang.com,Gaming,1813,0,0.0
+507,Germany,geoguessr.com,Gaming,1813,2,0.0011
+508,Germany,www.wowhead.com,Gaming,1813,0,0.0
+509,Germany,asics.com,Clothing,1814,0,0.0
+510,Germany,songkick.com,Entertainment,1814,1,0.0006
+511,Germany,windy.com,Weather,1814,1,0.0006
+512,Germany,art.ibomma.link,Movies,1814,1,0.0006
+513,Germany,context.reverso.net,Translator,1814,3,0.0017
+514,Germany,scoop.it,Business,1814,0,0.0
+515,Germany,appdynamics.com,Business,1814,0,0.0
+516,Germany,bdec.microsoft.com,Business,1814,0,0.0
+517,Germany,zoho.eu,Business,1814,1,0.0006
+518,Germany,intercom.com,Business,1814,0,0.0
+519,Germany,scratch.mit.edu,Educational Institutions,1814,6,0.0033
+520,Germany,uwaterloo.ca,Educational Institutions,1814,0,0.0
+521,Germany,open.ac.uk,Educational Institutions,1814,1,0.0006
+522,Germany,clemson.edu,Educational Institutions,1814,0,0.0
+523,Germany,arizona.edu,Educational Institutions,1814,0,0.0
+524,Germany,booth.pm,Arts,1814,0,0.0
+525,Germany,4chan.org,Forums,1814,28,0.0154
+526,Germany,parents.com,Parenting,1814,3,0.0017
+527,Germany,www.xvideos.es,Pornography,1814,10,0.0055
+528,Germany,m.indiamart.com,Auctions & Marketplaces,1814,0,0.0
+529,Germany,aniwatch.to,Parked & For Sale Domains,1814,1,0.0006
+530,Germany,michigan.gov,"Politics, Advocacy, and Government-Related",1814,0,0.0
+531,Germany,spanishdict.com,Translator,1814,0,0.0
+532,Germany,vimeo.com,Video Streaming,1814,44,0.0243
+533,Germany,en.wikipedia.org,Education,1814,8,0.0044
+534,Germany,typeform.com,File Sharing,1814,0,0.0
+535,Germany,abbott.com,Health & Fitness,1814,0,0.0
+536,Germany,myhostadmin.net,Technology,1814,0,0.0
+537,Germany,theknot.com,Dating & Relationships,1814,0,0.0
+538,Germany,whatsapp.com,Internet Phone & VOIP,1814,46,0.0254
+539,Germany,www.neopets.com,Safe for Kids,1814,0,0.0
+540,Germany,samsara.com,Travel,1814,0,0.0
+541,Germany,login.yahoo.com,Webmail,1814,0,0.0
+542,Germany,kunlungr.com,No Content,1814,1,0.0006
+543,Germany,sweetwater.com,Music,1814,0,0.0
+544,Germany,army.mil,Government,1814,0,0.0
+545,Germany,x.bidswitch.net,Content Servers,1814,0,0.0
+546,Germany,web.whatsapp.com,Instant Messengers,1814,47,0.0259
+547,Germany,amtrak.com,Travel,1814,0,0.0
+548,Germany,rebrand.ly,Redirect,1814,2,0.0011
+549,Germany,ameblo.jp,Personal Blogs,1814,0,0.0
+550,Germany,aif.ru,News & Media,1814,0,0.0
+551,Germany,adam4adam.com,Adult Themes,1814,7,0.0039
+552,Germany,www.deepl.com,Translator,1814,31,0.0171
+553,Germany,vatican.va,Religion,1814,17,0.0094
+554,Germany,cntraveler.com,Shopping,1814,1,0.0006
+555,Germany,discordapp.com,Internet Phone & VOIP,1814,54,0.0298
+556,Germany,br.skokka.com,Adult Themes,1814,7,0.0039
+557,Germany,www.twitch.tv,Gaming,1814,47,0.0259
+558,Germany,www.mathplayground.com,Safe for Kids,1814,0,0.0
+559,Germany,futurism.com,Magazines,1814,0,0.0
+560,Germany,www.tamildhool.net,Questionable Activities,1814,0,0.0
+561,Germany,lego.com,Ecommerce,1814,0,0.0
+562,Germany,midasbuy.com,No Content,1814,1,0.0006
+563,Germany,api.amazonvideo.com,Movies,1814,0,0.0
+564,Germany,pictoa.com,Pornography,1814,7,0.0039
+565,Germany,m.me,Instant Messengers,1814,0,0.0
+566,Germany,vivoglobal.com,Technology,1814,0,0.0
+567,Germany,netease.com,News & Media,1814,0,0.0
+568,Germany,wowhead.com,Forums,1814,1,0.0006
+569,Germany,p.typekit.net,Hobbies & Interests,1814,0,0.0
+570,Germany,doctolib.fr,Health & Fitness,1814,0,0.0
+571,Germany,nsw.gov.au,Travel,1814,1,0.0006
+572,Germany,lingojam.com,Translator,1814,0,0.0
+573,Germany,icloud.com,File Sharing,1814,2,0.0011
+574,Germany,exblog.jp,Personal Blogs,1814,0,0.0
+575,Germany,cloud.netflix.com,Movies,1814,46,0.0254
+576,Germany,secu100.net,Parked & For Sale Domains,1814,1,0.0006
+577,Germany,mumsnet.com,Parenting,1814,0,0.0
+578,Germany,nespresso.com,Home & Garden,1814,1,0.0006
+579,Germany,manganato.com,Comic Books,1814,5,0.0028
+580,Germany,gob.mx,Travel,1814,0,0.0
+581,Germany,myworkdayjobs.com,Job Search & Careers,1814,0,0.0
+582,Germany,123-hd.com,Questionable Activities,1814,0,0.0
+583,Germany,hola.org,P2P,1814,42,0.0232
+584,Germany,pro.ibomma.link,Questionable Activities,1814,0,0.0
+585,Germany,goguardian.com,Education,1814,1,0.0006
+586,Germany,sport.es,Sports,1814,1,0.0006
+587,Germany,bgdns.net,Phishing,1814,0,0.0
+588,Germany,eu.tiktokcdn.com,Social Networks,1814,36,0.0198
+589,Germany,notify.adobe.io,Technology,1814,2,0.0011
+590,Germany,olimpbet.kz,Gambling,1814,8,0.0044
+591,Germany,time.com,Magazines,1814,8,0.0044
+592,Germany,www.dogdrip.net,File Sharing,1814,2,0.0011
+593,Germany,metoffice.gov.uk,Weather,1814,3,0.0017
+594,Germany,nova.cz,Television,1813,0,0.0
+595,Germany,plex.tv,Television,1813,37,0.0204
+596,Germany,tv-asahi.co.jp,Television,1813,0,0.0
+597,Germany,paramountplus.com,Television,1813,36,0.0199
+598,Germany,programme-tv.net,Television,1813,0,0.0
+599,Germany,s7.ru,Travel,1813,0,0.0
+600,Germany,arlo.com,Ecommerce,1813,0,0.0
+601,Germany,detroitnews.com,News & Media,1813,0,0.0
+602,Germany,jooble.org,Job Search & Careers,1813,1,0.0006
+603,Germany,engadget.com,Shopping,1813,0,0.0
+604,Germany,wowma.jp,Coupons,1813,1,0.0006
+605,Germany,dotloop.com,Real Estate,1813,0,0.0
+606,Germany,wto.to,Cartoons & Anime,1813,3,0.0017
+607,Germany,crisp.chat,Chat,1813,0,0.0
+608,Germany,quillbot.com,Questionable Activities,1813,1,0.0006
+609,Germany,jra.jp,Gambling,1812,6,0.0033
+610,Germany,estrelabet.com,Gambling,1812,6,0.0033
+611,Germany,fdj.fr,Gambling,1812,6,0.0033
+612,Germany,dpboss.services,Gambling,1812,1,0.0006
+613,Germany,coral.co.uk,Gambling,1812,7,0.0039
+614,Germany,plus.google.com,Social Networks,1812,42,0.0232
+615,Germany,feednews.com,Personal Blogs,1812,7,0.0039
+616,Germany,shahvani.com,Adult Themes,1812,6,0.0033
+617,Germany,aws.duplex.snapchat.com,Social Networks,1812,37,0.0204
+618,Germany,prod.mozaws.net,Content Servers,1812,0,0.0
+619,Germany,iaai.com,Vehicles,1813,0,0.0
+620,Germany,uninet.net.mx,Content Servers,1813,0,0.0
+621,Germany,likee.video,Newly Seen Domains,1813,0,0.0
+622,Germany,sports.ru,Sports,1813,1,0.0006
+623,Germany,www.upwork.com,Job Search & Careers,1813,0,0.0
+624,Germany,gva.es,Job Search & Careers,1813,0,0.0
+625,Germany,landsend.com,Clothing,1813,0,0.0
+626,Germany,primevideo.com,Movies,1813,36,0.0199
+627,Germany,gatech.edu,Educational Institutions,1813,0,0.0
+628,Germany,cash.app,Information Technology,1813,0,0.0
+629,Germany,distmed.com,Login Screens,1813,0,0.0
+630,Germany,monster.com,Job Search & Careers,1813,0,0.0
+631,Germany,rb.gy,Redirect,1813,5,0.0028
+632,Germany,ssa.gov,Government,1813,0,0.0
+633,Germany,unified.adsafeprotected.com,Advertisements,1813,1,0.0006
+634,Germany,goo.gl,Redirect,1813,0,0.0
+635,Germany,9gag.com,Humor,1813,3,0.0017
+636,Germany,getresponse.com,Webmail,1813,2,0.0011
+637,Germany,egais.ru,"Politics, Advocacy, and Government-Related",1813,0,0.0
+638,Germany,architecturaldigest.com,Real Estate,1813,0,0.0
+639,Germany,protection.outlook.com,Webmail,1813,35,0.0193
+640,Germany,ivi.ru,Movies,1813,0,0.0
+641,Germany,ring.net,Technology,1813,0,0.0
+642,Germany,starbucks.com,Food & Drink,1813,0,0.0
+643,Germany,apartmenttherapy.com,Home & Garden,1813,0,0.0
+644,Germany,name-services.com,Phishing,1813,0,0.0
+645,Germany,moovitapp.com,Travel,1813,0,0.0
+646,Germany,skyscanner.net,Travel,1813,0,0.0
+647,Germany,turner.com,Entertainment,1813,0,0.0
+648,Germany,gall.dcinside.com,Movies,1814,44,0.0243
+649,Germany,pubmed.ncbi.nlm.nih.gov,Health & Fitness,1814,0,0.0
+650,Germany,www.subito.it,Auctions & Marketplaces,1814,0,0.0
+651,Germany,www.climatempo.com.br,Video Streaming,1814,0,0.0
+652,Germany,cbr.com,Comic Books,1814,0,0.0
+653,Germany,honey.io,Coupons,1814,0,0.0
+654,Germany,trendmicro.com,Information Security,1814,0,0.0
+655,Germany,blogspot.de,Unreachable,1814,9,0.005
+656,Germany,svenskaspel.se,Gambling,1814,8,0.0044
+657,Germany,translate.google.com,Translator,1813,37,0.0204
+658,Germany,omegle.com,Chat,1813,36,0.0199
+659,Germany,roblox.com,Chat,1813,4,0.0022
+660,Germany,www.roblox.com,Chat,1813,38,0.021
+661,Germany,olark.com,Chat,1813,0,0.0
+662,Germany,oldnavy.gap.com,Clothing,1813,0,0.0
+663,Germany,gapcanada.ca,Fashion,1813,0,0.0
+664,Germany,tendawifi.com,Phishing,1813,1,0.0006
+665,Germany,www.asos.com,Clothing,1813,0,0.0
+666,Germany,people.com,Magazines,1810,0,0.0
+667,Germany,caranddriver.com,Magazines,1810,0,0.0
+668,Germany,issuu.com,Magazines,1810,11,0.0061
+669,Germany,elle.com,Magazines,1810,0,0.0
+670,Germany,aappublications.org,Magazines,1810,0,0.0
+671,Germany,disney.co.jp,Safe for Kids,1810,0,0.0
+672,Germany,plentific.com,Real Estate,1810,0,0.0
+673,Germany,espresso-pa.clients6.google.com,Search Engines,1810,37,0.0204
+674,Germany,splashthat.com,Entertainment,1810,0,0.0
+675,Germany,letras.mus.br,Audio Streaming,1810,0,0.0
+676,Germany,g.whatsapp.net,Internet Phone & VOIP,1810,47,0.026
+677,Germany,fanatics.com,Clothing,1810,1,0.0006
+678,Germany,www.deviantart.com,Arts,1810,2,0.0011
+679,Germany,www.linkedin.com,Professional Networking,1810,43,0.0238
+680,Germany,tracker.samplicio.us,Shopping,1810,0,0.0
+681,Germany,waconatm.officeapps.live.com,Webmail,1810,0,0.0
+682,Germany,tantanapp.com,Dating & Relationships,1810,0,0.0
+683,Germany,chase.com,Economy & Finance,1810,0,0.0
+684,Germany,ibomma.link,Questionable Activities,1810,0,0.0
+685,Germany,getpublica.com,Advertisements,1810,0,0.0
+686,Germany,curl.se,Sports,1810,0,0.0
+687,Germany,samsung.com,Home & Garden,1810,4,0.0022
+688,Germany,orbitz.com,Travel,1810,1,0.0006
+689,Germany,nrdp.prod.ftl.netflix.com,Television,1810,36,0.0199
+690,Germany,sheknows.com,Personal Blogs,1810,0,0.0
+691,Germany,escortalligator.com.listcrawler.eu,Adult Themes,1810,6,0.0033
+692,Germany,roku.com,Ecommerce,1810,0,0.0
+693,Germany,altervista.org,Information Technology,1810,0,0.0
+694,Germany,devicetask.com,Unreachable,1810,0,0.0
+695,Germany,casalemedia.com,Advertisements,1810,0,0.0
+696,Germany,slickdeals.net,Coupons,1810,0,0.0
+697,Germany,uiboot.netflix.com,Movies,1810,36,0.0199
+698,Germany,fbi.gov,Government,1810,2,0.0011
+699,Germany,myvzw.com,Instant Messengers,1810,1,0.0006
+700,Germany,hotornot.com,Dating & Relationships,1810,0,0.0
+701,Germany,allrecipes.com,Food & Drink,1810,1,0.0006
+702,Germany,satta-king-fixed-no.in,Gambling,1810,6,0.0033
+703,Germany,topdns.com,Advertisements,1810,1,0.0006
+704,Germany,me.porno666.link,Pornography,1810,7,0.0039
+705,Germany,mercadolivre.com,Auctions & Marketplaces,1810,0,0.0
+706,Germany,kqzyfj.com,Redirect,1810,0,0.0
+707,Germany,samsungelectronics.com,Home & Garden,1810,0,0.0
+708,Germany,disneyplus.com,Safe for Kids,1810,37,0.0204
+709,Germany,health.mil,Government,1810,0,0.0
+710,Germany,realsimple.com,Magazines,1811,0,0.0
+711,Germany,onlar.az,Chat,1811,1,0.0006
+712,Germany,ipvanish.com,P2P,1813,3,0.0017
+713,Germany,google.tk,Search Engines,1813,0,0.0
+714,Germany,app.slack.com,Instant Messengers,1813,37,0.0204
+715,Germany,leagueofgraphs.com,Hobbies & Interests,1813,1,0.0006
+716,Germany,thrillist.com,Video Streaming,1813,2,0.0011
+717,Germany,ww1.goojara.to,Questionable Activities,1813,3,0.0017
+718,Germany,push-rtmp-f5-tt02.fcdn.us.tiktokv.com,Social Networks,1814,41,0.0226
+719,Germany,flipboard.com,Magazines,1813,25,0.0138
+720,Germany,computerworld.com,Magazines,1813,0,0.0
+721,Germany,imgsrc.ru,Photography,1811,3,0.0017
+722,Germany,us-east1-aws.api.snapchat.com,Photography,1811,36,0.0199
+723,Germany,smugmug.com,Photography,1811,1,0.0006
+724,Germany,completion.amazon.com,Ecommerce,1811,0,0.0
+725,Germany,parkingcrew.net,Parked & For Sale Domains,1811,0,0.0
+726,Germany,foxbusiness.com,Video Streaming,1811,1,0.0006
+727,Germany,iphone.life360.com,Travel,1810,0,0.0
+728,Germany,latamairlines.com,Travel,1810,0,0.0
+729,Germany,royalcaribbean.com,Travel,1810,1,0.0006
+730,Germany,tfl.gov.uk,Travel,1810,0,0.0
+731,Germany,jalan.net,Travel,1810,0,0.0
+732,Germany,m.fabswingers.com,Adult Themes,1810,7,0.0039
+733,Germany,mixcloud.com,Audio Streaming,1810,9,0.005
+734,Germany,prava-online.net,Parked & For Sale Domains,1810,2,0.0011
+735,Germany,dnevnik.ru,Education,1810,0,0.0
+736,Germany,canva.com,Arts,1810,31,0.0171
+737,Germany,mail-ads.google.com,Webmail,1810,36,0.0199
+738,Germany,stitcher.com,Audio Streaming,1810,8,0.0044
+739,Germany,psychologytoday.com,Health & Fitness,1810,0,0.0
+740,Germany,arbeitsagentur.de,Job Search & Careers,1810,0,0.0
+741,Germany,affirm.com,Shopping,1810,0,0.0
+742,Germany,google.al,Search Engines,1810,0,0.0
+743,Germany,listcrawler.eu,Adult Themes,1810,7,0.0039
+744,Germany,uhc.com,Economy & Finance,1810,0,0.0
+745,Germany,techradar.com,Shopping,1810,0,0.0
+746,Germany,yelp.com,Search Engines,1810,36,0.0199
+747,Germany,fr.linkedin.com,Professional Networking,1810,39,0.0215
+748,Germany,skroutz.gr,Shopping,1810,0,0.0
+749,Germany,jdcache.com,Content Servers,1810,1,0.0006
+750,Germany,adsafeprotected.com,Advertisements,1810,0,0.0
+751,Germany,mattel.com,Safe for Kids,1810,0,0.0
+752,Germany,playbattlegrounds.com,Gaming,1810,0,0.0
+753,Germany,nbc.com,Video Streaming,1810,1,0.0006
+754,Germany,yammer.com,Professional Networking,1810,0,0.0
+755,Germany,thomann.de,Music,1810,0,0.0
+756,Germany,anime-planet.com,Cartoons & Anime,1810,5,0.0028
+757,Germany,pps.whatsapp.net,Internet Phone & VOIP,1810,45,0.0249
+758,Germany,betpawa.ug,Sports,1810,6,0.0033
+759,Germany,www.w3schools.com,Education,1810,0,0.0
+760,Germany,www.tripadvisor.com,Shopping,1810,0,0.0
+761,Germany,t.co,Redirect,1810,3,0.0017
+762,Germany,bit.ly,Redirect,1813,0,0.0
+763,Germany,oppomobile.com,Technology,1813,0,0.0
+764,Germany,ip-plus.net,Information Security,1813,1,0.0006
+765,Germany,nrdp52-appboot.netflix.com,Movies,1813,36,0.0199
+766,Germany,utro.ru,News & Media,1813,1,0.0006
+767,Germany,disney.com,Entertainment,1813,0,0.0
+768,Germany,brevo.com,No Content,1813,1,0.0006
+769,Germany,forbes.com,Magazines,1812,11,0.0061
+770,Germany,www.wordreference.com,Education,1812,1,0.0006
+771,Germany,trilltrill.jp,Personal Blogs,1810,0,0.0
+772,Germany,3.bp.blogspot.com,Personal Blogs,1810,44,0.0243
+773,Germany,nejm.org,Health & Fitness,1810,1,0.0006
+774,Germany,ocsp.edge.digicert.com,Information Security,1810,1,0.0006
+775,Germany,jhkkjkj.com,Newly Seen Domains,1810,3,0.0017
+776,Germany,thekitchn.com,Home & Garden,1810,0,0.0
+777,Germany,mangabuddy.com,Cartoons & Anime,1810,5,0.0028
+778,Germany,depositphotos.com,"News, Portal & Search",1810,2,0.0011
+779,Germany,pokemon.com,Cartoons & Anime,1810,0,0.0
+780,Germany,groupon.com,Coupons,1809,1,0.0006
+781,Germany,svcmot.com,No Content,1809,1,0.0006
+782,Germany,slidesgo.com,Arts,1809,0,0.0
+783,Germany,sng.link,Parked & For Sale Domains,1809,0,0.0
+784,Germany,accounts.spotify.com,Audio Streaming,1808,37,0.0205
+785,Germany,blogtalkradio.com,Audio Streaming,1808,0,0.0
+786,Germany,audiomack.com,Audio Streaming,1808,0,0.0
+787,Germany,tidal.com,Audio Streaming,1808,2,0.0011
+788,Germany,anchor.fm,Audio Streaming,1808,0,0.0
+789,Germany,eska.pl,Video Streaming,1808,0,0.0
+790,Germany,chefkoch.de,Magazines,1808,0,0.0
+791,Germany,skyrock.net,Redirect,1808,0,0.0
+792,Germany,bahn.de,Travel,1808,0,0.0
+793,Germany,rd.com,Magazines,1808,0,0.0
+794,Germany,boldchat.com,Chat,1808,0,0.0
+795,Germany,tvpixel.com,Business,1808,0,0.0
+796,Germany,yr.no,Weather,1808,0,0.0
+797,Germany,lge.com,Home & Garden,1808,0,0.0
+798,Germany,is.gd,Redirect,1808,8,0.0044
+799,Germany,geny.com,Gambling,1808,5,0.0028
+800,Germany,tpmn.co.kr,Parked & For Sale Domains,1808,0,0.0
+801,Germany,nexusmods.com,Hobbies & Interests,1808,2,0.0011
+802,Germany,samokat.ru,Food & Drink,1808,0,0.0
+803,Germany,ftl.netflix.com,Television,1808,36,0.0199
+804,Germany,starfall.com,Safe for Kids,1808,0,0.0
+805,Germany,rtl.de,Television,1808,0,0.0
+806,Germany,carsensor.net,Vehicles,1809,0,0.0
+807,Germany,ojogodobicho.com,Health & Fitness,1809,5,0.0028
+808,Germany,tiktokv.com,Social Networks,1809,6,0.0033
+809,Germany,tango.me,Chat,1809,9,0.005
+810,Germany,www.uniqlo.com,Clothing,1809,0,0.0
+811,Germany,mackolik.com,Sports,1809,5,0.0028
+812,Germany,discord.com,Instant Messengers,1809,46,0.0254
+813,Germany,onlyfans.com,Adult Themes,1809,6,0.0033
+814,Germany,swagbucks.com,Coupons,1809,1,0.0006
+815,Germany,tawk.to,Instant Messengers,1809,0,0.0
+816,Germany,loom.com,Instant Messengers,1809,1,0.0006
+817,Germany,wpa.qq.com,News & Media,1809,35,0.0193
+818,Germany,3bmeteo.com,News & Media,1809,0,0.0
+819,Germany,nine.com.au,News & Media,1809,0,0.0
+820,Germany,www.bt.dk,News & Media,1809,0,0.0
+821,Germany,n.news.naver.com,News & Media,1809,0,0.0
+822,Germany,promiedos.com.ar,News & Media,1809,1,0.0006
+823,Germany,startappservice.com,Advertisements,1809,1,0.0006
+824,Germany,southernliving.com,Magazines,1809,0,0.0
+825,Germany,m.happymh.com,Comic Books,1809,1,0.0006
+826,Germany,steamcommunity.com,Gaming,1808,46,0.0254
+827,Germany,microsoftcasualgames.com,Gaming,1808,1,0.0006
+828,Germany,wan02.com,Gaming,1808,0,0.0
+829,Germany,rt.applovin.com,Gaming,1808,0,0.0
+830,Germany,neopets.com,Gaming,1808,0,0.0
+831,Germany,surfsharkstatus.com,P2P,1808,0,0.0
+832,Germany,store.steampowered.com,Ecommerce,1808,38,0.021
+833,Germany,kakuyomu.jp,Cartoons & Anime,1808,0,0.0
+834,Germany,market-trk.com,Newly Seen Domains,1808,0,0.0
+835,Germany,www.sexlog.com,Dating & Relationships,1808,6,0.0033
+836,Germany,app.schoology.com,Webmail,1808,1,0.0006
+837,Germany,use.fontawesome.com,Hobbies & Interests,1809,0,0.0
+838,Germany,hoyoverse.com,Hobbies & Interests,1809,1,0.0006
+839,Germany,themeisle.com,Hobbies & Interests,1809,0,0.0
+840,Germany,theme-fusion.com,Hobbies & Interests,1809,0,0.0
+841,Germany,zuimeitianqi.com,Weather,1809,1,0.0006
+842,Germany,rsc.org,Science,1808,2,0.0011
+843,Germany,discovermagazine.com,Science,1808,0,0.0
+844,Germany,newscientist.com,Science,1808,0,0.0
+845,Germany,mathway.com,Science,1808,0,0.0
+846,Germany,play.prodigygame.com,Science,1808,0,0.0
+847,Germany,tripadvisor.fr,Food & Drink,1808,0,0.0
+848,Germany,xfinityhome.com,No Content,1808,0,0.0
+849,Germany,ilfattoquotidiano.it,Video Streaming,1808,0,0.0
+850,Germany,match.adsrvr.org,Advertisements,1808,0,0.0
+851,Germany,tporn.xxx,Pornography,1808,10,0.0055
+852,Germany,manhwatop.com,Cartoons & Anime,1808,6,0.0033
+853,Germany,sinaedge.com,No Content,1808,0,0.0
+854,Germany,www.starfall.com,Safe for Kids,1808,0,0.0
+855,Germany,townnews.com,Business,1808,0,0.0
+856,Germany,moz.works,No Content,1808,0,0.0
+857,Germany,kickstarter.com,Hobbies & Interests,1808,0,0.0
+858,Germany,convertkit.com,Webmail,1808,1,0.0006
+859,Germany,vinted.fr,Auctions & Marketplaces,1808,0,0.0
+860,Germany,amcdn.msftauth.net,No Content,1808,0,0.0
+861,Germany,jcrew.com,Clothing,1807,1,0.0006
+862,Germany,clients.google.com,Search Engines,1806,36,0.0199
+863,Germany,com.com,Search Engines,1806,1,0.0006
+864,Germany,fundingchoicesmessages.google.com,Search Engines,1806,36,0.0199
+865,Germany,www.google.pl,Search Engines,1806,36,0.0199
+866,Germany,google.dz,Search Engines,1806,21,0.0116
+867,Germany,bkn.go.id,"Politics, Advocacy, and Government-Related",1806,0,0.0
+868,Germany,doublelist.com,Dating & Relationships,1805,8,0.0044
+869,Germany,fotostrana.ru,Dating & Relationships,1805,2,0.0011
+870,Germany,adultfriendfinder.com,Dating & Relationships,1805,7,0.0039
+871,Germany,pof.com,Dating & Relationships,1805,0,0.0
+872,Germany,550909.com,Dating & Relationships,1805,1,0.0006
+873,Germany,texas.gov,Government,1805,1,0.0006
+874,Germany,eltiempo.es,Weather,1805,1,0.0006
+875,Germany,ajio.com,Fashion,1805,0,0.0
+876,Germany,whecloud.com,Unreachable,1805,0,0.0
+877,Germany,nalog.ru,Economy & Finance,1805,0,0.0
+878,Germany,work.ua,Job Search & Careers,1805,2,0.0011
+879,Germany,naukri.com,Job Search & Careers,1805,1,0.0006
+880,Germany,uk.indeed.com,Job Search & Careers,1805,0,0.0
+881,Germany,csod.com,Job Search & Careers,1805,0,0.0
+882,Germany,osha.gov,Job Search & Careers,1805,0,0.0
+883,Germany,winzogames.com,Gambling,1805,2,0.0011
+884,Germany,nrdp-ipv6.prod.ftl.netflix.com,Movies,1805,36,0.0199
+885,Germany,uoregon.edu,Educational Institutions,1805,0,0.0
+886,Germany,t0x.net,Login Screens,1805,0,0.0
+887,Germany,starwars.com,Movies,1806,0,0.0
+888,Germany,v.qq.com,Movies,1806,36,0.0199
+889,Germany,hdtoday.tv,Movies,1806,6,0.0033
+890,Germany,jp.spankbang.com,Movies,1806,10,0.0055
+891,Germany,edu.ibomma.link,Movies,1806,3,0.0017
+892,Germany,searchengineland.com,Search Engines,1806,0,0.0
+893,Germany,gq.com,Fashion,1806,0,0.0
+894,Germany,ycombinator.com,Hobbies & Interests,1806,0,0.0
+895,Germany,aafp.org,Health & Fitness,1805,0,0.0
+896,Germany,mail.yahoo.com,Technology,1803,36,0.02
+897,Germany,apis.google.com,Technology,1803,36,0.02
+898,Germany,tenda.com.cn,Technology,1803,0,0.0
+899,Germany,saasprotection.com,Technology,1803,0,0.0
+900,Germany,fp.measure.office.com,Technology,1803,0,0.0
+901,Germany,waplog.com,Dating & Relationships,1803,0,0.0
+902,Germany,tate.org.uk,Arts,1803,0,0.0
+903,Germany,i.ytimg.com,Content Servers,1802,38,0.0211
+904,Germany,google.ca,Search Engines,1798,2,0.0011
+905,Germany,google.us,Search Engines,1798,1,0.0006
+906,Germany,policies.google.com,Search Engines,1798,37,0.0206
+907,Germany,www.carsensor.net,Search Engines,1798,0,0.0
+908,Germany,infocyte.com,Entertainment,1798,0,0.0
+909,Germany,googleblog.com,Personal Blogs,1797,0,0.0
+910,Germany,firstbytedns.net,Newly Seen Domains,1797,3,0.0017
+911,Germany,azurerms.com,Job Search & Careers,1797,0,0.0
+912,Germany,www.boatrace.jp,Sports,1797,6,0.0033
+913,Germany,ucalgary.ca,Educational Institutions,1797,0,0.0
+914,Germany,ulta.com,Ecommerce,1797,0,0.0
+915,Germany,emerald.com,"Politics, Advocacy, and Government-Related",1797,1,0.0006
+916,Germany,chinacloudapi.cn,Content Servers,1797,0,0.0
+917,Germany,sport1.de,Sports,1797,1,0.0006
+918,Germany,jwplatform.com,Business,1797,0,0.0
+919,Germany,fw.adsafeprotected.com,Advertisements,1797,0,0.0
+920,Germany,wanadoo.fr,Parked & For Sale Domains,1798,0,0.0
+921,Germany,google.td,Search Engines,1798,2,0.0011
+922,Germany,herokuspace.com,Login Screens,1798,0,0.0
+923,Germany,gimkit.com,Gaming,1798,0,0.0
+924,Germany,id.blooket.com,Safe for Kids,1798,36,0.02
+925,Germany,twilio.com,Internet Phone & VOIP,1799,2,0.0011
+926,Germany,reclameaqui.com.br,Shopping,1802,0,0.0
+927,Germany,digbearings.com,Newly Seen Domains,1804,0,0.0
+928,Germany,ads.pubmatic.com,Advertisements,1805,4,0.0022
+929,Germany,businessinsider.com,Economy & Finance,1804,8,0.0044
+930,Germany,funpay.com,Economy & Finance,1804,0,0.0
+931,Germany,fisglobal.com,Economy & Finance,1804,0,0.0
+932,Germany,irs.gov,Economy & Finance,1804,0,0.0
+933,Germany,lendgo.com,Economy & Finance,1804,1,0.0006
+934,Germany,weather.gov,Government,1806,0,0.0
+935,Germany,zearn.org,Science,1804,0,0.0
+936,Germany,wipo.int,Hobbies & Interests,1802,0,0.0
+937,Germany,utorrent.com,P2P,1801,0,0.0
+938,Germany,bittorrent.com,P2P,1801,0,0.0
+939,Germany,cyberghostvpn.com,P2P,1801,6,0.0033
+940,Germany,omny.fm,Audio Streaming,1801,8,0.0044
+941,Germany,l-tike.com,Entertainment,1801,0,0.0
+942,Germany,pinterest.de,Photography,1801,36,0.02
+943,Germany,zoomdev.us,Newly Seen Domains,1799,1,0.0006
+944,Germany,ekatox.com,Newly Seen Domains,1799,0,0.0
+945,Germany,xvideos53.com,Newly Seen Domains,1799,6,0.0033
+946,Germany,pangle-b.io,Newly Seen Domains,1799,0,0.0
+947,Germany,vlxx.moe,Newly Seen Domains,1799,7,0.0039
+948,Germany,gao.gov,Government,1799,0,0.0
+949,Germany,mydramalist.com,Television,1799,0,0.0
+950,Germany,porno365.pics,Parked & For Sale Domains,1799,8,0.0044
+951,Germany,amazon-adsystem.com,Advertisements,1799,0,0.0
+952,Germany,www.publi24.ro,Auctions & Marketplaces,1799,0,0.0
+953,Germany,ed.gov,Government,1799,1,0.0006
+954,Germany,suumo.jp,Real Estate,1799,0,0.0
+955,Germany,www.homedepot.com,Home & Garden,1799,0,0.0
+956,Germany,felenasoft.com,Business,1799,0,0.0
+957,Germany,badoocdn.com,Dating & Relationships,1799,0,0.0
+958,Germany,bls.gov,"Politics, Advocacy, and Government-Related",1799,49,0.0272
+959,Germany,y8.com,Gaming,1799,7,0.0039
+960,Germany,telecinco.es,Television,1799,3,0.0017
+961,Germany,www.letras.mus.br,Audio Streaming,1799,5,0.0028
+962,Germany,bitly.com,Redirect,1799,3,0.0017
+963,Germany,sports.yahoo.co.jp,Sports,1799,0,0.0
+964,Germany,tvsquared.com,Television,1799,3,0.0017
+965,Germany,basspro.com,Sports,1799,0,0.0
+966,Germany,owasp.org,Education,1799,1,0.0006
+967,Germany,asm.org,Clothing,1799,2,0.0011
+968,Germany,animesuge.to,Questionable Activities,1798,4,0.0022
+969,Germany,unsplash.com,"News, Portal & Search",1798,1,0.0006
+970,Germany,blogspot.fr,Unreachable,1798,8,0.0044
+971,Germany,mercadolibre.com.co,Auctions & Marketplaces,1798,2,0.0011
+972,Germany,tjk.org,Gambling,1798,6,0.0033
+973,Germany,mixpanel.com,Business,1798,1,0.0006
+974,Germany,njuskalo.hr,Auctions & Marketplaces,1800,1,0.0006
+975,Germany,www.list.am,Auctions & Marketplaces,1800,1,0.0006
+976,Germany,www.marktplaats.nl,Auctions & Marketplaces,1800,0,0.0
+977,Germany,articulo.mercadolibre.com.mx,Auctions & Marketplaces,1800,0,0.0
+978,Germany,www.mercadolibre.com.ar,Auctions & Marketplaces,1800,0,0.0
+979,Germany,trip.com,Shopping,1799,0,0.0
+980,Germany,otzovik.com,Shopping,1799,0,0.0
+981,Germany,vxxx.com,Shopping,1799,8,0.0044
+982,Germany,priceline.com,Shopping,1799,0,0.0
+983,Germany,www.pch.com,Shopping,1799,1,0.0006
+984,Germany,archiveofourown.org,Adult Themes,1799,10,0.0056
+985,Germany,thescore.com,Sports,1799,0,0.0
+986,Germany,kaiserpermanente.org,Health & Fitness,1799,1,0.0006
+987,Germany,wordwall.net,Hobbies & Interests,1799,1,0.0006
+988,Germany,twitpic.com,Photography,1794,1,0.0006
+989,Germany,magicbricks.com,Real Estate,1794,0,0.0
+990,Germany,krisha.kz,Real Estate,1794,0,0.0
+991,Germany,homes.co.jp,Real Estate,1794,0,0.0
+992,Germany,www.realtor.com,Real Estate,1794,0,0.0
+993,Germany,zoopla.co.uk,Real Estate,1794,1,0.0006
+994,Germany,www.idealista.it,Real Estate,1799,0,0.0
+995,Germany,apartments.com,Real Estate,1799,0,0.0
+996,Germany,seloger.com,Real Estate,1799,0,0.0
+997,Germany,idealista.it,Real Estate,1799,0,0.0
+998,Germany,www.zillow.com,Real Estate,1799,21,0.0117
+999,Germany,mask-h2.icloud.com,File Sharing,1799,42,0.0233
+1000,Germany,ui-dns.com,Newly Seen Domains,1799,0,0.0
+1001,Germany,mangalib.me,Cartoons & Anime,1799,1,0.0006
+1002,Germany,kit.fontawesome.com,Hobbies & Interests,1798,0,0.0
+1003,Germany,fws.gov,Government,1794,0,0.0
+1004,Germany,kremlin.ru,Government,1794,0,0.0
+1005,Germany,govdelivery.com,Government,1794,0,0.0
+1006,Germany,up.gov.in,Government,1794,0,0.0
+1007,Germany,census.gov,Government,1794,0,0.0
+1008,Germany,www2.hm.com,Fashion,1794,0,0.0
+1009,Germany,rand.org,Home & Garden,1794,3,0.0017
+1010,Germany,zalando.fr,Clothing,1794,0,0.0
+1011,Germany,sbs.com.au,Television,1794,0,0.0
+1012,Germany,zlib.net,Personal Blogs,1794,0,0.0
+1013,Germany,va.gov,Government,1794,0,0.0
+1014,Germany,freepik.com,"News, Portal & Search",1794,0,0.0
+1015,Germany,cancer.gov,"Politics, Advocacy, and Government-Related",1794,0,0.0
+1016,Germany,vwgroup.com,Vehicles,1794,0,0.0
+1017,Germany,jamanetwork.com,Health & Fitness,1794,0,0.0
+1018,Germany,ssl.com,Information Security,1794,1,0.0006
+1019,Germany,merlincdn.net,Unreachable,1794,1,0.0006
+1020,Germany,sharechat.com,Chat,1794,0,0.0
+1021,Germany,familysearch.org,Search Engines,1794,1,0.0006
+1022,Germany,stock.adobe.com,"News, Portal & Search",1794,0,0.0
+1023,Germany,1377x.to,Questionable Activities,1794,0,0.0
+1024,Germany,sfu.ca,Educational Institutions,1794,0,0.0
+1025,Germany,www.disneyplus.com,Movies,1794,36,0.0201
+1026,Germany,lausd.net,Education,1794,1,0.0006
+1027,Germany,baseball-reference.com,Sports,1794,0,0.0
+1028,Germany,tesla.com,Vehicles,1794,0,0.0
+1029,Germany,blogspot.in,Unreachable,1794,0,0.0
+1030,Germany,rfi.fr,Audio Streaming,1794,9,0.005
+1031,Germany,avsee.in,Questionable Activities,1794,4,0.0022
+1032,Germany,sascdn.com,Parked & For Sale Domains,1794,0,0.0
+1033,Germany,us-api.asm.skype.com,Instant Messengers,1794,4,0.0022
+1034,Germany,op.gg,Hobbies & Interests,1794,1,0.0006
+1035,Germany,match.com,Dating & Relationships,1794,0,0.0
+1036,Germany,www.ptt.cc,Forums,1794,8,0.0045
+1037,Germany,poetryfoundation.org,Education,1794,1,0.0006
+1038,Germany,metrics.icloud.com,File Sharing,1794,37,0.0206
+1039,Germany,hostingradio.ru,Music,1794,0,0.0
+1040,Germany,avito.st,Redirect,1794,0,0.0
+1041,Germany,refinery29.com,Magazines,1794,1,0.0006
+1042,Germany,politico.eu,Login Screens,1794,9,0.005
+1043,Germany,1337x.to,File Sharing,1797,2,0.0011
+1044,Germany,vecteezy.com,File Sharing,1797,1,0.0006
+1045,Germany,sharefile.com,File Sharing,1797,8,0.0045
+1046,Germany,www.dropbox.com,File Sharing,1797,70,0.039
+1047,Germany,cloudinary.com,File Sharing,1797,1,0.0006
+1048,Germany,googleusercontent.com,Content Servers,1799,0,0.0
+1049,Germany,eu.com,Parked & For Sale Domains,1799,2,0.0011
+1050,Germany,justdial.com,Search Engines,1799,21,0.0117
+1051,Germany,hto.to,Cartoons & Anime,1799,6,0.0033
+1052,Germany,aemet.es,Weather,1796,1,0.0006
+1053,Germany,theweathernetwork.com,Weather,1796,0,0.0
+1054,Germany,meteofrance.com,Weather,1796,0,0.0
+1055,Germany,meteoblue.com,Weather,1796,0,0.0
+1056,Germany,accuweather.com,Weather,1796,1,0.0006
+1057,Germany,indiamart.com,Auctions & Marketplaces,1794,1,0.0006
+1058,Germany,olx.co.id,Auctions & Marketplaces,1794,0,0.0
+1059,Germany,ebay.com,Auctions & Marketplaces,1794,0,0.0
+1060,Germany,m.olx.pl,Auctions & Marketplaces,1794,0,0.0
+1061,Germany,vivawebhost.com,Parked & For Sale Domains,1794,1,0.0006
+1062,Germany,shopee.io,Unreachable,1794,0,0.0
+1063,Germany,hudl.com,Sports,1794,0,0.0
+1064,Germany,pbase.com,Photography,1794,2,0.0011
+1065,Germany,consultant.ru,"Politics, Advocacy, and Government-Related",1794,0,0.0
+1066,Germany,500px.com,Photography,1794,8,0.0045
+1067,Germany,phys.org,Magazines,1794,0,0.0
+1068,Germany,nbcsports.com,Sports,1794,0,0.0
+1069,Germany,torn.com,Hobbies & Interests,1794,0,0.0
+1070,Germany,chartbeat.com,Business,1794,0,0.0
+1071,Germany,omappapi.com,Login Screens,1794,0,0.0
+1072,Germany,history.com,Television,1794,0,0.0
+1073,Germany,deezer.com,Audio Streaming,1794,0,0.0
+1074,Germany,sprig.com,No Content,1794,1,0.0006
+1075,Germany,phpbb.com,Forums,1794,0,0.0
+1076,Germany,netflix.net,Movies,1794,35,0.0195
+1077,Germany,bumble.com,Dating & Relationships,1794,0,0.0
+1078,Germany,calzedonia.com,Clothing,1794,0,0.0
+1079,Germany,www.xbox.com,Gaming,1794,0,0.0
+1080,Germany,dto.to,Cartoons & Anime,1794,6,0.0033
+1081,Germany,www.hotstar.com,Movies,1794,0,0.0
+1082,Germany,gdms.cloud,Parked & For Sale Domains,1794,1,0.0006
+1083,Germany,www.bathandbodyworks.com,Fashion,1794,0,0.0
+1084,Germany,willhaben.at,Auctions & Marketplaces,1794,0,0.0
+1085,Germany,just-eat.com,Food & Drink,1794,0,0.0
+1086,Germany,faa.gov,Government,1794,1,0.0006
+1087,Germany,giga.de,Magazines,1794,21,0.0117
+1088,Germany,discord.gg,Internet Phone & VOIP,1794,31,0.0173
+1089,Germany,chess.com,Gaming,1794,0,0.0
+1090,Germany,mcm.ru,Internet Phone & VOIP,1794,0,0.0
+1091,Germany,seriouseats.com,Food & Drink,1794,0,0.0
+1092,Germany,amazon.de,Ecommerce,1794,1,0.0006
+1093,Germany,idealo.de,Shopping,1794,0,0.0
+1094,Germany,kahoot.com,Education,1794,0,0.0
+1095,Germany,eatingwell.com,Food & Drink,1794,1,0.0006
+1096,Germany,skysports.com,Video Streaming,1794,1,0.0006
+1097,Germany,merit.net,Educational Institutions,1794,2,0.0011
+1098,Germany,hicloud.com,File Sharing,1794,0,0.0
+1099,Germany,akahost.net,Content Servers,1794,2,0.0011
+1100,Germany,directcrm.ru,No Content,1794,3,0.0017
+1101,Germany,directv.com,Television,1794,0,0.0
+1102,Germany,heytapmobi.com,Technology,1794,0,0.0
+1103,Germany,euro.com.pl,Home & Garden,1794,0,0.0
+1104,Germany,edmunds.com,Vehicles,1794,0,0.0
+1105,Germany,at.ua,Unreachable,1794,2,0.0011
+1106,Germany,housing.com,Real Estate,1794,0,0.0
+1107,Germany,crowdstrike.com,Information Security,1794,0,0.0
+1108,Germany,themeansar.com,Personal Blogs,1794,0,0.0
+1109,Germany,360yield.com,Login Screens,1794,0,0.0
+1110,Germany,xgroovy.com,Pornography,1794,8,0.0045
+1111,Germany,nab.com.au,Economy & Finance,1794,0,0.0
+1112,Germany,caliente.mx,Gambling,1794,6,0.0033
+1113,Germany,www.maxpreps.com,Sports,1794,0,0.0
+1114,Germany,cbre.com,Real Estate,1794,0,0.0
+1115,Germany,eu-west-1.amazonaws.com,Technology,1794,0,0.0
+1116,Germany,genius.com,Music,1794,6,0.0033
+1117,Germany,ravelry.com,Forums,1794,1,0.0006
+1118,Germany,sensor.cloud.tenable.com,Information Security,1794,32,0.0178
+1119,Germany,wannonce.com,Auctions & Marketplaces,1794,0,0.0
+1120,Germany,yemnnow.com,Newly Seen Domains,1794,0,0.0
+1121,Germany,heart.org,"Politics, Advocacy, and Government-Related",1794,0,0.0
+1122,Germany,idealista.com,Real Estate,1794,1,0.0006
+1123,Germany,usc-collabrtc.officeapps.live.com,Webmail,1794,0,0.0
+1124,Germany,grabtaxi.com,Travel,1794,0,0.0
+1125,Germany,tumblr.com,Social Networks,1794,7,0.0039
+1126,Germany,mos.ru,"Politics, Advocacy, and Government-Related",1794,1,0.0006
+1127,Germany,goojara.to,Questionable Activities,1794,3,0.0017
+1128,Germany,appnexusgslb.net,Content Servers,1794,0,0.0
+1129,Germany,pch.com,Shopping,1794,0,0.0
+1130,Germany,therapservices.net,Health & Fitness,1794,2,0.0011
+1131,Germany,ssp.yahoo.com,News & Media,1794,1,0.0006
+1132,Germany,serebii.net,Video Streaming,1794,0,0.0
+1133,Germany,jomodns.com,No Content,1794,0,0.0
+1134,Germany,bbcgoodfood.com,Food & Drink,1794,2,0.0011
+1135,Germany,1cbit.ru,Business,1794,0,0.0
+1136,Germany,roche.com,Health & Fitness,1794,0,0.0
+1137,Germany,myaccount.google.com,Information Security,1794,37,0.0206
+1138,Germany,www.jra.go.jp,Gambling,1794,7,0.0039
+1139,Germany,typekit.com,Hobbies & Interests,1794,0,0.0
+1140,Germany,bell.ca,Information Technology,1794,0,0.0
+1141,Germany,houzz.com,Home & Garden,1794,0,0.0
+1142,Germany,s.dto.jp,Adult Themes,1794,6,0.0033
+1143,Germany,rtb.openx.net,Advertisements,1794,0,0.0
+1144,Germany,podbean.com,Audio Streaming,1794,6,0.0033
+1145,Germany,multporn.net,Pornography,1794,9,0.005
+1146,Germany,giallozafferano.it,Food & Drink,1794,0,0.0
+1147,Germany,www.sciencedirect.com,Science,1794,0,0.0
+1148,Germany,service.minerva.devices.a2z.com,Content Servers,1794,1,0.0006
+1149,Germany,kleinanzeigen.de,Auctions & Marketplaces,1794,0,0.0
+1150,Germany,abcya.com,Safe for Kids,1794,0,0.0
+1151,Germany,su.itunes.apple.com,Music,1794,36,0.0201
+1152,Germany,harry.lu,File Sharing,1794,1,0.0006
+1153,Germany,kbb.com,Vehicles,1794,0,0.0
+1154,Germany,garmin.com,Fashion,1794,0,0.0
+1155,Germany,www.whatsapp.com,Internet Phone & VOIP,1794,44,0.0245
+1156,Germany,indeed.com,Job Search & Careers,1794,0,0.0
+1157,Germany,asm.skype.com,Instant Messengers,1794,0,0.0
+1158,Germany,meesho.com,Fashion,1794,1,0.0006
+1159,Germany,blogspot.com.es,Unreachable,1794,0,0.0
+1160,Germany,af.mil,Government,1794,0,0.0
+1161,Germany,eventbrite.com,Entertainment,1794,1,0.0006
+1162,Germany,amazon.jobs,Job Search & Careers,1794,0,0.0
+1163,Germany,mail.aol.com,Webmail,1794,3,0.0017
+1164,Germany,spotim.market,Instant Messengers,1794,0,0.0
+1165,Germany,freelancer.com,Job Search & Careers,1794,0,0.0
+1166,Germany,1tv.ru,Television,1794,0,0.0
+1167,Germany,jhu.edu,Educational Institutions,1794,1,0.0006
+1168,Germany,globalsign.com,Information Security,1794,1,0.0006
+1169,Germany,activision.com,Gaming,1794,0,0.0
+1170,Germany,ca.indeed.com,Job Search & Careers,1794,0,0.0
+1171,Germany,www.mobile.de,Vehicles,1794,0,0.0
+1172,Germany,athome.co.jp,Real Estate,1794,0,0.0
+1173,Germany,toomics.com,Comic Books,1794,7,0.0039
+1174,Germany,puma.com,Fashion,1794,0,0.0
+1175,Germany,www.programme-tv.net,Television,1794,1,0.0006
+1176,Germany,gotinder.com,Dating & Relationships,1794,0,0.0
+1177,Germany,video.qq.com,Video Streaming,1793,37,0.0206
+1178,Germany,bigolive.tv,Video Streaming,1793,0,0.0
+1179,Germany,thanhnien.vn,Video Streaming,1793,0,0.0
+1180,Germany,nginx.org,Entertainment,1794,0,0.0
+1181,Germany,www.aznude.com,Entertainment,1794,8,0.0045
+1182,Germany,starhit.ru,Entertainment,1794,0,0.0
+1183,Germany,vulture.com,Entertainment,1794,1,0.0006
+1184,Germany,the-sun.com,Entertainment,1794,0,0.0
+1185,Germany,tractorsupply.com,Ecommerce,1794,0,0.0
+1186,Germany,jp.pornhub.com,Pornography,1794,12,0.0067
+1187,Germany,maurices.com,Ecommerce,1794,1,0.0006
+1188,Germany,hot-sex-tube.com,Pornography,1794,8,0.0045
+1189,Germany,marvel.com,Cartoons & Anime,1793,0,0.0
+1190,Germany,myanimelist.net,Cartoons & Anime,1793,1,0.0006
+1191,Germany,crunchyroll.com,Cartoons & Anime,1793,0,0.0
+1192,Germany,cmoa.jp,Cartoons & Anime,1793,0,0.0
+1193,Germany,www.dlsite.com,Cartoons & Anime,1793,6,0.0033
+1194,Germany,dealer.spotify.com,Audio Streaming,1793,1,0.0006
+1195,Germany,custhelp.com,Login Screens,1793,0,0.0
+1196,Germany,pandora.net,Fashion,1793,0,0.0
+1197,Germany,bricklink.com,Safe for Kids,1793,0,0.0
+1198,Germany,alz.org,Health & Fitness,1793,0,0.0
+1199,Germany,nexus.officeapps.live.com,Webmail,1793,0,0.0
+1200,Germany,pccomponentes.com,Ecommerce,1793,2,0.0011
+1201,Germany,subway.com,File Sharing,1793,0,0.0
+1202,Germany,tedata.net,Personal Blogs,1793,1,0.0006
+1203,Germany,nola.com,News & Media,1793,0,0.0
+1204,Germany,msi.com,Technology,1793,0,0.0
+1205,Germany,fragrantica.com,Fashion,1793,1,0.0006
+1206,Germany,allstate.com,Economy & Finance,1793,0,0.0
+1207,Germany,bngf.ru,Technology,1793,0,0.0
+1208,Germany,www.xvideos4.com,Pornography,1793,7,0.0039
+1209,Germany,dewafilm.xyz,Pornography,1793,3,0.0017
+1210,Germany,lichess.org,Gaming,1793,1,0.0006
+1211,Germany,boticario.com.br,Fashion,1793,0,0.0
+1212,Germany,gateway.instagram.com,Photography,1793,45,0.0251
+1213,Germany,fedoraproject.org,Technology,1793,0,0.0
+1214,Germany,easyanticheat.net,Gaming,1793,1,0.0006
+1215,Germany,in.gov,Government,1793,1,0.0006
+1216,Germany,www.zearn.org,Science,1793,0,0.0
+1217,Germany,www.topmanhua.com,Personal Blogs,1793,5,0.0028
+1218,Germany,stackoverflow.com,Forums,1793,37,0.0206
+1219,Germany,cafe24.com,Unreachable,1793,1,0.0006
+1220,Germany,wa.gov,Travel,1793,0,0.0
+1221,Germany,dowjones.io,Content Servers,1793,0,0.0
+1222,Germany,nationalgeographic.com,Science,1793,1,0.0006
+1223,Germany,irecommend.ru,Shopping,1793,1,0.0006
+1224,Germany,hubspotemail.net,Information Security,1793,0,0.0
+1225,Germany,www.dell.com,Ecommerce,1793,0,0.0
+1226,Germany,beboo.ru,Dating & Relationships,1793,0,0.0
+1227,Germany,readthedocs.io,Education,1793,1,0.0006
+1228,Germany,ebay.co.uk,Auctions & Marketplaces,1793,1,0.0006
+1229,Germany,superhosting.bg,Information Technology,1793,0,0.0
+1230,Germany,polka.typekit.com,Hobbies & Interests,1793,1,0.0006
+1231,Germany,beget.com,File Sharing,1793,0,0.0
+1232,Germany,soundcloud.com,Audio Streaming,1793,45,0.0251
+1233,Germany,google.kz,Search Engines,1793,0,0.0
+1234,Germany,www.betika.com,Sports,1793,6,0.0033
+1235,Germany,m.tabor.ru,Dating & Relationships,1793,1,0.0006
+1236,Germany,boozt.com,Clothing,1793,0,0.0
+1237,Germany,pnas.org,Science,1793,2,0.0011
+1238,Germany,blogspot.com,Personal Blogs,1793,42,0.0234
+1239,Germany,libsyn.com,Audio Streaming,1793,0,0.0
+1240,Germany,lenovo.com.cn,Ecommerce,1793,0,0.0
+1241,Germany,meetme.com,Dating & Relationships,1793,7,0.0039
+1242,Germany,who.int,Health & Fitness,1793,1,0.0006
+1243,Germany,pull-flv-f77-tt03.tiktokcdn.com,Social Networks,1793,37,0.0206
+1244,Germany,oktacdn.com,Login Screens,1793,1,0.0006
+1245,Germany,metacritic.com,Entertainment,1794,0,0.0
+1246,Germany,miniclippt.com,File Sharing,1794,0,0.0
+1247,Germany,threatlocker.com,Information Security,1794,0,0.0
+1248,Germany,autotrader.com,Vehicles,1794,0,0.0
+1249,Germany,sandiegouniontribune.com,Audio Streaming,1794,9,0.005
+1250,Germany,sciencealert.com,Science,1794,0,0.0
+1251,Germany,amazonvideo.com,Movies,1794,1,0.0006
+1252,Germany,eventim.de,Entertainment,1794,1,0.0006
+1253,Germany,www.leboncoin.fr,Auctions & Marketplaces,1794,0,0.0
+1254,Germany,noam.cc.skype.com,Internet Phone & VOIP,1793,1,0.0006
+1255,Germany,vonage.com,Internet Phone & VOIP,1793,1,0.0006
+1256,Germany,faq.whatsapp.com,Internet Phone & VOIP,1793,42,0.0234
+1257,Germany,cc.skype.com,Internet Phone & VOIP,1793,0,0.0
+1258,Germany,eonline.com,Television,1793,0,0.0
+1259,Germany,int.ibomma.link,Questionable Activities,1793,1,0.0006
+1260,Germany,noodlemagazine.com,Search Engines,1793,6,0.0033
+1261,Germany,zhihu.com,Forums,1792,0,0.0
+1262,Germany,thingiverse.com,Forums,1792,1,0.0006
+1263,Germany,rateyourmusic.com,Forums,1792,1,0.0006
+1264,Germany,gutefrage.net,Forums,1792,0,0.0
+1265,Germany,habr.com,Forums,1792,1,0.0006
+1266,Germany,tinder.com,Dating & Relationships,1792,0,0.0
+1267,Germany,www.annunci69.it,Pornography,1792,6,0.0033
+1268,Germany,keydisk.ru,Unreachable,1792,0,0.0
+1269,Germany,freshchat.com,Chat,1792,1,0.0006
+1270,Germany,theweek.com,Magazines,1790,6,0.0034
+1271,Germany,wired.co.uk,Magazines,1790,0,0.0
+1272,Germany,inc.com,Magazines,1790,0,0.0
+1273,Germany,howtogeek.com,Magazines,1790,0,0.0
+1274,Germany,jut.su,Cartoons & Anime,1790,3,0.0017
+1275,Germany,symphony.com,Internet Phone & VOIP,1790,0,0.0
+1276,Germany,tesco.com,Ecommerce,1790,0,0.0
+1277,Germany,tabelog.com,Shopping,1790,0,0.0
+1278,Germany,skyscrapercity.com,Forums,1790,1,0.0006
+1279,Germany,cityheaven.net,Adult Themes,1790,6,0.0034
+1280,Germany,lilithgame.com,Gaming,1790,0,0.0
+1281,Germany,cdbaby.com,Music,1790,0,0.0
+1282,Germany,m.hqporner.com,Pornography,1790,8,0.0045
+1283,Germany,www.lg.com,Home & Garden,1790,2,0.0011
+1284,Germany,gaana.com,Audio Streaming,1790,0,0.0
+1285,Germany,gap.com,Clothing,1790,2,0.0011
+1286,Germany,maricopa.gov,Government,1790,0,0.0
+1287,Germany,gamewith.jp,Gaming,1790,1,0.0006
+1288,Germany,dns-diy.net,Login Screens,1791,0,0.0
+1289,Germany,sc-gw.com,Content Servers,1791,1,0.0006
+1290,Germany,jiathis.com,File Sharing,1791,0,0.0
+1291,Germany,iso.org,"Politics, Advocacy, and Government-Related",1791,0,0.0
+1292,Germany,gotowebinar.com,Technology,1791,0,0.0
+1293,Germany,upwitheaway.info,Parked & For Sale Domains,1791,4,0.0022
+1294,Germany,nfl.com,Sports,1791,0,0.0
+1295,Germany,tenable.com,Information Security,1791,31,0.0173
+1296,Germany,fatalmodel.com,Adult Themes,1791,7,0.0039
+1297,Germany,teleprogramma.pro,Magazines,1792,0,0.0
+1298,Germany,complex.com,Magazines,1792,1,0.0006
+1299,Germany,pcgamer.com,Magazines,1792,0,0.0
+1300,Germany,journaldesfemmes.fr,Magazines,1792,0,0.0
+1301,Germany,flic.kr,Photography,1792,1,0.0006
+1302,Germany,lin.ee,Internet Phone & VOIP,1792,0,0.0
+1303,Germany,plarium.com,Gaming,1792,0,0.0
+1304,Germany,register.com,Webmail,1792,1,0.0006
+1305,Germany,messenger.com,Instant Messengers,1792,39,0.0218
+1306,Germany,carsales.com.au,Vehicles,1790,1,0.0006
+1307,Germany,rst.ua,Vehicles,1790,3,0.0017
+1308,Germany,hyundai.com,Vehicles,1790,0,0.0
+1309,Germany,www.bikewale.com,Vehicles,1790,0,0.0
+1310,Germany,livedns.co.uk,Parked & For Sale Domains,1790,0,0.0
+1311,Germany,aax.amazon-adsystem.com,Advertisements,1790,1,0.0006
+1312,Germany,brainlyads.com,No Content,1790,0,0.0
+1313,Germany,gov.ibomma.link,Questionable Activities,1790,0,0.0
+1314,Germany,tabor.ru,Dating & Relationships,1790,0,0.0
+1315,Germany,eukdns.com,No Content,1790,1,0.0006
+1316,Germany,autoscout24.de,Vehicles,1790,0,0.0
+1317,Germany,sat.gob.mx,"Politics, Advocacy, and Government-Related",1790,1,0.0006
+1318,Germany,isappcloud.com,Education,1790,0,0.0
+1319,Germany,dazn.com,Sports,1790,1,0.0006
+1320,Germany,glamour.com,Magazines,1790,0,0.0
+1321,Germany,prod.netflix.com,Television,1790,38,0.0212
+1322,Germany,ny.gov,Government,1790,0,0.0
+1323,Germany,4shared.com,File Sharing,1790,6,0.0034
+1324,Germany,girlschannel.net,Forums,1790,0,0.0
+1325,Germany,connect.facebook.net,Social Networks,1790,36,0.0201
+1326,Germany,auto.drom.ru,Vehicles,1790,0,0.0
+1327,Germany,4channel.org,Forums,1790,2,0.0011
+1328,Germany,tripadvisor.it,Food & Drink,1790,1,0.0006
+1329,Germany,samsungiotcloud.com,File Sharing,1790,0,0.0
+1330,Germany,imgsmail.ru,Webmail,1790,0,0.0
+1331,Germany,nestle.com,Food & Drink,1790,0,0.0
+1332,Germany,www.geny.com,Gambling,1790,5,0.0028
+1333,Germany,cardmarket.com,Auctions & Marketplaces,1790,0,0.0
+1334,Germany,onetag-sys.com,Advertisements,1790,0,0.0
+1335,Germany,www.mangago.me,Comic Books,1790,7,0.0039
+1336,Germany,pragmaticplaylive.net,No Content,1790,7,0.0039
+1337,Germany,comodoca.com,Information Security,1790,1,0.0006
+1338,Germany,manyvids.com,Pornography,1790,6,0.0034
+1339,Germany,deliverimp.com,Advertisements,1790,1,0.0006
+1340,Germany,wallpapers.com,File Sharing,1790,1,0.0006
+1341,Germany,badoo.com,Dating & Relationships,1790,1,0.0006
+1342,Germany,foodnetwork.com,Food & Drink,1790,1,0.0006
+1343,Germany,image6.pubmatic.com,Technology,1790,1,0.0006
+1344,Germany,m.autoplius.lt,Vehicles,1790,0,0.0
+1345,Germany,lastline.com,Information Security,1790,0,0.0
+1346,Germany,www.goojara.to,Questionable Activities,1790,5,0.0028
+1347,Germany,underarmour.com,Clothing,1790,0,0.0
+1348,Germany,smartadserver.com,Advertisements,1790,0,0.0
+1349,Germany,gocomics.com,Comic Books,1790,0,0.0
+1350,Germany,pull-w5-gcp01.tiktokcdn.com,Social Networks,1790,36,0.0201
+1351,Germany,pull-flv-l77-gcp01.eu.tiktokcdn.com,Social Networks,1790,36,0.0201
+1352,Germany,nextdoor.com,Social Networks,1790,0,0.0
+1353,Germany,pull-q5-sg01.fcdn.eu.tiktokcdn.com,Social Networks,1790,36,0.0201
+1354,Germany,betproexch.com,Login Screens,1792,0,0.0
+1355,Germany,www.betproexch.com,Login Screens,1792,0,0.0
+1356,Germany,kidsa-z.com,Login Screens,1792,1,0.0006
+1357,Germany,aig.com,Login Screens,1792,0,0.0
+1358,Germany,passport.yandex.ru,Login Screens,1792,0,0.0
+1359,Germany,go.com,Safe for Kids,1793,0,0.0
+1360,Germany,trafficjunky.com,Advertisements,1793,1,0.0006
+1361,Germany,articulo.mercadolibre.com.ar,Auctions & Marketplaces,1793,6,0.0033
+1362,Germany,analytics.tiktok.com,Social Networks,1793,42,0.0234
+1363,Germany,uu.nl,Educational Institutions,1791,2,0.0011
+1364,Germany,unibo.it,Educational Institutions,1791,0,0.0
+1365,Germany,colostate.edu,Educational Institutions,1791,0,0.0
+1366,Germany,runnet.ru,Educational Institutions,1791,1,0.0006
+1367,Germany,iastate.edu,Educational Institutions,1791,1,0.0006
+1368,Germany,wikispaces.com,Education,1791,0,0.0
+1369,Germany,servicewebly.com,Pornography,1791,0,0.0
+1370,Germany,dior.com,Clothing,1790,5,0.0028
+1371,Germany,nike.com,Clothing,1790,14,0.0078
+1372,Germany,truefitcorp.com,Clothing,1790,6,0.0034
+1373,Germany,carters.com,Clothing,1790,6,0.0034
+1374,Germany,destacamos.com,Adult Themes,1790,13,0.0073
+1375,Germany,gamebanana.com,Gaming,1790,6,0.0034
+1376,Germany,elcomercio.pe,News & Media,1790,10,0.0056
+1377,Germany,game8.co,Gaming,1790,8,0.0045
+1378,Germany,citigroup.com,Economy & Finance,1789,9,0.005
+1379,Germany,domclick.ru,Economy & Finance,1789,10,0.0056
+1380,Germany,gamerant.com,Hobbies & Interests,1789,10,0.0056
+1381,Germany,unibet.com,Gambling,1789,9,0.005
+1382,Germany,wunderground.com,Weather,1789,0,0.0
+1383,Germany,bigbadtoystore.com,Safe for Kids,1789,1,0.0006
+1384,Germany,efscloud.net,File Sharing,1789,0,0.0
+1385,Germany,books.google.com,Search Engines,1789,37,0.0207
+1386,Germany,zaloapp.com,Instant Messengers,1789,0,0.0
+1387,Germany,www.goodreads.com,Education,1789,8,0.0045
+1388,Germany,uw.edu,Educational Institutions,1789,3,0.0017
+1389,Germany,escortbabylon.net,Adult Themes,1789,6,0.0034
+1390,Germany,pull-f5-vr-sg01.tiktokcdn.com,Social Networks,1789,35,0.0196
+1391,Germany,mangadex.org,Comic Books,1789,8,0.0045
+1392,Germany,pull-cmaf-f16-va01.tiktokcdn.com,Social Networks,1789,36,0.0201
+1393,Germany,ajax.systems,Information Security,1789,1,0.0006
+1394,Germany,alfabank.ru,Economy & Finance,1789,0,0.0
+1395,Germany,boatrace.jp,Gambling,1789,9,0.005
+1396,Germany,kff.org,Health & Fitness,1789,0,0.0
+1397,Germany,fubo.tv,Television,1789,3,0.0017
+1398,Germany,nordwindairlines.ru,Travel,1789,0,0.0
+1399,Germany,idealista.pt,Real Estate,1789,0,0.0
+1400,Germany,navy.mil,Job Search & Careers,1789,0,0.0
+1401,Germany,huya.com,Gaming,1789,0,0.0
+1402,Germany,cricketworldcup.com,Sports,1789,0,0.0
+1403,Germany,klaviyo.com,Technology,1789,0,0.0
+1404,Germany,desync.com,Questionable Activities,1789,1,0.0006
+1405,Germany,chat.zalo.me,Instant Messengers,1789,36,0.0201
+1406,Germany,telegram.me,Instant Messengers,1789,39,0.0218
+1407,Germany,oecd-ilibrary.org,Education,1789,0,0.0
+1408,Germany,home.blog,Personal Blogs,1790,1,0.0006
+1409,Germany,pull-f5-va01.tiktokcdn.com,Social Networks,1790,37,0.0207
+1410,Germany,felissimo.co.jp,Shopping,1790,0,0.0
+1411,Germany,minecraft.net,Hobbies & Interests,1790,1,0.0006
+1412,Germany,cl3.apple.com,Information Technology,1790,1,0.0006
+1413,Germany,revenuecat.com,Business,1790,2,0.0011
+1414,Germany,dogdrip.net,Forums,1790,0,0.0
+1415,Germany,privacyshield.gov,Government,1790,0,0.0
+1416,Germany,pbskids.org,Safe for Kids,1790,0,0.0
+1417,Germany,boardgamegeek.com,Hobbies & Interests,1790,4,0.0022
+1418,Germany,photos.google.com,Photography,1790,36,0.0201
+1419,Germany,theiconic.com.au,Clothing,1790,2,0.0011
+1420,Germany,www.futbin.com,Gaming,1790,0,0.0
+1421,Germany,www.cardmarket.com,Hobbies & Interests,1790,0,0.0
+1422,Germany,fr.m.wikipedia.org,Education,1791,8,0.0045
+1423,Germany,www.zalando.de,Comic Books,1791,2,0.0011
+1424,Germany,dt.adsafeprotected.com,Advertisements,1791,1,0.0006
+1425,Germany,ringcentral.com,Internet Phone & VOIP,1791,0,0.0
+1426,Germany,asos.com,Clothing,1791,0,0.0
+1427,Germany,cloudflareresolve.com,Internet Phone & VOIP,1791,0,0.0
+1428,Germany,capital.fr,Economy & Finance,1791,1,0.0006
+1429,Germany,umbrella.com,Business,1791,0,0.0
+1430,Germany,dnspod.com,Forums,1791,0,0.0
+1431,Germany,enlightenment.org,Technology,1791,2,0.0011
+1432,Germany,pinterest.jp,Social Networks,1791,42,0.0235
+1433,Germany,justwatch.com,Video Streaming,1791,0,0.0
+1434,Germany,serverdata.net,Login Screens,1791,1,0.0006
+1435,Germany,www.idealista.com,Real Estate,1791,3,0.0017
+1436,Germany,f.c2r.ts.cdn.office.net,Content Servers,1791,0,0.0
+1437,Germany,merriam-webster.com,Education,1791,0,0.0
+1438,Germany,secure.netflix.com,Television,1791,36,0.0201
+1439,Germany,ocws.officeapps.live.com,Webmail,1791,0,0.0
+1440,Germany,geico.com,Vehicles,1791,0,0.0
+1441,Germany,spot.im,Instant Messengers,1791,0,0.0
+1442,Germany,trusteer.com,Information Security,1791,1,0.0006
+1443,Germany,bom.gov.au,Weather,1791,0,0.0
+1444,Germany,ecnavi.jp,Shopping,1791,0,0.0
+1445,Germany,sleepfoundation.org,Health & Fitness,1791,0,0.0
+1446,Germany,vip-svr.com,Newly Seen Domains,1791,5,0.0028
+1447,Germany,gumtree.com,Auctions & Marketplaces,1791,0,0.0
+1448,Germany,trbcdn.net,Content Servers,1791,0,0.0
+1449,Germany,femmeactuelle.fr,Magazines,1791,1,0.0006
+1450,Germany,lolesports.com,Hobbies & Interests,1791,1,0.0006
+1451,Germany,openweathermap.org,Weather,1791,0,0.0
+1452,Germany,independent.co.uk,News & Media,1791,7,0.0039
+1453,Germany,nu.nl,News & Media,1791,1,0.0006
+1454,Germany,today.com,News & Media,1791,0,0.0
+1455,Germany,vaticannews.va,News & Media,1791,1,0.0006
+1456,Germany,birminghammail.co.uk,News & Media,1791,1,0.0006
+1457,Germany,calameo.com,Magazines,1791,1,0.0006
+1458,Germany,cio.com,Magazines,1791,0,0.0
+1459,Germany,xataka.com,Magazines,1791,0,0.0
+1460,Germany,tasteofhome.com,Magazines,1791,0,0.0
+1461,Germany,foodandwine.com,Magazines,1791,2,0.0011
+1462,Germany,tamilyogi.plus,Newly Seen Domains,1791,2,0.0011
+1463,Germany,glassdoor.com,Job Search & Careers,1791,1,0.0006
+1464,Germany,akamaiedge.net,Content Servers,1791,1,0.0006
+1465,Germany,live.net,Content Servers,1791,2,0.0011
+1466,Germany,msport.com,Gambling,1789,2,0.0011
+1467,Germany,rezultati.com,Gambling,1789,5,0.0028
+1468,Germany,betway.co.za,Gambling,1789,16,0.0089
+1469,Germany,sp.oddspark.com,Gambling,1789,7,0.0039
+1470,Germany,www.flashscore.com,Gambling,1789,3,0.0017
+1471,Germany,ezvizlife.com,Photography,1789,0,0.0
+1472,Germany,scholarship.up.gov.in,Government,1789,2,0.0011
+1473,Germany,api.whatsapp.com,Internet Phone & VOIP,1789,43,0.024
+1474,Germany,safebrowsing.google.com,Information Security,1789,37,0.0207
+1475,Germany,reverb.com,Music,1789,1,0.0006
+1476,Germany,m.animeflv.net,Movies,1789,0,0.0
+1477,Germany,www.ancestry.com,Hobbies & Interests,1789,0,0.0
+1478,Germany,hollywoodreporter.com,Entertainment,1789,0,0.0
+1479,Germany,ticketmaster.com.mx,Entertainment,1789,0,0.0
+1480,Germany,livescore.in,Sports,1789,7,0.0039
+1481,Germany,mythad.com,Vehicles,1789,1,0.0006
+1482,Germany,ethz.ch,Educational Institutions,1789,1,0.0006
+1483,Germany,trueconf.net,Internet Phone & VOIP,1789,0,0.0
+1484,Germany,auth.uber.com,Travel,1789,2,0.0011
+1485,Germany,www.chess.com,Hobbies & Interests,1788,3,0.0017
+1486,Germany,dafont.com,Hobbies & Interests,1788,0,0.0
+1487,Germany,athemes.com,Hobbies & Interests,1788,0,0.0
+1488,Germany,tcgplayer.com,Hobbies & Interests,1788,0,0.0
+1489,Germany,www.fashionnova.com,Clothing,1788,1,0.0006
+1490,Germany,likeevideo.ru,Photography,1788,0,0.0
+1491,Germany,lacoste.com,Clothing,1788,0,0.0
+1492,Germany,hud.gov,Real Estate,1788,0,0.0
+1493,Germany,sxyprn.net,Pornography,1788,8,0.0045
+1494,Germany,sportybet.com,Gambling,1790,8,0.0045
+1495,Germany,cloud.ru,Newly Seen Domains,1790,0,0.0
+1496,Germany,callofduty.com,Gaming,1790,0,0.0
+1497,Germany,oregon.gov,Government,1790,0,0.0
+1498,Germany,fcdn.us.tiktokv.com,Social Networks,1790,40,0.0223
+1499,Germany,0.pool.ntp.org,Technology,1790,0,0.0
+1500,Germany,de.com,Parked & For Sale Domains,1790,0,0.0
+1501,Germany,pxf.io,Content Servers,1790,0,0.0
+1502,Germany,plos.org,Education,1790,0,0.0
+1503,Germany,pull-flv-f62-va01.tiktokcdn.com,Social Networks,1789,37,0.0207
+1504,Germany,push-rtmp-f5-tt03.fcdn.eu.tiktokcdn.com,Social Networks,1789,36,0.0201
+1505,Germany,s.pinimg.com,Social Networks,1789,36,0.0201
+1506,Germany,pull-cmaf-f16-sg01.tiktokcdn.com,Social Networks,1789,37,0.0207
+1507,Germany,dgw.c10r.facebook.com,Social Networks,1789,38,0.0212
+1508,Germany,goibibo.com,Travel,1790,2,0.0011
+1509,Germany,hbo.com,Television,1790,7,0.0039
+1510,Germany,just-eat.co.uk,Food & Drink,1790,2,0.0011
+1511,Germany,liteapks.com,Personal Blogs,1790,0,0.0
+1512,Germany,secure.bankofamerica.com,Economy & Finance,1790,0,0.0
+1513,Germany,email.seznam.cz,Login Screens,1790,2,0.0011
+1514,Germany,tripadvisor.in,Food & Drink,1790,1,0.0006
+1515,Germany,qodeinteractive.com,Hobbies & Interests,1790,0,0.0
+1516,Germany,tistory.com,Personal Blogs,1790,0,0.0
+1517,Germany,teacherspayteachers.com,Auctions & Marketplaces,1789,0,0.0
+1518,Germany,mercadolibre.cl,Auctions & Marketplaces,1789,0,0.0
+1519,Germany,www.ebay.de,Auctions & Marketplaces,1789,0,0.0
+1520,Germany,catawiki.com,Auctions & Marketplaces,1789,0,0.0
+1521,Germany,cardgames.io,Hobbies & Interests,1789,0,0.0
+1522,Germany,mathplayground.com,Safe for Kids,1789,2,0.0011
+1523,Germany,purl.org,Login Screens,1789,0,0.0
+1524,Germany,statista.com,Education,1789,0,0.0
+1525,Germany,clinicaltrials.gov,Health & Fitness,1789,0,0.0
+1526,Germany,s3.amazonaws.com,File Sharing,1789,0,0.0
+1527,Germany,opentable.com,Search Engines,1789,1,0.0006
+1528,Germany,www.ebay.co.uk,Auctions & Marketplaces,1789,1,0.0006
+1529,Germany,www.primevideo.com,Television,1789,36,0.0201
+1530,Germany,localytics.com,Business,1789,1,0.0006
+1531,Germany,www.1377x.to,File Sharing,1789,2,0.0011
+1532,Germany,uni-heidelberg.de,Educational Institutions,1789,0,0.0
+1533,Germany,wetteronline.de,Weather,1789,0,0.0
+1534,Germany,sephora.com,Fashion,1789,1,0.0006
+1535,Germany,lonelyplanet.com,Travel,1789,0,0.0
+1536,Germany,ancestry.co.uk,Hobbies & Interests,1789,1,0.0006
+1537,Germany,uscis.gov,Government,1789,0,0.0
+1538,Germany,sudoku.com,Hobbies & Interests,1789,0,0.0
+1539,Germany,themoviedb.org,Movies,1789,1,0.0006
+1540,Germany,www.chordtela.com,Music,1789,0,0.0
+1541,Germany,runescape.com,Hobbies & Interests,1789,0,0.0
+1542,Germany,www.shaalaa.com,Educational Institutions,1789,0,0.0
+1543,Germany,sendbird.com,Instant Messengers,1789,1,0.0006
+1544,Germany,ebay.fr,Auctions & Marketplaces,1789,0,0.0
+1545,Germany,www.epicgames.com,Ecommerce,1789,0,0.0
+1546,Germany,bet365.com,Gambling,1789,14,0.0078
+1547,Germany,adriver.ru,Advertisements,1789,0,0.0
+1548,Germany,google.ml,Search Engines,1789,0,0.0
+1549,Germany,prod.cloud.netflix.com,Television,1789,36,0.0201
+1550,Germany,sonyliv.com,Television,1789,43,0.024
+1551,Germany,google.mu,Search Engines,1789,3,0.0017
+1552,Germany,crl3.digicert.com,Information Security,1789,1,0.0006
+1553,Germany,esri.com,Technology,1788,0,0.0
+1554,Germany,st.pubmatic.com,Technology,1788,0,0.0
+1555,Germany,mail.ru,Webmail,1788,4,0.0022
+1556,Germany,versus.com,Shopping,1788,1,0.0006
+1557,Germany,reacciun.ve,Parked & For Sale Domains,1788,0,0.0
+1558,Germany,defense.gov,Government,1788,3,0.0017
+1559,Germany,fda.gov,Government,1788,0,0.0
+1560,Germany,mass.gov,Government,1788,0,0.0
+1561,Germany,uscourts.gov,Government,1788,1,0.0006
+1562,Germany,virginia.gov,Government,1788,0,0.0
+1563,Germany,wsj.com,Economy & Finance,1788,6,0.0034
+1564,Germany,sportingnews.com,Sports,1788,0,0.0
+1565,Germany,npr.org,Audio Streaming,1789,1,0.0006
+1566,Germany,self.com,Fashion,1789,0,0.0
+1567,Germany,mangago.me,Comic Books,1788,8,0.0045
+1568,Germany,bato.to,Comic Books,1788,8,0.0045
+1569,Germany,readmanga.live,Comic Books,1788,2,0.0011
+1570,Germany,animanch.com,Comic Books,1788,0,0.0
+1571,Germany,queniuyk.com,Newly Seen Domains,1788,1,0.0006
+1572,Germany,mb.moatads.com,Advertisements,1788,0,0.0
+1573,Germany,nme.com,Music,1787,0,0.0
+1574,Germany,pemsrv.com,Newly Seen Domains,1786,0,0.0
+1575,Germany,supapush.net,Newly Seen Domains,1786,2,0.0011
+1576,Germany,limitedcommunitylinkage.online,Newly Seen Domains,1786,3,0.0017
+1577,Germany,dyingbirds.com,Newly Seen Domains,1786,0,0.0
+1578,Germany,pgsoft-games.com,Newly Seen Domains,1786,0,0.0
+1579,Germany,noaa.gov,Government,1786,0,0.0
+1580,Germany,gadgets360.com,Shopping,1786,0,0.0
+1581,Germany,heise.de,News & Media,1786,6,0.0034
+1582,Germany,battwo.com,Comic Books,1786,7,0.0039
+1583,Germany,api.weather.com,Weather,1786,0,0.0
+1584,Germany,www.rezultati.com,Gambling,1786,5,0.0028
+1585,Germany,iris.microsoft.com,Information Technology,1786,0,0.0
+1586,Germany,wikimedia.org,Education,1786,1,0.0006
+1587,Germany,xyz.ibomma.link,Questionable Activities,1786,0,0.0
+1588,Germany,zenon.net,Information Technology,1786,0,0.0
+1589,Germany,geneanet.org,Hobbies & Interests,1786,0,0.0
+1590,Germany,google.hn,Search Engines,1786,1,0.0006
+1591,Germany,honda.com,Vehicles,1786,0,0.0
+1592,Germany,yengo.com,Advertisements,1786,0,0.0
+1593,Germany,mangabat.com,Comic Books,1786,0,0.0
+1594,Germany,www.desmos.com,Technology,1786,0,0.0
+1595,Germany,chess-results.com,Hobbies & Interests,1786,1,0.0006
+1596,Germany,jetpack.wordpress.com,Personal Blogs,1786,0,0.0
+1597,Germany,mercadolibre.com.mx,Auctions & Marketplaces,1786,3,0.0017
+1598,Germany,www.shutterstock.com,Photography,1786,7,0.0039
+1599,Germany,pghub.io,Content Servers,1786,0,0.0
+1600,Germany,firebaseapp.com,Information Technology,1786,0,0.0
+1601,Germany,quad9.net,Information Security,1786,0,0.0
+1602,Germany,divar.ir,Auctions & Marketplaces,1786,0,0.0
+1603,Germany,xxpkg.com,Newly Seen Domains,1786,1,0.0006
+1604,Germany,pg.com,Job Search & Careers,1786,0,0.0
+1605,Germany,google.by,Search Engines,1786,0,0.0
+1606,Germany,comcast.net,Television,1786,1,0.0006
+1607,Germany,zappos.com,Clothing,1786,0,0.0
+1608,Germany,line.me,Internet Phone & VOIP,1786,8,0.0045
+1609,Germany,app.launchdarkly.com,Login Screens,1786,1,0.0006
+1610,Germany,stradivarius.com,Fashion,1786,10,0.0056
+1611,Germany,depor.com,Sports,1787,1,0.0006
+1612,Germany,youradchoices.com,Advertisements,1787,0,0.0
+1613,Germany,supersonicads.com,Gaming,1787,0,0.0
+1614,Germany,carview.co.jp,Vehicles,1787,0,0.0
+1615,Germany,stun.l.google.com,Search Engines,1787,35,0.0196
+1616,Germany,nhl.com,Sports,1787,0,0.0
+1617,Germany,zinmanga.com,Comic Books,1787,5,0.0028
+1618,Germany,onedrive.live.com,File Sharing,1787,41,0.0229
+1619,Germany,treehugger.com,Magazines,1787,1,0.0006
+1620,Germany,th.bing.com,Search Engines,1786,0,0.0
+1621,Germany,www.google.ru,Search Engines,1786,35,0.0196
+1622,Germany,google.tn,Search Engines,1786,0,0.0
+1623,Germany,2gis.com,Search Engines,1786,0,0.0
+1624,Germany,google.lv,Search Engines,1786,0,0.0
+1625,Germany,sinajs.cn,Personal Blogs,1786,0,0.0
+1626,Germany,bid.g.doubleclick.net,Advertisements,1786,38,0.0213
+1627,Germany,nanoleaf.me,Real Estate,1786,0,0.0
+1628,Germany,1000.menu,Food & Drink,1786,0,0.0
+1629,Germany,weathercn.com,Weather,1786,1,0.0006
+1630,Germany,one.google.com,Search Engines,1786,37,0.0207
+1631,Germany,dingtalk.com,Instant Messengers,1786,34,0.019
+1632,Germany,sagepub.com,Education,1786,3,0.0017
+1633,Germany,wwiops.io,Login Screens,1786,0,0.0
+1634,Germany,kinoafisha.info,Movies,1786,1,0.0006
+1635,Germany,howstuffworks.com,Education,1786,0,0.0
+1636,Germany,dssedge.com,Newly Seen Domains,1787,1,0.0006
+1637,Germany,staples.com,Ecommerce,1787,2,0.0011
+1638,Germany,voka.tv,Movies,1787,1,0.0006
+1639,Germany,rei.com,Clothing,1786,0,0.0
+1640,Germany,zalan.do,Clothing,1786,1,0.0006
+1641,Germany,pub.3gppnetwork.org,Content Servers,1786,1,0.0006
+1642,Germany,fiverr.com,Search Engines,1786,0,0.0
+1643,Germany,meetup.com,Entertainment,1786,1,0.0006
+1644,Germany,artstation.com,Hobbies & Interests,1785,6,0.0034
+1645,Germany,allure.com,Magazines,1784,4,0.0022
+1646,Germany,infoworld.com,Magazines,1784,0,0.0
+1647,Germany,curbed.com,Magazines,1784,1,0.0006
+1648,Germany,workspace.google.com,Search Engines,1786,35,0.0196
+1649,Germany,google.bi,Search Engines,1786,0,0.0
+1650,Germany,google.com.af,Search Engines,1786,0,0.0
+1651,Germany,myway.com,Search Engines,1786,2,0.0011
+1652,Germany,redirector.googlevideo.com,Search Engines,1786,42,0.0235
+1653,Germany,static.hotjar.com,Login Screens,1785,0,0.0
+1654,Germany,datadoghq.eu,Login Screens,1785,0,0.0
+1655,Germany,kasserver.com,Login Screens,1785,0,0.0
+1656,Germany,www.colaboraread.com.br,Login Screens,1785,0,0.0
+1657,Germany,eyeota.net,Login Screens,1785,0,0.0
+1658,Germany,reyrey.net,Webmail,1785,1,0.0006
+1659,Germany,loc.gov,Government,1785,0,0.0
+1660,Germany,avid.com,Music,1785,2,0.0011
+1661,Germany,emol.com,News & Media,1785,2,0.0011
+1662,Germany,brainpop.com,Safe for Kids,1783,0,0.0
+1663,Germany,www.blooket.com,Safe for Kids,1783,34,0.0191
+1664,Germany,ezvizru.com,No Content,1783,0,0.0
+1665,Germany,bitrix.info,No Content,1783,0,0.0
+1666,Germany,careem-internal.com,No Content,1783,0,0.0
+1667,Germany,digitaltrends.com,Shopping,1783,1,0.0006
+1668,Germany,arca.live,Forums,1783,0,0.0
+1669,Germany,m.media-amazon.com,Content Servers,1783,3,0.0017
+1670,Germany,sfr.net,Login Screens,1783,1,0.0006
+1671,Germany,your-server.de,Login Screens,1782,2,0.0011
+1672,Germany,vivintsky.com,Login Screens,1782,0,0.0
+1673,Germany,tpbid.com,Login Screens,1782,0,0.0
+1674,Germany,active.com,Login Screens,1782,0,0.0
+1675,Germany,colaboraread.com.br,Login Screens,1782,1,0.0006
+1676,Germany,made-in-china.com,Shopping,1782,0,0.0
+1677,Germany,observer.com,Video Streaming,1782,1,0.0006
+1678,Germany,adingo.jp,Business,1782,0,0.0
+1679,Germany,www.xvideos5.com,Pornography,1782,8,0.0045
+1680,Germany,kinescopecdn.net,Parked & For Sale Domains,1782,0,0.0
+1681,Germany,adsensecustomsearchads.com,Newly Seen Domains,1782,0,0.0
+1682,Germany,dnsexit.com,Webmail,1782,0,0.0
+1683,Germany,tagesschau.de,Economy & Finance,1782,6,0.0034
+1684,Germany,m.hollywoodbets.net,Gambling,1784,6,0.0034
+1685,Germany,tripadvisor.com.br,Travel,1784,0,0.0
+1686,Germany,careerbuilder.com,Job Search & Careers,1784,4,0.0022
+1687,Germany,thecut.com,Magazines,1784,0,0.0
+1688,Germany,stern.de,Video Streaming,1784,0,0.0
+1689,Germany,flightradar24.com,Travel,1784,1,0.0006
+1690,Germany,produto.mercadolivre.com.br,Ecommerce,1784,0,0.0
+1691,Germany,govinfo.gov,Government,1784,0,0.0
+1692,Germany,instagram.com,Photography,1784,43,0.0241
+1693,Germany,launchdarkly.com,Business,1782,0,0.0
+1694,Germany,crateandbarrel.com,Business,1782,0,0.0
+1695,Germany,aniview.com,Business,1782,0,0.0
+1696,Germany,www.imdb.com,Entertainment,1782,2,0.0011
+1697,Germany,ew.com,Entertainment,1782,0,0.0
+1698,Germany,filmstarts.de,Entertainment,1782,0,0.0
+1699,Germany,ebanx.com,Entertainment,1782,2,0.0011
+1700,Germany,ted.com,Entertainment,1782,0,0.0
+1701,Germany,reserved.com,Clothing,1781,0,0.0
+1702,Germany,www.nike.com,Clothing,1781,0,0.0
+1703,Germany,www.netshoes.com.br,Clothing,1781,0,0.0
+1704,Germany,zalando.de,Clothing,1781,2,0.0011
+1705,Germany,www.vinted.fr,Clothing,1781,1,0.0006
+1706,Germany,battle.net,Gaming,1781,2,0.0011
+1707,Germany,dexerto.com,Gaming,1781,1,0.0006
+1708,Germany,mobilityware.com,Gaming,1781,1,0.0006
+1709,Germany,xbox.com,Gaming,1781,0,0.0
+1710,Germany,fantasypros.com,Gaming,1781,1,0.0006
+1711,Germany,jiosaavn.com,Audio Streaming,1780,1,0.0006
+1712,Germany,www.spotify.com,Audio Streaming,1780,0,0.0
+1713,Germany,fb.watch,Audio Streaming,1780,2,0.0011
+1714,Germany,guc3-spclient.spotify.com,Audio Streaming,1780,1,0.0006
+1715,Germany,musicdel.ir,Audio Streaming,1780,21,0.0118
+1716,Germany,cian.ru,Real Estate,1780,1,0.0006
+1717,Germany,activebeat.com,Health & Fitness,1780,0,0.0
+1718,Germany,zapier.com,Business,1780,34,0.0191
+1719,Germany,starmakerstudios.com,Music,1780,0,0.0
+1720,Germany,google.com.ua,Search Engines,1777,1,0.0006
+1721,Germany,google.com.pr,Search Engines,1777,0,0.0
+1722,Germany,google.com.cy,Search Engines,1777,0,0.0
+1723,Germany,google.co.in,Search Engines,1777,1,0.0006
+1724,Germany,findagrave.com,Search Engines,1777,1,0.0006
+1725,Germany,shein.com.mx,Clothing,1777,1,0.0006
+1726,Germany,cloudbackup.management,No Content,1777,0,0.0
+1727,Germany,drom.ru,Vehicles,1777,0,0.0
+1728,Germany,bustle.com,Personal Blogs,1777,2,0.0011
+1729,Germany,imhentai.xxx,Pornography,1776,7,0.0039
+1730,Germany,tokyomotion.net,Pornography,1776,7,0.0039
+1731,Germany,highwebmedia.com,Pornography,1776,4,0.0023
+1732,Germany,www.erome.com,Pornography,1776,6,0.0034
+1733,Germany,allporncomic.com,Pornography,1776,6,0.0034
+1734,Germany,adage.com,Video Streaming,1776,0,0.0
+1735,Germany,my.com,Hobbies & Interests,1776,0,0.0
+1736,Germany,pull-flv-f77-tt02.tiktokcdn.com,Social Networks,1778,35,0.0197
+1737,Germany,powerreviews.com,Shopping,1778,1,0.0006
+1738,Germany,citibank.com,Economy & Finance,1777,0,0.0
+1739,Germany,schwab.com,Economy & Finance,1777,0,0.0
+1740,Germany,incometax.gov.in,Economy & Finance,1777,1,0.0006
+1741,Germany,cloudhub.io,Technology,1777,1,0.0006
+1742,Germany,like-video.com,Technology,1777,0,0.0
+1743,Germany,evernote.com,Technology,1777,36,0.0203
+1744,Germany,dvr163.com,Technology,1777,0,0.0
+1745,Germany,lynx.cognitivlabs.com,Technology,1777,0,0.0
+1746,Germany,healthcare.gov,Economy & Finance,1777,0,0.0
+1747,Germany,go.th,Newly Seen Domains,1777,0,0.0
+1748,Germany,edge.skype.com,Instant Messengers,1778,0,0.0
+1749,Germany,wl5.peachavocado.com,Newly Seen Domains,1778,4,0.0022
+1750,Germany,trafficshaping.dsp.mp.microsoft.com,Information Technology,1776,4,0.0023
+1751,Germany,hover.com,Information Technology,1776,2,0.0011
+1752,Germany,aarnet.net.au,Information Technology,1776,0,0.0
+1753,Germany,teleparty.com,Information Technology,1776,2,0.0011
+1754,Germany,azure.net,Information Technology,1776,0,0.0
+1755,Germany,gsmarena.com,Shopping,1777,0,0.0
+1756,Germany,uspto.gov,Government,1777,0,0.0
+1757,Germany,planetminecraft.com,Forums,1776,1,0.0006
+1758,Germany,gamer.com.tw,Forums,1776,6,0.0034
+1759,Germany,old.reddit.com,Forums,1776,39,0.022
+1760,Germany,www.reddit.com,Forums,1776,37,0.0208
+1761,Germany,dev.to,Forums,1776,0,0.0
+1762,Germany,support.apple.com,Ecommerce,1776,0,0.0
+1763,Germany,poczta.wp.pl,Webmail,1776,0,0.0
+1764,Germany,manga168.com,Comic Books,1776,1,0.0006
+1765,Germany,networkadvertising.org,"Politics, Advocacy, and Government-Related",1776,0,0.0
+1766,Germany,catchthemes.com,File Sharing,1776,2,0.0011
+1767,Germany,grab.com,Vehicles,1776,0,0.0
+1768,Germany,msh.amazon.com,Ecommerce,1776,0,0.0
+1769,Germany,zalando.pl,Clothing,1776,1,0.0006
+1770,Germany,ny.us,Newly Seen Domains,1776,0,0.0
+1771,Germany,google.co.kr,Search Engines,1776,0,0.0
+1772,Germany,jiocinema.com,Movies,1776,1,0.0006
+1773,Germany,synology.me,Educational Institutions,1776,1,0.0006
+1774,Germany,emarketer.com,Fashion,1776,4,0.0023
+1775,Germany,softpedia.com,File Sharing,1776,1,0.0006
+1776,Germany,rae.es,Educational Institutions,1776,1,0.0006
+1777,Germany,buyee.jp,Ecommerce,1776,0,0.0
+1778,Germany,mbga.jp,Gaming,1776,0,0.0
+1779,Germany,logs.netflix.com,Video Streaming,1776,31,0.0175
+1780,Germany,gfycat.com,Video Streaming,1776,2,0.0011
+1781,Germany,svt.se,Video Streaming,1776,1,0.0006
+1782,Germany,afp.com,Video Streaming,1776,2,0.0011
+1783,Germany,www.cricketworldcup.com,Video Streaming,1776,0,0.0
+1784,Germany,pointtoserver.com,Content Servers,1776,0,0.0
+1785,Germany,jofogas.hu,Auctions & Marketplaces,1776,0,0.0
+1786,Germany,m.inven.co.kr,Gaming,1777,3,0.0017
+1787,Germany,sync.teads.tv,Advertisements,1777,0,0.0
+1788,Germany,www.trendyol.com,Fashion,1776,0,0.0
+1789,Germany,salonboard.com,Fashion,1776,0,0.0
+1790,Germany,lojasrenner.com.br,Fashion,1776,0,0.0
+1791,Germany,swarovski.com,Fashion,1776,0,0.0
+1792,Germany,wwd.com,Fashion,1776,1,0.0006
+1793,Germany,techtarget.com,Business,1776,0,0.0
+1794,Germany,larkplayerapp.com,Music,1776,0,0.0
+1795,Germany,zoom.com,Internet Phone & VOIP,1775,1,0.0006
+1796,Germany,mmx-ds.cdn.whatsapp.net,Internet Phone & VOIP,1775,38,0.0214
+1797,Germany,dit.whatsapp.net,Internet Phone & VOIP,1775,38,0.0214
+1798,Germany,grandstream.com,Internet Phone & VOIP,1775,2,0.0011
+1799,Germany,ng.msg.teams.microsoft.com,Information Technology,1775,31,0.0175
+1800,Germany,zalo.me,Instant Messengers,1775,0,0.0
+1801,Germany,mattermost.com,Instant Messengers,1775,0,0.0
+1802,Germany,lotterysambadresult.in,Entertainment,1775,5,0.0028
+1803,Germany,itmedia.co.jp,Magazines,1775,0,0.0
+1804,Germany,mangakakalot.com,Comic Books,1775,4,0.0023
+1805,Germany,state.gov,Government,1775,1,0.0006
+1806,Germany,buymeacoffee.com,Information Technology,1775,0,0.0
+1807,Germany,thewrap.com,Entertainment,1775,0,0.0
+1808,Germany,rtb.gumgum.com,Business,1775,1,0.0006
+1809,Germany,m.forebet.com,Gambling,1775,6,0.0034
+1810,Germany,betfair.com,Gambling,1775,7,0.0039
+1811,Germany,redfin.com,Real Estate,1775,0,0.0
+1812,Germany,glife.bingoplus.com,Gambling,1775,6,0.0034
+1813,Germany,f95zone.to,Forums,1775,5,0.0028
+1814,Germany,moviead55.ru,No Content,1775,1,0.0006
+1815,Germany,3322.net,Information Technology,1776,0,0.0
+1816,Germany,toyhou.se,Hobbies & Interests,1776,1,0.0006
+1817,Germany,dndbeyond.com,Hobbies & Interests,1776,0,0.0
+1818,Germany,mx.indeed.com,Job Search & Careers,1776,0,0.0
+1819,Germany,leiniao.com,Questionable Activities,1776,0,0.0
+1820,Germany,ultimate-guitar.com,Hobbies & Interests,1776,1,0.0006
+1821,Germany,sonyentertainmentnetwork.com,Gaming,1776,1,0.0006
+1822,Germany,nyu.edu,Educational Institutions,1776,0,0.0
+1823,Germany,piccoma.com,Comic Books,1776,1,0.0006
+1824,Germany,cifraclub.com.br,Video Streaming,1775,0,0.0
+1825,Germany,foxnews.com,Video Streaming,1775,0,0.0
+1826,Germany,adcolony.xyz,Advertisements,1775,0,0.0
+1827,Germany,ad.doubleclick.net,Advertisements,1775,33,0.0186
+1828,Germany,doubleclick.net,Advertisements,1775,2,0.0011
+1829,Germany,sq-tungsten-ts.amazon-adsystem.com,Advertisements,1775,1,0.0006
+1830,Germany,ko-fi.com,Advertisements,1775,0,0.0
+1831,Germany,ancestry.com,Hobbies & Interests,1775,0,0.0
+1832,Germany,sfn.cn,Technology,1775,0,0.0
+1833,Germany,northwesternmutual.com,Economy & Finance,1775,1,0.0006
+1834,Germany,eventbrite.co.uk,Entertainment,1775,0,0.0
+1835,Germany,qihucdn.com,No Content,1775,0,0.0
+1836,Germany,tuasaude.com,Health & Fitness,1775,0,0.0
+1837,Germany,garena.com,Gaming,1775,0,0.0
+1838,Germany,immowelt.de,Real Estate,1775,0,0.0
+1839,Germany,appboycdn.com,Content Servers,1775,1,0.0006
+1840,Germany,iso.ch,"Politics, Advocacy, and Government-Related",1775,0,0.0
+1841,Germany,pandora.com,Audio Streaming,1775,31,0.0175
+1842,Germany,vlxyz.tv,Newly Seen Domains,1775,7,0.0039
+1843,Germany,httpwg.org,"Politics, Advocacy, and Government-Related",1775,0,0.0
+1844,Germany,bol.com,Ecommerce,1775,27,0.0152
+1845,Germany,topmanhua.com,Comic Books,1775,5,0.0028
+1846,Germany,fortune.com,Magazines,1775,0,0.0
+1847,Germany,bestbuy.ca,Ecommerce,1775,0,0.0
+1848,Germany,wmo.int,Weather,1775,0,0.0
+1849,Germany,wplay.co,Gambling,1775,5,0.0028
+1850,Germany,thehill.com,"Politics, Advocacy, and Government-Related",1775,1,0.0006
+1851,Germany,infomaniak.ch,Information Technology,1775,1,0.0006
+1852,Germany,m.shein.com,Fashion,1775,4,0.0023
+1853,Germany,imf.org,Economy & Finance,1775,5,0.0028
+1854,Germany,ilmeteo.it,Weather,1775,1,0.0006
+1855,Germany,facebook.com,Social Networks,1775,3,0.0017
+1856,Germany,rocketcyber.com,Technology,1775,2,0.0011
+1857,Germany,unc.edu,Educational Institutions,1775,0,0.0
+1858,Germany,www.sarkariresult.com,Job Search & Careers,1775,1,0.0006
+1859,Germany,accor.com,Travel,1775,0,0.0
+1860,Germany,unityads.unity3d.com,Gaming,1775,0,0.0
+1861,Germany,nouen.sp.mbga.jp,Gaming,1775,0,0.0
+1862,Germany,gucci.com,Fashion,1775,0,0.0
+1863,Germany,kijiji.ca,Auctions & Marketplaces,1775,0,0.0
+1864,Germany,s.tabelog.com,Food & Drink,1776,0,0.0
+1865,Germany,hismarttv.com,No Content,1776,0,0.0
+1866,Germany,www.betway.co.za,Gambling,1776,6,0.0034
+1867,Germany,music-fa.com,Music,1774,0,0.0
+1868,Germany,chordtela.com,Music,1774,1,0.0006
+1869,Germany,lnk.to,Music,1774,0,0.0
+1870,Germany,musescore.com,Music,1774,0,0.0
+1871,Germany,setlist.fm,Music,1774,0,0.0
+1872,Germany,usc1-gcp-v61.api.snapchat.com,Social Networks,1774,31,0.0175
+1873,Germany,slate.com,Magazines,1774,3,0.0017
+1874,Germany,hugedomains.com,Parked & For Sale Domains,1774,0,0.0
+1875,Germany,spotify.com,Audio Streaming,1774,0,0.0
+1876,Germany,capterra.com,Shopping,1774,0,0.0
+1877,Germany,windowsupdate.com,Information Technology,1774,1,0.0006
+1878,Germany,filmyzilla.com.gy,Newly Seen Domains,1774,5,0.0028
+1879,Germany,torob.com,Shopping,1774,0,0.0
+1880,Germany,simontokx.cfd,Newly Seen Domains,1774,4,0.0023
+1881,Germany,waconafd.officeapps.live.com,Webmail,1774,0,0.0
+1882,Germany,last.fm,Audio Streaming,1776,2,0.0011
+1883,Germany,indiewire.com,Audio Streaming,1776,0,0.0
+1884,Germany,radio-canada.ca,Audio Streaming,1776,0,0.0
+1885,Germany,acast.com,Audio Streaming,1776,6,0.0034
+1886,Germany,music.apple.com,Audio Streaming,1776,1,0.0006
+1887,Germany,app.ibomma.link,Questionable Activities,1776,1,0.0006
+1888,Germany,pvp.net,Gaming,1776,33,0.0186
+1889,Germany,thegamer.com,Magazines,1776,0,0.0
+1890,Germany,fortinet.com,Information Security,1776,1,0.0006
+1891,Germany,www.avito.ru,Auctions & Marketplaces,1775,2,0.0011
+1892,Germany,m.skelbiu.lt,Auctions & Marketplaces,1775,0,0.0
+1893,Germany,www.ebay.it,Auctions & Marketplaces,1775,1,0.0006
+1894,Germany,overclockers.ru,Auctions & Marketplaces,1775,0,0.0
+1895,Germany,m.ss.com,Auctions & Marketplaces,1775,0,0.0
+1896,Germany,falabella.com,Ecommerce,1775,0,0.0
+1897,Germany,www.google.co.th,Search Engines,1775,2,0.0011
+1898,Germany,trustpilot.com,Shopping,1775,0,0.0
+1899,Germany,www.flashscore.pl,Sports,1774,3,0.0017
+1900,Germany,uefa.com,Sports,1774,0,0.0
+1901,Germany,icc-cricket.com,Sports,1774,21,0.0118
+1902,Germany,eurosport.fr,Sports,1774,0,0.0
+1903,Germany,www.livescore.in,Sports,1774,4,0.0023
+1904,Germany,www.latamairlines.com,Travel,1774,0,0.0
+1905,Germany,2.bp.blogspot.com,Personal Blogs,1774,38,0.0214
+1906,Germany,forexfactory.com,Forums,1774,21,0.0118
+1907,Germany,groupme.com,Instant Messengers,1774,0,0.0
+1908,Germany,dyndns.tv,Parked & For Sale Domains,1774,0,0.0
+1909,Germany,ua.sinoptik.ua,Weather,1774,2,0.0011
+1910,Germany,blueapron.com,Food & Drink,1774,21,0.0118
+1911,Germany,bet7k.com,Gambling,1774,8,0.0045
+1912,Germany,acsechocaptiveportal.com,Newly Seen Domains,1774,1,0.0006
+1913,Germany,mrf.io,News & Media,1774,1,0.0006
+1914,Germany,ls.apple.com,Information Technology,1774,0,0.0
+1915,Germany,serverwatch.com,Shopping,1774,0,0.0
+1916,Germany,rs6.net,Parked & For Sale Domains,1774,0,0.0
+1917,Germany,kaggle.com,Education,1774,0,0.0
+1918,Germany,cnbc.com,Economy & Finance,1775,2,0.0011
+1919,Germany,smilewanted.com,Advertisements,1775,1,0.0006
+1920,Germany,kakaku.com,Shopping,1775,0,0.0
+1921,Germany,epicurious.com,Food & Drink,1775,0,0.0
+1922,Germany,over-blog.com,Personal Blogs,1775,0,0.0
+1923,Germany,kakao.com,Instant Messengers,1775,6,0.0034
+1924,Germany,vv.video.qq.com,News & Media,1775,31,0.0175
+1925,Germany,goo-net.com,Vehicles,1775,1,0.0006
+1926,Germany,howbuy.com,Economy & Finance,1776,1,0.0006
+1927,Germany,autodiscover-s.outlook.com,Webmail,1775,30,0.0169
+1928,Germany,safelinks.protection.outlook.com,Webmail,1775,30,0.0169
+1929,Germany,schoology.com,Webmail,1775,0,0.0
+1930,Germany,club.ne.jp,Webmail,1775,1,0.0006
+1931,Germany,alpha-prm.jp,Webmail,1775,2,0.0011
+1932,Germany,www.sinsay.com,Clothing,1775,0,0.0
+1933,Germany,hot.noodlemagazine.com,Search Engines,1775,6,0.0034
+1934,Germany,pages.dev,Personal Blogs,1775,3,0.0017
+1935,Germany,grammarly.net,Fashion,1774,0,0.0
+1936,Germany,shein.com,Fashion,1774,1,0.0006
+1937,Germany,cosme.net,Fashion,1774,0,0.0
+1938,Germany,avon.com,Fashion,1774,0,0.0
+1939,Germany,converse.com,Fashion,1774,1,0.0006
+1940,Germany,goodhousekeeping.com,Magazines,1774,0,0.0
+1941,Germany,cylance.com,Information Security,1774,1,0.0006
+1942,Germany,peakpx.com,Photography,1774,0,0.0
+1943,Germany,www.njuskalo.hr,Auctions & Marketplaces,1774,0,0.0
+1944,Germany,tacobell.com,Food & Drink,1774,0,0.0
+1945,Germany,wien.gv.at,Forums,1774,0,0.0
+1946,Germany,prod.service.minerva.devices.a2z.com,Content Servers,1774,0,0.0
+1947,Germany,graph.instagram.com,Photography,1774,40,0.0225
+1948,Germany,wzrkt.com,No Content,1774,1,0.0006
+1949,Germany,nesine.com,Gambling,1774,5,0.0028
+1950,Germany,sexemodel.com,Pornography,1774,5,0.0028
+1951,Germany,stabletransit.com,Content Servers,1774,1,0.0006
+1952,Germany,pexels.com,Photography,1774,0,0.0
+1953,Germany,avs-alexa-14-na.amazon.com,Ecommerce,1774,1,0.0006
+1954,Germany,delish.com,Food & Drink,1774,0,0.0
+1955,Germany,www.blogger.com,Personal Blogs,1774,37,0.0209
+1956,Germany,alipay.com,Economy & Finance,1774,0,0.0
+1957,Germany,bybit.com,Economy & Finance,1774,6,0.0034
+1958,Germany,questdiagnostics.com,Health & Fitness,1774,1,0.0006
+1959,Germany,sc-static.net,Content Servers,1774,0,0.0
+1960,Germany,t.me,Instant Messengers,1774,27,0.0152
+1961,Germany,walmart.com,Ecommerce,1774,0,0.0
+1962,Germany,russianfood.com,Food & Drink,1774,1,0.0006
+1963,Germany,federalregister.gov,Government,1774,0,0.0
+1964,Germany,pinterest.com.mx,Photography,1774,37,0.0209
+1965,Germany,easports.com,Gaming,1774,0,0.0
+1966,Germany,protothema.gr,News & Media,1774,2,0.0011
+1967,Germany,openxcdn.net,Advertisements,1774,0,0.0
+1968,Germany,aap.org,Health & Fitness,1774,0,0.0
+1969,Germany,windguru.cz,Weather,1774,0,0.0
+1970,Germany,britishcouncil.org,"Politics, Advocacy, and Government-Related",1774,0,0.0
+1971,Germany,rit.edu,Educational Institutions,1774,0,0.0
+1972,Germany,www.milanuncios.com,Auctions & Marketplaces,1774,1,0.0006
+1973,Germany,www.123-hd.com,Questionable Activities,1774,0,0.0
+1974,Germany,yutex.ru,Parked & For Sale Domains,1774,0,0.0
+1975,Germany,web.centraldasapostas.net,Gambling,1774,5,0.0028
+1976,Germany,faberlic.com,Fashion,1774,1,0.0006
+1977,Germany,open.spotify.com,Audio Streaming,1774,36,0.0203
+1978,Germany,ja.wikipedia.org,Education,1774,5,0.0028
+1979,Germany,yximgs.com,Photography,1774,0,0.0
+1980,Germany,softwareadvice.com,Shopping,1774,1,0.0006
+1981,Germany,siemens.de,Technology,1774,0,0.0
+1982,Germany,tomshardware.com,Shopping,1774,0,0.0
+1983,Germany,inbox.google.com,Webmail,1774,32,0.018
+1984,Germany,iheart.com,Audio Streaming,1775,5,0.0028
+1985,Germany,bajajfinserv.in,Economy & Finance,1775,0,0.0
+1986,Germany,tinypic.com,Photography,1775,0,0.0
+1987,Germany,vapp-servers.com,Advertisements,1775,2,0.0011
+1988,Germany,zenodo.org,Health & Fitness,1775,0,0.0
+1989,Germany,market.yandex.ru,Auctions & Marketplaces,1775,0,0.0
+1990,Germany,wa.gov.au,"Politics, Advocacy, and Government-Related",1775,0,0.0
+1991,Germany,www.ebay.com,Auctions & Marketplaces,1775,0,0.0
+1992,Germany,eapteka.ru,Health & Fitness,1775,2,0.0011
+1993,Germany,creativefabrica.com,Hobbies & Interests,1775,0,0.0
+1994,Germany,substack.com,Hobbies & Interests,1775,38,0.0214
+1995,Germany,ijg.org,Hobbies & Interests,1775,0,0.0
+1996,Germany,indiegogo.com,Hobbies & Interests,1775,0,0.0
+1997,Germany,jigsawplanet.com,Hobbies & Interests,1775,0,0.0
+1998,Germany,ladbrokes.com,Gambling,1775,5,0.0028
+1999,Germany,weathernews.jp,Weather,1775,1,0.0006
+2000,Germany,netflix.com,Television,1775,52,0.0293

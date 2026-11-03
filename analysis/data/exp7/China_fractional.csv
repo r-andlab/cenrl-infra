@@ -1,0 +1,2001 @@
+time,country,target,category,n_votes,n_blocked,rewards
+1,China,evite.com,Digital Postcards,1941,0,0.0
+2,China,cafe24.com,Unreachable,1941,1,0.0005
+3,China,blogspot.de,Unreachable,1941,1875,0.966
+4,China,blogspot.com.es,Unreachable,1941,79,0.0407
+5,China,devicetask.com,Unreachable,1941,30,0.0155
+6,China,upwitheaway.info,Parked & For Sale Domains,1941,1,0.0005
+7,China,gdms.cloud,Parked & For Sale Domains,1941,1,0.0005
+8,China,gda.pl,Lifestyle,1941,0,0.0
+9,China,myapps.classlink.com,Education,1941,1,0.0005
+10,China,tinder.com,Dating & Relationships,1941,0,0.0
+11,China,metmuseum.org,Fine Art,1941,0,0.0
+12,China,autoblog.com,Personal Blogs,1941,0,0.0
+13,China,name-services.com,Phishing,1941,0,0.0
+14,China,tmall.com,Ecommerce,1941,0,0.0
+15,China,pavietnam.net,Hacking,1941,1,0.0005
+16,China,ipvanish.com,P2P,1941,2,0.001
+17,China,jimdo.com,Nudity,1940,1,0.0005
+18,China,surfsharkstatus.com,P2P,1940,2,0.001
+19,China,expressvpn.com,P2P,1940,7,0.0036
+20,China,cyberghostvpn.com,P2P,1940,4,0.0021
+21,China,love.ru,Chat,1940,0,0.0
+22,China,toomics.com,Comic Books,1939,1,0.0005
+23,China,mangago.me,Comic Books,1939,1,0.0005
+24,China,cbr.com,Comic Books,1939,0,0.0
+25,China,manganato.com,Comic Books,1939,0,0.0
+26,China,dto.to,Comic Books,1939,0,0.0
+27,China,www.diretta.it,Sports,1939,0,0.0
+28,China,filmstarts.de,Entertainment,1939,0,0.0
+29,China,amagi.tv,File Sharing,1939,0,0.0
+30,China,chat.cdn.whatsapp.net,Instant Messengers,1939,1931,0.9959
+31,China,victoriassecret.com,Lingerie & Bikini,1939,55,0.0284
+32,China,bizport.cn,Messaging,1939,34,0.0175
+33,China,www.rightmove.co.uk,Real Estate,1939,18,0.0093
+34,China,www.canva.com,Arts,1939,17,0.0088
+35,China,deviantart.com,Arts,1939,7,0.0036
+36,China,mangabuddy.com,Cartoons & Anime,1939,0,0.0
+37,China,sephora.com,Fashion,1939,0,0.0
+38,China,petfinder.com,Pets,1939,0,0.0
+39,China,azurewebsites.net,Sex Education,1939,1,0.0005
+40,China,imtwjwoasak.com,Spam,1939,0,0.0
+41,China,com.se,Malware,1939,1,0.0005
+42,China,wzrkt.com,No Content,1939,0,0.0
+43,China,topwar.ru,Violence,1939,0,0.0
+44,China,knt9.xyz,DGA Domains,1939,0,0.0
+45,China,fsu.edu,Educational Institutions,1939,0,0.0
+46,China,www.freepik.com,"News, Portal & Search",1939,1,0.0005
+47,China,volcfcdndvs.com,DGA Domains,1939,0,0.0
+48,China,gamesradar.com,Gaming,1939,0,0.0
+49,China,www.tjk.org,Gambling,1939,0,0.0
+50,China,e-recht24.de,"Politics, Advocacy, and Government-Related",1939,0,0.0
+51,China,pull-cmaf-f77-va01.tiktokcdn.com,Social Networks,1939,13,0.0067
+52,China,www.biblegateway.com,Religion,1939,3,0.0015
+53,China,fifa.com,Video Streaming,1939,1,0.0005
+54,China,knowyourmeme.com,Humor,1940,1927,0.9933
+55,China,craigslist.org,Auctions & Marketplaces,1940,66,0.034
+56,China,mediafire.com,"Militancy, Hate & Extremism",1940,1,0.0005
+57,China,starmakerstudios.com,Music,1941,2,0.001
+58,China,ring.com,Photography,1941,1,0.0005
+59,China,www.discogs.com,Music,1941,0,0.0
+60,China,global.aa-rt.sharepoint.com,New Domains,1941,4,0.0021
+61,China,prodigygame.com,Science,1941,0,0.0
+62,China,hoyolab.com,Forums,1941,0,0.0
+63,China,dailyinnovation.biz,Astrology,1941,0,0.0
+64,China,centrastage.net,Login Screens,1941,0,0.0
+65,China,www.netflix.com,Movies,1941,4,0.0021
+66,China,bikewale.com,Vehicles,1941,0,0.0
+67,China,rentalcars.com,Travel,1941,1,0.0005
+68,China,www.deepl.com,Translator,1941,4,0.0021
+69,China,mantraonline.com,Miscellaneous,1941,1,0.0005
+70,China,ftl.netflix.com,Television,1941,4,0.0021
+71,China,translate.google.com,Translator,1941,5,0.0026
+72,China,deff.nelreports.net,Technology,1941,0,0.0
+73,China,houzz.com,Home & Garden,1941,0,0.0
+74,China,ycombinator.com,Hobbies & Interests,1941,1,0.0005
+75,China,stitcher.com,Audio Streaming,1941,1927,0.9928
+76,China,blogspot.co.uk,Arts & Crafts,1941,1879,0.9681
+77,China,att.com,Information Technology,1941,61,0.0314
+78,China,vkuserphoto.ru,Newly Seen Domains,1941,30,0.0155
+79,China,sleepfoundation.org,Health & Fitness,1941,21,0.0108
+80,China,fundingchoicesmessages.google.com,Search Engines,1941,13,0.0067
+81,China,openbittorrent.com,Questionable Activities,1941,2,0.001
+82,China,dmm.com,Home Video/DVD,1941,0,0.0
+83,China,savvis.net,Information Security,1941,0,0.0
+84,China,buienradar.nl,Weather,1941,0,0.0
+85,China,cc.skype.com,Internet Phone & VOIP,1941,1,0.0005
+86,China,bit.ly,Redirect,1941,22,0.0113
+87,China,outlook.com,Webmail,1941,0,0.0
+88,China,faa.gov,Government,1941,0,0.0
+89,China,fr.linkedin.com,Professional Networking,1941,6,0.0031
+90,China,prebid-server.rubiconproject.com,Advertisements,1941,0,0.0
+91,China,palmettostatearmory.com,Weapons,1941,1,0.0005
+92,China,eastmoney.com,Economy & Finance,1941,1,0.0005
+93,China,www.blooket.com,Safe for Kids,1941,4,0.0021
+94,China,croxyproxy.com,Anonymizer,1941,1,0.0005
+95,China,truefitcorp.com,Clothing,1941,1,0.0005
+96,China,spankbang.com,Pornography,1941,8,0.0041
+97,China,tracker.samplicio.us,Shopping,1941,0,0.0
+98,China,converse.com,Clothing,1941,0,0.0
+99,China,nghttp2.org,APIs,1941,1,0.0005
+100,China,asuscomm.com,Radio,1941,4,0.0021
+101,China,sun.com,Business,1941,1,0.0005
+102,China,gizmodo.com,Magazines,1941,2,0.001
+103,China,parents.com,Parenting,1941,0,0.0
+104,China,subway.com,Food & Drink,1941,0,0.0
+105,China,space.com,Space & Astronomy,1941,1,0.0005
+106,China,select.mamastar.jp,Parenting,1941,1,0.0005
+107,China,groupon.com,Coupons,1941,0,0.0
+108,China,jimdosite.com,Adult Themes,1941,0,0.0
+109,China,i.ua,News & Media,1941,0,0.0
+110,China,honey.io,Coupons,1941,0,0.0
+111,China,elcorreo.com,News & Media,1941,0,0.0
+112,China,s.dto.jp,Adult Themes,1941,8,0.0041
+113,China,pg.com,Job Search & Careers,1941,0,0.0
+114,China,jdcache.com,Content Servers,1941,0,0.0
+115,China,arbeitsagentur.de,Job Search & Careers,1941,0,0.0
+116,China,msappproxy.net,Content Servers,1941,0,0.0
+117,China,iphone-ld.origin-apple.com.akadns.net,Content Servers,1941,7,0.0036
+118,China,script.4dex.io,Content Servers,1941,0,0.0
+119,China,marthastewart.com,Arts & Crafts,1941,0,0.0
+120,China,api.whatsapp.com,Instant Messengers,1941,1932,0.9954
+121,China,t.me,Instant Messengers,1941,66,0.034
+122,China,joann.com,Arts & Crafts,1941,38,0.0196
+123,China,movie.eroterest.net,Humor,1941,24,0.0124
+124,China,linecorp.com,Instant Messengers,1941,16,0.0082
+125,China,chat.zalo.me,Instant Messengers,1941,4,0.0021
+126,China,funnyjunk.com,Humor,1941,0,0.0
+127,China,cc.com,Humor,1941,0,0.0
+128,China,podtrac.com,Audio Streaming,1941,0,0.0
+129,China,dual-gslb.spotify.com,Audio Streaming,1941,2,0.001
+130,China,spotify.com,Audio Streaming,1941,1,0.0005
+131,China,audacy.com,Audio Streaming,1941,10,0.0052
+132,China,audiomack.com,Audio Streaming,1941,8,0.0041
+133,China,guc3-spclient.spotify.com,Audio Streaming,1941,2,0.001
+134,China,zaloapp.com,Instant Messengers,1941,2,0.001
+135,China,tawk.to,Instant Messengers,1941,0,0.0
+136,China,dit.whatsapp.net,Instant Messengers,1941,1933,0.9959
+137,China,kakao.com,Instant Messengers,1941,1873,0.965
+138,China,wechat.com,Instant Messengers,1941,60,0.0309
+139,China,edgeapi.slack.com,Instant Messengers,1941,29,0.0149
+140,China,elo7.com.br,Arts & Crafts,1941,1,0.0005
+141,China,line.me,Instant Messengers,1941,1930,0.9943
+142,China,skype.com,Instant Messengers,1941,2,0.001
+143,China,messenger.com,Instant Messengers,1941,5,0.0026
+144,China,dingtalk.com,Instant Messengers,1941,4,0.0021
+145,China,telegram.org,Instant Messengers,1941,12,0.0062
+146,China,app.slack.com,Instant Messengers,1941,4,0.0021
+147,China,mattermost.com,Instant Messengers,1941,0,0.0
+148,China,telegram.me,Instant Messengers,1941,6,0.0031
+149,China,discord.com,Instant Messengers,1941,1933,0.9959
+150,China,sendbird.com,Instant Messengers,1941,0,0.0
+151,China,mmx-ds.cdn.whatsapp.net,Instant Messengers,1941,1934,0.9964
+152,China,slack.com,Instant Messengers,1940,0,0.0
+153,China,asm.skype.com,Instant Messengers,1940,1,0.0005
+154,China,www.messenger.com,Instant Messengers,1940,15,0.0077
+155,China,zalo.me,Instant Messengers,1940,307,0.1582
+156,China,intercom.com,Instant Messengers,1940,38,0.0196
+157,China,web.whatsapp.com,Instant Messengers,1940,1931,0.9954
+158,China,g.whatsapp.net,Instant Messengers,1940,1928,0.9938
+159,China,spotim.market,Instant Messengers,1940,51,0.0263
+160,China,icq.com,Instant Messengers,1940,36,0.0186
+161,China,pps.whatsapp.net,Instant Messengers,1940,1928,0.9938
+162,China,edge.skype.com,Instant Messengers,1940,53,0.0273
+163,China,intercom.io,Instant Messengers,1940,1,0.0005
+164,China,whatsapp.net,Instant Messengers,1940,1929,0.9943
+165,China,loom.com,Instant Messengers,1940,72,0.0371
+166,China,www.whatsapp.com,Instant Messengers,1940,1927,0.9933
+167,China,spot.im,Instant Messengers,1940,63,0.0325
+168,China,whatsapp.com,Instant Messengers,1940,1924,0.9918
+169,China,livechatinc.com,Instant Messengers,1940,48,0.0247
+170,China,faq.whatsapp.com,Instant Messengers,1940,1928,0.9938
+171,China,noam.cc.skype.com,Instant Messengers,1940,43,0.0222
+172,China,us-api.asm.skype.com,Instant Messengers,1940,4,0.0021
+173,China,threema.ch,Instant Messengers,1940,0,0.0
+174,China,myvzw.com,Instant Messengers,1940,1,0.0005
+175,China,viber.com,Instant Messengers,1940,1929,0.9943
+176,China,groupme.com,Instant Messengers,1940,58,0.0299
+177,China,chat.google.com,Instant Messengers,1940,46,0.0237
+178,China,lin.ee,Instant Messengers,1940,0,0.0
+179,China,m.me,Instant Messengers,1940,1,0.0005
+180,China,cdn.whatsapp.net,Instant Messengers,1940,1930,0.9948
+181,China,shopee.io,Unreachable,1940,1,0.0005
+182,China,whecloud.com,Unreachable,1940,0,0.0
+183,China,keydisk.ru,Unreachable,1940,0,0.0
+184,China,blogspot.it,Unreachable,1940,1865,0.9613
+185,China,1gb.ru,Unreachable,1940,76,0.0392
+186,China,humoruniv.com,Humor,1940,36,0.0186
+187,China,joyreactor.cc,Humor,1940,20,0.0103
+188,China,netlify.com,Humor,1940,8,0.0041
+189,China,at.ua,Unreachable,1940,0,0.0
+190,China,imgflip.com,Humor,1940,1930,0.9948
+191,China,blogspot.in,Unreachable,1940,60,0.0309
+192,China,merlincdn.net,Unreachable,1940,42,0.0216
+193,China,dbankcloud.ru,Unreachable,1940,2,0.001
+194,China,blogspot.fr,Unreachable,1940,1789,0.9222
+195,China,9gag.com,Humor,1940,40,0.0206
+196,China,m.humoruniv.com,Humor,1940,5,0.0026
+197,China,coub.com,Humor,1940,0,0.0
+198,China,last.fm,Audio Streaming,1941,1,0.0005
+199,China,libsyn.com,Audio Streaming,1941,0,0.0
+200,China,buzzsprout.com,Audio Streaming,1941,1930,0.9943
+201,China,mixcloud.com,Audio Streaming,1941,1921,0.9897
+202,China,dealer.spotify.com,Audio Streaming,1941,68,0.035
+203,China,soundcloud.com,Audio Streaming,1941,1832,0.9438
+204,China,anchor.fm,Audio Streaming,1941,77,0.0397
+205,China,acast.com,Audio Streaming,1941,1922,0.9902
+206,China,login5.spotify.com,Audio Streaming,1941,30,0.0155
+207,China,open.spotify.com,Audio Streaming,1941,1928,0.9933
+208,China,tunein.com,Audio Streaming,1941,31,0.016
+209,China,wbur.org,Audio Streaming,1941,1917,0.9876
+210,China,fb.watch,Audio Streaming,1941,57,0.0294
+211,China,discogs.com,Audio Streaming,1941,41,0.0211
+212,China,pandora.com,Audio Streaming,1941,19,0.0098
+213,China,bandcamp.com,Audio Streaming,1941,1917,0.9876
+214,China,spreaker.com,Audio Streaming,1941,1914,0.9861
+215,China,blogtalkradio.com,Audio Streaming,1941,67,0.0345
+216,China,reverbnation.com,Audio Streaming,1941,36,0.0185
+217,China,rfi.fr,Audio Streaming,1941,1910,0.984
+218,China,podbean.com,Audio Streaming,1941,1912,0.9851
+219,China,accounts.spotify.com,Audio Streaming,1941,60,0.0309
+220,China,sandiegouniontribune.com,Audio Streaming,1941,1915,0.9866
+221,China,letras.mus.br,Audio Streaming,1941,66,0.034
+222,China,radio-canada.ca,Audio Streaming,1941,34,0.0175
+223,China,tidal.com,Audio Streaming,1941,8,0.0041
+224,China,musicdel.ir,Audio Streaming,1941,2,0.001
+225,China,npr.org,Audio Streaming,1941,0,0.0
+226,China,www.npr.org,Audio Streaming,1941,0,0.0
+227,China,deezer.com,Audio Streaming,1941,10,0.0052
+228,China,wynk.in,Audio Streaming,1941,0,0.0
+229,China,gaana.com,Audio Streaming,1941,0,0.0
+230,China,xp.itunes-apple.com.akadns.net,Audio Streaming,1941,13,0.0067
+231,China,jiosaavn.com,Audio Streaming,1941,0,0.0
+232,China,www.spotify.com,Audio Streaming,1941,2,0.001
+233,China,www.letras.mus.br,Audio Streaming,1941,5,0.0026
+234,China,music.apple.com,Audio Streaming,1941,2,0.001
+235,China,kugou.com,Audio Streaming,1941,2,0.001
+236,China,iheart.com,Audio Streaming,1941,1918,0.9882
+237,China,spclient.wg.spotify.com,Audio Streaming,1941,68,0.035
+238,China,wg.spotify.com,Audio Streaming,1941,35,0.018
+239,China,indiewire.com,Audio Streaming,1941,0,0.0
+240,China,omny.fm,Audio Streaming,1941,1884,0.9706
+241,China,sport-express.ru,Sports,1941,0,0.0
+242,China,flashscore.fr,Sports,1941,0,0.0
+243,China,tjk.org,Sports,1941,5,0.0026
+244,China,formula1.com,Sports,1941,0,0.0
+245,China,cbssports.com,Sports,1941,0,0.0
+246,China,canonet.ne.jp,Miscellaneous,1941,0,0.0
+247,China,amazon.jobs,Job Search & Careers,1941,0,0.0
+248,China,www.cbssports.com,Sports,1941,0,0.0
+249,China,politico.com,"Politics, Advocacy, and Government-Related",1941,0,0.0
+250,China,infoworld.com,Magazines,1941,0,0.0
+251,China,www.realtor.com,Real Estate,1941,7,0.0036
+252,China,cosmopolitan.com,Adult Themes,1941,0,0.0
+253,China,www2.bing.com,Search Engines,1941,0,0.0
+254,China,racingpost.com,Sports,1941,4,0.0021
+255,China,www.xvideos53.com,Newly Seen Domains,1941,13,0.0067
+256,China,washingtonexaminer.com,News & Media,1941,1916,0.9871
+257,China,qvdt3feo.com,Newly Seen Domains,1941,56,0.0289
+258,China,vatican.va,Religion,1941,41,0.0211
+259,China,oktacdn.com,Login Screens,1941,27,0.0139
+260,China,attentivemobile.com,Messaging,1941,0,0.0
+261,China,origo.hu,News & Media,1941,0,0.0
+262,China,sponichi.co.jp,News & Media,1941,0,0.0
+263,China,bostonglobe.com,News & Media,1941,0,0.0
+264,China,iltalehti.fi,News & Media,1941,0,0.0
+265,China,www.bbc.co.uk,News & Media,1941,1917,0.9876
+266,China,ukr.net,News & Media,1941,64,0.033
+267,China,msnbc.com,News & Media,1941,38,0.0196
+268,China,www.latimes.com,News & Media,1941,23,0.0118
+269,China,gelderlander.nl,News & Media,1941,1,0.0005
+270,China,timesofisrael.com,News & Media,1941,0,0.0
+271,China,delfi.lt,News & Media,1941,0,0.0
+272,China,france24.com,News & Media,1941,1,0.0005
+273,China,sciencealert.com,News & Media,1941,1,0.0005
+274,China,thestar.com,News & Media,1941,8,0.0041
+275,China,tsn.ua,News & Media,1941,0,0.0
+276,China,cumhuriyet.com.tr,News & Media,1941,0,0.0
+277,China,sbnation.com,News & Media,1941,0,0.0
+278,China,wired.com,News & Media,1941,1,0.0005
+279,China,excite.co.jp,News & Media,1941,0,0.0
+280,China,ghanaweb.com,News & Media,1941,0,0.0
+281,China,azcentral.com,News & Media,1941,0,0.0
+282,China,detik.com,News & Media,1941,0,0.0
+283,China,toyokeizai.net,News & Media,1941,0,0.0
+284,China,eluniversal.com.mx,News & Media,1941,0,0.0
+285,China,ajc.com,News & Media,1941,0,0.0
+286,China,thedailybeast.com,News & Media,1941,0,0.0
+287,China,e1.ru,News & Media,1941,0,0.0
+288,China,lapresse.ca,News & Media,1941,0,0.0
+289,China,m.kooora.com,News & Media,1941,0,0.0
+290,China,newsnow.co.uk,News & Media,1941,0,0.0
+291,China,qz.com,News & Media,1941,1919,0.9887
+292,China,fitorf.ru,News & Media,1941,68,0.035
+293,China,kompas.com,News & Media,1941,0,0.0
+294,China,www.lemonde.fr,News & Media,1941,1921,0.9897
+295,China,bt.dk,News & Media,1941,63,0.0325
+296,China,indiatoday.in,News & Media,1941,1919,0.9887
+297,China,paris.fr,News & Media,1941,58,0.0299
+298,China,pn.ybp.yahoo.com,News & Media,1941,33,0.017
+299,China,www.yahoo.co.jp,News & Media,1941,1,0.0005
+300,China,clarin.com,News & Media,1941,0,0.0
+301,China,www.bt.dk,News & Media,1941,5,0.0026
+302,China,www.nikkansports.com,News & Media,1941,0,0.0
+303,China,merdeka.com,News & Media,1941,0,0.0
+304,China,rp-online.de,News & Media,1941,0,0.0
+305,China,championat.com,News & Media,1941,0,0.0
+306,China,livehindustan.com,News & Media,1941,0,0.0
+307,China,assets.msn.com,News & Media,1941,0,0.0
+308,China,163.com,News & Media,1941,1,0.0005
+309,China,wdr.de,News & Media,1941,0,0.0
+310,China,www.climatempo.com.br,News & Media,1941,0,0.0
+311,China,www.washingtonpost.com,News & Media,1941,1919,0.9887
+312,China,nos.nl,News & Media,1941,1916,0.9871
+313,China,www.t-online.de,News & Media,1941,0,0.0
+314,China,mashable.com,News & Media,1941,0,0.0
+315,China,www.prokerala.com,News & Media,1941,1,0.0005
+316,China,usatoday.com,News & Media,1941,0,0.0
+317,China,heraldo.es,News & Media,1941,0,0.0
+318,China,vox.com,News & Media,1941,1914,0.9861
+319,China,volkskrant.nl,News & Media,1941,1917,0.9876
+320,China,fanatik.com.tr,News & Media,1941,48,0.0247
+321,China,r7.com,News & Media,1941,37,0.0191
+322,China,donga.com,News & Media,1941,18,0.0093
+323,China,mlb.com,News & Media,1941,1,0.0005
+324,China,unian.ua,News & Media,1941,1,0.0005
+325,China,particlenews.com,News & Media,1941,0,0.0
+326,China,zoombangla.com,News & Media,1941,0,0.0
+327,China,xinhuanet.com,News & Media,1941,0,0.0
+328,China,skynewsarabia.com,News & Media,1941,0,0.0
+329,China,noutore.enjoy.point.auone.jp,News & Media,1941,0,0.0
+330,China,independent.ie,News & Media,1941,1916,0.9871
+331,China,daum.net,News & Media,1941,1850,0.9531
+332,China,uol.com.br,News & Media,1941,72,0.0371
+333,China,theepochtimes.com,News & Media,1941,1820,0.9377
+334,China,bartarinha.ir,News & Media,1941,68,0.035
+335,China,www.marca.com,News & Media,1941,31,0.016
+336,China,aajtak.in,News & Media,1941,0,0.0
+337,China,mlive.com,News & Media,1941,0,0.0
+338,China,www.telegraaf.nl,News & Media,1941,1,0.0005
+339,China,seattletimes.com,News & Media,1941,0,0.0
+340,China,tw.news.yahoo.com,News & Media,1941,1855,0.9557
+341,China,ole.com.ar,News & Media,1941,69,0.0355
+342,China,b.hatena.ne.jp,News & Media,1941,1915,0.9866
+343,China,www.buzzfeed.com,News & Media,1941,63,0.0325
+344,China,stuff.co.nz,News & Media,1941,32,0.0165
+345,China,nrk.no,News & Media,1941,1909,0.9835
+346,China,climatempo.com.br,News & Media,1941,75,0.0386
+347,China,infoseek.co.jp,News & Media,1941,20,0.0103
+348,China,mathrubhumi.com,News & Media,1941,0,0.0
+349,China,drom.ru,News & Media,1941,0,0.0
+350,China,news.cn,News & Media,1941,0,0.0
+351,China,nypost.com,News & Media,1941,1911,0.9845
+352,China,www.gismeteo.ru,News & Media,1941,72,0.0371
+353,China,poznan.pl,News & Media,1941,42,0.0216
+354,China,sozcu.com.tr,News & Media,1941,1,0.0005
+355,China,wetteronline.de,News & Media,1941,0,0.0
+356,China,lesechos.fr,News & Media,1941,1,0.0005
+357,China,swissinfo.ch,News & Media,1941,1860,0.9583
+358,China,la7.it,News & Media,1941,0,0.0
+359,China,military.com,News & Media,1941,0,0.0
+360,China,msn.com,News & Media,1941,0,0.0
+361,China,motherjones.com,News & Media,1941,7,0.0036
+362,China,dagbladet.no,News & Media,1940,0,0.0
+363,China,hk01.com,News & Media,1940,1906,0.9825
+364,China,foxsports.com,News & Media,1940,57,0.0294
+365,China,okdiario.com,News & Media,1940,28,0.0144
+366,China,nfl.com,News & Media,1940,13,0.0067
+367,China,irishtimes.com,News & Media,1940,5,0.0026
+368,China,eenadu.net,News & Media,1940,0,0.0
+369,China,japantimes.co.jp,News & Media,1940,1913,0.9861
+370,China,nola.com,News & Media,1940,71,0.0366
+371,China,chronicle.com,News & Media,1940,40,0.0206
+372,China,www.seznam.cz,News & Media,1940,6,0.0031
+373,China,sport1.de,News & Media,1940,0,0.0
+374,China,olympics.com,News & Media,1940,0,0.0
+375,China,abc.es,News & Media,1940,1910,0.9845
+376,China,qq.com,News & Media,1940,46,0.0237
+377,China,mail.com,News & Media,1940,34,0.0175
+378,China,dailymail.co.uk,News & Media,1940,1899,0.9789
+379,China,mako.co.il,News & Media,1940,54,0.0278
+380,China,dmoz.org,News & Media,1940,39,0.0201
+381,China,eurogamer.net,News & Media,1940,18,0.0093
+382,China,bunshun.jp,News & Media,1940,10,0.0052
+383,China,lepoint.fr,News & Media,1940,1905,0.982
+384,China,n.news.naver.com,News & Media,1940,72,0.0371
+385,China,nine.com.au,News & Media,1940,35,0.018
+386,China,mehrnews.com,News & Media,1940,16,0.0082
+387,China,univision.com,News & Media,1940,19,0.0098
+388,China,www.wp.pl,News & Media,1940,0,0.0
+389,China,almasryalyoum.com,News & Media,1940,0,0.0
+390,China,sheknows.com,News & Media,1940,1,0.0005
+391,China,mlbpark.donga.com,News & Media,1940,5,0.0026
+392,China,www.hln.be,News & Media,1940,1,0.0005
+393,China,miamiherald.com,News & Media,1940,1848,0.9526
+394,China,leparisien.fr,News & Media,1940,67,0.0345
+395,China,asriran.com,News & Media,1940,46,0.0237
+396,China,conectate.com.do,News & Media,1940,23,0.0119
+397,China,tienphong.vn,News & Media,1940,2,0.001
+398,China,standard.co.uk,News & Media,1940,1910,0.9845
+399,China,www.oricon.co.jp,News & Media,1940,1906,0.9825
+400,China,dn.se,News & Media,1940,62,0.032
+401,China,larazon.es,News & Media,1940,1898,0.9784
+402,China,marca.com,News & Media,1940,59,0.0304
+403,China,thehill.com,News & Media,1940,13,0.0067
+404,China,tycsports.com,News & Media,1940,0,0.0
+405,China,kooora.com,News & Media,1940,5,0.0026
+406,China,telegraaf.nl,News & Media,1940,6,0.0031
+407,China,o2.pl,News & Media,1940,0,0.0
+408,China,onet.pl,News & Media,1940,0,0.0
+409,China,europapress.es,News & Media,1940,0,0.0
+410,China,www.20minutos.es,News & Media,1940,0,0.0
+411,China,klix.ba,News & Media,1940,0,0.0
+412,China,hindustantimes.com,News & Media,1940,0,0.0
+413,China,financialexpress.com,News & Media,1940,0,0.0
+414,China,www.protothema.gr,News & Media,1940,0,0.0
+415,China,ilfattoquotidiano.it,News & Media,1940,0,0.0
+416,China,sciencedaily.com,News & Media,1940,0,0.0
+417,China,aemet.es,News & Media,1940,0,0.0
+418,China,indiatimes.com,News & Media,1940,1912,0.9856
+419,China,guardian.co.uk,News & Media,1940,63,0.0325
+420,China,www.infobae.com,News & Media,1940,41,0.0211
+421,China,sueddeutsche.de,News & Media,1940,1916,0.9876
+422,China,vv.video.qq.com,News & Media,1941,51,0.0263
+423,China,ua.sinoptik.ua,News & Media,1941,0,0.0
+424,China,depor.com,News & Media,1941,0,0.0
+425,China,www.clarin.com,News & Media,1941,5,0.0026
+426,China,francebleu.fr,News & Media,1941,0,0.0
+427,China,ahajournals.org,News & Media,1941,0,0.0
+428,China,swbell.net,News & Media,1941,2,0.001
+429,China,liberoquotidiano.it,News & Media,1941,0,0.0
+430,China,hinet.net,News & Media,1941,1913,0.9856
+431,China,bbci.co.uk,News & Media,1941,1914,0.9861
+432,China,cntv.cn,News & Media,1941,47,0.0242
+433,China,naver.com,News & Media,1941,0,0.0
+434,China,timesonline.co.uk,News & Media,1941,0,0.0
+435,China,sports.ru,News & Media,1941,0,0.0
+436,China,ntp.msn.com,News & Media,1941,0,0.0
+437,China,cnn.com,News & Media,1941,0,0.0
+438,China,ge.globo.com,News & Media,1941,0,0.0
+439,China,nifty.com,News & Media,1941,1914,0.9861
+440,China,suntimes.com,News & Media,1941,57,0.0294
+441,China,fnn.jp,News & Media,1941,23,0.0118
+442,China,eurosport.fr,News & Media,1941,21,0.0108
+443,China,m.timesofindia.com,News & Media,1941,11,0.0057
+444,China,aa.com.tr,News & Media,1941,0,0.0
+445,China,goal.com,News & Media,1941,1,0.0005
+446,China,journaldemontreal.com,News & Media,1941,1,0.0005
+447,China,vecernji.hr,News & Media,1941,1,0.0005
+448,China,zerohedge.com,News & Media,1941,1914,0.9861
+449,China,weather.com,News & Media,1941,62,0.0319
+450,China,nu.nl,News & Media,1941,31,0.016
+451,China,www.news.com.au,News & Media,1941,1913,0.9856
+452,China,leprogres.fr,News & Media,1941,55,0.0283
+453,China,20minutos.es,News & Media,1941,5,0.0026
+454,China,interfax.ru,News & Media,1941,0,0.0
+455,China,globaltimes.cn,News & Media,1941,0,0.0
+456,China,page.auctions.yahoo.co.jp,News & Media,1941,1911,0.9845
+457,China,www.terra.com.br,News & Media,1941,56,0.0289
+458,China,yandex.net,News & Media,1941,3,0.0015
+459,China,sports.news.naver.com,News & Media,1941,0,0.0
+460,China,chosun.com,News & Media,1941,0,0.0
+461,China,ensonhaber.com,News & Media,1941,0,0.0
+462,China,bleacherreport.com,News & Media,1941,0,0.0
+463,China,welt.de,News & Media,1941,1894,0.9758
+464,China,fararu.com,News & Media,1941,60,0.0309
+465,China,asahi.com,News & Media,1941,26,0.0134
+466,China,accuweather.com,News & Media,1941,1,0.0005
+467,China,rtve.es,News & Media,1941,0,0.0
+468,China,today.com,News & Media,1941,0,0.0
+469,China,chance.enjoy.point.auone.jp,News & Media,1941,5,0.0026
+470,China,bellsouth.net,News & Media,1941,0,0.0
+471,China,www.uol.com.br,News & Media,1941,5,0.0026
+472,China,m.cafe.daum.net,News & Media,1941,1845,0.9505
+473,China,tass.ru,News & Media,1941,60,0.0309
+474,China,svt.se,News & Media,1941,34,0.0175
+475,China,www.lefigaro.fr,News & Media,1941,18,0.0093
+476,China,gazeta.ru,News & Media,1941,5,0.0026
+477,China,www.haberler.com,News & Media,1941,0,0.0
+478,China,elperiodico.com,News & Media,1941,0,0.0
+479,China,ssp.yahoo.com,News & Media,1941,1,0.0005
+480,China,cafef.vn,News & Media,1941,0,0.0
+481,China,pcworld.com,News & Media,1941,0,0.0
+482,China,foreignpolicy.com,News & Media,1941,1908,0.983
+483,China,lifehacker.com,News & Media,1941,50,0.0258
+484,China,huffpost.com,News & Media,1941,1898,0.9778
+485,China,yandex.kz,News & Media,1941,55,0.0283
+486,China,chinadaily.com.cn,News & Media,1941,24,0.0124
+487,China,aol.com,News & Media,1941,1,0.0005
+488,China,yandex.by,News & Media,1941,1,0.0005
+489,China,skynet.be,News & Media,1941,0,0.0
+490,China,sudouest.fr,News & Media,1941,1,0.0005
+491,China,apnews.com,News & Media,1941,0,0.0
+492,China,huffpo.net,News & Media,1941,0,0.0
+493,China,netease.com,News & Media,1941,0,0.0
+494,China,fanpage.it,News & Media,1941,0,0.0
+495,China,aljazeera.com,News & Media,1941,1873,0.965
+496,China,tds.net,News & Media,1941,54,0.0278
+497,China,weathernews.jp,News & Media,1941,26,0.0134
+498,China,lindependant.fr,News & Media,1941,1,0.0005
+499,China,tv2.dk,News & Media,1941,0,0.0
+500,China,www.goal.com,News & Media,1941,6,0.0031
+501,China,cbsnews.com,News & Media,1941,0,0.0
+502,China,ap.org,News & Media,1941,0,0.0
+503,China,usnews.com,News & Media,1941,0,0.0
+504,China,novosti.rs,News & Media,1941,0,0.0
+505,China,medscape.com,News & Media,1941,0,0.0
+506,China,smt.docomo.ne.jp,News & Media,1941,5,0.0026
+507,China,pchome.com.tw,News & Media,1941,1835,0.9454
+508,China,tiscali.it,News & Media,1941,67,0.0345
+509,China,haberler.com,News & Media,1941,39,0.0201
+510,China,bbc.co.uk,News & Media,1941,1910,0.984
+511,China,kenh14.vn,News & Media,1941,65,0.0335
+512,China,coindesk.com,News & Media,1941,1907,0.9825
+513,China,bbc.com,News & Media,1941,1908,0.983
+514,China,www.francetvinfo.fr,News & Media,1941,58,0.0299
+515,China,ign.com,News & Media,1941,23,0.0118
+516,China,data.msn.com,News & Media,1941,0,0.0
+517,China,inews.co.uk,News & Media,1941,0,0.0
+518,China,dantri.com.vn,News & Media,1941,0,0.0
+519,China,kurir.rs,News & Media,1941,0,0.0
+520,China,www.nu.nl,News & Media,1941,6,0.0031
+521,China,m.daum.net,News & Media,1941,1856,0.9562
+522,China,prtimes.jp,News & Media,1941,57,0.0294
+523,China,theintercept.com,News & Media,1941,1836,0.9459
+524,China,repubblica.it,News & Media,1941,48,0.0247
+525,China,windguru.cz,News & Media,1941,30,0.0155
+526,China,rbc.ru,News & Media,1941,0,0.0
+527,China,haaretz.co.il,News & Media,1941,1,0.0005
+528,China,news.detik.com,News & Media,1941,15,0.0077
+529,China,redbull.com,News & Media,1941,0,0.0
+530,China,iaea.org,News & Media,1941,0,0.0
+531,China,www.blic.rs,News & Media,1941,0,0.0
+532,China,rr.com,News & Media,1941,0,0.0
+533,China,bluewin.ch,News & Media,1941,1,0.0005
+534,China,ilrestodelcarlino.it,News & Media,1941,0,0.0
+535,China,youm7.com,News & Media,1941,0,0.0
+536,China,timesofindia.com,News & Media,1941,5,0.0026
+537,China,oricon.co.jp,News & Media,1941,1904,0.9809
+538,China,m.naver.com,News & Media,1941,67,0.0345
+539,China,www.lequipe.fr,News & Media,1941,31,0.016
+540,China,drudgereport.com,News & Media,1941,0,0.0
+541,China,sport24.ru,News & Media,1941,0,0.0
+542,China,www.conectate.com.do,News & Media,1941,6,0.0031
+543,China,bild.de,News & Media,1941,1908,0.983
+544,China,pagina12.com.ar,News & Media,1941,67,0.0345
+545,China,edition.cnn.com,News & Media,1941,23,0.0118
+546,China,24ur.com,News & Media,1941,0,0.0
+547,China,jpost.com,News & Media,1941,0,0.0
+548,China,hochi.news,News & Media,1941,0,0.0
+549,China,sport.ua,News & Media,1941,0,0.0
+550,China,is.fi,News & Media,1941,0,0.0
+551,China,www.bartarinha.ir,News & Media,1941,5,0.0026
+552,China,actu.fr,News & Media,1941,0,0.0
+553,China,oregonlive.com,News & Media,1941,1,0.0005
+554,China,noticiasaominuto.com,News & Media,1941,0,0.0
+555,China,www.eltiempo.es,News & Media,1941,0,0.0
+556,China,theglobeandmail.com,News & Media,1941,1915,0.9866
+557,China,kuji.dmarket.docomo.ne.jp,News & Media,1941,54,0.0278
+558,China,sinoptik.ua,News & Media,1941,38,0.0196
+559,China,ctvnews.ca,News & Media,1941,0,0.0
+560,China,20minutes.fr,News & Media,1941,0,0.0
+561,China,www.gazzetta.it,News & Media,1941,0,0.0
+562,China,interia.pl,News & Media,1941,0,0.0
+563,China,s.yimg.com,News & Media,1941,0,0.0
+564,China,gazzetta.it,News & Media,1941,0,0.0
+565,China,digi24.ro,News & Media,1941,0,0.0
+566,China,rmf24.pl,News & Media,1941,0,0.0
+567,China,inbox.lv,News & Media,1941,0,0.0
+568,China,goo.ne.jp,News & Media,1941,1909,0.9835
+569,China,srtb.msn.com,News & Media,1941,66,0.034
+570,China,www.asriran.com,News & Media,1941,33,0.017
+571,China,www.daum.net,News & Media,1941,1809,0.932
+572,China,protothema.gr,News & Media,1941,72,0.0371
+573,China,larepublica.pe,News & Media,1941,0,0.0
+574,China,blic.rs,News & Media,1941,5,0.0026
+575,China,rt.com,News & Media,1941,0,0.0
+576,China,naver.jp,News & Media,1941,0,0.0
+577,China,topics.smt.docomo.ne.jp,News & Media,1941,6,0.0031
+578,China,walesonline.co.uk,News & Media,1941,0,0.0
+579,China,kulichki.net,News & Media,1941,1,0.0005
+580,China,www.jutarnji.hr,News & Media,1941,1,0.0005
+581,China,salon.com,News & Media,1941,0,0.0
+582,China,m.fmkorea.com,News & Media,1941,0,0.0
+583,China,gmx.net,News & Media,1941,0,0.0
+584,China,boursorama.com,News & Media,1941,0,0.0
+585,China,blesk.cz,News & Media,1941,1,0.0005
+586,China,www.interia.pl,News & Media,1941,0,0.0
+587,China,24h.com.vn,News & Media,1941,0,0.0
+588,China,www.khabaronline.ir,News & Media,1941,0,0.0
+589,China,huffingtonpost.co.uk,News & Media,1941,0,0.0
+590,China,www.cricbuzz.com,News & Media,1941,0,0.0
+591,China,express.co.uk,News & Media,1941,1906,0.982
+592,China,tn.com.ar,News & Media,1941,56,0.0289
+593,China,www.foxnews.com,News & Media,1941,39,0.0201
+594,China,elespanol.com,News & Media,1941,0,0.0
+595,China,emarketer.com,News & Media,1941,1,0.0005
+596,China,cnbc.com,News & Media,1941,0,0.0
+597,China,manchestereveningnews.co.uk,News & Media,1941,0,0.0
+598,China,arstechnica.com,News & Media,1941,0,0.0
+599,China,livedoor.com,News & Media,1941,1,0.0005
+600,China,bfmtv.com,News & Media,1941,0,0.0
+601,China,unotv.com,News & Media,1941,0,0.0
+602,China,pravda.com.ua,News & Media,1941,0,0.0
+603,China,sports.yahoo.com,News & Media,1941,0,0.0
+604,China,semana.com,News & Media,1941,0,0.0
+605,China,grist.org,News & Media,1941,0,0.0
+606,China,wsj.net,News & Media,1941,1903,0.9804
+607,China,gazeta.pl,News & Media,1941,53,0.0273
+608,China,newsbreak.com,News & Media,1941,1837,0.9464
+609,China,timeshighereducation.com,News & Media,1941,65,0.0335
+610,China,sina.cn,News & Media,1941,27,0.0139
+611,China,lequipe.fr,News & Media,1941,5,0.0026
+612,China,bhaskar.com,News & Media,1941,0,0.0
+613,China,chicagotribune.com,News & Media,1941,0,0.0
+614,China,vv6.video.qq.com,News & Media,1941,6,0.0031
+615,China,wn.com,News & Media,1941,0,0.0
+616,China,pewresearch.org,News & Media,1941,10,0.0052
+617,China,sapo.pt,News & Media,1941,0,0.0
+618,China,www.theguardian.com,News & Media,1941,1901,0.9794
+619,China,outlookindia.com,News & Media,1941,1908,0.983
+620,China,foreignaffairs.com,News & Media,1941,1835,0.9454
+621,China,mercurynews.com,News & Media,1941,75,0.0386
+622,China,eurekalert.org,News & Media,1941,18,0.0093
+623,China,vaticannews.va,News & Media,1941,22,0.0113
+624,China,www.sugotoku.docomo.ne.jp,News & Media,1941,6,0.0031
+625,China,nikkansports.com,News & Media,1941,5,0.0026
+626,China,rtbf.be,News & Media,1941,1909,0.9835
+627,China,windstream.net,News & Media,1941,68,0.035
+628,China,eldiario.es,News & Media,1941,24,0.0124
+629,China,sportingnews.com,News & Media,1941,1,0.0005
+630,China,www.dailymail.co.uk,News & Media,1941,1908,0.983
+631,China,francetvinfo.fr,News & Media,1941,10,0.0052
+632,China,lavoixdunord.fr,News & Media,1941,0,0.0
+633,China,fr.de,News & Media,1941,0,0.0
+634,China,derwesten.de,News & Media,1941,0,0.0
+635,China,theage.com.au,News & Media,1941,1909,0.9835
+636,China,kommersant.ru,News & Media,1941,50,0.0258
+637,China,aljazeera.net,News & Media,1941,27,0.0139
+638,China,szn.cz,News & Media,1941,0,0.0
+639,China,baomoi.com,News & Media,1941,0,0.0
+640,China,metro.co.uk,News & Media,1941,1,0.0005
+641,China,elconfidencial.com,News & Media,1941,1903,0.9804
+642,China,startribune.com,News & Media,1941,1903,0.9804
+643,China,siol.net,News & Media,1941,47,0.0242
+644,China,att.net,News & Media,1941,31,0.016
+645,China,ansa.it,News & Media,1941,15,0.0077
+646,China,pomorska.pl,News & Media,1941,0,0.0
+647,China,androidauthority.com,News & Media,1941,2,0.001
+648,China,www.elmundo.es,News & Media,1941,0,0.0
+649,China,www.idnes.cz,News & Media,1941,0,0.0
+650,China,idnes.cz,News & Media,1941,0,0.0
+651,China,newatlas.com,News & Media,1941,1,0.0005
+652,China,www.cronista.com,News & Media,1941,0,0.0
+653,China,mbl.is,News & Media,1941,0,0.0
+654,China,m.dcinside.com,News & Media,1941,4,0.0021
+655,China,biglobe.ne.jp,News & Media,1941,5,0.0026
+656,China,ndtv.com,News & Media,1941,1,0.0005
+657,China,dr.dk,News & Media,1941,0,0.0
+658,China,newsday.com,News & Media,1941,0,0.0
+659,China,tw.yahoo.com,News & Media,1941,1905,0.9815
+660,China,scotsman.com,News & Media,1941,66,0.034
+661,China,huanqiu.com,News & Media,1941,0,0.0
+662,China,m.search.naver.com,News & Media,1941,0,0.0
+663,China,gall.dcinside.com,News & Media,1941,1909,0.9835
+664,China,glavcom.ua,News & Media,1941,1,0.0005
+665,China,boston.com,News & Media,1941,1,0.0005
+666,China,channelnewsasia.com,News & Media,1941,1855,0.9557
+667,China,3bmeteo.com,News & Media,1941,64,0.033
+668,China,nytimes.com,News & Media,1941,1906,0.982
+669,China,www.cnnbrasil.com.br,News & Media,1941,43,0.0222
+670,China,sputniknews.com,News & Media,1941,26,0.0134
+671,China,express.de,News & Media,1941,0,0.0
+672,China,smh.com.au,News & Media,1941,1905,0.9815
+673,China,www.wsj.com,News & Media,1941,1905,0.9815
+674,China,dnaindia.com,News & Media,1941,63,0.0325
+675,China,www.naver.com,News & Media,1941,26,0.0134
+676,China,corriere.it,News & Media,1941,8,0.0041
+677,China,c-span.org,News & Media,1941,1842,0.949
+678,China,derstandard.at,News & Media,1941,37,0.0191
+679,China,tf1info.fr,News & Media,1941,1903,0.9804
+680,China,www.promiedos.com.ar,News & Media,1941,54,0.0278
+681,China,finance.yahoo.co.jp,News & Media,1941,42,0.0216
+682,China,saednews.com,News & Media,1941,3,0.0015
+683,China,blick.ch,News & Media,1941,0,0.0
+684,China,www.ouest-france.fr,News & Media,1941,0,0.0
+685,China,www.lanacion.com.ar,News & Media,1941,0,0.0
+686,China,sfchronicle.com,News & Media,1941,0,0.0
+687,China,netscape.com,News & Media,1941,0,0.0
+688,China,iol.co.za,News & Media,1941,0,0.0
+689,China,www.3bmeteo.com,News & Media,1941,5,0.0026
+690,China,www.mynet.com,News & Media,1941,1,0.0005
+691,China,in.gr,News & Media,1941,14,0.0072
+692,China,lemonde.fr,News & Media,1940,1889,0.9737
+693,China,farsnews.ir,News & Media,1929,0,0.0
+694,China,nease.net,News & Media,1929,0,0.0
+695,China,weathercn.com,News & Media,1929,0,0.0
+696,China,thehindu.com,News & Media,1929,1894,0.9819
+697,China,24sata.hr,News & Media,1929,49,0.0254
+698,China,www.nytimes.com,News & Media,1929,1894,0.9819
+699,China,globalnews.ca,News & Media,1929,59,0.0306
+700,China,garant.ru,News & Media,1929,35,0.0181
+701,China,mk.ru,News & Media,1929,19,0.0098
+702,China,biobiochile.cl,News & Media,1929,0,0.0
+703,China,wiadomosci.onet.pl,News & Media,1929,5,0.0026
+704,China,walkerplus.com,News & Media,1929,0,0.0
+705,China,news.yahoo.co.jp,News & Media,1929,6,0.0031
+706,China,search.naver.com,News & Media,1929,0,0.0
+707,China,www.livehindustan.com,News & Media,1929,5,0.0026
+708,China,web.de,News & Media,1929,0,0.0
+709,China,seznam.cz,News & Media,1929,5,0.0026
+710,China,thetimes.co.uk,News & Media,1929,0,0.0
+711,China,yandex.ru,News & Media,1929,1,0.0005
+712,China,events.data.msn.com,News & Media,1929,0,0.0
+713,China,t-online.de,News & Media,1929,0,0.0
+714,China,sp.analytics.yahoo.com,News & Media,1929,5,0.0026
+715,China,terra.com.br,News & Media,1929,5,0.0026
+716,China,digitaljournal.com,News & Media,1929,0,0.0
+717,China,mirror.co.uk,News & Media,1929,0,0.0
+718,China,ilsole24ore.com,News & Media,1929,0,0.0
+719,China,tuoitre.vn,News & Media,1929,0,0.0
+720,China,people.com.cn,News & Media,1930,0,0.0
+721,China,nate.com,News & Media,1934,1891,0.9778
+722,China,observer.com,News & Media,1941,0,0.0
+723,China,liveabout.com,News & Media,1941,0,0.0
+724,China,china.com.cn,News & Media,1941,0,0.0
+725,China,ent-api.msn.com,News & Media,1941,0,0.0
+726,China,amarujala.com,News & Media,1941,0,0.0
+727,China,independent.co.uk,News & Media,1941,1897,0.9773
+728,China,cnet.com,News & Media,1941,63,0.0325
+729,China,vz.ru,News & Media,1941,25,0.0129
+730,China,denverpost.com,News & Media,1941,13,0.0067
+731,China,krakow.pl,News & Media,1941,10,0.0052
+732,China,nieuwsblad.be,News & Media,1941,1,0.0005
+733,China,fakt.pl,News & Media,1941,0,0.0
+734,China,wyborcza.pl,News & Media,1941,0,0.0
+735,China,ambito.com,News & Media,1941,0,0.0
+736,China,haaretz.com,News & Media,1941,0,0.0
+737,China,sports.yahoo.co.jp,News & Media,1941,6,0.0031
+738,China,rawstory.com,News & Media,1941,1903,0.9804
+739,China,freep.com,News & Media,1941,57,0.0294
+740,China,ekstrabladet.dk,News & Media,1941,37,0.0191
+741,China,ilmeteo.it,News & Media,1941,0,0.0
+742,China,theaustralian.com.au,News & Media,1941,0,0.0
+743,China,c.msn.com,News & Media,1941,0,0.0
+744,China,sina.com,News & Media,1941,0,0.0
+745,China,google.co.ls,News & Media,1941,1,0.0005
+746,China,toutiao.com,News & Media,1941,0,0.0
+747,China,sportowefakty.wp.pl,News & Media,1941,5,0.0026
+748,China,dailystar.co.uk,News & Media,1941,0,0.0
+749,China,rg.ru,News & Media,1941,0,0.0
+750,China,nexusmods.com,News & Media,1941,0,0.0
+751,China,patch.com,News & Media,1941,1,0.0005
+752,China,index.hr,News & Media,1941,0,0.0
+753,China,kicker.de,News & Media,1941,0,0.0
+754,China,nationalpost.com,News & Media,1941,1,0.0005
+755,China,cleveland.com,News & Media,1941,1,0.0005
+756,China,24.hu,News & Media,1941,0,0.0
+757,China,swr.de,News & Media,1941,1901,0.9794
+758,China,rhino-news.com,News & Media,1940,1,0.0005
+759,China,cbc.ca,News & Media,1940,1893,0.9758
+760,China,tw.stock.yahoo.com,News & Media,1940,64,0.033
+761,China,vietnamnet.vn,News & Media,1940,40,0.0206
+762,China,wiadomosci.wp.pl,News & Media,1940,25,0.0129
+763,China,jutarnji.hr,News & Media,1940,21,0.0108
+764,China,gismeteo.ru,News & Media,1940,5,0.0026
+765,China,togetter.com,News & Media,1940,1894,0.9763
+766,China,browser.events.data.msn.com,News & Media,1940,50,0.0258
+767,China,unian.net,News & Media,1940,29,0.0149
+768,China,lrytas.lt,News & Media,1940,2,0.001
+769,China,post-gazette.com,News & Media,1940,0,0.0
+770,China,m.tribunnews.com,News & Media,1940,0,0.0
+771,China,sun-sentinel.com,News & Media,1940,0,0.0
+772,China,eltiempo.com,News & Media,1940,0,0.0
+773,China,www.ilmeteo.it,News & Media,1940,4,0.0021
+774,China,index.hu,News & Media,1940,0,0.0
+775,China,espncricinfo.com,News & Media,1940,0,0.0
+776,China,meteofrance.com,News & Media,1940,0,0.0
+777,China,namecheap.com,News & Media,1940,1,0.0005
+778,China,rokna.net,News & Media,1940,0,0.0
+779,China,centurylink.net,News & Media,1939,0,0.0
+780,China,166.com,News & Media,1939,0,0.0
+781,China,alarabiya.net,News & Media,1939,1,0.0005
+782,China,www.sport.es,News & Media,1939,0,0.0
+783,China,estadao.com.br,News & Media,1939,0,0.0
+784,China,hankyung.com,News & Media,1939,1,0.0005
+785,China,n-tv.de,News & Media,1939,1889,0.9742
+786,China,www.hurriyet.com.tr,News & Media,1937,1,0.0005
+787,China,www.mundodeportivo.com,News & Media,1937,1,0.0005
+788,China,cadenaser.com,News & Media,1937,0,0.0
+789,China,sindonews.com,News & Media,1937,0,0.0
+790,China,people.cn,News & Media,1937,0,0.0
+791,China,polygon.com,News & Media,1937,0,0.0
+792,China,zoznam.sk,News & Media,1937,0,0.0
+793,China,techcrunch.com,News & Media,1937,0,0.0
+794,China,cronista.com,News & Media,1937,5,0.0026
+795,China,ladepeche.fr,News & Media,1937,0,0.0
+796,China,nzherald.co.nz,News & Media,1937,0,0.0
+797,China,hln.be,News & Media,1937,6,0.0031
+798,China,lavanguardia.com,News & Media,1937,0,0.0
+799,China,www.cnn.com,News & Media,1937,0,0.0
+800,China,abc.net.au,News & Media,1937,1887,0.9742
+801,China,hb.yahoo.net,News & Media,1937,43,0.0222
+802,China,opera-api.com,News & Media,1937,4,0.0021
+803,China,reuters.com,News & Media,1937,1884,0.9726
+804,China,pstatic.net,News & Media,1937,1885,0.9732
+805,China,www.24h.com.vn,News & Media,1938,44,0.0227
+806,China,feednews.com,News & Media,1938,1887,0.9737
+807,China,huffingtonpost.es,News & Media,1938,37,0.0191
+808,China,abplive.com,News & Media,1938,1883,0.9716
+809,China,korrespondent.net,News & Media,1938,36,0.0186
+810,China,al.com,News & Media,1938,12,0.0062
+811,China,heise.de,News & Media,1938,1890,0.9752
+812,China,hs.fi,News & Media,1938,64,0.033
+813,China,okezone.com,News & Media,1940,0,0.0
+814,China,liveinternet.ru,News & Media,1939,1,0.0005
+815,China,www.varzesh3.com,News & Media,1939,1,0.0005
+816,China,geocities.jp,News & Media,1939,0,0.0
+817,China,scmp.com,News & Media,1939,1885,0.9722
+818,China,fmkorea.com,News & Media,1939,65,0.0335
+819,China,nbcnews.com,News & Media,1939,1892,0.9758
+820,China,krone.at,News & Media,1939,60,0.0309
+821,China,portfolio.hu,News & Media,1939,26,0.0134
+822,China,www.dagbladet.no,News & Media,1939,5,0.0026
+823,China,cmjornal.pt,News & Media,1939,0,0.0
+824,China,thenextweb.com,News & Media,1939,0,0.0
+825,China,newsweek.com,News & Media,1939,1881,0.9701
+826,China,aif.ru,News & Media,1939,69,0.0356
+827,China,ilgiornale.it,News & Media,1939,39,0.0201
+828,China,parade.com,News & Media,1939,21,0.0108
+829,China,novinky.cz,News & Media,1939,0,0.0
+830,China,elmundo.es,News & Media,1939,5,0.0026
+831,China,www.ynet.co.il,News & Media,1939,0,0.0
+832,China,mp.weixin.qq.com,News & Media,1939,0,0.0
+833,China,portal.auone.jp,News & Media,1939,5,0.0026
+834,China,atptour.com,News & Media,1939,0,0.0
+835,China,letelegramme.fr,News & Media,1939,1888,0.9737
+836,China,nyt.com,News & Media,1939,75,0.0387
+837,China,timesofindia.indiatimes.com,News & Media,1939,1886,0.9727
+838,China,www.onet.pl,News & Media,1939,75,0.0387
+839,China,www.n-tv.de,News & Media,1939,1881,0.9701
+840,China,www.eenadu.net,News & Media,1939,64,0.033
+841,China,www.milliyet.com.tr,News & Media,1939,30,0.0155
+842,China,nbcsports.com,News & Media,1939,0,0.0
+843,China,m.haber7.com,News & Media,1939,0,0.0
+844,China,thesun.co.uk,News & Media,1939,0,0.0
+845,China,sudinfo.be,News & Media,1939,0,0.0
+846,China,dawn.com,News & Media,1939,0,0.0
+847,China,fivethirtyeight.com,News & Media,1939,0,0.0
+848,China,thairath.co.th,News & Media,1939,0,0.0
+849,China,weather.gov,News & Media,1939,0,0.0
+850,China,www.detik.com,News & Media,1939,5,0.0026
+851,China,focus.de,News & Media,1939,1806,0.9314
+852,China,ria.ru,News & Media,1939,71,0.0366
+853,China,lavozdegalicia.es,News & Media,1939,29,0.015
+854,China,nzz.ch,News & Media,1939,1819,0.9381
+855,China,elpais.com,News & Media,1939,1885,0.9722
+856,China,eadaily.com,News & Media,1939,47,0.0242
+857,China,mainichi.jp,News & Media,1939,34,0.0175
+858,China,sohu.com,News & Media,1939,14,0.0072
+859,China,spiegel.de,News & Media,1939,1,0.0005
+860,China,pressreader.com,News & Media,1939,1881,0.9701
+861,China,varzesh3.com,News & Media,1939,6,0.0031
+862,China,dek-d.com,News & Media,1939,0,0.0
+863,China,www.index.hr,News & Media,1939,5,0.0026
+864,China,telegraph.co.uk,News & Media,1939,0,0.0
+865,China,khabaronline.ir,News & Media,1939,4,0.0021
+866,China,buzzfeednews.com,News & Media,1939,0,0.0
+867,China,yahoo.net,News & Media,1939,5,0.0026
+868,China,www.independent.co.uk,News & Media,1939,1881,0.9701
+869,China,www.sondakika.com,News & Media,1939,49,0.0253
+870,China,delfi.ee,News & Media,1939,36,0.0186
+871,China,beap-bc.yahoo.com,News & Media,1939,40,0.0206
+872,China,www.reuters.com,News & Media,1939,1876,0.9675
+873,China,cnnindonesia.com,News & Media,1939,45,0.0232
+874,China,newrepublic.com,News & Media,1939,41,0.0211
+875,China,vnexpress.net,News & Media,1939,0,0.0
+876,China,hurriyet.com.tr,News & Media,1939,2,0.001
+877,China,onedio.com,News & Media,1939,0,0.0
+878,China,yr.no,News & Media,1939,0,0.0
+879,China,manoramaonline.com,News & Media,1939,0,0.0
+880,China,dion.ne.jp,News & Media,1939,5,0.0026
+881,China,v.daum.net,News & Media,1939,1817,0.9371
+882,China,15min.lt,News & Media,1939,52,0.0268
+883,China,cgtn.com,News & Media,1939,32,0.0165
+884,China,libertatea.ro,News & Media,1939,0,0.0
+885,China,rttv.ru,News & Media,1939,0,0.0
+886,China,api.msn.com,News & Media,1939,0,0.0
+887,China,www.espncricinfo.com,News & Media,1939,5,0.0026
+888,China,straitstimes.com,News & Media,1939,1885,0.9722
+889,China,news-medical.net,News & Media,1939,45,0.0232
+890,China,chron.com,News & Media,1939,31,0.016
+891,China,liputan6.com,News & Media,1939,0,0.0
+892,China,abcnews.go.com,News & Media,1939,0,0.0
+893,China,vedomosti.ru,News & Media,1939,0,0.0
+894,China,wsj.com,News & Media,1939,1883,0.9711
+895,China,dcinside.com,News & Media,1939,70,0.0361
+896,China,br.search.yahoo.com,News & Media,1939,1888,0.9737
+897,China,theguardian.com,News & Media,1939,1885,0.9722
+898,China,rtlnieuws.nl,News & Media,1939,66,0.034
+899,China,businessinsider.com.pl,News & Media,1939,1885,0.9722
+900,China,www.ilmessaggero.it,News & Media,1939,59,0.0304
+901,China,storm.mg,News & Media,1939,1886,0.9727
+902,China,gordonua.com,News & Media,1939,40,0.0206
+903,China,aktuality.sk,News & Media,1939,22,0.0113
+904,China,orlandosentinel.com,News & Media,1939,13,0.0067
+905,China,b92.net,News & Media,1939,0,0.0
+906,China,snssdk.com,News & Media,1939,0,0.0
+907,China,lavoz.com.ar,News & Media,1939,0,0.0
+908,China,rusprofile.ru,News & Media,1939,0,0.0
+909,China,upi.com,News & Media,1939,1697,0.8752
+910,China,rte.ie,News & Media,1939,50,0.0258
+911,China,auone.jp,News & Media,1939,37,0.0191
+912,China,isna.ir,News & Media,1939,25,0.0129
+913,China,chinanews.com.cn,News & Media,1939,43,0.0222
+914,China,emol.com,News & Media,1939,0,0.0
+915,China,sportskeeda.com,News & Media,1939,0,0.0
+916,China,theregister.co.uk,News & Media,1939,0,0.0
+917,China,adevarul.ro,News & Media,1939,4,0.0021
+918,China,www.ixbt.com,News & Media,1939,0,0.0
+919,China,rainews.it,News & Media,1939,0,0.0
+920,China,haberturk.com,News & Media,1939,1889,0.9742
+921,China,news.com.au,News & Media,1939,1862,0.9603
+922,China,sondakika.com,News & Media,1939,75,0.0387
+923,China,www.vg.no,News & Media,1939,21,0.0108
+924,China,ixbt.com,News & Media,1939,8,0.0041
+925,China,sbcglobal.net,News & Media,1939,4,0.0021
+926,China,prnewswire.com,News & Media,1939,1,0.0005
+927,China,activebeat.com,News & Media,1939,0,0.0
+928,China,business-standard.com,News & Media,1939,1804,0.9304
+929,China,khaleejtimes.com,News & Media,1939,65,0.0335
+930,China,meteoblue.com,News & Media,1939,33,0.017
+931,China,promiedos.com.ar,News & Media,1939,0,0.0
+932,China,dw.com,News & Media,1939,1885,0.9722
+933,China,m.yahoo.co.jp,News & Media,1939,7,0.0036
+934,China,www.fmkorea.com,News & Media,1939,5,0.0026
+935,China,zing.vn,News & Media,1939,0,0.0
+936,China,tenki.jp,News & Media,1939,0,0.0
+937,China,rian.ru,News & Media,1939,0,0.0
+938,China,sanook.com,News & Media,1939,1,0.0005
+939,China,nag.ru,News & Media,1939,0,0.0
+940,China,kp.ru,News & Media,1939,0,0.0
+941,China,www.corriere.it,News & Media,1939,5,0.0026
+942,China,matchtv.ru,News & Media,1939,0,0.0
+943,China,aftonbladet.se,News & Media,1939,0,0.0
+944,China,cricbuzz.com,News & Media,1939,5,0.0026
+945,China,zeenews.india.com,News & Media,1939,1890,0.9747
+946,China,ledauphine.com,News & Media,1939,58,0.0299
+947,China,walla.co.il,News & Media,1939,30,0.0155
+948,China,mpokec.azet.sk,News & Media,1939,0,0.0
+949,China,m.bild.de,News & Media,1939,1885,0.9722
+950,China,news.google.com,News & Media,1939,6,0.0031
+951,China,ocn.ne.jp,News & Media,1939,5,0.0026
+952,China,vnn.vn,News & Media,1939,0,0.0
+953,China,www.msn.com,News & Media,1939,0,0.0
+954,China,birminghammail.co.uk,News & Media,1939,0,0.0
+955,China,udn.com,News & Media,1939,1889,0.9742
+956,China,transit.yahoo.co.jp,News & Media,1939,70,0.0361
+957,China,www.cnbcindonesia.com,News & Media,1939,41,0.0211
+958,China,sfgate.com,News & Media,1939,0,0.0
+959,China,24tv.ua,News & Media,1939,0,0.0
+960,China,huffingtonpost.com,News & Media,1939,0,0.0
+961,China,tribunnews.com,News & Media,1939,5,0.0026
+962,China,everydayhealth.com,News & Media,1939,0,0.0
+963,China,timesunion.com,News & Media,1939,0,0.0
+964,China,foxnews.com,News & Media,1939,5,0.0026
+965,China,malaysiakini.com,News & Media,1939,1891,0.9752
+966,China,washingtonpost.com,News & Media,1939,1884,0.9716
+967,China,ilmessaggero.it,News & Media,1939,75,0.0387
+968,China,www.welt.de,News & Media,1939,1886,0.9727
+969,China,gulfnews.com,News & Media,1939,68,0.0351
+970,China,www.iltalehti.fi,News & Media,1939,34,0.0175
+971,China,buzzfeed.com,News & Media,1939,5,0.0026
+972,China,indianexpress.com,News & Media,1939,1,0.0005
+973,China,ura.news,News & Media,1939,1,0.0005
+974,China,www.sportskeeda.com,News & Media,1939,5,0.0026
+975,China,ntv.ru,News & Media,1939,0,0.0
+976,China,economictimes.com,News & Media,1939,0,0.0
+977,China,rtvslo.si,News & Media,1939,0,0.0
+978,China,sanspo.com,News & Media,1939,0,0.0
+979,China,thenation.com,News & Media,1939,0,0.0
+980,China,hna.de,News & Media,1939,0,0.0
+981,China,elcomercio.pe,News & Media,1939,0,0.0
+982,China,cnews.fr,News & Media,1939,0,0.0
+983,China,nj.com,News & Media,1939,0,0.0
+984,China,finance.naver.com,News & Media,1939,0,0.0
+985,China,www.nexusmods.com,News & Media,1939,5,0.0026
+986,China,handelsblatt.com,News & Media,1939,1890,0.9747
+987,China,qq.com.cn,News & Media,1939,58,0.0299
+988,China,voanews.com,News & Media,1939,1879,0.9691
+989,China,insider.com,News & Media,1939,49,0.0253
+990,China,detroitnews.com,News & Media,1939,38,0.0196
+991,China,chinanews.com,News & Media,1939,1,0.0005
+992,China,ntv.com.tr,News & Media,1939,4,0.0021
+993,China,yahoo.co.jp,News & Media,1939,5,0.0026
+994,China,linternaute.com,News & Media,1939,0,0.0
+995,China,gadgetsnow.com,News & Media,1939,0,0.0
+996,China,ocregister.com,News & Media,1939,0,0.0
+997,China,merkur.de,News & Media,1939,0,0.0
+998,China,on3.com,News & Media,1939,0,0.0
+999,China,www.cnnindonesia.com,News & Media,1939,6,0.0031
+1000,China,www.repubblica.it,News & Media,1939,6,0.0031
+1001,China,news.livedoor.com,News & Media,1939,1890,0.9747
+1002,China,chunichi.co.jp,News & Media,1939,73,0.0376
+1003,China,medicalxpress.com,News & Media,1939,39,0.0201
+1004,China,www.amarujala.com,News & Media,1939,5,0.0026
+1005,China,economist.com,News & Media,1939,1890,0.9747
+1006,China,life.ru,News & Media,1939,0,0.0
+1007,China,sacbee.com,News & Media,1939,0,0.0
+1008,China,dailyrecord.co.uk,News & Media,1939,0,0.0
+1009,China,livedoor.jp,News & Media,1939,1,0.0005
+1010,China,chinatimes.com,News & Media,1939,1,0.0005
+1011,China,news18.com,News & Media,1939,0,0.0
+1012,China,smi2.ru,News & Media,1939,1,0.0005
+1013,China,docomo.ne.jp,News & Media,1939,6,0.0031
+1014,China,orf.at,News & Media,1939,0,0.0
+1015,China,midilibre.fr,News & Media,1939,0,0.0
+1016,China,stltoday.com,News & Media,1939,0,0.0
+1017,China,afp.com,News & Media,1939,0,0.0
+1018,China,cms.analytics.yahoo.com,News & Media,1939,5,0.0026
+1019,China,store.shopping.yahoo.co.jp,News & Media,1939,1891,0.9752
+1020,China,rambler.ru,News & Media,1939,65,0.0335
+1021,China,zdnet.com,News & Media,1939,43,0.0222
+1022,China,firstpost.com,News & Media,1939,1886,0.9727
+1023,China,censor.net,News & Media,1939,48,0.0248
+1024,China,adage.com,News & Media,1939,5,0.0026
+1025,China,www.kurir.rs,News & Media,1939,5,0.0026
+1026,China,lenta.ru,News & Media,1939,2,0.001
+1027,China,maariv.co.il,News & Media,1939,0,0.0
+1028,China,aol.co.uk,News & Media,1939,0,0.0
+1029,China,focus.ua,News & Media,1939,1,0.0005
+1030,China,news24.com,News & Media,1939,1,0.0005
+1031,China,clicrbs.com.br,News & Media,1939,0,0.0
+1032,China,legacy.com,News & Media,1939,0,0.0
+1033,China,xda-developers.com,News & Media,1939,0,0.0
+1034,China,gmw.cn,News & Media,1939,0,0.0
+1035,China,dallasnews.com,News & Media,1939,0,0.0
+1036,China,inquirer.com,News & Media,1939,0,0.0
+1037,China,cnbcindonesia.com,News & Media,1939,5,0.0026
+1038,China,rediff.com,News & Media,1939,1895,0.9773
+1039,China,www.merkur.de,News & Media,1939,58,0.0299
+1040,China,inverse.com,News & Media,1939,34,0.0175
+1041,China,arc.msn.com,News & Media,1939,0,0.0
+1042,China,www.pravda.com.ua,News & Media,1939,0,0.0
+1043,China,mrf.io,News & Media,1939,0,0.0
+1044,China,wpa.qq.com,News & Media,1939,4,0.0021
+1045,China,milliyet.com.tr,News & Media,1939,0,0.0
+1046,China,insidehighered.com,News & Media,1939,0,0.0
+1047,China,india.com,News & Media,1939,5,0.0026
+1048,China,chinaz.com,News & Media,1939,0,0.0
+1049,China,www.yahoo.com,News & Media,1939,0,0.0
+1050,China,nba.com,News & Media,1939,0,0.0
+1051,China,globo.com,News & Media,1939,5,0.0026
+1052,China,thenationalnews.com,News & Media,1939,0,0.0
+1053,China,mobile01.com,News & Media,1939,1885,0.9722
+1054,China,axios.com,News & Media,1939,1847,0.9526
+1055,China,faz.net,News & Media,1939,59,0.0304
+1056,China,lanacion.com.ar,News & Media,1939,19,0.0098
+1057,China,globenewswire.com,News & Media,1939,18,0.0093
+1058,China,lefigaro.fr,News & Media,1939,5,0.0026
+1059,China,cnnbrasil.com.br,News & Media,1939,5,0.0026
+1060,China,tagesspiegel.de,News & Media,1939,0,0.0
+1061,China,sportbox.ru,News & Media,1939,0,0.0
+1062,China,www.sozcu.com.tr,News & Media,1939,1,0.0005
+1063,China,cri.cn,News & Media,1939,0,0.0
+1064,China,game.hiroba.dpoint.docomo.ne.jp,News & Media,1939,5,0.0026
+1065,China,so-net.ne.jp,News & Media,1939,5,0.0026
+1066,China,sabah.com.tr,News & Media,1939,0,0.0
+1067,China,www.cnbc.com,News & Media,1939,5,0.0026
+1068,China,nikkei.com,News & Media,1939,1892,0.9758
+1069,China,www.bbc.com,News & Media,1939,1888,0.9737
+1070,China,www.fanpage.it,News & Media,1939,62,0.032
+1071,China,lastampa.it,News & Media,1939,30,0.0155
+1072,China,stern.de,News & Media,1939,20,0.0103
+1073,China,prokerala.com,News & Media,1939,17,0.0088
+1074,China,ouest-france.fr,News & Media,1939,5,0.0026
+1075,China,eurosport.com,News & Media,1939,0,0.0
+1076,China,theregister.com,News & Media,1939,0,0.0
+1077,China,br.de,News & Media,1939,0,0.0
+1078,China,azet.sk,News & Media,1939,5,0.0026
+1079,China,dailydot.com,News & Media,1939,0,0.0
+1080,China,china.com,News & Media,1939,1,0.0005
+1081,China,g1.globo.com,News & Media,1939,5,0.0026
+1082,China,nydailynews.com,News & Media,1939,0,0.0
+1083,China,wetter.com,News & Media,1939,0,0.0
+1084,China,www.accuweather.com,News & Media,1939,5,0.0026
+1085,China,www.globo.com,News & Media,1939,5,0.0026
+1086,China,jsonline.com,News & Media,1939,0,0.0
+1087,China,businesswire.com,News & Media,1939,0,0.0
+1088,China,infobae.com,News & Media,1939,5,0.0026
+1089,China,vice.com,News & Media,1939,0,0.0
+1090,China,viva.co.id,News & Media,1939,0,0.0
+1091,China,ztomy.com,News & Media,1939,1,0.0005
+1092,China,zeit.de,News & Media,1939,0,0.0
+1093,China,sport.es,News & Media,1939,5,0.0026
+1094,China,statnews.com,News & Media,1939,0,0.0
+1095,China,deccanherald.com,News & Media,1939,1856,0.9572
+1096,China,libero.it,News & Media,1939,0,0.0
+1097,China,live-video.net,News & Media,1939,0,0.0
+1098,China,liberation.fr,News & Media,1939,1856,0.9572
+1099,China,yahoo.com,News & Media,1939,68,0.0351
+1100,China,espncdn.com,News & Media,1939,2,0.001
+1101,China,tampabay.com,News & Media,1939,1,0.0005
+1102,China,espn.com.br,News & Media,1939,0,0.0
+1103,China,hatena.ne.jp,News & Media,1939,5,0.0026
+1104,China,verizon.net,News & Media,1939,0,0.0
+1105,China,cctv.com,News & Media,1939,0,0.0
+1106,China,dailycaller.com,News & Media,1939,8,0.0041
+1107,China,expressen.se,News & Media,1939,1890,0.9747
+1108,China,www.bfmtv.com,News & Media,1939,69,0.0356
+1109,China,euronews.com,News & Media,1939,1892,0.9758
+1110,China,theonion.com,News & Media,1939,58,0.0299
+1111,China,timesnownews.com,News & Media,1939,1845,0.9515
+1112,China,ufanet.ru,News & Media,1939,71,0.0366
+1113,China,dhnet.be,News & Media,1939,24,0.0124
+1114,China,yle.fi,News & Media,1939,0,0.0
+1115,China,ltn.com.tw,News & Media,1939,1890,0.9747
+1116,China,m.cricbuzz.com,News & Media,1939,5,0.0026
+1117,China,ncaa.com,News & Media,1939,0,0.0
+1118,China,businessweek.com,News & Media,1939,1,0.0005
+1119,China,eltiempo.es,News & Media,1939,6,0.0031
+1120,China,mynet.com,News & Media,1939,5,0.0026
+1121,China,dmarket.docomo.ne.jp,News & Media,1939,6,0.0031
+1122,China,analytics.yahoo.com,News & Media,1939,0,0.0
+1123,China,bloomberg.com,News & Media,1939,1889,0.9742
+1124,China,washingtontimes.com,News & Media,1939,1894,0.9768
+1125,China,utro.ru,News & Media,1939,62,0.032
+1126,China,nic.de,News & Media,1939,23,0.0119
+1127,China,yomiuri.co.jp,News & Media,1939,1834,0.9458
+1128,China,ynet.co.il,News & Media,1939,64,0.033
+1129,China,sina.com.cn,News & Media,1939,30,0.0155
+1130,China,wp.pl,News & Media,1939,5,0.0026
+1131,China,news.infoseek.co.jp,News & Media,1939,5,0.0026
+1132,China,tengrinews.kz,News & Media,1939,1,0.0005
+1133,China,baseball.yahoo.co.jp,News & Media,1939,6,0.0031
+1134,China,nhk.or.jp,News & Media,1939,0,0.0
+1135,China,diamond.jp,News & Media,1939,1890,0.9747
+1136,China,thanhnien.vn,News & Media,1939,45,0.0232
+1137,China,ngs.ru,News & Media,1939,0,0.0
+1138,China,livemint.com,News & Media,1939,8,0.0041
+1139,China,baltimoresun.com,News & Media,1939,2,0.001
+1140,China,theconversation.com,News & Media,1939,1893,0.9763
+1141,China,news.ru,News & Media,1939,60,0.0309
+1142,China,www.aajtak.in,News & Media,1939,23,0.0119
+1143,China,oneindia.com,News & Media,1939,1892,0.9758
+1144,China,chinamobile.com,News & Media,1939,55,0.0284
+1145,China,wionews.com,News & Media,1939,1890,0.9747
+1146,China,rbc.ua,News & Media,1939,40,0.0206
+1147,China,tvn24.pl,News & Media,1939,35,0.0181
+1148,China,metropoles.com,News & Media,1939,0,0.0
+1149,China,rferl.org,News & Media,1939,1,0.0005
+1150,China,medicalnewstoday.com,News & Media,1939,0,0.0
+1151,China,health.com,News & Media,1939,0,0.0
+1152,China,vg.no,News & Media,1939,5,0.0026
+1153,China,thestar.com.my,News & Media,1939,0,0.0
+1154,China,latimes.com,News & Media,1939,5,0.0026
+1155,China,mundodeportivo.com,News & Media,1939,5,0.0026
+1156,China,jagran.com,News & Media,1939,0,0.0
+1157,China,prothomalo.com,News & Media,1939,0,0.0
+1158,China,instiz.net,News & Media,1939,1,0.0005
+1159,China,ibtimes.com,News & Media,1939,1893,0.9763
+1160,China,irna.ir,News & Media,1939,0,0.0
+1161,China,windows.msn.com,News & Media,1939,0,0.0
+1162,China,haber7.com,News & Media,1939,5,0.0026
+1163,China,cbslocal.com,News & Media,1939,0,0.0
+1164,China,fontanka.ru,News & Media,1939,0,0.0
+1165,China,www.expressen.se,News & Media,1939,1894,0.9768
+1166,China,lingojam.com,Translator,1939,0,0.0
+1167,China,translate.goog,Translator,1939,1,0.0005
+1168,China,context.reverso.net,Translator,1939,0,0.0
+1169,China,deepl.com,Translator,1939,5,0.0026
+1170,China,spanishdict.com,Translator,1939,0,0.0
+1171,China,surriel.com,Radio,1939,0,0.0
+1172,China,gunbroker.com,Weapons,1939,0,0.0
+1173,China,elastic-cloud.com,Login Screens,1939,0,0.0
+1174,China,discordapp.com,Internet Phone & VOIP,1939,1893,0.9763
+1175,China,slickdeals.net,Coupons,1939,53,0.0273
+1176,China,horoscope.com,Astrology,1939,39,0.0201
+1177,China,nationalreview.com,Magazines,1939,8,0.0041
+1178,China,crunchyroll.com,Cartoons & Anime,1939,1,0.0005
+1179,China,twilio.com,Internet Phone & VOIP,1939,0,0.0
+1180,China,cloudflareresolve.com,Internet Phone & VOIP,1939,0,0.0
+1181,China,trueconf.net,Internet Phone & VOIP,1939,0,0.0
+1182,China,symphony.com,Internet Phone & VOIP,1939,0,0.0
+1183,China,vonage.com,Internet Phone & VOIP,1939,0,0.0
+1184,China,discord.gg,Internet Phone & VOIP,1939,1885,0.9722
+1185,China,agora.io,Internet Phone & VOIP,1939,48,0.0248
+1186,China,mcm.ru,Internet Phone & VOIP,1939,25,0.0129
+1187,China,zoom.com,Internet Phone & VOIP,1939,11,0.0057
+1188,China,ringcentral.com,Internet Phone & VOIP,1939,8,0.0041
+1189,China,grandstream.com,Internet Phone & VOIP,1939,0,0.0
+1190,China,telefonica.de,Messaging,1939,0,0.0
+1191,China,moviead55.ru,No Content,1939,0,0.0
+1192,China,haplat.net,No Content,1939,0,0.0
+1193,China,gpcloudservice.com,No Content,1939,4,0.0021
+1194,China,careem-internal.com,No Content,1939,1,0.0005
+1195,China,goo.gl,Redirect,1939,3,0.0015
+1196,China,lookmovie2.to,Phishing,1939,0,0.0
+1197,China,suumo.jp,Real Estate,1939,0,0.0
+1198,China,kt-prod.v.aaplimg.com,Information Technology,1939,0,0.0
+1199,China,mamastar.jp,Parenting,1939,6,0.0031
+1200,China,alphadnszone.com,Newly Seen Domains,1939,0,0.0
+1201,China,sniffies.com,Lifestyle,1939,0,0.0
+1202,China,aa-rt.sharepoint.com,New Domains,1939,4,0.0021
+1203,China,likee.com,Parked & For Sale Domains,1939,0,0.0
+1204,China,emerald.com,"Politics, Advocacy, and Government-Related",1939,0,0.0
+1205,China,takedwn.ws,DGA Domains,1939,0,0.0
+1206,China,www.primevideo.com,Video Streaming,1939,2,0.001
+1207,China,nyu.edu,Educational Institutions,1939,0,0.0
+1208,China,business2community.com,Forums,1939,1,0.0005
+1209,China,freepik.com,"News, Portal & Search",1939,5,0.0026
+1210,China,tripadvisor.es,Food & Drink,1939,1,0.0005
+1211,China,carsensor.net,Vehicles,1939,0,0.0
+1212,China,www.shutterstock.com,Photography,1939,1895,0.9773
+1213,China,ec.europa.eu,"Politics, Advocacy, and Government-Related",1939,58,0.0299
+1214,China,star-mini.c10r.facebook.com,Social Networks,1939,35,0.0181
+1215,China,www.dafont.com,Hobbies & Interests,1939,2,0.001
+1216,China,sensor.cloud.tenable.com,Information Security,1939,4,0.0021
+1217,China,freepik.es,Photography,1939,14,0.0072
+1218,China,www.furaffinity.net,Photography,1939,8,0.0041
+1219,China,ezvizlife.com,Photography,1939,0,0.0
+1220,China,imgur.com,Photography,1939,1887,0.9732
+1221,China,app.snapchat.com,Photography,1939,65,0.0335
+1222,China,pinterest.co.uk,Photography,1939,1797,0.9268
+1223,China,yximgs.com,Photography,1939,71,0.0366
+1224,China,imageshack.com,Photography,1939,32,0.0165
+1225,China,likeevideo.ru,Photography,1939,11,0.0057
+1226,China,reolink.com,Photography,1939,0,0.0
+1227,China,smugmug.com,Photography,1939,0,0.0
+1228,China,istockphoto.com,Photography,1939,1894,0.9768
+1229,China,123rf.com,Photography,1939,51,0.0263
+1230,China,pixabay.com,Photography,1939,37,0.0191
+1231,China,cargocollective.com,Photography,1939,17,0.0088
+1232,China,aws-proxy-gcp.api.snapchat.com,Photography,1939,26,0.0134
+1233,China,us-east4-gcp.api.snapchat.com,Photography,1939,14,0.0072
+1234,China,picsart.com,Photography,1939,1893,0.9763
+1235,China,dreamstime.com,Photography,1939,58,0.0299
+1236,China,500px.com,Photography,1939,1895,0.9773
+1237,China,pixieset.com,Photography,1939,64,0.033
+1238,China,us-east1-aws.api.snapchat.com,Photography,1939,41,0.0211
+1239,China,dji.com,Photography,1939,0,0.0
+1240,China,graph.instagram.com,Photography,1939,1894,0.9768
+1241,China,c10r.instagram.com,Photography,1939,1894,0.9768
+1242,China,pin.it,Photography,1939,65,0.0335
+1243,China,dribbble.com,Photography,1939,33,0.017
+1244,China,aws.duplex.snapchat.com,Photography,1939,17,0.0088
+1245,China,ct.pinterest.com,Photography,1939,1897,0.9783
+1246,China,in.pinterest.com,Photography,1939,1893,0.9763
+1247,China,flickr.com,Photography,1939,1893,0.9763
+1248,China,snapfish.com,Photography,1939,61,0.0315
+1249,China,pexels.com,Photography,1939,28,0.0144
+1250,China,i.pinimg.com,Photography,1939,7,0.0036
+1251,China,gateway.instagram.com,Photography,1939,1893,0.9763
+1252,China,gopro.com,Photography,1939,0,0.0
+1253,China,imageshack.us,Photography,1939,0,0.0
+1254,China,pinterest.ph,Photography,1939,1859,0.9587
+1255,China,pinterest.jp,Photography,1939,1756,0.9056
+1256,China,pinterest.com,Photography,1939,1891,0.9752
+1257,China,flic.kr,Photography,1939,73,0.0376
+1258,China,www.pinterest.com,Photography,1939,1889,0.9742
+1259,China,aws.api.snapchat.com,Photography,1939,70,0.0361
+1260,China,gettyimages.com,Photography,1939,17,0.0088
+1261,China,imgsrc.ru,Photography,1939,0,0.0
+1262,China,pinterest.de,Photography,1939,10,0.0052
+1263,China,pinterest.com.mx,Photography,1939,1861,0.9598
+1264,China,fotor.com,Photography,1939,67,0.0346
+1265,China,www.istockphoto.com,Photography,1939,1890,0.9747
+1266,China,picuki.com,Photography,1939,1890,0.9747
+1267,China,m.ok.ru,Photography,1939,1889,0.9742
+1268,China,photobucket.com,Photography,1939,57,0.0294
+1269,China,dpreview.com,Photography,1939,33,0.017
+1270,China,usc1-gcp-v62.api.snapchat.com,Photography,1939,24,0.0124
+1271,China,pinterest.es,Photography,1939,1852,0.9551
+1272,China,instagram.c10r.instagram.com,Photography,1939,1890,0.9747
+1273,China,api.snapchat.com,Photography,1939,59,0.0304
+1274,China,app-analytics-v2.snapchat.com,Photography,1939,46,0.0237
+1275,China,twitpic.com,Photography,1939,6,0.0031
+1276,China,canon.com,Photography,1939,0,0.0
+1277,China,s.pinimg.com,Photography,1939,4,0.0021
+1278,China,usc1-gcp-v61.api.snapchat.com,Photography,1939,10,0.0052
+1279,China,duplex.snapchat.com,Photography,1939,11,0.0057
+1280,China,instagram.com,Photography,1939,1892,0.9758
+1281,China,br.pinterest.com,Photography,1939,1893,0.9763
+1282,China,snapchat.com,Photography,1939,50,0.0258
+1283,China,furaffinity.net,Photography,1939,30,0.0155
+1284,China,tinypic.com,Photography,1939,0,0.0
+1285,China,ibb.co,Photography,1939,0,0.0
+1286,China,peakpx.com,Photography,1939,0,0.0
+1287,China,www.instagram.com,Photography,1939,1892,0.9758
+1288,China,photos.google.com,Photography,1939,4,0.0021
+1289,China,shutterstock.com,Photography,1939,1886,0.9727
+1290,China,pinimg.com,Photography,1939,59,0.0304
+1291,China,pbase.com,Photography,1939,35,0.0181
+1292,China,pinterest.ca,Photography,1939,1853,0.9556
+1293,China,postimg.cc,Photography,1939,64,0.033
+1294,China,gcp.api.snapchat.com,Photography,1939,10,0.0052
+1295,China,tplinkcloud.com,Photography,1939,0,0.0
+1296,China,pinterest.fr,Photography,1939,1854,0.9562
+1297,China,gravatar.com,Photography,1939,1890,0.9747
+1298,China,hhs.gov,Government,1939,0,0.0
+1299,China,mass.gov,Government,1939,0,0.0
+1300,China,up.gov.in,Government,1939,0,0.0
+1301,China,virginia.gov,Government,1939,0,0.0
+1302,China,mo.gov,Government,1939,0,0.0
+1303,China,unsplash.com,"News, Portal & Search",1939,0,0.0
+1304,China,distmed.com,Login Screens,1939,0,0.0
+1305,China,discord.media,Chat,1939,0,0.0
+1306,China,mimecast.net,Miscellaneous,1939,0,0.0
+1307,China,giga.de,Magazines,1939,0,0.0
+1308,China,www.zalando.de,Comic Books,1939,0,0.0
+1309,China,reverso.net,Translator,1939,5,0.0026
+1310,China,realsimple.com,Magazines,1939,0,0.0
+1311,China,play.itunes.apple.com,Information Technology,1939,4,0.0021
+1312,China,astro.com,Astrology,1939,0,0.0
+1313,China,nairaland.com,Forums,1939,0,0.0
+1314,China,mangalib.me,Cartoons & Anime,1939,0,0.0
+1315,China,wd2go.com,Login Screens,1939,0,0.0
+1316,China,binance.info,Parked & For Sale Domains,1939,1727,0.8907
+1317,China,play.prodigygame.com,Education,1939,73,0.0376
+1318,China,magicbricks.com,Real Estate,1939,25,0.0129
+1319,China,nipr.mil,Violence,1939,1,0.0005
+1320,China,euro.com.pl,Home & Garden,1939,0,0.0
+1321,China,cdn.house,Parked & For Sale Domains,1939,0,0.0
+1322,China,example.org,Parked & For Sale Domains,1939,0,0.0
+1323,China,js7k.com,Parked & For Sale Domains,1939,0,0.0
+1324,China,starfieldtech.com,Parked & For Sale Domains,1939,0,0.0
+1325,China,mmcdn.com,Parked & For Sale Domains,1939,0,0.0
+1326,China,de.com,Parked & For Sale Domains,1939,0,0.0
+1327,China,kick.com,Parked & For Sale Domains,1939,0,0.0
+1328,China,imghst-de.com,Parked & For Sale Domains,1939,0,0.0
+1329,China,livedns.co.uk,Parked & For Sale Domains,1939,0,0.0
+1330,China,uisp.com,Parked & For Sale Domains,1939,0,0.0
+1331,China,nic.do,Parked & For Sale Domains,1939,0,0.0
+1332,China,m.porno365.pics,Parked & For Sale Domains,1939,5,0.0026
+1333,China,sng.link,Parked & For Sale Domains,1939,0,0.0
+1334,China,tpmn.co.kr,Parked & For Sale Domains,1939,0,0.0
+1335,China,wanadoo.fr,Parked & For Sale Domains,1939,0,0.0
+1336,China,porno365.pics,Parked & For Sale Domains,1939,8,0.0041
+1337,China,eu.com,Parked & For Sale Domains,1939,0,0.0
+1338,China,namebrightdns.com,Parked & For Sale Domains,1939,0,0.0
+1339,China,dyndns.tv,Parked & For Sale Domains,1939,1,0.0005
+1340,China,kinescopecdn.net,Parked & For Sale Domains,1939,0,0.0
+1341,China,rs6.net,Parked & For Sale Domains,1939,0,0.0
+1342,China,nextmillmedia.com,Parked & For Sale Domains,1939,0,0.0
+1343,China,reacciun.ve,Parked & For Sale Domains,1939,0,0.0
+1344,China,prava-online.net,Parked & For Sale Domains,1939,0,0.0
+1345,China,bunnyinfra.net,Parked & For Sale Domains,1939,0,0.0
+1346,China,parkingcrew.net,Parked & For Sale Domains,1939,0,0.0
+1347,China,audrte.com,Parked & For Sale Domains,1939,0,0.0
+1348,China,sascdn.com,Parked & For Sale Domains,1939,0,0.0
+1349,China,163jiasu.com,Parked & For Sale Domains,1939,0,0.0
+1350,China,hugedomains.com,Parked & For Sale Domains,1939,0,0.0
+1351,China,csof.net,Parked & For Sale Domains,1939,0,0.0
+1352,China,yutex.ru,Parked & For Sale Domains,1939,0,0.0
+1353,China,aniwatch.to,Parked & For Sale Domains,1939,1,0.0005
+1354,China,dp.ua,Parked & For Sale Domains,1939,0,0.0
+1355,China,sedoparking.com,Parked & For Sale Domains,1939,0,0.0
+1356,China,unixtools.org,Parked & For Sale Domains,1939,0,0.0
+1357,China,axc.nl,Parked & For Sale Domains,1939,0,0.0
+1358,China,hopto.org,Parked & For Sale Domains,1939,7,0.0036
+1359,China,registry.in,Parked & For Sale Domains,1939,0,0.0
+1360,China,aliexpress.us,Parked & For Sale Domains,1939,0,0.0
+1361,China,minkatu.com,Parked & For Sale Domains,1939,0,0.0
+1362,China,vivawebhost.com,Parked & For Sale Domains,1939,0,0.0
+1363,China,secu100.net,Parked & For Sale Domains,1939,0,0.0
+1364,China,netshoes.com.br,Ecommerce,1939,0,0.0
+1365,China,walmart.ca,Ecommerce,1939,0,0.0
+1366,China,abebooks.com,Ecommerce,1939,1857,0.9577
+1367,China,dns-shop.ru,Ecommerce,1939,69,0.0356
+1368,China,mercadolivre.com.br,Ecommerce,1939,34,0.0175
+1369,China,cableone.net,Information Technology,1939,22,0.0113
+1370,China,homes.com,Real Estate,1939,10,0.0052
+1371,China,onepeloton.com,Ecommerce,1939,0,0.0
+1372,China,shein.com.mx,Ecommerce,1939,0,0.0
+1373,China,daraz.pk,Ecommerce,1939,0,0.0
+1374,China,www.emag.ro,Ecommerce,1939,0,0.0
+1375,China,llbean.com,Ecommerce,1939,0,0.0
+1376,China,pharmeasy.in,Ecommerce,1939,0,0.0
+1377,China,kobo.com,Ecommerce,1939,1892,0.9758
+1378,China,dickssportinggoods.com,Ecommerce,1939,58,0.0299
+1379,China,landsend.com,Ecommerce,1939,26,0.0134
+1380,China,www.uniqlo.com,Ecommerce,1939,0,0.0
+1381,China,zappos.com,Ecommerce,1939,0,0.0
+1382,China,amazon.cn,Ecommerce,1939,0,0.0
+1383,China,coupang.com,Ecommerce,1939,0,0.0
+1384,China,sweetwater.com,Ecommerce,1939,0,0.0
+1385,China,www.hepsiburada.com,Ecommerce,1939,1895,0.9773
+1386,China,au.com,Ecommerce,1939,60,0.0309
+1387,China,item.rakuten.co.jp,Ecommerce,1939,1848,0.9531
+1388,China,canadiantire.ca,Ecommerce,1939,58,0.0299
+1389,China,rozetka.com.ua,Ecommerce,1939,29,0.015
+1390,China,wish.com,Ecommerce,1939,0,0.0
+1391,China,qvc.com,Ecommerce,1939,0,0.0
+1392,China,tractorsupply.com,Ecommerce,1939,0,0.0
+1393,China,mheducation.com,Ecommerce,1939,0,0.0
+1394,China,cvs.com,Ecommerce,1939,0,0.0
+1395,China,mvideo.ru,Ecommerce,1939,0,0.0
+1396,China,therange.co.uk,Ecommerce,1939,0,0.0
+1397,China,nuance.com,Ecommerce,1939,0,0.0
+1398,China,masterhost.ru,Ecommerce,1939,0,0.0
+1399,China,www.dell.com,Ecommerce,1939,0,0.0
+1400,China,labirint.ru,Ecommerce,1939,0,0.0
+1401,China,walgreens.com,Ecommerce,1939,0,0.0
+1402,China,torrid.com,Ecommerce,1939,0,0.0
+1403,China,lazada.sg,Ecommerce,1939,0,0.0
+1404,China,dell.com,Ecommerce,1939,0,0.0
+1405,China,bethesda.net,Ecommerce,1939,0,0.0
+1406,China,boots.com,Ecommerce,1939,0,0.0
+1407,China,garmin.com,Ecommerce,1939,0,0.0
+1408,China,www.bathandbodyworks.com,Ecommerce,1939,0,0.0
+1409,China,world.co.jp,Ecommerce,1939,0,0.0
+1410,China,amazon.pl,Ecommerce,1939,0,0.0
+1411,China,etsy.com,Ecommerce,1939,1892,0.9758
+1412,China,calzedonia.com,Ecommerce,1939,57,0.0294
+1413,China,pccomponentes.com,Ecommerce,1939,28,0.0144
+1414,China,amazon.com.br,Ecommerce,1939,0,0.0
+1415,China,su.itunes.apple.com,Ecommerce,1939,4,0.0021
+1416,China,macys.com,Ecommerce,1939,0,0.0
+1417,China,tchibo.de,Ecommerce,1939,0,0.0
+1418,China,magento.com,Ecommerce,1939,0,0.0
+1419,China,www.amazon.com.mx,Ecommerce,1939,2,0.001
+1420,China,www.bestbuy.com,Ecommerce,1939,0,0.0
+1421,China,marksandspencer.com,Ecommerce,1939,0,0.0
+1422,China,barnesandnoble.com,Ecommerce,1939,0,0.0
+1423,China,msh.amazon.com,Ecommerce,1939,2,0.001
+1424,China,kroger.com,Ecommerce,1939,0,0.0
+1425,China,jdsports.co.uk,Ecommerce,1939,0,0.0
+1426,China,americanas.com.br,Ecommerce,1939,0,0.0
+1427,China,allegro.pl,Ecommerce,1939,0,0.0
+1428,China,themeforest.net,Ecommerce,1939,0,0.0
+1429,China,boulanger.com,Ecommerce,1939,0,0.0
+1430,China,ys7.com,Ecommerce,1939,0,0.0
+1431,China,boticario.com.br,Ecommerce,1939,0,0.0
+1432,China,reserved.com,Ecommerce,1939,0,0.0
+1433,China,asda.com,Ecommerce,1939,0,0.0
+1434,China,bookshop.org,Ecommerce,1939,0,0.0
+1435,China,ticketmaster.com.mx,Ecommerce,1939,0,0.0
+1436,China,liebertpub.com,Ecommerce,1939,0,0.0
+1437,China,www.trendyol.com,Ecommerce,1939,0,0.0
+1438,China,batch.com,Ecommerce,1939,2,0.001
+1439,China,blocket.se,Ecommerce,1939,0,0.0
+1440,China,dhgate.com,Ecommerce,1939,0,0.0
+1441,China,saksfifthavenue.com,Ecommerce,1939,0,0.0
+1442,China,potterybarn.com,Ecommerce,1939,0,0.0
+1443,China,cdiscount.com,Ecommerce,1939,0,0.0
+1444,China,zulily.com,Ecommerce,1939,0,0.0
+1445,China,avon.com,Ecommerce,1939,0,0.0
+1446,China,enjoei.com.br,Ecommerce,1939,0,0.0
+1447,China,ad-stir.com,Ecommerce,1939,0,0.0
+1448,China,officedepot.com,Ecommerce,1939,0,0.0
+1449,China,amazon.ae,Ecommerce,1939,0,0.0
+1450,China,biglots.com,Ecommerce,1939,0,0.0
+1451,China,store.steampowered.com,Ecommerce,1939,8,0.0041
+1452,China,belkin.com,Ecommerce,1939,1,0.0005
+1453,China,tradeinn.com,Ecommerce,1939,0,0.0
+1454,China,shopee.sg,Ecommerce,1939,2,0.001
+1455,China,comfy.ua,Ecommerce,1939,0,0.0
+1456,China,shopee.com.my,Ecommerce,1939,0,0.0
+1457,China,www.flipkart.com,Ecommerce,1939,0,0.0
+1458,China,telenor.se,Ecommerce,1939,1,0.0005
+1459,China,farfetch.com,Ecommerce,1939,0,0.0
+1460,China,shopee.vn,Ecommerce,1939,1,0.0005
+1461,China,showroomprive.com,Ecommerce,1939,0,0.0
+1462,China,unagi.amazon.com,Ecommerce,1939,2,0.001
+1463,China,laredoute.fr,Ecommerce,1939,0,0.0
+1464,China,louisvuitton.com,Ecommerce,1939,0,0.0
+1465,China,asics.com,Ecommerce,1939,0,0.0
+1466,China,amazon.de,Ecommerce,1939,0,0.0
+1467,China,pandora.net,Ecommerce,1939,0,0.0
+1468,China,tcgplayer.com,Ecommerce,1939,0,0.0
+1469,China,shopee.co.th,Ecommerce,1939,0,0.0
+1470,China,amazon.ca,Ecommerce,1939,3,0.0015
+1471,China,aliexpress.ru,Ecommerce,1939,1,0.0005
+1472,China,theiconic.com.au,Ecommerce,1939,0,0.0
+1473,China,grammarly.net,Ecommerce,1939,0,0.0
+1474,China,carrefour.com.br,Ecommerce,1939,0,0.0
+1475,China,crateandbarrel.com,Ecommerce,1939,0,0.0
+1476,China,acehardware.com,Ecommerce,1939,0,0.0
+1477,China,ebayimg.com,Ecommerce,1939,0,0.0
+1478,China,www.amazon.fr,Ecommerce,1939,0,0.0
+1479,China,bol.com,Ecommerce,1939,1890,0.9747
+1480,China,www.amazon.ae,Ecommerce,1939,58,0.0299
+1481,China,iherb.com,Ecommerce,1939,29,0.015
+1482,China,www.mercadolivre.com.br,Ecommerce,1939,5,0.0026
+1483,China,lego.com,Ecommerce,1939,0,0.0
+1484,China,www.udemy.com,Ecommerce,1939,5,0.0026
+1485,China,wildberries.ru,Ecommerce,1939,0,0.0
+1486,China,www.otto.de,Ecommerce,1939,0,0.0
+1487,China,blibli.com,Ecommerce,1939,0,0.0
+1488,China,adidas.com,Ecommerce,1939,0,0.0
+1489,China,svyaznoy.ru,Ecommerce,1939,0,0.0
+1490,China,lacoste.com,Ecommerce,1939,0,0.0
+1491,China,momoshop.com.tw,Ecommerce,1939,1891,0.9752
+1492,China,www.amazon.com.au,Ecommerce,1939,59,0.0304
+1493,China,buyma.com,Ecommerce,1939,27,0.0139
+1494,China,www.epicgames.com,Ecommerce,1939,0,0.0
+1495,China,arlo.com,Ecommerce,1939,0,0.0
+1496,China,gapcanada.ca,Ecommerce,1939,0,0.0
+1497,China,maurices.com,Ecommerce,1939,0,0.0
+1498,China,myshopify.com,Ecommerce,1939,2,0.001
+1499,China,nitori-net.jp,Ecommerce,1939,0,0.0
+1500,China,bigcartel.com,Ecommerce,1939,0,0.0
+1501,China,amazon.it,Ecommerce,1939,0,0.0
+1502,China,trendyol.com,Ecommerce,1939,0,0.0
+1503,China,bol.io,Ecommerce,1939,0,0.0
+1504,China,scholastic.com,Ecommerce,1939,0,0.0
+1505,China,target.com,Ecommerce,1939,0,0.0
+1506,China,www.leroymerlin.fr,Ecommerce,1939,0,0.0
+1507,China,shutterfly.com,Ecommerce,1939,0,0.0
+1508,China,shopee.co.id,Ecommerce,1939,0,0.0
+1509,China,www.americanas.com.br,Ecommerce,1939,5,0.0026
+1510,China,l-tike.com,Ecommerce,1939,0,0.0
+1511,China,bathandbodyworks.com,Ecommerce,1939,5,0.0026
+1512,China,www.amazon.com.tr,Ecommerce,1939,2,0.001
+1513,China,www.argos.co.uk,Ecommerce,1939,0,0.0
+1514,China,zalando.de,Ecommerce,1939,5,0.0026
+1515,China,www.amazon.ca,Ecommerce,1939,0,0.0
+1516,China,underarmour.com,Ecommerce,1939,0,0.0
+1517,China,jiomart.com,Ecommerce,1939,0,0.0
+1518,China,amazon.com,Ecommerce,1939,1,0.0005
+1519,China,digikala.com,Ecommerce,1939,0,0.0
+1520,China,myntra.com,Ecommerce,1939,0,0.0
+1521,China,www.myntra.com,Ecommerce,1939,0,0.0
+1522,China,hepsiburada.com,Ecommerce,1939,1888,0.9737
+1523,China,sainsburys.co.uk,Ecommerce,1939,55,0.0284
+1524,China,shop.app,Ecommerce,1939,33,0.017
+1525,China,www.amazon.es,Ecommerce,1939,0,0.0
+1526,China,porkbun.com,Ecommerce,1939,0,0.0
+1527,China,bedbathandbeyond.com,Ecommerce,1939,0,0.0
+1528,China,lazada.com.ph,Ecommerce,1939,0,0.0
+1529,China,mlstatic.com,Ecommerce,1939,0,0.0
+1530,China,bestbuy.com,Ecommerce,1939,5,0.0026
+1531,China,jd.com,Ecommerce,1939,0,0.0
+1532,China,casasbahia.com.br,Ecommerce,1939,0,0.0
+1533,China,megamarket.ru,Ecommerce,1939,0,0.0
+1534,China,lululemon.com,Ecommerce,1939,0,0.0
+1535,China,lightinthebox.com,Ecommerce,1939,0,0.0
+1536,China,kaufland.de,Ecommerce,1939,0,0.0
+1537,China,gigaset-elements.com,Ecommerce,1939,0,0.0
+1538,China,m.shein.com,Ecommerce,1939,0,0.0
+1539,China,m.magazineluiza.com.br,Ecommerce,1939,0,0.0
+1540,China,ruten.com.tw,Ecommerce,1939,1885,0.9722
+1541,China,penguinrandomhouse.com,Ecommerce,1939,60,0.0309
+1542,China,fashionnova.com,Ecommerce,1939,38,0.0196
+1543,China,www.elcorteingles.es,Ecommerce,1939,1,0.0005
+1544,China,www.lowes.com,Ecommerce,1939,0,0.0
+1545,China,vistaprint.com,Ecommerce,1939,0,0.0
+1546,China,www.tokopedia.com,Ecommerce,1939,0,0.0
+1547,China,academy.com,Ecommerce,1939,0,0.0
+1548,China,walmart.com.mx,Ecommerce,1939,0,0.0
+1549,China,staples.com,Ecommerce,1939,0,0.0
+1550,China,tp-staging.com,Ecommerce,1939,0,0.0
+1551,China,lww.com,Ecommerce,1939,0,0.0
+1552,China,next.co.uk,Ecommerce,1939,0,0.0
+1553,China,petco.com,Ecommerce,1939,0,0.0
+1554,China,ck-ie.com,Ecommerce,1939,0,0.0
+1555,China,matalan.co.uk,Ecommerce,1939,0,0.0
+1556,China,www.smythstoys.com,Ecommerce,1939,0,0.0
+1557,China,thomann.de,Ecommerce,1939,0,0.0
+1558,China,lazada.vn,Ecommerce,1939,0,0.0
+1559,China,prom.ua,Ecommerce,1939,1,0.0005
+1560,China,www.netshoes.com.br,Ecommerce,1939,5,0.0026
+1561,China,midea.com.cn,Ecommerce,1939,0,0.0
+1562,China,amazon.nl,Ecommerce,1939,0,0.0
+1563,China,lulu.com,Ecommerce,1939,1843,0.9505
+1564,China,argos.co.uk,Ecommerce,1939,5,0.0026
+1565,China,carrefour.es,Ecommerce,1939,0,0.0
+1566,China,vseinstrumenti.ru,Ecommerce,1939,0,0.0
+1567,China,viagogo.com,Ecommerce,1939,0,0.0
+1568,China,evotor.ru,Ecommerce,1939,0,0.0
+1569,China,bhphotovideo.com,Ecommerce,1939,0,0.0
+1570,China,completion.amazon.com,Ecommerce,1939,2,0.001
+1571,China,ecobee.com,Ecommerce,1939,0,0.0
+1572,China,screwfix.com,Ecommerce,1939,0,0.0
+1573,China,dinahosting.com,Ecommerce,1939,0,0.0
+1574,China,elcorteingles.es,Ecommerce,1939,5,0.0026
+1575,China,oculus.com,Ecommerce,1939,1,0.0005
+1576,China,lowes.com,Ecommerce,1939,5,0.0026
+1577,China,emag.ro,Ecommerce,1939,4,0.0021
+1578,China,uniqlo.com,Ecommerce,1939,5,0.0026
+1579,China,alipaydns.com,Ecommerce,1939,0,0.0
+1580,China,costco.com,Ecommerce,1939,1,0.0005
+1581,China,nespresso.com,Ecommerce,1939,0,0.0
+1582,China,www.kohls.com,Ecommerce,1939,0,0.0
+1583,China,www.homedepot.com,Ecommerce,1939,0,0.0
+1584,China,dlink.com,Ecommerce,1939,0,0.0
+1585,China,autozone.com,Ecommerce,1939,0,0.0
+1586,China,bloomingdales.com,Ecommerce,1939,0,0.0
+1587,China,www.digikala.com,Ecommerce,1939,0,0.0
+1588,China,qianxun.com,Ecommerce,1939,0,0.0
+1589,China,fnac.com,Ecommerce,1939,8,0.0041
+1590,China,21vek.by,Ecommerce,1939,0,0.0
+1591,China,kohls.com,Ecommerce,1939,4,0.0021
+1592,China,leroymerlin.com.br,Ecommerce,1939,0,0.0
+1593,China,gap.com,Ecommerce,1939,0,0.0
+1594,China,ulta.com,Ecommerce,1939,0,0.0
+1595,China,www.aliexpress.com,Ecommerce,1939,2,0.001
+1596,China,battle.net,Ecommerce,1939,2,0.001
+1597,China,dgsltx.com,Ecommerce,1939,0,0.0
+1598,China,carrefour.fr,Ecommerce,1939,0,0.0
+1599,China,api.amazon.com,Ecommerce,1939,2,0.001
+1600,China,www.dns-shop.ru,Ecommerce,1939,1,0.0005
+1601,China,amazon.com.tr,Ecommerce,1939,0,0.0
+1602,China,walmart.com,Ecommerce,1939,0,0.0
+1603,China,amazon.es,Ecommerce,1939,0,0.0
+1604,China,1688.com,Ecommerce,1939,0,0.0
+1605,China,jcpenney.com,Ecommerce,1938,1,0.0005
+1606,China,monotaro.com,Ecommerce,1938,0,0.0
+1607,China,currys.co.uk,Ecommerce,1938,0,0.0
+1608,China,www.coppel.com,Ecommerce,1938,0,0.0
+1609,China,therealreal.com,Ecommerce,1938,0,0.0
+1610,China,gucci.com,Ecommerce,1938,0,0.0
+1611,China,xiaoyi.com,Ecommerce,1938,1,0.0005
+1612,China,lazada.co.id,Ecommerce,1938,1,0.0005
+1613,China,link.coupang.com,Ecommerce,1938,5,0.0026
+1614,China,lidl.de,Ecommerce,1938,0,0.0
+1615,China,www.amazon.eg,Ecommerce,1938,0,0.0
+1616,China,tesco.com,Ecommerce,1938,0,0.0
+1617,China,www.wayfair.com,Ecommerce,1938,0,0.0
+1618,China,store.playstation.com,Ecommerce,1938,0,0.0
+1619,China,bellemaison.jp,Ecommerce,1938,0,0.0
+1620,China,coppel.com,Ecommerce,1938,6,0.0031
+1621,China,es.aliexpress.com,Ecommerce,1938,2,0.001
+1622,China,turbosquid.com,Ecommerce,1938,0,0.0
+1623,China,aan.amazon.com,Ecommerce,1938,2,0.001
+1624,China,jcrew.com,Ecommerce,1938,0,0.0
+1625,China,decathlon.fr,Ecommerce,1938,0,0.0
+1626,China,www.amazon.it,Ecommerce,1938,0,0.0
+1627,China,lenovo.com.cn,Ecommerce,1938,0,0.0
+1628,China,thriftbooks.com,Ecommerce,1938,0,0.0
+1629,China,empik.com,Ecommerce,1938,0,0.0
+1630,China,dafiti.com.br,Ecommerce,1938,0,0.0
+1631,China,produto.mercadolivre.com.br,Ecommerce,1938,5,0.0026
+1632,China,amazon.fr,Ecommerce,1938,0,0.0
+1633,China,device-metrics-us-2.amazon.com,Ecommerce,1938,2,0.001
+1634,China,www.mediaexpert.pl,Ecommerce,1938,0,0.0
+1635,China,alza.cz,Ecommerce,1938,0,0.0
+1636,China,ozon.ru,Ecommerce,1938,0,0.0
+1637,China,intimissimi.com,Ecommerce,1938,0,0.0
+1638,China,arcus-uswest.amazon.com,Ecommerce,1938,2,0.001
+1639,China,lazada.co.th,Ecommerce,1938,0,0.0
+1640,China,wayfair.com,Ecommerce,1938,5,0.0026
+1641,China,epicgames.com,Ecommerce,1938,0,0.0
+1642,China,costco.ca,Ecommerce,1938,0,0.0
+1643,China,daraz.com.bd,Ecommerce,1938,0,0.0
+1644,China,amazon.com.au,Ecommerce,1938,0,0.0
+1645,China,citilink.ru,Ecommerce,1938,0,0.0
+1646,China,roku.com,Ecommerce,1938,7,0.0036
+1647,China,amazon.eg,Ecommerce,1938,5,0.0026
+1648,China,carters.com,Ecommerce,1938,1,0.0005
+1649,China,www.amazon.in,Ecommerce,1938,0,0.0
+1650,China,amzn.to,Ecommerce,1938,0,0.0
+1651,China,cricketwireless.com,Ecommerce,1938,0,0.0
+1652,China,taobao.com,Ecommerce,1939,0,0.0
+1653,China,wb.ru,Ecommerce,1939,0,0.0
+1654,China,yodobashi.com,Ecommerce,1939,7,0.0036
+1655,China,shopeemobile.com,Ecommerce,1939,0,0.0
+1656,China,tokopedia.com,Ecommerce,1939,0,0.0
+1657,China,shopify.com,Ecommerce,1939,1,0.0005
+1658,China,www.etsy.com,Ecommerce,1939,1890,0.9747
+1659,China,michaels.com,Ecommerce,1939,0,0.0
+1660,China,ticketmaster.com,Ecommerce,1939,0,0.0
+1661,China,tomtom.com,Ecommerce,1938,0,0.0
+1662,China,sellercentral.amazon.com,Ecommerce,1938,2,0.001
+1663,China,superhosting.bg,Ecommerce,1938,0,0.0
+1664,China,amazon.in,Ecommerce,1938,0,0.0
+1665,China,amazon.sa,Ecommerce,1938,0,0.0
+1666,China,capitaloneshopping.com,Ecommerce,1938,1,0.0005
+1667,China,wyzecam.com,Ecommerce,1938,0,0.0
+1668,China,www.costco.com,Ecommerce,1938,5,0.0026
+1669,China,www.amazon.co.uk,Ecommerce,1938,0,0.0
+1670,China,hsn.com,Ecommerce,1938,0,0.0
+1671,China,drogaraia.com.br,Ecommerce,1938,0,0.0
+1672,China,www2.hm.com,Ecommerce,1938,0,0.0
+1673,China,mediamarkt.de,Ecommerce,1938,0,0.0
+1674,China,nordstrom.com,Ecommerce,1938,1,0.0005
+1675,China,instant-gaming.com,Ecommerce,1938,0,0.0
+1676,China,mediaexpert.pl,Ecommerce,1938,5,0.0026
+1677,China,zozo.jp,Ecommerce,1938,0,0.0
+1678,China,p-bandai.jp,Ecommerce,1938,0,0.0
+1679,China,redbubble.com,Ecommerce,1938,1894,0.9773
+1680,China,www.amazon.sa,Ecommerce,1938,52,0.0268
+1681,China,creativefabrica.com,Ecommerce,1938,46,0.0237
+1682,China,search.rakuten.co.jp,Ecommerce,1938,1846,0.9525
+1683,China,ugg.com,Ecommerce,1938,64,0.033
+1684,China,hm.com,Ecommerce,1938,24,0.0124
+1685,China,www.cdiscount.com,Ecommerce,1938,21,0.0108
+1686,China,www.bol.com,Ecommerce,1938,1878,0.969
+1687,China,fanatics.com,Ecommerce,1938,0,0.0
+1688,China,origin.com,Ecommerce,1938,0,0.0
+1689,China,ceneo.pl,Ecommerce,1938,0,0.0
+1690,China,puma.com,Ecommerce,1938,0,0.0
+1691,China,zalando.fr,Ecommerce,1938,0,0.0
+1692,China,shopee.ph,Ecommerce,1938,0,0.0
+1693,China,wyze.com,Ecommerce,1938,0,0.0
+1694,China,avs-alexa-14-na.amazon.com,Ecommerce,1938,2,0.001
+1695,China,homedepot.com.mx,Ecommerce,1938,0,0.0
+1696,China,mandmdirect.com,Ecommerce,1938,0,0.0
+1697,China,tutorialspoint.com,Ecommerce,1938,0,0.0
+1698,China,www.amazon.com.br,Ecommerce,1938,7,0.0036
+1699,China,www.jcpenney.com,Ecommerce,1938,5,0.0026
+1700,China,www.walmart.com,Ecommerce,1938,0,0.0
+1701,China,buyee.jp,Ecommerce,1938,0,0.0
+1702,China,nike.com,Ecommerce,1938,0,0.0
+1703,China,samsclub.com,Ecommerce,1938,0,0.0
+1704,China,www.vinted.fr,Ecommerce,1938,0,0.0
+1705,China,asos.com,Ecommerce,1938,0,0.0
+1706,China,support.apple.com,Ecommerce,1938,0,0.0
+1707,China,www.amazon.de,Ecommerce,1938,0,0.0
+1708,China,flipkart.com,Ecommerce,1938,5,0.0026
+1709,China,harborfreight.com,Ecommerce,1938,0,0.0
+1710,China,oldnavy.gap.com,Ecommerce,1938,5,0.0026
+1711,China,poshmark.com,Ecommerce,1938,0,0.0
+1712,China,www.macys.com,Ecommerce,1938,0,0.0
+1713,China,www.jiomart.com,Ecommerce,1938,5,0.0026
+1714,China,slatic.net,Ecommerce,1938,0,0.0
+1715,China,www.wildberries.ru,Ecommerce,1938,5,0.0026
+1716,China,ticketone.it,Ecommerce,1938,0,0.0
+1717,China,www.ozon.ru,Ecommerce,1938,0,0.0
+1718,China,homedepot.com,Ecommerce,1938,6,0.0031
+1719,China,aliexpress.com,Ecommerce,1938,2,0.001
+1720,China,ti.com,Ecommerce,1938,0,0.0
+1721,China,johnlewis.com,Ecommerce,1938,1,0.0005
+1722,China,gog.com,Ecommerce,1938,0,0.0
+1723,China,zara.com,Ecommerce,1938,0,0.0
+1724,China,eufylife.com,Ecommerce,1938,0,0.0
+1725,China,vprok.ru,Ecommerce,1938,0,0.0
+1726,China,ponta.jp,Ecommerce,1938,0,0.0
+1727,China,very.co.uk,Ecommerce,1938,0,0.0
+1728,China,peplink.com,Ecommerce,1938,0,0.0
+1729,China,www.amazon.com,Ecommerce,1938,2,0.001
+1730,China,shein.com,Ecommerce,1938,0,0.0
+1731,China,takealot.com,Ecommerce,1938,0,0.0
+1732,China,bose.com,Ecommerce,1938,0,0.0
+1733,China,patagonia.com,Ecommerce,1938,0,0.0
+1734,China,vizio.com,Ecommerce,1938,0,0.0
+1735,China,bestbuy.ca,Ecommerce,1938,0,0.0
+1736,China,wal-mart.com,Ecommerce,1938,0,0.0
+1737,China,petsmart.com,Ecommerce,1938,0,0.0
+1738,China,otto.de,Ecommerce,1938,5,0.0026
+1739,China,chewy.com,Ecommerce,1938,0,0.0
+1740,China,basspro.com,Ecommerce,1938,0,0.0
+1741,China,webrootanywhere.com,Ecommerce,1938,0,0.0
+1742,China,abercrombie.com,Ecommerce,1938,1,0.0005
+1743,China,liverpool.com.mx,Ecommerce,1938,0,0.0
+1744,China,nest.com,Ecommerce,1938,0,0.0
+1745,China,rakuten.co.jp,Ecommerce,1939,1846,0.952
+1746,China,www.amazon.co.jp,Ecommerce,1939,66,0.034
+1747,China,ifood.com.br,Ecommerce,1939,0,0.0
+1748,China,bigbadtoystore.com,Ecommerce,1939,0,0.0
+1749,China,magazineluiza.com.br,Ecommerce,1939,4,0.0021
+1750,China,zalando.pl,Ecommerce,1939,0,0.0
+1751,China,device-metrics-us.amazon.com,Ecommerce,1939,2,0.001
+1752,China,amazon.co.jp,Ecommerce,1939,9,0.0046
+1753,China,leroymerlin.fr,Ecommerce,1939,5,0.0026
+1754,China,amazon.co.uk,Ecommerce,1939,0,0.0
+1755,China,ciceksepeti.com,Ecommerce,1939,1891,0.9752
+1756,China,lojasrenner.com.br,Ecommerce,1939,52,0.0268
+1757,China,williams-sonoma.com,Ecommerce,1939,0,0.0
+1758,China,www.asos.com,Ecommerce,1939,5,0.0026
+1759,China,cafepress.com,Ecommerce,1939,1836,0.9469
+1760,China,falabella.com,Ecommerce,1939,41,0.0211
+1761,China,steelseries.com,Ecommerce,1939,2,0.001
+1762,China,codecanyon.net,Ecommerce,1939,0,0.0
+1763,China,lidl.com,Ecommerce,1939,0,0.0
+1764,China,www.target.com,Ecommerce,1939,0,0.0
+1765,China,shopee.tw,Ecommerce,1939,1846,0.952
+1766,China,sportsdirect.com,Ecommerce,1939,75,0.0387
+1767,China,rei.com,Ecommerce,1939,45,0.0232
+1768,China,www.nike.com,Ecommerce,1939,0,0.0
+1769,China,eventim.de,Ecommerce,1939,0,0.0
+1770,China,tbcache.com,Ecommerce,1939,0,0.0
+1771,China,newegg.com,Ecommerce,1939,0,0.0
+1772,China,logitech.com,Ecommerce,1939,0,0.0
+1773,China,n11.com,Ecommerce,1939,0,0.0
+1774,China,auchan.fr,Ecommerce,1939,0,0.0
+1775,China,zazzle.com,Ecommerce,1939,7,0.0036
+1776,China,www.fashionnova.com,Ecommerce,1939,5,0.0026
+1777,China,smythstoys.com,Ecommerce,1939,5,0.0026
+1778,China,wiley.com,Ecommerce,1939,0,0.0
+1779,China,hottopic.com,Ecommerce,1939,0,0.0
+1780,China,amazon.com.mx,Ecommerce,1939,0,0.0
+1781,China,gldn.net,Information Technology,1939,0,0.0
+1782,China,name.com,Information Technology,1939,0,0.0
+1783,China,spaceweb.pro,Information Technology,1939,0,0.0
+1784,China,api.flightproxy.teams.microsoft.com,Information Technology,1939,4,0.0021
+1785,China,sitemaps.org,Information Technology,1939,0,0.0
+1786,China,www.agoda.com,Coupons,1939,0,0.0
+1787,China,maharashtra.gov.in,"Politics, Advocacy, and Government-Related",1939,5,0.0026
+1788,China,familysearch.org,Hobbies & Interests,1939,7,0.0036
+1789,China,use.fontawesome.com,Information Technology,1934,1,0.0005
+1790,China,sprintlink.net,Information Technology,1934,1,0.0005
+1791,China,settings.data.microsoft.com,Information Technology,1934,0,0.0
+1792,China,orange.fr,Information Technology,1934,1,0.0005
+1793,China,aptoide.com,Information Technology,1934,1871,0.9674
+1794,China,alz.org,"Politics, Advocacy, and Government-Related",1934,55,0.0284
+1795,China,destacamos.com,Adult Themes,1934,5,0.0026
+1796,China,gr.global.aa-rt.sharepoint.com,New Domains,1934,4,0.0021
+1797,China,www.expedia.com,Travel,1934,0,0.0
+1798,China,api.cdp.microsoft.com,Information Technology,1934,0,0.0
+1799,China,managed-vps.net,Information Technology,1934,1,0.0005
+1800,China,freeservers.com,Information Technology,1934,1,0.0005
+1801,China,truecaller.com,Information Technology,1934,0,0.0
+1802,China,gyazo.com,Information Technology,1934,0,0.0
+1803,China,trellix.com,Information Technology,1934,0,0.0
+1804,China,snapcraft.io,Information Technology,1934,0,0.0
+1805,China,nic.ir,Information Technology,1934,0,0.0
+1806,China,wixsite.com,Information Technology,1934,1882,0.9731
+1807,China,ipcdn.apple.com,Information Technology,1934,66,0.0341
+1808,China,shalltry.com,Information Technology,1934,3,0.0016
+1809,China,telefonica.com,Information Technology,1934,0,0.0
+1810,China,cpanel.com,Information Technology,1934,0,0.0
+1811,China,geo.prod.do.dsp.mp.microsoft.com,Information Technology,1934,0,0.0
+1812,China,apps.apple.com,Information Technology,1934,0,0.0
+1813,China,enterprise.activity.windows.com,Information Technology,1934,0,0.0
+1814,China,hosteurope.de,Information Technology,1934,0,0.0
+1815,China,wordpress.com,Information Technology,1934,1,0.0005
+1816,China,claro.com.ar,Information Technology,1934,0,0.0
+1817,China,ls.apple.com,Information Technology,1934,0,0.0
+1818,China,1984.is,Information Technology,1934,0,0.0
+1819,China,telus.com,Information Technology,1934,0,0.0
+1820,China,fs.microsoft.com,Information Technology,1934,1,0.0005
+1821,China,verizonwireless.com,Information Technology,1934,0,0.0
+1822,China,xs4all.nl,Information Technology,1934,0,0.0
+1823,China,grabtaxi.com,Information Technology,1937,0,0.0
+1824,China,runnet.ru,Information Technology,1937,0,0.0
+1825,China,w3schools.com,Information Technology,1937,0,0.0
+1826,China,kv801.prod.do.dsp.mp.microsoft.com,Information Technology,1937,0,0.0
+1827,China,webland.ch,Information Technology,1937,0,0.0
+1828,China,chromium.org,Information Technology,1939,1,0.0005
+1829,China,liteapks.com,Information Technology,1939,0,0.0
+1830,China,firefox.com,Information Technology,1939,0,0.0
+1831,China,omniroot.com,Information Technology,1939,0,0.0
+1832,China,cs.dds.microsoft.com,Information Technology,1936,1,0.0005
+1833,China,dl.delivery.mp.microsoft.com,Information Technology,1936,1,0.0005
+1834,China,mobile.events.data.microsoft.com,Information Technology,1936,0,0.0
+1835,China,fbs.smoot.apple.com,Information Technology,1936,0,0.0
+1836,China,westeurope.cloudapp.azure.com,Information Technology,1936,0,0.0
+1837,China,zenon.net,Information Technology,1934,1,0.0005
+1838,China,weather-data.apple.com,Information Technology,1934,1,0.0005
+1839,China,api.smoot.apple.com,Information Technology,1934,0,0.0
+1840,China,msedge.api.cdp.microsoft.com,Information Technology,1934,0,0.0
+1841,China,mzstorekit.itunes.apple.com,Information Technology,1934,5,0.0026
+1842,China,jimdofree.com,Information Technology,1934,0,0.0
+1843,China,sandbox.push.apple.com,Information Technology,1934,0,0.0
+1844,China,webempresa.eu,Information Technology,1934,0,0.0
+1845,China,cdn-icloud-content.g.aaplimg.com,Information Technology,1934,0,0.0
+1846,China,3322.net,Information Technology,1934,1,0.0005
+1847,China,namecheaphosting.com,Information Technology,1934,0,0.0
+1848,China,site123.me,Information Technology,1934,0,0.0
+1849,China,comfortel.pro,Information Technology,1934,0,0.0
+1850,China,dnsexit.com,Information Technology,1934,10,0.0052
+1851,China,settings-win.data.microsoft.com,Information Technology,1934,0,0.0
+1852,China,cash.app,Information Technology,1934,0,0.0
+1853,China,wampserver.com,Information Technology,1934,0,0.0
+1854,China,letsencrypt.org,Information Technology,1934,0,0.0
+1855,China,avant.si,Information Technology,1934,0,0.0
+1856,China,zoneedit.com,Information Technology,1934,0,0.0
+1857,China,wixanswers.com,Information Technology,1934,0,0.0
+1858,China,init.itunes.apple.com,Information Technology,1934,5,0.0026
+1859,China,websupport.sk,Information Technology,1934,0,0.0
+1860,China,safebrowsing-proxy.g.aaplimg.com,Information Technology,1934,0,0.0
+1861,China,jetbrains.com,Information Technology,1934,0,0.0
+1862,China,ecdns.net,Information Technology,1934,0,0.0
+1863,China,edge.microsoft.com,Information Technology,1934,0,0.0
+1864,China,time.net.my,Information Technology,1932,0,0.0
+1865,China,slscr.update.microsoft.com,Information Technology,1932,4,0.0021
+1866,China,amp-api-edge.apps.apple.com,Information Technology,1932,0,0.0
+1867,China,sunista.info,Information Technology,1932,0,0.0
+1868,China,time.windows.com,Information Technology,1932,1,0.0005
+1869,China,mi.com,Information Technology,1932,0,0.0
+1870,China,irancell.ir,Information Technology,1932,1,0.0005
+1871,China,hostpapa.com,Information Technology,1932,0,0.0
+1872,China,virtua.com.br,Information Technology,1932,0,0.0
+1873,China,siteground.us,Information Technology,1932,0,0.0
+1874,China,adblockultimate.net,Information Technology,1932,0,0.0
+1875,China,update.microsoft.com,Information Technology,1931,4,0.0021
+1876,China,worldnic.com,Information Technology,1931,0,0.0
+1877,China,hwg.org,Information Technology,1931,0,0.0
+1878,China,9apps.com,Information Technology,1931,1824,0.9446
+1879,China,shop-pro.jp,Information Technology,1931,62,0.0321
+1880,China,smp-device-content.apple.com,Information Technology,1934,0,0.0
+1881,China,gsp85-ssl.ls.apple.com,Information Technology,1934,4,0.0021
+1882,China,nic.uk,Information Technology,1934,0,0.0
+1883,China,softbank.jp,Information Technology,1934,0,0.0
+1884,China,windows.microsoft.com,Information Technology,1938,0,0.0
+1885,China,ess.apple.com,Information Technology,1938,0,0.0
+1886,China,getpublica.com,Information Technology,1938,0,0.0
+1887,China,userreport.com,Information Technology,1938,0,0.0
+1888,China,notion.site,Information Technology,1938,4,0.0021
+1889,China,ihc.ru,Information Technology,1938,0,0.0
+1890,China,myfritz.net,Information Technology,1938,0,0.0
+1891,China,megapbx.ru,Information Technology,1938,0,0.0
+1892,China,anydesk.com,Information Technology,1938,0,0.0
+1893,China,tim.it,Information Technology,1937,0,0.0
+1894,China,devicelistenerprod.microsoft.com,Information Technology,1937,0,0.0
+1895,China,samokat.ru,Information Technology,1937,0,0.0
+1896,China,csp.microsoft.com,Information Technology,1937,0,0.0
+1897,China,value-domain.com,Information Technology,1937,0,0.0
+1898,China,sophos.com,Information Technology,1937,0,0.0
+1899,China,macomnet.ru,Information Technology,1937,0,0.0
+1900,China,gsas.apple.com,Information Technology,1937,0,0.0
+1901,China,iphone.life360.com,Information Technology,1937,0,0.0
+1902,China,microsoft.com,Information Technology,1936,0,0.0
+1903,China,dnspod.net,Information Technology,1936,0,0.0
+1904,China,smoot.apple.com,Information Technology,1936,0,0.0
+1905,China,virginmedia.com,Information Technology,1936,0,0.0
+1906,China,life360.com,Information Technology,1936,4,0.0021
+1907,China,aruba.it,Information Technology,1936,0,0.0
+1908,China,tsfe.trafficshaping.dsp.mp.microsoft.com,Information Technology,1936,0,0.0
+1909,China,getbootstrap.com,Information Technology,1936,0,0.0
+1910,China,cp.wd.microsoft.com,Information Technology,1936,0,0.0
+1911,China,zedge.net,Information Technology,1936,0,0.0
+1912,China,flipsnack.com,Information Technology,1936,0,0.0
+1913,China,eu-v20.events.data.microsoft.com,Information Technology,1936,0,0.0
+1914,China,tripod.com,Information Technology,1936,2,0.001
+1915,China,no-ip.com,Information Technology,1936,1,0.0005
+1916,China,is1-ssl.mzstatic.com,Information Technology,1936,1,0.0005
+1917,China,hosttech.ch,Information Technology,1936,1,0.0005
+1918,China,wandera.com,Information Technology,1936,0,0.0
+1919,China,wordfence.com,Information Technology,1936,0,0.0
+1920,China,geocities.com,Information Technology,1936,0,0.0
+1921,China,ipserver.su,Information Technology,1936,0,0.0
+1922,China,www.att.com,Information Technology,1936,0,0.0
+1923,China,tencent.com,Information Technology,1936,1,0.0005
+1924,China,ipv6.microsoft.com,Information Technology,1936,0,0.0
+1925,China,etc.uz,Information Technology,1936,0,0.0
+1926,China,m.apkpure.com,Information Technology,1936,1857,0.9592
+1927,China,valid.apple.com,Information Technology,1936,66,0.0341
+1928,China,pushwoosh.com,Information Technology,1936,37,0.0191
+1929,China,ng.msg.teams.microsoft.com,Information Technology,1936,4,0.0021
+1930,China,data-edge.smartscreen.microsoft.com,Information Technology,1936,0,0.0
+1931,China,presence.teams.microsoft.com,Information Technology,1936,4,0.0021
+1932,China,above.com,Information Technology,1936,0,0.0
+1933,China,dk-hostmaster.dk,Information Technology,1936,0,0.0
+1934,China,vortex-win.data.microsoft.com,Information Technology,1936,0,0.0
+1935,China,une.net.co,Information Technology,1936,0,0.0
+1936,China,asyncgw.teams.microsoft.com,Information Technology,1936,4,0.0021
+1937,China,hoster.ru,Information Technology,1936,0,0.0
+1938,China,hostinger.com,Information Technology,1936,0,0.0
+1939,China,ngenix.net,Information Technology,1936,0,0.0
+1940,China,crashlytics.com,Information Technology,1936,0,0.0
+1941,China,inleed.net,Information Technology,1936,0,0.0
+1942,China,treatment.grammarly.com,Information Technology,1936,4,0.0021
+1943,China,webnode.com,Information Technology,1936,1,0.0005
+1944,China,edublogs.org,Information Technology,1936,0,0.0
+1945,China,tv.apple.com,Information Technology,1936,4,0.0021
+1946,China,dds.microsoft.com,Information Technology,1936,0,0.0
+1947,China,dan.com,Information Technology,1936,0,0.0
+1948,China,authsvc.teams.microsoft.com,Information Technology,1936,4,0.0021
+1949,China,snapinsta.app,Information Technology,1936,0,0.0
+1950,China,web.app,Information Technology,1936,1,0.0005
+1951,China,rt.ru,Information Technology,1936,0,0.0
+1952,China,config.teams.microsoft.com,Information Technology,1936,4,0.0021
+1953,China,happymod.com,Information Technology,1936,0,0.0
+1954,China,jotform.com,Information Technology,1936,2,0.001
+1955,China,opera.technology,Information Technology,1936,0,0.0
+1956,China,www.creditkarma.com,Information Technology,1936,0,0.0
+1957,China,boostmobile.com,Information Technology,1936,0,0.0
+1958,China,infomaniak.ch,Information Technology,1936,0,0.0
+1959,China,telecomitalia.it,Information Technology,1936,0,0.0
+1960,China,aarnet.net.au,Information Technology,1936,0,0.0
+1961,China,17986.net,Information Technology,1936,0,0.0
+1962,China,online.net,Information Technology,1937,0,0.0
+1963,China,selectel.ru,Information Technology,1937,0,0.0
+1964,China,sakura.ne.jp,Information Technology,1937,5,0.0026
+1965,China,verizon.com,Information Technology,1937,0,0.0
+1966,China,comcast.com,Information Technology,1937,0,0.0
+1967,China,instabug.com,Information Technology,1938,0,0.0
+1968,China,podcasts.apple.com,Information Technology,1938,0,0.0
+1969,China,nic.io,Information Technology,1938,0,0.0
+1970,China,us-mobile.events.data.microsoft.com,Information Technology,1938,0,0.0
+1971,China,gcdn.co,Information Technology,1938,0,0.0
+1972,China,sattaamatka.co.com,Information Technology,1938,1,0.0005
+1973,China,ddns.net,Information Technology,1938,7,0.0036
+1974,China,rogers.com,Information Technology,1938,1,0.0005
+1975,China,virtualbox.org,Information Technology,1938,2,0.001
+1976,China,query.ess.apple.com,Information Technology,1938,0,0.0
+1977,China,disc601.prod.do.dsp.mp.microsoft.com,Information Technology,1938,1,0.0005
+1978,China,webs.com,Information Technology,1938,1,0.0005
+1979,China,tlu.dl.delivery.mp.microsoft.com,Information Technology,1938,0,0.0
+1980,China,bdec.microsoft.com,Information Technology,1938,0,0.0
+1981,China,mts-nn.ru,Information Technology,1938,0,0.0
+1982,China,samsunghealth.com,Information Technology,1938,0,0.0
+1983,China,signal.org,Information Technology,1938,1884,0.9721
+1984,China,graph.microsoft.com,Information Technology,1938,60,0.031
+1985,China,nav-edge.smartscreen.microsoft.com,Information Technology,1938,33,0.017
+1986,China,www.speedtest.net,Information Technology,1938,23,0.0119
+1987,China,tile-service.weather.microsoft.com,Information Technology,1938,0,0.0
+1988,China,r.manage.microsoft.com,Information Technology,1938,4,0.0021
+1989,China,webhostbox.net,Information Technology,1938,0,0.0
+1990,China,tailscale.com,Information Technology,1938,4,0.0021
+1991,China,sprint.com,Information Technology,1939,0,0.0
+1992,China,calm.com,Information Technology,1939,0,0.0
+1993,China,doh.dns.apple.com,Information Technology,1939,4,0.0021
+1994,China,cl2.apple.com,Information Technology,1939,3,0.0015
+1995,China,hvosting.ua,Information Technology,1939,0,0.0
+1996,China,vodafone.com.tr,Information Technology,1939,0,0.0
+1997,China,intelbras.com.br,Information Technology,1939,0,0.0
+1998,China,cpanel.net,Information Technology,1939,0,0.0
+1999,China,time.g.aaplimg.com,Information Technology,1939,0,0.0
+2000,China,vzw.com,Information Technology,1938,0,0.0

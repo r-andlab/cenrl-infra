@@ -1,0 +1,2001 @@
+time,country,target,category,n_votes,n_blocked,rewards
+1,Vietnam,jra.jp,Sports,288,21,0.0729
+2,Vietnam,www.espncricinfo.com,Sports,288,0,0.0
+3,Vietnam,www.betika.com,Sports,288,21,0.0729
+4,Vietnam,www.varzesh3.com,Sports,288,3,0.0104
+5,Vietnam,sportskeeda.com,Sports,288,0,0.0
+6,Vietnam,zinmanga.com,Comic Books,288,17,0.059
+7,Vietnam,www.zalando.de,Comic Books,288,0,0.0
+8,Vietnam,freeip.me,P2P,288,0,0.0
+9,Vietnam,fubo.tv,Television,288,0,0.0
+10,Vietnam,fb.watch,Audio Streaming,288,0,0.0
+11,Vietnam,easyjet.com,Travel,288,0,0.0
+12,Vietnam,asm.skype.com,Internet Phone & VOIP,288,0,0.0
+13,Vietnam,petfinder.com,Pets,288,0,0.0
+14,Vietnam,noodlemagazine.com,Pornography,288,26,0.0903
+15,Vietnam,freelancer.com,Job Search & Careers,288,0,0.0
+16,Vietnam,jimdosite.com,Body Art,288,9,0.0312
+17,Vietnam,azurewebsites.net,Safe for Kids,288,0,0.0
+18,Vietnam,hubpages.com,Professional Networking,288,2,0.0069
+19,Vietnam,wordwall.net,Hobbies & Interests,288,0,0.0
+20,Vietnam,escortbabylon.net,Adult Themes,288,20,0.0694
+21,Vietnam,member.rakuten-sec.co.jp,Economy & Finance,288,0,0.0
+22,Vietnam,jimdo.com,Nudity,288,0,0.0
+23,Vietnam,tum.de,Educational Institutions,288,3,0.0104
+24,Vietnam,mcdonalds.com,Food & Drink,288,3,0.0104
+25,Vietnam,avira.com,Information Security,288,0,0.0
+26,Vietnam,spiegel.de,Magazines,288,0,0.0
+27,Vietnam,context.reverso.net,Translator,288,0,0.0
+28,Vietnam,hgtv.com,Home & Garden,288,0,0.0
+29,Vietnam,hulu.com,Movies,288,2,0.0069
+30,Vietnam,intimissimi.com,Lingerie & Bikini,288,0,0.0
+31,Vietnam,coub.com,Humor,288,0,0.0
+32,Vietnam,canva.com,Arts,288,23,0.0799
+33,Vietnam,mediafire.com,"Militancy, Hate & Extremism",288,0,0.0
+34,Vietnam,mapbox.com,Education,288,0,0.0
+35,Vietnam,kaggle.com,Shopping,288,0,0.0
+36,Vietnam,gda.pl,Parenting,288,0,0.0
+37,Vietnam,news24.com,News & Media,288,0,0.0
+38,Vietnam,horoscope.com,Astrology,288,0,0.0
+39,Vietnam,www.att.com,Information Technology,288,0,0.0
+40,Vietnam,www.discogs.com,Music,288,0,0.0
+41,Vietnam,marthastewart.com,Arts & Crafts,288,0,0.0
+42,Vietnam,contacts.google.com,Technology,288,23,0.0799
+43,Vietnam,aa-rt.sharepoint.com,New Domains,288,23,0.0799
+44,Vietnam,canonet.ne.jp,Miscellaneous,288,0,0.0
+45,Vietnam,sbis.ru,Technology,288,0,0.0
+46,Vietnam,metmuseum.org,Fine Art,288,0,0.0
+47,Vietnam,yximgs.com,Photography,288,0,0.0
+48,Vietnam,550909.com,Dating & Relationships,288,0,0.0
+49,Vietnam,reacciun.ve,Parked & For Sale Domains,288,0,0.0
+50,Vietnam,sniffies.com,Lifestyle,288,17,0.059
+51,Vietnam,science.org,Science,288,0,0.0
+52,Vietnam,nkiri.com,Spam,288,0,0.0
+53,Vietnam,asuscomm.com,Radio,288,0,0.0
+54,Vietnam,google.so,Search Engines,288,0,0.0
+55,Vietnam,nist.gov,Government,288,0,0.0
+56,Vietnam,wol.jw.org,Religion,288,0,0.0
+57,Vietnam,nieuwsblad.be,Video Streaming,288,0,0.0
+58,Vietnam,ojrq.net,Redirect,288,0,0.0
+59,Vietnam,uspto.gov,Government,288,0,0.0
+60,Vietnam,yougov.com,Forums,288,0,0.0
+61,Vietnam,blogspot.fr,Unreachable,288,8,0.0278
+62,Vietnam,motortrend.com,Vehicles,288,0,0.0
+63,Vietnam,netlify.com,APIs,288,0,0.0
+64,Vietnam,evite.com,Digital Postcards,288,0,0.0
+65,Vietnam,gunbroker.com,Weapons,288,17,0.059
+66,Vietnam,we-stats.com,Content Servers,288,0,0.0
+67,Vietnam,lookmovie2.to,Phishing,288,0,0.0
+68,Vietnam,kik.com,Chat,288,0,0.0
+69,Vietnam,audacy.com,Entertainment,288,0,0.0
+70,Vietnam,volcfcdndvs.com,DGA Domains,288,0,0.0
+71,Vietnam,sq-tungsten-ts.amazon-adsystem.com,Advertisements,288,0,0.0
+72,Vietnam,us-east4-gcp.api.snapchat.com,Social Networks,288,23,0.0799
+73,Vietnam,weather.gov,Weather,288,0,0.0
+74,Vietnam,airee.ru,Real Estate,288,0,0.0
+75,Vietnam,dler.org,Questionable Activities,288,2,0.0069
+76,Vietnam,zuimeitianqi.com,Weather,288,0,0.0
+77,Vietnam,space.com,Space & Astronomy,288,3,0.0104
+78,Vietnam,adjarabet.am,Gambling,288,23,0.0799
+79,Vietnam,pubmed.ncbi.nlm.nih.gov,Health & Fitness,288,0,0.0
+80,Vietnam,4shared.com,File Sharing,288,0,0.0
+81,Vietnam,depositphotos.com,"News, Portal & Search",288,0,0.0
+82,Vietnam,attentivemobile.com,Messaging,288,0,0.0
+83,Vietnam,unep.org,"Politics, Advocacy, and Government-Related",288,0,0.0
+84,Vietnam,immedia-semi.com,No Content,288,0,0.0
+85,Vietnam,nipr.mil,Violence,288,0,0.0
+86,Vietnam,dmm.com,Home Video/DVD,288,0,0.0
+87,Vietnam,asos.com,Clothing,288,0,0.0
+88,Vietnam,pavietnam.net,Hacking,288,0,0.0
+89,Vietnam,mail.ru,Webmail,288,2,0.0069
+90,Vietnam,pandora.net,Fashion,288,0,0.0
+91,Vietnam,bbb.org,Auctions & Marketplaces,288,0,0.0
+92,Vietnam,vivintsky.com,Login Screens,288,0,0.0
+93,Vietnam,denverpost.com,Personal Blogs,288,1,0.0035
+94,Vietnam,com.se,Malware,288,0,0.0
+95,Vietnam,omnatuor.com,Malware,288,15,0.0521
+96,Vietnam,heroeswm.ru,Gaming,288,3,0.0104
+97,Vietnam,www.agoda.com,Coupons,288,0,0.0
+98,Vietnam,autozone.com,Ecommerce,288,0,0.0
+99,Vietnam,m.c7vkn.com,Newly Seen Domains,288,16,0.0556
+100,Vietnam,faq.whatsapp.com,Instant Messengers,288,23,0.0799
+101,Vietnam,hihonorcloud.com,Newly Seen Domains,288,0,0.0
+102,Vietnam,acehardware.com,Ecommerce,288,0,0.0
+103,Vietnam,trafficshaping.dsp.mp.microsoft.com,Business,288,0,0.0
+104,Vietnam,cdn.whatsapp.net,Instant Messengers,288,23,0.0799
+105,Vietnam,proxysite.com,Anonymizer,288,7,0.0243
+106,Vietnam,www.croxyproxy.com,Anonymizer,288,1,0.0035
+107,Vietnam,cpe.dotomi.com,Business,288,1,0.0035
+108,Vietnam,croxyproxy.com,Anonymizer,288,1,0.0035
+109,Vietnam,animesuge.to,Cartoons & Anime,288,0,0.0
+110,Vietnam,crunchyroll.com,Cartoons & Anime,288,1,0.0035
+111,Vietnam,pokemon.com,Cartoons & Anime,288,3,0.0104
+112,Vietnam,www.dlsite.com,Cartoons & Anime,288,17,0.059
+113,Vietnam,mangalib.me,Cartoons & Anime,288,0,0.0
+114,Vietnam,fabswingers.com,Dating & Relationships,288,17,0.059
+115,Vietnam,amazonvideo.com,Movies,288,0,0.0
+116,Vietnam,cutt.ly,Redirect,288,4,0.0139
+117,Vietnam,westeurope.cloudapp.azure.com,Information Technology,288,0,0.0
+118,Vietnam,mmcdn.com,Parked & For Sale Domains,288,0,0.0
+119,Vietnam,pull-f5-vr-sg01.tiktokcdn.com,Social Networks,288,24,0.0833
+120,Vietnam,itunes.apple.com,Music,288,23,0.0799
+121,Vietnam,astro.com,Astrology,288,0,0.0
+122,Vietnam,www.goojara.to,Questionable Activities,288,0,0.0
+123,Vietnam,dual-s-msedge.net,Newly Seen Domains,288,0,0.0
+124,Vietnam,appleinsider.com,Technology,288,0,0.0
+125,Vietnam,takedwn.ws,DGA Domains,288,0,0.0
+126,Vietnam,kinoafisha.info,Entertainment,288,0,0.0
+127,Vietnam,mil.ru,Violence,288,0,0.0
+128,Vietnam,athemes.com,Hobbies & Interests,288,0,0.0
+129,Vietnam,g.live.com,Webmail,288,0,0.0
+130,Vietnam,clickcease.com,Information Security,288,0,0.0
+131,Vietnam,about.me,Personal Blogs,288,4,0.0139
+132,Vietnam,surriel.com,Radio,288,0,0.0
+133,Vietnam,reyrey.net,Webmail,288,0,0.0
+134,Vietnam,rutgers.edu,Educational Institutions,288,0,0.0
+135,Vietnam,torproject.org,Anonymizer,288,24,0.0833
+136,Vietnam,nyaa.si,File Sharing,288,2,0.0069
+137,Vietnam,www.freepik.com,"News, Portal & Search",288,0,0.0
+138,Vietnam,gemius.pl,Personal Blogs,288,2,0.0069
+139,Vietnam,gog.com,Ecommerce,288,3,0.0104
+140,Vietnam,whatsapp.net,Internet Phone & VOIP,288,0,0.0
+141,Vietnam,pixiv.net,Arts,288,0,0.0
+142,Vietnam,anyclip.com,Technology,288,0,0.0
+143,Vietnam,nginx.org,Entertainment,288,0,0.0
+144,Vietnam,rb.gy,Redirect,288,0,0.0
+145,Vietnam,pdflib.com,Technology,288,0,0.0
+146,Vietnam,tradplusad.com,Spam,288,1,0.0035
+147,Vietnam,svcmot.com,No Content,288,0,0.0
+148,Vietnam,mpsuadv.ru,Spam,288,0,0.0
+149,Vietnam,xnxx.com.se,Pornography,288,21,0.0729
+150,Vietnam,manganato.com,Comic Books,288,17,0.059
+151,Vietnam,proquest.com,Education,288,0,0.0
+152,Vietnam,discord.com,Instant Messengers,288,21,0.0729
+153,Vietnam,nasa.gov,Space & Astronomy,288,0,0.0
+154,Vietnam,zearn.org,Science,288,0,0.0
+155,Vietnam,servidoresdns.net,Forums,288,0,0.0
+156,Vietnam,love.ru,Dating & Relationships,288,0,0.0
+157,Vietnam,joann.com,Arts & Crafts,288,0,0.0
+158,Vietnam,nghttp2.org,APIs,288,0,0.0
+159,Vietnam,knt9.xyz,DGA Domains,288,0,0.0
+160,Vietnam,yammer.com,Professional Networking,288,0,0.0
+161,Vietnam,long.tv,Religion,288,0,0.0
+162,Vietnam,edgesuite.net,Content Servers,288,0,0.0
+163,Vietnam,fabguys.com,Dating & Relationships,288,0,0.0
+164,Vietnam,disneyplus.com,Safe for Kids,288,23,0.0799
+165,Vietnam,ft.com,Economy & Finance,288,0,0.0
+166,Vietnam,asics.com,Clothing,288,0,0.0
+167,Vietnam,pik.ru,Real Estate,288,0,0.0
+168,Vietnam,military.com,Violence,288,0,0.0
+169,Vietnam,starwars.com,Hobbies & Interests,288,0,0.0
+170,Vietnam,midea.com.cn,Ecommerce,288,0,0.0
+171,Vietnam,mojang.com,Hobbies & Interests,288,3,0.0104
+172,Vietnam,www.ebay.com,Auctions & Marketplaces,288,0,0.0
+173,Vietnam,booth.pm,Auctions & Marketplaces,288,0,0.0
+174,Vietnam,www.linkedin.com,Professional Networking,288,29,0.1007
+175,Vietnam,juicyads.com,Lingerie & Bikini,288,18,0.0625
+176,Vietnam,theme-fusion.com,Hobbies & Interests,288,0,0.0
+177,Vietnam,dto.to,Comic Books,288,17,0.059
+178,Vietnam,cbre.com,Real Estate,288,0,0.0
+179,Vietnam,ec-lyon.fr,Educational Institutions,288,0,0.0
+180,Vietnam,imghst-de.com,Parked & For Sale Domains,288,0,0.0
+181,Vietnam,jw.org,Religion,288,0,0.0
+182,Vietnam,freepik.es,"News, Portal & Search",288,0,0.0
+183,Vietnam,m.dcinside.com,Movies,288,23,0.0799
+184,Vietnam,blogspot.co.uk,Arts & Crafts,288,6,0.0208
+185,Vietnam,telefonica.de,Messaging,288,0,0.0
+186,Vietnam,ringcentral.com,Internet Phone & VOIP,288,0,0.0
+187,Vietnam,gapcanada.ca,Fashion,288,0,0.0
+188,Vietnam,sharepoint.com,Login Screens,288,0,0.0
+189,Vietnam,xz.fbcdn.net,Social Networks,288,23,0.0799
+190,Vietnam,it.wikipedia.org,Education,288,0,0.0
+191,Vietnam,elo7.com.br,Arts & Crafts,288,0,0.0
+192,Vietnam,ktkjmp.com,Spam,288,0,0.0
+193,Vietnam,ccc.de,Hacking,288,0,0.0
+194,Vietnam,samsung.com,Home & Garden,288,0,0.0
+195,Vietnam,avon.com,Fashion,288,0,0.0
+196,Vietnam,istockphoto.com,"News, Portal & Search",288,0,0.0
+197,Vietnam,gr.global.aa-rt.sharepoint.com,New Domains,288,23,0.0799
+198,Vietnam,www.indianpornvideos.me,Pornography,288,17,0.059
+199,Vietnam,shein.com.mx,Clothing,288,0,0.0
+200,Vietnam,tiny.cc,Redirect,288,2,0.0069
+201,Vietnam,custhelp.com,Travel,288,0,0.0
+202,Vietnam,merit.net,"Politics, Advocacy, and Government-Related",288,0,0.0
+203,Vietnam,mywot.com,Information Security,288,0,0.0
+204,Vietnam,nhk.jp,Television,288,0,0.0
+205,Vietnam,surfsharkstatus.com,P2P,288,0,0.0
+206,Vietnam,xing.com,Professional Networking,288,0,0.0
+207,Vietnam,akismet.com,Information Security,288,0,0.0
+208,Vietnam,fapello.com,Pornography,288,18,0.0625
+209,Vietnam,sharechat.com,Chat,288,0,0.0
+210,Vietnam,mini.de,Travel,288,0,0.0
+211,Vietnam,lnkd.in,Professional Networking,288,0,0.0
+212,Vietnam,unsplash.com,"News, Portal & Search",288,1,0.0035
+213,Vietnam,groupon.com,Coupons,288,0,0.0
+214,Vietnam,humoruniv.com,Humor,287,0,0.0
+215,Vietnam,joyreactor.cc,Humor,287,19,0.0662
+216,Vietnam,imgflip.com,Humor,287,0,0.0
+217,Vietnam,m.humoruniv.com,Humor,287,0,0.0
+218,Vietnam,www.t-online.de,Video Streaming,287,0,0.0
+219,Vietnam,boardgamearena.com,Hobbies & Interests,287,3,0.0105
+220,Vietnam,eu.com,Parked & For Sale Domains,287,1,0.0035
+221,Vietnam,imgur.com,Photography,285,23,0.0807
+222,Vietnam,usmagazine.com,Magazines,284,0,0.0
+223,Vietnam,inc.com,Magazines,284,0,0.0
+224,Vietnam,thrillist.com,Magazines,284,0,0.0
+225,Vietnam,technologyreview.com,Magazines,284,0,0.0
+226,Vietnam,parents.com,Magazines,284,0,0.0
+227,Vietnam,www.ojogodobicho.com,Health & Fitness,284,16,0.0563
+228,Vietnam,ru.com,Malware,284,0,0.0
+229,Vietnam,value-domain.com,Miscellaneous,284,0,0.0
+230,Vietnam,google.co.vi,"News, Portal & Search",284,0,0.0
+231,Vietnam,fp.measure.office.com,Technology,284,0,0.0
+232,Vietnam,www.canva.com,Arts,284,23,0.081
+233,Vietnam,spbtv.com,Television,284,0,0.0
+234,Vietnam,jooble.org,Job Search & Careers,284,0,0.0
+235,Vietnam,lnk.to,Music,284,0,0.0
+236,Vietnam,www.turkiye.gov.tr,"Politics, Advocacy, and Government-Related",284,0,0.0
+237,Vietnam,animeflv.net,Cartoons & Anime,284,0,0.0
+238,Vietnam,discordapp.com,Internet Phone & VOIP,284,23,0.081
+239,Vietnam,moma.org,Arts,284,0,0.0
+240,Vietnam,select.mamastar.jp,Parenting,284,0,0.0
+241,Vietnam,ninisite.com,Parenting,284,0,0.0
+242,Vietnam,nationalacademies.org,Educational Institutions,284,0,0.0
+243,Vietnam,connectivitycheck.platform.hicloud.com,File Sharing,284,0,0.0
+244,Vietnam,trendyol.com,Fashion,284,0,0.0
+245,Vietnam,spanishdict.com,Translator,284,0,0.0
+246,Vietnam,palmettostatearmory.com,Weapons,284,16,0.0563
+247,Vietnam,deviantart.com,Arts,284,0,0.0
+248,Vietnam,purl.org,Login Screens,284,1,0.0035
+249,Vietnam,athome.co.jp,Real Estate,284,0,0.0
+250,Vietnam,music.apple.com,Audio Streaming,285,0,0.0
+251,Vietnam,babycenter.com,Parenting,285,0,0.0
+252,Vietnam,adskeeper.com,Technology,285,0,0.0
+253,Vietnam,mynavi.jp,Job Search & Careers,287,0,0.0
+254,Vietnam,blogspot.it,Unreachable,287,10,0.0348
+255,Vietnam,www.chordtela.com,Music,287,0,0.0
+256,Vietnam,ru.wikipedia.org,Education,287,0,0.0
+257,Vietnam,bet365.com,Sports,287,18,0.0627
+258,Vietnam,mine.nu,Miscellaneous,288,0,0.0
+259,Vietnam,cosme.net,Fashion,287,1,0.0035
+260,Vietnam,drive2.ru,Vehicles,287,0,0.0
+261,Vietnam,tabor.ru,Dating & Relationships,287,0,0.0
+262,Vietnam,push.prod.netflix.com,Movies,285,23,0.0807
+263,Vietnam,app.ibomma.link,Movies,285,0,0.0
+264,Vietnam,ivi.ru,Movies,285,0,0.0
+265,Vietnam,themoviedb.org,Movies,285,9,0.0316
+266,Vietnam,www.ninisite.com,Parenting,285,0,0.0
+267,Vietnam,slidesgo.com,Arts,284,0,0.0
+268,Vietnam,www.pixiv.net,Arts,284,0,0.0
+269,Vietnam,www.deviantart.com,Arts,284,0,0.0
+270,Vietnam,tate.org.uk,Arts,284,0,0.0
+271,Vietnam,artnet.com,Arts,284,0,0.0
+272,Vietnam,ibb.co,Photography,284,0,0.0
+273,Vietnam,imtwjwoasak.com,Spam,284,0,0.0
+274,Vietnam,williams-sonoma.com,Home & Garden,284,0,0.0
+275,Vietnam,dit.whatsapp.net,Internet Phone & VOIP,284,23,0.081
+276,Vietnam,chewy.com,Pets,284,0,0.0
+277,Vietnam,topwar.ru,Violence,284,0,0.0
+278,Vietnam,t.me,Instant Messengers,284,1,0.0035
+279,Vietnam,iterable.com,Business,284,0,0.0
+280,Vietnam,apartmenttherapy.com,Home & Garden,284,0,0.0
+281,Vietnam,poe.com,Malware,284,0,0.0
+282,Vietnam,vxxx.com,Pornography,284,16,0.0563
+283,Vietnam,www.samsung.com,Home & Garden,284,0,0.0
+284,Vietnam,drogaraia.com.br,Health & Fitness,284,0,0.0
+285,Vietnam,rubiconproject.com,Advertisements,284,1,0.0035
+286,Vietnam,pps.whatsapp.net,Instant Messengers,284,23,0.081
+287,Vietnam,hbomax.com,Movies,284,23,0.081
+288,Vietnam,m.tnaflix.com,Pornography,284,26,0.0915
+289,Vietnam,abbott.com,Health & Fitness,284,0,0.0
+290,Vietnam,tripadvisor.it,Food & Drink,284,0,0.0
+291,Vietnam,whecloud.com,Unreachable,284,0,0.0
+292,Vietnam,xyz.ibomma.link,Questionable Activities,284,0,0.0
+293,Vietnam,myportfolio.com,Arts,284,0,0.0
+294,Vietnam,imf.org,"Politics, Advocacy, and Government-Related",284,0,0.0
+295,Vietnam,tcgplayer.com,Hobbies & Interests,284,0,0.0
+296,Vietnam,meesho.com,Fashion,284,0,0.0
+297,Vietnam,boomtrain.com,Business,284,0,0.0
+298,Vietnam,bittorrent.com,P2P,284,0,0.0
+299,Vietnam,telegram.org,Instant Messengers,284,24,0.0845
+300,Vietnam,wikibooks.org,Education,284,0,0.0
+301,Vietnam,www.sexlog.com,Dating & Relationships,284,16,0.0563
+302,Vietnam,hugedomains.com,Parked & For Sale Domains,284,0,0.0
+303,Vietnam,pikabu.ru,Personal Blogs,284,0,0.0
+304,Vietnam,victoriassecret.com,Lingerie & Bikini,284,0,0.0
+305,Vietnam,m.facebook.com,Social Networks,284,29,0.1021
+306,Vietnam,crashlytics.com,Information Technology,284,0,0.0
+307,Vietnam,overwolf.com,Gaming,284,3,0.0106
+308,Vietnam,polyfill.io,Technology,284,20,0.0704
+309,Vietnam,outlook.live.com,Webmail,284,23,0.081
+310,Vietnam,inkuai.com,Newly Seen Domains,284,0,0.0
+311,Vietnam,trafficjunky.net,Advertisements,284,1,0.0035
+312,Vietnam,maps.googleapis.com,Education,284,23,0.081
+313,Vietnam,neopets.com,Safe for Kids,284,4,0.0141
+314,Vietnam,beboo.ru,Dating & Relationships,284,1,0.0035
+315,Vietnam,cc.com,Humor,284,0,0.0
+316,Vietnam,knowyourmeme.com,Humor,284,0,0.0
+317,Vietnam,itv.com,Video Streaming,284,0,0.0
+318,Vietnam,vonage.com,Internet Phone & VOIP,284,0,0.0
+319,Vietnam,global.aa-rt.sharepoint.com,New Domains,284,23,0.081
+320,Vietnam,hoyolab.com,Forums,284,3,0.0106
+321,Vietnam,pixbet.com,Spam,284,16,0.0563
+322,Vietnam,torn.com,Hobbies & Interests,284,3,0.0106
+323,Vietnam,petsmart.com,Pets,284,0,0.0
+324,Vietnam,kaiserpermanente.org,Economy & Finance,284,0,0.0
+325,Vietnam,dota2.com,Gaming,284,12,0.0423
+326,Vietnam,clean.gg,Content Servers,284,0,0.0
+327,Vietnam,pki.goog,Information Security,284,0,0.0
+328,Vietnam,betproexch.com,Login Screens,284,0,0.0
+329,Vietnam,linklist.bio,Malware,284,0,0.0
+330,Vietnam,stihi.ru,Education,284,0,0.0
+331,Vietnam,bible.com,Religion,284,0,0.0
+332,Vietnam,m.fabguys.com,Lifestyle,284,1,0.0035
+333,Vietnam,danbooru.donmai.us,Arts,284,16,0.0563
+334,Vietnam,cricbuzz.com,Sports,284,0,0.0
+335,Vietnam,hostmonster.com,Miscellaneous,284,0,0.0
+336,Vietnam,filesusr.com,Content Servers,284,0,0.0
+337,Vietnam,churchcenter.com,Religion,284,0,0.0
+338,Vietnam,nike.com,Clothing,284,0,0.0
+339,Vietnam,linkedin.com,Professional Networking,284,26,0.0915
+340,Vietnam,name-services.com,Phishing,284,0,0.0
+341,Vietnam,dnsv5.com,Information Technology,284,0,0.0
+342,Vietnam,amung.us,Technology,284,0,0.0
+343,Vietnam,netflix.com,Movies,284,23,0.081
+344,Vietnam,google.co.ls,News & Media,284,0,0.0
+345,Vietnam,webtoons.com,Comic Books,285,7,0.0246
+346,Vietnam,pantip.com,Forums,285,0,0.0
+347,Vietnam,lync.com,Technology,285,0,0.0
+348,Vietnam,grindr.com,Lifestyle,285,0,0.0
+349,Vietnam,pull-cmaf-f16-tt03.fcdn.eu.tiktokcdn.com,Social Networks,285,24,0.0842
+350,Vietnam,meituan.com,Search Engines,285,0,0.0
+351,Vietnam,aif.ru,News & Media,285,0,0.0
+352,Vietnam,www.clarity.ms,Spam,287,0,0.0
+353,Vietnam,az24.vn,Entertainment,287,0,0.0
+354,Vietnam,mmx-ds.cdn.whatsapp.net,Instant Messengers,287,23,0.0801
+355,Vietnam,skype.com,Instant Messengers,287,0,0.0
+356,Vietnam,edgeapi.slack.com,Instant Messengers,287,0,0.0
+357,Vietnam,chat.cdn.whatsapp.net,Instant Messengers,287,23,0.0801
+358,Vietnam,messenger.com,Instant Messengers,287,23,0.0801
+359,Vietnam,jut.su,Cartoons & Anime,287,0,0.0
+360,Vietnam,fbi.gov,Government,287,0,0.0
+361,Vietnam,translate.google.com,Translator,285,24,0.0842
+362,Vietnam,rakuten.com,Coupons,285,0,0.0
+363,Vietnam,www.mercadolibre.com.mx,Auctions & Marketplaces,284,0,0.0
+364,Vietnam,alibaba.com,Auctions & Marketplaces,284,0,0.0
+365,Vietnam,www.marktplaats.nl,Auctions & Marketplaces,284,0,0.0
+366,Vietnam,www.ebay.co.uk,Auctions & Marketplaces,284,0,0.0
+367,Vietnam,bricklink.com,Auctions & Marketplaces,284,0,0.0
+368,Vietnam,oajs.openx.net,Advertisements,284,1,0.0035
+369,Vietnam,stradivarius.com,Fashion,284,0,0.0
+370,Vietnam,esquire.com,Magazines,284,0,0.0
+371,Vietnam,eufylife.com,Home & Garden,284,0,0.0
+372,Vietnam,rome2rio.com,Travel,284,0,0.0
+373,Vietnam,skyrock.net,Redirect,284,0,0.0
+374,Vietnam,akamaistream.net,Miscellaneous,284,0,0.0
+375,Vietnam,lingojam.com,Translator,284,0,0.0
+376,Vietnam,yimg.com,Content Servers,284,0,0.0
+377,Vietnam,adidas.com,Fashion,284,0,0.0
+378,Vietnam,dailyinnovation.biz,Astrology,284,0,0.0
+379,Vietnam,mantraonline.com,Miscellaneous,284,0,0.0
+380,Vietnam,google.com.mx,Search Engines,284,0,0.0
+381,Vietnam,jofogas.hu,Auctions & Marketplaces,284,0,0.0
+382,Vietnam,tubidy.cool,Newly Seen Domains,284,0,0.0
+383,Vietnam,reverso.net,Translator,284,0,0.0
+384,Vietnam,on3.com,Sports,284,0,0.0
+385,Vietnam,aetna.com,Health & Fitness,284,0,0.0
+386,Vietnam,ww1.goojara.to,Questionable Activities,284,0,0.0
+387,Vietnam,id.blooket.com,Safe for Kids,284,23,0.081
+388,Vietnam,blogtalkradio.com,Personal Blogs,284,1,0.0035
+389,Vietnam,omegle.com,Chat,284,16,0.0563
+390,Vietnam,bgdns.net,Phishing,284,0,0.0
+391,Vietnam,pull-f5-gcp01.fcdn.us.tiktokv.com,Social Networks,284,25,0.088
+392,Vietnam,bizport.cn,Messaging,284,0,0.0
+393,Vietnam,gnavi.co.jp,Food & Drink,284,0,0.0
+394,Vietnam,people.cn,Personal Blogs,284,0,0.0
+395,Vietnam,js-agent.newrelic.com,Business,284,0,0.0
+396,Vietnam,surfshark.com,P2P,284,0,0.0
+397,Vietnam,ladbrokes.com,Gambling,284,17,0.0599
+398,Vietnam,boldchat.com,Chat,284,0,0.0
+399,Vietnam,idealista.com,Real Estate,284,0,0.0
+400,Vietnam,magicbricks.com,Real Estate,284,0,0.0
+401,Vietnam,egais.ru,"Politics, Advocacy, and Government-Related",284,0,0.0
+402,Vietnam,diabetes.org,Health & Fitness,284,1,0.0035
+403,Vietnam,athenahealth.com,Health & Fitness,284,0,0.0
+404,Vietnam,livescience.com,Science,284,0,0.0
+405,Vietnam,ctadns.cn,Newly Seen Domains,284,0,0.0
+406,Vietnam,toomics.com,Comic Books,284,16,0.0563
+407,Vietnam,findagrave.com,Search Engines,284,0,0.0
+408,Vietnam,cyberghostvpn.com,P2P,284,1,0.0035
+409,Vietnam,themeisle.com,Hobbies & Interests,284,0,0.0
+410,Vietnam,mobilegamestats.com,Gaming,284,0,0.0
+411,Vietnam,fotostrana.ru,Dating & Relationships,284,0,0.0
+412,Vietnam,nrdp52-appboot.netflix.com,Television,284,23,0.081
+413,Vietnam,keenetic.link,No Content,284,0,0.0
+414,Vietnam,dhs.gov,Government,284,0,0.0
+415,Vietnam,op.gg,Gaming,284,3,0.0106
+416,Vietnam,lin.ee,Internet Phone & VOIP,284,0,0.0
+417,Vietnam,logs.netflix.com,Television,284,23,0.081
+418,Vietnam,pbskids.org,Safe for Kids,284,0,0.0
+419,Vietnam,outlook.office365.com,Webmail,284,23,0.081
+420,Vietnam,mimecast.net,Miscellaneous,284,0,0.0
+421,Vietnam,tv21.avsee.in,Questionable Activities,284,1,0.0035
+422,Vietnam,browsiprod.com,Advertisements,284,0,0.0
+423,Vietnam,3.bp.blogspot.com,Personal Blogs,284,19,0.0669
+424,Vietnam,zomato.com,Food & Drink,284,0,0.0
+425,Vietnam,trueconf.net,Internet Phone & VOIP,284,0,0.0
+426,Vietnam,meetup.com,Entertainment,284,0,0.0
+427,Vietnam,cityheaven.net,Adult Themes,284,16,0.0563
+428,Vietnam,mydlink.com,Technology,284,0,0.0
+429,Vietnam,login5.spotify.com,Audio Streaming,284,0,0.0
+430,Vietnam,accounts.youtube.com,Content Servers,284,23,0.081
+431,Vietnam,akc.org,Pets,284,0,0.0
+432,Vietnam,ssp.yahoo.com,News & Media,284,0,0.0
+433,Vietnam,game8.co,Gaming,284,4,0.0141
+434,Vietnam,eonline.com,Television,284,0,0.0
+435,Vietnam,lfstrm.tv,Entertainment,284,0,0.0
+436,Vietnam,ssstik.io,Personal Blogs,284,8,0.0282
+437,Vietnam,trulia.com,Real Estate,284,0,0.0
+438,Vietnam,fr.linkedin.com,Professional Networking,284,23,0.081
+439,Vietnam,www.jusbrasil.com.br,"Politics, Advocacy, and Government-Related",284,0,0.0
+440,Vietnam,drom.ru,Vehicles,284,0,0.0
+441,Vietnam,faphouse.com,Pornography,284,18,0.0634
+442,Vietnam,ipvanish.com,P2P,284,1,0.0035
+443,Vietnam,web.whatsapp.com,Internet Phone & VOIP,284,23,0.081
+444,Vietnam,google.de,Search Engines,284,0,0.0
+445,Vietnam,hotornot.com,Dating & Relationships,284,0,0.0
+446,Vietnam,nexusmods.com,Hobbies & Interests,284,3,0.0106
+447,Vietnam,boticario.com.br,Fashion,284,0,0.0
+448,Vietnam,www.biblegateway.com,Religion,284,0,0.0
+449,Vietnam,twitpic.com,Photography,284,0,0.0
+450,Vietnam,s.dto.jp,Adult Themes,284,16,0.0563
+451,Vietnam,www.topmanhua.com,Comic Books,284,16,0.0563
+452,Vietnam,ameblo.jp,Personal Blogs,284,0,0.0
+453,Vietnam,cc.skype.com,Internet Phone & VOIP,284,0,0.0
+454,Vietnam,espncricinfo.com,Sports,284,0,0.0
+455,Vietnam,moz.works,No Content,284,0,0.0
+456,Vietnam,waplog.com,Dating & Relationships,284,0,0.0
+457,Vietnam,m.tabor.ru,Dating & Relationships,284,0,0.0
+458,Vietnam,osha.gov,Job Search & Careers,284,0,0.0
+459,Vietnam,splashthat.com,Entertainment,284,0,0.0
+460,Vietnam,in.linkedin.com,Professional Networking,284,23,0.081
+461,Vietnam,popsci.com,Magazines,284,0,0.0
+462,Vietnam,mos.ru,Travel,284,0,0.0
+463,Vietnam,dailykos.com,"Politics, Advocacy, and Government-Related",284,0,0.0
+464,Vietnam,www.blooket.com,Safe for Kids,284,23,0.081
+465,Vietnam,acronis.com,File Sharing,284,0,0.0
+466,Vietnam,ftl.netflix.com,Movies,284,23,0.081
+467,Vietnam,copart.com,Vehicles,284,0,0.0
+468,Vietnam,riskified.com,Information Security,284,0,0.0
+469,Vietnam,www.udemy.com,Ecommerce,284,23,0.081
+470,Vietnam,duke.edu,Educational Institutions,284,0,0.0
+471,Vietnam,www.dogdrip.net,File Sharing,284,0,0.0
+472,Vietnam,device-metrics-us.amazon.com,Ecommerce,284,0,0.0
+473,Vietnam,cdnga.net,Content Servers,284,0,0.0
+474,Vietnam,line.me,Internet Phone & VOIP,284,0,0.0
+475,Vietnam,indeed.tech,Technology,284,0,0.0
+476,Vietnam,moovitapp.com,Travel,284,0,0.0
+477,Vietnam,euro.com.pl,Home & Garden,284,0,0.0
+478,Vietnam,kqzyfj.com,Redirect,284,0,0.0
+479,Vietnam,hud.gov,Real Estate,284,0,0.0
+480,Vietnam,es.scribd.com,Education,284,23,0.081
+481,Vietnam,autoblog.com,Vehicles,284,0,0.0
+482,Vietnam,expressvpn.com,P2P,284,20,0.0704
+483,Vietnam,deepl.com,Translator,284,23,0.081
+484,Vietnam,houzz.com,Home & Garden,284,0,0.0
+485,Vietnam,mail.aol.com,Webmail,284,0,0.0
+486,Vietnam,betterhelp.com,Health & Fitness,284,0,0.0
+487,Vietnam,wechat.com,Instant Messengers,284,23,0.081
+488,Vietnam,activemetering.com,No Content,284,0,0.0
+489,Vietnam,auto.drom.ru,Vehicles,284,0,0.0
+490,Vietnam,apkmirror.com,File Sharing,284,0,0.0
+491,Vietnam,hh.ru,Job Search & Careers,284,0,0.0
+492,Vietnam,podbean.com,Business,284,0,0.0
+493,Vietnam,app-measurement.com,Content Servers,284,0,0.0
+494,Vietnam,sba.gov,Economy & Finance,284,0,0.0
+495,Vietnam,sharefile.com,File Sharing,284,0,0.0
+496,Vietnam,fashionnova.com,Ecommerce,284,0,0.0
+497,Vietnam,yr.no,Weather,284,0,0.0
+498,Vietnam,sporcle.com,Entertainment,284,0,0.0
+499,Vietnam,bloglovin.com,Login Screens,284,5,0.0176
+500,Vietnam,vatican.va,Religion,284,0,0.0
+501,Vietnam,famousbirthdays.com,Entertainment,284,0,0.0
+502,Vietnam,s-cloud.fi,No Content,284,0,0.0
+503,Vietnam,privacy.com.br,Content Servers,284,16,0.0563
+504,Vietnam,api2.amplitude.com,Business,284,0,0.0
+505,Vietnam,ticketmaster.com.mx,Entertainment,284,0,0.0
+506,Vietnam,surveymonkey.com,Shopping,284,0,0.0
+507,Vietnam,esaj.tjsp.jus.br,"Politics, Advocacy, and Government-Related",284,0,0.0
+508,Vietnam,wholefoodsmarket.com,Food & Drink,284,0,0.0
+509,Vietnam,teleprogramma.pro,Magazines,284,0,0.0
+510,Vietnam,mamastar.jp,Parenting,284,0,0.0
+511,Vietnam,nordvpn.com,P2P,284,24,0.0845
+512,Vietnam,olo.com,Food & Drink,284,0,0.0
+513,Vietnam,lululemon.com,Clothing,284,0,0.0
+514,Vietnam,www.chess.com,Hobbies & Interests,284,3,0.0106
+515,Vietnam,leiniao.com,Television,284,0,0.0
+516,Vietnam,ys7.com,Ecommerce,284,0,0.0
+517,Vietnam,livedns.co.uk,Parked & For Sale Domains,284,0,0.0
+518,Vietnam,www.ilmeteo.it,Weather,284,0,0.0
+519,Vietnam,csod.com,Job Search & Careers,284,0,0.0
+520,Vietnam,movie.eroterest.net,Humor,284,17,0.0599
+521,Vietnam,main.endpoint.ingress.rapid7.com,Information Security,284,0,0.0
+522,Vietnam,rsc.org,Science,284,0,0.0
+523,Vietnam,joinhoney.com,Coupons,284,0,0.0
+524,Vietnam,kr-weathernews.com,Weather,284,0,0.0
+525,Vietnam,www.destacamos.com,Adult Themes,284,17,0.0599
+526,Vietnam,umn.edu,Educational Institutions,284,0,0.0
+527,Vietnam,carnival.com,Travel,284,0,0.0
+528,Vietnam,123-hd.com,Questionable Activities,284,0,0.0
+529,Vietnam,delish.com,Food & Drink,284,0,0.0
+530,Vietnam,tdnsv6.com,Newly Seen Domains,284,0,0.0
+531,Vietnam,www.homedepot.com,Home & Garden,284,0,0.0
+532,Vietnam,nflximg.com,Movies,284,0,0.0
+533,Vietnam,joyclub.de,Pornography,284,17,0.0599
+534,Vietnam,mathplayground.com,Safe for Kids,284,3,0.0106
+535,Vietnam,akamaized.net,Content Servers,284,0,0.0
+536,Vietnam,mailgun.net,Webmail,284,0,0.0
+537,Vietnam,4chan.org,Adult Themes,284,17,0.0599
+538,Vietnam,rateyourmusic.com,Forums,284,0,0.0
+539,Vietnam,9gag.com,Humor,284,16,0.0563
+540,Vietnam,dndbeyond.com,Hobbies & Interests,284,3,0.0106
+541,Vietnam,tenki.jp,Weather,284,0,0.0
+542,Vietnam,allure.com,Magazines,284,0,0.0
+543,Vietnam,twnic.net.tw,Webmail,284,0,0.0
+544,Vietnam,ultradns.com,Information Technology,284,0,0.0
+545,Vietnam,avito.st,Redirect,284,0,0.0
+546,Vietnam,blogspot.in,Unreachable,284,7,0.0246
+547,Vietnam,urban-vpn.com,P2P,284,4,0.0141
+548,Vietnam,mindbodygreen.com,Magazines,284,0,0.0
+549,Vietnam,dezeen.com,Magazines,284,0,0.0
+550,Vietnam,samsara.com,Travel,284,0,0.0
+551,Vietnam,reserved.com,Clothing,284,0,0.0
+552,Vietnam,fanatics.com,Clothing,284,0,0.0
+553,Vietnam,zalando.pl,Clothing,284,0,0.0
+554,Vietnam,www.uniqlo.com,Clothing,284,0,0.0
+555,Vietnam,dior.com,Clothing,284,0,0.0
+556,Vietnam,discord.gg,Internet Phone & VOIP,284,0,0.0
+557,Vietnam,edge.skype.com,Internet Phone & VOIP,284,0,0.0
+558,Vietnam,mcm.ru,Internet Phone & VOIP,284,0,0.0
+559,Vietnam,symphony.com,Internet Phone & VOIP,284,0,0.0
+560,Vietnam,cloudflareresolve.com,Internet Phone & VOIP,284,0,0.0
+561,Vietnam,www.istockphoto.com,"News, Portal & Search",284,0,0.0
+562,Vietnam,subway.com,File Sharing,284,0,0.0
+563,Vietnam,samsungnyc.com,Content Servers,284,0,0.0
+564,Vietnam,nla.gov.au,Education,284,0,0.0
+565,Vietnam,terabox.app,Newly Seen Domains,284,0,0.0
+566,Vietnam,agoda.com,Coupons,284,0,0.0
+567,Vietnam,dafont.com,Hobbies & Interests,284,0,0.0
+568,Vietnam,kugou.com,Audio Streaming,284,0,0.0
+569,Vietnam,e621.net,"News, Portal & Search",284,17,0.0599
+570,Vietnam,stock.adobe.com,"News, Portal & Search",284,1,0.0035
+571,Vietnam,bit.ly,Redirect,284,0,0.0
+572,Vietnam,cp601.prod.do.dsp.mp.microsoft.com,Business,284,0,0.0
+573,Vietnam,phys.org,Magazines,284,0,0.0
+574,Vietnam,your-server.de,Login Screens,284,0,0.0
+575,Vietnam,supercell.com,Job Search & Careers,284,3,0.0106
+576,Vietnam,hbopenbid.pubmatic.com,Technology,284,1,0.0035
+577,Vietnam,www.amazon.sa,Ecommerce,284,0,0.0
+578,Vietnam,backblaze.com,File Sharing,284,0,0.0
+579,Vietnam,www.sportybet.com,Gambling,284,22,0.0775
+580,Vietnam,garenanow.com,Content Servers,284,3,0.0106
+581,Vietnam,privacyshield.gov,Government,284,0,0.0
+582,Vietnam,petco.com,Pets,284,0,0.0
+583,Vietnam,anchor.fm,Audio Streaming,284,0,0.0
+584,Vietnam,guc3-spclient.spotify.com,Audio Streaming,284,0,0.0
+585,Vietnam,tradingview.com,Professional Networking,284,0,0.0
+586,Vietnam,ci3.googleusercontent.com,Content Servers,284,0,0.0
+587,Vietnam,af.mil,Government,284,0,0.0
+588,Vietnam,1337x.to,Questionable Activities,284,5,0.0176
+589,Vietnam,dbankcloud.ru,Unreachable,284,0,0.0
+590,Vietnam,www.ncbi.nlm.nih.gov,Government,284,0,0.0
+591,Vietnam,hola.org,P2P,284,24,0.0845
+592,Vietnam,google.mg,Search Engines,284,0,0.0
+593,Vietnam,ad.turn.com,Login Screens,284,1,0.0035
+594,Vietnam,ravelry.com,Forums,284,0,0.0
+595,Vietnam,idaho.gov,Travel,284,0,0.0
+596,Vietnam,kinopoisk.ru,Entertainment,284,0,0.0
+597,Vietnam,shopee.tw,Ecommerce,284,0,0.0
+598,Vietnam,ads.linkedin.com,Professional Networking,284,25,0.088
+599,Vietnam,netseer-ipaddr-assoc.xz.fbcdn.net,Social Networks,284,23,0.081
+600,Vietnam,nz.ua,Educational Institutions,284,0,0.0
+601,Vietnam,inbox.lv,News & Media,284,0,0.0
+602,Vietnam,bing.net,Search Engines,284,0,0.0
+603,Vietnam,me.com,File Sharing,284,0,0.0
+604,Vietnam,hotels.com,Travel,284,0,0.0
+605,Vietnam,mystrikingly.com,Phishing,284,0,0.0
+606,Vietnam,underarmour.com,Fashion,284,0,0.0
+607,Vietnam,upenn.edu,Educational Institutions,284,0,0.0
+608,Vietnam,ampproject.net,Information Technology,284,0,0.0
+609,Vietnam,prod.partner.netflix.net,Movies,284,23,0.081
+610,Vietnam,harimanga.com,Comic Books,284,0,0.0
+611,Vietnam,salonboard.com,Fashion,284,0,0.0
+612,Vietnam,www.smythstoys.com,Ecommerce,284,0,0.0
+613,Vietnam,hostingradio.ru,Music,284,0,0.0
+614,Vietnam,example.org,Parked & For Sale Domains,284,0,0.0
+615,Vietnam,pornhat.one,Pornography,284,16,0.0563
+616,Vietnam,prebid.a-mo.net,Advertisements,284,0,0.0
+617,Vietnam,tudelft.nl,Educational Institutions,284,0,0.0
+618,Vietnam,skyscrapercity.com,Forums,284,0,0.0
+619,Vietnam,infourok.ru,Video Streaming,284,0,0.0
+620,Vietnam,kampyle.com,Business,284,0,0.0
+621,Vietnam,currys.co.uk,Ecommerce,284,0,0.0
+622,Vietnam,bumble.com,Dating & Relationships,284,3,0.0106
+623,Vietnam,serverdata.net,Login Screens,284,0,0.0
+624,Vietnam,slideshare.net,File Sharing,284,0,0.0
+625,Vietnam,www.whatsapp.com,Internet Phone & VOIP,284,23,0.081
+626,Vietnam,cern.ch,Educational Institutions,284,0,0.0
+627,Vietnam,gigaset-elements.com,Ecommerce,284,0,0.0
+628,Vietnam,m.gsmarena.com,Shopping,284,0,0.0
+629,Vietnam,indiewire.com,Movies,284,0,0.0
+630,Vietnam,supapush.net,Newly Seen Domains,284,17,0.0599
+631,Vietnam,monday.com,Technology,284,23,0.081
+632,Vietnam,homedepot.com,Home & Garden,284,0,0.0
+633,Vietnam,fatalmodel.com,Adult Themes,284,16,0.0563
+634,Vietnam,lilithgame.com,Gaming,284,3,0.0106
+635,Vietnam,tendawifi.com,Phishing,284,1,0.0035
+636,Vietnam,cbp.gov,Government,284,0,0.0
+637,Vietnam,24.hu,Video Streaming,284,0,0.0
+638,Vietnam,tradeinn.com,Ecommerce,284,0,0.0
+639,Vietnam,www.letras.mus.br,Audio Streaming,284,0,0.0
+640,Vietnam,dnspod.com,Forums,284,0,0.0
+641,Vietnam,barrons.com,Economy & Finance,284,0,0.0
+642,Vietnam,aws.api.sc-gw.com,Content Servers,284,0,0.0
+643,Vietnam,www.rightmove.co.uk,Real Estate,284,0,0.0
+644,Vietnam,ximalaya.com,Music,284,0,0.0
+645,Vietnam,glassdoor.com,Job Search & Careers,284,0,0.0
+646,Vietnam,www.geny.com,Gambling,284,17,0.0599
+647,Vietnam,xnxx2.com,Pornography,284,20,0.0704
+648,Vietnam,cargurus.com,Vehicles,284,0,0.0
+649,Vietnam,chat.zalo.me,Instant Messengers,284,23,0.081
+650,Vietnam,eporner.com,Pornography,284,21,0.0739
+651,Vietnam,g.whatsapp.net,Internet Phone & VOIP,284,23,0.081
+652,Vietnam,cdbaby.com,Music,284,2,0.007
+653,Vietnam,toyota.com,Vehicles,284,2,0.007
+654,Vietnam,mfms.ru,Chat,284,0,0.0
+655,Vietnam,planetminecraft.com,Forums,284,3,0.0106
+656,Vietnam,boutell.co.uk,Economy & Finance,284,0,0.0
+657,Vietnam,ouedkniss.com,Auctions & Marketplaces,284,0,0.0
+658,Vietnam,www.trendyol.com,Fashion,284,0,0.0
+659,Vietnam,uiboot.netflix.com,Television,284,23,0.081
+660,Vietnam,zg-api.com,No Content,284,0,0.0
+661,Vietnam,wwiops.io,Login Screens,284,0,0.0
+662,Vietnam,dp.ua,Parked & For Sale Domains,284,0,0.0
+663,Vietnam,reverb.com,Auctions & Marketplaces,284,0,0.0
+664,Vietnam,groupme.com,Instant Messengers,284,0,0.0
+665,Vietnam,seek.com.au,Job Search & Careers,284,0,0.0
+666,Vietnam,archdaily.com,Real Estate,284,0,0.0
+667,Vietnam,m.beboo.ru,Dating & Relationships,284,1,0.0035
+668,Vietnam,nationalreview.com,Magazines,284,0,0.0
+669,Vietnam,nespresso.com,Home & Garden,284,0,0.0
+670,Vietnam,facebook.com,Social Networks,284,7,0.0246
+671,Vietnam,castbox.fm,Music,284,0,0.0
+672,Vietnam,allmusic.com,Music,284,0,0.0
+673,Vietnam,webmd.com,Health & Fitness,284,0,0.0
+674,Vietnam,google.us,Search Engines,284,0,0.0
+675,Vietnam,google.com.sb,Search Engines,284,0,0.0
+676,Vietnam,gotinder.com,Dating & Relationships,284,0,0.0
+677,Vietnam,buienradar.nl,Weather,284,0,0.0
+678,Vietnam,mangabat.com,Comic Books,284,0,0.0
+679,Vietnam,newyorker.com,Video Streaming,284,0,0.0
+680,Vietnam,beauty.hotpepper.jp,Food & Drink,284,0,0.0
+681,Vietnam,biblegateway.com,Religion,284,0,0.0
+682,Vietnam,gateway.instagram.com,Photography,284,23,0.081
+683,Vietnam,m.ok.ru,Social Networks,284,0,0.0
+684,Vietnam,crazyporn.xxx,Pornography,284,16,0.0563
+685,Vietnam,drift.com,Business,284,0,0.0
+686,Vietnam,iltalehti.fi,News & Media,284,0,0.0
+687,Vietnam,amagi.tv,File Sharing,284,0,0.0
+688,Vietnam,pinterest.ca,Photography,284,23,0.081
+689,Vietnam,freepik.com,"News, Portal & Search",284,0,0.0
+690,Vietnam,www.publi24.ro,Auctions & Marketplaces,284,0,0.0
+691,Vietnam,mumsnet.com,Parenting,284,1,0.0035
+692,Vietnam,blogspot.de,Unreachable,284,5,0.0176
+693,Vietnam,helsinki.fi,Educational Institutions,284,0,0.0
+694,Vietnam,match.com,Dating & Relationships,284,0,0.0
+695,Vietnam,hollywoodbets.net,Gambling,284,20,0.0704
+696,Vietnam,www.tjk.org,Sports,284,17,0.0599
+697,Vietnam,us-api.asm.skype.com,Internet Phone & VOIP,284,0,0.0
+698,Vietnam,icc-cricket.com,Sports,284,0,0.0
+699,Vietnam,ezvizru.com,No Content,284,0,0.0
+700,Vietnam,www.washingtonpost.com,Video Streaming,284,0,0.0
+701,Vietnam,rzd.ru,Business,284,0,0.0
+702,Vietnam,br.skokka.com,Dating & Relationships,284,17,0.0599
+703,Vietnam,zee5.com,Movies,284,0,0.0
+704,Vietnam,www.imdb.com,Movies,284,0,0.0
+705,Vietnam,ticketone.it,Entertainment,284,0,0.0
+706,Vietnam,my.com,Hobbies & Interests,284,0,0.0
+707,Vietnam,alamy.com,"News, Portal & Search",284,0,0.0
+708,Vietnam,brainpop.com,Education,284,0,0.0
+709,Vietnam,jiveip.net,Login Screens,284,0,0.0
+710,Vietnam,www.shutterstock.com,Photography,284,0,0.0
+711,Vietnam,priceline.com,Shopping,284,0,0.0
+712,Vietnam,adam4adam.com,Adult Themes,284,17,0.0599
+713,Vietnam,rottentomatoes.com,Movies,284,6,0.0211
+714,Vietnam,vwapps.run,Newly Seen Domains,284,0,0.0
+715,Vietnam,us-u.openx.net,Advertisements,284,1,0.0035
+716,Vietnam,at.ua,Unreachable,284,0,0.0
+717,Vietnam,desync.com,Questionable Activities,284,0,0.0
+718,Vietnam,wooga.com,Gaming,284,3,0.0106
+719,Vietnam,infocyte.com,Entertainment,284,0,0.0
+720,Vietnam,extension.grammarly.com,Information Technology,284,23,0.081
+721,Vietnam,ebay.com.au,Auctions & Marketplaces,284,0,0.0
+722,Vietnam,archiveofourown.org,Adult Themes,284,0,0.0
+723,Vietnam,onepeloton.com,Health & Fitness,284,0,0.0
+724,Vietnam,hentailib.me,Pornography,284,16,0.0563
+725,Vietnam,m.kooora.com,Sports,284,0,0.0
+726,Vietnam,samplicio.us,Shopping,284,1,0.0035
+727,Vietnam,keydisk.ru,Unreachable,284,0,0.0
+728,Vietnam,www.sciencedirect.com,Science,284,0,0.0
+729,Vietnam,ameba.jp,Personal Blogs,284,0,0.0
+730,Vietnam,translate.goog,Translator,284,0,0.0
+731,Vietnam,domclick.ru,Economy & Finance,284,1,0.0035
+732,Vietnam,pagesix.com,Entertainment,284,0,0.0
+733,Vietnam,funnyjunk.com,Humor,284,15,0.0528
+734,Vietnam,football.fantasysports.yahoo.com,Sports,284,0,0.0
+735,Vietnam,merlincdn.net,Unreachable,284,0,0.0
+736,Vietnam,www.deepl.com,Translator,284,23,0.081
+737,Vietnam,www.lg.com,Home & Garden,284,0,0.0
+738,Vietnam,lgthinq.com,Home & Garden,284,0,0.0
+739,Vietnam,api.whatsapp.com,Internet Phone & VOIP,284,23,0.081
+740,Vietnam,poringa.net,Pornography,284,17,0.0599
+741,Vietnam,colaboraread.com.br,Login Screens,284,0,0.0
+742,Vietnam,goojara.to,Questionable Activities,284,0,0.0
+743,Vietnam,m.pantip.com,Forums,284,0,0.0
+744,Vietnam,radiofrance.fr,Music,284,0,0.0
+745,Vietnam,faa.gov,Government,284,0,0.0
+746,Vietnam,edu.ibomma.link,Questionable Activities,284,0,0.0
+747,Vietnam,prod.ftl.netflix.com,Television,284,23,0.081
+748,Vietnam,skwstat.ru,No Content,284,0,0.0
+749,Vietnam,keplr.app,Business,284,0,0.0
+750,Vietnam,otzovik.com,Shopping,284,0,0.0
+751,Vietnam,versus.com,Shopping,284,0,0.0
+752,Vietnam,reverbnation.com,Audio Streaming,284,0,0.0
+753,Vietnam,imageshack.com,Video Streaming,284,0,0.0
+754,Vietnam,zillow.com,Real Estate,284,0,0.0
+755,Vietnam,www.jw.org,Religion,284,0,0.0
+756,Vietnam,onlineradiobox.com,Music,284,7,0.0246
+757,Vietnam,ruliweb.com,Gaming,284,4,0.0141
+758,Vietnam,www.hulu.com,Television,284,23,0.081
+759,Vietnam,whatsapp.com,Internet Phone & VOIP,284,23,0.081
+760,Vietnam,cmoa.jp,Cartoons & Anime,284,0,0.0
+761,Vietnam,aemet.es,Weather,284,0,0.0
+762,Vietnam,apachefriends.org,Technology,284,0,0.0
+763,Vietnam,cookiebot.com,Information Security,284,0,0.0
+764,Vietnam,animanch.com,Comic Books,284,0,0.0
+765,Vietnam,spot.im,Instant Messengers,284,0,0.0
+766,Vietnam,starmakerstudios.com,Audio Streaming,284,0,0.0
+767,Vietnam,gazzetta.it,Sports,284,0,0.0
+768,Vietnam,eas.outlook.com,Webmail,284,23,0.081
+769,Vietnam,threebit.net,Technology,284,0,0.0
+770,Vietnam,api-global.netflix.com,Television,284,23,0.081
+771,Vietnam,ocsp.digicert.com,Information Security,284,0,0.0
+772,Vietnam,lg.com,Home & Garden,284,0,0.0
+773,Vietnam,filimo.com,Movies,284,0,0.0
+774,Vietnam,pku.edu.cn,Education,284,0,0.0
+775,Vietnam,m.me,Instant Messengers,284,0,0.0
+776,Vietnam,disney.com,Safe for Kids,284,0,0.0
+777,Vietnam,ow.ly,Redirect,284,0,0.0
+778,Vietnam,ssbsync.smartadserver.com,Advertisements,284,1,0.0035
+779,Vietnam,arbeitsagentur.de,Job Search & Careers,284,1,0.0035
+780,Vietnam,google.bg,Search Engines,284,0,0.0
+781,Vietnam,wetter.com,Weather,284,0,0.0
+782,Vietnam,zalando.de,Fashion,284,0,0.0
+783,Vietnam,calzedonia.com,Clothing,284,0,0.0
+784,Vietnam,aj2517.bid,Newly Seen Domains,284,1,0.0035
+785,Vietnam,com.ua,Newly Seen Domains,284,0,0.0
+786,Vietnam,pki.strln.net,Newly Seen Domains,284,0,0.0
+787,Vietnam,safeframe.googlesyndication.com,Advertisements,284,24,0.0845
+788,Vietnam,mattermost.com,Instant Messengers,284,0,0.0
+789,Vietnam,utorrent.com,P2P,284,0,0.0
+790,Vietnam,accuweather.com,Weather,284,0,0.0
+791,Vietnam,www.123-hd.com,Questionable Activities,284,0,0.0
+792,Vietnam,bbcgoodfood.com,Video Streaming,284,0,0.0
+793,Vietnam,greenhouse.io,Job Search & Careers,284,0,0.0
+794,Vietnam,garmin.com,Fashion,284,0,0.0
+795,Vietnam,thekitchn.com,Food & Drink,284,0,0.0
+796,Vietnam,animekimi.com,Cartoons & Anime,284,0,0.0
+797,Vietnam,m.site777.jp,Gambling,284,17,0.0599
+798,Vietnam,mega.co.nz,File Sharing,284,23,0.081
+799,Vietnam,agora.io,Internet Phone & VOIP,284,0,0.0
+800,Vietnam,brainly.lat,Forums,284,0,0.0
+801,Vietnam,pinimg.com,Photography,284,0,0.0
+802,Vietnam,www.ancestry.com,Hobbies & Interests,284,0,0.0
+803,Vietnam,noam.cc.skype.com,Internet Phone & VOIP,284,0,0.0
+804,Vietnam,hdtoday.tv,Movies,284,0,0.0
+805,Vietnam,rand.org,Home & Garden,284,0,0.0
+806,Vietnam,cbr.com,Cartoons & Anime,284,0,0.0
+807,Vietnam,hootsuite.com,Business,284,0,0.0
+808,Vietnam,aa.com,Travel,284,0,0.0
+809,Vietnam,gumtree.com,Auctions & Marketplaces,284,0,0.0
+810,Vietnam,comcast.net,Television,284,0,0.0
+811,Vietnam,www.programme-tv.net,Television,284,0,0.0
+812,Vietnam,fr.pornhub.com,Pornography,284,24,0.0845
+813,Vietnam,www.omegle.com,Chat,284,16,0.0563
+814,Vietnam,roblox.com,Chat,284,12,0.0423
+815,Vietnam,truefitcorp.com,Clothing,284,0,0.0
+816,Vietnam,kickstarter.com,Hobbies & Interests,284,0,0.0
+817,Vietnam,uquiz.com,Personal Blogs,284,3,0.0106
+818,Vietnam,active24.cz,Information Technology,284,0,0.0
+819,Vietnam,abril.com.br,Magazines,284,0,0.0
+820,Vietnam,bonappetit.com,Food & Drink,284,0,0.0
+821,Vietnam,wps.com,Technology,284,0,0.0
+822,Vietnam,static.adsafeprotected.com,Advertisements,284,1,0.0035
+823,Vietnam,unicef.org,"Politics, Advocacy, and Government-Related",284,0,0.0
+824,Vietnam,gameloft.com,Gaming,284,3,0.0106
+825,Vietnam,caranddriver.com,Vehicles,284,0,0.0
+826,Vietnam,pinterest.com,Photography,284,15,0.0528
+827,Vietnam,noaa.gov,Government,284,0,0.0
+828,Vietnam,www.fuq.com,Pornography,284,21,0.0739
+829,Vietnam,cdn.fbsbx.com,No Content,284,1,0.0035
+830,Vietnam,loom.com,Instant Messengers,284,0,0.0
+831,Vietnam,ozbargain.com.au,Coupons,284,0,0.0
+832,Vietnam,gamer.com.tw,Forums,284,3,0.0106
+833,Vietnam,zoom.com,Internet Phone & VOIP,284,0,0.0
+834,Vietnam,streamable.com,Video Streaming,284,0,0.0
+835,Vietnam,hkjc.com,Gambling,284,17,0.0599
+836,Vietnam,honey.io,Coupons,284,0,0.0
+837,Vietnam,zillowstatic.com,Real Estate,284,0,0.0
+838,Vietnam,baseball-reference.com,Sports,284,0,0.0
+839,Vietnam,uscourts.gov,Government,284,0,0.0
+840,Vietnam,wattpad.com,Education,284,4,0.0141
+841,Vietnam,linecorp.com,Instant Messengers,284,0,0.0
+842,Vietnam,pbase.com,Photography,284,0,0.0
+843,Vietnam,rogers.com,Information Technology,284,0,0.0
+844,Vietnam,wowma.jp,Coupons,284,0,0.0
+845,Vietnam,www.skroutz.gr,Shopping,284,0,0.0
+846,Vietnam,zoopla.co.uk,Real Estate,284,0,0.0
+847,Vietnam,sonnen.de,Business,284,0,0.0
+848,Vietnam,careem-internal.com,No Content,284,0,0.0
+849,Vietnam,autoscout24.de,Vehicles,284,12,0.0423
+850,Vietnam,humblebundle.com,Coupons,284,3,0.0106
+851,Vietnam,yutex.ru,Parked & For Sale Domains,284,0,0.0
+852,Vietnam,ilmeteo.it,Weather,284,0,0.0
+853,Vietnam,www3.animeflv.net,Cartoons & Anime,284,0,0.0
+854,Vietnam,msnbc.com,Video Streaming,284,0,0.0
+855,Vietnam,illinois.gov,Government,284,0,0.0
+856,Vietnam,kolesa.kz,Vehicles,284,0,0.0
+857,Vietnam,just-eat.es,Food & Drink,284,0,0.0
+858,Vietnam,ultradns.net,Login Screens,284,0,0.0
+859,Vietnam,www.bet365.com,Gambling,284,18,0.0634
+860,Vietnam,yandexadexchange.net,No Content,284,1,0.0035
+861,Vietnam,paheal.net,Pornography,284,16,0.0563
+862,Vietnam,amzn.to,Ecommerce,284,0,0.0
+863,Vietnam,clickbank.net,Advertisements,284,6,0.0211
+864,Vietnam,www.healthline.com,Health & Fitness,284,1,0.0035
+865,Vietnam,marriott.com,Travel,284,0,0.0
+866,Vietnam,gucci.com,Fashion,284,0,0.0
+867,Vietnam,thscore.mobi,Sports,284,0,0.0
+868,Vietnam,ucr.edu,Education,284,0,0.0
+869,Vietnam,google.co.id,Search Engines,284,0,0.0
+870,Vietnam,www.mathplayground.com,Safe for Kids,284,3,0.0106
+871,Vietnam,1gb.ru,Unreachable,284,0,0.0
+872,Vietnam,tripadvisor.es,Food & Drink,284,0,0.0
+873,Vietnam,webshell.suite.office.com,Technology,284,0,0.0
+874,Vietnam,olark.com,Chat,284,0,0.0
+875,Vietnam,edublogs.org,Personal Blogs,284,0,0.0
+876,Vietnam,tantanapp.com,Dating & Relationships,284,2,0.007
+877,Vietnam,swagbucks.com,Coupons,284,0,0.0
+878,Vietnam,pro.ibomma.link,Questionable Activities,284,0,0.0
+879,Vietnam,krisha.kz,Real Estate,284,0,0.0
+880,Vietnam,js7k.com,Parked & For Sale Domains,284,0,0.0
+881,Vietnam,ulta.com,Fashion,284,0,0.0
+882,Vietnam,auth.uber.com,Travel,284,0,0.0
+883,Vietnam,rokt.com,Business,284,0,0.0
+884,Vietnam,popsugar.com,Entertainment,284,0,0.0
+885,Vietnam,elegantthemes.com,Hobbies & Interests,284,0,0.0
+886,Vietnam,serverbid.com,Business,284,0,0.0
+887,Vietnam,gov.ibomma.link,Questionable Activities,284,0,0.0
+888,Vietnam,t.co,Redirect,284,0,0.0
+889,Vietnam,ajax.systems,Shopping,284,0,0.0
+890,Vietnam,kleinanzeigen.de,Auctions & Marketplaces,284,0,0.0
+891,Vietnam,sanspo.com,News & Media,284,0,0.0
+892,Vietnam,thecut.com,Entertainment,284,0,0.0
+893,Vietnam,huntress.io,Information Security,284,0,0.0
+894,Vietnam,icloud.com,File Sharing,284,0,0.0
+895,Vietnam,converse.com,Fashion,284,0,0.0
+896,Vietnam,prebid-server.rubiconproject.com,Advertisements,284,1,0.0035
+897,Vietnam,www.messenger.com,Instant Messengers,284,23,0.081
+898,Vietnam,techradar.com,Shopping,284,0,0.0
+899,Vietnam,autotrader.com,Vehicles,284,0,0.0
+900,Vietnam,bitly.com,Redirect,284,0,0.0
+901,Vietnam,king.com,Gaming,284,3,0.0106
+902,Vietnam,furaffinity.net,Photography,284,16,0.0563
+903,Vietnam,crisp.chat,Chat,284,0,0.0
+904,Vietnam,e17437.dsct.akamaiedge.net,Content Servers,284,0,0.0
+905,Vietnam,felissimo.co.jp,Shopping,284,0,0.0
+906,Vietnam,datto.com,Business,284,0,0.0
+907,Vietnam,adultfriendfinder.com,Dating & Relationships,284,17,0.0599
+908,Vietnam,refinery29.com,Magazines,284,0,0.0
+909,Vietnam,shein.com,Fashion,284,1,0.0035
+910,Vietnam,music-fa.com,Music,284,0,0.0
+911,Vietnam,rwth-aachen.de,Educational Institutions,284,0,0.0
+912,Vietnam,uidapi.com,Job Search & Careers,284,0,0.0
+913,Vietnam,blackfriday.com,Coupons,284,0,0.0
+914,Vietnam,fextralife.com,Gaming,284,3,0.0106
+915,Vietnam,landsend.com,Ecommerce,284,0,0.0
+916,Vietnam,rezka.ag,Questionable Activities,284,0,0.0
+917,Vietnam,skroutz.gr,Shopping,284,0,0.0
+918,Vietnam,m.forebet.com,Gambling,284,16,0.0563
+919,Vietnam,gocomics.com,Comic Books,284,0,0.0
+920,Vietnam,aternos.org,Gaming,284,3,0.0106
+921,Vietnam,cloud.ru,Newly Seen Domains,284,0,0.0
+922,Vietnam,arc-msedge.net,Newly Seen Domains,284,0,0.0
+923,Vietnam,fitbit.com,Fashion,284,0,0.0
+924,Vietnam,jra.go.jp,Gambling,284,17,0.0599
+925,Vietnam,shopee.io,Unreachable,284,0,0.0
+926,Vietnam,cafe24.com,Unreachable,284,0,0.0
+927,Vietnam,bfmio.com,Content Servers,284,0,0.0
+928,Vietnam,blogspot.com.es,Unreachable,284,0,0.0
+929,Vietnam,slickdeals.net,Coupons,284,0,0.0
+930,Vietnam,app.schoology.com,Webmail,284,0,0.0
+931,Vietnam,thegay.com,Pornography,284,21,0.0739
+932,Vietnam,mercadolibre.com.ar,Auctions & Marketplaces,284,0,0.0
+933,Vietnam,sportingnews.com,News & Media,284,2,0.007
+934,Vietnam,deezer.com,Audio Streaming,284,0,0.0
+935,Vietnam,zscalertwo.net,Information Security,284,0,0.0
+936,Vietnam,bbs.animanch.com,Comic Books,284,0,0.0
+937,Vietnam,aznude.com,Pornography,284,16,0.0563
+938,Vietnam,powerreviews.com,Shopping,284,0,0.0
+939,Vietnam,lotterysambadresult.in,Gambling,284,16,0.0563
+940,Vietnam,smugmug.com,Photography,284,0,0.0
+941,Vietnam,dataservice.protection.outlook.com,Webmail,284,23,0.081
+942,Vietnam,hto.to,Questionable Activities,284,16,0.0563
+943,Vietnam,americanas.com.br,Ecommerce,284,0,0.0
+944,Vietnam,ny.gov,Government,284,0,0.0
+945,Vietnam,getyourguide.com,Travel,284,0,0.0
+946,Vietnam,lgappstv.com,Television,284,0,0.0
+947,Vietnam,harry.lu,Questionable Activities,284,0,0.0
+948,Vietnam,self.com,Fashion,284,0,0.0
+949,Vietnam,ftc.gov,Government,284,0,0.0
+950,Vietnam,dev.to,Forums,284,0,0.0
+951,Vietnam,aax-us-east.amazon-adsystem.com,Advertisements,284,0,0.0
+952,Vietnam,oup.com,Educational Institutions,284,0,0.0
+953,Vietnam,betpawa.ug,Sports,284,16,0.0563
+954,Vietnam,scopely.io,Content Servers,284,0,0.0
+955,Vietnam,windstream.net,Video Streaming,284,0,0.0
+956,Vietnam,www.google.fr,Search Engines,284,23,0.081
+957,Vietnam,ubereats.com,Food & Drink,284,0,0.0
+958,Vietnam,m.fabswingers.com,Dating & Relationships,284,16,0.0563
+959,Vietnam,google.co.tz,Search Engines,284,0,0.0
+960,Vietnam,battwo.com,Movies,284,16,0.0563
+961,Vietnam,contentabc.com,Advertisements,284,1,0.0035
+962,Vietnam,www.wowhead.com,Gaming,284,3,0.0106
+963,Vietnam,rtl.de,Television,284,0,0.0
+964,Vietnam,www.meesho.com,Personal Blogs,284,0,0.0
+965,Vietnam,discovermagazine.com,Magazines,284,1,0.0035
+966,Vietnam,york.ac.uk,Educational Institutions,284,0,0.0
+967,Vietnam,kakuyomu.jp,Cartoons & Anime,284,0,0.0
+968,Vietnam,smi2.net,Business,284,0,0.0
+969,Vietnam,toptal.com,Job Search & Careers,284,0,0.0
+970,Vietnam,realestate.com.au,Real Estate,284,0,0.0
+971,Vietnam,search.yahoo.com,Search Engines,284,0,0.0
+972,Vietnam,sciencedirect.com,Science,284,0,0.0
+973,Vietnam,lacoste.com,Fashion,284,0,0.0
+974,Vietnam,viber.com,Instant Messengers,284,0,0.0
+975,Vietnam,letterboxd.com,Movies,284,0,0.0
+976,Vietnam,de.com,Parked & For Sale Domains,284,0,0.0
+977,Vietnam,booking.com,Travel,284,0,0.0
+978,Vietnam,badoocdn.com,Dating & Relationships,284,0,0.0
+979,Vietnam,www.tripadvisor.com,Travel,284,0,0.0
+980,Vietnam,express.de,Adult Themes,284,0,0.0
+981,Vietnam,smashingmagazine.com,Magazines,284,0,0.0
+982,Vietnam,perl.com,Personal Blogs,284,0,0.0
+983,Vietnam,iqiyi.com,Video Streaming,284,0,0.0
+984,Vietnam,in.bookmyshow.com,Questionable Activities,284,0,0.0
+985,Vietnam,avid.com,Music,284,0,0.0
+986,Vietnam,www.npr.org,Audio Streaming,284,0,0.0
+987,Vietnam,divar.ir,Auctions & Marketplaces,284,0,0.0
+988,Vietnam,boingboing.net,Magazines,284,0,0.0
+989,Vietnam,panasonic.com,Home & Garden,284,0,0.0
+990,Vietnam,kit.fontawesome.com,Hobbies & Interests,284,0,0.0
+991,Vietnam,apa.org,Health & Fitness,284,0,0.0
+992,Vietnam,l-tike.com,Entertainment,284,0,0.0
+993,Vietnam,goo.gl,Redirect,284,0,0.0
+994,Vietnam,2dehands.be,Auctions & Marketplaces,284,1,0.0035
+995,Vietnam,springeropen.com,Search Engines,284,0,0.0
+996,Vietnam,symbolab.com,Science,284,0,0.0
+997,Vietnam,buzzsprout.com,Audio Streaming,284,0,0.0
+998,Vietnam,homeadvisor.com,Home & Garden,284,0,0.0
+999,Vietnam,scientificamerican.com,Science,284,0,0.0
+1000,Vietnam,ocsp.edge.digicert.com,Information Security,284,0,0.0
+1001,Vietnam,kasserver.com,Login Screens,284,0,0.0
+1002,Vietnam,xp.apple.com,Information Technology,284,0,0.0
+1003,Vietnam,lego.com,Safe for Kids,284,0,0.0
+1004,Vietnam,nanoleaf.me,Real Estate,284,0,0.0
+1005,Vietnam,aaa.com,Vehicles,284,0,0.0
+1006,Vietnam,www.ebay.it,Auctions & Marketplaces,284,0,0.0
+1007,Vietnam,healthcare.gov,Health & Fitness,284,0,0.0
+1008,Vietnam,sync.go.sonobi.com,Business,284,1,0.0035
+1009,Vietnam,nexusrules.officeapps.live.com,Webmail,284,0,0.0
+1010,Vietnam,xiaohongshu.com,Shopping,284,0,0.0
+1011,Vietnam,manga168.com,Comic Books,284,0,0.0
+1012,Vietnam,icoremail.net,Information Security,284,0,0.0
+1013,Vietnam,1377x.to,Questionable Activities,284,3,0.0106
+1014,Vietnam,game8.jp,Hobbies & Interests,284,3,0.0106
+1015,Vietnam,aniwatch.to,Parked & For Sale Domains,284,0,0.0
+1016,Vietnam,scdn.co,Content Servers,284,0,0.0
+1017,Vietnam,app.slack.com,Instant Messengers,284,23,0.081
+1018,Vietnam,chartbeat.com,Business,284,1,0.0035
+1019,Vietnam,theweathernetwork.com,Weather,284,0,0.0
+1020,Vietnam,doublelist.com,Dating & Relationships,284,16,0.0563
+1021,Vietnam,race.sp.netkeiba.com,Gambling,284,17,0.0599
+1022,Vietnam,skokka.com,Adult Themes,284,16,0.0563
+1023,Vietnam,www.sport.es,Sports,284,0,0.0
+1024,Vietnam,zalo.me,Instant Messengers,284,0,0.0
+1025,Vietnam,samsungelectronics.com,Home & Garden,284,0,0.0
+1026,Vietnam,fandom.com,Movies,284,0,0.0
+1027,Vietnam,bdstatic.com,Search Engines,284,1,0.0035
+1028,Vietnam,etoote.com,Adult Themes,284,0,0.0
+1029,Vietnam,health.mil,Government,284,0,0.0
+1030,Vietnam,www2.hm.com,Fashion,284,0,0.0
+1031,Vietnam,tokyodisneyresort.jp,Travel,284,0,0.0
+1032,Vietnam,su.itunes.apple.com,Music,284,23,0.081
+1033,Vietnam,northeurope.cloudapp.azure.com,Technology,284,0,0.0
+1034,Vietnam,convertkit.com,Webmail,284,0,0.0
+1035,Vietnam,musicdel.ir,Audio Streaming,284,0,0.0
+1036,Vietnam,sciencealert.com,Science,284,0,0.0
+1037,Vietnam,hm.com,Clothing,284,0,0.0
+1038,Vietnam,cvte.com,Technology,284,0,0.0
+1039,Vietnam,sexalarabi.com,Newly Seen Domains,284,16,0.0563
+1040,Vietnam,workspaceupdates.googleblog.com,Personal Blogs,284,0,0.0
+1041,Vietnam,elle.com,Fashion,284,0,0.0
+1042,Vietnam,tripadvisor.in,Food & Drink,284,0,0.0
+1043,Vietnam,ew.com,Entertainment,284,0,0.0
+1044,Vietnam,ilmessaggero.it,Video Streaming,284,0,0.0
+1045,Vietnam,betway.co.za,Sports,284,16,0.0563
+1046,Vietnam,es.aliexpress.com,Ecommerce,284,2,0.007
+1047,Vietnam,hotstar.com,Movies,284,0,0.0
+1048,Vietnam,api.weather.com,Weather,284,0,0.0
+1049,Vietnam,geotrust.com,Information Security,284,0,0.0
+1050,Vietnam,tubitv.com,Television,284,24,0.0845
+1051,Vietnam,moviead55.ru,No Content,284,0,0.0
+1052,Vietnam,zara.com,Fashion,284,0,0.0
+1053,Vietnam,debian.org,Webmail,284,0,0.0
+1054,Vietnam,pagead2.googlesyndication.com,Advertisements,284,24,0.0845
+1055,Vietnam,o2online.de,Information Technology,284,0,0.0
+1056,Vietnam,www.goal.com,Sports,284,1,0.0035
+1057,Vietnam,billboard.com,Music,284,0,0.0
+1058,Vietnam,uwaterloo.ca,Educational Institutions,284,0,0.0
+1059,Vietnam,mathway.com,Science,284,0,0.0
+1060,Vietnam,yaplakal.com,Forums,284,0,0.0
+1061,Vietnam,www.neopets.com,Safe for Kids,284,3,0.0106
+1062,Vietnam,clients.config.office.net,Content Servers,284,0,0.0
+1063,Vietnam,lge.com,Home & Garden,284,0,0.0
+1064,Vietnam,kunlungr.com,No Content,284,12,0.0423
+1065,Vietnam,tamildhool.net,Questionable Activities,284,0,0.0
+1066,Vietnam,fao.org,"Politics, Advocacy, and Government-Related",284,0,0.0
+1067,Vietnam,wwd.com,Fashion,284,0,0.0
+1068,Vietnam,wikiquote.org,Forums,284,0,0.0
+1069,Vietnam,rentalcars.com,Shopping,284,0,0.0
+1070,Vietnam,tango.me,Chat,284,0,0.0
+1071,Vietnam,wsj.com,Economy & Finance,284,0,0.0
+1072,Vietnam,www.idealista.com,Real Estate,284,0,0.0
+1073,Vietnam,mail.yahoo.com,Webmail,284,23,0.081
+1074,Vietnam,gamesradar.com,Magazines,284,3,0.0106
+1075,Vietnam,google.hn,Search Engines,284,0,0.0
+1076,Vietnam,cntraveler.com,Shopping,284,0,0.0
+1077,Vietnam,adsco.re,Advertisements,284,0,0.0
+1078,Vietnam,farfetch.com,Clothing,284,0,0.0
+1079,Vietnam,www.cityheaven.net,Adult Themes,284,16,0.0563
+1080,Vietnam,typepad.com,Personal Blogs,284,0,0.0
+1081,Vietnam,samsungknox.com,Technology,284,0,0.0
+1082,Vietnam,in.indeed.com,Job Search & Careers,284,0,0.0
+1083,Vietnam,healthline.com,Education,284,0,0.0
+1084,Vietnam,bom.gov.au,Weather,284,0,0.0
+1085,Vietnam,jiocinema.com,Television,284,0,0.0
+1086,Vietnam,gvt2.com,Content Servers,284,0,0.0
+1087,Vietnam,mbl.is,News & Media,284,0,0.0
+1088,Vietnam,seriouseats.com,Food & Drink,284,0,0.0
+1089,Vietnam,nexus.officeapps.live.com,Webmail,284,0,0.0
+1090,Vietnam,unibet.com,Gambling,284,23,0.081
+1091,Vietnam,cosmopolitan.com,Adult Themes,284,0,0.0
+1092,Vietnam,futurism.com,Magazines,284,0,0.0
+1093,Vietnam,google.com.ph,Search Engines,284,0,0.0
+1094,Vietnam,faberlic.com,Fashion,284,0,0.0
+1095,Vietnam,alibaba-inc.com,Webmail,284,0,0.0
+1096,Vietnam,openweathermap.org,Weather,284,0,0.0
+1097,Vietnam,www.idealista.it,Real Estate,284,0,0.0
+1098,Vietnam,kick.com,Parked & For Sale Domains,284,3,0.0106
+1099,Vietnam,puma.com,Fashion,284,0,0.0
+1100,Vietnam,creditkarma.com,Economy & Finance,284,0,0.0
+1101,Vietnam,hzmklvdieo.com,Content Servers,284,3,0.0106
+1102,Vietnam,audiomack.com,Music,284,0,0.0
+1103,Vietnam,icims.com,Job Search & Careers,284,0,0.0
+1104,Vietnam,dyndns.tv,Parked & For Sale Domains,284,0,0.0
+1105,Vietnam,badoo.com,Dating & Relationships,284,0,0.0
+1106,Vietnam,army.mil,Government,284,0,0.0
+1107,Vietnam,disney.co.jp,Safe for Kids,284,0,0.0
+1108,Vietnam,wikia.com,Movies,284,0,0.0
+1109,Vietnam,bunnyinfra.net,Parked & For Sale Domains,284,0,0.0
+1110,Vietnam,epicurious.com,Personal Blogs,284,1,0.0035
+1111,Vietnam,tomshardware.com,Shopping,284,0,0.0
+1112,Vietnam,app.collegeboard.org,Educational Institutions,284,0,0.0
+1113,Vietnam,ibomma.link,Questionable Activities,284,0,0.0
+1114,Vietnam,quora.com,Forums,284,0,0.0
+1115,Vietnam,www.zillow.com,Real Estate,284,0,0.0
+1116,Vietnam,weather.com,Weather,284,0,0.0
+1117,Vietnam,devicetask.com,Unreachable,284,0,0.0
+1118,Vietnam,www.winzogames.com,Gaming,284,3,0.0106
+1119,Vietnam,www.mundodeportivo.com,Sports,284,0,0.0
+1120,Vietnam,mrdeepfakes.com,Pornography,284,17,0.0599
+1121,Vietnam,starhit.ru,Entertainment,284,0,0.0
+1122,Vietnam,js.adsrvr.org,Advertisements,284,1,0.0035
+1123,Vietnam,xlivrdr.com,Newly Seen Domains,284,0,0.0
+1124,Vietnam,basalam.com,Food & Drink,284,0,0.0
+1125,Vietnam,themeforest.net,Ecommerce,284,0,0.0
+1126,Vietnam,hotjar.com,Technology,284,0,0.0
+1127,Vietnam,peakpx.com,Photography,284,3,0.0106
+1128,Vietnam,freshchat.com,Chat,284,0,0.0
+1129,Vietnam,meshok.net,Auctions & Marketplaces,284,0,0.0
+1130,Vietnam,p-cdn.com,Content Servers,284,0,0.0
+1131,Vietnam,pof.com,Dating & Relationships,284,0,0.0
+1132,Vietnam,marvel.com,Cartoons & Anime,284,0,0.0
+1133,Vietnam,letras.mus.br,Audio Streaming,284,0,0.0
+1134,Vietnam,newscientist.com,Science,284,0,0.0
+1135,Vietnam,163jiasu.com,Parked & For Sale Domains,284,0,0.0
+1136,Vietnam,www.bikewale.com,Vehicles,284,0,0.0
+1137,Vietnam,lc.chat,Redirect,284,0,0.0
+1138,Vietnam,theiconic.com.au,Clothing,284,0,0.0
+1139,Vietnam,minkatu.com,Parked & For Sale Domains,284,0,0.0
+1140,Vietnam,medscape.com,Health & Fitness,284,0,0.0
+1141,Vietnam,wmo.int,Weather,284,0,0.0
+1142,Vietnam,espncdn.com,News & Media,284,0,0.0
+1143,Vietnam,nosv.org,Personal Blogs,284,0,0.0
+1144,Vietnam,mx.indeed.com,Job Search & Careers,284,1,0.0035
+1145,Vietnam,hbo.com,Television,284,0,0.0
+1146,Vietnam,skelbiu.lt,Auctions & Marketplaces,284,0,0.0
+1147,Vietnam,post-gazette.com,Video Streaming,284,0,0.0
+1148,Vietnam,ls-apple.com.akadns.net,Content Servers,284,0,0.0
+1149,Vietnam,curseforge.com,Gaming,284,3,0.0106
+1150,Vietnam,register.com,Webmail,284,0,0.0
+1151,Vietnam,distmed.com,Login Screens,284,0,0.0
+1152,Vietnam,ddnss.de,Information Technology,284,0,0.0
+1153,Vietnam,shopee.ph,Ecommerce,284,0,0.0
+1154,Vietnam,www.sahibinden.com,Auctions & Marketplaces,284,0,0.0
+1155,Vietnam,trustarc.com,Information Security,284,0,0.0
+1156,Vietnam,gsmarena.com,Shopping,284,1,0.0035
+1157,Vietnam,kriesi.at,Personal Blogs,284,0,0.0
+1158,Vietnam,mass.gov,Government,284,0,0.0
+1159,Vietnam,www.pch.com,Gambling,284,4,0.0141
+1160,Vietnam,ua.sinoptik.ua,Weather,284,0,0.0
+1161,Vietnam,cedia.org.ec,Educational Institutions,284,0,0.0
+1162,Vietnam,lolesports.com,Entertainment,284,3,0.0106
+1163,Vietnam,ebay.de,Auctions & Marketplaces,284,0,0.0
+1164,Vietnam,irecommend.ru,Shopping,284,0,0.0
+1165,Vietnam,gva.es,Job Search & Careers,284,0,0.0
+1166,Vietnam,feeds.feedburner.com,Personal Blogs,284,0,0.0
+1167,Vietnam,msg.teams.microsoft.com,Information Technology,284,23,0.081
+1168,Vietnam,usf.edu,Educational Institutions,284,0,0.0
+1169,Vietnam,sportsdirect.com,Clothing,284,0,0.0
+1170,Vietnam,meteofrance.com,Weather,284,0,0.0
+1171,Vietnam,www.t-mobile.com,Information Technology,284,0,0.0
+1172,Vietnam,usc-collabrtc.officeapps.live.com,Webmail,284,0,0.0
+1173,Vietnam,meetme.com,Dating & Relationships,284,0,0.0
+1174,Vietnam,grandstream.com,Internet Phone & VOIP,284,0,0.0
+1175,Vietnam,justpaste.it,File Sharing,284,0,0.0
+1176,Vietnam,www.annunci69.it,Pornography,284,18,0.0634
+1177,Vietnam,hoyoverse.com,Hobbies & Interests,284,3,0.0106
+1178,Vietnam,braintreegateway.com,Login Screens,284,0,0.0
+1179,Vietnam,netkeiba.com,Gambling,284,18,0.0634
+1180,Vietnam,sephora.com,Fashion,284,0,0.0
+1181,Vietnam,countryliving.com,Magazines,284,0,0.0
+1182,Vietnam,eska.pl,Video Streaming,284,0,0.0
+1183,Vietnam,lectortmo.com,Comic Books,284,0,0.0
+1184,Vietnam,beget.com,File Sharing,284,0,0.0
+1185,Vietnam,nj.gov,Government,284,0,0.0
+1186,Vietnam,arca.live,Forums,284,0,0.0
+1187,Vietnam,mql5.com,Forums,284,0,0.0
+1188,Vietnam,adx.com.ru,Advertisements,284,0,0.0
+1189,Vietnam,www.zearn.org,Science,284,0,0.0
+1190,Vietnam,cust-service.com,No Content,284,0,0.0
+1191,Vietnam,toyokeizai.net,Economy & Finance,284,0,0.0
+1192,Vietnam,mangabuddy.com,Cartoons & Anime,284,17,0.0599
+1193,Vietnam,openbittorrent.com,Questionable Activities,284,0,0.0
+1194,Vietnam,active.com,Sports,284,0,0.0
+1195,Vietnam,gamerant.com,Personal Blogs,284,3,0.0106
+1196,Vietnam,usc1-gcp-v62.api.snapchat.com,Photography,284,23,0.081
+1197,Vietnam,directcrm.ru,No Content,284,0,0.0
+1198,Vietnam,fontawesome.com,Hobbies & Interests,284,0,0.0
+1199,Vietnam,shorturl.at,Redirect,284,0,0.0
+1200,Vietnam,jio.com,Technology,284,0,0.0
+1201,Vietnam,avaaz.org,"Politics, Advocacy, and Government-Related",284,0,0.0
+1202,Vietnam,up.gov.in,Government,284,0,0.0
+1203,Vietnam,www.list.am,Auctions & Marketplaces,284,0,0.0
+1204,Vietnam,art.ibomma.link,Movies,284,0,0.0
+1205,Vietnam,therealreal.com,Fashion,284,0,0.0
+1206,Vietnam,hisavana.com,Newly Seen Domains,284,0,0.0
+1207,Vietnam,theknot.com,Dating & Relationships,284,0,0.0
+1208,Vietnam,escortalligator.com.listcrawler.eu,Adult Themes,284,17,0.0599
+1209,Vietnam,officedepot.com,Ecommerce,284,0,0.0
+1210,Vietnam,eepurl.com,Redirect,284,0,0.0
+1211,Vietnam,netseer-ipaddr-assoc.xy.fbcdn.net,Social Networks,284,24,0.0845
+1212,Vietnam,ncbank.cn,Economy & Finance,284,0,0.0
+1213,Vietnam,sciencemag.org,Science,284,0,0.0
+1214,Vietnam,www.diretta.it,Sports,284,0,0.0
+1215,Vietnam,spreaker.com,Music,284,1,0.0035
+1216,Vietnam,dotloop.com,Real Estate,284,0,0.0
+1217,Vietnam,edgecdn.world,Newly Seen Domains,284,0,0.0
+1218,Vietnam,flashscore.fr,Gambling,284,0,0.0
+1219,Vietnam,foodnetwork.com,Food & Drink,284,0,0.0
+1220,Vietnam,res.office365.com,Technology,284,23,0.081
+1221,Vietnam,alb.reddit.com,Forums,284,23,0.081
+1222,Vietnam,russianfood.com,Food & Drink,284,0,0.0
+1223,Vietnam,scholar.google.com,Search Engines,284,23,0.081
+1224,Vietnam,usen.ad.jp,Economy & Finance,284,0,0.0
+1225,Vietnam,ugg.com,Clothing,284,0,0.0
+1226,Vietnam,serebii.net,Cartoons & Anime,284,0,0.0
+1227,Vietnam,www.disneyplus.com,Safe for Kids,284,23,0.081
+1228,Vietnam,cymru.com,Information Security,284,0,0.0
+1229,Vietnam,activebeat.com,Health & Fitness,284,0,0.0
+1230,Vietnam,brainlyads.com,No Content,284,0,0.0
+1231,Vietnam,tjk.org,Gambling,284,18,0.0634
+1232,Vietnam,mobilefuse.com,Advertisements,284,0,0.0
+1233,Vietnam,mail.google.com,Webmail,284,23,0.081
+1234,Vietnam,kremlin.ru,Government,284,1,0.0035
+1235,Vietnam,observer.com,Video Streaming,284,0,0.0
+1236,Vietnam,pg.com,Job Search & Careers,284,0,0.0
+1237,Vietnam,cc-ecdn.net,Newly Seen Domains,284,0,0.0
+1238,Vietnam,weathernews.jp,Weather,284,0,0.0
+1239,Vietnam,pnas.org,Science,284,0,0.0
+1240,Vietnam,ucoz.net,Information Technology,284,0,0.0
+1241,Vietnam,kinescopecdn.net,Parked & For Sale Domains,284,0,0.0
+1242,Vietnam,nc0.co,No Content,284,0,0.0
+1243,Vietnam,tenor.com,Technology,284,4,0.0141
+1244,Vietnam,uisp.com,Parked & For Sale Domains,284,0,0.0
+1245,Vietnam,www.indeed.com,Job Search & Careers,284,0,0.0
+1246,Vietnam,dpreview.com,Shopping,284,0,0.0
+1247,Vietnam,metacritic.com,Gaming,284,0,0.0
+1248,Vietnam,sync.ad.cpe.dotomi.com,Business,284,1,0.0035
+1249,Vietnam,br.de,News & Media,284,0,0.0
+1250,Vietnam,tplinkcloud.com,Photography,284,0,0.0
+1251,Vietnam,google.com.ng,Search Engines,284,0,0.0
+1252,Vietnam,tinder.com,Dating & Relationships,284,0,0.0
+1253,Vietnam,myanimelist.net,Cartoons & Anime,284,0,0.0
+1254,Vietnam,pinterest.fr,Photography,284,23,0.081
+1255,Vietnam,azure.us,Technology,284,1,0.0035
+1256,Vietnam,poczta.wp.pl,Webmail,284,0,0.0
+1257,Vietnam,jivosite.com,Chat,284,0,0.0
+1258,Vietnam,wien.gv.at,Forums,284,0,0.0
+1259,Vietnam,sinoptik.ua,Weather,284,0,0.0
+1260,Vietnam,opentable.com,Food & Drink,284,0,0.0
+1261,Vietnam,sweetwater.com,Music,284,0,0.0
+1262,Vietnam,relap.io,No Content,284,0,0.0
+1263,Vietnam,socdm.com,Content Servers,284,0,0.0
+1264,Vietnam,mattel.com,Safe for Kids,284,0,0.0
+1265,Vietnam,www.primevideo.com,Video Streaming,284,23,0.081
+1266,Vietnam,alfabank.ru,Economy & Finance,284,0,0.0
+1267,Vietnam,unmsapp.com,Login Screens,284,0,0.0
+1268,Vietnam,binance.com,Economy & Finance,284,1,0.0035
+1269,Vietnam,bio.ibomma.link,Questionable Activities,284,0,0.0
+1270,Vietnam,tinyurl.com,Redirect,284,0,0.0
+1271,Vietnam,www.1377x.to,Questionable Activities,284,4,0.0141
+1272,Vietnam,olympics.com,Television,284,0,0.0
+1273,Vietnam,starfall.com,Safe for Kids,284,0,0.0
+1274,Vietnam,charter.com,Information Technology,284,0,0.0
+1275,Vietnam,listcrawler.eu,Pornography,284,16,0.0563
+1276,Vietnam,unisa.ac.za,Educational Institutions,284,0,0.0
+1277,Vietnam,hottopic.com,Clothing,284,0,0.0
+1278,Vietnam,imap.gmail.com,Webmail,284,23,0.081
+1279,Vietnam,literotica.com,Pornography,284,18,0.0634
+1280,Vietnam,flipboard.com,Magazines,284,0,0.0
+1281,Vietnam,3bmeteo.com,Weather,284,0,0.0
+1282,Vietnam,www.gimkit.com,Personal Blogs,284,0,0.0
+1283,Vietnam,dominos.com,Food & Drink,284,0,0.0
+1284,Vietnam,pinterest.de,Photography,284,23,0.081
+1285,Vietnam,live.com,Webmail,284,0,0.0
+1286,Vietnam,archives.gov,Government,284,0,0.0
+1287,Vietnam,bikewale.com,Vehicles,284,0,0.0
+1288,Vietnam,superdnsserver.net,No Content,284,0,0.0
+1289,Vietnam,bathandbodyworks.com,Fashion,284,0,0.0
+1290,Vietnam,medicalnewstoday.com,Health & Fitness,284,0,0.0
+1291,Vietnam,www.google.com.mx,Search Engines,284,23,0.081
+1292,Vietnam,www.flashscore.com.br,Sports,284,16,0.0563
+1293,Vietnam,measure.office.com,Technology,284,0,0.0
+1294,Vietnam,pornhub.com,Pornography,284,22,0.0775
+1295,Vietnam,cloud.netflix.com,Movies,284,23,0.081
+1296,Vietnam,twilio.com,Internet Phone & VOIP,284,0,0.0
+1297,Vietnam,threema.ch,Instant Messengers,284,0,0.0
+1298,Vietnam,anime-planet.com,Cartoons & Anime,284,16,0.0563
+1299,Vietnam,wto.to,Comic Books,284,0,0.0
+1300,Vietnam,gaana.com,Audio Streaming,284,0,0.0
+1301,Vietnam,zaloapp.com,Instant Messengers,284,0,0.0
+1302,Vietnam,autoplius.lt,Vehicles,284,0,0.0
+1303,Vietnam,rebrand.ly,Redirect,284,0,0.0
+1304,Vietnam,www.vinted.fr,Clothing,284,0,0.0
+1305,Vietnam,www.fsiblog.club,Newly Seen Domains,284,16,0.0563
+1306,Vietnam,themeansar.com,Personal Blogs,284,0,0.0
+1307,Vietnam,dns-diy.net,Login Screens,284,0,0.0
+1308,Vietnam,nationalgeographic.com,Science,284,0,0.0
+1309,Vietnam,dealer.spotify.com,Audio Streaming,284,0,0.0
+1310,Vietnam,nrdp-ipv6.prod.ftl.netflix.com,Movies,284,23,0.081
+1311,Vietnam,partner.netflix.net,Movies,284,23,0.081
+1312,Vietnam,president.jp,Magazines,284,0,0.0
+1313,Vietnam,is.gd,Redirect,284,0,0.0
+1314,Vietnam,spankbang.com,Pornography,284,24,0.0845
+1315,Vietnam,springserve.com,Business,284,1,0.0035
+1316,Vietnam,azurerms.com,Job Search & Careers,284,0,0.0
+1317,Vietnam,google.com.sg,Search Engines,284,0,0.0
+1318,Vietnam,bigbadtoystore.com,Safe for Kids,284,0,0.0
+1319,Vietnam,altibbi.com,Health & Fitness,284,0,0.0
+1320,Vietnam,olx.ro,Auctions & Marketplaces,284,0,0.0
+1321,Vietnam,pensador.com,Education,284,0,0.0
+1322,Vietnam,namebrightdns.com,Parked & For Sale Domains,284,0,0.0
+1323,Vietnam,manhwatop.com,Cartoons & Anime,284,16,0.0563
+1324,Vietnam,naukri.com,Job Search & Careers,284,0,0.0
+1325,Vietnam,m.animeflv.net,Movies,284,0,0.0
+1326,Vietnam,waconafd.officeapps.live.com,Webmail,284,0,0.0
+1327,Vietnam,slack.com,Instant Messengers,284,0,0.0
+1328,Vietnam,shahvani.com,Adult Themes,284,16,0.0563
+1329,Vietnam,wunderground.com,Weather,284,0,0.0
+1330,Vietnam,sinaedge.com,No Content,284,0,0.0
+1331,Vietnam,voka.tv,Movies,284,0,0.0
+1332,Vietnam,prodigygame.com,Science,284,0,0.0
+1333,Vietnam,upstart.com,Economy & Finance,284,0,0.0
+1334,Vietnam,globalsign.net,Content Servers,284,0,0.0
+1335,Vietnam,findlaw.com,Search Engines,284,0,0.0
+1336,Vietnam,mo.gov,Government,284,1,0.0035
+1337,Vietnam,takeaway.com,Food & Drink,284,0,0.0
+1338,Vietnam,line-apps.com,Content Servers,284,0,0.0
+1339,Vietnam,softpedia.com,File Sharing,284,0,0.0
+1340,Vietnam,livechat.com,Chat,284,0,0.0
+1341,Vietnam,revopush.com,Economy & Finance,284,0,0.0
+1342,Vietnam,gnome.org,"Politics, Advocacy, and Government-Related",284,0,0.0
+1343,Vietnam,jivo.ru,Chat,284,0,0.0
+1344,Vietnam,discogs.com,Music,284,0,0.0
+1345,Vietnam,www.subito.it,Auctions & Marketplaces,284,0,0.0
+1346,Vietnam,qtlgslb.com,Newly Seen Domains,284,0,0.0
+1347,Vietnam,bitdefender.net,Technology,284,0,0.0
+1348,Vietnam,npr.org,Audio Streaming,284,0,0.0
+1349,Vietnam,newplayjj.com,Newly Seen Domains,284,0,0.0
+1350,Vietnam,deadline.com,Entertainment,284,0,0.0
+1351,Vietnam,edmunds.com,Vehicles,284,0,0.0
+1352,Vietnam,www.coolmathgames.com,Gaming,284,3,0.0106
+1353,Vietnam,trbcdn.net,Content Servers,284,0,0.0
+1354,Vietnam,google.com.tj,Search Engines,284,0,0.0
+1355,Vietnam,myvzw.com,Instant Messengers,284,0,0.0
+1356,Vietnam,www.hotstar.com,Movies,284,0,0.0
+1357,Vietnam,mckinsey.com,Webmail,284,0,0.0
+1358,Vietnam,spotim.market,Instant Messengers,284,0,0.0
+1359,Vietnam,sportingbet.com,Gambling,284,17,0.0599
+1360,Vietnam,indeed.com,Job Search & Careers,284,0,0.0
+1361,Vietnam,hostgator.com.br,Webmail,284,0,0.0
+1362,Vietnam,rug.nl,Educational Institutions,284,1,0.0035
+1363,Vietnam,qz.com,News & Media,284,0,0.0
+1364,Vietnam,pull-f5-tt02.fcdn.us.tiktokv.com,Social Networks,284,25,0.088
+1365,Vietnam,sync.com,File Sharing,284,0,0.0
+1366,Vietnam,static.hotjar.com,Login Screens,284,0,0.0
+1367,Vietnam,instagram.c10r.instagram.com,Photography,284,23,0.081
+1368,Vietnam,minecraft.net,Hobbies & Interests,284,3,0.0106
+1369,Vietnam,carview.co.jp,Vehicles,284,0,0.0
+1370,Vietnam,www.bathandbodyworks.com,Ecommerce,284,0,0.0
+1371,Vietnam,livejournal.com,Social Networks,284,0,0.0
+1372,Vietnam,studentaid.gov,Job Search & Careers,284,0,0.0
+1373,Vietnam,apartments.com,Real Estate,284,0,0.0
+1374,Vietnam,dingtalk.com,Instant Messengers,284,23,0.081
+1375,Vietnam,www.amazon.it,Ecommerce,284,0,0.0
+1376,Vietnam,schema.org,Technology,284,0,0.0
+1377,Vietnam,rutracker.org,Questionable Activities,284,3,0.0106
+1378,Vietnam,poder360.com.br,"Politics, Advocacy, and Government-Related",284,0,0.0
+1379,Vietnam,bs.serving-sys.com,Advertisements,284,0,0.0
+1380,Vietnam,eu-west-1.amazonaws.com,Technology,284,0,0.0
+1381,Vietnam,tidal.com,Audio Streaming,284,0,0.0
+1382,Vietnam,mail-ads.google.com,Webmail,284,23,0.081
+1383,Vietnam,telegram.me,Instant Messengers,284,24,0.0845
+1384,Vietnam,louvre.fr,Travel,284,0,0.0
+1385,Vietnam,genius.com,Music,284,0,0.0
+1386,Vietnam,survata.com,Business,284,0,0.0
+1387,Vietnam,hellomagazine.com,Entertainment,284,0,0.0
+1388,Vietnam,nyc.gov,Government,284,0,0.0
+1389,Vietnam,seloger.com,Real Estate,284,0,0.0
+1390,Vietnam,filmstarts.de,Entertainment,284,0,0.0
+1391,Vietnam,aps.org,Educational Institutions,284,0,0.0
+1392,Vietnam,thewrap.com,Entertainment,284,0,0.0
+1393,Vietnam,destacamos.com,Adult Themes,284,16,0.0563
+1394,Vietnam,canalblog.com,Personal Blogs,284,0,0.0
+1395,Vietnam,computrabajo.com,Job Search & Careers,284,0,0.0
+1396,Vietnam,mercedes-benz.com,Vehicles,284,0,0.0
+1397,Vietnam,www.roblox.com,Chat,284,31,0.1092
+1398,Vietnam,sicredi.com.br,Economy & Finance,284,0,0.0
+1399,Vietnam,laredoute.fr,Ecommerce,284,0,0.0
+1400,Vietnam,geico.com,Economy & Finance,284,0,0.0
+1401,Vietnam,govt.nz,Newly Seen Domains,284,0,0.0
+1402,Vietnam,redcross.org,"Politics, Advocacy, and Government-Related",284,0,0.0
+1403,Vietnam,sex.com,Pornography,284,19,0.0669
+1404,Vietnam,chsi.com.cn,Educational Institutions,284,0,0.0
+1405,Vietnam,ssc.nic.in,Job Search & Careers,284,0,0.0
+1406,Vietnam,brevo.com,No Content,284,0,0.0
+1407,Vietnam,unimelb.edu.au,Educational Institutions,284,0,0.0
+1408,Vietnam,unwomen.org,"Politics, Advocacy, and Government-Related",284,0,0.0
+1409,Vietnam,gravatar.com,Photography,284,0,0.0
+1410,Vietnam,schneier.com,Personal Blogs,284,0,0.0
+1411,Vietnam,sportradar.com,Business,284,1,0.0035
+1412,Vietnam,mail.me.com,File Sharing,284,23,0.081
+1413,Vietnam,antigena.com,Real Estate,284,0,0.0
+1414,Vietnam,tmdb.org,Movies,284,0,0.0
+1415,Vietnam,squareup.com,Economy & Finance,284,23,0.081
+1416,Vietnam,palmplaystore.com,Gaming,284,0,0.0
+1417,Vietnam,catchthemes.com,File Sharing,284,0,0.0
+1418,Vietnam,care.com,Job Search & Careers,284,0,0.0
+1419,Vietnam,johnnys-web.com,Personal Blogs,284,0,0.0
+1420,Vietnam,ardmediathek.de,Television,284,0,0.0
+1421,Vietnam,kakao.com,Instant Messengers,284,0,0.0
+1422,Vietnam,jamanetwork.com,Health & Fitness,284,0,0.0
+1423,Vietnam,tracker.samplicio.us,Shopping,284,0,0.0
+1424,Vietnam,nrdp.prod.ftl.netflix.com,Movies,284,23,0.081
+1425,Vietnam,adriver.ru,Advertisements,284,1,0.0035
+1426,Vietnam,jdcache.com,Content Servers,284,0,0.0
+1427,Vietnam,google.lt,Search Engines,284,0,0.0
+1428,Vietnam,excel-telemetry.officeapps.live.com,Webmail,284,0,0.0
+1429,Vietnam,epicgames.com,Gaming,284,3,0.0106
+1430,Vietnam,play.prodigygame.com,Science,284,0,0.0
+1431,Vietnam,yorku.ca,Educational Institutions,284,1,0.0035
+1432,Vietnam,ads.stickyadstv.com,Advertisements,284,1,0.0035
+1433,Vietnam,login.aol.com,Webmail,284,0,0.0
+1434,Vietnam,www.wordreference.com,Education,284,0,0.0
+1435,Vietnam,www.amazon.fr,Ecommerce,284,0,0.0
+1436,Vietnam,blooket.com,Safe for Kids,284,0,0.0
+1437,Vietnam,ualberta.ca,Educational Institutions,284,0,0.0
+1438,Vietnam,kuaishou.com,Video Streaming,284,0,0.0
+1439,Vietnam,microsoftazuread-sso.com,Content Servers,284,0,0.0
+1440,Vietnam,s.tabelog.com,Food & Drink,284,0,0.0
+1441,Vietnam,nflxvideo.net,Video Streaming,284,0,0.0
+1442,Vietnam,seattletimes.com,News & Media,284,0,0.0
+1443,Vietnam,google.com.bd,Search Engines,284,0,0.0
+1444,Vietnam,onlyfans.com,Adult Themes,284,16,0.0563
+1445,Vietnam,plex.tv,Television,284,23,0.081
+1446,Vietnam,peatix.com,Entertainment,284,0,0.0
+1447,Vietnam,polka.typekit.com,Hobbies & Interests,284,0,0.0
+1448,Vietnam,bkn.go.id,"Politics, Advocacy, and Government-Related",284,0,0.0
+1449,Vietnam,windows.microsoft.com,Information Technology,284,1,0.0035
+1450,Vietnam,accounts.spotify.com,Audio Streaming,284,23,0.081
+1451,Vietnam,rightmove.co.uk,Real Estate,284,0,0.0
+1452,Vietnam,jal.co.jp,Travel,284,0,0.0
+1453,Vietnam,nrdp.prod.cloud.netflix.com,Television,284,23,0.081
+1454,Vietnam,coches.net,Vehicles,284,0,0.0
+1455,Vietnam,savvis.net,Information Security,284,0,0.0
+1456,Vietnam,vivox.com,Chat,284,0,0.0
+1457,Vietnam,metoffice.gov.uk,Weather,284,0,0.0
+1458,Vietnam,www.pornhub.org,Pornography,284,17,0.0599
+1459,Vietnam,last.fm,Audio Streaming,284,0,0.0
+1460,Vietnam,code.org,Education,284,0,0.0
+1461,Vietnam,maryland.gov,Government,284,0,0.0
+1462,Vietnam,pin.it,Photography,284,0,0.0
+1463,Vietnam,tmz.com,Entertainment,284,0,0.0
+1464,Vietnam,mydramalist.com,Television,284,0,0.0
+1465,Vietnam,mobile.de,Vehicles,284,0,0.0
+1466,Vietnam,uu.se,Educational Institutions,284,0,0.0
+1467,Vietnam,nextmillmedia.com,Parked & For Sale Domains,284,0,0.0
+1468,Vietnam,getresponse.com,Webmail,284,0,0.0
+1469,Vietnam,hs-scripts.com,Content Servers,284,0,0.0
+1470,Vietnam,homes.co.jp,Real Estate,284,0,0.0
+1471,Vietnam,av380.net,Login Screens,284,0,0.0
+1472,Vietnam,azioncdn.net,Personal Blogs,284,0,0.0
+1473,Vietnam,blueapron.com,Food & Drink,284,0,0.0
+1474,Vietnam,ed.gov,Government,284,0,0.0
+1475,Vietnam,intercom.io,Instant Messengers,284,9,0.0317
+1476,Vietnam,play.blooket.com,Safe for Kids,284,23,0.081
+1477,Vietnam,ocws.officeapps.live.com,Webmail,284,0,0.0
+1478,Vietnam,thepioneerwoman.com,Food & Drink,284,0,0.0
+1479,Vietnam,in.pinterest.com,Photography,284,23,0.081
+1480,Vietnam,pro-market.net,Login Screens,284,0,0.0
+1481,Vietnam,collider.com,Entertainment,284,0,0.0
+1482,Vietnam,www.anses.gob.ar,"Politics, Advocacy, and Government-Related",284,0,0.0
+1483,Vietnam,rbx.com,No Content,284,0,0.0
+1484,Vietnam,app.launchdarkly.com,Login Screens,284,0,0.0
+1485,Vietnam,com.edgesuite.net,Content Servers,284,0,0.0
+1486,Vietnam,gingerall.com,Personal Blogs,284,0,0.0
+1487,Vietnam,fidelity.com,Economy & Finance,284,1,0.0035
+1488,Vietnam,teslamotors.com,Vehicles,284,0,0.0
+1489,Vietnam,skorozvon.ru,Economy & Finance,284,0,0.0
+1490,Vietnam,dscd.akamaiedge.net,Content Servers,284,0,0.0
+1491,Vietnam,bet7k.com,Gambling,284,16,0.0563
+1492,Vietnam,mangago.me,Comic Books,284,17,0.0599
+1493,Vietnam,xnxx.tv,Pornography,284,21,0.0739
+1494,Vietnam,immobilienscout24.de,Real Estate,284,1,0.0035
+1495,Vietnam,dogdrip.net,Forums,284,0,0.0
+1496,Vietnam,moneysupermarket.com,Shopping,284,0,0.0
+1497,Vietnam,honda.com,Vehicles,284,0,0.0
+1498,Vietnam,hwg.org,Information Technology,284,0,0.0
+1499,Vietnam,nme.com,Music,284,0,0.0
+1500,Vietnam,sonypictures.com,Movies,284,0,0.0
+1501,Vietnam,app.snapchat.com,Photography,284,23,0.081
+1502,Vietnam,db.com,Economy & Finance,284,0,0.0
+1503,Vietnam,nflxso.net,Content Servers,284,0,0.0
+1504,Vietnam,dealer.com,Vehicles,284,0,0.0
+1505,Vietnam,www.tamildhool.net,Questionable Activities,284,0,0.0
+1506,Vietnam,v.qq.com,Television,284,23,0.081
+1507,Vietnam,who.int,Health & Fitness,284,0,0.0
+1508,Vietnam,homes.com,Real Estate,284,0,0.0
+1509,Vietnam,wetteronline.de,Weather,284,0,0.0
+1510,Vietnam,starbucks.com.cn,Food & Drink,284,0,0.0
+1511,Vietnam,centrastage.net,Login Screens,284,0,0.0
+1512,Vietnam,al.com,News & Media,284,0,0.0
+1513,Vietnam,www.nesine.com,Gambling,284,17,0.0599
+1514,Vietnam,s3.amazonaws.com,File Sharing,284,0,0.0
+1515,Vietnam,fcdn.eu.tiktokcdn.com,Social Networks,284,24,0.0845
+1516,Vietnam,pinduoduo.com,Shopping,284,1,0.0035
+1517,Vietnam,zynga.com,Gaming,284,3,0.0106
+1518,Vietnam,vjav.com,Pornography,284,22,0.0775
+1519,Vietnam,planalto.gov.br,"Politics, Advocacy, and Government-Related",284,0,0.0
+1520,Vietnam,valve.net,Newly Seen Domains,284,0,0.0
+1521,Vietnam,intercom.com,Instant Messengers,284,0,0.0
+1522,Vietnam,sp.jra.jp,Gambling,284,18,0.0634
+1523,Vietnam,avsee.in,Questionable Activities,284,0,0.0
+1524,Vietnam,ropro.io,Forums,284,3,0.0106
+1525,Vietnam,thehill.com,Video Streaming,284,0,0.0
+1526,Vietnam,axc.nl,Parked & For Sale Domains,284,1,0.0035
+1527,Vietnam,berlin.de,Travel,284,0,0.0
+1528,Vietnam,hyprmx.com,Gaming,284,0,0.0
+1529,Vietnam,www.starfall.com,Safe for Kids,284,0,0.0
+1530,Vietnam,topmanhua.com,Comic Books,284,17,0.0599
+1531,Vietnam,spectrum.s3.amazonaws.com,File Sharing,284,0,0.0
+1532,Vietnam,mixcloud.com,Audio Streaming,284,0,0.0
+1533,Vietnam,mat6tube.com,Pornography,284,20,0.0704
+1534,Vietnam,titles.prod.mos.microsoft.com,Business,284,0,0.0
+1535,Vietnam,plutotv.net,Television,284,0,0.0
+1536,Vietnam,www.flashscore.fr,Gambling,284,0,0.0
+1537,Vietnam,careerbuilder.com,Job Search & Careers,284,0,0.0
+1538,Vietnam,miibeian.gov.cn,"Politics, Advocacy, and Government-Related",284,0,0.0
+1539,Vietnam,int.ibomma.link,Movies,284,0,0.0
+1540,Vietnam,registry.in,Parked & For Sale Domains,284,0,0.0
+1541,Vietnam,govinfo.gov,Government,284,0,0.0
+1542,Vietnam,ad.360yield.com,Advertisements,284,1,0.0035
+1543,Vietnam,open.ac.uk,Educational Institutions,284,0,0.0
+1544,Vietnam,imgsmail.ru,Webmail,284,0,0.0
+1545,Vietnam,filmaffinity.com,Movies,284,0,0.0
+1546,Vietnam,work.ua,Job Search & Careers,284,0,0.0
+1547,Vietnam,cisa.gov,Government,284,0,0.0
+1548,Vietnam,deltadna.net,Login Screens,284,0,0.0
+1549,Vietnam,onlar.az,Chat,284,0,0.0
+1550,Vietnam,uw.edu,Educational Institutions,284,0,0.0
+1551,Vietnam,feedly.com,Technology,284,0,0.0
+1552,Vietnam,delta.com,Travel,284,0,0.0
+1553,Vietnam,getdropbox.com,File Sharing,284,0,0.0
+1554,Vietnam,pinterest.co.uk,Photography,284,23,0.081
+1555,Vietnam,gab.com,Social Networks,284,0,0.0
+1556,Vietnam,weathercn.com,Weather,284,0,0.0
+1557,Vietnam,google.com.nf,Search Engines,284,0,0.0
+1558,Vietnam,mhlw.go.jp,Health & Fitness,284,0,0.0
+1559,Vietnam,joyn.de,Television,284,0,0.0
+1560,Vietnam,plentific.com,Real Estate,284,0,0.0
+1561,Vietnam,netflix.net,Movies,284,23,0.081
+1562,Vietnam,m.happymh.com,Comic Books,284,0,0.0
+1563,Vietnam,economictimes.com,Economy & Finance,284,0,0.0
+1564,Vietnam,tomsguide.com,Shopping,284,0,0.0
+1565,Vietnam,myteksi.net,No Content,284,0,0.0
+1566,Vietnam,musescore.com,Music,284,0,0.0
+1567,Vietnam,onmicrosoft.com,Technology,284,0,0.0
+1568,Vietnam,utoronto.ca,Educational Institutions,284,0,0.0
+1569,Vietnam,sascdn.com,Parked & For Sale Domains,284,1,0.0035
+1570,Vietnam,tvspielfilm.de,Television,284,0,0.0
+1571,Vietnam,boostmobile.com,Information Technology,284,0,0.0
+1572,Vietnam,m.porno365.pics,Parked & For Sale Domains,284,17,0.0599
+1573,Vietnam,penguinrandomhouse.com,Education,284,0,0.0
+1574,Vietnam,box.com,File Sharing,284,0,0.0
+1575,Vietnam,www.ajio.com,Fashion,284,0,0.0
+1576,Vietnam,suumo.jp,Real Estate,284,0,0.0
+1577,Vietnam,abcya.com,Safe for Kids,284,0,0.0
+1578,Vietnam,gall.dcinside.com,Movies,284,23,0.081
+1579,Vietnam,likee.com,Parked & For Sale Domains,284,0,0.0
+1580,Vietnam,cashstar.com,Technology,284,0,0.0
+1581,Vietnam,rei.com,Clothing,284,0,0.0
+1582,Vietnam,pcgamer.com,Shopping,284,3,0.0106
+1583,Vietnam,list.am,Auctions & Marketplaces,284,0,0.0
+1584,Vietnam,dt.adsafeprotected.com,Advertisements,284,1,0.0035
+1585,Vietnam,immowelt.de,Real Estate,284,0,0.0
+1586,Vietnam,discord.media,Chat,284,0,0.0
+1587,Vietnam,awsdns-60.com,Content Servers,284,0,0.0
+1588,Vietnam,gazprombank.ru,Economy & Finance,284,0,0.0
+1589,Vietnam,larkplayerapp.com,Music,284,3,0.0106
+1590,Vietnam,pull-o5-va01.tiktokcdn.com,Social Networks,284,24,0.0845
+1591,Vietnam,m.chaturbate.com,Pornography,284,18,0.0634
+1592,Vietnam,outlook.com,Webmail,284,0,0.0
+1593,Vietnam,aa.agkn.com,Information Security,284,1,0.0035
+1594,Vietnam,weather-data.apple.com,Information Technology,284,0,0.0
+1595,Vietnam,smallpdf.com,Business,284,23,0.081
+1596,Vietnam,icq.com,Instant Messengers,284,0,0.0
+1597,Vietnam,mangakakalot.com,Comic Books,284,17,0.0599
+1598,Vietnam,mangadex.org,Comic Books,284,23,0.081
+1599,Vietnam,ted.com,Video Streaming,284,0,0.0
+1600,Vietnam,pscp.tv,Video Streaming,284,0,0.0
+1601,Vietnam,racingpost.com,Gambling,284,17,0.0599
+1602,Vietnam,login.yahoo.com,Advertisements,284,0,0.0
+1603,Vietnam,hadron.ad.gt,Advertisements,284,0,0.0
+1604,Vietnam,www.xnxx.tv,Pornography,284,19,0.0669
+1605,Vietnam,pandora.com,Audio Streaming,284,23,0.081
+1606,Vietnam,ycombinator.com,Hobbies & Interests,284,0,0.0
+1607,Vietnam,likeevideo.ru,Photography,284,0,0.0
+1608,Vietnam,futbol24.com,Sports,284,17,0.0599
+1609,Vietnam,vidoomy.com,Business,284,0,0.0
+1610,Vietnam,asm.org,Clothing,284,0,0.0
+1611,Vietnam,turbo.az,Vehicles,284,0,0.0
+1612,Vietnam,webvisor.com,Content Servers,284,0,0.0
+1613,Vietnam,rtve.es,News & Media,284,0,0.0
+1614,Vietnam,quillbot.com,Questionable Activities,284,0,0.0
+1615,Vietnam,smilewanted.com,Advertisements,284,0,0.0
+1616,Vietnam,coral.co.uk,Gaming,284,17,0.0599
+1617,Vietnam,marmiton.org,Food & Drink,284,0,0.0
+1618,Vietnam,spacebattles.com,Movies,284,0,0.0
+1619,Vietnam,gap.com,Clothing,284,0,0.0
+1620,Vietnam,sandiegouniontribune.com,Audio Streaming,284,0,0.0
+1621,Vietnam,go.com,Safe for Kids,284,0,0.0
+1622,Vietnam,jcrew.com,Clothing,284,0,0.0
+1623,Vietnam,queniutc.com,Newly Seen Domains,284,0,0.0
+1624,Vietnam,tawk.to,Instant Messengers,284,9,0.0317
+1625,Vietnam,ama-assn.org,Health & Fitness,284,0,0.0
+1626,Vietnam,skyeng.ru,Education,284,0,0.0
+1627,Vietnam,meteoblue.com,Weather,284,0,0.0
+1628,Vietnam,saednews.com,News & Media,284,0,0.0
+1629,Vietnam,shareasale.com,Advertisements,284,0,0.0
+1630,Vietnam,htlb.casalemedia.com,Advertisements,284,1,0.0035
+1631,Vietnam,trustpilot.com,Shopping,284,0,0.0
+1632,Vietnam,resetera.com,Forums,284,3,0.0106
+1633,Vietnam,automattic.com,Information Technology,284,0,0.0
+1634,Vietnam,gmail.com,Webmail,284,0,0.0
+1635,Vietnam,xvideosporno.blog.br,Pornography,284,17,0.0599
+1636,Vietnam,www.bancodevenezuela.com,Economy & Finance,284,0,0.0
+1637,Vietnam,api.amazonvideo.com,Television,284,0,0.0
+1638,Vietnam,rollingstone.com,Entertainment,284,0,0.0
+1639,Vietnam,omappapi.com,Login Screens,284,0,0.0
+1640,Vietnam,walletconnect.com,Economy & Finance,284,0,0.0
+1641,Vietnam,netshoes.com.br,Clothing,284,0,0.0
+1642,Vietnam,bajajfinserv.in,Economy & Finance,284,0,0.0
+1643,Vietnam,upwitheaway.info,Parked & For Sale Domains,284,0,0.0
+1644,Vietnam,www.nhs.uk,Health & Fitness,284,0,0.0
+1645,Vietnam,wordpress.net,Personal Blogs,284,0,0.0
+1646,Vietnam,homeip.net,Information Technology,284,1,0.0035
+1647,Vietnam,safelinks.protection.outlook.com,Webmail,284,23,0.081
+1648,Vietnam,livechatinc.com,Instant Messengers,284,0,0.0
+1649,Vietnam,pull-flv-f62-va01.tiktokcdn.com,Social Networks,284,24,0.0845
+1650,Vietnam,zalando.fr,Clothing,284,0,0.0
+1651,Vietnam,royalroad.com,Education,284,0,0.0
+1652,Vietnam,lexisnexis.com,Technology,284,0,0.0
+1653,Vietnam,office365.us,Login Screens,284,0,0.0
+1654,Vietnam,m.imdb.com,Movies,284,0,0.0
+1655,Vietnam,officeapps.live.com,Technology,284,0,0.0
+1656,Vietnam,familysearch.org,Hobbies & Interests,284,0,0.0
+1657,Vietnam,www.nairaland.com,Forums,284,0,0.0
+1658,Vietnam,wetransfer.com,File Sharing,284,23,0.081
+1659,Vietnam,xhtab3.com,Pornography,284,16,0.0563
+1660,Vietnam,globalsign.com,Information Security,284,0,0.0
+1661,Vietnam,huya.com,Gaming,284,0,0.0
+1662,Vietnam,heanet.ie,Education,284,0,0.0
+1663,Vietnam,us.tiktokv.com,Social Networks,284,25,0.088
+1664,Vietnam,www.sinsay.com,Clothing,284,0,0.0
+1665,Vietnam,rtb.adentifi.com,Content Servers,284,1,0.0035
+1666,Vietnam,rst.ua,Vehicles,284,0,0.0
+1667,Vietnam,stackoverflow.com,Forums,284,23,0.081
+1668,Vietnam,www.3bmeteo.com,Weather,284,0,0.0
+1669,Vietnam,threatlocker.com,Information Security,284,0,0.0
+1670,Vietnam,vulture.com,Entertainment,284,0,0.0
+1671,Vietnam,justice.gov,"Politics, Advocacy, and Government-Related",284,0,0.0
+1672,Vietnam,audrte.com,Parked & For Sale Domains,284,0,0.0
+1673,Vietnam,picuki.com,Photography,284,0,0.0
+1674,Vietnam,mobile01.com,Personal Blogs,284,0,0.0
+1675,Vietnam,gopro.com,Photography,284,0,0.0
+1676,Vietnam,spo-msedge.net,Content Servers,284,0,0.0
+1677,Vietnam,metrics.icloud.com,File Sharing,284,23,0.081
+1678,Vietnam,dazn.com,Sports,284,0,0.0
+1679,Vietnam,grab.com,Travel,284,0,0.0
+1680,Vietnam,ably.io,Personal Blogs,284,0,0.0
+1681,Vietnam,gst.gov.in,"Politics, Advocacy, and Government-Related",284,0,0.0
+1682,Vietnam,sec.gov,Government,284,1,0.0035
+1683,Vietnam,apkcombo.com,Gaming,284,3,0.0106
+1684,Vietnam,trc.taboola.com,Business,284,1,0.0035
+1685,Vietnam,hubspotemail.net,Information Security,284,0,0.0
+1686,Vietnam,stern.de,News & Media,284,0,0.0
+1687,Vietnam,dnacdn.net,Content Servers,284,0,0.0
+1688,Vietnam,wa.gov,Government,284,0,0.0
+1689,Vietnam,tripadvisor.com.br,Food & Drink,284,0,0.0
+1690,Vietnam,schoology.com,Webmail,284,0,0.0
+1691,Vietnam,symcd.com,File Sharing,284,0,0.0
+1692,Vietnam,gihc.net,Content Servers,284,0,0.0
+1693,Vietnam,tabelog.com,Shopping,284,0,0.0
+1694,Vietnam,tubidy.watch,Newly Seen Domains,284,0,0.0
+1695,Vietnam,jalanmenangku.com,Newly Seen Domains,284,2,0.007
+1696,Vietnam,gelbooru.com,Forums,284,19,0.0669
+1697,Vietnam,www.ptt.cc,Forums,284,0,0.0
+1698,Vietnam,drugs.com,Health & Fitness,284,1,0.0035
+1699,Vietnam,si.com,Magazines,284,0,0.0
+1700,Vietnam,prmsrvs.com,Newly Seen Domains,284,13,0.0458
+1701,Vietnam,gpcloudservice.com,No Content,284,23,0.081
+1702,Vietnam,gekso.com,Pornography,284,16,0.0563
+1703,Vietnam,www.staseraintv.com,Newly Seen Domains,284,0,0.0
+1704,Vietnam,state.gov,Government,284,0,0.0
+1705,Vietnam,hotmail.com,Webmail,284,23,0.081
+1706,Vietnam,bazaarvoice.com,Business,284,0,0.0
+1707,Vietnam,ryanair.com,Travel,284,0,0.0
+1708,Vietnam,capterra.com,Shopping,284,0,0.0
+1709,Vietnam,batch.com,Technology,284,0,0.0
+1710,Vietnam,complex.com,Magazines,284,0,0.0
+1711,Vietnam,cigna.com,Health & Fitness,284,0,0.0
+1712,Vietnam,uk.indeed.com,Job Search & Careers,284,0,0.0
+1713,Vietnam,chat.google.com,Instant Messengers,284,23,0.081
+1714,Vietnam,forter.com,Information Security,284,0,0.0
+1715,Vietnam,zazzle.com,Ecommerce,284,0,0.0
+1716,Vietnam,mobileposse.com,Technology,284,1,0.0035
+1717,Vietnam,m.indiamart.com,Auctions & Marketplaces,284,0,0.0
+1718,Vietnam,covers.com,Sports,284,17,0.0599
+1719,Vietnam,www.boatrace.jp,Sports,284,17,0.0599
+1720,Vietnam,idealo.de,Shopping,284,0,0.0
+1721,Vietnam,ria.ru,News & Media,284,0,0.0
+1722,Vietnam,autotrader.co.uk,Vehicles,284,0,0.0
+1723,Vietnam,moodle.org,Education,284,0,0.0
+1724,Vietnam,winzogames.com,Gambling,284,3,0.0106
+1725,Vietnam,farpost.ru,Auctions & Marketplaces,284,0,0.0
+1726,Vietnam,setlist.fm,Music,284,1,0.0035
+1727,Vietnam,sendbird.com,Instant Messengers,284,0,0.0
+1728,Vietnam,gifshow.com,File Sharing,284,0,0.0
+1729,Vietnam,litres.ru,Education,284,0,0.0
+1730,Vietnam,www.mayoclinic.org,Health & Fitness,284,0,0.0
+1731,Vietnam,lojasrenner.com.br,Fashion,284,0,0.0
+1732,Vietnam,gq.com,Fashion,284,0,0.0
+1733,Vietnam,zoho.com,Business,284,0,0.0
+1734,Vietnam,detroitnews.com,News & Media,284,0,0.0
+1735,Vietnam,typeform.com,Webmail,284,0,0.0
+1736,Vietnam,m.olx.ua,Auctions & Marketplaces,284,0,0.0
+1737,Vietnam,united.com,Travel,284,0,0.0
+1738,Vietnam,theqoo.net,Forums,284,0,0.0
+1739,Vietnam,gencat.cat,"Politics, Advocacy, and Government-Related",284,0,0.0
+1740,Vietnam,www.youporn.com,Pornography,284,21,0.0739
+1741,Vietnam,aviasales.ru,Travel,284,0,0.0
+1742,Vietnam,safebrowsing.google.com,Information Security,284,23,0.081
+1743,Vietnam,sympla.com.br,Entertainment,284,0,0.0
+1744,Vietnam,realtor.com,Real Estate,284,0,0.0
+1745,Vietnam,dcloudstc.com,No Content,284,1,0.0035
+1746,Vietnam,www.avto.net,Vehicles,284,0,0.0
+1747,Vietnam,bookmyshow.com,Movies,284,0,0.0
+1748,Vietnam,hyatt.com,Travel,284,0,0.0
+1749,Vietnam,tasteofhome.com,Magazines,284,0,0.0
+1750,Vietnam,eltiempo.es,Weather,284,0,0.0
+1751,Vietnam,tripadvisor.co.uk,Travel,284,0,0.0
+1752,Vietnam,pixabay.com,Photography,284,0,0.0
+1753,Vietnam,pitchfork.com,Music,284,0,0.0
+1754,Vietnam,managed-vps.net,Information Technology,284,0,0.0
+1755,Vietnam,5ch.net,Forums,284,23,0.081
+1756,Vietnam,www.asos.com,Clothing,284,0,0.0
+1757,Vietnam,www.universal-credit.service.gov.uk,"Politics, Advocacy, and Government-Related",284,0,0.0
+1758,Vietnam,foxbusiness.com,Economy & Finance,284,0,0.0
+1759,Vietnam,arduino.cc,Technology,284,0,0.0
+1760,Vietnam,miit.gov.cn,"Politics, Advocacy, and Government-Related",284,0,0.0
+1761,Vietnam,secure.netflix.com,Television,284,23,0.081
+1762,Vietnam,goibibo.com,Travel,284,0,0.0
+1763,Vietnam,pull-f5-sg01.tiktokcdn.com,Social Networks,284,24,0.0845
+1764,Vietnam,www.wellsfargo.com,Economy & Finance,284,0,0.0
+1765,Vietnam,m.shein.com,Fashion,284,0,0.0
+1766,Vietnam,flickr.com,Photography,284,5,0.0176
+1767,Vietnam,windguru.cz,Weather,284,0,0.0
+1768,Vietnam,xvideos.com,Pornography,284,23,0.081
+1769,Vietnam,hopkinsmedicine.org,Educational Institutions,284,0,0.0
+1770,Vietnam,thingiverse.com,Forums,284,0,0.0
+1771,Vietnam,apps.chrome,No Content,284,0,0.0
+1772,Vietnam,rockstargames.com,Gaming,284,3,0.0106
+1773,Vietnam,google.ee,Search Engines,284,0,0.0
+1774,Vietnam,uniqlo.com,Clothing,284,0,0.0
+1775,Vietnam,dual-gslb.spotify.com,Audio Streaming,284,0,0.0
+1776,Vietnam,screenrant.com,Movies,284,0,0.0
+1777,Vietnam,kino-teatr.ru,Entertainment,284,0,0.0
+1778,Vietnam,vogue.com,Fashion,284,0,0.0
+1779,Vietnam,gettyimages.com,Photography,284,0,0.0
+1780,Vietnam,fcomet.com,No Content,284,0,0.0
+1781,Vietnam,books.google.com,Education,284,23,0.081
+1782,Vietnam,smoot.apple.com,Technology,284,0,0.0
+1783,Vietnam,myshopify.com,Ecommerce,284,0,0.0
+1784,Vietnam,snapchat.com,Photography,284,3,0.0106
+1785,Vietnam,psychcentral.com,Health & Fitness,284,0,0.0
+1786,Vietnam,googleads.g.doubleclick.net,Advertisements,284,24,0.0845
+1787,Vietnam,caf.fr,Job Search & Careers,284,0,0.0
+1788,Vietnam,chime.aws,Forums,284,1,0.0035
+1789,Vietnam,house.gov,Government,284,0,0.0
+1790,Vietnam,proton.me,Information Security,284,23,0.081
+1791,Vietnam,pch.com,Shopping,284,4,0.0141
+1792,Vietnam,sxyprn.com,Pornography,284,23,0.081
+1793,Vietnam,samokat.ru,Information Technology,284,0,0.0
+1794,Vietnam,reolink.com,Photography,284,0,0.0
+1795,Vietnam,mask-api.icloud.com,File Sharing,284,23,0.081
+1796,Vietnam,www.amazon.es,Ecommerce,284,0,0.0
+1797,Vietnam,www.milanuncios.com,Auctions & Marketplaces,284,0,0.0
+1798,Vietnam,pccomponentes.com,Ecommerce,284,0,0.0
+1799,Vietnam,klaviyo.com,Technology,284,0,0.0
+1800,Vietnam,sophosxl.net,Newly Seen Domains,284,0,0.0
+1801,Vietnam,eyeota.net,Login Screens,284,0,0.0
+1802,Vietnam,ojogodobicho.com,Health & Fitness,284,16,0.0563
+1803,Vietnam,www.accuweather.com,Weather,284,0,0.0
+1804,Vietnam,funda.nl,Real Estate,284,0,0.0
+1805,Vietnam,flightrising.com,Forums,284,3,0.0106
+1806,Vietnam,plarium.com,Hobbies & Interests,284,3,0.0106
+1807,Vietnam,architecturaldigest.com,Real Estate,284,0,0.0
+1808,Vietnam,easports.com,Gaming,284,3,0.0106
+1809,Vietnam,marca.com,Sports,284,0,0.0
+1810,Vietnam,cardgames.io,Hobbies & Interests,284,3,0.0106
+1811,Vietnam,www.redfin.com,Real Estate,284,0,0.0
+1812,Vietnam,kaspi.kz,Economy & Finance,284,0,0.0
+1813,Vietnam,fantasypros.com,Sports,284,0,0.0
+1814,Vietnam,ru.m.wikipedia.org,Education,284,0,0.0
+1815,Vietnam,www.google.ca,Search Engines,284,23,0.081
+1816,Vietnam,fotocdn.net,No Content,284,0,0.0
+1817,Vietnam,reson8.com,Information Security,284,0,0.0
+1818,Vietnam,www.netshoes.com.br,Clothing,284,0,0.0
+1819,Vietnam,pracuj.pl,Job Search & Careers,284,0,0.0
+1820,Vietnam,static.ads-twitter.com,Advertisements,284,0,0.0
+1821,Vietnam,ksyuncdn.com,Content Servers,284,0,0.0
+1822,Vietnam,www.mangago.me,Comic Books,284,23,0.081
+1823,Vietnam,www.uol.com.br,News & Media,284,0,0.0
+1824,Vietnam,google.com.uy,Search Engines,284,0,0.0
+1825,Vietnam,pull-cmaf-l10-sg01.tiktokcdn.com,Social Networks,284,24,0.0845
+1826,Vietnam,getepic.com,Education,284,0,0.0
+1827,Vietnam,google.ba,Search Engines,284,0,0.0
+1828,Vietnam,idealmedia.io,No Content,284,0,0.0
+1829,Vietnam,tf1.fr,Television,284,0,0.0
+1830,Vietnam,housing.com,Real Estate,284,0,0.0
+1831,Vietnam,ico.org.uk,Information Security,284,0,0.0
+1832,Vietnam,ca.indeed.com,Job Search & Careers,284,0,0.0
+1833,Vietnam,csfd.cz,Movies,284,0,0.0
+1834,Vietnam,ebanx.com,Entertainment,284,0,0.0
+1835,Vietnam,tunein.com,Audio Streaming,284,0,0.0
+1836,Vietnam,xfinityhome.com,No Content,284,0,0.0
+1837,Vietnam,cm.g.doubleclick.net,Advertisements,284,24,0.0845
+1838,Vietnam,goo-net.com,Vehicles,284,0,0.0
+1839,Vietnam,sportowefakty.wp.pl,Sports,284,0,0.0
+1840,Vietnam,windy.com,Weather,284,0,0.0
+1841,Vietnam,shutterstock.com,Photography,284,0,0.0
+1842,Vietnam,www.russianfood.com,Food & Drink,284,0,0.0
+1843,Vietnam,google.am,Search Engines,284,0,0.0
+1844,Vietnam,chordtela.com,Music,284,0,0.0
+1845,Vietnam,piccoma.com,Comic Books,284,0,0.0
+1846,Vietnam,alz.org,Health & Fitness,284,0,0.0
+1847,Vietnam,ubi.com,Gaming,284,3,0.0106
+1848,Vietnam,www.netflix.com,Movies,284,23,0.081
+1849,Vietnam,grubhub.com,Food & Drink,284,0,0.0
+1850,Vietnam,wg.spotify.com,Audio Streaming,284,0,0.0
+1851,Vietnam,ajio.com,Fashion,284,0,0.0
+1852,Vietnam,drweb.com,Information Security,284,1,0.0035
+1853,Vietnam,analytics.twitter.com,Business,284,23,0.081
+1854,Vietnam,fox.com,Television,284,0,0.0
+1855,Vietnam,paziresh24.com,Health & Fitness,284,0,0.0
+1856,Vietnam,sling.com,Television,284,0,0.0
+1857,Vietnam,weightwatchers.com,Health & Fitness,284,0,0.0
+1858,Vietnam,detail.chiebukuro.yahoo.co.jp,Forums,284,0,0.0
+1859,Vietnam,gdms.cloud,Parked & For Sale Domains,284,0,0.0
+1860,Vietnam,hochi.news,Sports,284,0,0.0
+1861,Vietnam,queniuiq.com,Newly Seen Domains,284,0,0.0
+1862,Vietnam,swarovski.com,Fashion,284,0,0.0
+1863,Vietnam,fragrantica.com,Fashion,284,0,0.0
+1864,Vietnam,aig.com,Login Screens,284,0,0.0
+1865,Vietnam,www.bilibili.tv,Gaming,284,8,0.0282
+1866,Vietnam,cbsi.com,Television,284,0,0.0
+1867,Vietnam,shopifysvc.com,Content Servers,284,0,0.0
+1868,Vietnam,idealista.it,Real Estate,284,0,0.0
+1869,Vietnam,ebay.com,Auctions & Marketplaces,284,0,0.0
+1870,Vietnam,cloud.tenable.com,Information Security,284,0,0.0
+1871,Vietnam,johnlewis.com,Ecommerce,284,0,0.0
+1872,Vietnam,spotify.com,Audio Streaming,284,0,0.0
+1873,Vietnam,kff.org,Health & Fitness,284,0,0.0
+1874,Vietnam,b.tlu.dl.delivery.mp.microsoft.com,Business,284,2,0.007
+1875,Vietnam,warwick.ac.uk,Educational Institutions,284,0,0.0
+1876,Vietnam,admin.google.com,Search Engines,284,23,0.081
+1877,Vietnam,fuckmoral.com,Pornography,284,20,0.0704
+1878,Vietnam,nic.do,Parked & For Sale Domains,284,0,0.0
+1879,Vietnam,transmissionbt.com,File Sharing,284,0,0.0
+1880,Vietnam,over-blog.com,Personal Blogs,284,0,0.0
+1881,Vietnam,samsungiotcloud.com,File Sharing,284,0,0.0
+1882,Vietnam,thomann.de,Music,284,1,0.0035
+1883,Vietnam,mangatoto.com,Comic Books,284,17,0.0599
+1884,Vietnam,ezoic.net,Business,284,1,0.0035
+1885,Vietnam,csof.net,Parked & For Sale Domains,284,0,0.0
+1886,Vietnam,www.upwork.com,Job Search & Careers,284,0,0.0
+1887,Vietnam,vic.gov.au,"Politics, Advocacy, and Government-Related",284,0,0.0
+1888,Vietnam,boxofficemojo.com,Movies,284,0,0.0
+1889,Vietnam,slashdot.org,Personal Blogs,284,0,0.0
+1890,Vietnam,inbox.google.com,Webmail,284,23,0.081
+1891,Vietnam,comcastbusiness.net,Information Technology,284,0,0.0
+1892,Vietnam,newsdig.tbs.co.jp,Television,284,0,0.0
+1893,Vietnam,defense.gov,Government,284,0,0.0
+1894,Vietnam,ca.gov,Government,284,0,0.0
+1895,Vietnam,news.com.au,News & Media,284,0,0.0
+1896,Vietnam,bato.to,Comic Books,284,16,0.0563
+1897,Vietnam,wikiwand.com,Education,284,0,0.0
+1898,Vietnam,medtronic.com,Health & Fitness,284,0,0.0
+1899,Vietnam,flic.kr,Photography,284,0,0.0
+1900,Vietnam,reclameaqui.com.br,Shopping,284,0,0.0
+1901,Vietnam,tayninh.gov.vn,"Politics, Advocacy, and Government-Related",284,0,0.0
+1902,Vietnam,ensighten.com,Business,284,0,0.0
+1903,Vietnam,sportybet.com,Sports,284,26,0.0915
+1904,Vietnam,imasdk.googleapis.com,Content Servers,284,23,0.081
+1905,Vietnam,www.reddit.com,Forums,284,23,0.081
+1906,Vietnam,market.yandex.ru,Auctions & Marketplaces,284,0,0.0
+1907,Vietnam,orbitz.com,Travel,284,0,0.0
+1908,Vietnam,vudu.com,Movies,284,0,0.0
+1909,Vietnam,wd2go.com,Login Screens,284,0,0.0
+1910,Vietnam,ngtv.io,Content Servers,284,0,0.0
+1911,Vietnam,jeuxvideo.com,Video Streaming,284,3,0.0106
+1912,Vietnam,tn.gov,Government,284,0,0.0
+1913,Vietnam,treehugger.com,Magazines,284,0,0.0
+1914,Vietnam,shaalaa.com,Educational Institutions,284,0,0.0
+1915,Vietnam,politico.eu,Login Screens,284,0,0.0
+1916,Vietnam,gadgets360.com,Shopping,284,0,0.0
+1917,Vietnam,draft.blogger.com,Personal Blogs,284,19,0.0669
+1918,Vietnam,narrative.io,Business,284,0,0.0
+1919,Vietnam,tesla.com,Vehicles,284,0,0.0
+1920,Vietnam,4channel.org,Forums,284,15,0.0528
+1921,Vietnam,dpboss.services,Gambling,284,0,0.0
+1922,Vietnam,autodiscover-s.outlook.com,Webmail,284,23,0.081
+1923,Vietnam,zdf.de,Television,284,0,0.0
+1924,Vietnam,emarketer.com,Fashion,284,1,0.0035
+1925,Vietnam,conviva.com,Technology,284,0,0.0
+1926,Vietnam,grammarly.net,Fashion,284,0,0.0
+1927,Vietnam,open.spotify.com,Audio Streaming,284,23,0.081
+1928,Vietnam,cepat.net.id,Information Technology,284,0,0.0
+1929,Vietnam,mercadolibre.com.mx,Auctions & Marketplaces,284,0,0.0
+1930,Vietnam,mythad.com,Vehicles,284,0,0.0
+1931,Vietnam,parkingcrew.net,Parked & For Sale Domains,284,0,0.0
+1932,Vietnam,dcinside.com,Movies,284,26,0.0915
+1933,Vietnam,gspe19-ssl.ls.apple.com,Technology,284,23,0.081
+1934,Vietnam,fws.gov,Government,284,1,0.0035
+1935,Vietnam,www.theverge.com,Magazines,284,0,0.0
+1936,Vietnam,www.jiocinema.com,Movies,284,0,0.0
+1937,Vietnam,nova.cz,Video Streaming,284,0,0.0
+1938,Vietnam,guildwars2.com,Gaming,284,4,0.0141
+1939,Vietnam,bethesda.net,Gaming,284,3,0.0106
+1940,Vietnam,alpha-prm.jp,Webmail,284,0,0.0
+1941,Vietnam,www.betway.co.za,Gambling,284,17,0.0599
+1942,Vietnam,redbull.com,Sports,284,0,0.0
+1943,Vietnam,ijavhd.com,Personal Blogs,284,23,0.081
+1944,Vietnam,carsensor.net,Vehicles,284,0,0.0
+1945,Vietnam,adservice.google.com,Advertisements,284,24,0.0845
+1946,Vietnam,eukdns.com,No Content,284,0,0.0
+1947,Vietnam,nationalpost.com,News & Media,284,0,0.0
+1948,Vietnam,photobucket.com,Photography,284,0,0.0
+1949,Vietnam,eventim.de,Entertainment,284,0,0.0
+1950,Vietnam,nairaland.com,Forums,284,0,0.0
+1951,Vietnam,pikweb.net,No Content,284,0,0.0
+1952,Vietnam,eurosport.com,Sports,284,0,0.0
+1953,Vietnam,packet8.net,Business,284,0,0.0
+1954,Vietnam,m.rst.ua,Vehicles,284,0,0.0
+1955,Vietnam,rfi.fr,Audio Streaming,284,4,0.0141
+1956,Vietnam,smartnews.net,Newly Seen Domains,284,0,0.0
+1957,Vietnam,videowalldirect.com,No Content,284,0,0.0
+1958,Vietnam,searchenginejournal.com,Education,284,0,0.0
+1959,Vietnam,engadget.com,Shopping,284,0,0.0
+1960,Vietnam,gm.com,Vehicles,284,0,0.0
+1961,Vietnam,chess-results.com,Hobbies & Interests,284,0,0.0
+1962,Vietnam,auto.ria.com,Auctions & Marketplaces,284,0,0.0
+1963,Vietnam,sony.tv,Technology,284,1,0.0035
+1964,Vietnam,ctrip.com,Travel,284,0,0.0
+1965,Vietnam,idealista.pt,Real Estate,284,0,0.0
+1966,Vietnam,www.realtor.com,Real Estate,284,0,0.0
+1967,Vietnam,msport.com,Gambling,284,5,0.0176
+1968,Vietnam,www.joyclub.de,Pornography,284,17,0.0599
+1969,Vietnam,aliexpress.us,Parked & For Sale Domains,284,0,0.0
+1970,Vietnam,configuration.ls.apple.com,Information Technology,284,23,0.081
+1971,Vietnam,olx.co.id,Auctions & Marketplaces,284,0,0.0
+1972,Vietnam,stitcher.com,Audio Streaming,284,0,0.0
+1973,Vietnam,sprig.com,No Content,284,0,0.0
+1974,Vietnam,cookielaw.org,"Politics, Advocacy, and Government-Related",284,0,0.0
+1975,Vietnam,cnblogs.com,Forums,284,0,0.0
+1976,Vietnam,starfieldtech.com,Parked & For Sale Domains,284,0,0.0
+1977,Vietnam,entelchile.net,File Sharing,284,0,0.0
+1978,Vietnam,tpmn.co.kr,Parked & For Sale Domains,284,0,0.0
+1979,Vietnam,oktacdn.com,Login Screens,284,0,0.0
+1980,Vietnam,www.pinterest.com,Social Networks,284,23,0.081
+1981,Vietnam,px.ads.linkedin.com,Advertisements,284,25,0.088
+1982,Vietnam,indiegogo.com,Hobbies & Interests,284,0,0.0
+1983,Vietnam,jiosaavn.com,Audio Streaming,284,7,0.0246
+1984,Vietnam,mlb.com,Video Streaming,284,0,0.0
+1985,Vietnam,aviasales.com,Travel,284,0,0.0
+1986,Vietnam,boozt.com,Clothing,284,0,0.0
+1987,Vietnam,navy.mil,Job Search & Careers,284,0,0.0
+1988,Vietnam,gazeta.ru,News & Media,284,0,0.0
+1989,Vietnam,dropboxusercontent.com,File Sharing,284,0,0.0
+1990,Vietnam,an1.com,Information Technology,284,0,0.0
+1991,Vietnam,ancestry.com,Hobbies & Interests,284,0,0.0
+1992,Vietnam,datadoghq.eu,Login Screens,284,0,0.0
+1993,Vietnam,vivawebhost.com,Parked & For Sale Domains,284,0,0.0
+1994,Vietnam,google.co.mz,Search Engines,284,0,0.0
+1995,Vietnam,haberturk.com,News & Media,284,0,0.0
+1996,Vietnam,sliide.cloud,No Content,284,0,0.0
+1997,Vietnam,hltv.org,Gaming,284,0,0.0
+1998,Vietnam,lse.ac.uk,Education,284,0,0.0
+1999,Vietnam,stockx.com,Clothing,284,0,0.0
+2000,Vietnam,i0.wp.com,Personal Blogs,284,0,0.0

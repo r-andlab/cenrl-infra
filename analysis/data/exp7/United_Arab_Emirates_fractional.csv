@@ -1,0 +1,2001 @@
+time,country,target,category,n_votes,n_blocked,rewards
+1,United Arab Emirates,languagetoolplus.com,Education,216,0,0.0
+2,United Arab Emirates,oldschool.runescape.wiki,Education,216,0,0.0
+3,United Arab Emirates,litres.ru,Education,216,0,0.0
+4,United Arab Emirates,thespruce.com,Education,216,0,0.0
+5,United Arab Emirates,bookshop.org,Education,216,0,0.0
+6,United Arab Emirates,indiewire.com,Audio Streaming,216,0,0.0
+7,United Arab Emirates,fb.watch,Audio Streaming,216,0,0.0
+8,United Arab Emirates,deezer.com,Audio Streaming,216,0,0.0
+9,United Arab Emirates,dealer.spotify.com,Audio Streaming,216,0,0.0
+10,United Arab Emirates,spotify.com,Audio Streaming,216,0,0.0
+11,United Arab Emirates,jimdo.com,Nudity,216,0,0.0
+12,United Arab Emirates,acronis.com,Miscellaneous,216,0,0.0
+13,United Arab Emirates,stock.adobe.com,"News, Portal & Search",216,0,0.0
+14,United Arab Emirates,pavietnam.net,Hacking,216,0,0.0
+15,United Arab Emirates,asuscomm.com,Radio,216,0,0.0
+16,United Arab Emirates,aj2555.bid,Newly Seen Domains,216,0,0.0
+17,United Arab Emirates,mpsuadv.ru,Spam,216,0,0.0
+18,United Arab Emirates,afcdn.net,Newly Seen Domains,216,0,0.0
+19,United Arab Emirates,us-api.asm.skype.com,Internet Phone & VOIP,216,0,0.0
+20,United Arab Emirates,prodigygame.com,Science,216,0,0.0
+21,United Arab Emirates,pikweb.net,No Content,216,0,0.0
+22,United Arab Emirates,www.deviantart.com,Arts,216,41,0.1898
+23,United Arab Emirates,tango.me,Chat,216,132,0.6111
+24,United Arab Emirates,torproject.org,Anonymizer,216,47,0.2176
+25,United Arab Emirates,skyrock.net,Redirect,216,0,0.0
+26,United Arab Emirates,nrdp.prod.cloud.netflix.com,Movies,216,5,0.0231
+27,United Arab Emirates,reverso.net,Translator,216,0,0.0
+28,United Arab Emirates,ubereats.com,Food & Drink,216,21,0.0972
+29,United Arab Emirates,spotify.net,Login Screens,216,0,0.0
+30,United Arab Emirates,lesta.ru,Entertainment,216,0,0.0
+31,United Arab Emirates,azurewebsites.net,Safe for Kids,216,0,0.0
+32,United Arab Emirates,aa-rt.sharepoint.com,New Domains,216,5,0.0231
+33,United Arab Emirates,360yield.com,Login Screens,216,0,0.0
+34,United Arab Emirates,gali-result.in,Gambling,216,19,0.088
+35,United Arab Emirates,palmettostatearmory.com,Weapons,216,19,0.088
+36,United Arab Emirates,www.bet365.com,Sports,216,51,0.2361
+37,United Arab Emirates,poe.com,Malware,216,0,0.0
+38,United Arab Emirates,grindr.com,Lifestyle,216,131,0.6065
+39,United Arab Emirates,knowyourmeme.com,Humor,216,0,0.0
+40,United Arab Emirates,miibeian.gov.cn,"Politics, Advocacy, and Government-Related",216,0,0.0
+41,United Arab Emirates,netlify.com,APIs,216,0,0.0
+42,United Arab Emirates,nipr.mil,Violence,216,0,0.0
+43,United Arab Emirates,ec-lyon.fr,Educational Institutions,216,0,0.0
+44,United Arab Emirates,sensor.cloud.tenable.com,Information Security,216,5,0.0231
+45,United Arab Emirates,nasa.gov,Space & Astronomy,216,0,0.0
+46,United Arab Emirates,joann.com,Arts & Crafts,216,0,0.0
+47,United Arab Emirates,js7k.com,Parked & For Sale Domains,216,0,0.0
+48,United Arab Emirates,vrt.be,Television,216,0,0.0
+49,United Arab Emirates,gocomics.com,Comic Books,216,0,0.0
+50,United Arab Emirates,rtve.es,Television,216,0,0.0
+51,United Arab Emirates,at.ua,Unreachable,216,0,0.0
+52,United Arab Emirates,entrepreneur.com,Magazines,216,0,0.0
+53,United Arab Emirates,tripadvisor.in,Travel,216,0,0.0
+54,United Arab Emirates,victoriassecret.com,Lingerie & Bikini,216,0,0.0
+55,United Arab Emirates,wol.jw.org,Religion,216,0,0.0
+56,United Arab Emirates,flic.kr,Photography,216,0,0.0
+57,United Arab Emirates,rateyourmusic.com,Music,216,0,0.0
+58,United Arab Emirates,fr.linkedin.com,Professional Networking,216,5,0.0231
+59,United Arab Emirates,weather.gov,Government,216,0,0.0
+60,United Arab Emirates,bbcgoodfood.com,Video Streaming,216,0,0.0
+61,United Arab Emirates,telefonica.de,Messaging,216,0,0.0
+62,United Arab Emirates,pro.ibomma.link,Questionable Activities,216,0,0.0
+63,United Arab Emirates,sonyentertainmentnetwork.com,Gaming,216,0,0.0
+64,United Arab Emirates,lacoste.com,Clothing,216,0,0.0
+65,United Arab Emirates,we.tl,File Sharing,216,0,0.0
+66,United Arab Emirates,listcrawler.eu,Adult Themes,216,20,0.0926
+67,United Arab Emirates,gda.pl,Sex Education,216,0,0.0
+68,United Arab Emirates,outlook.live.com,Webmail,216,5,0.0231
+69,United Arab Emirates,m.beboo.ru,Dating & Relationships,216,0,0.0
+70,United Arab Emirates,sq-tungsten-ts.amazon-adsystem.com,Advertisements,216,0,0.0
+71,United Arab Emirates,megapbx.ru,Information Technology,216,0,0.0
+72,United Arab Emirates,osha.gov,Job Search & Careers,216,0,0.0
+73,United Arab Emirates,www.trendyol.com,Fashion,216,0,0.0
+74,United Arab Emirates,mediafire.com,"Militancy, Hate & Extremism",216,0,0.0
+75,United Arab Emirates,ebay.com,Auctions & Marketplaces,216,0,0.0
+76,United Arab Emirates,activebeat.com,Health & Fitness,216,0,0.0
+77,United Arab Emirates,avto.net,Vehicles,216,0,0.0
+78,United Arab Emirates,astro.com,Astrology,216,0,0.0
+79,United Arab Emirates,dmm.com,Home Video/DVD,216,0,0.0
+80,United Arab Emirates,groupon.com,Coupons,216,0,0.0
+81,United Arab Emirates,micpn.com,Content Servers,216,0,0.0
+82,United Arab Emirates,vox-cdn.com,Content Servers,216,0,0.0
+83,United Arab Emirates,evite.com,Digital Postcards,216,0,0.0
+84,United Arab Emirates,wipo.int,Hobbies & Interests,216,0,0.0
+85,United Arab Emirates,ok.xxx,Pornography,216,52,0.2407
+86,United Arab Emirates,marketwatch.com,Economy & Finance,216,0,0.0
+87,United Arab Emirates,thenationalnews.com,News & Media,216,0,0.0
+88,United Arab Emirates,icq.com,Instant Messengers,216,0,0.0
+89,United Arab Emirates,matomo.cloud,Technology,216,0,0.0
+90,United Arab Emirates,dgsltx.com,Ecommerce,216,0,0.0
+91,United Arab Emirates,intuit.com,Business,216,0,0.0
+92,United Arab Emirates,urban-vpn.com,P2P,216,42,0.1944
+93,United Arab Emirates,rentalcars.com,Shopping,216,0,0.0
+94,United Arab Emirates,parents.com,Parenting,216,0,0.0
+95,United Arab Emirates,expressvpn.com,P2P,216,44,0.2037
+96,United Arab Emirates,takedwn.ws,DGA Domains,216,0,0.0
+97,United Arab Emirates,petco.com,Pets,216,0,0.0
+98,United Arab Emirates,volcfcdndvs.com,DGA Domains,216,0,0.0
+99,United Arab Emirates,idealista.pt,Real Estate,216,0,0.0
+100,United Arab Emirates,metmuseum.org,Fine Art,216,0,0.0
+101,United Arab Emirates,houzz.com,Home & Garden,216,0,0.0
+102,United Arab Emirates,google.com.fj,Search Engines,216,0,0.0
+103,United Arab Emirates,google.co.ke,Search Engines,216,1,0.0046
+104,United Arab Emirates,eskimi.com,Social Networks,216,0,0.0
+105,United Arab Emirates,pull-cmaf-f16-tt02.fcdn.us.tiktokv.com,Social Networks,216,5,0.0231
+106,United Arab Emirates,jimdosite.com,Body Art,216,0,0.0
+107,United Arab Emirates,pinterest.co.uk,Social Networks,216,6,0.0278
+108,United Arab Emirates,lookmovie2.to,Phishing,216,131,0.6065
+109,United Arab Emirates,www.accuweather.com,Weather,216,0,0.0
+110,United Arab Emirates,metoffice.gov.uk,Weather,216,0,0.0
+111,United Arab Emirates,csdn.net,Forums,216,0,0.0
+112,United Arab Emirates,4channel.org,Forums,216,53,0.2454
+113,United Arab Emirates,bp.blogspot.com,Personal Blogs,216,3,0.0139
+114,United Arab Emirates,phpbb.com,Forums,216,0,0.0
+115,United Arab Emirates,mangabuddy.com,Cartoons & Anime,216,20,0.0926
+116,United Arab Emirates,animekimi.com,Cartoons & Anime,216,0,0.0
+117,United Arab Emirates,igvita.com,Personal Blogs,216,0,0.0
+118,United Arab Emirates,animesuge.to,Cartoons & Anime,216,0,0.0
+119,United Arab Emirates,dto.to,Cartoons & Anime,216,132,0.6111
+120,United Arab Emirates,bgdns.net,Phishing,216,1,0.0046
+121,United Arab Emirates,com.se,Phishing,216,0,0.0
+122,United Arab Emirates,onlar.az,Chat,216,0,0.0
+123,United Arab Emirates,fabguys.com,Lifestyle,216,41,0.1898
+124,United Arab Emirates,m.fabguys.com,Lifestyle,216,43,0.1991
+125,United Arab Emirates,olark.com,Chat,216,0,0.0
+126,United Arab Emirates,sniffies.com,Lifestyle,216,52,0.2407
+127,United Arab Emirates,jivo.ru,Chat,216,0,0.0
+128,United Arab Emirates,freshchat.com,Chat,216,0,0.0
+129,United Arab Emirates,love.ru,Chat,216,0,0.0
+130,United Arab Emirates,crisp.chat,Chat,216,0,0.0
+131,United Arab Emirates,kik.com,Chat,216,0,0.0
+132,United Arab Emirates,name-services.com,Phishing,216,0,0.0
+133,United Arab Emirates,tendawifi.com,Phishing,216,0,0.0
+134,United Arab Emirates,mystrikingly.com,Phishing,216,0,0.0
+135,United Arab Emirates,cmoa.jp,Cartoons & Anime,216,0,0.0
+136,United Arab Emirates,pokemon.com,Cartoons & Anime,216,0,0.0
+137,United Arab Emirates,marvel.com,Cartoons & Anime,216,0,0.0
+138,United Arab Emirates,wto.to,Cartoons & Anime,216,130,0.6019
+139,United Arab Emirates,manhwatop.com,Cartoons & Anime,216,21,0.0972
+140,United Arab Emirates,hto.to,Cartoons & Anime,216,20,0.0926
+141,United Arab Emirates,myanimelist.net,Cartoons & Anime,216,0,0.0
+142,United Arab Emirates,www3.animeflv.net,Cartoons & Anime,216,127,0.588
+143,United Arab Emirates,crunchyroll.com,Cartoons & Anime,216,2,0.0093
+144,United Arab Emirates,www.dlsite.com,Cartoons & Anime,216,20,0.0926
+145,United Arab Emirates,jut.su,Cartoons & Anime,216,0,0.0
+146,United Arab Emirates,kakuyomu.jp,Cartoons & Anime,216,41,0.1898
+147,United Arab Emirates,serebii.net,Cartoons & Anime,216,0,0.0
+148,United Arab Emirates,anime-planet.com,Cartoons & Anime,216,20,0.0926
+149,United Arab Emirates,cbr.com,Cartoons & Anime,216,0,0.0
+150,United Arab Emirates,mangalib.me,Cartoons & Anime,216,0,0.0
+151,United Arab Emirates,animeflv.net,Cartoons & Anime,216,130,0.6019
+152,United Arab Emirates,roblox.com,Chat,216,2,0.0093
+153,United Arab Emirates,sharechat.com,Chat,216,0,0.0
+154,United Arab Emirates,jivosite.com,Chat,216,0,0.0
+155,United Arab Emirates,mfms.ru,Chat,216,0,0.0
+156,United Arab Emirates,discord.media,Chat,216,0,0.0
+157,United Arab Emirates,boldchat.com,Chat,216,0,0.0
+158,United Arab Emirates,www.roblox.com,Chat,216,7,0.0324
+159,United Arab Emirates,omegle.com,Chat,216,72,0.3333
+160,United Arab Emirates,vivox.com,Chat,216,0,0.0
+161,United Arab Emirates,www.omegle.com,Chat,216,72,0.3333
+162,United Arab Emirates,livechat.com,Chat,216,0,0.0
+163,United Arab Emirates,space.com,Space & Astronomy,216,0,0.0
+164,United Arab Emirates,phys.org,Science,216,0,0.0
+165,United Arab Emirates,scientificamerican.com,Science,216,0,0.0
+166,United Arab Emirates,livescience.com,Science,216,0,0.0
+167,United Arab Emirates,play.prodigygame.com,Science,216,0,0.0
+168,United Arab Emirates,cdn.flashtalking.com,Content Servers,216,0,0.0
+169,United Arab Emirates,tradingview.com,Professional Networking,216,0,0.0
+170,United Arab Emirates,translate.goog,Translator,216,0,0.0
+171,United Arab Emirates,pinterest.ph,Photography,216,5,0.0231
+172,United Arab Emirates,knt9.xyz,DGA Domains,216,0,0.0
+173,United Arab Emirates,dominos.com,Food & Drink,216,0,0.0
+174,United Arab Emirates,liveintent.com,Business,216,0,0.0
+175,United Arab Emirates,www.croxyproxy.com,Anonymizer,216,2,0.0093
+176,United Arab Emirates,ccc.de,Hacking,216,0,0.0
+177,United Arab Emirates,ringcentral.com,Internet Phone & VOIP,216,0,0.0
+178,United Arab Emirates,www.pixiv.net,Forums,216,20,0.0926
+179,United Arab Emirates,flashscore.com.br,Sports,216,19,0.088
+180,United Arab Emirates,pixbet.com,Spam,216,51,0.2361
+181,United Arab Emirates,uva.nl,Educational Institutions,216,0,0.0
+182,United Arab Emirates,sharepoint.com,New Domains,216,0,0.0
+183,United Arab Emirates,suggestqueries.google.com,Search Engines,216,5,0.0231
+184,United Arab Emirates,linklist.bio,Malware,216,0,0.0
+185,United Arab Emirates,bumlam.com,Content Servers,216,0,0.0
+186,United Arab Emirates,eater.com,Video Streaming,216,0,0.0
+187,United Arab Emirates,kit.fontawesome.com,Information Technology,216,0,0.0
+188,United Arab Emirates,gotinder.com,Dating & Relationships,216,89,0.412
+189,United Arab Emirates,surriel.com,Radio,216,1,0.0046
+190,United Arab Emirates,prserv.net,Information Technology,216,0,0.0
+191,United Arab Emirates,yammer.com,Professional Networking,216,0,0.0
+192,United Arab Emirates,rt.com,News & Media,216,0,0.0
+193,United Arab Emirates,nrdp52-appboot.netflix.com,Television,216,5,0.0231
+194,United Arab Emirates,itunes.apple.com,Music,216,4,0.0185
+195,United Arab Emirates,m.humoruniv.com,Humor,216,0,0.0
+196,United Arab Emirates,m.happymh.com,Comic Books,216,0,0.0
+197,United Arab Emirates,noodlemagazine.com,Search Engines,216,52,0.2407
+198,United Arab Emirates,g.whatsapp.net,Internet Phone & VOIP,216,5,0.0231
+199,United Arab Emirates,value-domain.com,Miscellaneous,216,0,0.0
+200,United Arab Emirates,petfinder.com,Pets,216,0,0.0
+201,United Arab Emirates,keenetic.link,No Content,216,0,0.0
+202,United Arab Emirates,www.gov.pl,Travel,216,0,0.0
+203,United Arab Emirates,cnbc.com,Economy & Finance,216,0,0.0
+204,United Arab Emirates,walmart.com,Ecommerce,216,0,0.0
+205,United Arab Emirates,globalredir.akadns.net,Content Servers,216,0,0.0
+206,United Arab Emirates,fubo.tv,Television,216,0,0.0
+207,United Arab Emirates,in.gov,Government,216,0,0.0
+208,United Arab Emirates,olx.ua,Auctions & Marketplaces,216,0,0.0
+209,United Arab Emirates,picrew.me,Technology,216,0,0.0
+210,United Arab Emirates,w.org,Personal Blogs,216,0,0.0
+211,United Arab Emirates,photobucket.com,Photography,216,0,0.0
+212,United Arab Emirates,decathlon.fr,Clothing,216,0,0.0
+213,United Arab Emirates,ru.com,Malware,216,41,0.1898
+214,United Arab Emirates,active.com,Login Screens,216,0,0.0
+215,United Arab Emirates,joyn.de,Television,216,0,0.0
+216,United Arab Emirates,toyota.com,Vehicles,216,0,0.0
+217,United Arab Emirates,apkpure.com,Gaming,215,0,0.0
+218,United Arab Emirates,itch.io,Gaming,215,0,0.0
+219,United Arab Emirates,store.steampowered.com,Gaming,215,6,0.0279
+220,United Arab Emirates,secondlife.com,Gaming,215,2,0.0093
+221,United Arab Emirates,ms.applovin.com,Gaming,215,0,0.0
+222,United Arab Emirates,opera.com,Technology,215,0,0.0
+223,United Arab Emirates,pinterest.com,Photography,215,4,0.0186
+224,United Arab Emirates,m.ok.ru,Social Networks,215,0,0.0
+225,United Arab Emirates,reverb.com,Music,215,0,0.0
+226,United Arab Emirates,dailykos.com,Forums,215,0,0.0
+227,United Arab Emirates,kidsa-z.com,Login Screens,215,0,0.0
+228,United Arab Emirates,mumsnet.com,Parenting,215,0,0.0
+229,United Arab Emirates,utorrent.com,P2P,215,5,0.0233
+230,United Arab Emirates,prod.cloud.netflix.com,Television,215,4,0.0186
+231,United Arab Emirates,infoworld.com,Magazines,215,0,0.0
+232,United Arab Emirates,connectivitycheck.platform.hicloud.com,File Sharing,215,0,0.0
+233,United Arab Emirates,open.spotify.com,Audio Streaming,215,4,0.0186
+234,United Arab Emirates,market.yandex.ru,Auctions & Marketplaces,215,0,0.0
+235,United Arab Emirates,outbrainimg.com,Content Servers,215,0,0.0
+236,United Arab Emirates,accounts.google.com,Information Security,215,24,0.1116
+237,United Arab Emirates,juicyads.com,Lingerie & Bikini,215,51,0.2372
+238,United Arab Emirates,mamastar.jp,Parenting,215,0,0.0
+239,United Arab Emirates,nghttp2.org,APIs,215,0,0.0
+240,United Arab Emirates,music.apple.com,Audio Streaming,215,0,0.0
+241,United Arab Emirates,gunbroker.com,Weapons,215,18,0.0837
+242,United Arab Emirates,tripadvisor.com.br,Travel,215,0,0.0
+243,United Arab Emirates,babycenter.com,Parenting,215,0,0.0
+244,United Arab Emirates,icons8.com,File Sharing,215,0,0.0
+245,United Arab Emirates,ecnavi.jp,Shopping,215,0,0.0
+246,United Arab Emirates,mil.ru,Violence,215,0,0.0
+247,United Arab Emirates,humblebundle.com,Coupons,215,0,0.0
+248,United Arab Emirates,telecinco.es,Television,215,0,0.0
+249,United Arab Emirates,www.amazon.fr,Ecommerce,215,0,0.0
+250,United Arab Emirates,akc.org,Pets,215,0,0.0
+251,United Arab Emirates,autotrader.com,Vehicles,215,0,0.0
+252,United Arab Emirates,in.bookmyshow.com,Questionable Activities,215,0,0.0
+253,United Arab Emirates,gamerant.com,Hobbies & Interests,215,0,0.0
+254,United Arab Emirates,discogs.com,Audio Streaming,215,0,0.0
+255,United Arab Emirates,www.freepik.com,"News, Portal & Search",215,0,0.0
+256,United Arab Emirates,oupeng.com,File Sharing,215,0,0.0
+257,United Arab Emirates,piccoma.com,Comic Books,215,0,0.0
+258,United Arab Emirates,tdnsvod1.cn,Newly Seen Domains,215,0,0.0
+259,United Arab Emirates,unsplash.com,"News, Portal & Search",215,0,0.0
+260,United Arab Emirates,proxysite.com,Anonymizer,215,41,0.1907
+261,United Arab Emirates,tvbs.com.tw,Television,215,0,0.0
+262,United Arab Emirates,sinaedge.com,No Content,215,0,0.0
+263,United Arab Emirates,bingoplus.com,Gambling,215,18,0.0837
+264,United Arab Emirates,www.disneyplus.com,Movies,215,4,0.0186
+265,United Arab Emirates,cdbaby.com,Music,215,0,0.0
+266,United Arab Emirates,fdj.fr,Gambling,215,18,0.0837
+267,United Arab Emirates,cosmopolitan.com,Magazines,215,1,0.0047
+268,United Arab Emirates,googleads4.g.doubleclick.net,Advertisements,215,4,0.0186
+269,United Arab Emirates,casasbahia.com.br,Ecommerce,215,0,0.0
+270,United Arab Emirates,grammarlyaws.com,Content Servers,215,0,0.0
+271,United Arab Emirates,pandora.net,Ecommerce,215,0,0.0
+272,United Arab Emirates,select.mamastar.jp,Parenting,215,0,0.0
+273,United Arab Emirates,cafe24.com,Unreachable,215,0,0.0
+274,United Arab Emirates,www.discogs.com,Music,215,0,0.0
+275,United Arab Emirates,zara.com,Clothing,215,0,0.0
+276,United Arab Emirates,hubpages.com,Professional Networking,215,0,0.0
+277,United Arab Emirates,meetup.com,Entertainment,215,0,0.0
+278,United Arab Emirates,mask-api.icloud.com,File Sharing,215,4,0.0186
+279,United Arab Emirates,sec.gov,Government,215,0,0.0
+280,United Arab Emirates,athome.co.jp,Real Estate,215,0,0.0
+281,United Arab Emirates,shopee.io,Unreachable,215,0,0.0
+282,United Arab Emirates,kriesi.at,Personal Blogs,215,0,0.0
+283,United Arab Emirates,athemes.com,Hobbies & Interests,215,0,0.0
+284,United Arab Emirates,blogspot.co.uk,Arts & Crafts,215,0,0.0
+285,United Arab Emirates,wikiquote.org,Forums,215,0,0.0
+286,United Arab Emirates,outcome-ssp.supersonicads.com,Gaming,215,0,0.0
+287,United Arab Emirates,omnatuor.com,Malware,215,23,0.107
+288,United Arab Emirates,google.com.gt,Search Engines,215,0,0.0
+289,United Arab Emirates,global.aa-rt.sharepoint.com,New Domains,215,4,0.0186
+290,United Arab Emirates,translate.google.com,Translator,215,6,0.0279
+291,United Arab Emirates,allure.com,Magazines,215,0,0.0
+292,United Arab Emirates,deepl.com,Translator,215,4,0.0186
+293,United Arab Emirates,spanishdict.com,Translator,215,0,0.0
+294,United Arab Emirates,m.imdb.com,Television,215,0,0.0
+295,United Arab Emirates,google.si,Search Engines,215,0,0.0
+296,United Arab Emirates,horoscope.com,Astrology,216,0,0.0
+297,United Arab Emirates,web.whatsapp.com,Internet Phone & VOIP,216,4,0.0185
+298,United Arab Emirates,rfihub.com,Content Servers,216,0,0.0
+299,United Arab Emirates,fws.gov,Government,216,0,0.0
+300,United Arab Emirates,stradivarius.com,Fashion,216,0,0.0
+301,United Arab Emirates,garmin.com,Fashion,216,0,0.0
+302,United Arab Emirates,lingojam.com,Translator,216,0,0.0
+303,United Arab Emirates,gadgetsnow.com,Video Streaming,216,0,0.0
+304,United Arab Emirates,change.org,"Politics, Advocacy, and Government-Related",216,131,0.6065
+305,United Arab Emirates,marthastewart.com,Home & Garden,215,1,0.0047
+306,United Arab Emirates,panasonic.com,Home & Garden,215,0,0.0
+307,United Arab Emirates,www.lg.com,Home & Garden,215,0,0.0
+308,United Arab Emirates,lg.com,Home & Garden,215,0,0.0
+309,United Arab Emirates,izbirkom.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+310,United Arab Emirates,networkadvertising.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+311,United Arab Emirates,mhlw.go.jp,"Politics, Advocacy, and Government-Related",215,0,0.0
+312,United Arab Emirates,www.anses.gob.ar,"Politics, Advocacy, and Government-Related",215,0,0.0
+313,United Arab Emirates,law.edu.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+314,United Arab Emirates,thuvienphapluat.vn,"Politics, Advocacy, and Government-Related",215,0,0.0
+315,United Arab Emirates,maharashtra.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+316,United Arab Emirates,acs.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+317,United Arab Emirates,tayninh.gov.vn,"Politics, Advocacy, and Government-Related",215,0,0.0
+318,United Arab Emirates,eeoc.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+319,United Arab Emirates,acesso.gov.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+320,United Arab Emirates,weforum.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+321,United Arab Emirates,orcid.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+322,United Arab Emirates,ekloges.ypes.gr,"Politics, Advocacy, and Government-Related",215,0,0.0
+323,United Arab Emirates,httpwg.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+324,United Arab Emirates,garant.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+325,United Arab Emirates,rsc.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+326,United Arab Emirates,royalsocietypublishing.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+327,United Arab Emirates,oecd.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+328,United Arab Emirates,tjsp.jus.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+329,United Arab Emirates,michigan.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+330,United Arab Emirates,pmkisan.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+331,United Arab Emirates,service-public.fr,"Politics, Advocacy, and Government-Related",215,0,0.0
+332,United Arab Emirates,iso.ch,"Politics, Advocacy, and Government-Related",215,0,0.0
+333,United Arab Emirates,nationalacademies.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+334,United Arab Emirates,www.nhs.uk,"Politics, Advocacy, and Government-Related",215,0,0.0
+335,United Arab Emirates,justice.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+336,United Arab Emirates,undp.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+337,United Arab Emirates,mca.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+338,United Arab Emirates,cikrf.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+339,United Arab Emirates,unhcr.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+340,United Arab Emirates,fema.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+341,United Arab Emirates,acm.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+342,United Arab Emirates,kde.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+343,United Arab Emirates,nobelprize.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+344,United Arab Emirates,eia.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+345,United Arab Emirates,wien.gv.at,"Politics, Advocacy, and Government-Related",215,0,0.0
+346,United Arab Emirates,nrdc.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+347,United Arab Emirates,admhmao.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+348,United Arab Emirates,cancer.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+349,United Arab Emirates,nic.ls,"Politics, Advocacy, and Government-Related",215,0,0.0
+350,United Arab Emirates,nfpa.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+351,United Arab Emirates,gov.uz,"Politics, Advocacy, and Government-Related",215,0,0.0
+352,United Arab Emirates,beian.gov.cn,"Politics, Advocacy, and Government-Related",215,0,0.0
+353,United Arab Emirates,ewg.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+354,United Arab Emirates,meb.gov.tr,"Politics, Advocacy, and Government-Related",215,0,0.0
+355,United Arab Emirates,crpt.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+356,United Arab Emirates,cookielaw.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+357,United Arab Emirates,nato.int,"Politics, Advocacy, and Government-Related",215,0,0.0
+358,United Arab Emirates,un.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+359,United Arab Emirates,ns4.kaluga.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+360,United Arab Emirates,coe.int,"Politics, Advocacy, and Government-Related",215,0,0.0
+361,United Arab Emirates,w3.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+362,United Arab Emirates,shrm.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+363,United Arab Emirates,aafp.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+364,United Arab Emirates,www.gov.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+365,United Arab Emirates,e-recht24.de,"Politics, Advocacy, and Government-Related",215,0,0.0
+366,United Arab Emirates,diabetes.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+367,United Arab Emirates,unifiedportal-mem.epfindia.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+368,United Arab Emirates,www.beian.miit.gov.cn,"Politics, Advocacy, and Government-Related",215,0,0.0
+369,United Arab Emirates,bls.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+370,United Arab Emirates,scholarship.up.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+371,United Arab Emirates,nationalarchives.gov.uk,"Politics, Advocacy, and Government-Related",215,0,0.0
+372,United Arab Emirates,unwomen.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+373,United Arab Emirates,tcmb.gov.tr,"Politics, Advocacy, and Government-Related",215,0,0.0
+374,United Arab Emirates,theintercept.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+375,United Arab Emirates,usdoj.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+376,United Arab Emirates,turkiye.gov.tr,"Politics, Advocacy, and Government-Related",215,0,0.0
+377,United Arab Emirates,moe.gov.sa,"Politics, Advocacy, and Government-Related",215,0,0.0
+378,United Arab Emirates,russianpost.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+379,United Arab Emirates,asm.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+380,United Arab Emirates,jigsaw.w3.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+381,United Arab Emirates,rezync.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+382,United Arab Emirates,lbl.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+383,United Arab Emirates,europa.eu,"Politics, Advocacy, and Government-Related",215,0,0.0
+384,United Arab Emirates,boe.es,"Politics, Advocacy, and Government-Related",215,0,0.0
+385,United Arab Emirates,service.gov.uk,"Politics, Advocacy, and Government-Related",215,0,0.0
+386,United Arab Emirates,vatican.va,"Politics, Advocacy, and Government-Related",215,0,0.0
+387,United Arab Emirates,www.gov.cn,"Politics, Advocacy, and Government-Related",215,0,0.0
+388,United Arab Emirates,nami.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+389,United Arab Emirates,ecosia.org,"Politics, Advocacy, and Government-Related",215,3,0.014
+390,United Arab Emirates,nla.gov.au,"Politics, Advocacy, and Government-Related",215,0,0.0
+391,United Arab Emirates,heart.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+392,United Arab Emirates,deloitte.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+393,United Arab Emirates,ns5.kaluga.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+394,United Arab Emirates,iowa.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+395,United Arab Emirates,jusbrasil.com.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+396,United Arab Emirates,bldrdoc.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+397,United Arab Emirates,maine.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+398,United Arab Emirates,www.gov.uk,"Politics, Advocacy, and Government-Related",215,0,0.0
+399,United Arab Emirates,foreignaffairs.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+400,United Arab Emirates,aarp.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+401,United Arab Emirates,qld.gov.au,"Politics, Advocacy, and Government-Related",215,0,0.0
+402,United Arab Emirates,nps.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+403,United Arab Emirates,kremlin.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+404,United Arab Emirates,caf.fr,"Politics, Advocacy, and Government-Related",215,20,0.093
+405,United Arab Emirates,tfl.gov.uk,"Politics, Advocacy, and Government-Related",215,0,0.0
+406,United Arab Emirates,whitehouse.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+407,United Arab Emirates,esaj.tjsp.jus.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+408,United Arab Emirates,rosminzdrav.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+409,United Arab Emirates,utah.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+410,United Arab Emirates,admin.ch,"Politics, Advocacy, and Government-Related",215,0,0.0
+411,United Arab Emirates,samhsa.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+412,United Arab Emirates,epa.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+413,United Arab Emirates,cfr.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+414,United Arab Emirates,anses.gob.ar,"Politics, Advocacy, and Government-Related",215,0,0.0
+415,United Arab Emirates,usaid.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+416,United Arab Emirates,nso.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+417,United Arab Emirates,miit.gov.cn,"Politics, Advocacy, and Government-Related",215,0,0.0
+418,United Arab Emirates,beian.miit.gov.cn,"Politics, Advocacy, and Government-Related",215,0,0.0
+419,United Arab Emirates,schema.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+420,United Arab Emirates,mofa.gov.sa,"Politics, Advocacy, and Government-Related",215,0,0.0
+421,United Arab Emirates,spamhaus.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+422,United Arab Emirates,opensource.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+423,United Arab Emirates,return.gst.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+424,United Arab Emirates,karnataka.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+425,United Arab Emirates,vic.gov.au,"Politics, Advocacy, and Government-Related",215,0,0.0
+426,United Arab Emirates,rnp.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+427,United Arab Emirates,creativecommons.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+428,United Arab Emirates,www.gob.mx,"Politics, Advocacy, and Government-Related",215,0,0.0
+429,United Arab Emirates,icann.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+430,United Arab Emirates,bayern.de,"Politics, Advocacy, and Government-Related",215,0,0.0
+431,United Arab Emirates,sleepfoundation.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+432,United Arab Emirates,motherjones.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+433,United Arab Emirates,avaaz.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+434,United Arab Emirates,amnesty.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+435,United Arab Emirates,sii.cl,"Politics, Advocacy, and Government-Related",215,0,0.0
+436,United Arab Emirates,msk.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+437,United Arab Emirates,cia.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+438,United Arab Emirates,gesetze-im-internet.de,"Politics, Advocacy, and Government-Related",215,0,0.0
+439,United Arab Emirates,sss.gov.ph,"Politics, Advocacy, and Government-Related",215,0,0.0
+440,United Arab Emirates,agenciatributaria.gob.es,"Politics, Advocacy, and Government-Related",215,0,0.0
+441,United Arab Emirates,poder360.com.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+442,United Arab Emirates,passbook.epfindia.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+443,United Arab Emirates,lzptt.gx.cn,"Politics, Advocacy, and Government-Related",215,0,0.0
+444,United Arab Emirates,www.ecosia.org,"Politics, Advocacy, and Government-Related",215,3,0.014
+445,United Arab Emirates,afrinic.net,"Politics, Advocacy, and Government-Related",215,0,0.0
+446,United Arab Emirates,hawaii.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+447,United Arab Emirates,gst.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+448,United Arab Emirates,alz.org,"Politics, Advocacy, and Government-Related",216,0,0.0
+449,United Arab Emirates,www.turkiye.gov.tr,"Politics, Advocacy, and Government-Related",216,0,0.0
+450,United Arab Emirates,unodc.org,"Politics, Advocacy, and Government-Related",216,0,0.0
+451,United Arab Emirates,redcross.org,"Politics, Advocacy, and Government-Related",216,0,0.0
+452,United Arab Emirates,cnil.fr,"Politics, Advocacy, and Government-Related",216,0,0.0
+453,United Arab Emirates,unesco.org,"Politics, Advocacy, and Government-Related",216,0,0.0
+454,United Arab Emirates,worldbank.org,"Politics, Advocacy, and Government-Related",216,0,0.0
+455,United Arab Emirates,unep.org,"Politics, Advocacy, and Government-Related",216,0,0.0
+456,United Arab Emirates,supremecourt.gov,"Politics, Advocacy, and Government-Related",216,0,0.0
+457,United Arab Emirates,login.caixa.gov.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+458,United Arab Emirates,nalog.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+459,United Arab Emirates,cdn.cookielaw.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+460,United Arab Emirates,ky.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+461,United Arab Emirates,canada.ca,"Politics, Advocacy, and Government-Related",215,0,0.0
+462,United Arab Emirates,gofundme.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+463,United Arab Emirates,aap.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+464,United Arab Emirates,lodz.pl,"Politics, Advocacy, and Government-Related",215,0,0.0
+465,United Arab Emirates,inss.gov.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+466,United Arab Emirates,gc.ca,"Politics, Advocacy, and Government-Related",215,0,0.0
+467,United Arab Emirates,gpo.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+468,United Arab Emirates,gov.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+469,United Arab Emirates,wmo.int,"Politics, Advocacy, and Government-Related",215,0,0.0
+470,United Arab Emirates,washingtonexaminer.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+471,United Arab Emirates,poetryfoundation.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+472,United Arab Emirates,ted.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+473,United Arab Emirates,unfccc.int,"Politics, Advocacy, and Government-Related",215,0,0.0
+474,United Arab Emirates,gencat.cat,"Politics, Advocacy, and Government-Related",215,0,0.0
+475,United Arab Emirates,nhtsa.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+476,United Arab Emirates,bkn.go.id,"Politics, Advocacy, and Government-Related",215,0,0.0
+477,United Arab Emirates,ssc.nic.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+478,United Arab Emirates,federalreserve.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+479,United Arab Emirates,up.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+480,United Arab Emirates,opera-api.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+481,United Arab Emirates,dot.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+482,United Arab Emirates,iubenda.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+483,United Arab Emirates,services.gst.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+484,United Arab Emirates,nsf.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+485,United Arab Emirates,fas.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+486,United Arab Emirates,berlin.de,"Politics, Advocacy, and Government-Related",215,0,0.0
+487,United Arab Emirates,unicef.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+488,United Arab Emirates,justgiving.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+489,United Arab Emirates,findlaw.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+490,United Arab Emirates,juntadeandalucia.es,"Politics, Advocacy, and Government-Related",215,0,0.0
+491,United Arab Emirates,gob.pe,"Politics, Advocacy, and Government-Related",215,0,0.0
+492,United Arab Emirates,bund.de,"Politics, Advocacy, and Government-Related",215,0,0.0
+493,United Arab Emirates,gnome.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+494,United Arab Emirates,gsa.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+495,United Arab Emirates,britishcouncil.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+496,United Arab Emirates,planalto.gov.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+497,United Arab Emirates,ipcc.ch,"Politics, Advocacy, and Government-Related",215,0,0.0
+498,United Arab Emirates,nber.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+499,United Arab Emirates,namdinh.gov.vn,"Politics, Advocacy, and Government-Related",215,0,0.0
+500,United Arab Emirates,nationalgeographic.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+501,United Arab Emirates,thehill.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+502,United Arab Emirates,treasury.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+503,United Arab Emirates,myaadhaar.uidai.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+504,United Arab Emirates,oclc.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+505,United Arab Emirates,sat.gob.mx,"Politics, Advocacy, and Government-Related",215,0,0.0
+506,United Arab Emirates,ilo.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+507,United Arab Emirates,americanbar.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+508,United Arab Emirates,agenziaentrate.gov.it,"Politics, Advocacy, and Government-Related",215,0,0.0
+509,United Arab Emirates,cancer.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+510,United Arab Emirates,apa.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+511,United Arab Emirates,cnrs.fr,"Politics, Advocacy, and Government-Related",215,0,0.0
+512,United Arab Emirates,giris.turkiye.gov.tr,"Politics, Advocacy, and Government-Related",215,0,0.0
+513,United Arab Emirates,gosuslugi.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+514,United Arab Emirates,meti.go.jp,"Politics, Advocacy, and Government-Related",215,0,0.0
+515,United Arab Emirates,servicioscorp.anses.gob.ar,"Politics, Advocacy, and Government-Related",215,0,0.0
+516,United Arab Emirates,plos.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+517,United Arab Emirates,ieee.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+518,United Arab Emirates,caixa.gov.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+519,United Arab Emirates,aboutcookies.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+520,United Arab Emirates,ct.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+521,United Arab Emirates,ohchr.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+522,United Arab Emirates,delaware.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+523,United Arab Emirates,consultant.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+524,United Arab Emirates,mcx.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+525,United Arab Emirates,rajasthan.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+526,United Arab Emirates,usembassy.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+527,United Arab Emirates,tsa.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+528,United Arab Emirates,fazenda.gov.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+529,United Arab Emirates,energy.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+530,United Arab Emirates,emerald.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+531,United Arab Emirates,clinicaltrials.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+532,United Arab Emirates,uscis.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+533,United Arab Emirates,daftar-sscasn.bkn.go.id,"Politics, Advocacy, and Government-Related",215,0,0.0
+534,United Arab Emirates,raspberrypi.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+535,United Arab Emirates,fao.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+536,United Arab Emirates,thenation.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+537,United Arab Emirates,tatar.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+538,United Arab Emirates,jst.go.jp,"Politics, Advocacy, and Government-Related",215,0,0.0
+539,United Arab Emirates,www.jusbrasil.com.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+540,United Arab Emirates,healthcare.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+541,United Arab Emirates,moe.gov.cn,"Politics, Advocacy, and Government-Related",215,1,0.0047
+542,United Arab Emirates,ec.europa.eu,"Politics, Advocacy, and Government-Related",215,1,0.0047
+543,United Arab Emirates,iaea.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+544,United Arab Emirates,incometax.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+545,United Arab Emirates,imf.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+546,United Arab Emirates,ons.gov.uk,"Politics, Advocacy, and Government-Related",215,0,0.0
+547,United Arab Emirates,fcc.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+548,United Arab Emirates,eff.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+549,United Arab Emirates,ama-assn.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+550,United Arab Emirates,propublica.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+551,United Arab Emirates,hrw.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+552,United Arab Emirates,wassenaar.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+553,United Arab Emirates,cpsc.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+554,United Arab Emirates,sudrf.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+555,United Arab Emirates,medicare.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+556,United Arab Emirates,justia.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+557,United Arab Emirates,uscourts.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+558,United Arab Emirates,ncsl.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+559,United Arab Emirates,google.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+560,United Arab Emirates,usa.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+561,United Arab Emirates,mos.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+562,United Arab Emirates,ohio.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+563,United Arab Emirates,who.int,"Politics, Advocacy, and Government-Related",215,0,0.0
+564,United Arab Emirates,sba.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+565,United Arab Emirates,politico.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+566,United Arab Emirates,usda.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+567,United Arab Emirates,egais.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+568,United Arab Emirates,roskazna.ru,"Politics, Advocacy, and Government-Related",215,0,0.0
+569,United Arab Emirates,esa.int,"Politics, Advocacy, and Government-Related",215,0,0.0
+570,United Arab Emirates,gob.mx,"Politics, Advocacy, and Government-Related",215,0,0.0
+571,United Arab Emirates,tpad2.tsc.go.ke,"Politics, Advocacy, and Government-Related",215,0,0.0
+572,United Arab Emirates,wto.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+573,United Arab Emirates,miitbeian.gov.cn,"Politics, Advocacy, and Government-Related",215,0,0.0
+574,United Arab Emirates,iso.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+575,United Arab Emirates,worldwildlife.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+576,United Arab Emirates,sso.acesso.gov.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+577,United Arab Emirates,uidai.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+578,United Arab Emirates,bom.gov.au,"Politics, Advocacy, and Government-Related",215,0,0.0
+579,United Arab Emirates,epfindia.gov.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+580,United Arab Emirates,wa.gov.au,"Politics, Advocacy, and Government-Related",215,0,0.0
+581,United Arab Emirates,itu.int,"Politics, Advocacy, and Government-Related",215,0,0.0
+582,United Arab Emirates,ypes.gr,"Politics, Advocacy, and Government-Related",215,0,0.0
+583,United Arab Emirates,copyright.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+584,United Arab Emirates,member.sss.gov.ph,"Politics, Advocacy, and Government-Related",215,0,0.0
+585,United Arab Emirates,iata.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+586,United Arab Emirates,specbench.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+587,United Arab Emirates,owasp.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+588,United Arab Emirates,euractiv.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+589,United Arab Emirates,national-lottery.co.uk,"Politics, Advocacy, and Government-Related",215,18,0.0837
+590,United Arab Emirates,enabiz.gov.tr,"Politics, Advocacy, and Government-Related",215,0,0.0
+591,United Arab Emirates,usgs.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+592,United Arab Emirates,tsc.go.ke,"Politics, Advocacy, and Government-Related",215,0,0.0
+593,United Arab Emirates,lexisnexis.com,"Politics, Advocacy, and Government-Related",215,0,0.0
+594,United Arab Emirates,chsi.com.cn,"Politics, Advocacy, and Government-Related",215,0,0.0
+595,United Arab Emirates,www.universal-credit.service.gov.uk,"Politics, Advocacy, and Government-Related",215,0,0.0
+596,United Arab Emirates,sp.gov.br,"Politics, Advocacy, and Government-Related",215,0,0.0
+597,United Arab Emirates,irctc.co.in,"Politics, Advocacy, and Government-Related",215,0,0.0
+598,United Arab Emirates,merit.net,"Politics, Advocacy, and Government-Related",215,0,0.0
+599,United Arab Emirates,colorado.gov,"Politics, Advocacy, and Government-Related",215,0,0.0
+600,United Arab Emirates,aclu.org,"Politics, Advocacy, and Government-Related",215,0,0.0
+601,United Arab Emirates,education.gouv.fr,"Politics, Advocacy, and Government-Related",215,0,0.0
+602,United Arab Emirates,nsw.gov.au,"Politics, Advocacy, and Government-Related",215,0,0.0
+603,United Arab Emirates,ag.gov.au,"Politics, Advocacy, and Government-Related",215,0,0.0
+604,United Arab Emirates,hollywoodbets.net,Gambling,215,49,0.2279
+605,United Arab Emirates,estrelabet.com,Gambling,215,49,0.2279
+606,United Arab Emirates,m.wplay.co,Gambling,215,18,0.0837
+607,United Arab Emirates,www.sportybet.com,Gambling,215,49,0.2279
+608,United Arab Emirates,jra.go.jp,Gambling,215,18,0.0837
+609,United Arab Emirates,ancestry.com,Hobbies & Interests,215,0,0.0
+610,United Arab Emirates,elo7.com.br,Arts & Crafts,215,0,0.0
+611,United Arab Emirates,blogspot.in,Unreachable,215,0,0.0
+612,United Arab Emirates,afreecatv.com,Video Streaming,215,0,0.0
+613,United Arab Emirates,sciencealert.com,Science,215,0,0.0
+614,United Arab Emirates,topwar.ru,Violence,215,0,0.0
+615,United Arab Emirates,www.canva.com,Hobbies & Interests,215,3,0.014
+616,United Arab Emirates,dailyinnovation.biz,Astrology,215,0,0.0
+617,United Arab Emirates,www.deepl.com,Translator,215,4,0.0186
+618,United Arab Emirates,lichess.org,Hobbies & Interests,215,0,0.0
+619,United Arab Emirates,mathway.com,Science,215,0,0.0
+620,United Arab Emirates,mail.yahoo.com,Webmail,215,4,0.0186
+621,United Arab Emirates,www.meesho.com,Fashion,215,0,0.0
+622,United Arab Emirates,bancointer.com.br,Economy & Finance,215,0,0.0
+623,United Arab Emirates,spacebattles.com,Hobbies & Interests,215,0,0.0
+624,United Arab Emirates,bigbadtoystore.com,Safe for Kids,215,0,0.0
+625,United Arab Emirates,www.wapoz.info,Pornography,215,19,0.0884
+626,United Arab Emirates,churchcenter.com,Religion,215,0,0.0
+627,United Arab Emirates,cardgames.io,Gaming,215,0,0.0
+628,United Arab Emirates,www.instagram.com,Photography,215,4,0.0186
+629,United Arab Emirates,aria.microsoft.com,Information Technology,215,0,0.0
+630,United Arab Emirates,ninisite.com,Parenting,215,0,0.0
+631,United Arab Emirates,nexusmods.com,Hobbies & Interests,215,0,0.0
+632,United Arab Emirates,tf1.fr,Television,215,0,0.0
+633,United Arab Emirates,pull-hls-f77-gcp01.tiktokcdn.com,Social Networks,215,4,0.0186
+634,United Arab Emirates,ana.co.jp,Travel,215,0,0.0
+635,United Arab Emirates,kr-weathernews.com,Weather,215,0,0.0
+636,United Arab Emirates,google.com.ni,Search Engines,215,0,0.0
+637,United Arab Emirates,mmx-ds.cdn.whatsapp.net,Instant Messengers,215,4,0.0186
+638,United Arab Emirates,clamav.net,Information Security,215,0,0.0
+639,United Arab Emirates,freeip.me,Anonymizer,215,0,0.0
+640,United Arab Emirates,imgflip.com,Adult Themes,215,0,0.0
+641,United Arab Emirates,funnyjunk.com,Humor,215,18,0.0837
+642,United Arab Emirates,blooket.com,Safe for Kids,215,0,0.0
+643,United Arab Emirates,www.3bmeteo.com,Weather,215,0,0.0
+644,United Arab Emirates,attentivemobile.com,Messaging,215,0,0.0
+645,United Arab Emirates,themeisle.com,Hobbies & Interests,215,0,0.0
+646,United Arab Emirates,ximalaya.com,Music,215,0,0.0
+647,United Arab Emirates,samsungads.com,Television,215,0,0.0
+648,United Arab Emirates,www.flashscore.com,Gambling,215,40,0.186
+649,United Arab Emirates,3movs.com,Pornography,215,50,0.2326
+650,United Arab Emirates,zee5.com,Television,215,0,0.0
+651,United Arab Emirates,meteofrance.com,Weather,215,0,0.0
+652,United Arab Emirates,texas.gov,Government,215,0,0.0
+653,United Arab Emirates,chewy.com,Pets,215,0,0.0
+654,United Arab Emirates,www.temu.com,Newly Seen Domains,215,0,0.0
+655,United Arab Emirates,www.youjizz.com,Pornography,215,50,0.2326
+656,United Arab Emirates,cdn.whatsapp.net,Internet Phone & VOIP,215,3,0.014
+657,United Arab Emirates,movie.eroterest.net,Personal Blogs,215,19,0.0884
+658,United Arab Emirates,masterclass.com,Education,215,0,0.0
+659,United Arab Emirates,ravelry.com,Hobbies & Interests,215,0,0.0
+660,United Arab Emirates,stackexchange.com,Forums,215,0,0.0
+661,United Arab Emirates,mcdonalds.com,Food & Drink,215,0,0.0
+662,United Arab Emirates,www.samsung.com,Home & Garden,215,0,0.0
+663,United Arab Emirates,bonappetit.com,Magazines,215,0,0.0
+664,United Arab Emirates,context.reverso.net,Translator,215,0,0.0
+665,United Arab Emirates,www.biblegateway.com,Religion,215,0,0.0
+666,United Arab Emirates,ibb.co,Photography,215,0,0.0
+667,United Arab Emirates,www.news.com.au,News & Media,215,0,0.0
+668,United Arab Emirates,deliverimp.com,Advertisements,215,0,0.0
+669,United Arab Emirates,guc3-spclient.spotify.com,Audio Streaming,215,0,0.0
+670,United Arab Emirates,plutotv.net,Television,215,0,0.0
+671,United Arab Emirates,myaccount.google.com,Information Security,215,4,0.0186
+672,United Arab Emirates,netcts.cdn-apple.com,Content Servers,215,0,0.0
+673,United Arab Emirates,uhc.com,Economy & Finance,215,0,0.0
+674,United Arab Emirates,military.com,Violence,215,0,0.0
+675,United Arab Emirates,pinterest.com.mx,Photography,215,4,0.0186
+676,United Arab Emirates,apartmenttherapy.com,Home & Garden,215,0,0.0
+677,United Arab Emirates,disneyplus.com,Safe for Kids,215,3,0.014
+678,United Arab Emirates,mathplayground.com,Safe for Kids,215,0,0.0
+679,United Arab Emirates,noaa.gov,Government,215,0,0.0
+680,United Arab Emirates,ew.com,Entertainment,215,0,0.0
+681,United Arab Emirates,pull-f5-gcp01.fcdn.us.tiktokv.com,Video Streaming,215,4,0.0186
+682,United Arab Emirates,runescape.com,Hobbies & Interests,215,0,0.0
+683,United Arab Emirates,gr.global.aa-rt.sharepoint.com,New Domains,215,4,0.0186
+684,United Arab Emirates,bizport.cn,Messaging,215,0,0.0
+685,United Arab Emirates,pull-cmaf-f16-tt01.tiktokcdn.com,Social Networks,215,4,0.0186
+686,United Arab Emirates,betweendigital.com,Advertisements,215,0,0.0
+687,United Arab Emirates,brainly.com.br,Education,215,0,0.0
+688,United Arab Emirates,ads.linkedin.com,Professional Networking,215,4,0.0186
+689,United Arab Emirates,soundcloud.com,Audio Streaming,215,4,0.0186
+690,United Arab Emirates,dafiti.com.br,Clothing,215,0,0.0
+691,United Arab Emirates,gucci.com,Fashion,215,0,0.0
+692,United Arab Emirates,bangmod.cloud,Advertisements,215,0,0.0
+693,United Arab Emirates,mail.aol.com,Webmail,215,0,0.0
+694,United Arab Emirates,www.goojara.to,Movies,215,127,0.5907
+695,United Arab Emirates,epicurious.com,Food & Drink,215,1,0.0047
+696,United Arab Emirates,countryliving.com,Magazines,215,0,0.0
+697,United Arab Emirates,th.bing.com,Search Engines,215,0,0.0
+698,United Arab Emirates,yelp.com,Shopping,215,3,0.014
+699,United Arab Emirates,prod.partner.netflix.net,Movies,215,4,0.0186
+700,United Arab Emirates,amazonvideo.com,Movies,215,0,0.0
+701,United Arab Emirates,push.prod.netflix.com,Movies,215,4,0.0186
+702,United Arab Emirates,secure.netflix.com,Movies,215,4,0.0186
+703,United Arab Emirates,themoviedb.org,Movies,215,0,0.0
+704,United Arab Emirates,api-global.netflix.com,Movies,215,4,0.0186
+705,United Arab Emirates,iq.com,Movies,215,0,0.0
+706,United Arab Emirates,art.ibomma.link,Movies,215,0,0.0
+707,United Arab Emirates,voka.tv,Movies,215,0,0.0
+708,United Arab Emirates,cloud.netflix.com,Movies,215,4,0.0186
+709,United Arab Emirates,netflix.com,Movies,215,24,0.1116
+710,United Arab Emirates,int.ibomma.link,Movies,215,0,0.0
+711,United Arab Emirates,www.imdb.com,Movies,215,0,0.0
+712,United Arab Emirates,primevideo.com,Movies,215,4,0.0186
+713,United Arab Emirates,fandom.com,Movies,215,0,0.0
+714,United Arab Emirates,nflximg.com,Movies,215,0,0.0
+715,United Arab Emirates,letterboxd.com,Movies,215,0,0.0
+716,United Arab Emirates,vudu.com,Movies,215,0,0.0
+717,United Arab Emirates,goojara.to,Movies,215,131,0.6093
+718,United Arab Emirates,wikia.com,Movies,215,1,0.0047
+719,United Arab Emirates,www.jiocinema.com,Movies,215,0,0.0
+720,United Arab Emirates,v.qq.com,Movies,215,4,0.0186
+721,United Arab Emirates,battwo.com,Movies,215,130,0.6047
+722,United Arab Emirates,boxofficemojo.com,Movies,215,2,0.0093
+723,United Arab Emirates,nrdp.prod.ftl.netflix.com,Movies,215,4,0.0186
+724,United Arab Emirates,jp.spankbang.com,Movies,215,19,0.0884
+725,United Arab Emirates,starwars.com,Movies,215,0,0.0
+726,United Arab Emirates,ibomma.link,Movies,215,0,0.0
+727,United Arab Emirates,preapp.prod.partner.netflix.net,Movies,215,4,0.0186
+728,United Arab Emirates,rottentomatoes.com,Movies,215,0,0.0
+729,United Arab Emirates,m.animeflv.net,Movies,215,130,0.6047
+730,United Arab Emirates,xyz.ibomma.link,Movies,215,1,0.0047
+731,United Arab Emirates,prod.ftl.netflix.com,Movies,215,4,0.0186
+732,United Arab Emirates,hbomax.com,Movies,215,4,0.0186
+733,United Arab Emirates,partner.netflix.net,Movies,215,4,0.0186
+734,United Arab Emirates,dcinside.com,Movies,215,4,0.0186
+735,United Arab Emirates,ww1.goojara.to,Movies,215,130,0.6047
+736,United Arab Emirates,sonypictures.com,Movies,215,1,0.0047
+737,United Arab Emirates,warnerbros.com,Movies,215,0,0.0
+738,United Arab Emirates,mydramalist.com,Movies,215,0,0.0
+739,United Arab Emirates,edu.ibomma.link,Movies,215,0,0.0
+740,United Arab Emirates,bio.ibomma.link,Movies,215,0,0.0
+741,United Arab Emirates,filmstarts.de,Movies,215,0,0.0
+742,United Arab Emirates,filmaffinity.com,Movies,215,0,0.0
+743,United Arab Emirates,gamesradar.com,Movies,215,0,0.0
+744,United Arab Emirates,nrdp-ipv6.prod.ftl.netflix.com,Movies,215,4,0.0186
+745,United Arab Emirates,www.primevideo.com,Movies,215,4,0.0186
+746,United Arab Emirates,m.dcinside.com,Movies,215,4,0.0186
+747,United Arab Emirates,bookmyshow.com,Movies,215,0,0.0
+748,United Arab Emirates,filmweb.pl,Movies,215,0,0.0
+749,United Arab Emirates,ivi.ru,Movies,215,0,0.0
+750,United Arab Emirates,gall.dcinside.com,Movies,215,4,0.0186
+751,United Arab Emirates,uiboot.netflix.com,Movies,215,4,0.0186
+752,United Arab Emirates,csfd.cz,Movies,215,0,0.0
+753,United Arab Emirates,hdtoday.tv,Movies,215,40,0.186
+754,United Arab Emirates,prod.netflix.com,Movies,215,4,0.0186
+755,United Arab Emirates,hotstar.com,Movies,215,0,0.0
+756,United Arab Emirates,imdb.com,Movies,215,0,0.0
+757,United Arab Emirates,www.hulu.com,Movies,215,4,0.0186
+758,United Arab Emirates,kinoafisha.info,Movies,215,0,0.0
+759,United Arab Emirates,filimo.com,Movies,215,40,0.186
+760,United Arab Emirates,disney.co.jp,Movies,215,0,0.0
+761,United Arab Emirates,allocine.fr,Movies,215,0,0.0
+762,United Arab Emirates,www.netflix.com,Movies,215,4,0.0186
+763,United Arab Emirates,kino.de,Movies,215,0,0.0
+764,United Arab Emirates,nflxvideo.net,Movies,215,0,0.0
+765,United Arab Emirates,screenrant.com,Movies,215,0,0.0
+766,United Arab Emirates,ftl.netflix.com,Movies,215,4,0.0186
+767,United Arab Emirates,logs.netflix.com,Movies,215,4,0.0186
+768,United Arab Emirates,kinopoisk.ru,Movies,215,0,0.0
+769,United Arab Emirates,tubitv.com,Movies,215,4,0.0186
+770,United Arab Emirates,api.amazonvideo.com,Movies,215,0,0.0
+771,United Arab Emirates,app.ibomma.link,Movies,215,0,0.0
+772,United Arab Emirates,gov.ibomma.link,Movies,215,0,0.0
+773,United Arab Emirates,hulu.com,Movies,215,0,0.0
+774,United Arab Emirates,www.hotstar.com,Movies,215,0,0.0
+775,United Arab Emirates,tmdb.org,Movies,215,0,0.0
+776,United Arab Emirates,netflix.net,Movies,215,4,0.0186
+777,United Arab Emirates,jiocinema.com,Movies,215,0,0.0
+778,United Arab Emirates,plex.tv,Movies,215,4,0.0186
+779,United Arab Emirates,4chan.org,Forums,215,148,0.6884
+780,United Arab Emirates,m.fanfiction.net,Forums,215,19,0.0884
+781,United Arab Emirates,thingiverse.com,Forums,215,0,0.0
+782,United Arab Emirates,qiita.com,Forums,215,0,0.0
+783,United Arab Emirates,resetera.com,Forums,215,0,0.0
+784,United Arab Emirates,dogdrip.net,Forums,215,0,0.0
+785,United Arab Emirates,ropro.io,Forums,215,0,0.0
+786,United Arab Emirates,nairaland.com,Forums,215,40,0.186
+787,United Arab Emirates,furaffinity.net,Forums,215,19,0.0884
+788,United Arab Emirates,quora.com,Forums,215,0,0.0
+789,United Arab Emirates,planetminecraft.com,Forums,215,0,0.0
+790,United Arab Emirates,chime.aws,Forums,215,0,0.0
+791,United Arab Emirates,forexfactory.com,Forums,215,20,0.093
+792,United Arab Emirates,steamcommunity.com,Forums,215,6,0.0279
+793,United Arab Emirates,fanfiction.net,Forums,215,19,0.0884
+794,United Arab Emirates,redd.it,Forums,215,0,0.0
+795,United Arab Emirates,pantip.com,Forums,215,0,0.0
+796,United Arab Emirates,bigthink.com,Forums,215,0,0.0
+797,United Arab Emirates,detail.chiebukuro.yahoo.co.jp,Forums,215,0,0.0
+798,United Arab Emirates,www.nairaland.com,Forums,215,40,0.186
+799,United Arab Emirates,gutefrage.net,Forums,215,0,0.0
+800,United Arab Emirates,bakusai.com,Forums,215,0,0.0
+801,United Arab Emirates,mql5.com,Forums,215,0,0.0
+802,United Arab Emirates,cnblogs.com,Forums,215,0,0.0
+803,United Arab Emirates,yougov.com,Forums,215,0,0.0
+804,United Arab Emirates,flightrising.com,Forums,215,0,0.0
+805,United Arab Emirates,gamer.com.tw,Forums,215,0,0.0
+806,United Arab Emirates,5ch.net,Forums,215,4,0.0186
+807,United Arab Emirates,www.ptt.cc,Forums,215,0,0.0
+808,United Arab Emirates,hoyolab.com,Forums,215,0,0.0
+809,United Arab Emirates,f95zone.to,Forums,215,128,0.5953
+810,United Arab Emirates,old.reddit.com,Forums,215,4,0.0186
+811,United Arab Emirates,elastic.co,Forums,215,0,0.0
+812,United Arab Emirates,gelbooru.com,Forums,215,50,0.2326
+813,United Arab Emirates,rutracker.org,Forums,215,125,0.5814
+814,United Arab Emirates,www.quora.com,Forums,215,6,0.0279
+815,United Arab Emirates,skyscrapercity.com,Forums,215,0,0.0
+816,United Arab Emirates,girlschannel.net,Forums,215,0,0.0
+817,United Arab Emirates,pixiv.net,Forums,215,0,0.0
+818,United Arab Emirates,www.furaffinity.net,Forums,215,19,0.0884
+819,United Arab Emirates,yaplakal.com,Forums,215,0,0.0
+820,United Arab Emirates,ptt.cc,Forums,215,0,0.0
+821,United Arab Emirates,alb.reddit.com,Forums,215,6,0.0279
+822,United Arab Emirates,dev.to,Forums,215,2,0.0093
+823,United Arab Emirates,wowhead.com,Forums,215,0,0.0
+824,United Arab Emirates,arca.live,Forums,215,0,0.0
+825,United Arab Emirates,apachelounge.com,Forums,215,0,0.0
+826,United Arab Emirates,theqoo.net,Forums,215,0,0.0
+827,United Arab Emirates,brainly.lat,Forums,215,0,0.0
+828,United Arab Emirates,ppomppu.co.kr,Forums,215,0,0.0
+829,United Arab Emirates,www.wowhead.com,Forums,215,0,0.0
+830,United Arab Emirates,m.ppomppu.co.kr,Forums,215,0,0.0
+831,United Arab Emirates,stackoverflow.com,Forums,215,4,0.0186
+832,United Arab Emirates,zhihu.com,Forums,215,0,0.0
+833,United Arab Emirates,business2community.com,Forums,215,0,0.0
+834,United Arab Emirates,habr.com,Forums,215,0,0.0
+835,United Arab Emirates,dnspod.com,Forums,215,0,0.0
+836,United Arab Emirates,www.reddit.com,Forums,215,5,0.0233
+837,United Arab Emirates,servidoresdns.net,Forums,215,0,0.0
+838,United Arab Emirates,m.pantip.com,Forums,215,0,0.0
+839,United Arab Emirates,reddit.com,Forums,215,1,0.0047
+840,United Arab Emirates,nn.gx.cn,Forums,215,0,0.0
+841,United Arab Emirates,cisa.gov,Government,215,0,0.0
+842,United Arab Emirates,cms.gov,Government,215,0,0.0
+843,United Arab Emirates,oregon.gov,Government,215,0,0.0
+844,United Arab Emirates,studentaid.gov,Government,215,0,0.0
+845,United Arab Emirates,virginia.gov,Government,215,0,0.0
+846,United Arab Emirates,namebrightdns.com,Parked & For Sale Domains,215,0,0.0
+847,United Arab Emirates,rand.org,Home & Garden,215,0,0.0
+848,United Arab Emirates,dbankcloud.ru,Unreachable,215,0,0.0
+849,United Arab Emirates,mangatoto.com,Comic Books,215,19,0.0884
+850,United Arab Emirates,chat.google.com,Instant Messengers,215,4,0.0186
+851,United Arab Emirates,eukdns.com,No Content,215,0,0.0
+852,United Arab Emirates,prava-online.net,Parked & For Sale Domains,215,0,0.0
+853,United Arab Emirates,tvsquared.com,Television,215,0,0.0
+854,United Arab Emirates,house.gov,Government,215,0,0.0
+855,United Arab Emirates,is.gd,Redirect,215,0,0.0
+856,United Arab Emirates,croxyproxy.com,Anonymizer,215,2,0.0093
+857,United Arab Emirates,www.agoda.com,Coupons,215,0,0.0
+858,United Arab Emirates,aig.com,Login Screens,215,0,0.0
+859,United Arab Emirates,discordapp.com,Internet Phone & VOIP,215,4,0.0186
+860,United Arab Emirates,intimissimi.com,Lingerie & Bikini,215,0,0.0
+861,United Arab Emirates,about.me,Personal Blogs,215,0,0.0
+862,United Arab Emirates,mitre.org,Information Security,215,0,0.0
+863,United Arab Emirates,cntv.cn,Video Streaming,215,0,0.0
+864,United Arab Emirates,ebay.it,Auctions & Marketplaces,215,0,0.0
+865,United Arab Emirates,mine.nu,Miscellaneous,215,0,0.0
+866,United Arab Emirates,hgtv.com,Home & Garden,215,0,0.0
+867,United Arab Emirates,sonicwall.com,Information Security,215,0,0.0
+868,United Arab Emirates,de.pornhub.org,Pornography,215,19,0.0884
+869,United Arab Emirates,vtrk.doubleverify.com,Business,215,0,0.0
+870,United Arab Emirates,justpaste.it,File Sharing,215,40,0.186
+871,United Arab Emirates,rtl.de,Television,215,0,0.0
+872,United Arab Emirates,sonyliv.com,Television,215,4,0.0186
+873,United Arab Emirates,calculator.apps.chrome,No Content,215,0,0.0
+874,United Arab Emirates,petsmart.com,Pets,215,0,0.0
+875,United Arab Emirates,aruba.it,Information Technology,215,0,0.0
+876,United Arab Emirates,us.org,Information Technology,215,0,0.0
+877,United Arab Emirates,skokka.com,Adult Themes,215,19,0.0884
+878,United Arab Emirates,deviantart.com,Adult Themes,215,37,0.1721
+879,United Arab Emirates,computrabajo.com,Job Search & Careers,215,0,0.0
+880,United Arab Emirates,moviesda8.net,Newly Seen Domains,215,19,0.0884
+881,United Arab Emirates,bible.com,Religion,215,0,0.0
+882,United Arab Emirates,alibaba-inc.com,Webmail,215,0,0.0
+883,United Arab Emirates,easyjet.com,Travel,215,0,0.0
+884,United Arab Emirates,jamanetwork.com,Health & Fitness,215,0,0.0
+885,United Arab Emirates,rfi.fr,Audio Streaming,215,0,0.0
+886,United Arab Emirates,joyreactor.cc,Humor,215,19,0.0884
+887,United Arab Emirates,pharmeasy.in,Health & Fitness,215,0,0.0
+888,United Arab Emirates,trouter.teams.microsoft.com,Business,215,4,0.0186
+889,United Arab Emirates,adultfriendfinder.com,Dating & Relationships,215,44,0.2047
+890,United Arab Emirates,thriftbooks.com,Education,215,0,0.0
+891,United Arab Emirates,xataka.com,Magazines,215,0,0.0
+892,United Arab Emirates,surfsharkstatus.com,P2P,215,0,0.0
+893,United Arab Emirates,satta-king-fixed-no.in,Gambling,215,18,0.0837
+894,United Arab Emirates,ensighten.com,Information Security,215,0,0.0
+895,United Arab Emirates,badoocdn.com,Social Networks,215,22,0.1023
+896,United Arab Emirates,ln-msedge.net,Newly Seen Domains,215,0,0.0
+897,United Arab Emirates,sfu.ca,Educational Institutions,215,0,0.0
+898,United Arab Emirates,akamaistream.net,Miscellaneous,215,0,0.0
+899,United Arab Emirates,technoratimedia.com,Business,215,0,0.0
+900,United Arab Emirates,hostmonster.com,Miscellaneous,215,0,0.0
+901,United Arab Emirates,www.tumblr.com,Social Networks,215,4,0.0186
+902,United Arab Emirates,thecut.com,Entertainment,215,0,0.0
+903,United Arab Emirates,utk.edu,Education,215,0,0.0
+904,United Arab Emirates,go.com,Safe for Kids,215,40,0.186
+905,United Arab Emirates,wetteronline.de,News & Media,215,0,0.0
+906,United Arab Emirates,therapservices.net,Health & Fitness,215,0,0.0
+907,United Arab Emirates,mangabat.com,Comic Books,215,0,0.0
+908,United Arab Emirates,bitly.com,Redirect,215,0,0.0
+909,United Arab Emirates,joinhoney.com,Coupons,215,0,0.0
+910,United Arab Emirates,nanoleaf.me,Real Estate,215,0,0.0
+911,United Arab Emirates,pull-f5-vr-gcp01.tiktokcdn.com,Social Networks,215,4,0.0186
+912,United Arab Emirates,acast.com,Audio Streaming,215,0,0.0
+913,United Arab Emirates,rightmove.co.uk,Real Estate,215,0,0.0
+914,United Arab Emirates,healthline.com,Health & Fitness,215,0,0.0
+915,United Arab Emirates,musescore.com,Music,215,0,0.0
+916,United Arab Emirates,www.ninisite.com,Parenting,215,0,0.0
+917,United Arab Emirates,match.sync.ad.cpe.dotomi.com,Business,215,0,0.0
+918,United Arab Emirates,presence.teams.microsoft.com,Business,215,4,0.0186
+919,United Arab Emirates,pubmed.ncbi.nlm.nih.gov,Government,215,0,0.0
+920,United Arab Emirates,bs.serving-sys.com,Advertisements,215,0,0.0
+921,United Arab Emirates,subway.com,File Sharing,215,0,0.0
+922,United Arab Emirates,appsforoffice.microsoft.com,Business,215,0,0.0
+923,United Arab Emirates,alamy.com,"News, Portal & Search",215,0,0.0
+924,United Arab Emirates,pushnp.svc.ms,Content Servers,215,0,0.0
+925,United Arab Emirates,freepik.es,"News, Portal & Search",215,0,0.0
+926,United Arab Emirates,pull-a5-gcp01.tiktokcdn.com,Social Networks,215,4,0.0186
+927,United Arab Emirates,edgekey.net.globalredir.akadns.net,Content Servers,215,0,0.0
+928,United Arab Emirates,buyee.jp,Ecommerce,215,0,0.0
+929,United Arab Emirates,wynk.in,Audio Streaming,215,0,0.0
+930,United Arab Emirates,draft.blogger.com,Personal Blogs,215,2,0.0093
+931,United Arab Emirates,istockphoto.com,"News, Portal & Search",215,20,0.093
+932,United Arab Emirates,ktkjmp.com,Spam,215,0,0.0
+933,United Arab Emirates,mantraonline.com,Miscellaneous,215,0,0.0
+934,United Arab Emirates,dp.ua,Parked & For Sale Domains,215,0,0.0
+935,United Arab Emirates,honey.io,Coupons,215,1,0.0047
+936,United Arab Emirates,sfx.ms,File Sharing,215,0,0.0
+937,United Arab Emirates,athenahealth.com,Health & Fitness,215,0,0.0
+938,United Arab Emirates,harry.lu,Personal Blogs,215,0,0.0
+939,United Arab Emirates,articulo.mercadolibre.com.mx,Auctions & Marketplaces,215,0,0.0
+940,United Arab Emirates,dns-diy.net,Login Screens,215,0,0.0
+941,United Arab Emirates,long.tv,Religion,215,0,0.0
+942,United Arab Emirates,surfnet.nl,Information Security,215,0,0.0
+943,United Arab Emirates,cutt.ly,Redirect,215,0,0.0
+944,United Arab Emirates,theweek.com,Magazines,215,0,0.0
+945,United Arab Emirates,s.dto.jp,Adult Themes,215,19,0.0884
+946,United Arab Emirates,pps.whatsapp.net,Instant Messengers,215,4,0.0186
+947,United Arab Emirates,jra.jp,Gambling,215,18,0.0837
+948,United Arab Emirates,pornhub.com,Pornography,215,70,0.3256
+949,United Arab Emirates,www.icloud.com,File Sharing,215,4,0.0186
+950,United Arab Emirates,www.mathplayground.com,Safe for Kids,215,0,0.0
+951,United Arab Emirates,abc.com,Video Streaming,215,40,0.186
+952,United Arab Emirates,respawn.com,Business,215,0,0.0
+953,United Arab Emirates,bitdefender.net,Information Security,215,0,0.0
+954,United Arab Emirates,kff.org,Health & Fitness,215,0,0.0
+955,United Arab Emirates,weathercn.com,Weather,215,0,0.0
+956,United Arab Emirates,firefox.com,Information Technology,215,0,0.0
+957,United Arab Emirates,myportfolio.com,Arts,215,1,0.0047
+958,United Arab Emirates,cc.com,Humor,215,0,0.0
+959,United Arab Emirates,chat.cdn.whatsapp.net,Internet Phone & VOIP,215,4,0.0186
+960,United Arab Emirates,coub.com,Humor,215,0,0.0
+961,United Arab Emirates,www.pinterest.com,Photography,215,4,0.0186
+962,United Arab Emirates,devicetask.com,Unreachable,215,0,0.0
+963,United Arab Emirates,theculturetrip.com,Travel,215,0,0.0
+964,United Arab Emirates,tasteofhome.com,Food & Drink,215,0,0.0
+965,United Arab Emirates,deccanherald.com,Video Streaming,215,0,0.0
+966,United Arab Emirates,slidesgo.com,Arts,215,0,0.0
+967,United Arab Emirates,www.starfall.com,Safe for Kids,215,0,0.0
+968,United Arab Emirates,tds.net,News & Media,215,0,0.0
+969,United Arab Emirates,mercadopago.com.br,Economy & Finance,215,0,0.0
+970,United Arab Emirates,slickdeals.net,Coupons,215,0,0.0
+971,United Arab Emirates,google.es,Search Engines,215,0,0.0
+972,United Arab Emirates,edgeapi.slack.com,Instant Messengers,215,0,0.0
+973,United Arab Emirates,sky.com,Television,215,0,0.0
+974,United Arab Emirates,inbox.google.com,Webmail,215,4,0.0186
+975,United Arab Emirates,google.com.sa,Search Engines,215,0,0.0
+976,United Arab Emirates,norton.com,Information Security,215,0,0.0
+977,United Arab Emirates,ecdns.net,Information Technology,215,0,0.0
+978,United Arab Emirates,pinterest.de,Photography,215,4,0.0186
+979,United Arab Emirates,science.org,Magazines,215,0,0.0
+980,United Arab Emirates,timeweb.ru,Information Technology,215,0,0.0
+981,United Arab Emirates,static.hotjar.com,Login Screens,215,0,0.0
+982,United Arab Emirates,blogspot.com.es,Unreachable,215,0,0.0
+983,United Arab Emirates,auctollo.com,Personal Blogs,215,0,0.0
+984,United Arab Emirates,www.expedia.com,Travel,215,0,0.0
+985,United Arab Emirates,reg.ru,Information Technology,215,0,0.0
+986,United Arab Emirates,1337x.to,Questionable Activities,215,127,0.5907
+987,United Arab Emirates,fantasypros.com,Sports,215,1,0.0047
+988,United Arab Emirates,sudoku.com,Hobbies & Interests,215,0,0.0
+989,United Arab Emirates,learn.microsoft.com,Information Technology,215,0,0.0
+990,United Arab Emirates,eventbrite.com,Entertainment,215,0,0.0
+991,United Arab Emirates,rezka.ag,Questionable Activities,215,40,0.186
+992,United Arab Emirates,www.tamildhool.net,Questionable Activities,215,0,0.0
+993,United Arab Emirates,tv21.avsee.in,Questionable Activities,215,0,0.0
+994,United Arab Emirates,1377x.to,Questionable Activities,215,127,0.5907
+995,United Arab Emirates,dler.org,Questionable Activities,215,1,0.0047
+996,United Arab Emirates,tamildhool.net,Questionable Activities,215,0,0.0
+997,United Arab Emirates,www.123-hd.com,Questionable Activities,215,0,0.0
+998,United Arab Emirates,123-hd.com,Questionable Activities,215,0,0.0
+999,United Arab Emirates,avsee.in,Questionable Activities,215,0,0.0
+1000,United Arab Emirates,www.1377x.to,Questionable Activities,215,128,0.5953
+1001,United Arab Emirates,quillbot.com,Questionable Activities,215,1,0.0047
+1002,United Arab Emirates,nyaa.si,Questionable Activities,215,5,0.0233
+1003,United Arab Emirates,leiniao.com,Questionable Activities,215,0,0.0
+1004,United Arab Emirates,desync.com,Questionable Activities,215,0,0.0
+1005,United Arab Emirates,openbittorrent.com,Questionable Activities,215,1,0.0047
+1006,United Arab Emirates,powerreviews.com,Shopping,215,0,0.0
+1007,United Arab Emirates,trip.com,Shopping,215,0,0.0
+1008,United Arab Emirates,samplicio.us,Shopping,215,0,0.0
+1009,United Arab Emirates,producthunt.com,Shopping,215,0,0.0
+1010,United Arab Emirates,techradar.com,Shopping,215,0,0.0
+1011,United Arab Emirates,zoom.com,Internet Phone & VOIP,215,0,0.0
+1012,United Arab Emirates,neopets.com,Safe for Kids,215,0,0.0
+1013,United Arab Emirates,investopedia.com,Economy & Finance,215,0,0.0
+1014,United Arab Emirates,rakuten.com,Coupons,215,0,0.0
+1015,United Arab Emirates,roaming.officeapps.live.com,Webmail,215,0,0.0
+1016,United Arab Emirates,blogspot.it,Unreachable,215,0,0.0
+1017,United Arab Emirates,shorturl.at,Redirect,215,0,0.0
+1018,United Arab Emirates,alipay.com,Economy & Finance,215,0,0.0
+1019,United Arab Emirates,illusionblack.com,Personal Blogs,215,0,0.0
+1020,United Arab Emirates,www.freepornvideo.sex,Pornography,215,131,0.6093
+1021,United Arab Emirates,www.linkedin.com,Professional Networking,215,4,0.0186
+1022,United Arab Emirates,biblegateway.com,Religion,215,0,0.0
+1023,United Arab Emirates,betcity.ru,Gambling,215,18,0.0837
+1024,United Arab Emirates,passwordsleakcheck-pa.googleapis.com,Content Servers,215,4,0.0186
+1025,United Arab Emirates,xhtab3.com,Pornography,215,19,0.0884
+1026,United Arab Emirates,exhentai.org,Pornography,215,128,0.5953
+1027,United Arab Emirates,www.xvideos.com,Pornography,215,51,0.2372
+1028,United Arab Emirates,www.sex.com,Pornography,215,50,0.2326
+1029,United Arab Emirates,txxx.com,Pornography,215,50,0.2326
+1030,United Arab Emirates,xhamster2.com,Pornography,215,50,0.2326
+1031,United Arab Emirates,upornia.com,Pornography,215,52,0.2419
+1032,United Arab Emirates,dewafilm.xyz,Pornography,215,40,0.186
+1033,United Arab Emirates,rt.pornhub.com,Pornography,215,19,0.0884
+1034,United Arab Emirates,chaturbate.com,Pornography,215,50,0.2326
+1035,United Arab Emirates,xgroovy.com,Pornography,215,129,0.6
+1036,United Arab Emirates,xhamster.com,Pornography,215,131,0.6093
+1037,United Arab Emirates,sxyprn.com,Pornography,215,128,0.5953
+1038,United Arab Emirates,vxxx.com,Pornography,215,52,0.2419
+1039,United Arab Emirates,boyfriendtv.com,Pornography,215,131,0.6093
+1040,United Arab Emirates,es.xhamster.com,Pornography,215,19,0.0884
+1041,United Arab Emirates,kemono.party,Pornography,215,19,0.0884
+1042,United Arab Emirates,porn300.com,Pornography,215,127,0.5907
+1043,United Arab Emirates,18comic.vip,Pornography,215,49,0.2279
+1044,United Arab Emirates,www.qorno.com,Pornography,215,52,0.2419
+1045,United Arab Emirates,javhdporn.net,Pornography,215,19,0.0884
+1046,United Arab Emirates,www.wnacg.com,Pornography,215,19,0.0884
+1047,United Arab Emirates,xvideos5.com,Pornography,215,19,0.0884
+1048,United Arab Emirates,la.spankbang.com,Pornography,215,19,0.0884
+1049,United Arab Emirates,www.hdtube.porn,Pornography,215,50,0.2326
+1050,United Arab Emirates,tube8.com,Pornography,215,51,0.2372
+1051,United Arab Emirates,fr.xhamster.com,Pornography,215,19,0.0884
+1052,United Arab Emirates,www.pornocarioca.com,Pornography,215,51,0.2372
+1053,United Arab Emirates,tokyomotion.net,Pornography,215,51,0.2372
+1054,United Arab Emirates,hqporner.com,Pornography,215,132,0.614
+1055,United Arab Emirates,xxx18.uno,Pornography,215,20,0.093
+1056,United Arab Emirates,tukif.com,Pornography,215,50,0.2326
+1057,United Arab Emirates,anysex.com,Pornography,215,129,0.6
+1058,United Arab Emirates,pl.pornhub.com,Pornography,215,22,0.1023
+1059,United Arab Emirates,ijavhd.com,Pornography,215,51,0.2372
+1060,United Arab Emirates,thegay.com,Pornography,215,51,0.2372
+1061,United Arab Emirates,manyvids.com,Pornography,215,51,0.2372
+1062,United Arab Emirates,www.pornhub.com,Pornography,215,51,0.2372
+1063,United Arab Emirates,www.indianpornvideos.me,Pornography,215,51,0.2372
+1064,United Arab Emirates,www.porno-zona.com,Pornography,215,127,0.5907
+1065,United Arab Emirates,www.redtube.com,Pornography,215,52,0.2419
+1066,United Arab Emirates,www.dmm.co.jp,Pornography,215,51,0.2372
+1067,United Arab Emirates,allporncomic.com,Pornography,215,126,0.586
+1068,United Arab Emirates,arbada.com,Pornography,215,52,0.2419
+1069,United Arab Emirates,fapello.com,Pornography,215,52,0.2419
+1070,United Arab Emirates,pornone.com,Pornography,215,51,0.2372
+1071,United Arab Emirates,wnacg.com,Pornography,215,19,0.0884
+1072,United Arab Emirates,redgifs.com,Pornography,215,50,0.2326
+1073,United Arab Emirates,fuckmoral.com,Pornography,215,51,0.2372
+1074,United Arab Emirates,boafoda.com,Pornography,215,51,0.2372
+1075,United Arab Emirates,sexnhanh.co,Pornography,215,0,0.0
+1076,United Arab Emirates,dlsite.com,Pornography,215,19,0.0884
+1077,United Arab Emirates,yadongtube.net,Pornography,215,0,0.0
+1078,United Arab Emirates,servicewebly.com,Pornography,215,0,0.0
+1079,United Arab Emirates,redtube.com,Pornography,215,51,0.2372
+1080,United Arab Emirates,my.xhtab3.com,Pornography,215,19,0.0884
+1081,United Arab Emirates,clip2vip.com,Pornography,215,51,0.2372
+1082,United Arab Emirates,www.pornhat.one,Pornography,215,51,0.2372
+1083,United Arab Emirates,literotica.com,Pornography,215,51,0.2372
+1084,United Arab Emirates,jav.guru,Pornography,215,51,0.2372
+1085,United Arab Emirates,xvideos2.com,Pornography,215,51,0.2372
+1086,United Arab Emirates,youjizz.com,Pornography,215,51,0.2372
+1087,United Arab Emirates,eroterest.net,Pornography,215,51,0.2372
+1088,United Arab Emirates,www.pornpics.com,Pornography,215,51,0.2372
+1089,United Arab Emirates,serviporno.com,Pornography,215,51,0.2372
+1090,United Arab Emirates,freepornvideo.sex,Pornography,215,126,0.586
+1091,United Arab Emirates,nl.pornhub.com,Pornography,215,20,0.093
+1092,United Arab Emirates,porno365.pics,Pornography,215,19,0.0884
+1093,United Arab Emirates,rule34video.com,Pornography,215,51,0.2372
+1094,United Arab Emirates,skipthegames.com,Pornography,215,51,0.2372
+1095,United Arab Emirates,www.sexlog.com,Pornography,215,51,0.2372
+1096,United Arab Emirates,www.xvideos2.com,Pornography,215,51,0.2372
+1097,United Arab Emirates,pictoa.com,Pornography,215,51,0.2372
+1098,United Arab Emirates,supjav.com,Pornography,215,19,0.0884
+1099,United Arab Emirates,tecno.servicewebly.com,Pornography,215,0,0.0
+1100,United Arab Emirates,phim.heo69.top,Pornography,215,19,0.0884
+1101,United Arab Emirates,sexvid.pro,Pornography,215,51,0.2372
+1102,United Arab Emirates,heo69.top,Pornography,215,19,0.0884
+1103,United Arab Emirates,beeg.com,Pornography,215,124,0.5767
+1104,United Arab Emirates,www.xvideos3.com,Pornography,215,52,0.2419
+1105,United Arab Emirates,www.xvideos5.com,Pornography,214,19,0.0888
+1106,United Arab Emirates,www.xnxx.tv,Pornography,214,50,0.2336
+1107,United Arab Emirates,in3x.net,Pornography,214,124,0.5794
+1108,United Arab Emirates,jable.tv,Pornography,214,51,0.2383
+1109,United Arab Emirates,xnxx2.com,Pornography,214,50,0.2336
+1110,United Arab Emirates,www.pornhub.org,Pornography,214,50,0.2336
+1111,United Arab Emirates,www.annunci69.it,Pornography,214,50,0.2336
+1112,United Arab Emirates,multporn.net,Pornography,214,21,0.0981
+1113,United Arab Emirates,www.indianbfvideos.com,Pornography,214,50,0.2336
+1114,United Arab Emirates,xxxdan.com,Pornography,214,49,0.229
+1115,United Arab Emirates,www.bhojpurisex.site,Pornography,214,95,0.4439
+1116,United Arab Emirates,superporn.com,Pornography,214,128,0.5981
+1117,United Arab Emirates,poringa.net,Pornography,214,49,0.229
+1118,United Arab Emirates,youporn.com,Pornography,214,49,0.229
+1119,United Arab Emirates,erome.com,Pornography,214,50,0.2336
+1120,United Arab Emirates,hindixxxhd.com,Pornography,214,53,0.2477
+1121,United Arab Emirates,pornpics.com,Pornography,214,45,0.2103
+1122,United Arab Emirates,rat.xxx,Pornography,214,46,0.215
+1123,United Arab Emirates,xhwide4.com,Pornography,214,0,0.0
+1124,United Arab Emirates,toonily.com,Pornography,214,46,0.215
+1125,United Arab Emirates,sextb.net,Pornography,214,46,0.215
+1126,United Arab Emirates,apornvideo.com,Pornography,214,46,0.215
+1127,United Arab Emirates,xnxx.health,Pornography,214,122,0.5701
+1128,United Arab Emirates,xvideos4.com,Pornography,214,48,0.2243
+1129,United Arab Emirates,sexalarab.com,Pornography,214,50,0.2336
+1130,United Arab Emirates,wapoz.info,Pornography,214,19,0.0888
+1131,United Arab Emirates,goodporn.to,Pornography,214,49,0.229
+1132,United Arab Emirates,highwebmedia.com,Pornography,214,19,0.0888
+1133,United Arab Emirates,xvideos3.com,Pornography,214,50,0.2336
+1134,United Arab Emirates,beeg.porn,Pornography,214,124,0.5794
+1135,United Arab Emirates,es.pornhub.com,Pornography,214,20,0.0935
+1136,United Arab Emirates,hot-sex-tube.com,Pornography,215,50,0.2326
+1137,United Arab Emirates,pornkai.com,Pornography,215,48,0.2233
+1138,United Arab Emirates,okxxx1.com,Pornography,215,50,0.2326
+1139,United Arab Emirates,joyclub.de,Pornography,215,50,0.2326
+1140,United Arab Emirates,gayboystube.com,Pornography,215,50,0.2326
+1141,United Arab Emirates,www.sexvid.xxx,Pornography,215,49,0.2279
+1142,United Arab Emirates,hoes.tube,Pornography,215,50,0.2326
+1143,United Arab Emirates,rule34.us,Pornography,215,125,0.5814
+1144,United Arab Emirates,amp.xhamster.com,Pornography,215,21,0.0977
+1145,United Arab Emirates,xfreehd.com,Pornography,214,51,0.2383
+1146,United Arab Emirates,br.spankbang.com,Pornography,214,19,0.0888
+1147,United Arab Emirates,myreadingmanga.info,Pornography,214,126,0.5888
+1148,United Arab Emirates,www.hdhindisex.com,Pornography,214,20,0.0935
+1149,United Arab Emirates,videosection.com,Pornography,214,50,0.2336
+1150,United Arab Emirates,indianbfvideos.com,Pornography,214,51,0.2383
+1151,United Arab Emirates,www.apornvideo.com,Pornography,214,51,0.2383
+1152,United Arab Emirates,www.rat.xxx,Pornography,214,52,0.243
+1153,United Arab Emirates,kompoz2.com,Pornography,214,126,0.5888
+1154,United Arab Emirates,xv-videos1.com,Pornography,214,20,0.0935
+1155,United Arab Emirates,pornhat.one,Pornography,214,50,0.2336
+1156,United Arab Emirates,cz.pornhub.com,Pornography,214,19,0.0888
+1157,United Arab Emirates,m.sexemodel.com,Pornography,214,49,0.229
+1158,United Arab Emirates,www.xvideos4.com,Pornography,214,52,0.243
+1159,United Arab Emirates,gekso.xyz,Pornography,214,49,0.229
+1160,United Arab Emirates,e-hentai.org,Pornography,214,50,0.2336
+1161,United Arab Emirates,gaymaletube.com,Pornography,214,50,0.2336
+1162,United Arab Emirates,dmm.co.jp,Pornography,214,49,0.229
+1163,United Arab Emirates,webx.sexnhanh.co,Pornography,214,0,0.0
+1164,United Arab Emirates,xxx.com,Pornography,214,50,0.2336
+1165,United Arab Emirates,tubesafari.com,Pornography,214,50,0.2336
+1166,United Arab Emirates,fuq.com,Pornography,214,49,0.229
+1167,United Arab Emirates,m.chaturbate.com,Pornography,214,50,0.2336
+1168,United Arab Emirates,www.sexvid.pro,Pornography,214,50,0.2336
+1169,United Arab Emirates,m.tnaflix.com,Pornography,214,50,0.2336
+1170,United Arab Emirates,eporner.com,Pornography,214,50,0.2336
+1171,United Arab Emirates,mat6tube.com,Pornography,214,50,0.2336
+1172,United Arab Emirates,contentabc.com,Pornography,214,39,0.1822
+1173,United Arab Emirates,luxuretv.com,Pornography,214,50,0.2336
+1174,United Arab Emirates,www.xnxx2.com,Pornography,214,50,0.2336
+1175,United Arab Emirates,xhamster3.com,Pornography,214,126,0.5888
+1176,United Arab Emirates,xnxx3.com,Pornography,214,50,0.2336
+1177,United Arab Emirates,spankbang.com,Pornography,214,50,0.2336
+1178,United Arab Emirates,xvideosporno.blog.br,Pornography,214,50,0.2336
+1179,United Arab Emirates,bhojpurisex.site,Pornography,214,95,0.4439
+1180,United Arab Emirates,www.imagefap.com,Pornography,214,51,0.2383
+1181,United Arab Emirates,xhwide3.com,Pornography,214,20,0.0935
+1182,United Arab Emirates,xxx18hot.com,Pornography,214,50,0.2336
+1183,United Arab Emirates,imagefap.com,Pornography,214,50,0.2336
+1184,United Arab Emirates,hnext.jp,Pornography,214,19,0.0888
+1185,United Arab Emirates,javbus.com,Pornography,214,19,0.0888
+1186,United Arab Emirates,www.kamababa.desi,Pornography,214,19,0.0888
+1187,United Arab Emirates,www.serviporno.com,Pornography,214,51,0.2383
+1188,United Arab Emirates,id.spankbang.com,Pornography,214,19,0.0888
+1189,United Arab Emirates,www.porn300.com,Pornography,214,126,0.5888
+1190,United Arab Emirates,hentai.name,Pornography,214,19,0.0888
+1191,United Arab Emirates,ru.xhamster.com,Pornography,214,19,0.0888
+1192,United Arab Emirates,jp.pornhub.com,Pornography,214,19,0.0888
+1193,United Arab Emirates,kamababa.desi,Pornography,214,19,0.0888
+1194,United Arab Emirates,www.sexindrag.com,Pornography,214,123,0.5748
+1195,United Arab Emirates,hentaihaven.xxx,Pornography,214,53,0.2477
+1196,United Arab Emirates,de.pornhub.com,Pornography,214,19,0.0888
+1197,United Arab Emirates,hdhindisex.com,Pornography,214,19,0.0888
+1198,United Arab Emirates,m.hqporner.com,Pornography,214,126,0.5888
+1199,United Arab Emirates,pussyspace.com,Pornography,214,53,0.2477
+1200,United Arab Emirates,fap2bed.com,Pornography,214,19,0.0888
+1201,United Arab Emirates,bestjavporn.com,Pornography,214,19,0.0888
+1202,United Arab Emirates,donmai.us,Pornography,215,51,0.2372
+1203,United Arab Emirates,erothots.co,Pornography,215,50,0.2326
+1204,United Arab Emirates,tmohentai.com,Pornography,215,50,0.2326
+1205,United Arab Emirates,www.ixxx.com,Pornography,215,49,0.2279
+1206,United Arab Emirates,www.boyfriendtv.com,Pornography,215,125,0.5814
+1207,United Arab Emirates,imhentai.xxx,Pornography,215,51,0.2372
+1208,United Arab Emirates,hanime.tv,Pornography,215,124,0.5767
+1209,United Arab Emirates,theporndude.com,Pornography,215,50,0.2326
+1210,United Arab Emirates,cam4.com,Pornography,215,54,0.2512
+1211,United Arab Emirates,pornhub.org,Pornography,214,50,0.2336
+1212,United Arab Emirates,www.joyclub.de,Pornography,214,50,0.2336
+1213,United Arab Emirates,thisav.com,Pornography,214,49,0.229
+1214,United Arab Emirates,iporntv.net,Pornography,214,51,0.2383
+1215,United Arab Emirates,www.erome.com,Pornography,214,51,0.2383
+1216,United Arab Emirates,porno666.link,Pornography,214,19,0.0888
+1217,United Arab Emirates,ge.xhamster.desi,Pornography,214,19,0.0888
+1218,United Arab Emirates,www.eporner.com,Pornography,214,51,0.2383
+1219,United Arab Emirates,redwap-xxx.com,Pornography,214,124,0.5794
+1220,United Arab Emirates,sexlog.com,Pornography,214,52,0.243
+1221,United Arab Emirates,infinix.servicewebly.com,Pornography,214,0,0.0
+1222,United Arab Emirates,www.youporn.com,Pornography,214,51,0.2383
+1223,United Arab Emirates,xgx.mobi,Pornography,214,126,0.5888
+1224,United Arab Emirates,phncdn.com,Pornography,214,51,0.2383
+1225,United Arab Emirates,indianpornvideos.me,Pornography,214,51,0.2383
+1226,United Arab Emirates,nhentai.net,Pornography,214,50,0.2336
+1227,United Arab Emirates,hot.noodlemagazine.com,Pornography,214,19,0.0888
+1228,United Arab Emirates,xnxx.com.se,Pornography,214,126,0.5888
+1229,United Arab Emirates,ixxx.com,Pornography,214,52,0.243
+1230,United Arab Emirates,sexemodel.com,Pornography,214,51,0.2383
+1231,United Arab Emirates,txxx.tube,Pornography,214,49,0.229
+1232,United Arab Emirates,pt.pornhub.com,Pornography,214,19,0.0888
+1233,United Arab Emirates,bongacams.com,Pornography,214,49,0.229
+1234,United Arab Emirates,hitomi.la,Pornography,214,51,0.2383
+1235,United Arab Emirates,dto.jp,Pornography,214,19,0.0888
+1236,United Arab Emirates,faphouse.com,Pornography,214,51,0.2383
+1237,United Arab Emirates,xvideos-cdn.com,Pornography,214,50,0.2336
+1238,United Arab Emirates,www.fuq.com,Pornography,214,50,0.2336
+1239,United Arab Emirates,tube4world.com,Pornography,214,51,0.2383
+1240,United Arab Emirates,3hentai.net,Pornography,214,19,0.0888
+1241,United Arab Emirates,www.fulldesisex.com,Pornography,214,19,0.0888
+1242,United Arab Emirates,porno-zona.com,Pornography,214,126,0.5888
+1243,United Arab Emirates,www.clip2vip.com,Pornography,214,52,0.243
+1244,United Arab Emirates,www.tokyomotion.net,Pornography,214,50,0.2336
+1245,United Arab Emirates,www.xvideos.es,Pornography,214,50,0.2336
+1246,United Arab Emirates,tubev.sex,Pornography,214,126,0.5888
+1247,United Arab Emirates,heavy-r.com,Pornography,214,51,0.2383
+1248,United Arab Emirates,hotindianporn.mobi,Pornography,214,20,0.0935
+1249,United Arab Emirates,hdporncomics.com,Pornography,214,51,0.2383
+1250,United Arab Emirates,stripchat.com,Pornography,214,51,0.2383
+1251,United Arab Emirates,www.arbada.com,Pornography,214,50,0.2336
+1252,United Arab Emirates,pornhat.com,Pornography,214,50,0.2336
+1253,United Arab Emirates,en.luxuretv.com,Pornography,214,19,0.0888
+1254,United Arab Emirates,vjav.com,Pornography,214,50,0.2336
+1255,United Arab Emirates,zbiornik.com,Pornography,214,50,0.2336
+1256,United Arab Emirates,ita.xhamster.com,Pornography,214,19,0.0888
+1257,United Arab Emirates,xhamsterlive.com,Pornography,214,51,0.2383
+1258,United Arab Emirates,xvideos.com,Pornography,214,51,0.2383
+1259,United Arab Emirates,me.porno666.link,Pornography,214,19,0.0888
+1260,United Arab Emirates,www.xnxx.com,Pornography,214,51,0.2383
+1261,United Arab Emirates,sexvid.xxx,Pornography,214,50,0.2336
+1262,United Arab Emirates,cn.pornhub.com,Pornography,214,19,0.0888
+1263,United Arab Emirates,fr.pornhub.com,Pornography,214,19,0.0888
+1264,United Arab Emirates,ashemaletube.com,Pornography,214,125,0.5841
+1265,United Arab Emirates,xvideos.es,Pornography,214,52,0.243
+1266,United Arab Emirates,sxyprn.net,Pornography,214,123,0.5748
+1267,United Arab Emirates,www.xnxx3.com,Pornography,214,54,0.2523
+1268,United Arab Emirates,zbporn.tv,Pornography,214,51,0.2383
+1269,United Arab Emirates,qorno.com,Pornography,214,50,0.2336
+1270,United Arab Emirates,love4porn.com,Pornography,214,50,0.2336
+1271,United Arab Emirates,mrdeepfakes.com,Pornography,214,51,0.2383
+1272,United Arab Emirates,xxxnd.com,Pornography,214,0,0.0
+1273,United Arab Emirates,hdtube.porn,Pornography,214,49,0.229
+1274,United Arab Emirates,fulldesisex.com,Pornography,214,19,0.0888
+1275,United Arab Emirates,fpo.xxx,Pornography,214,50,0.2336
+1276,United Arab Emirates,xnxx.com,Pornography,214,50,0.2336
+1277,United Arab Emirates,incestflix.com,Pornography,214,50,0.2336
+1278,United Arab Emirates,it.pornhub.com,Pornography,214,19,0.0888
+1279,United Arab Emirates,youjizz.sex,Pornography,214,50,0.2336
+1280,United Arab Emirates,xnxx-cdn.com,Pornography,214,50,0.2336
+1281,United Arab Emirates,xhamster.desi,Pornography,214,122,0.5701
+1282,United Arab Emirates,myfreecams.com,Pornography,214,51,0.2383
+1283,United Arab Emirates,zbporn.com,Pornography,214,49,0.229
+1284,United Arab Emirates,fetlife.com,Pornography,214,122,0.5701
+1285,United Arab Emirates,e621.net,Pornography,214,123,0.5748
+1286,United Arab Emirates,pornozavr.net,Pornography,214,49,0.229
+1287,United Arab Emirates,hotmovs.com,Pornography,214,50,0.2336
+1288,United Arab Emirates,evexxx.com,Pornography,214,122,0.5701
+1289,United Arab Emirates,tnaflix.com,Pornography,214,51,0.2383
+1290,United Arab Emirates,annunci69.it,Pornography,214,50,0.2336
+1291,United Arab Emirates,sexindrag.com,Pornography,214,127,0.5935
+1292,United Arab Emirates,motherless.com,Pornography,214,54,0.2523
+1293,United Arab Emirates,gekso.com,Pornography,214,50,0.2336
+1294,United Arab Emirates,xnxxsex.net,Pornography,214,51,0.2383
+1295,United Arab Emirates,id.xhamster.com,Pornography,214,19,0.0888
+1296,United Arab Emirates,xxxvideos247.com,Pornography,214,50,0.2336
+1297,United Arab Emirates,pornzog.com,Pornography,214,50,0.2336
+1298,United Arab Emirates,spankbang.party,Pornography,214,50,0.2336
+1299,United Arab Emirates,sankakucomplex.com,Pornography,214,49,0.229
+1300,United Arab Emirates,www.pussyspace.com,Pornography,214,49,0.229
+1301,United Arab Emirates,aznude.com,Pornography,214,125,0.5841
+1302,United Arab Emirates,xxxbule.com,Pornography,214,49,0.229
+1303,United Arab Emirates,sex.com,Pornography,214,70,0.3271
+1304,United Arab Emirates,wonporn.com,Pornography,214,50,0.2336
+1305,United Arab Emirates,thisvid.com,Pornography,214,51,0.2383
+1306,United Arab Emirates,porno18.site,Pornography,214,51,0.2383
+1307,United Arab Emirates,pl.xhamster.com,Pornography,214,19,0.0888
+1308,United Arab Emirates,4kporn.xxx,Pornography,214,51,0.2383
+1309,United Arab Emirates,xxxvideo.best,Pornography,214,51,0.2383
+1310,United Arab Emirates,missav.com,Pornography,214,51,0.2383
+1311,United Arab Emirates,www.pornhat.com,Pornography,214,50,0.2336
+1312,United Arab Emirates,jizzbunker.com,Pornography,214,49,0.229
+1313,United Arab Emirates,rule34.xxx,Pornography,214,50,0.2336
+1314,United Arab Emirates,ge.xhamster.com,Pornography,214,19,0.0888
+1315,United Arab Emirates,hlebo.mobi,Pornography,214,49,0.229
+1316,United Arab Emirates,xhamster1.desi,Pornography,214,125,0.5841
+1317,United Arab Emirates,hdzog.com,Pornography,214,49,0.229
+1318,United Arab Emirates,porntrex.com,Pornography,214,49,0.229
+1319,United Arab Emirates,www.hentai.name,Pornography,214,20,0.0935
+1320,United Arab Emirates,hentaiera.com,Pornography,214,124,0.5794
+1321,United Arab Emirates,paheal.net,Pornography,214,49,0.229
+1322,United Arab Emirates,tporn.xxx,Pornography,214,49,0.229
+1323,United Arab Emirates,82xnxx.com,Pornography,214,19,0.0888
+1324,United Arab Emirates,yadongkorea.org,Pornography,214,19,0.0888
+1325,United Arab Emirates,crazyporn.xxx,Pornography,214,50,0.2336
+1326,United Arab Emirates,m.porno365.pics,Pornography,214,19,0.0888
+1327,United Arab Emirates,th.spankbang.com,Pornography,214,19,0.0888
+1328,United Arab Emirates,video.hnext.jp,Pornography,214,19,0.0888
+1329,United Arab Emirates,xxxshake.com,Pornography,214,49,0.229
+1330,United Arab Emirates,hentailib.me,Pornography,214,19,0.0888
+1331,United Arab Emirates,tubecup.net,Pornography,214,49,0.229
+1332,United Arab Emirates,hentaifox.com,Pornography,214,49,0.229
+1333,United Arab Emirates,br.xhamster.com,Pornography,214,19,0.0888
+1334,United Arab Emirates,xnxx.tv,Pornography,214,49,0.229
+1335,United Arab Emirates,hanime1.me,Pornography,214,19,0.0888
+1336,United Arab Emirates,camwhores.tv,Pornography,214,49,0.229
+1337,United Arab Emirates,sex4arab.xxx,Pornography,214,124,0.5794
+1338,United Arab Emirates,pornocarioca.com,Pornography,214,50,0.2336
+1339,United Arab Emirates,tktube.com,Pornography,214,49,0.229
+1340,United Arab Emirates,milf33.com,Pornography,214,122,0.5701
+1341,United Arab Emirates,jw.org,Religion,214,0,0.0
+1342,United Arab Emirates,www.jw.org,Religion,214,0,0.0
+1343,United Arab Emirates,malwarebytes.com,Information Security,214,0,0.0
+1344,United Arab Emirates,thawte.com,Information Security,214,0,0.0
+1345,United Arab Emirates,verisign.net,Information Security,214,0,0.0
+1346,United Arab Emirates,programiz.com,Education,214,0,0.0
+1347,United Arab Emirates,foxsports.com,Sports,214,0,0.0
+1348,United Arab Emirates,starmakerstudios.com,Music,214,0,0.0
+1349,United Arab Emirates,jdsports.co.uk,Ecommerce,214,0,0.0
+1350,United Arab Emirates,maurices.com,Clothing,214,0,0.0
+1351,United Arab Emirates,humoruniv.com,Humor,214,0,0.0
+1352,United Arab Emirates,1gb.ru,Unreachable,214,0,0.0
+1353,United Arab Emirates,m.tabor.ru,Dating & Relationships,214,0,0.0
+1354,United Arab Emirates,ozbargain.com.au,Coupons,214,0,0.0
+1355,United Arab Emirates,www.extra.cz,Personal Blogs,214,0,0.0
+1356,United Arab Emirates,agora.io,Internet Phone & VOIP,214,0,0.0
+1357,United Arab Emirates,familysearch.org,Hobbies & Interests,214,0,0.0
+1358,United Arab Emirates,colab.research.google.com,Search Engines,214,4,0.0187
+1359,United Arab Emirates,www.spotify.com,Audio Streaming,214,0,0.0
+1360,United Arab Emirates,roche.com,Health & Fitness,214,0,0.0
+1361,United Arab Emirates,mobile.de,Vehicles,214,0,0.0
+1362,United Arab Emirates,zdbb.net,Economy & Finance,214,0,0.0
+1363,United Arab Emirates,badoo.com,Dating & Relationships,214,63,0.2944
+1364,United Arab Emirates,adlooxtracking.com,Advertisements,214,0,0.0
+1365,United Arab Emirates,kv601.prod.do.dsp.mp.microsoft.com,Business,214,0,0.0
+1366,United Arab Emirates,zinmanga.com,Comic Books,214,19,0.0888
+1367,United Arab Emirates,blogspot.fr,Unreachable,214,0,0.0
+1368,United Arab Emirates,cricketworldcup.com,Sports,214,0,0.0
+1369,United Arab Emirates,rwth-aachen.de,Educational Institutions,214,0,0.0
+1370,United Arab Emirates,tripadvisor.co.uk,Food & Drink,214,0,0.0
+1371,United Arab Emirates,the-sun.com,Entertainment,214,0,0.0
+1372,United Arab Emirates,fitbit.com,Health & Fitness,214,0,0.0
+1373,United Arab Emirates,c-span.org,Video Streaming,214,0,0.0
+1374,United Arab Emirates,su.itunes.apple.com,Music,214,4,0.0187
+1375,United Arab Emirates,noam.cc.skype.com,Internet Phone & VOIP,214,0,0.0
+1376,United Arab Emirates,nationalgeographic.com,Science,214,0,0.0
+1377,United Arab Emirates,surfshark.com,P2P,214,39,0.1822
+1378,United Arab Emirates,nexus.officeapps.live.com,Webmail,214,0,0.0
+1379,United Arab Emirates,uni-muenchen.de,Educational Institutions,214,0,0.0
+1380,United Arab Emirates,cargocollective.com,Photography,214,0,0.0
+1381,United Arab Emirates,capterra.com,Shopping,214,0,0.0
+1382,United Arab Emirates,m.indiamart.com,Auctions & Marketplaces,214,39,0.1822
+1383,United Arab Emirates,pangle-ads.com,Newly Seen Domains,214,0,0.0
+1384,United Arab Emirates,canonet.ne.jp,Miscellaneous,214,0,0.0
+1385,United Arab Emirates,netshoes.com.br,Clothing,214,0,0.0
+1386,United Arab Emirates,fabswingers.com,Dating & Relationships,214,19,0.0888
+1387,United Arab Emirates,iu.edu,Educational Institutions,214,0,0.0
+1388,United Arab Emirates,9gag.com,Humor,214,18,0.0841
+1389,United Arab Emirates,thepioneerwoman.com,Food & Drink,214,0,0.0
+1390,United Arab Emirates,www.carsensor.net,Search Engines,214,0,0.0
+1391,United Arab Emirates,mattermost.com,Instant Messengers,214,2,0.0093
+1392,United Arab Emirates,ycombinator.com,Hobbies & Interests,214,0,0.0
+1393,United Arab Emirates,dndbeyond.com,Hobbies & Interests,214,0,0.0
+1394,United Arab Emirates,federalregister.gov,Government,214,0,0.0
+1395,United Arab Emirates,www.list.am,Auctions & Marketplaces,214,0,0.0
+1396,United Arab Emirates,football.fantasysports.yahoo.com,Sports,214,1,0.0047
+1397,United Arab Emirates,redirector.googlevideo.com,Search Engines,214,4,0.0187
+1398,United Arab Emirates,freepik.com,"News, Portal & Search",214,0,0.0
+1399,United Arab Emirates,500px.com,Photography,214,0,0.0
+1400,United Arab Emirates,njav.tv,Newly Seen Domains,214,121,0.5654
+1401,United Arab Emirates,blogspot.de,Unreachable,214,1,0.0047
+1402,United Arab Emirates,azurerms.com,Job Search & Careers,214,2,0.0093
+1403,United Arab Emirates,caranddriver.com,Vehicles,214,0,0.0
+1404,United Arab Emirates,ico.org.uk,Information Security,214,0,0.0
+1405,United Arab Emirates,nregastrep.nic.in,Newly Seen Domains,214,0,0.0
+1406,United Arab Emirates,bbtec.net,Newly Seen Domains,214,0,0.0
+1407,United Arab Emirates,churchofjesuschrist.org,Newly Seen Domains,214,0,0.0
+1408,United Arab Emirates,yadongkorea.red,Newly Seen Domains,214,0,0.0
+1409,United Arab Emirates,script.ac,Newly Seen Domains,214,0,0.0
+1410,United Arab Emirates,arm-msedge.net,Newly Seen Domains,214,0,0.0
+1411,United Arab Emirates,apdcdn.com,Newly Seen Domains,214,0,0.0
+1412,United Arab Emirates,sophosxl.net,Newly Seen Domains,214,0,0.0
+1413,United Arab Emirates,amzndns.com,Newly Seen Domains,214,0,0.0
+1414,United Arab Emirates,mangosip.ru,Newly Seen Domains,214,0,0.0
+1415,United Arab Emirates,www.wuxiap.com,Newly Seen Domains,214,0,0.0
+1416,United Arab Emirates,abovedomains.com,Newly Seen Domains,214,0,0.0
+1417,United Arab Emirates,m.c7vkn.com,Newly Seen Domains,214,19,0.0888
+1418,United Arab Emirates,asuratoon.com,Newly Seen Domains,214,0,0.0
+1419,United Arab Emirates,ecombdapi.com,Newly Seen Domains,214,0,0.0
+1420,United Arab Emirates,ultradns.biz,Newly Seen Domains,214,0,0.0
+1421,United Arab Emirates,shopee.com.br,Newly Seen Domains,214,0,0.0
+1422,United Arab Emirates,bronze.systems,Newly Seen Domains,214,0,0.0
+1423,United Arab Emirates,gob.ar,Newly Seen Domains,214,0,0.0
+1424,United Arab Emirates,fastly-masque.net,Newly Seen Domains,214,0,0.0
+1425,United Arab Emirates,valve.net,Newly Seen Domains,214,0,0.0
+1426,United Arab Emirates,supapush.net,Newly Seen Domains,214,18,0.0841
+1427,United Arab Emirates,newtoki316.com,Newly Seen Domains,214,10,0.0467
+1428,United Arab Emirates,hisavana.com,Newly Seen Domains,214,0,0.0
+1429,United Arab Emirates,microsoftpersonalcontent.com,Newly Seen Domains,214,0,0.0
+1430,United Arab Emirates,nubank.com.br,Newly Seen Domains,214,0,0.0
+1431,United Arab Emirates,com.c.bytefcdn-oversea.com,Newly Seen Domains,214,1,0.0047
+1432,United Arab Emirates,simontokx.quest,Newly Seen Domains,214,19,0.0888
+1433,United Arab Emirates,ironsrc.mobi,Newly Seen Domains,214,0,0.0
+1434,United Arab Emirates,anoboy.show,Newly Seen Domains,214,19,0.0888
+1435,United Arab Emirates,serverpod.net,Newly Seen Domains,214,0,0.0
+1436,United Arab Emirates,pansy.pw,Newly Seen Domains,214,0,0.0
+1437,United Arab Emirates,r22-ispdy5ersd-ai-verify01--gcs.g-xyz.xyz,Newly Seen Domains,214,19,0.0888
+1438,United Arab Emirates,queniutc.com,Newly Seen Domains,214,0,0.0
+1439,United Arab Emirates,kwcdn.com,Newly Seen Domains,214,0,0.0
+1440,United Arab Emirates,xvideos53.com,Newly Seen Domains,214,19,0.0888
+1441,United Arab Emirates,pa.us,Newly Seen Domains,214,0,0.0
+1442,United Arab Emirates,su89-cdn.net,Newly Seen Domains,214,36,0.1682
+1443,United Arab Emirates,www.1024tera.com,Newly Seen Domains,214,0,0.0
+1444,United Arab Emirates,yemnnow.com,Newly Seen Domains,214,0,0.0
+1445,United Arab Emirates,smartnews.net,Newly Seen Domains,214,0,0.0
+1446,United Arab Emirates,virginm.net,Newly Seen Domains,214,1,0.0047
+1447,United Arab Emirates,kiev.ua,Newly Seen Domains,214,0,0.0
+1448,United Arab Emirates,zijieapi.com,Newly Seen Domains,214,0,0.0
+1449,United Arab Emirates,hihonorcloud.com,Newly Seen Domains,214,0,0.0
+1450,United Arab Emirates,queniubg.com,Newly Seen Domains,214,0,0.0
+1451,United Arab Emirates,perplexity.ai,Newly Seen Domains,214,4,0.0187
+1452,United Arab Emirates,apple-dns.cn,Newly Seen Domains,214,0,0.0
+1453,United Arab Emirates,ggbluefox.com,Newly Seen Domains,214,0,0.0
+1454,United Arab Emirates,ruidongcloud.com,Newly Seen Domains,214,0,0.0
+1455,United Arab Emirates,novelbin.org,Newly Seen Domains,214,0,0.0
+1456,United Arab Emirates,vivint.ai,Newly Seen Domains,214,0,0.0
+1457,United Arab Emirates,meson.ai,Newly Seen Domains,214,0,0.0
+1458,United Arab Emirates,phimxxxhay.com,Newly Seen Domains,214,0,0.0
+1459,United Arab Emirates,huedatastore.com,Newly Seen Domains,214,0,0.0
+1460,United Arab Emirates,spd-mgts.ru,Newly Seen Domains,214,0,0.0
+1461,United Arab Emirates,com.au,Newly Seen Domains,214,0,0.0
+1462,United Arab Emirates,drmgms.com,Newly Seen Domains,214,0,0.0
+1463,United Arab Emirates,xnxx.gift,Newly Seen Domains,214,19,0.0888
+1464,United Arab Emirates,puzztake.com,Newly Seen Domains,214,0,0.0
+1465,United Arab Emirates,adsensecustomsearchads.com,Newly Seen Domains,214,0,0.0
+1466,United Arab Emirates,bmo.com,Newly Seen Domains,214,0,0.0
+1467,United Arab Emirates,imoim.net,Newly Seen Domains,214,0,0.0
+1468,United Arab Emirates,qvdt3feo.com,Newly Seen Domains,214,0,0.0
+1469,United Arab Emirates,queniurc.com,Newly Seen Domains,214,0,0.0
+1470,United Arab Emirates,gboxlab.com,Newly Seen Domains,214,0,0.0
+1471,United Arab Emirates,thestreameast.to,Newly Seen Domains,214,18,0.0841
+1472,United Arab Emirates,rabo.cloud,Newly Seen Domains,214,0,0.0
+1473,United Arab Emirates,gandi-ns.fr,Newly Seen Domains,214,0,0.0
+1474,United Arab Emirates,cmediahub.ru,Newly Seen Domains,214,0,0.0
+1475,United Arab Emirates,newplayjj.com,Newly Seen Domains,214,0,0.0
+1476,United Arab Emirates,idouyinvod.com,Newly Seen Domains,214,0,0.0
+1477,United Arab Emirates,threads.net,Newly Seen Domains,214,0,0.0
+1478,United Arab Emirates,pitaya-clientai.com,Newly Seen Domains,214,0,0.0
+1479,United Arab Emirates,pg.access-33.com,Newly Seen Domains,214,0,0.0
+1480,United Arab Emirates,webflow.com,Newly Seen Domains,214,0,0.0
+1481,United Arab Emirates,akagtm.org,Newly Seen Domains,214,0,0.0
+1482,United Arab Emirates,gtm-a2b2.com,Newly Seen Domains,214,0,0.0
+1483,United Arab Emirates,vb17123filippaaniketos.pw,Newly Seen Domains,214,0,0.0
+1484,United Arab Emirates,afp.ai,Newly Seen Domains,214,0,0.0
+1485,United Arab Emirates,tx.us,Newly Seen Domains,214,0,0.0
+1486,United Arab Emirates,zoomdev.us,Newly Seen Domains,214,0,0.0
+1487,United Arab Emirates,tiktokcdn.com.rocket-cdn.com,Newly Seen Domains,214,0,0.0
+1488,United Arab Emirates,staseraintv.com,Newly Seen Domains,214,0,0.0
+1489,United Arab Emirates,inkuai.com,Newly Seen Domains,214,0,0.0
+1490,United Arab Emirates,queniuco.com,Newly Seen Domains,214,0,0.0
+1491,United Arab Emirates,go.id,Newly Seen Domains,214,0,0.0
+1492,United Arab Emirates,510623.com,Newly Seen Domains,214,0,0.0
+1493,United Arab Emirates,trpcdn.net,Newly Seen Domains,214,0,0.0
+1494,United Arab Emirates,confiant-integrations.net,Newly Seen Domains,214,0,0.0
+1495,United Arab Emirates,wl5.peachavocado.com,Newly Seen Domains,214,18,0.0841
+1496,United Arab Emirates,crcldu.com,Newly Seen Domains,214,0,0.0
+1497,United Arab Emirates,servetraff.com,Newly Seen Domains,214,0,0.0
+1498,United Arab Emirates,liftoff-creatives.io,Newly Seen Domains,214,0,0.0
+1499,United Arab Emirates,newtoki314.com,Newly Seen Domains,214,0,0.0
+1500,United Arab Emirates,sex.vlxyz.tv,Newly Seen Domains,214,19,0.0888
+1501,United Arab Emirates,unity3dusercontent.com,Newly Seen Domains,214,0,0.0
+1502,United Arab Emirates,breitbart.com,Newly Seen Domains,214,20,0.0935
+1503,United Arab Emirates,ctdns.cn,Newly Seen Domains,214,0,0.0
+1504,United Arab Emirates,net-hosted.com,Newly Seen Domains,214,0,0.0
+1505,United Arab Emirates,eu-1-id5-sync.com,Newly Seen Domains,214,0,0.0
+1506,United Arab Emirates,c.live.rocket-cdnbp.com,Newly Seen Domains,214,0,0.0
+1507,United Arab Emirates,palmst0re.com,Newly Seen Domains,214,0,0.0
+1508,United Arab Emirates,dbankedge.net,Newly Seen Domains,214,0,0.0
+1509,United Arab Emirates,insanony.com,Newly Seen Domains,214,0,0.0
+1510,United Arab Emirates,bc.ca,Newly Seen Domains,214,0,0.0
+1511,United Arab Emirates,ohmy.bid,Newly Seen Domains,214,0,0.0
+1512,United Arab Emirates,ru.sex-studentki.pics,Newly Seen Domains,214,19,0.0888
+1513,United Arab Emirates,vegamovies.boo,Newly Seen Domains,214,19,0.0888
+1514,United Arab Emirates,selcloud.ru,Newly Seen Domains,214,0,0.0
+1515,United Arab Emirates,xxpkg.com,Newly Seen Domains,214,0,0.0
+1516,United Arab Emirates,minutemedia-prebid.com,Newly Seen Domains,214,0,0.0
+1517,United Arab Emirates,bytelb.com,Newly Seen Domains,214,0,0.0
+1518,United Arab Emirates,steamserver.net,Newly Seen Domains,214,0,0.0
+1519,United Arab Emirates,pubt.in,Newly Seen Domains,214,19,0.0888
+1520,United Arab Emirates,xxxhindiporn.net,Newly Seen Domains,214,19,0.0888
+1521,United Arab Emirates,plground.live,Newly Seen Domains,214,0,0.0
+1522,United Arab Emirates,goal.co,Newly Seen Domains,214,0,0.0
+1523,United Arab Emirates,or.th,Newly Seen Domains,214,0,0.0
+1524,United Arab Emirates,strpst.com,Newly Seen Domains,214,0,0.0
+1525,United Arab Emirates,yaoilib.me,Newly Seen Domains,214,0,0.0
+1526,United Arab Emirates,newtoki313.com,Newly Seen Domains,214,0,0.0
+1527,United Arab Emirates,dns-parking.com,Newly Seen Domains,214,0,0.0
+1528,United Arab Emirates,rtb.mx,Newly Seen Domains,214,0,0.0
+1529,United Arab Emirates,vcmdiawe.com,Newly Seen Domains,214,0,0.0
+1530,United Arab Emirates,simpcity.su,Newly Seen Domains,214,50,0.2336
+1531,United Arab Emirates,likee.video,Newly Seen Domains,214,0,0.0
+1532,United Arab Emirates,pepepush.net,Newly Seen Domains,214,0,0.0
+1533,United Arab Emirates,miravia.es,Newly Seen Domains,214,0,0.0
+1534,United Arab Emirates,kinedns.net,Newly Seen Domains,214,0,0.0
+1535,United Arab Emirates,msahosting101.cloud,Newly Seen Domains,214,0,0.0
+1536,United Arab Emirates,statsigapi.net,Newly Seen Domains,214,0,0.0
+1537,United Arab Emirates,marketiq.com,Newly Seen Domains,214,0,0.0
+1538,United Arab Emirates,kidshealth.org,Newly Seen Domains,214,0,0.0
+1539,United Arab Emirates,justindianxporn.com,Newly Seen Domains,214,19,0.0888
+1540,United Arab Emirates,www.goal.co,Newly Seen Domains,214,0,0.0
+1541,United Arab Emirates,mynetname.net,Newly Seen Domains,214,0,0.0
+1542,United Arab Emirates,cloud.microsoft,Newly Seen Domains,214,0,0.0
+1543,United Arab Emirates,digbearings.com,Newly Seen Domains,214,0,0.0
+1544,United Arab Emirates,ksycdn.cn,Newly Seen Domains,214,0,0.0
+1545,United Arab Emirates,unimelb.net.au,Newly Seen Domains,214,0,0.0
+1546,United Arab Emirates,simontok.cyou,Newly Seen Domains,214,0,0.0
+1547,United Arab Emirates,amzndns.net,Newly Seen Domains,214,0,0.0
+1548,United Arab Emirates,newtoki315.com,Newly Seen Domains,214,0,0.0
+1549,United Arab Emirates,myqnapcloud.io,Newly Seen Domains,214,0,0.0
+1550,United Arab Emirates,wl4.peachavocado.com,Newly Seen Domains,214,18,0.0841
+1551,United Arab Emirates,gta.gov.zw,Newly Seen Domains,214,0,0.0
+1552,United Arab Emirates,tencentclb.com,Newly Seen Domains,214,0,0.0
+1553,United Arab Emirates,www.arabdx.com,Newly Seen Domains,214,50,0.2336
+1554,United Arab Emirates,com.ua,Newly Seen Domains,214,0,0.0
+1555,United Arab Emirates,atp.fox,Newly Seen Domains,214,0,0.0
+1556,United Arab Emirates,wbbasket.ru,Newly Seen Domains,214,0,0.0
+1557,United Arab Emirates,juliahub.com,Newly Seen Domains,214,0,0.0
+1558,United Arab Emirates,ctadns.cn,Newly Seen Domains,214,0,0.0
+1559,United Arab Emirates,schools.emaktab.uz,Newly Seen Domains,214,0,0.0
+1560,United Arab Emirates,queniuiq.com,Newly Seen Domains,214,0,0.0
+1561,United Arab Emirates,vedsalb.com,Newly Seen Domains,214,0,0.0
+1562,United Arab Emirates,tdnsstic1.cn,Newly Seen Domains,214,0,0.0
+1563,United Arab Emirates,kzhi.tech,Newly Seen Domains,214,0,0.0
+1564,United Arab Emirates,wwsga.me,Newly Seen Domains,214,0,0.0
+1565,United Arab Emirates,sattamatkano1.me,Newly Seen Domains,214,18,0.0841
+1566,United Arab Emirates,clevertap-prod.com,Newly Seen Domains,214,0,0.0
+1567,United Arab Emirates,acsechocaptiveportal.com,Newly Seen Domains,214,0,0.0
+1568,United Arab Emirates,dbankcdn.ru,Newly Seen Domains,214,0,0.0
+1569,United Arab Emirates,net-line.pro,Newly Seen Domains,214,0,0.0
+1570,United Arab Emirates,anybunny.org,Newly Seen Domains,214,123,0.5748
+1571,United Arab Emirates,shopifykloud.com,Newly Seen Domains,214,2,0.0093
+1572,United Arab Emirates,cagenerator.pki.strln.net,Newly Seen Domains,214,0,0.0
+1573,United Arab Emirates,iotcplatform.com,Newly Seen Domains,214,2,0.0093
+1574,United Arab Emirates,awmcdn.net,Newly Seen Domains,214,0,0.0
+1575,United Arab Emirates,www.staseraintv.com,Newly Seen Domains,214,0,0.0
+1576,United Arab Emirates,zorox.to,Newly Seen Domains,214,19,0.0888
+1577,United Arab Emirates,dutils.com,Newly Seen Domains,214,0,0.0
+1578,United Arab Emirates,qc.ca,Newly Seen Domains,214,0,0.0
+1579,United Arab Emirates,ltmsphrcl.net,Newly Seen Domains,214,0,0.0
+1580,United Arab Emirates,mechacomic.jp,Newly Seen Domains,214,19,0.0888
+1581,United Arab Emirates,c.bytefcdn-ttpeu.com,Newly Seen Domains,214,0,0.0
+1582,United Arab Emirates,commpass.tv,Newly Seen Domains,214,0,0.0
+1583,United Arab Emirates,apachetoday.com,Newly Seen Domains,214,0,0.0
+1584,United Arab Emirates,m.anwap.tube,Newly Seen Domains,214,0,0.0
+1585,United Arab Emirates,snaptube.app,Newly Seen Domains,214,0,0.0
+1586,United Arab Emirates,bytefcdn-oversea.com,Newly Seen Domains,214,1,0.0047
+1587,United Arab Emirates,video-voip.com,Newly Seen Domains,214,0,0.0
+1588,United Arab Emirates,emaktab.uz,Newly Seen Domains,214,0,0.0
+1589,United Arab Emirates,rdatasrv.net,Newly Seen Domains,214,0,0.0
+1590,United Arab Emirates,xhamster40.desi,Newly Seen Domains,214,0,0.0
+1591,United Arab Emirates,abusix.zone,Newly Seen Domains,214,0,0.0
+1592,United Arab Emirates,qtlgslb.com,Newly Seen Domains,214,0,0.0
+1593,United Arab Emirates,weerrhoop.cc,Newly Seen Domains,214,0,0.0
+1594,United Arab Emirates,vlxyz.tv,Newly Seen Domains,214,19,0.0888
+1595,United Arab Emirates,arabdx.com,Newly Seen Domains,214,50,0.2336
+1596,United Arab Emirates,lermanga.org,Newly Seen Domains,214,18,0.0841
+1597,United Arab Emirates,www.coco.gg,Newly Seen Domains,214,0,0.0
+1598,United Arab Emirates,dual-s-msedge.net,Newly Seen Domains,214,0,0.0
+1599,United Arab Emirates,httpbl.org,Newly Seen Domains,214,0,0.0
+1600,United Arab Emirates,bollyflix.foo,Newly Seen Domains,214,19,0.0888
+1601,United Arab Emirates,dzeninfra.ru,Newly Seen Domains,214,0,0.0
+1602,United Arab Emirates,cdnhwc6.com,Newly Seen Domains,214,0,0.0
+1603,United Arab Emirates,rocket-cdnbp.com,Newly Seen Domains,214,0,0.0
+1604,United Arab Emirates,aucdn.net,Newly Seen Domains,214,0,0.0
+1605,United Arab Emirates,blackrussia.online,Newly Seen Domains,214,0,0.0
+1606,United Arab Emirates,ttlivecdn.com.c.bytefcdn-oversea.com,Newly Seen Domains,214,1,0.0047
+1607,United Arab Emirates,t-s2-msedge.net,Newly Seen Domains,214,0,0.0
+1608,United Arab Emirates,teleport.sh,Newly Seen Domains,214,0,0.0
+1609,United Arab Emirates,com.rocket-cdn.com,Newly Seen Domains,214,0,0.0
+1610,United Arab Emirates,www.colamanga.com,Newly Seen Domains,214,19,0.0888
+1611,United Arab Emirates,queniusy.com,Newly Seen Domains,214,0,0.0
+1612,United Arab Emirates,adspend.space,Newly Seen Domains,214,0,0.0
+1613,United Arab Emirates,netoservices.ru,Newly Seen Domains,214,0,0.0
+1614,United Arab Emirates,mycybercns.com,Newly Seen Domains,214,6,0.028
+1615,United Arab Emirates,stbid.ru,Newly Seen Domains,214,0,0.0
+1616,United Arab Emirates,batocomic.com,Newly Seen Domains,214,0,0.0
+1617,United Arab Emirates,gv.at,Newly Seen Domains,214,0,0.0
+1618,United Arab Emirates,1e100.net,Newly Seen Domains,214,0,0.0
+1619,United Arab Emirates,vegamovies.zip,Newly Seen Domains,214,0,0.0
+1620,United Arab Emirates,forticloud.com,Newly Seen Domains,214,0,0.0
+1621,United Arab Emirates,pull-f5-tt02.tiktokcdn.com.c.bytefcdn-oversea.com,Newly Seen Domains,214,1,0.0047
+1622,United Arab Emirates,doppiocdn.org,Newly Seen Domains,214,0,0.0
+1623,United Arab Emirates,zenecn.net,Newly Seen Domains,214,0,0.0
+1624,United Arab Emirates,got-to-be.net,Newly Seen Domains,214,0,0.0
+1625,United Arab Emirates,firstbytedns.net,Newly Seen Domains,214,0,0.0
+1626,United Arab Emirates,queniuuf.com,Newly Seen Domains,214,0,0.0
+1627,United Arab Emirates,verkada-lan.com,Newly Seen Domains,214,0,0.0
+1628,United Arab Emirates,vkuserphoto.ru,Newly Seen Domains,214,0,0.0
+1629,United Arab Emirates,terabox.app,Newly Seen Domains,214,0,0.0
+1630,United Arab Emirates,queniukr.com,Newly Seen Domains,214,0,0.0
+1631,United Arab Emirates,onlyindianx.cc,Newly Seen Domains,214,124,0.5794
+1632,United Arab Emirates,bangcdn.net,Newly Seen Domains,214,1,0.0047
+1633,United Arab Emirates,whitl12vd.com,Newly Seen Domains,214,0,0.0
+1634,United Arab Emirates,websitepridecounseling.com,Newly Seen Domains,214,19,0.0888
+1635,United Arab Emirates,wcdnga.com,Newly Seen Domains,214,0,0.0
+1636,United Arab Emirates,xnxx115.com,Newly Seen Domains,214,19,0.0888
+1637,United Arab Emirates,colamanga.com,Newly Seen Domains,214,19,0.0888
+1638,United Arab Emirates,cometchat.io,Newly Seen Domains,214,0,0.0
+1639,United Arab Emirates,amphora.software,Newly Seen Domains,214,18,0.0841
+1640,United Arab Emirates,co.uk,Newly Seen Domains,214,0,0.0
+1641,United Arab Emirates,casinozeus.vip,Newly Seen Domains,214,0,0.0
+1642,United Arab Emirates,ui-dns.com,Newly Seen Domains,214,0,0.0
+1643,United Arab Emirates,myroute53.com,Newly Seen Domains,214,0,0.0
+1644,United Arab Emirates,smartcasttv.com,Newly Seen Domains,214,0,0.0
+1645,United Arab Emirates,hi.xhamster42.desi,Newly Seen Domains,214,0,0.0
+1646,United Arab Emirates,clover.network,Newly Seen Domains,214,0,0.0
+1647,United Arab Emirates,esportesdasorte.com,Newly Seen Domains,214,50,0.2336
+1648,United Arab Emirates,piratbit.fun,Newly Seen Domains,214,0,0.0
+1649,United Arab Emirates,www.xvideos53.com,Newly Seen Domains,214,19,0.0888
+1650,United Arab Emirates,mtgglobals.com,Newly Seen Domains,214,0,0.0
+1651,United Arab Emirates,edge.apple,Newly Seen Domains,214,0,0.0
+1652,United Arab Emirates,heytapdl.com,Newly Seen Domains,214,1,0.0047
+1653,United Arab Emirates,doods.pro,Newly Seen Domains,214,0,0.0
+1654,United Arab Emirates,queniuyk.com,Newly Seen Domains,214,0,0.0
+1655,United Arab Emirates,cc-ecdn.net,Newly Seen Domains,214,0,0.0
+1656,United Arab Emirates,ecdnx.com,Newly Seen Domains,214,0,0.0
+1657,United Arab Emirates,sberinsur.ru,Newly Seen Domains,214,0,0.0
+1658,United Arab Emirates,nokta.com,Newly Seen Domains,214,0,0.0
+1659,United Arab Emirates,transsion-os.com,Newly Seen Domains,214,1,0.0047
+1660,United Arab Emirates,tdnsdp1.cn,Newly Seen Domains,214,0,0.0
+1661,United Arab Emirates,magsrv.com,Newly Seen Domains,214,0,0.0
+1662,United Arab Emirates,www.terabox.app,Newly Seen Domains,214,0,0.0
+1663,United Arab Emirates,dfaklj.tech,Newly Seen Domains,214,0,0.0
+1664,United Arab Emirates,tiktokcdn-eu.net,Newly Seen Domains,214,0,0.0
+1665,United Arab Emirates,ohthree.com,Newly Seen Domains,214,0,0.0
+1666,United Arab Emirates,filmyzilla.la,Newly Seen Domains,214,19,0.0888
+1667,United Arab Emirates,ttdns2.com,Newly Seen Domains,214,0,0.0
+1668,United Arab Emirates,ikarem.io,Newly Seen Domains,214,0,0.0
+1669,United Arab Emirates,citykr.kg,Newly Seen Domains,214,0,0.0
+1670,United Arab Emirates,simplyhired-staging.com,Newly Seen Domains,214,0,0.0
+1671,United Arab Emirates,rainberrytv.com,Newly Seen Domains,214,0,0.0
+1672,United Arab Emirates,adserv.ai,Newly Seen Domains,214,0,0.0
+1673,United Arab Emirates,fmoviesz.to,Newly Seen Domains,214,36,0.1682
+1674,United Arab Emirates,gopsahome.info,Newly Seen Domains,214,0,0.0
+1675,United Arab Emirates,kwai-pro.com,Newly Seen Domains,214,0,0.0
+1676,United Arab Emirates,tiktokv.us,Newly Seen Domains,214,0,0.0
+1677,United Arab Emirates,moviesda8.me,Newly Seen Domains,214,19,0.0888
+1678,United Arab Emirates,on.ca,Newly Seen Domains,214,0,0.0
+1679,United Arab Emirates,apple.news,Newly Seen Domains,214,0,0.0
+1680,United Arab Emirates,dycdn.com,Newly Seen Domains,214,0,0.0
+1681,United Arab Emirates,pki.strln.net,Newly Seen Domains,214,0,0.0
+1682,United Arab Emirates,crl.prod.cagenerator.pki.strln.net,Newly Seen Domains,214,0,0.0
+1683,United Arab Emirates,gpubgm.com,Newly Seen Domains,214,0,0.0
+1684,United Arab Emirates,librefutboltv.com,Newly Seen Domains,214,19,0.0888
+1685,United Arab Emirates,merchant-center-analytics.goog,Newly Seen Domains,214,0,0.0
+1686,United Arab Emirates,m.xszj.org,Newly Seen Domains,214,0,0.0
+1687,United Arab Emirates,lalapush.com,Newly Seen Domains,214,0,0.0
+1688,United Arab Emirates,al-array.com,Newly Seen Domains,214,0,0.0
+1689,United Arab Emirates,gname-dns.com,Newly Seen Domains,214,0,0.0
+1690,United Arab Emirates,pull-f5-sg01.tiktokcdn.com.c.bytefcdn-oversea.com,Newly Seen Domains,214,1,0.0047
+1691,United Arab Emirates,stackdns.com,Newly Seen Domains,214,0,0.0
+1692,United Arab Emirates,pacloudflare.com,Newly Seen Domains,214,0,0.0
+1693,United Arab Emirates,tubidy.cool,Newly Seen Domains,214,0,0.0
+1694,United Arab Emirates,pull-f5-tt02-infra.fcdn.us.gts.ttoverseaus.net,Newly Seen Domains,214,0,0.0
+1695,United Arab Emirates,wac-msedge.net,Newly Seen Domains,214,0,0.0
+1696,United Arab Emirates,ca.us,Newly Seen Domains,214,0,0.0
+1697,United Arab Emirates,sex-studentki.pics,Newly Seen Domains,214,19,0.0888
+1698,United Arab Emirates,soinluck.com,Newly Seen Domains,214,0,0.0
+1699,United Arab Emirates,volcgtm.com,Newly Seen Domains,214,0,0.0
+1700,United Arab Emirates,tlivecdn.com,Newly Seen Domains,214,0,0.0
+1701,United Arab Emirates,fdv2-t-msedge.net,Newly Seen Domains,214,0,0.0
+1702,United Arab Emirates,dnsv1.com.cn,Newly Seen Domains,214,0,0.0
+1703,United Arab Emirates,lk21official.wiki,Newly Seen Domains,214,0,0.0
+1704,United Arab Emirates,wac-dc-msedge.net,Newly Seen Domains,214,0,0.0
+1705,United Arab Emirates,cdnhwc3.com,Newly Seen Domains,214,0,0.0
+1706,United Arab Emirates,thevirallist.com,Newly Seen Domains,214,0,0.0
+1707,United Arab Emirates,5movierulz.gd,Newly Seen Domains,214,19,0.0888
+1708,United Arab Emirates,edgecdn.ru,Newly Seen Domains,214,0,0.0
+1709,United Arab Emirates,11xplay.com,Newly Seen Domains,214,18,0.0841
+1710,United Arab Emirates,xham.live,Newly Seen Domains,214,19,0.0888
+1711,United Arab Emirates,komikindo.tv,Newly Seen Domains,214,0,0.0
+1712,United Arab Emirates,moviesda8.co,Newly Seen Domains,214,19,0.0888
+1713,United Arab Emirates,tiktokcdn.com.c.bytefcdn-oversea.com,Newly Seen Domains,214,1,0.0047
+1714,United Arab Emirates,queniucf.com,Newly Seen Domains,214,0,0.0
+1715,United Arab Emirates,gouv.fr,Newly Seen Domains,214,0,0.0
+1716,United Arab Emirates,hadronid.net,Newly Seen Domains,214,0,0.0
+1717,United Arab Emirates,bk6bba-resources.com,Newly Seen Domains,214,0,0.0
+1718,United Arab Emirates,vidaahub.com,Newly Seen Domains,214,0,0.0
+1719,United Arab Emirates,wx.phimxxxhay.com,Newly Seen Domains,214,0,0.0
+1720,United Arab Emirates,go.th,Newly Seen Domains,214,0,0.0
+1721,United Arab Emirates,glanceapis.com,Newly Seen Domains,214,0,0.0
+1722,United Arab Emirates,toponadss.com,Newly Seen Domains,214,0,0.0
+1723,United Arab Emirates,queniuaa.com,Newly Seen Domains,214,0,0.0
+1724,United Arab Emirates,anwap.tube,Newly Seen Domains,214,0,0.0
+1725,United Arab Emirates,goldenfrog.com,Newly Seen Domains,214,35,0.1636
+1726,United Arab Emirates,now.gg,Newly Seen Domains,214,0,0.0
+1727,United Arab Emirates,laodong.vn,Newly Seen Domains,214,0,0.0
+1728,United Arab Emirates,jus.br,Newly Seen Domains,214,0,0.0
+1729,United Arab Emirates,tdatamaster.com,Newly Seen Domains,214,0,0.0
+1730,United Arab Emirates,dnsv.jp,Newly Seen Domains,214,0,0.0
+1731,United Arab Emirates,bzsn.ru,Newly Seen Domains,214,0,0.0
+1732,United Arab Emirates,therealxh2.com,Newly Seen Domains,214,19,0.0888
+1733,United Arab Emirates,turbify.com,Newly Seen Domains,214,0,0.0
+1734,United Arab Emirates,blaze-4.com,Newly Seen Domains,214,45,0.2103
+1735,United Arab Emirates,googlezip.net,Newly Seen Domains,214,36,0.1682
+1736,United Arab Emirates,queniulf.com,Newly Seen Domains,214,0,0.0
+1737,United Arab Emirates,queniusz.com,Newly Seen Domains,214,0,0.0
+1738,United Arab Emirates,doujindesu.tv,Newly Seen Domains,214,19,0.0888
+1739,United Arab Emirates,hwcdn.ru,Newly Seen Domains,214,0,0.0
+1740,United Arab Emirates,ecs-sgoic.pt,Newly Seen Domains,214,0,0.0
+1741,United Arab Emirates,wise.com,Newly Seen Domains,214,0,0.0
+1742,United Arab Emirates,kwikdns.com,Newly Seen Domains,214,0,0.0
+1743,United Arab Emirates,7dakxf.bio,Newly Seen Domains,214,19,0.0888
+1744,United Arab Emirates,vedcdnlb.com,Newly Seen Domains,214,0,0.0
+1745,United Arab Emirates,lgtviot.com,Newly Seen Domains,214,0,0.0
+1746,United Arab Emirates,xszj.org,Newly Seen Domains,214,0,0.0
+1747,United Arab Emirates,tdnsv6.com,Newly Seen Domains,214,0,0.0
+1748,United Arab Emirates,ai-lawandorder.com,Newly Seen Domains,214,0,0.0
+1749,United Arab Emirates,fb-t-msedge.net,Newly Seen Domains,214,0,0.0
+1750,United Arab Emirates,piojm.tech,Newly Seen Domains,214,0,0.0
+1751,United Arab Emirates,v1.slashlib.me,Newly Seen Domains,214,0,0.0
+1752,United Arab Emirates,access-33.com,Newly Seen Domains,214,0,0.0
+1753,United Arab Emirates,mosmedzdrav.ru,Newly Seen Domains,214,0,0.0
+1754,United Arab Emirates,salesforce-dns.com,Newly Seen Domains,214,0,0.0
+1755,United Arab Emirates,tiktokcdn-eu.com,Newly Seen Domains,214,0,0.0
+1756,United Arab Emirates,azure-dns.com,Newly Seen Domains,214,0,0.0
+1757,United Arab Emirates,sgmbocast.com,Newly Seen Domains,214,0,0.0
+1758,United Arab Emirates,showvid.ws,Newly Seen Domains,214,0,0.0
+1759,United Arab Emirates,c6gj-static.net,Newly Seen Domains,214,0,0.0
+1760,United Arab Emirates,hiaiabc.com,Newly Seen Domains,214,0,0.0
+1761,United Arab Emirates,ksyna.net,Newly Seen Domains,214,0,0.0
+1762,United Arab Emirates,ukyuh.tech,Newly Seen Domains,214,0,0.0
+1763,United Arab Emirates,limitedcommunitylinkage.online,Newly Seen Domains,214,0,0.0
+1764,United Arab Emirates,susercontent.com,Newly Seen Domains,214,0,0.0
+1765,United Arab Emirates,www.xnxx.gift,Newly Seen Domains,214,19,0.0888
+1766,United Arab Emirates,wl1.peachavocado.com,Newly Seen Domains,214,18,0.0841
+1767,United Arab Emirates,kwaicdn.com,Newly Seen Domains,214,0,0.0
+1768,United Arab Emirates,douyinliving.com,Newly Seen Domains,214,0,0.0
+1769,United Arab Emirates,xplanet.tech,Newly Seen Domains,214,0,0.0
+1770,United Arab Emirates,app2dn.fextok.com,Newly Seen Domains,214,19,0.0888
+1771,United Arab Emirates,ekatox.com,Newly Seen Domains,214,0,0.0
+1772,United Arab Emirates,dzen.ru,Newly Seen Domains,214,0,0.0
+1773,United Arab Emirates,nska.net,Newly Seen Domains,214,0,0.0
+1774,United Arab Emirates,ny.us,Newly Seen Domains,214,0,0.0
+1775,United Arab Emirates,fcdn.us.gts.ttoverseaus.net,Newly Seen Domains,214,0,0.0
+1776,United Arab Emirates,govt.nz,Newly Seen Domains,214,0,0.0
+1777,United Arab Emirates,goodoo.ru,Newly Seen Domains,214,0,0.0
+1778,United Arab Emirates,wuxiap.com,Newly Seen Domains,214,0,0.0
+1779,United Arab Emirates,on.aws,Newly Seen Domains,214,0,0.0
+1780,United Arab Emirates,ytmp3.nu,Newly Seen Domains,214,18,0.0841
+1781,United Arab Emirates,jalanmenangku.com,Newly Seen Domains,214,0,0.0
+1782,United Arab Emirates,sexalarabi.com,Newly Seen Domains,214,120,0.5607
+1783,United Arab Emirates,temu.com,Newly Seen Domains,214,1,0.0047
+1784,United Arab Emirates,discomax.com,Newly Seen Domains,214,0,0.0
+1785,United Arab Emirates,firstbyte.club,Newly Seen Domains,214,0,0.0
+1786,United Arab Emirates,c.apple.news,Newly Seen Domains,214,0,0.0
+1787,United Arab Emirates,jhkkjkj.com,Newly Seen Domains,214,0,0.0
+1788,United Arab Emirates,gts.ttoverseaus.net,Newly Seen Domains,214,0,0.0
+1789,United Arab Emirates,electro-com.ru,Newly Seen Domains,214,0,0.0
+1790,United Arab Emirates,dns-tm.com,Newly Seen Domains,214,0,0.0
+1791,United Arab Emirates,bki-okb.com,Newly Seen Domains,214,0,0.0
+1792,United Arab Emirates,telecid.ru,Newly Seen Domains,214,0,0.0
+1793,United Arab Emirates,bytefcdn-ttpeu.com,Newly Seen Domains,214,0,0.0
+1794,United Arab Emirates,easytrader.ir,Newly Seen Domains,214,0,0.0
+1795,United Arab Emirates,cachenow.net,Newly Seen Domains,214,0,0.0
+1796,United Arab Emirates,eu.tiktokcdn.com.c.bytefcdn-ttpeu.com,Newly Seen Domains,214,0,0.0
+1797,United Arab Emirates,or.kr,Newly Seen Domains,214,0,0.0
+1798,United Arab Emirates,webpkgcache.com,Newly Seen Domains,214,0,0.0
+1799,United Arab Emirates,id.xhtree.com,Newly Seen Domains,214,0,0.0
+1800,United Arab Emirates,ebalka.nl,Newly Seen Domains,214,19,0.0888
+1801,United Arab Emirates,ww7.5movierulz.gd,Newly Seen Domains,214,19,0.0888
+1802,United Arab Emirates,asso.fr,Newly Seen Domains,214,0,0.0
+1803,United Arab Emirates,mo.ebalovo.xxx,Newly Seen Domains,214,19,0.0888
+1804,United Arab Emirates,indriverapp.com,Newly Seen Domains,214,0,0.0
+1805,United Arab Emirates,grabpay.com,Newly Seen Domains,214,0,0.0
+1806,United Arab Emirates,cldin.eu,Newly Seen Domains,214,0,0.0
+1807,United Arab Emirates,simontokx.cfd,Newly Seen Domains,214,19,0.0888
+1808,United Arab Emirates,widgetable.net,Newly Seen Domains,214,0,0.0
+1809,United Arab Emirates,astivysauran.com,Newly Seen Domains,214,18,0.0841
+1810,United Arab Emirates,wl2.peachavocado.com,Newly Seen Domains,214,18,0.0841
+1811,United Arab Emirates,olxmenit.com,Newly Seen Domains,214,0,0.0
+1812,United Arab Emirates,tamilyogi.band,Newly Seen Domains,214,19,0.0888
+1813,United Arab Emirates,therealxh.com,Newly Seen Domains,214,19,0.0888
+1814,United Arab Emirates,www.fsiblog.club,Newly Seen Domains,214,19,0.0888
+1815,United Arab Emirates,market-trk.com,Newly Seen Domains,214,0,0.0
+1816,United Arab Emirates,9animetv.to,Newly Seen Domains,214,114,0.5327
+1817,United Arab Emirates,redecanais.zip,Newly Seen Domains,214,1,0.0047
+1818,United Arab Emirates,c.bytefcdn-oversea.com,Newly Seen Domains,214,1,0.0047
+1819,United Arab Emirates,yts.mx,Newly Seen Domains,214,34,0.1589
+1820,United Arab Emirates,volcgslb.com,Newly Seen Domains,214,0,0.0
+1821,United Arab Emirates,re.kr,Newly Seen Domains,214,0,0.0
+1822,United Arab Emirates,tv1.lk21official.wiki,Newly Seen Domains,214,0,0.0
+1823,United Arab Emirates,ttoverseaus.net,Newly Seen Domains,214,0,0.0
+1824,United Arab Emirates,163img.com,Newly Seen Domains,214,0,0.0
+1825,United Arab Emirates,bytedns1.com,Newly Seen Domains,214,0,0.0
+1826,United Arab Emirates,freeconnect.link,Newly Seen Domains,214,2,0.0093
+1827,United Arab Emirates,live.rocket-cdnbp.com,Newly Seen Domains,214,0,0.0
+1828,United Arab Emirates,gbnews.com,Newly Seen Domains,214,0,0.0
+1829,United Arab Emirates,vlxx.moe,Newly Seen Domains,214,18,0.0841
+1830,United Arab Emirates,listdl.com,Newly Seen Domains,214,0,0.0
+1831,United Arab Emirates,updaterecomended.com,Newly Seen Domains,214,0,0.0
+1832,United Arab Emirates,tamilyogi.plus,Newly Seen Domains,214,0,0.0
+1833,United Arab Emirates,null1.kg,Newly Seen Domains,214,0,0.0
+1834,United Arab Emirates,beelinegprs.ru,Newly Seen Domains,214,0,0.0
+1835,United Arab Emirates,vonedge.com,Newly Seen Domains,214,0,0.0
+1836,United Arab Emirates,qtlcdn.com,Newly Seen Domains,214,0,0.0
+1837,United Arab Emirates,skyhigh.cloud,Newly Seen Domains,214,0,0.0
+1838,United Arab Emirates,gravitational.io,Newly Seen Domains,214,0,0.0
+1839,United Arab Emirates,dpbossnet.news,Newly Seen Domains,214,0,0.0
+1840,United Arab Emirates,filmyzilla.com.gy,Newly Seen Domains,214,19,0.0888
+1841,United Arab Emirates,queniuum.com,Newly Seen Domains,214,0,0.0
+1842,United Arab Emirates,digicertdns.com,Newly Seen Domains,214,0,0.0
+1843,United Arab Emirates,tvwiki.top,Newly Seen Domains,214,0,0.0
+1844,United Arab Emirates,armgs.team,Newly Seen Domains,214,0,0.0
+1845,United Arab Emirates,tlivepush.com,Newly Seen Domains,214,0,0.0
+1846,United Arab Emirates,com.c.bytefcdn-ttpeu.com,Newly Seen Domains,214,0,0.0
+1847,United Arab Emirates,cdnbuild.net,Newly Seen Domains,214,0,0.0
+1848,United Arab Emirates,adspay.ge,Newly Seen Domains,214,0,0.0
+1849,United Arab Emirates,goindian.net,Newly Seen Domains,214,115,0.5374
+1850,United Arab Emirates,com.br,Newly Seen Domains,214,1,0.0047
+1851,United Arab Emirates,acoustic-adm.com,Newly Seen Domains,214,0,0.0
+1852,United Arab Emirates,dssedge.com,Newly Seen Domains,214,0,0.0
+1853,United Arab Emirates,photonengine.io,Newly Seen Domains,214,0,0.0
+1854,United Arab Emirates,alphadnszone.com,Newly Seen Domains,214,0,0.0
+1855,United Arab Emirates,bbrdbr.com,Newly Seen Domains,214,1,0.0047
+1856,United Arab Emirates,qqq-ttss.su,Newly Seen Domains,214,2,0.0093
+1857,United Arab Emirates,d-53.jp,Newly Seen Domains,214,0,0.0
+1858,United Arab Emirates,prmsrvs.com,Newly Seen Domains,214,19,0.0888
+1859,United Arab Emirates,porno365.expert,Newly Seen Domains,214,0,0.0
+1860,United Arab Emirates,tiktokcdn.com.c.bytefcdn-ttpeu.com,Newly Seen Domains,214,0,0.0
+1861,United Arab Emirates,fedapush.net,Newly Seen Domains,214,18,0.0841
+1862,United Arab Emirates,mightycheckout.com,Newly Seen Domains,214,1,0.0047
+1863,United Arab Emirates,dyna-ns.net,Newly Seen Domains,214,0,0.0
+1864,United Arab Emirates,squarespacedns.com,Newly Seen Domains,214,0,0.0
+1865,United Arab Emirates,trafcfy.com,Newly Seen Domains,214,0,0.0
+1866,United Arab Emirates,amzndns.co.uk,Newly Seen Domains,214,0,0.0
+1867,United Arab Emirates,vips.ne.jp,Newly Seen Domains,214,0,0.0
+1868,United Arab Emirates,filter.sh,Newly Seen Domains,214,0,0.0
+1869,United Arab Emirates,luncdvod.xyz,Newly Seen Domains,214,0,0.0
+1870,United Arab Emirates,fsiblog.club,Newly Seen Domains,214,19,0.0888
+1871,United Arab Emirates,orbsrv.com,Newly Seen Domains,214,0,0.0
+1872,United Arab Emirates,kwaipros.com,Newly Seen Domains,214,0,0.0
+1873,United Arab Emirates,zcvh.net,Newly Seen Domains,214,0,0.0
+1874,United Arab Emirates,douyincdn.com,Newly Seen Domains,214,0,0.0
+1875,United Arab Emirates,pv-cdn.net,Newly Seen Domains,214,1,0.0047
+1876,United Arab Emirates,mn.us,Newly Seen Domains,214,0,0.0
+1877,United Arab Emirates,a-mx.net,Newly Seen Domains,214,0,0.0
+1878,United Arab Emirates,arvancdn.ir,Newly Seen Domains,214,0,0.0
+1879,United Arab Emirates,coomer.su,Newly Seen Domains,214,44,0.2056
+1880,United Arab Emirates,r.au,Newly Seen Domains,214,0,0.0
+1881,United Arab Emirates,in.th,Newly Seen Domains,214,0,0.0
+1882,United Arab Emirates,dataprivacyframework.gov,Newly Seen Domains,214,0,0.0
+1883,United Arab Emirates,activtrak.net,Newly Seen Domains,214,0,0.0
+1884,United Arab Emirates,allawntech.com,Newly Seen Domains,214,0,0.0
+1885,United Arab Emirates,mnaspm.com,Newly Seen Domains,214,19,0.0888
+1886,United Arab Emirates,xhamster41.desi,Newly Seen Domains,214,19,0.0888
+1887,United Arab Emirates,go.kr,Newly Seen Domains,214,0,0.0
+1888,United Arab Emirates,capcutapi.com,Newly Seen Domains,214,0,0.0
+1889,United Arab Emirates,oraclecloud.net,Newly Seen Domains,214,0,0.0
+1890,United Arab Emirates,prreqcroab.icu,Newly Seen Domains,214,0,0.0
+1891,United Arab Emirates,tiktokcdn.com.c.live.rocket-cdnbp.com,Newly Seen Domains,214,0,0.0
+1892,United Arab Emirates,serving-sys.ru,Newly Seen Domains,214,0,0.0
+1893,United Arab Emirates,arc-msedge.net,Newly Seen Domains,214,0,0.0
+1894,United Arab Emirates,batcg.org,Newly Seen Domains,214,0,0.0
+1895,United Arab Emirates,www.xnxx.press,Newly Seen Domains,214,19,0.0888
+1896,United Arab Emirates,featuregates.org,Newly Seen Domains,214,0,0.0
+1897,United Arab Emirates,us.gts.ttoverseaus.net,Newly Seen Domains,214,0,0.0
+1898,United Arab Emirates,5movierulz.gg,Newly Seen Domains,214,0,0.0
+1899,United Arab Emirates,qh-cdn.com,Newly Seen Domains,214,0,0.0
+1900,United Arab Emirates,dpbosss.com,Newly Seen Domains,214,0,0.0
+1901,United Arab Emirates,nhattruyenplus.com,Newly Seen Domains,214,0,0.0
+1902,United Arab Emirates,hijackery.cn,Newly Seen Domains,214,0,0.0
+1903,United Arab Emirates,g-xyz.xyz,Newly Seen Domains,214,19,0.0888
+1904,United Arab Emirates,haproxyedge.net,Newly Seen Domains,214,0,0.0
+1905,United Arab Emirates,ethdisco.net,Newly Seen Domains,214,0,0.0
+1906,United Arab Emirates,cricbet99.com,Newly Seen Domains,214,34,0.1589
+1907,United Arab Emirates,shinigami.sh,Newly Seen Domains,214,19,0.0888
+1908,United Arab Emirates,kkstories.com,Newly Seen Domains,214,0,0.0
+1909,United Arab Emirates,dns.google,Newly Seen Domains,214,4,0.0187
+1910,United Arab Emirates,character.ai,Newly Seen Domains,214,4,0.0187
+1911,United Arab Emirates,spglobal.com,Newly Seen Domains,214,0,0.0
+1912,United Arab Emirates,snackvideo.in,Newly Seen Domains,214,0,0.0
+1913,United Arab Emirates,hdhub4u.zip,Newly Seen Domains,214,0,0.0
+1914,United Arab Emirates,haecdn.com,Newly Seen Domains,214,0,0.0
+1915,United Arab Emirates,f2pool.com,Newly Seen Domains,214,11,0.0514
+1916,United Arab Emirates,visortmo.com,Newly Seen Domains,214,19,0.0888
+1917,United Arab Emirates,publicdnsservice.com,Newly Seen Domains,214,0,0.0
+1918,United Arab Emirates,share-dns.com,Newly Seen Domains,214,0,0.0
+1919,United Arab Emirates,pari-match-bet.in,Newly Seen Domains,214,43,0.2009
+1920,United Arab Emirates,galleryvalery.com,Newly Seen Domains,214,0,0.0
+1921,United Arab Emirates,www.filmyzilla.com.gy,Newly Seen Domains,214,19,0.0888
+1922,United Arab Emirates,suspended-domain.com,Newly Seen Domains,214,0,0.0
+1923,United Arab Emirates,com.cn,Newly Seen Domains,214,0,0.0
+1924,United Arab Emirates,appiancloud.com,Newly Seen Domains,214,0,0.0
+1925,United Arab Emirates,dns.sa,Newly Seen Domains,214,0,0.0
+1926,United Arab Emirates,vwapps.run,Newly Seen Domains,214,0,0.0
+1927,United Arab Emirates,rajwap.cc,Newly Seen Domains,214,115,0.5374
+1928,United Arab Emirates,kueezrtb.com,Newly Seen Domains,214,1,0.0047
+1929,United Arab Emirates,opera-api2.com,Newly Seen Domains,214,0,0.0
+1930,United Arab Emirates,mydnspt.net,Newly Seen Domains,214,0,0.0
+1931,United Arab Emirates,xhtree.com,Newly Seen Domains,214,0,0.0
+1932,United Arab Emirates,dualeotruyenpk.com,Newly Seen Domains,214,19,0.0888
+1933,United Arab Emirates,1024tera.com,Newly Seen Domains,214,0,0.0
+1934,United Arab Emirates,int08h.com,Newly Seen Domains,214,0,0.0
+1935,United Arab Emirates,prxbox.com,Newly Seen Domains,214,0,0.0
+1936,United Arab Emirates,d-net.pro,Newly Seen Domains,214,0,0.0
+1937,United Arab Emirates,conn3ct.space,Newly Seen Domains,214,0,0.0
+1938,United Arab Emirates,codmwest.com,Newly Seen Domains,214,0,0.0
+1939,United Arab Emirates,privacysandboxservices.com,Newly Seen Domains,214,0,0.0
+1940,United Arab Emirates,adguard-vpn.online,Newly Seen Domains,214,0,0.0
+1941,United Arab Emirates,pemsrv.com,Newly Seen Domains,214,0,0.0
+1942,United Arab Emirates,ksyunv5.com,Newly Seen Domains,214,0,0.0
+1943,United Arab Emirates,s.au,Newly Seen Domains,214,0,0.0
+1944,United Arab Emirates,nettruyenus.com,Newly Seen Domains,214,0,0.0
+1945,United Arab Emirates,xxxbfvideos.com,Newly Seen Domains,214,19,0.0888
+1946,United Arab Emirates,www.filmyzilla.la,Newly Seen Domains,214,19,0.0888
+1947,United Arab Emirates,pubmnet.com,Newly Seen Domains,214,0,0.0
+1948,United Arab Emirates,coco.gg,Newly Seen Domains,214,0,0.0
+1949,United Arab Emirates,crossmh.ru,Newly Seen Domains,214,0,0.0
+1950,United Arab Emirates,superchatlive.com,Newly Seen Domains,214,45,0.2103
+1951,United Arab Emirates,allawnos.com,Newly Seen Domains,214,0,0.0
+1952,United Arab Emirates,pgf-asw0zz.com,Newly Seen Domains,214,0,0.0
+1953,United Arab Emirates,wurl.tv,Newly Seen Domains,214,0,0.0
+1954,United Arab Emirates,glance-cdn.com,Newly Seen Domains,214,0,0.0
+1955,United Arab Emirates,strln.net,Newly Seen Domains,214,0,0.0
+1956,United Arab Emirates,wscvip.cn,Newly Seen Domains,214,0,0.0
+1957,United Arab Emirates,midasplayer.cloud,Newly Seen Domains,214,0,0.0
+1958,United Arab Emirates,7mmtv.sx,Newly Seen Domains,214,118,0.5514
+1959,United Arab Emirates,ac.uk,Newly Seen Domains,214,1,0.0047
+1960,United Arab Emirates,defybrick.com,Newly Seen Domains,214,0,0.0
+1961,United Arab Emirates,fl.us,Newly Seen Domains,214,0,0.0
+1962,United Arab Emirates,amsoveasea.com,Newly Seen Domains,214,0,0.0
+1963,United Arab Emirates,bcvcdn.com,Newly Seen Domains,214,0,0.0
+1964,United Arab Emirates,bluevoox.com,Newly Seen Domains,214,0,0.0
+1965,United Arab Emirates,bd33fgabh.com,Newly Seen Domains,214,0,0.0
+1966,United Arab Emirates,therealxh1.com,Newly Seen Domains,214,19,0.0888
+1967,United Arab Emirates,sg.fr,Newly Seen Domains,214,0,0.0
+1968,United Arab Emirates,hstgr.net,Newly Seen Domains,214,0,0.0
+1969,United Arab Emirates,kemono.su,Newly Seen Domains,214,45,0.2103
+1970,United Arab Emirates,ipv4only.arpa,Newly Seen Domains,214,0,0.0
+1971,United Arab Emirates,isaidub4.com,Newly Seen Domains,214,19,0.0888
+1972,United Arab Emirates,edgecdn.world,Newly Seen Domains,214,0,0.0
+1973,United Arab Emirates,7games.bet,Newly Seen Domains,214,35,0.1636
+1974,United Arab Emirates,123rutor.su,Newly Seen Domains,214,0,0.0
+1975,United Arab Emirates,thejeu.com,Newly Seen Domains,214,0,0.0
+1976,United Arab Emirates,flat-ads.com,Newly Seen Domains,214,0,0.0
+1977,United Arab Emirates,avsxappcaptiveportal.com,Newly Seen Domains,214,0,0.0
+1978,United Arab Emirates,dkinternal.com,Newly Seen Domains,214,0,0.0
+1979,United Arab Emirates,yd6n63ptky.com,Newly Seen Domains,214,19,0.0888
+1980,United Arab Emirates,or.id,Newly Seen Domains,214,0,0.0
+1981,United Arab Emirates,cloud.ru,Newly Seen Domains,214,0,0.0
+1982,United Arab Emirates,pinterest.net,Newly Seen Domains,214,0,0.0
+1983,United Arab Emirates,od.ua,Newly Seen Domains,214,0,0.0
+1984,United Arab Emirates,ww7.5movierulz.gg,Newly Seen Domains,214,0,0.0
+1985,United Arab Emirates,mmechocaptiveportal.com,Newly Seen Domains,214,0,0.0
+1986,United Arab Emirates,xxxsexjav.com,Newly Seen Domains,214,19,0.0888
+1987,United Arab Emirates,dyingbirds.com,Newly Seen Domains,214,0,0.0
+1988,United Arab Emirates,meb4r.com,Newly Seen Domains,214,0,0.0
+1989,United Arab Emirates,xnxx.press,Newly Seen Domains,214,19,0.0888
+1990,United Arab Emirates,aka.ms,Newly Seen Domains,214,0,0.0
+1991,United Arab Emirates,ab.ca,Newly Seen Domains,214,0,0.0
+1992,United Arab Emirates,com.c.live.rocket-cdnbp.com,Newly Seen Domains,214,0,0.0
+1993,United Arab Emirates,splunkdev.net,Newly Seen Domains,214,0,0.0
+1994,United Arab Emirates,queniukw.com,Newly Seen Domains,214,0,0.0
+1995,United Arab Emirates,slashlib.me,Newly Seen Domains,214,0,0.0
+1996,United Arab Emirates,pg-nmga.com,Newly Seen Domains,214,0,0.0
+1997,United Arab Emirates,waw.pl,Newly Seen Domains,214,0,0.0
+1998,United Arab Emirates,vip-svr.com,Newly Seen Domains,214,19,0.0888
+1999,United Arab Emirates,prod.cagenerator.pki.strln.net,Newly Seen Domains,214,0,0.0
+2000,United Arab Emirates,www.nettruyenus.com,Newly Seen Domains,214,0,0.0
