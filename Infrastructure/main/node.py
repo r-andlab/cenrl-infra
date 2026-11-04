@@ -37,6 +37,7 @@ class RegionalNode:
         action_space_folder: str = None,
         on_reset: Optional[Callable[[str], None]] = None,
         aggregation_method: AggregationMethod = AggregationMethod.MAJORITY_VOTE,
+        reward_mode: str = "majority",
         **kwargs: Any,
     ):
         self.params = params.copy()
@@ -80,6 +81,15 @@ class RegionalNode:
         # aggregation lives on MeasurementAggregator (orchestrator-owned).
         self.aggregation_method: AggregationMethod = aggregation_method
         self.model: BatchUCB = model_klass(self.params, country_name, **kwargs)
+        # Ex 6: set as a plain post-construction attribute, NOT forwarded via
+        # **kwargs into model_klass -- kwargs is forwarded verbatim to every
+        # model_klass (including the LinUCB/ClusterLinUCB track's
+        # BatchLinUCBMixin chain), which does not know about reward_mode and
+        # would raise TypeError on an unexpected keyword argument. Only
+        # BatchUCB reads this attribute (getattr(..., "majority") default);
+        # it's silently inert (an unread attribute) on every other model
+        # class, so this is zero-risk to that other track.
+        self.model.reward_mode = reward_mode
         self.model.output_directory = os.path.dirname(self.params["outfile_csv"])
         self.model.outfile = Path(self.model.output_directory) / f"{self.country_name_standard}.csv"
         if action_space_csv:
@@ -255,9 +265,13 @@ class RegionalNode:
             "current_epoch_num": self.model.current_epoch_num,
             # Daily progress
             "measurements_completed_today": self.model.current_epoch_num,
-            # Run config snapshot
-            "c": self.model.c,
-            "step_size": self.model.step_size,
+            # Run config snapshot -- c/step_size are UCB-only hyperparameters
+            # (LinUCB/ClusterLinUCB use alpha instead, and have no step_size
+            # at all); getattr avoids crashing save_checkpoint for those
+            # model classes, confirmed via a real LinUCB run where this
+            # raised AttributeError on self.model.c every checkpoint attempt.
+            "c": getattr(self.model, "c", None),
+            "step_size": getattr(self.model, "step_size", None),
             "initial_value_estimate": self.model.initial_value_estimate,
             "selection_method": self.model.selection_method.name,
             "size_method": self.model.size_method.name,
@@ -468,9 +482,12 @@ class RegionalNode:
         self.model.action_space.wake_up_all_nodes()
         self.model.current_epoch_num = 0
         self.in_flight = 0
-        self.state = NodeState.IDLE
         self.episode_stats = []
         self.episode_idx += 1
+        if self.episode_idx - 1 >= self.model.num_episodes:
+            self.state = NodeState.DONE
+        else:
+            self.state = NodeState.IDLE
         # Claude's discretion (CONTEXT.md): snap dynamic batch size back to
         # base on iteration boundary. wake_up_all_nodes() re-enables the action
         # space, and the prior batch trajectory may not generalize across

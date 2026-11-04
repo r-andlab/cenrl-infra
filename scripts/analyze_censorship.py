@@ -106,11 +106,18 @@ def aggregate_country(
     country: str,
     csv_path: Path,
     pairs: dict[tuple[str, str], PairAggregator],
+    episode_filter: int | None = None,
 ) -> None:
-    """Stream ``csv_path`` and update ``pairs`` for the given country."""
+    """Stream ``csv_path`` and update ``pairs`` for the given country.
+
+    When ``episode_filter`` is set, rows from other episodes are skipped
+    entirely, so their denominators don't count toward ``total_tests``.
+    """
     with csv_path.open("r", newline="", encoding="utf-8") as fh:
         reader = csv.DictReader(fh)
         for row in reader:
+            if episode_filter is not None and row.get("episode") != str(episode_filter):
+                continue
             action = row.get("action", "")
             if not action.startswith(CATEGORY_PREFIX):
                 # Defensive: ignore non-categories rows (e.g. other feature
@@ -269,7 +276,11 @@ def _mtime_date(run_dir: Path) -> str:
     return ts.strftime("%Y-%m-%d %H:%M:%S")
 
 
-def collect_run_meta(run_dir: Path, country_csvs: list[tuple[str, Path]]) -> RunMeta:
+def collect_run_meta(
+    run_dir: Path,
+    country_csvs: list[tuple[str, Path]],
+    episode_filter: int | None = None,
+) -> RunMeta:
     """Build a ``RunMeta`` by scanning ``country_csvs`` for episode/step caps.
 
     ``measurements_per_episode`` is ``max(time)`` observed across all rows
@@ -290,6 +301,8 @@ def collect_run_meta(run_dir: Path, country_csvs: list[tuple[str, Path]]) -> Run
                         ep = int(row["episode"])
                         st = int(row["time"])
                     except (KeyError, ValueError):
+                        continue
+                    if episode_filter is not None and ep != episode_filter:
                         continue
                     episodes_seen.add(ep)
                     if st > max_step:
@@ -514,6 +527,15 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="Skip PNG rendering (CSV + stdout only).",
     )
+    parser.add_argument(
+        "--episode",
+        type=int,
+        default=None,
+        help=(
+            "Analyze only this episode number (e.g. 1, 2, 3). Default: all "
+            "episodes. Output files get an _epN suffix when set."
+        ),
+    )
     args = parser.parse_args(argv)
 
     run_dir: Path = args.run_dir
@@ -538,10 +560,11 @@ def main(argv: list[str] | None = None) -> int:
     # across calls and rely on identity; cast back to a plain dict view by
     # passing it through aggregate_country.
     for country, csv_path in country_csvs:
-        aggregate_country(country, csv_path, pairs)
+        aggregate_country(country, csv_path, pairs, episode_filter=args.episode)
 
     rows = build_rows(pairs)
-    out_path = run_dir / "censorship_summary.csv"
+    suffix = f"_ep{args.episode}" if args.episode is not None else ""
+    out_path = run_dir / f"censorship_summary{suffix}.csv"
     write_csv(out_path, rows)
 
     if rows:
@@ -550,8 +573,8 @@ def main(argv: list[str] | None = None) -> int:
         print(f"No censorship detected in {run_dir}.")
 
     if not args.no_png:
-        meta = collect_run_meta(run_dir, country_csvs)
-        png_path = run_dir / "censorship_summary.png"
+        meta = collect_run_meta(run_dir, country_csvs, episode_filter=args.episode)
+        png_path = run_dir / f"censorship_summary{suffix}.png"
         render_png(png_path, rows, meta, max_rows=args.max_rows)
         print(f"Wrote PNG: {png_path}")
 

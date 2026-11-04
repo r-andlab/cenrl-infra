@@ -1,7 +1,8 @@
 """
 LinUCB with a single shared (global) A matrix and b vector across all arms.
 
-every probe updates one
+In the standard (disjoint) LinUCB each arm maintains independent A_a and b_a,
+so learning from one arm never updates another. Here, every probe updates one
 global A and b regardless of which arm was chosen:
 
     A_global  +=  x_a x_a^T        (updated after every probe)
@@ -11,6 +12,9 @@ global A and b regardless of which arm was chosen:
 
     score(a)   =  θ_global · x_a  +  α * sqrt(x_a · A_global⁻¹ · x_a)
 
+This means probing "Pornography" and seeing reward=1 immediately raises the
+predicted score for every arm that shares features with it (e.g. Adult Themes,
+Dating & Relationships) — true cross-arm knowledge transfer.
 """
 
 import typing
@@ -32,7 +36,11 @@ np.seterr(divide="ignore", invalid="ignore")
 
 
 class LinUCBShared(Model):
-
+    """
+    LinUCB with a single global A/b shared across all arms.
+    Arm selection and hierarchy traversal are identical to LinUCB;
+    only the update rule changes.
+    """
 
     def __init__(self, params, **kwargs):
         super().__init__(params, **kwargs)
@@ -72,7 +80,7 @@ class LinUCBShared(Model):
 
         return np.concatenate([static, [log_size, fraction_remaining]])
 
-    # ── Scoring using global weights ───────────────
+    # ── Scoring using global weights ──────────────────────────────────────────
 
     def _score(self, node_key: str) -> float:
         x          = self._get_feature_vector(node_key)
@@ -82,7 +90,7 @@ class LinUCBShared(Model):
         uncertainty = float(np.sqrt(x @ A_inv_x))
         return predicted + self.alpha * uncertainty
 
-    # ── Arm selection (same traversal logic as LinUCB) ───────────
+    # ── Arm selection (same traversal logic as LinUCB) ────────────────────────
 
     def choose_arm(self) -> typing.List[str]:
         source = self.action_space.get_root()
@@ -119,7 +127,7 @@ class LinUCBShared(Model):
         self.last_selected_arm_index = selected_arms_history[-1]
         return selected_arms_history
 
-    # ── Global weight update ─────
+    # ── Global weight update ──────────────────────────────────────────────────
 
     def observe(self, selected_arm: str, measurement_result: float) -> float:
         x = self._get_feature_vector(selected_arm)
@@ -157,7 +165,4 @@ class LinUCBSharedParserOptions(ParserOptions):
 if __name__ == "__main__":
     parser = LinUCBSharedParserOptions()
     params = parser.parse()
-    run_multiprocessing(LinUCBShared, params,
-                        addition_model_run_kwargs={
-                            "action_space_klass": LinUCBActionSpace
-                        })
+    run_multiprocessing(LinUCBShared, params)

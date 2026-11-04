@@ -382,3 +382,129 @@ class TestWeightedVoteBranch:
         agg.record("US", "c", "t", blocked=False)
         ready = agg.get_ready("US")
         assert ready[0].vp_count == 3
+
+
+class TestAbstention:
+    """record(blocked=None) means the VP reported (stops the wait) but is
+    excluded from both the majority vote and vote_fraction."""
+
+    def test_abstained_vote_excluded_from_majority_and_vp_count(self, agg):
+        agg.register_targets("US", ["t"], {"a", "b", "c"})
+        agg.record("US", "a", "t", blocked=True)
+        agg.record("US", "b", "t", blocked=None)   # abstain
+        agg.record("US", "c", "t", blocked=False)
+        ready = agg.get_ready("US")
+        assert len(ready) == 1
+        # 1 blocked, 1 not-blocked among the 2 real votes -> tie -> not blocked
+        assert ready[0].blocked is False
+        assert ready[0].vp_count == 2
+
+    def test_all_abstained_is_a_no_vote_response(self, agg):
+        agg.register_targets("US", ["t"], {"a", "b"})
+        agg.record("US", "a", "t", blocked=None)
+        agg.record("US", "b", "t", blocked=None)
+        ready = agg.get_ready("US")
+        assert len(ready) == 1
+        assert ready[0].blocked is False
+        assert ready[0].vp_count == 0
+        assert ready[0].vote_fraction == 0.0
+
+    def test_abstain_still_satisfies_the_wait(self, agg):
+        """An abstained VP counts as having reported -- finalize fires once
+        every expected VP has responded, whether their vote is real or None."""
+        agg.register_targets("US", ["t"], {"a", "b"})
+        agg.record("US", "a", "t", blocked=None)
+        assert agg.get_ready("US") == []          # still waiting on "b"
+        agg.record("US", "b", "t", blocked=True)
+        ready = agg.get_ready("US")
+        assert len(ready) == 1 and ready[0].blocked is True
+
+
+class TestVoteFraction:
+    """vote_fraction: fraction of voting (non-abstained) VPs that voted
+    blocked -- unweighted, regardless of aggregation_method."""
+
+    def test_unanimous_blocked(self, agg):
+        agg.register_targets("US", ["t"], {"a", "b"})
+        agg.record("US", "a", "t", blocked=True)
+        agg.record("US", "b", "t", blocked=True)
+        assert agg.get_ready("US")[0].vote_fraction == 1.0
+
+    def test_unanimous_not_blocked(self, agg):
+        agg.register_targets("US", ["t"], {"a", "b"})
+        agg.record("US", "a", "t", blocked=False)
+        agg.record("US", "b", "t", blocked=False)
+        assert agg.get_ready("US")[0].vote_fraction == 0.0
+
+    def test_partial_fraction(self, agg):
+        agg.register_targets("US", ["t"], {"a", "b", "c"})
+        agg.record("US", "a", "t", blocked=True)
+        agg.record("US", "b", "t", blocked=True)
+        agg.record("US", "c", "t", blocked=False)
+        assert abs(agg.get_ready("US")[0].vote_fraction - 2 / 3) < 1e-9
+
+    def test_expected_drained_to_empty_gives_zero_fraction(self, agg):
+        """The pre-existing drop_vp-drains-expected-to-empty no-vote path
+        also carries vote_fraction=0.0, matching its blocked=False."""
+        agg.register_targets("US", ["t"], {"a"})
+        agg.drop_vp("US", "a")
+        ready = agg.get_ready("US")
+        assert len(ready) == 1
+        assert ready[0].blocked is False
+        assert ready[0].vote_fraction == 0.0
+
+    def test_vote_fraction_is_unweighted_even_under_weighted_vote(self):
+        """WEIGHTED_VOTE's per-VP weights decide `blocked` but vote_fraction
+        stays the plain unweighted fraction -- 'percentage of VPs,' not a
+        weighted percentage."""
+        agg = MeasurementAggregator(aggregation_method=AggregationMethod.WEIGHTED_VOTE)
+        agg.set_vp_weights("US", {"a": 0.9, "b": 0.1})
+        agg.register_targets("US", ["t"], {"a", "b"})
+        agg.record("US", "a", "t", blocked=True)
+        agg.record("US", "b", "t", blocked=False)
+        ready = agg.get_ready("US")[0]
+        assert ready.vote_fraction == 0.5   # unweighted: 1 of 2 voted blocked
+
+
+class TestAsnVoteFraction:
+    """asn_vote_fraction: like vote_fraction, but averaged within each
+    vote-group (e.g. ASN, via vote_group_key) first, then across groups --
+    so a group with many VPs can't dominate a group with few."""
+
+    def test_default_grouping_matches_vote_fraction(self, agg):
+        """No vote_group_key given -> every VP is its own group -> identical
+        to the flat vote_fraction."""
+        agg.register_targets("US", ["t"], {"a", "b", "c"})
+        agg.record("US", "a", "t", blocked=True)
+        agg.record("US", "b", "t", blocked=True)
+        agg.record("US", "c", "t", blocked=False)
+        ready = agg.get_ready("US")[0]
+        assert ready.asn_vote_fraction == ready.vote_fraction == pytest.approx(2 / 3)
+
+    def test_uneven_groups_differ_from_flat_fraction(self):
+        """3 VPs in one group (all blocked) outvote 1 VP in another group
+        (not blocked) under the flat fraction, but not under grouping."""
+        group = {"a": "g1", "b": "g1", "c": "g1", "d": "g2"}
+        agg = MeasurementAggregator(vote_group_key=lambda vp: group[vp])
+        agg.register_targets("US", ["t"], {"a", "b", "c", "d"})
+        agg.record("US", "a", "t", blocked=True)
+        agg.record("US", "b", "t", blocked=True)
+        agg.record("US", "c", "t", blocked=True)
+        agg.record("US", "d", "t", blocked=False)
+        ready = agg.get_ready("US")[0]
+        assert ready.vote_fraction == pytest.approx(0.75)        # 3 of 4 VPs
+        assert ready.asn_vote_fraction == pytest.approx(0.5)     # g1=1.0, g2=0.0 -> avg 0.5
+
+    def test_abstained_vp_excluded_from_grouping(self):
+        """An abstaining VP (blocked=None) is excluded from asn_vote_fraction
+        the same way it's already excluded from vote_fraction."""
+        group = {"a": "g1", "b": "g2", "c": "g2"}
+        agg = MeasurementAggregator(vote_group_key=lambda vp: group[vp])
+        agg.register_targets("US", ["t"], {"a", "b", "c"})
+        agg.record("US", "a", "t", blocked=None)   # abstains
+        agg.record("US", "b", "t", blocked=True)
+        agg.record("US", "c", "t", blocked=False)
+        ready = agg.get_ready("US")[0]
+        # Only group g2 remains ({b: True, c: False} -> mean 0.5).
+        assert ready.vote_fraction == pytest.approx(0.5)
+        assert ready.asn_vote_fraction == pytest.approx(0.5)
