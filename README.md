@@ -146,7 +146,7 @@ If you use the CenRL tool or data, please cite the following publication:
 ```
 @inproceedings{le2025cenrl,
   title={CenRL: A Framework for Performing Intelligent Censorship Measurements},
-  author={Le, Hieu and Wang, Kevin and Huremagic, Armin and Ensafi, Roya and Sundara Raman, Ram},
+  author={Le, Hieu and Huremagic, Armin and Wang, Kevin and Ensafi, Roya and Sundara Raman, Ram},
   booktitle={IEEE Security & Privacy 2026 (IEEE S&P 26)},
   year={2026}
 }
