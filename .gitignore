@@ -429,3 +429,6 @@ CLAUDE.md
 
 # local
 **/local/**
+
+# jupyter notebook
+**/.ipynb_checkpoints/**

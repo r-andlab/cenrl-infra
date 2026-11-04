@@ -2,7 +2,7 @@ cachetools==5.3.0
 certifi==2022.12.7
 charset-normalizer==3.1.0
 cloudpickle==2.2.1
-db-dtypes==1.0.5
+# db-dtypes==1.0.5
 google-api-core==2.11.0
 google-auth==2.16.2
 google-cloud-bigquery==3.7.0
@@ -10,8 +10,8 @@ google-cloud-core==2.3.2
 google-crc32c==1.5.0
 google-resumable-media==2.4.1
 googleapis-common-protos==1.58.0
-grpcio==1.51.3
-grpcio-status==1.51.3
+# grpcio==1.51.3
+# grpcio-status==1.51.3
 gym==0.26.2
 gym-notices==0.0.8
 idna==3.4
@@ -20,10 +20,10 @@ numpy==1.21.6; python_version < "3.11"
 # For Python 3.11 and above
 numpy>=1.23.5; python_version >= "3.11"
 packaging==23.0
-pandas==1.5.2
+# pandas==1.5.2
 proto-plus==1.22.2
 protobuf==4.22.1
-pyarrow==11.0.0
+# pyarrow==11.0.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 python-dateutil==2.8.2
